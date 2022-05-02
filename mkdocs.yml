@@ -1,1 +1,4 @@
 site_name: Yurie's homepages
+
+theme:
+  name: material
