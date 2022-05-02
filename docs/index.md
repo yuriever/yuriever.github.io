@@ -7,7 +7,7 @@
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project, then go to the dictionary.
-* `mkdocs serve` - Start the live-reloading docs server at the http://localhost:8000/. 
+* `mkdocs serve` - Start the live-reloading docs server at http://localhost:8000/. 
 * `mkdocs build` - Build the html files.
 * `mkdocs gh-deploy --force` - Push to github and then wait for minutes.
 * `mkdocs -h` - Print help message and exit.
@@ -29,4 +29,4 @@
 * [mkdocs theme: material](squidfunk.github.io/mkdocs-material/getting-started/)
 * [test1]()
 
-add some words
+add some words1
