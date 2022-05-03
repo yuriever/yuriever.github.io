@@ -1,32 +1,16 @@
-# This is a test web.
+# 晚安，来访者
 
-* [mkdocs](https://www.mkdocs.org)
+这里的内容包括：
 
-* [mkdocs 中文文档](https://mkdocs.zimoapps.com/)
+* [mathematica 笔记](doc/mma.md)
+* [常用配置方案](doc/mkdocs.md)
+* [数学物理小记](light/lightnovel.md) [^1]
+* [科研随想](ochiba/ochiba.md) [^2]
 
-## Commands
+[^1]: 因为写的比较零落，故名轻小说；引用文献可能不完整，但尽可能保证陈述的专业性。
+[^2]: 无法实践的科研想法，原因：非作者所属专业，或者工程量过大；不保证专业性，例如关于神经网络的内容。
 
-* `mkdocs new [dir-name]` - Create a new project, then go to the dictionary.
-* `mkdocs serve` - Start the live-reloading docs server at http://localhost:8000/. 
-* `mkdocs build` - Build the html files.
-* `mkdocs gh-deploy --force` - Push to github and then wait for minutes.
-* `mkdocs -h` - Print help message and exit.
 
-*Windows: add `python -m` before `mkdocs`.*
+!!! note ""
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # Homepage.
-        ...       # Other markdown pages, images and other files.
-    site/         # Built html files.
-
-## Other documents
-
-* [git](http://www.git-scm.com/docs/git)
-* [yaml intro](gettaurus.org/docs/YAMLTutorial/)
-* [mkdocs theme: material](squidfunk.github.io/mkdocs-material/getting-started/)
-* [test1]()
-
-add some words1
+    test

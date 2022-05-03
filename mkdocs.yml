@@ -1,4 +1,74 @@
-site_name: Yurie's homepages
+site_name: Sora
+site_description: Sora
+# site_url: https://yuriever.github.io/
 
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - header.autohide
+  palette:
+    primary: deep purple
+    accent: blue
+  logo: img/logo.png
+  favicon: img/logo.png
+  icon:
+    admonition:
+      <type>: <icon> 
+
+
+nav:
+  - Home: index.md
+  - Document: 
+    - Mathematica: doc/mma.md
+    - MkDocs: doc/mkdocs.md
+    # - Others: doc/new.md
+  - Light Novel: 
+    - lignt1: light/lightnovel.md
+  - Ochiba: ochiba/ochiba.md
+
+extra:
+  generator: false
+
+
+markdown_extensions:
+
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# mathjax 支持，可见：
+# https://squidfunk.github.io/mkdocs-material/reference/mathjax/
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
