@@ -15,7 +15,7 @@
     
     
       
-        <title>MkDocs - Sora</title>
+        <title>xAct 变分计算 - Sora</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mkdocs" class="md-skip">
+        <a href="#xact" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MkDocs
+              xAct 变分计算
             
           </span>
         </div>
@@ -175,7 +175,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../mma/index_mma/" class="md-tabs__link">
+      <a href="../index_mma/" class="md-tabs__link">
         Mathematica
       </a>
     </li>
@@ -185,15 +185,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../index_doc/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../doc/index_doc/" class="md-tabs__link">
         Document
       </a>
     </li>
@@ -312,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mma/index_mma/" class="md-nav__link">
+      <a href="../index_mma/" class="md-nav__link">
         Index
       </a>
     </li>
@@ -326,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mma/1.md" class="md-nav__link">
+      <a href="../1.md" class="md-nav__link">
         Package
       </a>
     </li>
@@ -346,14 +344,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -376,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index_doc/" class="md-nav__link">
+      <a href="../../doc/index_doc/" class="md-nav__link">
         Index
       </a>
     </li>
@@ -388,59 +384,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          MkDocs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../doc/mkdocs/" class="md-nav__link">
         MkDocs
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#documentations" class="md-nav__link">
-    Documentations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands-for-mac" class="md-nav__link">
-    Commands for Mac
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -603,15 +551,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentations" class="md-nav__link">
-    Documentations
+  <a href="#_1" class="md-nav__link">
+    导言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#commands-for-mac" class="md-nav__link">
-    Commands for Mac
+  <a href="#_2" class="md-nav__link">
+    流形与作用量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xpert" class="md-nav__link">
+    基于 xPert 的度规变分计算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xtras" class="md-nav__link">
+    基于 xTras 的实现
   </a>
   
 </li>
@@ -630,26 +592,157 @@
                 
 
 
-<h1 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h1>
-<p>本网站由 mkdocs 生成，因此在这里给出简单介绍。使用 mkdocs，创作者可仅关注用 markdown 语法书写的内容，无需关心 html, css 等底层细节。</p>
-<h2 id="documentations">Documentations<a class="headerlink" href="#documentations" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><a href="https://www.mkdocs.org/user-guide/">mkdocs user guide</a></p>
+<h1 id="xact">xAct 变分计算<a class="headerlink" href="#xact" title="Permanent link">&para;</a></h1>
+<p>本文以 4 维标量场和电磁场为例介绍 xAct，根据 <a href="http://www.xact.es/xPert/index.html">xPert 文档</a>，<a href="http://www.xact.es/xTras/documentation/guide/xTras.html">xTras 文档</a>，<a href="https://github.com/xAct-contrib/examples/blob/master/ActionVariation_Metric_Fields.nb">作用量变分实例</a>写作。</p>
+<h2 id="_1">导言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>变分计算问题回到最底层，是遵循一系列规则依照一定次序化简表达式，逐步降低表达式的复杂度，最后抵达目标表达式。</p>
+<p>这是一个代数问题，不需要指明场构型在哪一个函数空间中，不需要流形的整体信息，不必明确是何种意义的积分<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。我们所需的只是一个坐标卡内的局部结构，例如微分、度规、复结构。这个坐标卡可以是欧氏空间的开集，可以是超空间的开集，或者某种形式几何。</p>
+<div class="admonition note">
+<p>say some words on variational bi-complex, formal geometry and BV-BRST.</p>
+</div>
+<p>那么直接的实现方案是利用MMA的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见 <a href="../noncomm_algebra/">符号计算：非交换代数</a>。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
+<p>我们需要调用的扩展包如下：</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt; Notation`;
+
+(*隐藏导入时打印的版本信息*)
+Block[{Print},
+ &lt;&lt; xAct`xCore`;
+ &lt;&lt; xAct`xPerm`;
+ &lt;&lt; xAct`xTensor`;
+ &lt;&lt; xAct`xPert`;
+ &lt;&lt; xAct`xTras`;
+ &lt;&lt; xAct`xCoba`;]
+
+(*定义某些对象后xAct会打印相关信息，可隐藏*)
+$DefInfoQ = False;
+
+(*隐藏局部变量的$符号*)
+$PrePrint = ScreenDollarIndices;
+
+(*以前缀运算符的形式打印协变导数*)
+$CovDFormat = &quot;Postfix&quot;;
+
+tensorSim[x_] := x // ContractMetric // Simplification;
+tensorCollect[x_] := Collect[ContractMetric[x], $PerturbationParameter, Simplification];
+
+(*有时计算结果会包含一个delta符号，可用如下规则消除*)
+ruled1 = {delta[-LI[1], LI[1]] -&gt; 1};
+</code></pre></div>
+<p>变分计算可以分为三步：写下作用量；对场量变分；分部积分化简表达式。</p>
+<h2 id="_2">流形与作用量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>我们先声明流形、度规和 Levi-Civita 联络，号差为<span class="arithmatex">\((-,+,+,...)\)</span>，</p>
+<div class="highlight"><pre><span></span><code>(*声明流形为M4，维数为4，xAct会自动声明切丛以及相关的张量丛*)
+(*第三个自变量是指标集，亦可以用函数IndexRange指定*)
+DefManifold[M4, 4, {a,b,c,d,e,f,g,h}]
+
+(*第一个变量是度规行列式的符号*)
+(*下指标用负号标记，xAct自动定义适配的Levi-Civita联络，SymbolOfCovD和PrintAs是打印规则*)
+DefMetric[-1, metric[-a, -b], CD, SymbolOfCovD -&gt; {&quot;;&quot;, &quot;\[Del]&quot;}, PrintAs -&gt; &quot;g&quot;]
+rootMetric = Sqrt[-Detmetric[]];
+</code></pre></div>
+<p>方便起见，这里引入 <code>rootMetric</code> 为 <span class="arithmatex">\(\sqrt{-g}\)</span>，其中 <code>Detmetric[]</code> 为附着度规名称 <code>metric</code> 自动定义的度规行列式。</p>
+<p>声明标量场 <span class="arithmatex">\(\phi\)</span>、电磁场 <span class="arithmatex">\(A_{a}, F_{ab}\)</span>，定义作用量，</p>
+<div class="highlight"><pre><span></span><code>DefConstantSymbol[cs, PrintAs -&gt; &quot;\!\(\*SubscriptBox[\(c\), \(s\)]\)&quot;]
+DefTensor[\[Phi][], M4]
+DefTensor[A[-a], M4]
+DefTensor[F[-a, -b], M4, Antisymmetric[{-a, -b}]]
+</code></pre></div>
+<p>场强和规范势需满足规则 <span class="arithmatex">\(F_{ab}=\partial_{[a}A_{b]}\)</span> ，xAct 提供了类似 <code>SetDelayed</code> 的函数 <code>IndexSetDelayed</code>，以及类似 <code>Rule</code> 的函数 <code>MakeRule</code>，</p>
+<div class="highlight"><pre><span></span><code>?IndexSetDelayed
+?MakeRule
+</code></pre></div>
+<blockquote>
+<p>IndexSet[lhs, rhs] defines a relation between indexed expressions lhs and rhs, without evaluating rhs.</p>
+<p>MakeRule[{LHS, RHS}] gives a list of delayed rules with left and right hand sides as given by LHS and RHS respectively, but moving indices to consider all possible equivalent rules. See notes for its options PatternIndices, MetricOn, UseSymmetries and TestIndices. MakeRule[{LHS, RHS, conditions}] adds conditions to the rules.</p>
+</blockquote>
+<p>这里我们选用 <code>MakeRule</code>，更方便控制计算，</p>
+<div class="highlight"><pre><span></span><code>(*注意MakeRule不需要使用模式*)
+ruleFToA = MakeRule[{F[a, b], CD[a]@A[b] - CD[b]@A[a]}];
+</code></pre></div>
+<p>接下来定义 Lagrangian density，以下混称作用量，</p>
+<div class="highlight"><pre><span></span><code>actionScalar = 1/2 rootMetric (CD[a]@\[Phi][] CD[-a]@\[Phi][] + cs RicciScalarCD[] \[Phi][]^2 )
+actionEM = 1/4 F[-a, -b] F[a, b] rootMetric
+</code></pre></div>
+<p>其中标量场的作用量为，</p>
+<div class="arithmatex">\[
+S=\frac{1}{2}\int\,{d^{d}x}\sqrt{-g}\,( \partial^{a}\phi \partial_{a}\phi + c_s R \phi^2)
+\]</div>
+<p>修正项可使作用量在 Weyl 变换下不变，待定系数 <span class="arithmatex">\(c_s\)</span> 需用 <code>DefConstantSymbol</code> 声明；电磁场的作用量为，</p>
+<div class="arithmatex">\[
+S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
+\]</div>
+<h2 id="xpert">基于 xPert 的度规变分计算<a class="headerlink" href="#xpert" title="Permanent link">&para;</a></h2>
+<p>扩展包 xPert 的主要功能为度规微扰。变分函数 <code>Perturbation</code> 内置了变分满足的线性性和 Lebniz 规则，例如 <code>Perturbation@A[-a]</code> 便是 <span class="arithmatex">\(\delta A_{a}\)</span>，被打印为 <span class="arithmatex">\(\Delta A_{a}\)</span>，例如对电磁场作用量的变分为</p>
+<div class="highlight"><pre><span></span><code>actionEM // Perturbation
+</code></pre></div>
+<p>对作用量中的三个因子的分别变分，展开给出三项，</p>
+<figure align="center">
+  <img src="../xact_variation1_img/actionEM_Perturbation1.png">
+</figure>
+
+<p>被变分的基本场为规范势 <span class="arithmatex">\(A\)</span> 而非场强 <span class="arithmatex">\(F\)</span>，因此利用规则 <code>ruleFToA</code> 展开 <span class="arithmatex">\(F\)</span>，</p>
+<div class="highlight"><pre><span></span><code>actionEM /. ruleFToA // tensorSim // Perturbation
+</code></pre></div>
+<figure align="center">
+  <img src="../xact_variation1_img/actionEM_Perturbation2.png">
+</figure>
+
+<p>注意 <span class="arithmatex">\(\delta A^{a}\)</span> 隐含度规缩并 <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>。需要将 <span class="arithmatex">\(\delta L\)</span> 展开成 <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span> 的形式，<span class="arithmatex">\(\delta A_{a}\)</span> 的系数给出场方程，<span class="arithmatex">\(\delta g\)</span> 的系数给出能动张量，括号中含有关于变分的协变导数，需要通过分部积分来消除。</p>
+<p>函数 <code>VarD[#1,#2]</code> 提供了抽取系数以及分部积分的功能，其中第一个自变量表示被变分的场，第二个自变量表示关于 <code>CD</code> 进行分部积分，在声明度规时已自动定义了度规变分，由此可计算能动张量 <span class="arithmatex">\(T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}\)</span> 以及迹 <span class="arithmatex">\(\trace{T}\)</span> ，</p>
+<div class="highlight"><pre><span></span><code>stressTensorEM1 = 2/rootMetric VarD[metric[a, b], CD]@actionEM // tensorSim
+stressTensorTraceEM1 = stressTensorEM1 metric[a, b] // tensorSim
+stressTensorScalar = 2/rootMetric VarD[metric[a, b], CD]@actionScalar // tensorSim
+stressTensorTraceScalar = stressTensorScalar metric[a, b] // tensorSim
+</code></pre></div>
+<figure align="center">
+  <img src="../xact_variation1_img/stresstensor.png">
+</figure>
+
+<p>注意这里无需使用规则 <code>ruleFToA</code>，如果提前展开场强为规范势，能动张量的表达式会略显复杂，稍后介绍化简方法。实际上，<span class="arithmatex">\(\trace{T}= \frac{d-4}{4}F^{2}\)</span>，仅当 <span class="arithmatex">\(d=4\)</span> 时，自由电磁场具有<font color="red">共形对称性</font>。</p>
+<p>以电磁场的运动方程为例，实现为，</p>
+<div class="highlight"><pre><span></span><code>actionEM /. ruleFToA // Perturbation // ExpandPerturbation;
+eomEM = 1/rootMetric VarD[dA[LI[1], a], CD]@Out[] /. ruled1 // tensorSim
+</code></pre></div>
+<p>其中函数 <code>ExpandPerturbation</code> 可化简度规微扰，结果为，</p>
+<figure align="center">
+  <img src="../xact_variation1_img/eomEM1.png">
+</figure>
+
+<p>类似的可计算标量场的运动方程与能动张量，</p>
+<div class="highlight"><pre><span></span><code>actionConformalScalar // Perturbation // ExpandPerturbation;
+eomScalar = 1/rootMetric VarD[ds[LI[1]], CD]@Out[] /. ruled1 // tensorSim
+stressTensorScalar = 2/rootMetric VarD[dg[LI[1], a, b], CD]@Out[-2] /. ruled1;
+stressTensorTraceScalar = stressTensorScalar metric[a, b] // tensorSim
+</code></pre></div>
+<p>我们仅关心能动张量的迹，因此隐藏了能动张量，结果为，</p>
+<figure align="center">
+  <img src="../xact_variation1_img/eomscalar1.png">
+</figure>
+
+<p>取待定系数 <span class="arithmatex">\(c_{s}=\frac{d-2}{12}=\frac{1}{6}\)</span> 有，</p>
+<figure align="center">
+  <img src="../xact_variation1_img/eomscalar2.png">
+</figure>
+
+<p>此时迹正比于运动方程，即 <span class="arithmatex">\(\trace{T}=0\)</span>。</p>
+<h2 id="xtras">基于 xTras 的实现<a class="headerlink" href="#xtras" title="Permanent link">&para;</a></h2>
+<p>在 xPert 的基础上，xTras 封装了关于变分的一系列规则和函数， <strong>无需利用 <code>DefTensorPerturbation</code> 定义变分场</strong> ，上一节的计算可以精简为</p>
+<div class="highlight"><pre><span></span><code>eomEM = 1/rootMetric VarD[A[-a], CD]@(actionEM /. ruleFToA) // tensorSim
+stressTensorEM = 2/rootMetric VarD[metric[a, b], CD]@actionEM // tensorSim
+
+eomScalar = 1/rootMetric VarD[s[], CD]@actionScalar // tensorSim
+stressTensorScalar = 2/rootMetric VarD[metric[a, b], CD]@actionScalar // tensorSim;
+stressTensorTraceScalar = stressTensorScalar metric[a, b] // tensorSim
+</code></pre></div>
+<hr />
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>甚至积分不必被视为是到复数 <span class="arithmatex">\(\mathbb{C}\)</span> 的映射，它可以是到 <span class="arithmatex">\(\mathbb{C}[[\hbar,m,g,\dots ]]\)</span> 的映射，或者是到其他的奇怪的环。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li>
-<p><a href="http://squidfunk.github.io/mkdocs-material/">mkdocs theme: material</a>, esp. the <a href="https://squidfunk.github.io/mkdocs-material/reference/">Reference</a> pages.</p>
-</li>
-</ul>
-<h2 id="commands-for-mac">Commands for Mac<a class="headerlink" href="#commands-for-mac" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs build</code> - Build the html files.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server at http://localhost:8000/ (may need <code>sudo</code>). </li>
-<li><code>mkdocs gh-deploy --force</code> - Push to github and then wait for minutes.</li>
-<li><code>mkdocs -h</code> - Print help message.</li>
-</ul>
-<p><em>Windows: add <code>python -m</code> before <code>mkdocs</code>.</em></p>
+</ol>
+</div>
 
               
             </article>
@@ -664,41 +757,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../index_doc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Index
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../lightnovel/index_lightnovel/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Index
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
