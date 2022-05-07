@@ -13,15 +13,15 @@
         <link rel="canonical" href="https://yuriever.github.io/subdir_document/mathjax_macro/">
       
       <link rel="icon" href="../../img/logo1.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.12">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
-        <title>MathJax 宏配置 - Sora</title>
+        <title>MathJax Configuration - Sora</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.27ad92d8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mathjax" class="md-skip">
+        <a href="#mathjax-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MathJax 宏配置
+              MathJax Configuration
             
           </span>
         </div>
@@ -474,7 +474,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mathjax_1" class="md-nav__link">
+  <a href="#mathjax" class="md-nav__link">
     MathJax
   </a>
   
@@ -494,33 +494,86 @@
                 
 
 
-<h1 id="mathjax">MathJax 宏配置<a class="headerlink" href="#mathjax" title="Permanent link">&para;</a></h1>
+<h1 id="mathjax-configuration">MathJax Configuration<a class="headerlink" href="#mathjax-configuration" title="Permanent link">&para;</a></h1>
 <h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
 <p><a href="https://squidfunk.github.io/mkdocs-material/customization/#additional-javascript">Material for MkDocs: additional JavaScript</a></p>
 <p><a href="https://squidfunk.github.io/mkdocs-material/reference/mathjax/">MkDocs: MathJax supporting</a></p>
-<p>Adding the followings to the configuration file <code>mkdocs.yml</code>:</p>
+<p>Adding the followings to <code>mkdocs.yml</code>:</p>
 <div class="highlight"><pre><span></span><code>markdown_extensions:
+  # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+- javascripts/mathjax.js
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 </code></pre></div>
-<h2 id="mathjax_1">MathJax<a class="headerlink" href="#mathjax_1" title="Permanent link">&para;</a></h2>
+<h2 id="mathjax">MathJax<a class="headerlink" href="#mathjax" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.mathjax.org/en/latest/input/tex/extensions/configmacros.html">MathJax: configmacros</a></p>
-<p>Editting the mathjax configuration <code>mathjax.js</code> like:</p>
+<p>Editting the mathjax configuration file <code>mathjax.js</code> like:</p>
 <div class="highlight"><pre><span></span><code>window.MathJax = {
+  loader: {load: [&#39;[tex]/tagformat&#39;, &#39;[tex]/configmacros&#39;, &#39;[tex]/physics&#39;]},
   tex: {
+    // packages included
+    packages: {&#39;[+]&#39;: [&#39;tagformat&#39;, &#39;configmacros&#39;, &#39;physics&#39;]},
+    // inline math mode delimiters
+    inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],
+    // display math mode delimiters
+    displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;] ],
+    // use \$ to escape the dollar sign
+    processEscapes: true,
+    // process \begin{xxx}...\end{xxx} outside of math mode
+    processEnvironments: true, 
+    // process \ref{...} outside of math mode
+    processRefs: true,         
+    // pattern for recognizing numbers
+    digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+    // tag options
+    tags: &#39;all&#39;,
+    tagSide: &#39;right&#39;,          
+    tagIndent: &#39;2em&#39;,
+    tagformat: {
+      number: (n) =&gt; n.toString(),
+      tag:    (tag) =&gt; &#39;(&#39; + tag + &#39;)&#39;,
+      id:     (id) =&gt; &#39;mjx-eqn:&#39; + id.replace(/\s/g, &#39;_&#39;),
+      url:    (id, base) =&gt; base + &#39;#&#39; + encodeURIComponent(id),
+    },
+    // use label name rather than tag for ids
+    useLabelIds: true,         
+    // macros
     macros: {
-      vev: [&quot;{\\langle #1 \\rangle}&quot;, 1],
-      f: &quot;{\\phi}&quot;
-    }
+      vev: [&#39;{\\langle #1 \\rangle}&#39;, 1],
+      f: &#39;{\\phi}&#39;
+    },
+    enviroments: {
+      testenviroment: [&#39;\\left\\{&#39;, &#39;\\right\\}&#39;]
+    },
+  },
+  // package physics options
+  physics: {
+    italicdiff: false,
+    arrowdel: false
+  },
+  options: {
+    ignoreHtmlClass: &#39;.&#39;,
+    processHtmlClass: &#39;arithmatex&#39;
   }
 };
 </code></pre></div>
-<p>Then <code>\vev{\f\f}</code> will be rendered as <span class="arithmatex">\(\vev{\phi\phi}\)</span>.</p>
+<p>Then <code>\vev{\f\f}</code> will be rendered as <span class="arithmatex">\(\vev{\f\f}\)</span>, and the labeled equations will be displayed as:</p>
+<div class="highlight"><pre><span></span><code>two-point functions \eqref{eq:a}:
+
+\begin{equation}
+  \vev{\f_1\f_2}=\delta_{12}|x_{12}|^{-2\Delta}
+  \label{eq:a}
+\end{equation}
+</code></pre></div>
+<p>two-point functions \eqref{eq:a}:</p>
+<div class="arithmatex">\[\begin{equation}
+  \vev{\f_1\f_2}=\delta_{12}|x_{12}|^{-2\Delta}
+  \label{eq:a}
+\end{equation}\]</div>
 
               
             </article>
