@@ -1,62 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_document/index_document/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_document/mathjax_macro/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_document/mkdocs/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_lightnovel/index_lightnovel/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_lightnovel/celestial_CFT/celestial_CFT/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_ochiba/index_ochiba/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_symbolic/index_symbolic/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_symbolic/mma/index_mma/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_symbolic/mma/noncomm_algebra/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_symbolic/mma/package_development/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://yuriever.github.io/subdir_symbolic/mma/xact_variation1/</loc>
+         <lastmod>2022-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/subdir_symbolic/sagemath/index_sagemath/</loc>
          <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
