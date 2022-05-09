@@ -1,7 +1,22 @@
 site_name: Sora
 site_description: Sora
-# site_url: https://yuriever.github.io/
+site_url: https://yuriever.github.io/
 
+
+nav:
+  - Home: index.md
+  - Triangulated Reality: 
+    - Index: subdir_symbolic/index_symbolic.md
+    - Mathematica: subdir_symbolic/mma/index_mma.md
+    - SageMath: subdir_symbolic/sagemath/index_sagemath.md
+  - Archieve: subdir_archieve/index_archieve.md
+  - Light Novel: 
+    - Index: subdir_lightnovel/index_lightnovel.md 
+    - Celestial CFT: subdir_lightnovel/celestial_CFT/celestial_CFT.md
+  - Ochiba: subdir_ochiba/index_ochiba.md
+
+
+# 主题设定
 theme:
   name: material
   features:
@@ -12,29 +27,22 @@ theme:
   palette:
     primary: deep purple
     accent: blue
-  logo: img/logo.png
-  favicon: img/logo.png
-  icon:
-    admonition:
-      <type>: <icon> 
+  logo: img/logo1.png
+  favicon: img/logo1.png
 
 
-nav:
-  - Home: index.md
-  - Document: 
-    - Mathematica: doc/mma.md
-    - MkDocs: doc/mkdocs.md
-    # - Others: doc/new.md
-  - Light Novel: 
-    - lignt1: light/lightnovel.md
-  - Ochiba: ochiba/ochiba.md
-
+# 关闭页底的"made with material"
 extra:
   generator: false
 
 
-markdown_extensions:
+# css文件
+extra_css:
+  - css/extra.css
 
+
+# 扩展
+markdown_extensions:
   # Python Markdown
   - abbr
   - admonition
@@ -45,6 +53,10 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+  - extra
+  - tables
+
+      
 
   # Python Markdown Extensions
   - pymdownx.arithmatex:
@@ -65,10 +77,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# mathjax 支持，可见：
-# https://squidfunk.github.io/mkdocs-material/reference/mathjax/
-
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+- js/mathjax.js
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
