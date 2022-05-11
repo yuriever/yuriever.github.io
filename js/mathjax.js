@@ -16,7 +16,7 @@ window.MathJax = {
     // pattern for recognizing numbers
     digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
     // tag options
-    tags: 'all',
+    tags: 'ams',
     tagSide: 'right',          
     tagIndent: '2em',
     tagformat: {
