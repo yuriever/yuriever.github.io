@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3629,         89]
+NotebookOptionsPosition[      2973,         70]
+NotebookOutlinePosition[      3367,         86]
+CellTagsIndexPosition[      3324,         83]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Quit", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.861291607204685*^9, 3.861291608958353*^9}, {
+  3.8612921751161623`*^9, 3.861292175923897*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"e0eb23f5-390e-4b5d-ad41-b2b2aebacbec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Path"], "Input",
+ CellChangeTimes->{{3.8612916121838503`*^9, 3.861291612979501*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"746f2962-5241-4cbd-b2c1-1c24a0f68a5f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/reiko/Library/Mathematica/DocumentationIndices\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/SystemFiles/Links\"\>", 
+   ",", "\<\"/Users/reiko/Library/Mathematica/Kernel\"\>", 
+   ",", "\<\"/Users/reiko/Library/Mathematica/Autoload\"\>", 
+   ",", "\<\"/Users/reiko/Library/Mathematica/Applications\"\>", 
+   ",", "\<\"/Library/Mathematica/Kernel\"\>", 
+   ",", "\<\"/Library/Mathematica/Autoload\"\>", 
+   ",", "\<\"/Library/Mathematica/Applications\"\>", ",", "\<\".\"\>", 
+   ",", "\<\"/Users/reiko\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/AddOns/Packages\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/SystemFiles/Autoload\"\>",
+    ",", "\<\"/Applications/Mathematica.app/Contents/AddOns/Autoload\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/AddOns/Applications\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/AddOns/ExtraPackages\"\>",
+    ",", "\<\"/Applications/Mathematica.app/Contents/SystemFiles/Kernel/\
+Packages\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/Documentation/English/\
+System\"\>", 
+   ",", "\<\"/Applications/Mathematica.app/Contents/SystemFiles/Data/ICC\"\>",
+    ",", "\<\"/Applications/Mathematica.app/Contents/Documentation/\
+ChineseSimplified/System/\"\>", 
+   ",", "\<\"/Users/reiko/Library/Mathematica/Applications/reikoPackages\"\>",
+    ",", "\<\"/Users/reiko/Markdown/yuriever/docs/subdir_symbolic/mma/xact_\
+variation1\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8612916144976597`*^9, {3.861292300451569*^9, 3.861292313853628*^9}, {
+   3.861292360187819*^9, 3.861292369401635*^9}},
+ CellLabel->"Out[5]=",ExpressionUUID->"176e2e0f-d94d-4c43-91a9-184efb4876eb"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"<<", "lily`"}]], "Input",
+ CellChangeTimes->{{3.861291860638681*^9, 3.8612918624128*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"849e1b2f-9990-4cba-a926-b3ec7a5ed5c8"]
+},
+WindowSize->{720, 872},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"03a452da-c1cc-40f7-9075-efcdeeb49548"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 265, 5, 37, "Input",ExpressionUUID->"e0eb23f5-390e-4b5d-ad41-b2b2aebacbec"],
+Cell[CellGroupData[{
+Cell[848, 29, 177, 2, 37, "Input",ExpressionUUID->"746f2962-5241-4cbd-b2c1-1c24a0f68a5f"],
+Cell[1028, 33, 1735, 29, 693, "Output",ExpressionUUID->"176e2e0f-d94d-4c43-91a9-184efb4876eb"]
+}, Open  ]],
+Cell[2778, 65, 191, 3, 37, "Input",ExpressionUUID->"849e1b2f-9990-4cba-a926-b3ec7a5ed5c8"]
+}
+]
+*)
+
