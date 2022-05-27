@@ -1,0 +1,11 @@
+In[1]:= <<lily`
+In[21]:=
+Quit[];
+In[2]:= L[n_]:=(x^(n+1) D[#,x])&;
+L[n]@f[x]
+Out[3]= x^(1+n) (f^\[Prime])[x]
+In[4]:= L[n]//TreeForm//exportSVG["tree_example"]
+Out[4]//TreeForm= 
+In[5]:= diffComm[L[n],L[m]]@f[x]-(n-m)L[n+m]@f[x]//FS
+Out[5]= 0
+

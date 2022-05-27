@@ -1,0 +1,14 @@
+.md-typeset .admonition.mark,
+.md-typeset details.mark {
+  border-color: rgba(90,90,90,0.2);
+}
+.md-typeset .mark > .admonition-title,
+.md-typeset .mark > summary {
+  background-color: rgba(90,90,90,0.05);
+}
+.md-typeset .mark > .admonition-title::before,
+.md-typeset .mark > summary::before {
+  background-color: rgba(90,90,90,0.2);
+  /* -webkit-mask-image: """"; */
+          /* mask-image: null; */
+}

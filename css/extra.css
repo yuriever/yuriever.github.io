@@ -19,6 +19,10 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     color: #ba0000
 }
 
-fig {
-    transform: scale(0.5);
-}
+
+/* center */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

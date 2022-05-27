@@ -6,7 +6,7 @@ window.MathJax = {
     // inline math mode delimiters
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     // display math mode delimiters
-    displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
     // use \$ to escape the dollar sign
     processEscapes: true,
     // process \begin{xxx}...\end{xxx} outside of math mode
@@ -17,7 +17,7 @@ window.MathJax = {
     digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
     // tag options
     tags: 'ams',
-    tagSide: 'right',          
+    tagSide: 'right',
     tagIndent: '2em',
     tagformat: {
       number: (n) => n.toString(),
@@ -26,7 +26,8 @@ window.MathJax = {
       url:    (id, base) => base + '#' + encodeURIComponent(id),
     },
     // use label name rather than tag for ids
-    useLabelIds: true,         
+    useLabelIds: true,
+    showProcessingMessages: true,
     // macros
     macros: {
       // Size control of tilde, bar and hat,
