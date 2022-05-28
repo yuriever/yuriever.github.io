@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://yuriever.github.io/subdir_symbolic/package_development/">
+        <link rel="canonical" href="https://yuriever.github.io/subdir_archieve/hotkey/">
       
       <link rel="icon" href="../../img/logo1.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
-        <title>扩展包开发 - Sora</title>
+        <title>Hotkey - Sora</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hotkey" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              扩展包开发
+              Hotkey
             
           </span>
         </div>
@@ -178,7 +178,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../index_symbolic/" class="md-tabs__link">
+    <a href="../../subdir_symbolic/index_symbolic/" class="md-tabs__link">
       Triangulated Reality
     </a>
   </li>
@@ -190,7 +190,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../subdir_archieve/index_archieve/" class="md-tabs__link">
+    <a href="../index_archieve/" class="md-tabs__link">
       Archieve
     </a>
   </li>
@@ -278,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index_symbolic/" class="md-nav__link">
+      <a href="../../subdir_symbolic/index_symbolic/" class="md-nav__link">
         Triangulated Reality
       </a>
     </li>
@@ -293,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subdir_archieve/index_archieve/" class="md-nav__link">
+      <a href="../index_archieve/" class="md-nav__link">
         Archieve
       </a>
     </li>
@@ -397,6 +397,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#win-autohotkey" class="md-nav__link">
+    Win: AutoHotkey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-karabiner" class="md-nav__link">
+    Mac: Karabiner
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -409,21 +431,99 @@
                 
 
 
-<h1 id="_1">扩展包开发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>自上到下的书写规则</p>
-<div class="highlight"><pre><span></span><code>BeginPackage[&quot;foo`&quot;];
-
-Unprotect@@Names[&quot;foo`*&quot;];
-ClearAll@@Names[&quot;foo`*&quot;];
+<h1 id="hotkey">Hotkey<a class="headerlink" href="#hotkey" title="Permanent link">&para;</a></h1>
+<p>Reference:</p>
+<ul>
+<li>
+<p><a href="https://ahkcn.github.io/docs/AutoHotkey.htm">AutoHotkey 中文文档</a></p>
+</li>
+<li>
+<p><a href="https://karabiner-elements.pqrs.org/docs/json/">Karabiner-Elements Documentation</a></p>
+</li>
+</ul>
+<h2 id="win-autohotkey">Win: AutoHotkey<a class="headerlink" href="#win-autohotkey" title="Permanent link">&para;</a></h2>
+<h2 id="mac-karabiner">Mac: Karabiner<a class="headerlink" href="#mac-karabiner" title="Permanent link">&para;</a></h2>
+<p>Karabiner 可以复现 AutoHotkey 的一部分功能。配置文件的格式为 <code>JSON</code>，其目录为
+<div class="highlight"><pre><span></span><code>~/.config/karabiner/assets/complex_modifications/xxx.json
+</code></pre></div></p>
+<p>配置文件 <code>xxx.json</code> 的结构为
+<div class="highlight"><pre><span></span><code>{
+    &quot;title&quot;: &quot;test shortcuts&quot;,
+    &quot;rules&quot;: [
+        ...
+    ]
+}
+</code></pre></div></p>
+<p>数组 <code>rules</code> 存储了单个快捷键的配置信息，其结构如下。<code>from</code> 为快捷键以及修饰键，<code>to</code> 为激活的一系列按键或其它事件。</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;description&quot;: &quot;...&quot;,
+    &quot;manipulators&quot;: [
+        {
+            &quot;type&quot;: &quot;basic&quot;,
+            &quot;from&quot;: {...},
+            &quot;to&quot;: [...],
+        }
+    }
+    ...
+]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>lily                # initialization
-
-base/
-    matrix          # matrix and differential operator
-    list/           # list manipulation
-        algebra     # noncommutative algebra
-        variable    # indexed variable
+<p>例如，右 option 键加删除键实现向后删除的方案如下。键名可用 Karabiner 自带的 EventViewer 查看。</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;description&quot;: &quot;right_option + del : del_forward&quot;,
+    &quot;manipulators&quot;: [
+        {
+            &quot;type&quot;: &quot;basic&quot;,
+            &quot;from&quot;: {
+                &quot;key_code&quot;: &quot;delete_or_backspace&quot;,
+                &quot;modifiers&quot;: {
+                    &quot;mandatory&quot;: [
+                        &quot;right_option&quot;
+                    ]
+                }
+            },
+            &quot;to&quot;: [
+                {
+                    &quot;key_code&quot;: &quot;delete_forward&quot;
+                }
+            ]
+        }
+    ]
+},
 </code></pre></div>
+<p>Karabiner 不具有类似于 AutoHotkey <code>Send/SendRaw</code> 的函数，可以通过剪切板实现类似的功能，例如 LaTeX 的行间公式环境可被快捷键实现为，</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;description&quot;: &quot;option + n : equation&quot;,
+    &quot;manipulators&quot;: [
+        {
+        &quot;type&quot;: &quot;basic&quot;,
+        &quot;from&quot;: {
+            &quot;key_code&quot;: &quot;n&quot;,
+            &quot;modifiers&quot;: {
+                &quot;mandatory&quot;: [
+                    &quot;left_option&quot;
+                ]
+            }
+        },
+        &quot;to&quot;: [
+            {
+                &quot;shell_command&quot;: &quot;printf &#39;\\\\begin{equation}\\n\\n\\\\end{equation}&#39; | pbcopy&quot;,
+                &quot;hold_down_milliseconds&quot;: 200
+            },
+            {
+                &quot;key_code&quot;: &quot;v&quot;,
+                &quot;modifiers&quot;: [
+                    &quot;right_command&quot;
+                ]
+            },
+            {
+                &quot;key_code&quot;: &quot;up_arrow&quot;
+            }
+        ]
+        }
+    ]
+}
+</code></pre></div>
+<p>此处 <code>shell_command</code> 可通过命令行将字符串传输给剪切板。需要注意的是：其一，字符串需要通过两次转译，例如 <code>\begin{...}\n</code> 在 command line 中应为 <code>\\begin{...}\n</code>，而在 <code>xxx.json</code> 中需要进一步将反斜杠进行转译，为 <code>\\\\begin{...}\\n</code>；其二，为保证粘贴之前已经完成字符串的传输，需要在两个事件间用 <code>hold_down_milliseconds</code> 添加延迟，类似于 AutoHotkey 的函数 <code>Sleep</code>。</p>
 
               
             </article>

@@ -348,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subdir_lightnovel/celestial_CFT/celestial_CFT.md" class="md-nav__link">
+      <a href="../../subdir_lightnovel/celestial_CFT/" class="md-nav__link">
         Celestial CFT
       </a>
     </li>
@@ -576,8 +576,8 @@ DefTensor[F[-a, -b], M4, Antisymmetric[{-a, -b}]]
 <div class="highlight"><pre><span></span><code>action[\[Phi]] = 1/2 (CD[a]@\[Phi][] CD[-a]@\[Phi][] + cs RicciScalarCD[] \[Phi][]^2 ) measure[metric];
 action[A] = 1/4 F[-a, -b] F[a, b] measure[metric];
 </code></pre></div>
-<p>如此便完成了准备工作。</p>
 <p><img src="../xact_variation1/action1.svg" width="40%"></p>
+<p>如此便完成了准备工作。</p>
 <h2 id="3">3. 能动张量<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>扩展包 xPert 提供了变分与度规微扰的相关函数。变分函数 <code>Perturbation</code> 内置了变分满足的线性性和 Lebniz 规则，例如 <code>Perturbation@A[-a]</code> 便是 <span class="arithmatex">\(\delta A_{a}\)</span>，被打印为 <span class="arithmatex">\(\Delta A_{a}\)</span>，例如对电磁场作用量的变分为</p>
 <div class="highlight"><pre><span></span><code>action@A // Perturbation
