@@ -468,7 +468,7 @@ extra_javascript:
 - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 </code></pre></div>
 <h2 id="mathjax">MathJax<a class="headerlink" href="#mathjax" title="Permanent link">&para;</a></h2>
-<p>edit the mathjax configuration file <code>mathjax.js</code> like:</p>
+<p>edit the MathJax configuration file <code>mathjax.js</code> like:</p>
 <div class="highlight"><pre><span></span><code>window.MathJax = {
   loader: {load: [&#39;[tex]/tagformat&#39;, &#39;[tex]/configmacros&#39;, &#39;[tex]/physics&#39;]},
   tex: {
@@ -532,7 +532,7 @@ extra_javascript:
   \label{eq:a}
 \end{equation}\]</div>
 <h2 id="latex-to-mathjax">LaTeX to MathJax<a class="headerlink" href="#latex-to-mathjax" title="Permanent link">&para;</a></h2>
-<p>translate the latex macros into js via mathematica, e.g.</p>
+<p>translate the LaTeX macros into JS via Mathematica, e.g.</p>
 <div class="highlight"><pre><span></span><code>ruleLaTeXToJS = {
   &quot;\\newcommand{\\&quot; ~~ Shortest[macroName__] ~~ &quot;}[&quot; ~~ num_?DigitQ ~~ &quot;]{&quot; ~~ Longest[macroFunction__] ~~ &quot;}&quot; 
     -&gt; macroName ~~ &quot;: [&#39;{&quot; ~~ macroFunction ~~ &quot;}&#39;, &quot; ~~ num ~~ &quot;]&quot;

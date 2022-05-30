@@ -432,7 +432,7 @@
 
 
 <h1 id="hotkey">Hotkey<a class="headerlink" href="#hotkey" title="Permanent link">&para;</a></h1>
-<p>Reference:</p>
+<p>References:</p>
 <ul>
 <li>
 <p><a href="https://ahkcn.github.io/docs/AutoHotkey.htm">AutoHotkey 中文文档</a></p>
@@ -523,7 +523,7 @@
     ]
 }
 </code></pre></div>
-<p>此处 <code>shell_command</code> 可通过命令行将字符串传输给剪切板。需要注意的是：其一，字符串需要通过两次转译，例如 <code>\begin{...}\n</code> 在 command line 中应为 <code>\\begin{...}\n</code>，而在 <code>xxx.json</code> 中需要进一步将反斜杠进行转译，为 <code>\\\\begin{...}\\n</code>；其二，为保证粘贴之前已经完成字符串的传输，需要在两个事件间用 <code>hold_down_milliseconds</code> 添加延迟，类似于 AutoHotkey 的函数 <code>Sleep</code>。</p>
+<p>此处 <code>shell_command</code> 可通过命令行将字符串传输给剪切板。需要注意的是：其一，字符串需要通过两次转译，例如 <code>\begin{...}\n</code> 在命令行中应为 <code>\\begin{...}\n</code>，而在 <code>xxx.json</code> 中需要进一步将反斜杠进行转译，为 <code>\\\\begin{...}\\n</code>；其二，为保证粘贴之前已经完成字符串的传输，需要在两个事件间用 <code>hold_down_milliseconds</code> 添加延迟，类似于 AutoHotkey 的函数 <code>Sleep</code>。</p>
 
               
             </article>

@@ -425,7 +425,7 @@
 
 
 <h1 id="_1">非交换代数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>Reference:</p>
+<p>References:</p>
 <h2 id="_2">介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>本文介绍用 Mathematica 实现非交换代数的计算，例如Lie algebra, quantum group 及其表示。</p>
 <p>市面上能找到的Lie algebra package 多数是针对semisimple Lie algebra 特化的， SuperLie package 看起来可以实现我们需要的功能，有兴趣的小伙伴可以尝试一下。在 Headrick的Virasoro algebra notebook 基础上，我们可以总结出两种方法加载代数关系，其一是他采用的延迟赋值SetDelayed，其二是ReplaceRepeated，根据MMA自带的文档，前者在计算中实际上就是采用了后者。我个人的经验是后者计算更加可控。

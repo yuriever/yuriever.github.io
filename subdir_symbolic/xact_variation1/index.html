@@ -460,7 +460,7 @@
 
 
 <h1 id="xact">xAct 变分计算<a class="headerlink" href="#xact" title="Permanent link">&para;</a></h1>
-<p>Reference:</p>
+<p>References:</p>
 <ul>
 <li>
 <p><a href="http://www.xact.es/xPert/index.html">xPert 文档</a></p>
@@ -508,10 +508,10 @@ S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
 <h2 id="1">1. 导言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>变分计算问题回到最底层，是遵循一系列规则依照一定次序化简表达式，逐步降低表达式的复杂度，最后抵达目标表达式。</p>
 <p>这是一个代数问题，不需要指明场构型在哪一个函数空间中，不需要流形的整体信息，不必明确是何种意义的积分<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。我们所需的只是一个坐标卡内的局部结构，例如微分、度规、复结构。这个坐标卡可以是欧氏空间的开集，可以是超空间的开集，或者来自于某种形式几何。</p>
-<div class="admonition note">
+<div class="admonition mark">
 <p>say some words on variational bi-complex, formal geometry and BV-BRST.</p>
 </div>
-<p>那么直接的实现方案是利用MMA的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见<a href="../noncomm_algebra/">符号计算：非交换代数</a>。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
+<p>那么直接的实现方案是利用MMA的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见<a href="../noncomm_algebra/">非交换代数</a>一文。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
 <p>我们需要调用的扩展包如下：</p>
 <div class="highlight"><pre><span></span><code>Notation`AutoLoadNotationPalette = False;
 &lt;&lt; Notation`;
@@ -605,10 +605,10 @@ traceT@\[Phi]
 <p>稍后将说明此项正比于运动方程，因此 on-shell 为零。</p>
 <h2 id="4">4. 运动方程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>在 xPert 的基础上，xTras 进一步封装了关于变分的规则和函数，此时函数 <code>VarD</code> 的第一个变量可以接收其它张量场，由此可计算运动方程，</p>
-<div class="highlight"><pre><span></span><code>eom[field_, rule_ : {}] := 1/measure[metric] VarD[indexed[field], CD]@(action[field] /. rule) // tensorSim;
+<div class="highlight"><pre><span></span><code>eom[field_, rule_ : {}] := 1/measure[metric] VarD[tensorIndexed[field], CD]@(action[field] /. rule) // tensorSim;
 </code></pre></div>
-<p>此处函数 <code>indexed</code> 的作用为赋予已声明的张量场以默认的指标，例如</p>
-<div class="highlight"><pre><span></span><code>indexed /@ {A, F, \[Phi], B}
+<p>此处函数 <code>tensorIndexed</code> 的作用为赋予已声明的张量场以默认的指标，例如</p>
+<div class="highlight"><pre><span></span><code>tensorIndexed /@ {A, F, \[Phi], B}
 </code></pre></div>
 <p>给出</p>
 <p><img src="../xact_variation1/indexed1.svg" width="40%"></p>
