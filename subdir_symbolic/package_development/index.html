@@ -397,6 +397,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    扩展包依赖关系
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -410,12 +425,46 @@
 
 
 <h1 id="_1">扩展包开发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>自上到下的书写规则</p>
-<div class="highlight"><pre><span></span><code>BeginPackage[&quot;foo`&quot;];
+<p>References:</p>
+<ul>
+<li><a href="https://yuluyan.com/posts/mma-package/">Luyan Yu, Modern package style of Mathematica</a> </li>
+</ul>
+<p>扩展包的结构可概括为，</p>
+<div class="highlight"><pre><span></span><code>BeginPackage[&quot;p`&quot;, {&quot;p1`&quot;, ...}];
 
-Unprotect@@Names[&quot;foo`*&quot;];
-ClearAll@@Names[&quot;foo`*&quot;];
+(*重载扩展包时清除上次的定义*)
+Unprotect @@ Names[&quot;p`*&quot;];
+ClearAll @@ Names[&quot;p`*&quot;];
+
+(*声明外部可见的函数*)
+foo::usage = &quot;&quot;;
+
+Begin[&quot;`Private`&quot;];
+
+foo = ...;
+
+End[];
+EndPackage[];
 </code></pre></div>
+<p>扩展包中的函数可以分为下列：</p>
+<ul>
+<li>
+<p>常数，例如主体函数中的搜索次数等等，命名为$+小写字母；</p>
+</li>
+<li>
+<p>存储变量的列表以及列表操作函数；</p>
+</li>
+<li>
+<p>判别函数，命名为xxQ，用以界定变量的类型和范围，因此定义尽量完备；</p>
+</li>
+<li>
+<p>主体函数，实现该扩展包的各种功能。为防止意外计算，需要定义再去定义，遵循自上到下的书写规则；</p>
+</li>
+<li>
+<p>打印函数，区分返回值和打印，分离函数之间传递的值和输出结果。</p>
+</li>
+</ul>
+<h2 id="_2">扩展包依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>lily                # initialization
 
 base/

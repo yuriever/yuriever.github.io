@@ -444,6 +444,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-wolfram" class="md-nav__link">
+    3. Wolfram 模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 其它
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -513,7 +527,7 @@
 <details class="mark">
 <summary>Everything is an expression.</summary>
 <p>At the core of the Wolfram Language is the foundational idea that everything - data, programs, formulas, graphics, documents - can be represented as symbolic expressions. And it is this unifying concept that underlies the Wolfram Language's symbolic programming paradigm, and makes possible much of the unique power of the Wolfram Language and the Wolfram System.</p>
-<p>——from Mathematica documentation <code>guide/Expressions</code></p>
+<p>-- from Mathematica documentation <code>guide/Expressions</code></p>
 </details>
 <p>与树的结构相似，不存在非平凡子表达式的称为原子表达式 (atom)，例如数、符号、字符串。若干表达式可以复合为复杂度更高的表达式，此处复合 (composite) 指树的拼接，类似于 operad，形如<code>f0[f1, f2, ...]</code>。</p>
 <p>此外，若干树构成森林，这对应于合成 (compound) ，形如 <code>f1; f2; ...</code>，类似于张量积。</p>
@@ -565,6 +579,7 @@ Block[{$RecursionLimit = 20},
 <div class="highlight"><pre><span></span><code>$RecursionLimit::reclim2: Recursion depth of 20 exceeded during evaluation of -f.
 </code></pre></div>
 <p><img src="../evaluation_control/trace1.svg" class="center" width="50%"></p>
+<hr />
 <h3 id="22">2.2 非标准计算<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>计算依赖规则之间的顺序，类似于不同的矢量场不交换。因此选取合适的规则顺序方可得到目标表达式。</p>
 <ul>
@@ -572,6 +587,8 @@ Block[{$RecursionLimit = 20},
 <li><code>Unevaluated</code></li>
 <li><code>Inactivated</code></li>
 </ul>
+<h2 id="3-wolfram">3. Wolfram 模型<a class="headerlink" href="#3-wolfram" title="Permanent link">&para;</a></h2>
+<h2 id="4">4. 其它<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 
               
             </article>
