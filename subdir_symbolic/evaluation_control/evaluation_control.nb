@@ -1,11 +1,11 @@
 In[1]:= <<lily`
-In[21]:=
-Quit[];
-In[2]:= L[n_]:=(x^(n+1) D[#,x])&;
-L[n]@f[x]
-Out[3]= x^(1+n) (f^\[Prime])[x]
-In[4]:= L[n]//TreeForm//exportSVG["tree_example"]
-Out[4]//TreeForm= 
-In[5]:= diffComm[L[n],L[m]]@f[x]-(n-m)L[n+m]@f[x]//FS
-Out[5]= 0
-
+In[118]:= clear@f
+In[119]:= f:=-f;
+In[137]:= Block[{$RecursionLimit=20},
+TreeForm[Trace[f,f],
+PlotStyle->Directive[PointSize[Large],RGBColor[1,0,0,0.5]],
+VertexLabeling->Automatic]
+]//exportSVG["trace1"]
+During evaluation of In[137]:= $RecursionLimit::reclim2: Recursion depth of 20 exceeded during evaluation of -f.
+Out[137]//TreeForm= 
+TreeForm

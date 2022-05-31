@@ -51,7 +51,7 @@ window.MathJax = {
       // vev,
       vev: ['{\\langle #1 \\rangle}', 1],
       // field operators,
-      op: '{\\cO}',
+      op: '{\\mathcal{O}}',
       // shadow operator,
       opshadow: '{\\wave{\\op}}',
       fshadow: '{\\wave{\\f}}',
