@@ -28,7 +28,7 @@
         
           
           
-          <meta name="theme-color" content="#7e56c2">
+          <meta name="theme-color" content="#ab47bd">
         
       
     
@@ -61,7 +61,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="purple" data-md-color-accent="light-blue">
   
     
     
@@ -427,7 +427,12 @@
 <h1 id="_1">扩展包开发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>References:</p>
 <ul>
-<li><a href="https://yuluyan.com/posts/mma-package/">Luyan Yu, Modern package style of Mathematica</a> </li>
+<li>
+<p><a href="https://yuluyan.com/posts/mma-package/">Luyan Yu, Modern package style of Mathematica</a> </p>
+</li>
+<li>
+<p><a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a></p>
+</li>
 </ul>
 <p>扩展包的结构可概括为，</p>
 <div class="highlight"><pre><span></span><code>BeginPackage[&quot;p`&quot;, {&quot;p1`&quot;, ...}];
@@ -464,8 +469,12 @@ EndPackage[];
 <p>打印函数，区分返回值和打印，分离函数之间传递的值和输出结果。</p>
 </li>
 </ul>
+<div class="admonition question">
+<p class="admonition-title">判别函数的属性</p>
+<p>判别函数不应带有 <code>HoldAll</code> 等类似属性。</p>
+</div>
 <h2 id="_2">扩展包依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>lily                # initialization
+<div class="highlight"><pre><span></span><code>lilyric             # initialization
 
 base/
     matrix          # matrix and differential operator
@@ -475,6 +484,10 @@ base/
         variable    # indexed variable
     others          # other functions
 </code></pre></div>
+<div class="admonition notice">
+<p class="admonition-title">子扩展包的自动补全</p>
+<p>母扩展包 <code>p`</code> 下的子扩展包 <code>p`p1`</code> 中的公共函数不会被自动补全。解决方案：将母扩展包解耦并重命名为 <code>p0`</code>，在 <code>p0`</code> 中用函数 <code>Get</code> 启用子扩展包 <code>p`p1`</code>。</p>
+</div>
 
               
             </article>
