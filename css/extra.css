@@ -11,16 +11,31 @@
     --md-hue: 250;
 }
 
+/* 改变无序列表的标号 */
+article ul {
+    list-style-type: circle !important;
+}
+
+article ul ul {
+    list-style-type: none !important;
+}
+
+article ul ul ul {
+    list-style-type: none !important;
+}
+
+
+/* 隐藏navigation sidebar */
+/* .md-sidebar--primary {
+display: none;
+} */
+
+/* 目录放在左侧 */
+.md-sidebar--secondary {
+    order: 1;
+}
+
+/* 行距 */
 /* .md-grid {
     max-width: initial;
 } */
-
-/* .md-sidebar--primary {
-    order: 0;
-} */
-
-
-/* 改变无序列表的标号 */
-ul li {
-    list-style: circle;
-}
