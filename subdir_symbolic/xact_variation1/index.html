@@ -155,6 +155,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -541,91 +543,91 @@ S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
 </div>
 <p>那么直接的实现方案是利用MMA的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见<a href="../noncomm_algebra/">非交换代数</a>一文。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
 <p>我们需要调用的扩展包如下：</p>
-<div class="highlight"><pre><span></span><code>Notation`AutoLoadNotationPalette = False;
-&lt;&lt; Notation`;
-
-(*隐藏导入时打印的版本信息*)
-Block[{Print},
- &lt;&lt; xAct`xCore`;
- &lt;&lt; xAct`xPerm`;
- &lt;&lt; xAct`xTensor`;
- &lt;&lt; xAct`xPert`;
- &lt;&lt; xAct`xTras`;
- &lt;&lt; xAct`xCoba`;]
-
-(*定义某些对象后xAct会打印相关信息，可隐藏*)
-$DefInfoQ = False;
-
-(*隐藏局部变量的$符号*)
-$PrePrint = ScreenDollarIndices;
-
-(*以前缀运算符的形式打印协变导数*)
-$CovDFormat = &quot;Prefix&quot;;
-
-(*常用的预定义函数*)
-tensorSim[x_] := x // ContractMetric // Simplification;
-tensorCollect[x_] := Collect[x, $PerturbationParameter, tensorSim];
-
-(*有时计算结果会包含一个delta符号，可用如下规则消除*)
-ruled1 = {delta[-LI[1], LI[1]] -&gt; 1};
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">Notation`</span><span class="n">AutoLoadNotationPalette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">False</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">Notation`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c">(*隐藏导入时打印的版本信息*)</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Block</span><span class="p">[{</span><span class="n">Print</span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xCore`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xPerm`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xTensor`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xPert`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xTras`</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nn">xAct`xCoba`</span><span class="p">;]</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c">(*定义某些对象后xAct会打印相关信息，可隐藏*)</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="err">$</span><span class="n">DefInfoQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">False</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c">(*隐藏局部变量的$符号*)</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="err">$</span><span class="n">PrePrint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenDollarIndices</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c">(*以前缀运算符的形式打印协变导数*)</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="err">$</span><span class="n">CovDFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Prefix&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c">(*常用的预定义函数*)</span><span class="w"></span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">tensorSim</span><span class="p">[</span><span class="nv">x_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">ContractMetric</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Simplification</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">tensorCollect</span><span class="p">[</span><span class="nv">x_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Collect</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">PerturbationParameter</span><span class="p">,</span><span class="w"> </span><span class="n">tensorSim</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c">(*有时计算结果会包含一个delta符号，可用如下规则消除*)</span><span class="w"></span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">ruled1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">delta</span><span class="p">[</span><span class="o">-</span><span class="n">LI</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">LI</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <p>变分计算可以分为三步：写下作用量；对场量变分；分部积分化简表达式。</p>
 <h2 id="2">2. 流形与作用量<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>我们先声明流形、度规和 Levi-Civita 联络，号差为<span class="arithmatex">\((-,+,+,...)\)</span>。函数 <code>DefManifold</code> 可声明流形，其三个参数分别为流形的名称、维数与指标集合。注意 xAct 会自动声明切丛以及相关的张量丛。类似的，声明度规的函数为 <code>DefMetric</code>。</p>
-<p><div class="highlight"><pre><span></span><code>(*dim为xAct的预定常量，打印为d*)
-(*函数IndexRange指定了所有英文字母为抽象指标*)
-DefManifold[M, dim, IndexRange[a, z]];
-
-(*第一个变量是度规行列式的符号*)
-(*下指标用负号标记，xAct自动定义适配的Levi-Civita联络，SymbolOfCovD和PrintAs是打印规则*)
-DefMetric[-1, metric[-a, -b], CD, SymbolOfCovD -&gt; {&quot;;&quot;, &quot;\[Del]&quot;}，PrintAs -&gt; &quot;g&quot;]
-
-measure[met_?MetricQ] := Sqrt[-ToExpression[&quot;Det&quot; &lt;&gt; ToString@met &lt;&gt; &quot;[]&quot;]];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">(*dim为xAct的预定常量，打印为d*)</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c">(*函数IndexRange指定了所有英文字母为抽象指标*)</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">DefManifold</span><span class="p">[</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">dim</span><span class="p">,</span><span class="w"> </span><span class="n">IndexRange</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">]];</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c">(*第一个变量是度规行列式的符号*)</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c">(*下指标用负号标记，xAct自动定义适配的Levi-Civita联络，SymbolOfCovD和PrintAs是打印规则*)</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">DefMetric</span><span class="p">[</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">metric</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="p">],</span><span class="w"> </span><span class="n">CD</span><span class="p">,</span><span class="w"> </span><span class="n">SymbolOfCovD</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\[Del]&quot;</span><span class="p">}</span><span class="err">，</span><span class="n">PrintAs</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;g&quot;</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">measure</span><span class="p">[</span><span class="nv">met_</span><span class="o">?</span><span class="n">MetricQ</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">[</span><span class="o">-</span><span class="n">ToExpression</span><span class="p">[</span><span class="s">&quot;Det&quot;</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">ToString</span><span class="o">@</span><span class="n">met</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s">&quot;[]&quot;</span><span class="p">]];</span><span class="w"></span>
 </code></pre></div>
-方便起见，这里引入函数 <code>measure</code>，<code>measure[metric]</code> 为 <span class="arithmatex">\(\sqrt{-g}\)</span>。在声明完度规 <code>metric</code> 后，xAct 会自动声明 <code>Detmetric[]</code> 为附着 <code>metric</code> 的度规行列式。</p>
-<p>声明常量 <span class="arithmatex">\(c_{s}\)</span>、标量场 <span class="arithmatex">\(\phi\)</span>、电磁场 <span class="arithmatex">\(A_{a}\)</span> 与 <span class="arithmatex">\(F_{ab}\)</span>，
-<div class="highlight"><pre><span></span><code>DefConstantSymbol[cs, PrintAs -&gt; &quot;c&quot;]
-DefTensor[\[Phi][], M4]
-DefTensor[A[-a], M4]
-DefTensor[F[-a, -b], M4, Antisymmetric[{-a, -b}]]
-</code></pre></div></p>
+<p>方便起见，这里引入函数 <code>measure</code>，<code>measure[metric]</code> 为 <span class="arithmatex">\(\sqrt{-g}\)</span>。在声明完度规 <code>metric</code> 后，xAct 会自动声明 <code>Detmetric[]</code> 为附着 <code>metric</code> 的度规行列式。</p>
+<p>声明常量 <span class="arithmatex">\(c_{s}\)</span>、标量场 <span class="arithmatex">\(\phi\)</span>、电磁场 <span class="arithmatex">\(A_{a}\)</span> 与 <span class="arithmatex">\(F_{ab}\)</span>，</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">DefConstantSymbol</span><span class="p">[</span><span class="n">cs</span><span class="p">,</span><span class="w"> </span><span class="n">PrintAs</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">DefTensor</span><span class="p">[</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">][],</span><span class="w"> </span><span class="n">M4</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">DefTensor</span><span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">],</span><span class="w"> </span><span class="n">M4</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">DefTensor</span><span class="p">[</span><span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="p">],</span><span class="w"> </span><span class="n">M4</span><span class="p">,</span><span class="w"> </span><span class="n">Antisymmetric</span><span class="p">[{</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="p">}]]</span><span class="w"></span>
+</code></pre></div>
 <p>场强和规范势需满足规则 <span class="arithmatex">\(F_{ab}=\partial_{[a}A_{b]}\)</span> ，xAct 提供了类似 <code>Rule</code> 的函数 <code>MakeRule</code>，以及类似 <code>SetDelayed</code> 的函数 <code>IndexSetDelayed</code>，</p>
-<div class="highlight"><pre><span></span><code>?MakeRule
-?IndexSetDelayed
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">?</span><span class="n">MakeRule</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">?</span><span class="n">IndexSetDelayed</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p>MakeRule[{LHS, RHS}] gives a list of delayed rules with left and right hand sides as given by LHS and RHS respectively, but moving indices to consider all possible equivalent rules. See notes for its options PatternIndices, MetricOn, UseSymmetries and TestIndices. MakeRule[{LHS, RHS, conditions}] adds conditions to the rules.</p>
 <p>IndexSet[lhs, rhs] defines a relation between indexed expressions lhs and rhs, without evaluating rhs.</p>
 </blockquote>
 <p>这里我们选用 <code>MakeRule</code>，更方便控制计算。注意与 <code>Rule</code> 不同，<code>MakeRule</code> 不需要使用模式。场强转化为规范势的规则为</p>
-<div class="highlight"><pre><span></span><code>ruleFToA = MakeRule[{F[a, b], CD[a]@A[b] - CD[b]@A[a]}];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ruleFToA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MakeRule</span><span class="p">[{</span><span class="n">F</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">],</span><span class="w"> </span><span class="n">CD</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">@</span><span class="n">A</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">CD</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">@</span><span class="n">A</span><span class="p">[</span><span class="n">a</span><span class="p">]}];</span><span class="w"></span>
 </code></pre></div>
 <p>接下来定义 Lagrangian density，以下混称作用量，</p>
-<div class="highlight"><pre><span></span><code>action[\[Phi]] = 1/2 (CD[a]@\[Phi][] CD[-a]@\[Phi][] + cs RicciScalarCD[] \[Phi][]^2 ) measure[metric];
-action[A] = 1/4 F[-a, -b] F[a, b] measure[metric];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">action</span><span class="p">[</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">CD</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">@</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">][]</span><span class="w"> </span><span class="n">CD</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">]</span><span class="o">@</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">][]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cs</span><span class="w"> </span><span class="n">RicciScalarCD</span><span class="p">[]</span><span class="w"> </span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">][]</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">measure</span><span class="p">[</span><span class="n">metric</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">action</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="n">measure</span><span class="p">[</span><span class="n">metric</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../xact_variation1/action1.svg" width="40%"></p>
 <p>如此便完成了准备工作。</p>
 <h2 id="3">3. 能动张量<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>扩展包 xPert 提供了变分与度规微扰的相关函数。变分函数 <code>Perturbation</code> 内置了变分满足的线性性和 Lebniz 规则，例如 <code>Perturbation@A[-a]</code> 便是 <span class="arithmatex">\(\delta A_{a}\)</span>，被打印为 <span class="arithmatex">\(\Delta A_{a}\)</span>，例如对电磁场作用量的变分为</p>
-<div class="highlight"><pre><span></span><code>action@A // Perturbation
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">action</span><span class="o">@</span><span class="n">A</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Perturbation</span><span class="w"></span>
 </code></pre></div>
 <p>对作用量中的三个因子的分别变分，展开给出三项，</p>
 <p><img src="../xact_variation1/actionEM_variation1.svg" width="70%"></p>
 <p>被变分的基本场为规范势 <span class="arithmatex">\(A\)</span> 而非场强 <span class="arithmatex">\(F\)</span>，因此利用规则 <code>ruleFToA</code> 展开 <span class="arithmatex">\(F\)</span>，</p>
-<div class="highlight"><pre><span></span><code>actionEM /. ruleFToA // tensorSim // Perturbation
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">actionEM</span><span class="w"> </span><span class="o">/.</span><span class="w"> </span><span class="n">ruleFToA</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">tensorSim</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Perturbation</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../xact_variation1/actionEM_variation2.svg" width="80%"></p>
 <p>注意 <span class="arithmatex">\(\delta A^{a}\)</span> 隐含度规缩并 <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>。需要将 <span class="arithmatex">\(\delta L\)</span> 展开成 <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span> 的形式，<span class="arithmatex">\(\delta A_{a}\)</span> 的系数给出场方程，<span class="arithmatex">\(\delta g\)</span> 的系数给出能动张量，括号中含有关于变分的协变导数，需要通过分部积分来消除。</p>
 <p>函数 <code>VarD[#1,#2]</code> 提供了抽取系数以及分部积分的功能，其中第一个自变量表示变分场，第二个自变量表示关于协变导数 <code>CD</code> 进行分部积分。此外，在声明度规时已自动定义了度规变分，由此可计算能动张量以及迹，</p>
-<div class="highlight"><pre><span></span><code>emtensor[field_] := 2/measure[metric] VarD[metric[a, b], CD]@action[field] // tensorSim;
-traceT[field_] := emtensor[field] metric[a, b] // tensorSim;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">emtensor</span><span class="p">[</span><span class="nv">field_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="n">measure</span><span class="p">[</span><span class="n">metric</span><span class="p">]</span><span class="w"> </span><span class="n">VarD</span><span class="p">[</span><span class="n">metric</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">],</span><span class="w"> </span><span class="n">CD</span><span class="p">]</span><span class="o">@</span><span class="n">action</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">tensorSim</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">traceT</span><span class="p">[</span><span class="nv">field_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">emtensor</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="w"> </span><span class="n">metric</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">tensorSim</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>结果为
-<div class="highlight"><pre><span></span><code>emtensor@A
-traceT@A
-traceT@\[Phi]
-</code></pre></div></p>
+<p>结果为</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">emtensor</span><span class="o">@</span><span class="n">A</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">traceT</span><span class="o">@</span><span class="n">A</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">traceT</span><span class="o">@</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
 <p><img src="../xact_variation1/stresstensor.svg" width="100%"></p>
 <p>注意这里无需使用规则 <code>ruleFToA</code>，如果提前展开场强为规范势，能动张量的表达式会略显复杂，稍后介绍化简方法。</p>
 <p>对于电磁场，仅当 <span class="arithmatex">\(d=4\)</span> 时 <span class="arithmatex">\(\trace T=0\)</span>。对于标量场，取待定系数 <span class="arithmatex">\(c_{s}=\frac{d-2}{4(d-1)}\)</span>，<span class="arithmatex">\(\trace T\)</span> 为</p>
@@ -633,23 +635,23 @@ traceT@\[Phi]
 <p>稍后将说明此项正比于运动方程，因此 on-shell 为零。</p>
 <h2 id="4">4. 运动方程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>在 xPert 的基础上，xTras 进一步封装了关于变分的规则和函数，此时函数 <code>VarD</code> 的第一个变量可以接收其它张量场，由此可计算运动方程，</p>
-<div class="highlight"><pre><span></span><code>eom[field_, rule_ : {}] := 1/measure[metric] VarD[tensorIndexed[field], CD]@(action[field] /. rule) // tensorSim;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">eom</span><span class="p">[</span><span class="nv">field_</span><span class="p">,</span><span class="w"> </span><span class="nv">rule_</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{}]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">measure</span><span class="p">[</span><span class="n">metric</span><span class="p">]</span><span class="w"> </span><span class="n">VarD</span><span class="p">[</span><span class="n">tensorIndexed</span><span class="p">[</span><span class="n">field</span><span class="p">],</span><span class="w"> </span><span class="n">CD</span><span class="p">]</span><span class="o">@</span><span class="p">(</span><span class="n">action</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="w"> </span><span class="o">/.</span><span class="w"> </span><span class="n">rule</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">tensorSim</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>此处函数 <code>tensorIndexed</code> 的作用为赋予已声明的张量场以默认的指标，例如</p>
-<div class="highlight"><pre><span></span><code>tensorIndexed /@ {A, F, \[Phi], B}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">tensorIndexed</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">],</span><span class="w"> </span><span class="n">B</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>给出</p>
 <p><img src="../xact_variation1/indexed1.svg" width="40%"></p>
 <p>标量场与电磁场的运动方程为</p>
-<div class="highlight"><pre><span></span><code>eom@\[Phi]
-eom[A, ruleFToA]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">eom</span><span class="o">@</span><span class="err">\</span><span class="p">[</span><span class="n">Phi</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">eom</span><span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">ruleFToA</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../xact_variation1/eom1.svg" width="20%"></p>
 <p>由此可验证共形标量场的能动张量迹为零。</p>
 <hr />
 <h2 id="5">5. 表达式拟设与化简<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>如果在计算电磁场的能动张量时应用了规则 <code>ruleFToA</code> ，结果为</p>
-<div class="highlight"><pre><span></span><code>emtensor2[A] = emtensor[A] /. ruleFToA // Expand
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">emtensor2</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emtensor</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="o">/.</span><span class="w"> </span><span class="n">ruleFToA</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Expand</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../xact_variation1/stresstensorEM2.svg" width="90%"></p>
 <p>现尝试将上式重新整理为 <span class="arithmatex">\(F_{ab}\)</span>， </p>
@@ -684,6 +686,16 @@ eom[A, ruleFToA]
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:<lily-ric@outlook.com>" target="_blank" rel="noopener" title="test" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -692,7 +704,7 @@ eom[A, ruleFToA]
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide", "search.suggest"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

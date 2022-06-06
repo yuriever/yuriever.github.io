@@ -155,6 +155,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -560,26 +562,26 @@
 <p>see the explanation in <a href="https://www.math3ma.com/blog/what-is-an-operad-part-1">math3ma.com</a>.</p>
 </details>
 <p>举例说明上述介绍， Witt 代数的生成元 <span class="arithmatex">\(L_n=x^{n+1} \p_x\)</span> 可写为如下的纯函数，</p>
-<div class="highlight"><pre><span></span><code>L[n_] := (x^(n + 1) D[#, x]) &amp;;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">L</span><span class="p">[</span><span class="nv">n_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="nv">#</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">])</span><span class="w"> </span><span class="o">&amp;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>作用在函数 <span class="arithmatex">\(f(x)\)</span> 上 <code>L[n]@f[x]</code>， 给出 <span class="arithmatex">\(x^{n+1} f'(x)\)</span>。<span class="arithmatex">\(L_{n}\)</span>的树形式为</p>
-<div class="highlight"><pre><span></span><code>L[n] // TreeForm
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">TreeForm</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../evaluation_control/tree_example.svg" class="center" width="50%"></p>
 <p>可用 <code>Head, Level, Position, Part, Length, Depth</code> 等函数访问树的内部结构。此外，函数 <code>LeafCount</code> 给出树的节点 (node) 或称叶子的总数，因此提供了一种表达式复杂度的度量。例如 <code>LeafCount@L[n]</code> 给出上图中的节点数 11。</p>
 <h2 id="2">2. 计算<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>表达式的集合 <strong>Expr</strong> 是一个无结构的平凡集合。对表达式的计算 (evaluation) 可实现表达式之间的形变 (deformation)。当然，计算类似于离散动力系统，此处并无良好定义的微分与线性结构。</p>
-<p>特定对象 <span class="arithmatex">\(f_0\)</span> 的不同无穷小形变可简单写为 <span class="arithmatex">\(f_0\mapsto f_0 + \d_i f_0,\,  i\in TM_{f}\)</span>，例如有效作用量的形变为</p>
+<p>特定对象 <span class="arithmatex">\(f_0\)</span> 的不同无穷小形变可简单写为 <span class="arithmatex">\(f_0 \mapsto f_0 + \d_i f_0,\,  \d_i f_0\in TM_{f_0}\)</span>，例如有效作用量的形变为</p>
 <div class="arithmatex">\[\begin{equation}
-S_0\to S_0+\sum_i\intt{dx^d}\d g_i \op_i
+S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
 \end{equation}\]</div>
 <p>形变切方向的类似物即为规则 (rule)，记表达式 <code>f</code> 的所有子表达式的集合为 <code>sub[f]</code>。可以改变特定表达式 <code>f0</code> 的规则列表为 <code>t[f0] = Table[f -&gt; ..., {f, sub[f0]}]</code>。替换函数 <code>Replace</code> 可实现形变，下列复合函数给出 <code>f0</code> 的所有可能形变，</p>
-<div class="highlight"><pre><span></span><code>Replace[f0, #] &amp; /@ t[f0]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Replace</span><span class="p">[</span><span class="n">f0</span><span class="p">,</span><span class="w"> </span><span class="nv">#</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">f0</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>矢量场 <span class="arithmatex">\(v\)</span> 需要在 <span class="arithmatex">\(M\)</span> 的每点指派无穷小形变 $f \mapsto v_f, \, \forall f\in M $。模式匹配提供了全称量词的类似物，含有模式的延迟规则为 <code>p_ /; condition :&gt; ...</code>，可作用到 <strong>Expr</strong> 中的每一个表达式上。</p>
 <p>需要注意的是，赋值函数 <code>Set (=), SetDelayed (:=), UpSet (^=), UpSetDelayed (^:=)</code> 等的作用是在 Mathematica 的规则库中添加用户指定的规则。例如 <code>f[x_]:=x</code> 实际上是指定了符号 <code>f</code> 的下值 (down value)，</p>
-<div class="highlight"><pre><span></span><code>f // DownValues
-{HoldPattern[f[x_]] :&gt; x}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">f</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">DownValues</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span><span class="n">HoldPattern</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="nv">x_</span><span class="p">]]</span><span class="w"> </span><span class="o">:&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="21">2.1 标准计算<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>在计算时，Mathematica 会反复遍历表达式 <code>f0[f1, f2, ...]</code> 的子结构，比对规则库进行模式匹配，直到表达式的形式不变，即收敛到不动点。标准计算的流程为：</p>
@@ -592,15 +594,15 @@ S_0\to S_0+\sum_i\intt{dx^d}\d g_i \op_i
 <li>重复上述步骤，直到表达式不再变化或溢出。</li>
 </ul>
 <p>可类比为矢量场提供的 flow 收敛到不动点或发散。例如递归溢出，</p>
-<div class="highlight"><pre><span></span><code>f := -f;
-Block[{$RecursionLimit = 20},
-  TreeForm[Trace[f, f],
-   PlotStyle -&gt; Directive[PointSize[Large], RGBColor[1, 0, 0, 0.5]],
-   VertexLabeling -&gt; Automatic]
-  ]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">f</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Block</span><span class="p">[{</span><span class="err">$</span><span class="n">RecursionLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">TreeForm</span><span class="p">[</span><span class="n">Trace</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="n">PlotStyle</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Directive</span><span class="p">[</span><span class="n">PointSize</span><span class="p">[</span><span class="n">Large</span><span class="p">],</span><span class="w"> </span><span class="n">RGBColor</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]],</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span><span class="n">VertexLabeling</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Automatic</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>给出如下错误信息</p>
-<div class="highlight"><pre><span></span><code>$RecursionLimit::reclim2: Recursion depth of 20 exceeded during evaluation of -f.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">$</span><span class="n">RecursionLimit</span><span class="err">::</span><span class="n">reclim2</span><span class="err">:</span><span class="w"> </span><span class="n">Recursion</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="n">exceeded</span><span class="w"> </span><span class="n">during</span><span class="w"> </span><span class="n">evaluation</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="err">.</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../evaluation_control/trace1.svg" class="center" width="50%"></p>
 <hr />
@@ -635,6 +637,16 @@ Block[{$RecursionLimit = 20},
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:<lily-ric@outlook.com>" target="_blank" rel="noopener" title="test" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -643,7 +655,7 @@ Block[{$RecursionLimit = 20},
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide", "search.suggest"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>

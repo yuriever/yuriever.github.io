@@ -18,3 +18,9 @@
 /* .md-sidebar--primary {
     order: 0;
 } */
+
+
+/* 改变无序列表的标号 */
+ul li {
+    list-style: circle;
+}

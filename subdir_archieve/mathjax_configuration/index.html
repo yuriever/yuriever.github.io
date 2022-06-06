@@ -155,6 +155,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -481,74 +483,74 @@
 </ul>
 <h2 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h2>
 <p>add the followings to <code>mkdocs.yml</code>:</p>
-<div class="highlight"><pre><span></span><code>markdown_extensions:
-  # Python Markdown Extensions
-  - pymdownx.arithmatex:
-      generic: true
-
-extra_javascript:
-- js/mathjax.js
-- https://polyfill.io/v3/polyfill.min.js?features=es6
-- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="c1"># Python Markdown Extensions</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">extra_javascript</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">js/mathjax.js</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://polyfill.io/v3/polyfill.min.js?features=es6</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><span class="w"></span>
 </code></pre></div>
 <h2 id="mathjax">MathJax<a class="headerlink" href="#mathjax" title="Permanent link">&para;</a></h2>
 <p>edit the MathJax configuration file <code>mathjax.js</code> like:</p>
-<div class="highlight"><pre><span></span><code>window.MathJax = {
-  loader: {load: [&#39;[tex]/tagformat&#39;, &#39;[tex]/configmacros&#39;, &#39;[tex]/physics&#39;]},
-  tex: {
-    // packages included
-    packages: {&#39;[+]&#39;: [&#39;tagformat&#39;, &#39;configmacros&#39;, &#39;physics&#39;]},
-    // inline math mode delimiters
-    inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],
-    // display math mode delimiters
-    displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;] ],
-    // use \$ to escape the dollar sign
-    processEscapes: true,
-    // process \begin{xxx}...\end{xxx} outside of math mode
-    processEnvironments: true, 
-    // process \ref{...} outside of math mode
-    processRefs: true,         
-    // pattern for recognizing numbers
-    digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
-    // tag options
-    tags: &#39;all&#39;,
-    tagSide: &#39;right&#39;,          
-    tagIndent: &#39;2em&#39;,
-    tagformat: {
-      number: (n) =&gt; n.toString(),
-      tag:    (tag) =&gt; &#39;(&#39; + tag + &#39;)&#39;,
-      id:     (id) =&gt; &#39;mjx-eqn:&#39; + id.replace(/\s/g, &#39;_&#39;),
-      url:    (id, base) =&gt; base + &#39;#&#39; + encodeURIComponent(id),
-    },
-    // use label name rather than tag for ids
-    useLabelIds: true,         
-    // macros
-    macros: {
-      vev: [&#39;{\\langle #1 \\rangle}&#39;, 1],
-      f: &#39;{\\phi}&#39;
-    },
-    enviroments: {
-      testenviroment: [&#39;\\left\\{&#39;, &#39;\\right\\}&#39;]
-    },
-  },
-  // package physics options
-  physics: {
-    italicdiff: false,
-    arrowdel: false
-  },
-  options: {
-    ignoreHtmlClass: &#39;.&#39;,
-    processHtmlClass: &#39;arithmatex&#39;
-  }
-};
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;[tex]/tagformat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[tex]/configmacros&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[tex]/physics&#39;</span><span class="p">]},</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">// packages included</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">packages</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;[+]&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;tagformat&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;configmacros&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;physics&#39;</span><span class="p">]},</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">// inline math mode delimiters</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">inlineMath</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">// display math mode delimiters</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">displayMath</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span><span class="s1">&#39;\\]&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="c1">// use \$ to escape the dollar sign</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">processEscapes</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// process \begin{xxx}...\end{xxx} outside of math mode</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">processEnvironments</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="c1">// process \ref{...} outside of math mode</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">processRefs</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">         </span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="c1">// pattern for recognizing numbers</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">digits</span><span class="o">:</span><span class="w"> </span><span class="sr">/^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="c1">// tag options</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nx">tagSide</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="w">          </span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nx">tagIndent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2em&#39;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nx">tagformat</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">      </span><span class="nx">number</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="nx">tag</span><span class="o">:</span><span class="w">    </span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w">     </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s1">&#39;mjx-eqn:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">id</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">),</span><span class="w"></span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">      </span><span class="nx">url</span><span class="o">:</span><span class="w">    </span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;#&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">id</span><span class="p">),</span><span class="w"></span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="c1">// use label name rather than tag for ids</span><span class="w"></span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="nx">useLabelIds</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">         </span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="c1">// macros</span><span class="w"></span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">      </span><span class="nx">vev</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;{\\langle #1 \\rangle}&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">      </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;{\\phi}&#39;</span><span class="w"></span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="nx">enviroments</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">      </span><span class="nx">testenviroment</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;\\left\\{&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\\right\\}&#39;</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">  </span><span class="c1">// package physics options</span><span class="w"></span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">  </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="nx">italicdiff</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">    </span><span class="nx">arrowdel</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="nx">ignoreHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="nx">processHtmlClass</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;arithmatex&#39;</span><span class="w"></span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <p>Then <code>\vev{\f\f}</code> will be rendered as <span class="arithmatex">\(\vev{\f\f}\)</span>, and the labeled equations will be displayed as:</p>
-<div class="highlight"><pre><span></span><code>two-point functions \eqref{eq:a}:
-
-\begin{equation}
-  \vev{\f_1\f_2}=\delta_{12}|x_{12}|^{-2\Delta}
-  \label{eq:a}
-\end{equation}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>two-point functions <span class="k">\eqref</span><span class="nb">{</span>eq:a<span class="nb">}</span>:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="k">\vev</span><span class="nb">{</span><span class="k">\f</span><span class="nb">_</span>1<span class="k">\f</span><span class="nb">_</span>2<span class="nb">}</span>=<span class="k">\delta</span><span class="nb">_{</span>12<span class="nb">}</span>|x<span class="nb">_{</span>12<span class="nb">}</span>|<span class="nb">^{</span>-2<span class="k">\Delta</span><span class="nb">}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="k">\label</span><span class="nb">{</span>eq:a<span class="nb">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
 </code></pre></div>
 <p>two-point functions \eqref{eq:a}:</p>
 <div class="arithmatex">\[\begin{equation}
@@ -557,9 +559,9 @@ extra_javascript:
 \end{equation}\]</div>
 <h2 id="latex-to-mathjax">LaTeX to MathJax<a class="headerlink" href="#latex-to-mathjax" title="Permanent link">&para;</a></h2>
 <p>translate the LaTeX macros into JS via Mathematica, e.g.</p>
-<div class="highlight"><pre><span></span><code>ruleLaTeXToJS = {
-  &quot;\\newcommand{\\&quot; ~~ Shortest[macroName__] ~~ &quot;}[&quot; ~~ num_?DigitQ ~~ &quot;]{&quot; ~~ Longest[macroFunction__] ~~ &quot;}&quot; 
-    -&gt; macroName ~~ &quot;: [&#39;{&quot; ~~ macroFunction ~~ &quot;}&#39;, &quot; ~~ num ~~ &quot;]&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ruleLaTeXToJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s">&quot;\\newcommand{\\&quot;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="n">Shortest</span><span class="p">[</span><span class="nv">macroName__</span><span class="p">]</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;}[&quot;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="nv">num_</span><span class="o">?</span><span class="n">DigitQ</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;]{&quot;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="n">Longest</span><span class="p">[</span><span class="nv">macroFunction__</span><span class="p">]</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;}&quot;</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">macroName</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;: [&#39;{&quot;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="n">macroFunction</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;}&#39;, &quot;</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">~~</span><span class="w"> </span><span class="s">&quot;]&quot;</span><span class="w"></span>
 </code></pre></div>
 
               
@@ -583,6 +585,16 @@ extra_javascript:
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    <a href="mailto:<lily-ric@outlook.com>" target="_blank" rel="noopener" title="test" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -591,7 +603,7 @@ extra_javascript:
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "header.autohide", "search.suggest"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
