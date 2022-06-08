@@ -467,24 +467,18 @@
 <p>You can contact me via <code>lily-ric@outlook.com</code> or <a href="https://space.bilibili.com/23100384/">yuriever@Bilibili</a>.</p>
 <h2 id="to-do-list">To-do list<a class="headerlink" href="#to-do-list" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 重写 <code>admonition_custom.css</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> autoresize of svg exported from mathematica</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 计算控制：关于非标准计算的介绍</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 非交换代数：重新排版</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> xAct 变分计算：后半部分</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> overwriting main.html to hide the sidebar on all pages.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 加入 bibtex 后重写 reference 部分 </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 加入 bibtex 后重写 reference 部分 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> to customize the code highlighter</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> SVG 图片在夜晚模式下的填充颜色的适配问题，见action1.svg被注释的部分，以及<a href="https://stackoverflow.com/questions/67187091/">1</a> <a href="https://www.ctrl.blog/entry/svg-embed-dark-mode.html">2</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> mathematica 数据结构 DataSet</li>
 </ul>
 <h2 id="test-region">Test region<a class="headerlink" href="#test-region" title="Permanent link">&para;</a></h2>
-<hr />
-<p>Mermaid.js</p>
-<pre class="mermaid"><code>graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;
-    C--&gt;D;</code></pre>
 <hr />
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -527,6 +521,45 @@
 \end{equation}
 for some Boltzmann weight <span class="arithmatex">\(f(x)\)</span>.</p>
 <p>The topology of Cantor set does bookkeep the poset structure of <span class="arithmatex">\(\N\)</span>. This should reflect the locality on the <span class="arithmatex">\(p\)</span>-adic integers.</p>
+<hr />
+<p>xAct + MaTeX</p>
+<p>Env. aligned is OK.</p>
+<div class="arithmatex">\[\begin{align}
+0={}&amp;\tfrac{1}{15} R_{ah} R_{bf} R_{cd}
+ + \tfrac{1}{15} R_{af} R_{bh} R_{cd}
+ + \tfrac{1}{15} R_{ah} R_{bd} R_{cf}
+ + \tfrac{1}{15} R_{ad} R_{bh} R_{cf}\nonumber\\
+&amp; + \tfrac{1}{15} R_{af} R_{bd} R_{ch}
+ + \tfrac{1}{15} R_{ad} R_{bf} R_{ch}
+ + \tfrac{1}{15} R_{ah} R_{bc} R_{df}
+ + \tfrac{1}{15} R_{ac} R_{bh} R_{df}\nonumber\\
+&amp; + \tfrac{1}{15} R_{ab} R_{ch} R_{df}
+ + \tfrac{1}{15} R_{af} R_{bc} R_{dh}
+ + \tfrac{1}{15} R_{ac} R_{bf} R_{dh}
+ + \tfrac{1}{15} R_{ab} R_{cf} R_{dh}\nonumber\\
+&amp; + \tfrac{1}{15} R_{ad} R_{bc} R_{fh}
+ + \tfrac{1}{15} R_{ac} R_{bd} R_{fh}
+ + \tfrac{1}{15} R_{ab} R_{cd} R_{fh}.
+\end{align}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+0={}&amp;\tfrac{1}{15} R_{ah} R_{bf} R_{cd}
+ + \tfrac{1}{15} R_{af} R_{bh} R_{cd}
+ + \tfrac{1}{15} R_{ah} R_{bd} R_{cf}
+ + \tfrac{1}{15} R_{ad} R_{bh} R_{cf}\\
+&amp; + \tfrac{1}{15} R_{af} R_{bd} R_{ch}
+ + \tfrac{1}{15} R_{ad} R_{bf} R_{ch}
+ + \tfrac{1}{15} R_{ah} R_{bc} R_{df}
+ + \tfrac{1}{15} R_{ac} R_{bh} R_{df}\\
+&amp; + \tfrac{1}{15} R_{ab} R_{ch} R_{df}
+ + \tfrac{1}{15} R_{af} R_{bc} R_{dh}
+ + \tfrac{1}{15} R_{ac} R_{bf} R_{dh}
+ + \tfrac{1}{15} R_{ab} R_{cf} R_{dh}\\
+&amp; + \tfrac{1}{15} R_{ad} R_{bc} R_{fh}
+ + \tfrac{1}{15} R_{ac} R_{bd} R_{fh}
+ + \tfrac{1}{15} R_{ab} R_{cd} R_{fh}.
+\end{aligned}
+\end{equation}\]</div>
 <div class="footnote">
 <hr />
 <ol>
