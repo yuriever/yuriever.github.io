@@ -447,24 +447,6 @@
 <li>
 <p><a href="https://github.com/xAct-contrib/examples/blob/master/ActionVariation_Metric_Fields.nb">xAct 作用量变分实例</a></p>
 </li>
-<li>
-<p><a href="https://inspirehep.net/literature/22605">Polchinski, Scale and Conformal Invariance in Quantum Field Theory</a> </p>
-</li>
-<li>
-<p><a href="https://inspirehep.net/literature/885318">Jackiw, et al., Tutorial on Scale and Conformal Symmetries in Diverse Dimensions</a></p>
-</li>
-<li>
-<p><a href="https://inspirehep.net/literature/885729">El-Showk, et al., What Maxwell Theory in D&lt;&gt;4 teaches us about scale and conformal invariance</a></p>
-</li>
-<li>
-<p><a href="https://inspirehep.net/literature/1217757">Nakayama, Scale invariance vs conformal invariance</a></p>
-</li>
-<li>
-<p><a href="https://inspirehep.net/literature/1112191">Luty, et al., The <span class="arithmatex">\(\alpha\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory</a></p>
-</li>
-<li>
-<p><a href="https://inspirehep.net/literature/1253735">Dymarsky, et al., On Scale and Conformal Invariance in Four Dimensions</a></p>
-</li>
 </ul>
 <p>Materials:</p>
 <ul>
@@ -481,9 +463,16 @@ S=\frac{1}{2}\int\,{d^{d}x}\sqrt{-g}\,( \partial^{a}\phi \partial_{a}\phi + c_s 
 S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
 \]</div>
 <p>且有 <span class="arithmatex">\(\trace{T}= -\frac{d-4}{4}F^{2}\)</span>。事实上，仅当 <span class="arithmatex">\(d=4\)</span> 时，自由电磁场具有共形对称性。</p>
+<p>相关讨论可见文献
+<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup>
+<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>
+<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup>
+<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup>
+<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup>
+<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>。</p>
 <h2 id="1">1. 导言<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>变分计算问题回到最底层，是遵循一系列规则依照一定次序化简表达式，逐步降低表达式的复杂度，最后抵达目标表达式。</p>
-<p>这是一个代数问题，不需要指明场构型在哪一个函数空间中，不需要流形的整体信息，不必明确是何种意义的积分<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。我们所需的只是一个坐标卡内的局部结构，例如微分、度规、复结构。这个坐标卡可以是欧氏空间的开集，可以是超空间的开集，或者来自于某种形式几何。</p>
+<p>这是一个代数问题，不需要指明场构型在哪一个函数空间中，不需要流形的整体信息，不必明确是何种意义的积分<sup id="fnref:tag1"><a class="footnote-ref" href="#fn:tag1">1</a></sup>。我们所需的只是一个坐标卡内的局部结构，例如微分、度规、复结构。这个坐标卡可以是欧氏空间的开集，可以是超空间的开集，或者来自于某种形式几何。</p>
 <div class="admonition mark">
 <p>say some words on variational bi-complex, formal geometry and BV-BRST.</p>
 </div>
@@ -601,12 +590,29 @@ S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
 </code></pre></div>
 <p><img src="../xact_variation1/stresstensorEM2.svg" width="90%"></p>
 <p>现尝试将上式重新整理为 <span class="arithmatex">\(F_{ab}\)</span>， </p>
-<hr />
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:tag1">
+<p>甚至积分不必被视为是到复数 <span class="arithmatex">\(\mathbb{C}\)</span> 的映射，它可以是到 <span class="arithmatex">\(\mathbb{C}[[\hbar,m,g,\dots ]]\)</span> 的映射，或者是到其他的奇怪的环。&#160;<a class="footnote-backref" href="#fnref:tag1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:1">
-<p>甚至积分不必被视为是到复数 <span class="arithmatex">\(\mathbb{C}\)</span> 的映射，它可以是到 <span class="arithmatex">\(\mathbb{C}[[\hbar,m,g,\dots ]]\)</span> 的映射，或者是到其他的奇怪的环。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Joseph Polchinski. Scale and Conformal Invariance in Quantum Field Theory. <em>Nucl. Phys. B</em>, 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>R. Jackiw and S. -Y. Pi. Tutorial on Scale and Conformal Symmetries in Diverse Dimensions. <em>J. Phys. A</em>, 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What Maxwell Theory in D≠4 teaches us about scale and conformal invariance. <em>Nucl. Phys. B</em>, 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Yu Nakayama. Scale invariance vs conformal invariance. <em>Phys. Rept.</em>, 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory. <em>JHEP</em>, 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On Scale and Conformal Invariance in Four Dimensions. <em>JHEP</em>, 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

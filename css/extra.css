@@ -24,13 +24,7 @@ article ul ul ul {
     list-style-type: none !important;
 }
 
-
-/* 隐藏navigation sidebar */
-/* .md-sidebar--primary {
-display: none;
-} */
-
-/* 目录放在左侧 */
+/* 目录放在右侧 */
 .md-sidebar--secondary {
     order: 1;
 }
@@ -39,3 +33,12 @@ display: none;
 /* .md-grid {
     max-width: initial;
 } */
+
+/* footnotes 格式 */
+a.footnote-ref:before {
+    content: "[";
+}
+
+a.footnote-ref:after {
+    content: "]";
+}

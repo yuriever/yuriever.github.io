@@ -1,0 +1,1205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     55012,       1197]
+NotebookOptionsPosition[     53596,       1168]
+NotebookOutlinePosition[     54032,       1185]
+CellTagsIndexPosition[     53989,       1182]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.8636224039112997`*^9, 3.8636224043476267`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"cfa473c7-d0af-451b-96b2-5cbf0806e99c"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "lilyric`"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "lilytex`"}]}], "Input",
+ CellChangeTimes->{{3.863621849092093*^9, 3.8636218550929937`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"5db86030-30ae-479d-9ef6-836471d01cfb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"x", "^", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}]}], " ", 
+      RowBox[{"D", "[", 
+       RowBox[{"#", ",", "x"}], "]"}]}], ")"}], "&"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.863621859545549*^9, 3.863621863188158*^9}, 
+   3.8636224100133247`*^9, {3.863626011995235*^9, 3.863626012534354*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"aeaf58c5-277f-4c23-bf80-7e9084868b8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "n", "]"}], "//", 
+   RowBox[{"TF", "[", "]"}]}], "//", 
+  RowBox[{"exportSVG", "[", "\"\<tree_example_Witt\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8636218648497066`*^9, 3.863621882533588*^9}, {
+  3.863622242285865*^9, 3.863622254469018*^9}, {3.863625429018395*^9, 
+  3.8636254665495653`*^9}, {3.863625710317129*^9, 3.863625743049356*^9}, {
+  3.863625800356509*^9, 3.863625800481144*^9}, {3.863625858975265*^9, 
+  3.863625892197214*^9}, {3.863626009050495*^9, 3.86362602395537*^9}, {
+  3.8636260559126663`*^9, 3.86362606850163*^9}, {3.863626147953224*^9, 
+  3.863626252719533*^9}, {3.863626417563163*^9, 3.863626417894928*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"ec94f947-0bd9-4878-b89f-6e651151b11f"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+      11}, {{{1, 2}, {2, 3}, {3, 4}, {3, 5}, {5, 6}, {5, 7}, {2, 8}, {8, 9}, {
+       9, 10}, {8, 11}}, Null}, {
+      AnnotationRules -> {
+        6 -> {"Subexpression" -> HoldForm[$CellContext`n]}, 
+         2 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1) 
+             D[#, $CellContext`x]]}, 
+         1 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1) 
+             D[#, $CellContext`x]& ]}, 10 -> {"Subexpression" -> HoldForm[1]},
+          5 -> {"Subexpression" -> HoldForm[$CellContext`n + 1]}, 
+         11 -> {"Subexpression" -> HoldForm[$CellContext`x]}, 
+         8 -> {"Subexpression" -> HoldForm[
+             D[#, $CellContext`x]]}, 
+         3 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1)]}, 
+         4 -> {"Subexpression" -> HoldForm[$CellContext`x]}, 
+         9 -> {"Subexpression" -> HoldForm[#]}, 
+         7 -> {"Subexpression" -> HoldForm[1]}}, 
+       EdgeShapeFunction -> {"Line"}, EdgeStyle -> {
+         RGBColor[1, 0, 0]}, FormatType -> StandardForm, GraphLayout -> 
+       "LayeredDigraphEmbedding", 
+       VertexLabels -> {
+        6 -> HoldForm[$CellContext`n], 3 -> Power, 11 -> 
+         HoldForm[$CellContext`x], 5 -> Plus, 8 -> D, 7 -> HoldForm[1], 10 -> 
+         HoldForm[1], 9 -> Slot, 4 -> HoldForm[$CellContext`x], 2 -> Times, 1 -> 
+         Function}, VertexLabelStyle -> {
+         RGBColor[0, 0, 1]}, VertexShapeFunction -> {"Circle"}, 
+       VertexSize -> {Tiny}, VertexStyle -> {
+         RGBColor[0.87, 0.94, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {RGBColor[1, 0, 0], Opacity[0.7], LineBox[{{0., 4.}, {0., 3.}}], 
+        LineBox[{{0., 3.}, {-1., 2.}}], LineBox[{{0., 3.}, {0., 2.}}], 
+        LineBox[{{-1., 2.}, {-2., 1.}}], LineBox[{{-1., 2.}, {-1., 1.}}], 
+        LineBox[{{-1., 1.}, {-2., 0.}}], LineBox[{{-1., 1.}, {-1., 0.}}], 
+        LineBox[{{0., 2.}, {1., 1.}}], LineBox[{{0., 2.}, {0., 1.}}], 
+        LineBox[{{1., 1.}, {1., 0.}}]}, 
+       {RGBColor[0.87, 0.94, 1], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 4.}, 0.025], InsetBox[
+          StyleBox["Function",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {0., 4.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 3.}, 0.025], InsetBox[
+          StyleBox["Times",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {0., 3.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 2.}, 0.025], InsetBox[
+          StyleBox["Power",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {-1., 2.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-2., 1.}, 0.025], InsetBox[
+          StyleBox["x",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, -2}, {-2., 0.975}], 
+          ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 1.}, 0.025], InsetBox[
+          StyleBox["Plus",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {-1., 1.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-2., 0.}, 0.025], InsetBox[
+          StyleBox["n",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, -2}, {-2., -0.025}], 
+          ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 0.}, 0.025], InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, -2}, {-1., -0.025}], 
+          ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 2.}, 0.025], InsetBox[
+          StyleBox["D",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {0., 2.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1., 1.}, 0.025], InsetBox[
+          StyleBox["Slot",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {1., 1.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1., 0.}, 0.025], InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, -2}, {1., -0.025}], 
+          ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 1.}, 0.025], InsetBox[
+          StyleBox["x",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, -2}, {0., 0.975}], 
+          ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->StandardForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{{3.863621865434416*^9, 3.863621883686439*^9}, {
+   3.863622243312869*^9, 3.863622254911127*^9}, 3.863622411442649*^9, 
+   3.863625110051985*^9, {3.863625425185293*^9, 3.863625493444295*^9}, {
+   3.8636257074996*^9, 3.863625743505229*^9}, {3.863625796793949*^9, 
+   3.863625801483718*^9}, {3.863625868867297*^9, 3.863625892680481*^9}, {
+   3.863626009490108*^9, 3.863626068943824*^9}, {3.8636261453021717`*^9, 
+   3.8636262530719633`*^9}, {3.86362641560853*^9, 3.863626446768752*^9}, 
+   3.863627044141006*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"5b602519-b0b1-4a7a-8ec8-9ad76d8ebea4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"$RecursionLimit", "=", "20"}], ",", "f"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"f", ":=", 
+      RowBox[{"-", "f"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Trace", "[", 
+      RowBox[{"f", ",", "f"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], "//", 
+  "ReleaseHold"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Out", "[", "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "f"}], "->", "\"\<-f\>\""}], "}"}]}], "//", 
+   RowBox[{"TF", "[", "]"}]}], "//", 
+  RowBox[{"exportSVG", "[", "\"\<trace1\>\"", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8636220956324778`*^9, 3.863622111216934*^9}, {
+  3.863622311433044*^9, 3.863622314598051*^9}, {3.863622415195644*^9, 
+  3.863622479419939*^9}, {3.863625126247444*^9, 3.863625132217725*^9}, {
+  3.863625187405693*^9, 3.863625188580134*^9}, {3.863626465897623*^9, 
+  3.863626471445561*^9}, {3.8636270562257957`*^9, 3.863627176107574*^9}, {
+  3.863627267935248*^9, 3.863627317227868*^9}, {3.863627363321826*^9, 
+  3.863627442555543*^9}, {3.863627489983713*^9, 
+  3.863627502611228*^9}},ExpressionUUID->"dd4292bd-6a65-41f0-8d29-\
+71146d2d682f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "$RecursionLimit", "reclim2", 
+   "\"Recursion depth of \\!\\(\\*RowBox[{\\\"20\\\"}]\\) exceeded during \
+evaluation of \\!\\(\\*RowBox[{\\\"-\\\", \\\"f\\\"}]\\).\"", 2, 47, 37, 
+   17269978431728539822, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.863627270250965*^9, 3.863627317596953*^9}, {
+  3.863627366851088*^9, 3.8636274428865757`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[47]:=",ExpressionUUID->"fd763930-cdff-42c4-ad81-ed5d8a14de99"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"f", ",", 
+   RowBox[{"-", "f"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"f", ",", 
+     RowBox[{"-", "f"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"f", ",", 
+       RowBox[{"-", "f"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"f", ",", 
+         RowBox[{"-", "f"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"f", ",", 
+           RowBox[{"-", "f"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"f", ",", 
+             RowBox[{"-", "f"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"f", ",", 
+               RowBox[{"-", "f"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"f", ",", 
+                 RowBox[{"-", "f"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"f", ",", 
+                   RowBox[{"-", "f"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", 
+                    RowBox[{"-", "f"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+                    "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+              "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.863627270261517*^9, 3.8636273177156687`*^9}, {
+  3.863627366862288*^9, 3.863627442948531*^9}},
+ CellLabel->"Out[47]=",ExpressionUUID->"590251ca-4f9d-4c19-9745-68bedcb1a71c"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+       20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+       38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 
+      51}, {{{1, 2}, {1, 3}, {1, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}, {
+       7, 10}, {10, 11}, {10, 12}, {10, 13}, {13, 14}, {13, 15}, {13, 16}, {
+       16, 17}, {16, 18}, {16, 19}, {19, 20}, {19, 21}, {19, 22}, {22, 23}, {
+       22, 24}, {22, 25}, {25, 26}, {25, 27}, {25, 28}, {28, 29}, {28, 30}, {
+       28, 31}, {31, 32}, {31, 33}, {31, 34}, {34, 35}, {34, 36}, {34, 37}, {
+       37, 38}, {37, 39}, {37, 40}, {40, 41}, {40, 42}, {40, 43}, {43, 44}, {
+       43, 45}, {43, 46}, {46, 47}, {46, 48}, {46, 49}, {49, 50}, {49, 51}}, 
+       Null}, {AnnotationRules -> {
+        6 -> {"Subexpression" -> HoldForm["-f"]}, 
+         38 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         23 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         1 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}}}}}}]}, 
+         2 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         31 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, "-f", {$CellContext`f, "-f"}}}}}}}]},
+          21 -> {"Subexpression" -> HoldForm["-f"]}, 
+         36 -> {"Subexpression" -> HoldForm["-f"]}, 
+         24 -> {"Subexpression" -> HoldForm["-f"]}, 
+         18 -> {"Subexpression" -> HoldForm["-f"]}, 
+         12 -> {"Subexpression" -> HoldForm["-f"]}, 
+         10 -> {
+          "Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}}}]}, 
+         49 -> {"Subexpression" -> HoldForm[{$CellContext`f, "-f"}]}, 
+         26 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         5 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         47 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         14 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         11 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         8 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         42 -> {"Subexpression" -> HoldForm["-f"]}, 
+         45 -> {"Subexpression" -> HoldForm["-f"]}, 
+         3 -> {"Subexpression" -> HoldForm["-f"]}, 
+         30 -> {"Subexpression" -> HoldForm["-f"]}, 
+         13 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}}]}, 
+         19 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}]}, 
+         27 -> {"Subexpression" -> HoldForm["-f"]}, 
+         51 -> {"Subexpression" -> HoldForm["-f"]}, 
+         35 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         17 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         4 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}}}}}]}, 
+         32 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         41 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         46 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, "-f", {$CellContext`f, "-f"}}]}, 
+         22 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}]}, 
+         43 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, "-f", {$CellContext`f, "-f"}}}]}, 
+         9 -> {"Subexpression" -> HoldForm["-f"]}, 
+         20 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         50 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         37 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, "-f", {$CellContext`f, "-f"}}}}}]}, 
+         39 -> {"Subexpression" -> HoldForm["-f"]}, 
+         48 -> {"Subexpression" -> HoldForm["-f"]}, 
+         40 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, "-f", {$CellContext`f, "-f"}}}}]}, 
+         29 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         44 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         28 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}]}, 
+         34 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, "-f", {$CellContext`f, "-f"}}}}}}]}, 
+         7 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}}}}]}, 
+         25 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}]}, 
+         15 -> {"Subexpression" -> HoldForm["-f"]}, 
+         16 -> {"Subexpression" -> 
+           HoldForm[{$CellContext`f, 
+              "-f", {$CellContext`f, 
+               "-f", {$CellContext`f, 
+                "-f", {$CellContext`f, 
+                 "-f", {$CellContext`f, 
+                  "-f", {$CellContext`f, 
+                   "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, 
+                    "-f", {$CellContext`f, "-f"}}}}}}}}}}}}]}, 
+         33 -> {"Subexpression" -> HoldForm["-f"]}}, 
+       EdgeShapeFunction -> {"Line"}, EdgeStyle -> {
+         RGBColor[1, 0, 0]}, FormatType -> StandardForm, GraphLayout -> 
+       "LayeredDigraphEmbedding", 
+       VertexLabels -> {
+        8 -> HoldForm[$CellContext`f], 12 -> HoldForm["-f"], 22 -> List, 14 -> 
+         HoldForm[$CellContext`f], 2 -> HoldForm[$CellContext`f], 29 -> 
+         HoldForm[$CellContext`f], 41 -> HoldForm[$CellContext`f], 38 -> 
+         HoldForm[$CellContext`f], 37 -> List, 13 -> List, 20 -> 
+         HoldForm[$CellContext`f], 21 -> HoldForm["-f"], 32 -> 
+         HoldForm[$CellContext`f], 46 -> List, 18 -> HoldForm["-f"], 47 -> 
+         HoldForm[$CellContext`f], 45 -> HoldForm["-f"], 25 -> List, 5 -> 
+         HoldForm[$CellContext`f], 7 -> List, 9 -> HoldForm["-f"], 17 -> 
+         HoldForm[$CellContext`f], 30 -> HoldForm["-f"], 50 -> 
+         HoldForm[$CellContext`f], 19 -> List, 16 -> List, 26 -> 
+         HoldForm[$CellContext`f], 51 -> HoldForm["-f"], 23 -> 
+         HoldForm[$CellContext`f], 49 -> List, 39 -> HoldForm["-f"], 34 -> 
+         List, 40 -> List, 11 -> HoldForm[$CellContext`f], 44 -> 
+         HoldForm[$CellContext`f], 6 -> HoldForm["-f"], 36 -> HoldForm["-f"], 
+         33 -> HoldForm["-f"], 1 -> List, 15 -> HoldForm["-f"], 42 -> 
+         HoldForm["-f"], 3 -> HoldForm["-f"], 35 -> HoldForm[$CellContext`f], 
+         28 -> List, 48 -> HoldForm["-f"], 4 -> List, 24 -> HoldForm["-f"], 
+         10 -> List, 27 -> HoldForm["-f"], 43 -> List, 31 -> List}, 
+       VertexLabelStyle -> {
+         RGBColor[0, 0, 1]}, VertexShapeFunction -> {"Circle"}, 
+       VertexSize -> {Tiny}, VertexStyle -> {
+         RGBColor[0.87, 0.94, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {RGBColor[1, 0, 0], Opacity[0.7], 
+        LineBox[{{0., 17.}, {-0.9999999998678675, 16.}}], 
+        LineBox[{{0., 17.}, {3.3227820495085325`*^-10, 16.}}], 
+        LineBox[{{0., 17.}, {1.0000000004311431`, 16.}}], 
+        LineBox[{{1.0000000004311431`, 16.}, {3.651194901976851*^-10, 15.}}], 
+        LineBox[{{1.0000000004311431`, 16.}, {1.0000000004815774`, 15.}}], 
+        LineBox[{{1.0000000004311431`, 16.}, {2.00000000052043, 15.}}], 
+        LineBox[{{2.00000000052043, 15.}, {1.0000000003002754`, 14.}}], 
+        LineBox[{{2.00000000052043, 15.}, {2.0000000004676792`, 14.}}], 
+        LineBox[{{2.00000000052043, 15.}, {3.000000000553456, 14.}}], 
+        LineBox[{{3.000000000553456, 14.}, {2.0000000003185647`, 13.}}], 
+        LineBox[{{3.000000000553456, 14.}, {3.0000000004996394`, 13.}}], 
+        LineBox[{{3.000000000553456, 14.}, {4.0000000006267555`, 13.}}], 
+        LineBox[{{4.0000000006267555`, 13.}, {3.000000000415028, 12.}}], 
+        LineBox[{{4.0000000006267555`, 13.}, {4.000000000618087, 12.}}], 
+        LineBox[{{4.0000000006267555`, 13.}, {5.000000000685631, 12.}}], 
+        LineBox[{{5.000000000685631, 12.}, {4.000000000533035, 11.}}], 
+        LineBox[{{5.000000000685631, 12.}, {5.000000000734502, 11.}}], 
+        LineBox[{{5.000000000685631, 12.}, {6.000000000822197, 11.}}], 
+        LineBox[{{6.000000000822197, 11.}, {5.000000000590802, 10.}}], 
+        LineBox[{{6.000000000822197, 11.}, {6.0000000007862155`, 10.}}], 
+        LineBox[{{6.000000000822197, 11.}, {7.000000000889898, 10.}}], 
+        LineBox[{{7.000000000889898, 10.}, {6.000000000524878, 9.}}], 
+        LineBox[{{7.000000000889898, 10.}, {7.000000000719936, 9.}}], 
+        LineBox[{{7.000000000889898, 10.}, {8.000000000805912, 9.}}], 
+        LineBox[{{8.000000000805912, 9.}, {7.000000000276387, 8.}}], 
+        LineBox[{{8.000000000805912, 9.}, {8.000000000481592, 8.}}], 
+        LineBox[{{8.000000000805912, 9.}, {9.000000000639986, 8.}}], 
+        LineBox[{{9.000000000639986, 8.}, {7.999999999891415, 7.}}], 
+        LineBox[{{9.000000000639986, 8.}, {9.000000000072632, 7.}}], 
+        LineBox[{{9.000000000639986, 8.}, {10.000000000256804`, 7.}}], 
+        LineBox[{{10.000000000256804`, 7.}, {8.999999999322782, 6.}}], 
+        LineBox[{{10.000000000256804`, 7.}, {9.999999999555584, 6.}}], 
+        LineBox[{{10.000000000256804`, 7.}, {10.999999999744361`, 6.}}], 
+        LineBox[{{10.999999999744361`, 6.}, {9.999999998793882, 5.}}], 
+        LineBox[{{10.999999999744361`, 6.}, {10.999999999012047`, 5.}}], 
+        LineBox[{{10.999999999744361`, 6.}, {11.999999999204576`, 5.}}], 
+        LineBox[{{11.999999999204576`, 5.}, {10.999999998500314`, 4.}}], 
+        LineBox[{{11.999999999204576`, 5.}, {11.999999998738403`, 4.}}], 
+        LineBox[{{11.999999999204576`, 5.}, {12.999999998928885`, 4.}}], 
+        LineBox[{{12.999999998928885`, 4.}, {11.99999999845862, 3.}}], 
+        LineBox[{{12.999999998928885`, 4.}, {12.999999998656122`, 3.}}], 
+        LineBox[{{12.999999998928885`, 4.}, {13.99999999880255, 3.}}], 
+        LineBox[{{13.99999999880255, 3.}, {12.999999998303466`, 2.}}], 
+        LineBox[{{13.99999999880255, 3.}, {13.999999998487468`, 2.}}], 
+        LineBox[{{13.99999999880255, 3.}, {14.999999998670589`, 2.}}], 
+        LineBox[{{14.999999998670589`, 2.}, {13.999999997861053`, 1.}}], 
+        LineBox[{{14.999999998670589`, 2.}, {14.99999999805415, 1.}}], 
+        LineBox[{{14.999999998670589`, 2.}, {15.999999998226926`, 1.}}], 
+        LineBox[{{15.999999998226926`, 1.}, {15.593640033064943`, 0.}}], 
+        LineBox[{{15.999999998226926`, 1.}, {16.5936400330868, 0.}}]}, 
+       {RGBColor[0.87, 0.94, 1], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 17.}, 0.025], InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], Offset[{0, 2}, {0., 17.025}], 
+          ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.9999999998678675, 16.}, 0.025], InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {-0.9999999998678675, 15.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.3227820495085325*^-10, 16.}, 0.025], InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {3.3227820495085325*^-10, 15.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.0000000004311431, 16.}, 0.025],
+          InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {1.0000000004311431, 16.025}], ImageScaled[{0.5, 0}],
+          
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.651194901976851*^-10, 15.}, 0.025], InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {3.651194901976851*^-10, 14.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.0000000004815774, 15.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {1.0000000004815774, 14.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.00000000052043, 15.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {2.00000000052043, 15.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.0000000003002754, 14.}, 0.025],
+          InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {1.0000000003002754, 13.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.0000000004676792, 14.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {2.0000000004676792, 13.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{3.000000000553456, 14.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {3.000000000553456, 14.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.0000000003185647, 13.}, 0.025],
+          InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {2.0000000003185647, 12.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{3.0000000004996394, 13.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {3.0000000004996394, 12.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4.0000000006267555, 13.}, 0.025],
+          InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {4.0000000006267555, 13.025}], ImageScaled[{0.5, 0}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{3.000000000415028, 12.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {3.000000000415028, 11.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{4.000000000618087, 12.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {4.000000000618087, 11.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000685631, 12.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {5.000000000685631, 12.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4.000000000533035, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {4.000000000533035, 10.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000734502, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {5.000000000734502, 10.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{6.000000000822197, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {6.000000000822197, 11.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000590802, 10.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {5.000000000590802, 9.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{6.0000000007862155, 10.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {6.0000000007862155, 9.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000889898, 10.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {7.000000000889898, 10.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{6.000000000524878, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {6.000000000524878, 8.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000719936, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {7.000000000719936, 8.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.000000000805912, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {8.000000000805912, 9.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000276387, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {7.000000000276387, 7.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.000000000481592, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {8.000000000481592, 7.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.000000000639986, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {9.000000000639986, 8.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.999999999891415, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {7.999999999891415, 6.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.000000000072632, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {9.000000000072632, 6.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.000000000256804, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {10.000000000256804, 7.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.999999999322782, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {8.999999999322782, 5.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.999999999555584, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {9.999999999555584, 5.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999999744361, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {10.999999999744361, 6.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.999999998793882, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {9.999999998793882, 4.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999999012047, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {10.999999999012047, 4.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{11.999999999204576, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {11.999999999204576, 5.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999998500314, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {10.999999998500314, 3.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{11.999999998738403, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {11.999999998738403, 3.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{12.999999998928885, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {12.999999998928885, 4.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{11.99999999845862, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {11.99999999845862, 2.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{12.999999998656122, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {12.999999998656122, 2.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{13.99999999880255, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {13.99999999880255, 3.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{12.999999998303466, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {12.999999998303466, 1.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{13.999999998487468, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {13.999999998487468, 1.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{14.999999998670589, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {14.999999998670589, 2.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{13.999999997861053, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {13.999999997861053, 0.975}], ImageScaled[{0.5, 1}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{14.99999999805415, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {14.99999999805415, 0.975}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{15.999999998226926, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["List",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, 2}, {15.999999998226926, 1.025}], ImageScaled[{0.5, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{15.593640033064943, 0.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {15.593640033064943, -0.025}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}, {DiskBox[{16.5936400330868, 0.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{0, -2}, {16.5936400330868, -0.025}], ImageScaled[{0.5, 1}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->StandardForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{{3.863627270261517*^9, 3.8636273177156687`*^9}, {
+  3.863627366862288*^9, 3.863627443067178*^9}},
+ CellLabel->"Out[48]=",ExpressionUUID->"4a63cb8c-db30-40b1-b4c8-712b12f727bf"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.863627172414043*^9, {3.863627286829269*^9, 
+   3.8636272884888773`*^9}},ExpressionUUID->"74ad1fe5-322f-437b-a788-\
+caaa5b80084a"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8636271233729153`*^9, 3.863627123376483*^9}, 
+   3.863627168229558*^9},ExpressionUUID->"80913e36-5ca6-4760-9715-\
+c6c69dc4685f"]
+},
+WindowSize->{720, 872},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a60ca2e1-c1e6-44b7-b6e8-9343b447f35e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 178, 2, 37, "Input",ExpressionUUID->"cfa473c7-d0af-451b-96b2-5cbf0806e99c"],
+Cell[739, 24, 253, 4, 64, "Input",ExpressionUUID->"5db86030-30ae-479d-9ef6-836471d01cfb"],
+Cell[995, 30, 530, 14, 37, "Input",ExpressionUUID->"aeaf58c5-277f-4c23-bf80-7e9084868b8a"],
+Cell[CellGroupData[{
+Cell[1550, 48, 768, 13, 37, "Input",ExpressionUUID->"ec94f947-0bd9-4878-b89f-6e651151b11f"],
+Cell[2321, 63, 7646, 157, 561, "Output",ExpressionUUID->"5b602519-b0b1-4a7a-8ec8-9ad76d8ebea4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10004, 225, 1270, 31, 142, "Input",ExpressionUUID->"dd4292bd-6a65-41f0-8d29-71146d2d682f"],
+Cell[11277, 258, 509, 11, 35, "Message",ExpressionUUID->"fd763930-cdff-42c4-ad81-ed5d8a14de99"],
+Cell[11789, 271, 2158, 57, 95, "Output",ExpressionUUID->"590251ca-4f9d-4c19-9745-68bedcb1a71c"],
+Cell[13950, 330, 39267, 824, 478, "Output",ExpressionUUID->"4a63cb8c-db30-40b1-b4c8-712b12f727bf"]
+}, Open  ]],
+Cell[53232, 1157, 180, 4, 37, "Input",ExpressionUUID->"74ad1fe5-322f-437b-a788-caaa5b80084a"],
+Cell[53415, 1163, 177, 3, 37, InheritFromParent,ExpressionUUID->"80913e36-5ca6-4760-9715-c6c69dc4685f"]
+}
+]
+*)
+
