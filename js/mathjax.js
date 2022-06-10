@@ -32,6 +32,7 @@ window.MathJax = {
     macros: {
       // Size control of tilde, bar and hat,
       // https://tex.stackexchange.com/questions/365376,
+      nn: '{\\nonumber}',
       wave: ['{\\widetilde{#1}}', 1],
       bar: ['{\\overline{#1}}', 1],
       hat: ['{\\widehat{#1}}', 1],
