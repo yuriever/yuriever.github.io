@@ -399,16 +399,9 @@
 
 
 <h1 id="_1">扩展包开发<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>References:</p>
-<ul>
-<li>
-<p><a href="https://yuluyan.com/posts/mma-package/">Luyan Yu, Modern package style of Mathematica</a> </p>
-</li>
-<li>
-<p><a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a></p>
-</li>
-</ul>
-<p>扩展包的结构可概括为，</p>
+<!-- References: -->
+
+<p>扩展包结构可概括为：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">BeginPackage</span><span class="p">[</span><span class="s">&quot;p`&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;p1`&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}];</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c">(*重载扩展包时清除上次的定义*)</span><span class="w"></span>
@@ -428,13 +421,13 @@
 <p>扩展包中的函数可以分为下列：</p>
 <ul>
 <li>
-<p>常数，例如主体函数中的搜索次数等等，命名为$+小写字母；</p>
+<p>常数，例如主体函数中的搜索次数等等；</p>
 </li>
 <li>
 <p>存储变量的列表以及列表操作函数；</p>
 </li>
 <li>
-<p>判别函数，命名为xxQ，用以界定变量的类型和范围，因此定义尽量完备；</p>
+<p>判别函数，用以界定变量的类型和范围，因此定义尽量完备；</p>
 </li>
 <li>
 <p>主体函数，实现该扩展包的各种功能。为防止意外计算，需要定义再去定义，遵循自上到下的书写规则；</p>
@@ -443,58 +436,111 @@
 <p>打印函数，区分返回值和打印，分离函数之间传递的值和输出结果。</p>
 </li>
 </ul>
-<div class="admonition question">
-<p class="admonition-title">判别函数的属性</p>
-<p>判别函数不应带有 <code>HoldAll</code> 等类似属性。</p>
-</div>
+<p>一些经验：</p>
+<ul>
+<li>脱耦合。减少不同功能的函数、不同扩展包之间的关联。</li>
+<li>减少<code>HoldAll</code> 等属性的使用，以防阻止期待的计算。特别的，判别函数不应带有此类属性。</li>
+<li>子扩展包的自动补全。母扩展包 <code>p`</code> 下的子扩展包 <code>p`p1`</code> 中的公共函数不会被自动补全。解决方案：将母扩展包解耦并重命名为 <code>p0`</code>，在 <code>p0`</code> 中用函数 <code>Get</code> 启用子扩展包 <code>p`p1`</code>。可见 <a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a>。</li>
+</ul>
 <h2 id="_2">扩展包依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lilyric             # initialization
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>lilytex/            # Mathematica + LaTeX
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    lilyxact        # xAct custumaziation
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>lilyxact            # xAct custumaziation
 </code></pre></div>
 <div class="admonition mark">
 <p class="admonition-title">Package lilyric</p>
 <pre class="mermaid"><code>classDiagram
 
-base &lt;.. matrix
 base &lt;.. simplify
+base &lt;.. matrix
 base &lt;.. list
-base &lt;.. others
 list &lt;.. algebra
 list &lt;.. variable
+base &lt;.. shortcuts
+base &lt;.. others
 
 class base{
-    shortcuts()
-    questing()
+    &lt;&lt;base, debug&gt;&gt;
+    xxQ()
+    test()
 }
 
 class matrix{
-    matrix and operator
+    &lt;&lt;matrix, operator&gt;&gt;
 }
 
 class simplify{
-    expression simplification
-}
-
-class others{
-    other functions
+    &lt;&lt;expression \n simplification&gt;&gt;
+    together()
+    apart()
 }
 
 class list{
-    list manipulation
+    &lt;&lt;data&gt;&gt;
+    data(type,member)
+    member()
 }
 
 class algebra{
-    noncommutative algebra
+    &lt;&lt;noncommutative \n algebra&gt;&gt;
+    operator
+    relation
+    printing
 }
 
 class variable{
-    indexed variable
+    &lt;&lt;indexed variable&gt;&gt;
+    variable
+    index
+}
+
+class shortcuts{
+    &lt;&lt;customized \n built-in functions&gt;&gt;
+    xxForm()
+    IO()
+}
+
+class others{
+    &lt;&lt;unclassified&gt;&gt;
+    IBP()
+}
+
+class MaTeX{
+    &lt;&lt;latex compiling&gt;&gt;
 }</code></pre>
 </div>
-<div class="admonition notice">
-<p class="admonition-title">子扩展包的自动补全</p>
-<p>母扩展包 <code>p`</code> 下的子扩展包 <code>p`p1`</code> 中的公共函数不会被自动补全。解决方案：将母扩展包解耦并重命名为 <code>p0`</code>，在 <code>p0`</code> 中用函数 <code>Get</code> 启用子扩展包 <code>p`p1`</code>。</p>
+<div class="admonition mark">
+<p class="admonition-title">Package lilyxact</p>
+<pre class="mermaid"><code>classDiagram
+
+class xCore{
+    &lt;&lt;debug tools&gt;&gt;
+}
+
+class xPerm{
+    &lt;&lt;permutation \n manipulation&gt;&gt;
+}
+
+class xTensor{
+    &lt;&lt;abstract tensor \n computations&gt;&gt;
+}
+
+class xCoba{
+    &lt;&lt;component tensor \n computations&gt;&gt;
+}
+
+class xPert{
+    &lt;&lt;component tensor \n computations&gt;&gt;
+}
+
+class TexAct{
+    &lt;&lt;latex format&gt;&gt;
+}
+
+class MaTeX{
+    latex compiling
+}
+
+</code></pre>
 </div>
 
               
