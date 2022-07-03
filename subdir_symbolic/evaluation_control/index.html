@@ -450,21 +450,24 @@
 <p>References:</p>
 <ul>
 <li>
-<p>Mathematica documentation: <code>tutorial/EvaluationOfExpressions</code></p>
+<p><a href="https://library.wolfram.com/infocenter/Conferences/377/">Robby Villegas, Working with Unevaluated Expressions
+</a></p>
+<p>In this tutorial, I will demonstrate situations in which evaluation control is important, pointing out common pitfalls and providing useful tools and techniques along the way.</p>
 </li>
 <li>
-<p>Mathematica documentation: <code>tutorial/Evaluation</code></p>
+<p><code>tutorial/Expressions</code></p>
 </li>
 <li>
-<p>Mathematica documentation: <code>tutorial/Expressions</code></p>
+<p><code>tutorial/Evaluation</code></p>
+<p>The standard evaluation sequence.</p>
 </li>
 <li>
-<p><a href="https://inspirehep.net/literature/1800422">Maloney, Averaging Over Narain Moduli Space</a></p>
+<p><code>tutorial/EvaluationOfExpressions</code></p>
 </li>
 </ul>
 <h2 id="0">0. 背景<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
 <p>It's convenient to treat a collection of similar objects as a unity, the properties of which reveal the relations between specific objects. Sometimes, the collection itself admits "nice" geometric structures, and we call it the moduli space.</p>
-<p>Borrowing the idea of differential geometry, a curve in the moduli represents an one parameter family of objects, aka, finite deformation, and the tangent space contains independent directions of infinitesimal deformations. A typical example is the moduli space of Narain CFTs: tangent vectors correspond to exactly marginal operators, and measures correspond to ensembles of CFTs.</p>
+<p>Borrowing the idea of differential geometry, a curve in the moduli represents an one parameter family of objects, aka, finite deformation, and the tangent space contains independent directions of infinitesimal deformations. A typical example is the moduli space of Narain CFTs<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>: tangent vectors correspond to exactly marginal operators, and measures correspond to ensembles of CFTs.</p>
 <p>In the following we will review the evaluation of expressions in Mathematica by analogy with the moduli space.</p>
 <table>
 <thead>
@@ -512,7 +515,7 @@
 <p>举例说明上述介绍， Witt 代数的生成元 <span class="arithmatex">\(L_n=x^{n+1} \p_x\)</span> 可写为如下的纯函数，</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">L</span><span class="p">[</span><span class="nv">n_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="nv">#</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">])</span><span class="w"> </span><span class="o">&amp;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>作用在函数 <span class="arithmatex">\(f(x)\)</span> 上 <code>L[n]@f[x]</code>， 给出 <span class="arithmatex">\(x^{n+1} f'(x)\)</span>。<span class="arithmatex">\(L_{n}\)</span>的树形式为 [^1]</p>
+<p>作用在函数 <span class="arithmatex">\(f(x)\)</span> 上 <code>L[n]@f[x]</code>， 给出 <span class="arithmatex">\(x^{n+1} f'(x)\)</span>。<span class="arithmatex">\(L_{n}\)</span>的树形式为</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">TreeForm</span><span class="w"></span>
 </code></pre></div>
 <p><img src="../evaluation_control/tree_example_Witt.svg" class="center" width="50%"></p>
@@ -563,6 +566,14 @@ S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
 </ul>
 <h2 id="3-wolfram">3. Wolfram 模型<a class="headerlink" href="#3-wolfram" title="Permanent link">&para;</a></h2>
 <h2 id="4">4. 其它<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Alexander Maloney and Edward Witten. Averaging over Narain moduli space. <em>JHEP</em>, 10:187, 2020. <a href="https://arxiv.org/abs/2006.04855">arXiv:2006.04855</a>, <a href="https://doi.org/10.1007/JHEP10(2020)187">doi:10.1007/JHEP10(2020)187</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>

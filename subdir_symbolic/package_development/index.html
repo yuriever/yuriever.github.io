@@ -441,6 +441,7 @@
 <li>脱耦合。减少不同功能的函数、不同扩展包之间的关联。</li>
 <li>减少<code>HoldAll</code> 等属性的使用，以防阻止期待的计算。特别的，判别函数不应带有此类属性。</li>
 <li>子扩展包的自动补全。母扩展包 <code>p`</code> 下的子扩展包 <code>p`p1`</code> 中的公共函数不会被自动补全。解决方案：将母扩展包解耦并重命名为 <code>p0`</code>，在 <code>p0`</code> 中用函数 <code>Get</code> 启用子扩展包 <code>p`p1`</code>。可见 <a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a>。</li>
+<li>命名规范。同一类功能的函数应以相同的单词开头命名，判别函数的名称为 xxQ，局部变量的名称全为小写字母，重复模式的名称为单词复数，列表模式的名称为 xxlist。</li>
 </ul>
 <h2 id="_2">扩展包依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lilyric             # initialization
@@ -448,6 +449,9 @@
 </code></pre></div>
 <div class="admonition mark">
 <p class="admonition-title">Package lilyric</p>
+<ul>
+<li>Function <code>echo</code> has been migrated from <code>lily`test`</code> to <code>lily`base`</code>.</li>
+</ul>
 <pre class="mermaid"><code>classDiagram
 
 base &lt;.. simplify
@@ -455,13 +459,15 @@ base &lt;.. matrix
 base &lt;.. list
 list &lt;.. algebra
 list &lt;.. variable
-base &lt;.. shortcuts
+base &lt;.. number
 base &lt;.. others
+base &lt;.. test
+base &lt;.. IO
+MaTeX &lt;.. IO
 
 class base{
-    &lt;&lt;base, debug&gt;&gt;
+    &lt;&lt;custom, debug&gt;&gt;
     xxQ()
-    test()
 }
 
 class matrix{
@@ -481,20 +487,29 @@ class list{
 }
 
 class algebra{
-    &lt;&lt;noncommutative \n algebra&gt;&gt;
+    &lt;&lt;associative \n algebra&gt;&gt;
     operator
     relation
     printing
 }
 
 class variable{
-    &lt;&lt;indexed variable&gt;&gt;
+    &lt;&lt;indexed objexts&gt;&gt;
     variable
     index
 }
 
-class shortcuts{
-    &lt;&lt;customized \n built-in functions&gt;&gt;
+class test{
+    &lt;&lt;unit testing, timing&gt;&gt;
+    test()
+    timing()
+}
+
+class number{
+    &lt;&lt;number field&gt;&gt;
+}
+class IO{
+    &lt;&lt;input/output&gt;&gt;
     xxForm()
     IO()
 }
@@ -506,6 +521,10 @@ class others{
 
 class MaTeX{
     &lt;&lt;latex compiling&gt;&gt;
+}
+
+class GeneralUtilities{
+    &lt;&lt;version dependent&gt;&gt;
 }</code></pre>
 </div>
 <div class="admonition mark">
