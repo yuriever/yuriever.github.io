@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://yuriever.github.io/subdir_symbolic/xact_variation1/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/xact_variation1/">
       
       <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
@@ -34,8 +34,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -216,8 +216,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../subdir_archieve/index_archieve/" class="md-tabs__link">
-      Archieve
+    <a href="../../archive/index_archive/" class="md-tabs__link">
+      Archive
     </a>
   </li>
 
@@ -228,7 +228,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../subdir_lightnovel/index_lightnovel/" class="md-tabs__link">
+    <a href="../../lightnovel/index_lightnovel/" class="md-tabs__link">
       Light Novel
     </a>
   </li>
@@ -240,7 +240,19 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../subdir_ochiba/index_ochiba/" class="md-tabs__link">
+    <a href="../../symphonia/index_symphonia/" class="md-tabs__link">
+      Symphonia
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../ochiba/index_ochiba/" class="md-tabs__link">
       Ochiba
     </a>
   </li>
@@ -314,8 +326,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subdir_archieve/index_archieve/" class="md-nav__link">
-        Archieve
+      <a href="../../archive/index_archive/" class="md-nav__link">
+        Archive
       </a>
     </li>
   
@@ -329,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subdir_lightnovel/index_lightnovel/" class="md-nav__link">
+      <a href="../../lightnovel/index_lightnovel/" class="md-nav__link">
         Light Novel
       </a>
     </li>
@@ -344,7 +356,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../subdir_ochiba/index_ochiba/" class="md-nav__link">
+      <a href="../../symphonia/index_symphonia/" class="md-nav__link">
+        Symphonia
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ochiba/index_ochiba/" class="md-nav__link">
         Ochiba
       </a>
     </li>
@@ -474,7 +501,7 @@ S=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}
 <div class="admonition mark">
 <p>say some words on variational bi-complex, formal geometry and BV-BRST.</p>
 </div>
-<p>那么直接的实现方案是利用MMA的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见<a href="../noncomm_algebra/">非交换代数</a>一文。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
+<p>那么直接的实现方案是利用 Mathematica 的核心功能：<code>Rule</code> 和 <code>Replace</code>，相关介绍可见<a href="../noncomm_algebra/">非交换代数</a>一文。如果想重复利用代码，需要明确各个对象/变量之间的派生关系，例如：某张量场是在某坐标卡上的，某联络的某一项是关于某纤维丛的。xAct 提供了相应的完整平台。</p>
 <p>我们需要调用的扩展包如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">(*隐藏导入时打印的版本信息*)</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Block</span><span class="p">[{</span><span class="n">Print</span><span class="p">},</span><span class="w"> </span><span class="n">Get</span><span class="o">/@</span><span class="w"></span>
