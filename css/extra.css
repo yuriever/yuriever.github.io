@@ -1,0 +1,102 @@
+/*default colors*/
+/*https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss*/
+
+/*light mode颜色*/
+[data-md-color-scheme="sora"] {
+    --md-primary-fg-color: rgba(120, 0, 255, 0.6);
+    --md-typeset-a-color: rgba(100, 60, 200, 1);
+    --md-footer-fg-color: rgba(100, 0, 255, 0.5);
+    --md-footer-bg-color: rgba(255, 255, 255, 0.9);
+    /* Code highlighting color shades*/
+    --md-code-hl-number-color: rgb(178, 65, 0);
+    --md-code-hl-special-color: rgb(219, 20, 87);
+    --md-code-hl-function-color: rgb(168, 70, 185);
+    --md-code-hl-constant-color: rgb(181, 89, 217);
+    --md-code-hl-keyword-color: rgb(14, 122, 56);
+    --md-code-hl-string-color: rgb(178, 148, 0);
+    --md-code-hl-name-color: rgb(34, 18, 220);
+    --md-code-hl-operator-color: rgb(0, 0, 0);
+    --md-code-hl-punctuation-color: rgb(0, 0, 0);
+    --md-code-hl-comment-color: rgb(153, 153, 153);
+    --md-code-hl-variable-color: rgb(110, 89, 217);
+    --md-code-hl-color: rgba(220, 220, 220, 0.4);
+    /*--md-code-bg-color: rgb(245, 245, 245);*/
+}
+
+.md-header,
+.md-tabs {
+    color: rgba(240, 220, 255, 1);
+}
+
+/*dark mode颜色*/
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: rgba(173, 129, 255, 0.827);
+    --md-primary-fg-color--light: rgba(98, 0, 255, 0.604);
+    --md-primary-fg-color--dark: rgba(173, 129, 255, 0.827);
+    --md-hue: 250;
+}
+
+
+/*h2标题
+添加下边框
+*/
+.md-typeset h2 {
+    margin: 1.6em 0 0.64em;
+    /*font-size: 1.4rem;*/
+    line-height: 1.4;
+    letter-spacing: 0em;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+
+/*目录放在右侧*/
+.md-sidebar--secondary {
+    order: 1;
+}
+
+
+/*隐藏md-footer-meta*/
+.md-footer {
+    display: none;
+}
+
+.md-footer-meta {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0;
+}
+
+
+/*footnotes格式*/
+a.footnote-ref:before {
+    content: "[";
+}
+
+a.footnote-ref:after {
+    content: "]";
+}
+
+
+/*副标题*/
+span.subtitle {
+    font-size: 16px;
+}
+
+span.subtitle:before {
+    content: "\a";
+    white-space: pre;
+}
+
+
+/*行距*/
+/* .md-grid {
+    max-width: initial;
+} */
+
+
+/*img center*/
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

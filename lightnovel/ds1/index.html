@@ -1,0 +1,945 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora...">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/ds1/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.2.13">
+    
+    
+      
+        <title>Introduction to cosmological bootstrap - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../css/list.css">
+    
+      <link rel="stylesheet" href="../../css/curtain.css">
+    
+      <link rel="stylesheet" href="../../css/admonition_custom.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-cosmological-bootstrap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to cosmological bootstrap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../symbolic/" class="md-tabs__link">
+      Triangulated reality
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../archive/" class="md-tabs__link">
+      Archive
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../" class="md-tabs__link">
+      Lightnovel
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../sora/" class="md-tabs__link">
+      Sora
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../symbolic/" class="md-nav__link">
+        Triangulated reality
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/" class="md-nav__link">
+        Archive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Lightnovel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sora/" class="md-nav__link">
+        Sora
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ds-poincare-patch" class="md-nav__link">
+    dS Poincare patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#massive-free-scalar-on-ds" class="md-nav__link">
+    Massive free scalar on dS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-qfts-on-ds" class="md-nav__link">
+    Interacting QFTs on dS
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacting QFTs on dS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kallenlehmann-decomposition" class="md-nav__link">
+    Källén–Lehmann decomposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-operators-from-the-late-time-expansion" class="md-nav__link">
+    Boundary operators from the late-time expansion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-massive-scalar" class="md-nav__link">
+    Free massive scalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cft-on-ds" class="md-nav__link">
+    CFT on dS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higher-point-functions" class="md-nav__link">
+    Higher-point functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Higher-point functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mft" class="md-nav__link">
+    MFT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-terms" class="md-nav__link">
+    Local terms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+        </div>
+    </div>
+</div>
+
+
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="introduction-to-cosmological-bootstrap">Introduction to cosmological bootstrap</h1>
+<p>This page is a recap of 2107.13871.</p>
+<ol>
+<li>
+<p>late-time correlation functions transform as conformal correlation functions under the isometry group <span class="arithmatex">\(SO(d + 1, 1)\)</span> of <span class="arithmatex">\(dS_{d+1}\)</span></p>
+</li>
+<li>
+<p>This suggests using conformal bootstrap methods to study QFT in dS.</p>
+</li>
+<li>
+<p>Unitary conformal bootstrap:</p>
+<ol>
+<li>conformal block expansion (four identical operators):</li>
+</ol>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+=
+\sum_{\Delta, \ell} C_{\Delta, \ell}^2 G_{\Delta, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
+\end{equation}\]</div>
+<ol>
+<li>
+<p><span class="arithmatex">\(\wave{SO}(d,2)\)</span> AdS/Lorentzian unitarity: <span class="arithmatex">\(C_{\Delta, \ell}^2 \geq 0\)</span></p>
+</li>
+<li>
+<p>crossing symmetry: invariance under permutations of the positions <span class="arithmatex">\(x_{i}\)</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Idea of dS bootstrap:</p>
+<ol>
+<li>
+<p>Object: dS correlations functions in the late-time limit</p>
+</li>
+<li>
+<p>existence of SOC and convergence of OPE are problematic, hence lack of conformal block expansion.</p>
+</li>
+<li>
+<p>instead, consider the conformal partial wave expansion:</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+=
+\sum_{\ell} \int d \nu I_{\ell}(\nu) \Psi_{\frac{d}{2}+i \nu, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
+\end{equation}\]</div>
+</li>
+<li>
+<p><span class="arithmatex">\(SO(d+1,1)\)</span> dS/Euclidean unitarity: <span class="arithmatex">\(I_{\ell}(\nu) \geq 0\)</span></p>
+</li>
+<li>
+<p>crossing symmetry still holds: invariance under permutation due to operators commuting at spacelike separation.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="ds-poincare-patch">dS Poincare patch</h2>
+<p>In the following we adopt the convention <span class="arithmatex">\(Q^{\dagger}=-Q\)</span>, <span class="arithmatex">\(R=1\)</span>.</p>
+<p>Global dS is confomally equivalent to part of the Lorentzian cylinder, useful in the analysis of CFT on dS,</p>
+<div class="arithmatex">\[\begin{equation}
+d s^2=\frac{1}{\cos ^2 \tau}\left(-d \tau^2+d \Omega_d^2\right), \quad-\pi / 2 \leq \tau \leq \pi / 2
+\end{equation}\]</div>
+<p><span class="arithmatex">\(\R^{d,1}\)</span>
+<span class="arithmatex">\(\hookrightarrow\)</span>
+Lorentzian cylinder
+<span class="arithmatex">\(\hookleftarrow\)</span>
+dS Poincare patch</p>
+<p>Figure 2 of 1805.00098</p>
+<p><img src="../ds1/lorentziancylinder.png" class="center" width="70%"></p>
+<p>Figure 1 of 2107.13871</p>
+<p><img src="../ds1/dspoincare.png" class="center" width="70%"></p>
+<p>The Poincare patch of dS is</p>
+<div class="arithmatex">\[\begin{equation}
+d s^2=\frac{-d \eta^2+d x^\mu d x_\mu}{\eta^2}
+\end{equation}\]</div>
+<p>where $ η &lt; 0,\, x\in\R^{d}$. The null surface at <span class="arithmatex">\(\eta=-\inf\)</span> is the particle horizon of the Poincare patch, and <span class="arithmatex">\(\eta=0\)</span> is the future infinity of dS.</p>
+<p>The Killing vectors in the Poincare coordinates are,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{gathered}
+D: \eta \frac{\partial}{\partial \eta}+x^\mu \frac{\partial}{\partial x^\mu}, \quad P_\mu: \frac{\partial}{\partial x^\mu}, \\
+K_\mu:\left(\eta^2-x^2\right) \frac{\partial}{\partial x^\mu}+2 x_\mu \eta \frac{\partial}{\partial \eta}+2 x_\mu x^\nu \frac{\partial}{\partial x^\nu}, \quad M_{\mu \nu}: x_\nu \frac{\partial}{\partial x^\mu}-x_\mu \frac{\partial}{\partial x^\nu} .
+\end{gathered}
+\end{equation}\]</div>
+<p>In the late-time limit <span class="arithmatex">\(\eta=0\)</span> they <strong>manifest</strong> the conformal symmetries of the future infinity.</p>
+<h2 id="massive-free-scalar-on-ds">Massive free scalar on dS</h2>
+<p>and assume <span class="arithmatex">\(m^2&gt;d^2/4\)</span>.</p>
+<p>The action is,</p>
+<div class="arithmatex">\[\begin{equation}
+S=\int d^d x \int_{-\infty}^0 \frac{d \eta}{(-\eta)^{d+1}}\left[\eta^2\left(\frac{1}{2} \dot{\phi}^2-\frac{1}{2}(\nabla \phi)^2\right)-\frac{1}{2} m^2 \phi^2\right]
+\end{equation}\]</div>
+<p>By solving the EOM and imposing the CCR,</p>
+<div class="arithmatex">\[\begin{equation}
+\left[\phi(\eta, x), \Pi\left(\eta, x^{\prime}\right)\right]=i \delta^{(d)}\left(x-x^{\prime}\right), \quad \Pi(\eta, x)=(-\eta)^{1-d} \dot{\phi}(\eta, x)
+\end{equation}\]</div>
+<p>the Fourier modes are</p>
+<div class="arithmatex">\[\begin{equation}
+\phi(\eta, k)=f_k(\eta) a_k^{\dagger}+\bar{f}_k(\eta) a_{-k}
+\end{equation}\]</div>
+<p>and the creation/anilhilation relation is</p>
+<div class="arithmatex">\[\begin{equation}
+\left[a_k, a_{k^{\prime}}^{\dagger}\right]=(2 \pi)^d \delta^d\left(k-k^{\prime}\right)
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(f_k(\eta)\)</span> is some hypergeometric function. The behaviour at late time is</p>
+<div class="arithmatex">\[\begin{equation}
+\lim _{\eta \rightarrow 0} \phi(\eta,x)=\f^{+}(x) (-\eta)^{\Delta^{+}}+\f^{-}(x) (-\eta)^{\Delta^{-}}
+\end{equation}\]</div>
+<p>where the mass-"dimension" relation is <span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span>, c.f. in AdS/CFT the relation is <span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span>. </p>
+<table>
+<thead>
+<tr>
+<th align="left">mass</th>
+<th align="left">dimension</th>
+<th align="left">rep</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="arithmatex">\(m^2&gt;d^2/4\)</span></td>
+<td align="left"><span class="arithmatex">\(\Delta_{\pm}=\frac{d}{2}\pm i \nu \text { with } \nu \in \mathbb{R}\)</span></td>
+<td align="left">principal series</td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\(0&lt;m^2&lt;d^2/4\)</span></td>
+<td align="left"><span class="arithmatex">\(\D\in(0,d)\)</span></td>
+<td align="left">complementary series</td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\(m=d/2\)</span></td>
+<td align="left"><span class="arithmatex">\(\D=d/2\)</span></td>
+<td align="left">exceptional series</td>
+</tr>
+</tbody>
+</table>
+<p>The principal series rep (PSR) is just the function space <span class="arithmatex">\(L^2(\R^{d})\)</span> with suitable decay at <span class="arithmatex">\(x\to\inf\)</span>, and the action of the conformal group is exact the same as that of primary operators in unitary CFT.</p>
+<p>The shadow transform is a Weyl reflection on the weight lattice, and gives the equivalence between <span class="arithmatex">\(\Delta_{\pm}\)</span>. At the end point, the complementary series rep can be reducible due to the shadow transform, and splits into exceptional series reps.</p>
+<p>Since the theory is free, the Hilbert space is the Fock space building from the single-particle state, denoted as,</p>
+<div class="arithmatex">\[\begin{equation}
+|\Delta, k\rangle:=a_k^{\dagger}|\Omega\rangle,
+\end{equation}\]</div>
+<p>with the local inner product,</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Delta, k \vert \Delta, k^{\prime}\right\rangle=(2 \pi)^d \delta^d\left(k-k^{\prime}\right)
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(|\Omega\rangle\)</span> is named as the Bunch-Davies vacuum.</p>
+<p>The subspace of single-particle state should be an irrep of the isometry group <span class="arithmatex">\(SO(d+1,1)\)</span>. Under the assumption <span class="arithmatex">\(m^2&gt;d^2/4\)</span> it can be identified with the principal series rep (PSR). Then multi-particle states are in tensor products of PSRs, which can be further decomposed into direct integrals of PSRs.</p>
+<p>Direct calculation shows,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_\mu|\Delta, k\rangle&amp;=i k_\mu|\Delta, k\rangle\\
+D|\Delta, k\rangle &amp;=-\left(k \cdot \partial+\frac{d}{2}\right)|\Delta, k\rangle \\
+K_\mu|\Delta, k\rangle &amp;=i\left(k_\mu \partial^2-2(k \cdot \partial) \partial_\mu-d \partial_\mu+\left(\Delta-\frac{d}{2}\right)^2 \frac{k_\mu}{|k|^2}\right)|\Delta, k\rangle \\
+M_{\mu \nu}|\Delta, k\rangle &amp;=\left(k_\nu \partial_\mu-k_\mu \partial_\nu\right)|\Delta, k\rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>To manifest it's relation with PSR, choosing a new position basis by</p>
+<div class="arithmatex">\[\begin{equation}
+|\Delta, x\rangle:=\int \frac{d^d k}{(2 \pi)^d} e^{i k \cdot x}|k|^{\Delta-d / 2}|\Delta, k\rangle
+\end{equation}\]</div>
+<p>in which the kernel can be fixed by the desired action on <span class="arithmatex">\(|\Delta, x\rangle\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_\mu|\Delta, x\rangle &amp;=\frac{\partial}{\partial x^\mu}|\Delta, x\rangle \\
+D|\Delta, x\rangle &amp;=(x \cdot \partial+\Delta)|\Delta, x\rangle \\
+M_{\mu \nu}|\Delta, x\rangle &amp;=\left(x_\nu \partial_\mu-x_\mu \partial_\nu\right)|\Delta, x\rangle \\
+K_\mu|\Delta, x\rangle &amp;=\left(2 x_\mu(x \cdot \partial)-x^2 \partial_\mu+2 \Delta x_\mu\right)|\Delta, x\rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>Aka, <span class="arithmatex">\(|\Delta, x\rangle\)</span> transforms as an primary "operator" acting on the vacuum <span class="arithmatex">\(\op_{\D}(x)|\Omega\rangle\)</span>. But unlike the physical primary operators, the inner product is local</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Delta, x \vert \Delta, x^{\prime}\right\rangle=\delta^{(d)}\left(x-x^{\prime}\right)
+\end{equation}\]</div>
+<p>Recall that in Wightman QFT, the Hilbert space is spanned by the state from the smeared operator,</p>
+<div class="arithmatex">\[\begin{equation}
+\left|\Psi_f\right\rangle \equiv \int d^d x f(x) \mathcal{O}(x)|\Omega\rangle
+\end{equation}\]</div>
+<p>and the inner product is </p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Psi_{f} \mid \Psi_g\right\rangle=\int d^d x_1 d^d x_2 f^*\left(x_2\right) g\left(x_1\right)\left\langle\mathcal{O}\left(x_2\right) \mathcal{O}\left(x_1\right)\right\rangle_W
+\end{equation}\]</div>
+<p>After smeared by some normalizable wave function, the inner product of PSR is </p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Psi_{f} \mid \Psi_g\right\rangle=\int d^d x f^*\left(x\right) g\left(x\right)
+\end{equation}\]</div>
+<p>The conjugation relations are also different: for PSR is <span class="arithmatex">\(Q_{E}^{\dagger}=-Q_{E}\)</span>, for physical rep is <span class="arithmatex">\(Q_{L}^{\dagger}=-Q_{L}\)</span> <span class="arithmatex">\(\to\)</span> BPZ conjuagtion.</p>
+<p>The correlation function is some hypergeometric function,</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\phi(\eta, x) \phi(\eta', x')\right\rangle:=G_{\mathrm{f}}(\xi ; \nu)=\frac{\mathrm{g}\left(\frac{d}{2}+i \nu\right) \psi_{\frac{d}{2}+i \nu}(\xi)+(\nu \to-\nu)}{2}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(\xi=\frac{4 \eta \eta^{\prime}}{-\left(\eta-\eta^{\prime}\right)^2+\left|x-x^{\prime}\right|^2}\)</span> is the two-point dS invariant, </p>
+<div class="arithmatex">\[\begin{equation}
+\mathrm{g}(\Delta)=\frac{\Gamma\left(\frac{d}{2}-\Delta\right) \Gamma(\Delta)}{2^{2 \Delta+1} \pi^{d / 2+1}} \quad \text { and } \quad \psi_{\Delta}(\xi)=\xi^{\Delta}{ }_2 F_1\left(\begin{array}{c}
+\Delta, \Delta-\frac{1}{2}(d-1) \\
+2 \Delta-d+1
+\end{array} \mid \xi\right)
+\end{equation}\]</div>
+<ol>
+<li>
+<p><span class="arithmatex">\(\xi&gt;0\)</span> coresspondes to  spacelike separated, and the late-time limit <span class="arithmatex">\(\eta,\eta'\to 0\)</span> correspondes to <span class="arithmatex">\(\xi\to 0^{+} \sim \left|x-x^{\prime}\right|^{-2}\)</span>, then </p>
+<div class="arithmatex">\[\begin{equation}
+\psi_{\Delta}(\xi) \sim \xi^{\Delta} \sim \left|x-x^{\prime}\right|^{-2\Delta} \sim \vev{\op\op}_{\text{CFT}}
+\end{equation}\]</div>
+</li>
+<li>
+<p>Different <span class="arithmatex">\(i \e\)</span> prescriptions corresponde to different types of time-ordering.</p>
+</li>
+<li>
+<p>The shadow symmetry is manifested by <span class="arithmatex">\(\nu \to -\nu\)</span>.</p>
+</li>
+</ol>
+<h2 id="interacting-qfts-on-ds">Interacting QFTs on dS</h2>
+<p>If turning on some interaction, the correlation functions can be calculated via:</p>
+<ol>
+<li>
+<p>analytic continuation of correlation functions on the Euclidean sphere.</p>
+</li>
+<li>
+<p>in-in formalism.</p>
+</li>
+</ol>
+<p>In this page we escape these calcalutions as our inputs.</p>
+<p>Alternatively we can consider the non-perturbative properties of correlation functions.</p>
+<h3 id="kallenlehmann-decomposition">Källén–Lehmann decomposition</h3>
+<p>KL decomposition is the integral transform of two-point functions with the kernel of the free two-point function. </p>
+<p>From flat to the dS case, the complete basis of energy eigenstates are replaced by the PSR basis, and in result the integral is over the principal series,</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle=\langle\phi\rangle^2+\sum_{\ell} \int \frac{d \Delta}{2 \pi i} \frac{1}{N(\Delta, \ell)} \int \frac{d^d k}{(2 \pi)^d}\langle\Omega|\phi(\eta, x)| \Delta, k\rangle_{\mu_1 \ldots \mu_{\ell}}^{\mu_1 \ldots \mu_{\ell}}\left\langle\Delta, k\left|\phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle
+\end{equation}\]</div>
+<p>and it can be collected into</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle=\langle\phi\rangle^2+\int_{\mathbb{R}} \frac{d \nu}{2 \pi} \rho_\phi\left(\frac{d}{2}+i \nu\right) G_{\mathrm{f}}(\xi ; \nu)
+\end{equation}\]</div>
+<p>where the spectral density <span class="arithmatex">\(\rho_\phi\left(\frac{d}{2}+i \nu\right)\)</span> is a  combination of matrix element of exchanged states and the Plancherel measure.</p>
+<ol>
+<li>
+<p>Unitarity implies the spectral density is a positive distribution.</p>
+</li>
+<li>
+<p>Hermiticity of <span class="arithmatex">\(\f\)</span> implies <span class="arithmatex">\(\rho_\phi(\Delta)^*=\rho_\phi\left(\Delta^*\right)\)</span>.</p>
+</li>
+</ol>
+<h3 id="boundary-operators-from-the-late-time-expansion">Boundary operators from the late-time expansion</h3>
+<ol>
+<li>
+<p>for a UV-complete QFT defined as a relevant deformation of a UV CFT, the space of local operators is the one of the UV CFT.</p>
+</li>
+<li>
+<p>for local CFTs the content of local operator should not depend on the background geometry.</p>
+</li>
+<li>
+<p>for local CFTs on flat spacetime with boundaries, the local operators can be expanded as boundary local operators. After putting on dS spacetime, </p>
+<div class="arithmatex">\[\begin{equation}
+\phi(\eta, x)=(-\eta)^{\Delta_\phi} \phi_{\text {flat }}(\eta, x),
+\end{equation}\]</div>
+<p>one can also define boundary operators by pushing bulk local operators to future infinity.</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\phi(\eta, x) &amp;=\sum_k b_{\phi k}(-\eta)^{\Delta_k}\left[\mathcal{O}_k(x)+c_1 \eta^2 \partial_x^2 \mathcal{O}_k(x)+c_2 \eta^4\left(\partial_x^2\right)^2 \mathcal{O}_k(x)+\ldots\right] \\
+&amp;=\sum_k b_{\phi k}(-\eta)^{\Delta_k}{ }_0 F_1\left(\Delta_k-\frac{d}{2}+1, \frac{1}{4} \eta^2 \partial_x^2\right) \mathcal{O}_k(x)
+\end{aligned}
+\end{equation}\]</div>
+<p>in which <span class="arithmatex">\(\mathcal{O}_k(x)\)</span>'s are primary "operators", and the contributions from descendants can be fixed by the dS isometry</p>
+</li>
+<li>
+<p>The one-point coefficients <span class="arithmatex">\(b_{\phi k}\)</span> stores the dynamical informations. This can be compared with the HKLL reconstruction in AdS/CFT.</p>
+</li>
+</ol>
+<p>Now we can compare the late-time expansion and the KL decomposition. Using the shadow symmetry of the free two-point function, the KL decomposition can be written as</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle=\langle\phi\rangle^2+\int_{\frac{d}{2}-i \infty}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} \rho_\phi(\Delta) g(\Delta) \psi_{\Delta}(\xi)
+\end{equation}\]</div>
+<p>then we want to closen the contour from the principal series to the right infinity, picking up the contributions from poles.</p>
+<p>Requirements on the spectral density:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(g(\Delta)\)</span> has simple poles at <span class="arithmatex">\(\Delta=\frac{d}{2}+\mathbb{N}\)</span>, we assume </p>
+<div class="arithmatex">\[\begin{equation}
+\rho_\phi\left(\frac{d}{2}+n\right)=0 \quad \text { for all } \quad n=0,1,2, \ldots
+\end{equation}\]</div>
+<p>to cancel these non-physical poles due to the following reasons:</p>
+<ol>
+<li>
+<p>in all known examples <span class="arithmatex">\(\rho_\phi\left(\frac{d}{2}+i \nu\right) \sim 1/\Gamma\left(\frac{d}{2}-\Delta\right)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\rho_\phi\left(\frac{d}{2}+i \nu\right)\)</span> contains the information of the Plancherel measure, which cancels the poles in <span class="arithmatex">\(g(\Delta)\)</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\rho_\phi\left(\frac{d}{2}+i \nu\right)\)</span> can be analytically continued to the right with suitable decay, and the simple poles are denoted as</p>
+</li>
+</ol>
+<div class="arithmatex">\[\begin{equation}
+\rho_\phi(\Delta) \underset{\Delta \rightarrow \Delta_*}{\sim} \frac{\operatorname{Res} \rho_\phi\left(\Delta_*\right)}{\Delta-\Delta_*}, \quad \operatorname{Re}\left(\Delta_*\right)&gt;d / 2 .
+\end{equation}\]</div>
+<p>Now closing the contour and get</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta, x^{\prime}\right)\right| \Omega\right\rangle \underset{\eta \rightarrow 0^{-}}{\sim}\left\langle\phi^2\right\rangle-\sum_{\Delta_*} \operatorname{Res} \rho_\phi\left(\Delta_*\right) \mathrm{g}\left(\Delta_*\right)\left(\frac{-2 \eta}{\left|x-x^{\prime}\right|}\right)^{2 \Delta_*}+\ldots
+\end{equation}\]</div>
+<p>comparing with the late-time expansion </p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta, x^{\prime}\right)\right| \Omega\right\rangle \underset{\eta \rightarrow 0^{-}}{\sim}\left\langle\phi^2\right\rangle+\sum_k\left(b_{\phi k}\right)^2\left(\frac{-\eta}{\left|x-x^{\prime}\right|}\right)^{2 \Delta_k}+\ldots
+\end{equation}\]</div>
+<p>we get the relation between one-point coefficients and the spectral density,</p>
+<div class="arithmatex">\[\begin{equation}
+\left(b_{\phi k}\right)^2=-4^{\Delta_k} \mathrm{~g}\left(\Delta_k\right) \operatorname{Res} \rho_\phi\left(\Delta_k\right)
+\end{equation}\]</div>
+<h3 id="examples">Examples</h3>
+<h4 id="free-massive-scalar">Free massive scalar</h4>
+<p>For the free two-point itself, the spectral density is </p>
+<div class="arithmatex">\[\begin{equation}
+\frac{1}{2 \pi} \rho_{\mathrm{f}}\left(\frac{d}{2}+i \nu\right)=\frac{\delta(\mu+\nu)+\delta(\mu-\nu)}{2}
+\end{equation}\]</div>
+<p>and there is only one pair of "opeartors" <span class="arithmatex">\(\op\)</span> and $ \op^{\dagger}$ in the late-time expansion. And the boundary correlation functions form a MFT with fundamental operator <span class="arithmatex">\(\op\)</span> and $ \op^{\dagger}$.</p>
+<p>For the composite operator <span class="arithmatex">\(\f^2\)</span>, the two-point function is </p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\phi^2(\eta, x) \phi^2\left(\eta^{\prime}, x^{\prime}\right)\right\rangle=2 G_f(\xi ; \mu)^2
+\end{equation}\]</div>
+<p>The spectral density </p>
+<div class="arithmatex">\[\begin{equation}
+\rho_{\phi^2}(\Delta)=\frac{\nu \sinh (\pi \nu)}{2^6 \pi^{\frac{d}{2}+3} \Gamma\left(\frac{d}{2}\right)} \frac{\Gamma^2\left(\frac{\Delta}{2}\right) \Gamma^2\left(\frac{d-\Delta}{2}\right)}{\Gamma(\Delta) \Gamma(d-\Delta)} \Gamma\left(\frac{2 \Delta_\phi+\Delta-d}{2}\right) \Gamma\left(\frac{2 \Delta_\phi-\Delta}{2}\right) \Gamma\left(\frac{d-2 \Delta_\phi+\Delta}{2}\right) \Gamma\left(\frac{2 d-2 \Delta_\phi-\Delta}{2}\right)
+\end{equation}\]</div>
+<p>contains three types of simple poles</p>
+<div class="arithmatex">\[\begin{equation}
+\Delta=2 \Delta_\phi+2 \mathbb{N}, \quad \Delta=2\left(d-\Delta_\phi\right)+2 \mathbb{N} \quad \text { and } \quad \Delta=d+2 \mathbb{N}
+\end{equation}\]</div>
+<p>corresponding to </p>
+<div class="arithmatex">\[\begin{equation}
+\mathcal{O} \square^n \mathcal{O}, \quad \mathcal{O}^{\dagger} \square^n \mathcal{O}^{\dagger} \quad \text { and } \quad \mathcal{O}^{\dagger} \square^n \mathcal{O}+\mathcal{O} \square^n \mathcal{O}^{\dagger}
+\end{equation}\]</div>
+<p>which justifies the structure of MFT.</p>
+<h4 id="cft-on-ds">CFT on dS</h4>
+<p>The two-point function of <span class="arithmatex">\(\f_{\d},\, \d \geq (d − 1)/2\)</span> in CFT on dS is </p>
+<div class="arithmatex">\[\begin{equation}
+G_\delta(\xi)=\frac{1}{2^\delta} \xi^\delta
+\end{equation}\]</div>
+<p>The spectral density </p>
+<div class="arithmatex">\[\begin{equation}
+\rho_\delta(\Delta)=\frac{2^{d+2-\delta} \pi^{(d+1) / 2}}{\Gamma(\delta) \Gamma\left(\delta-\frac{d}{2}+\frac{1}{2}\right)} \nu \sinh (\pi \nu) \Gamma(\delta-\Delta) \Gamma(\delta-d+\Delta)
+\end{equation}\]</div>
+<p>contains poles at </p>
+<div class="arithmatex">\[\begin{equation}
+\Delta=\delta+\mathbb{N}
+\end{equation}\]</div>
+<p>The symmetry of CFT on dS is enhanced to <span class="arithmatex">\(\wave{SO}(d+1,2)\)</span>. The late-time expansion can be derived by expanding <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span> on the slice <span class="arithmatex">\(\eta=0\)</span>, and the summation counts the order of <span class="arithmatex">\(\eta\)</span>-derivatives of <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span>, and the primaries on constant <span class="arithmatex">\(\eta\)</span> form a series <span class="arithmatex">\(\Delta=\delta+\mathbb{N}\)</span>.
+This corresponds to decompose the rep of <span class="arithmatex">\(\wave{SO}(d+1,2)\)</span> into <span class="arithmatex">\(SO(d+1,1)\)</span>.</p>
+<h2 id="higher-point-functions">Higher-point functions</h2>
+<p>From the late-time expansion we get a set of boundary operators, transforming as the primary operators in CFT, and the correlation functions of this set can define a CFT on the future infinity. This CFT lacks features of flat-space CFT, e.g. the existence of SOC and the convergence of OPE, and there is no local stress-energy tensor in the operator spectrum.</p>
+<p>To test the proterties of this fictitious CFT, we can extract the dynamical informations from the four-point functions.</p>
+<p>Recall the conformal partial wave expansion is</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\mathcal{O}_1 \mathcal{O}_2 \mathcal{O}_3 \mathcal{O}_4\right\rangle=\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)+\left\langle\mathcal{O}_1 \mathcal{O}_2\right\rangle\left\langle\mathcal{O}_3 \mathcal{O}_4\right\rangle
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(\Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)\)</span> is the conformal partial wave,</p>
+<div class="arithmatex">\[\begin{equation}
+\Psi_{\Delta, \ell}^{\Delta i}\left(x_i\right):=\int d^d x\left\langle\mathcal{O}_1\left(x_1\right) \mathcal{O}_2\left(x_2\right) \mathcal{O}_{\mu_1 \ldots \mu_{\ell}}(x)\right\rangle\left\langle\tilde{\mathcal{O}}^{\mu_1 \ldots \mu_{\ell}}(x) \mathcal{O}_3\left(x_3\right) \mathcal{O}_4\left(x_4\right)\right\rangle
+\end{equation}\]</div>
+<p>which is orthogonal and complete,</p>
+<div class="arithmatex">\[\begin{equation}
+\int \frac{d^d x_1 \ldots d^d x_4}{\operatorname{vol}(\operatorname{SO}(d+1,1))} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right) \Psi_{\tilde{\Delta}^{\prime}, \ell^{\prime}}^{\tilde{\Delta}_i}\left(x_i\right)=2 \pi n_{\Delta, \ell} \delta_{\ell, \ell^{\prime}} \delta\left(\nu-\nu^{\prime}\right)
+\end{equation}\]</div>
+<p>Due to the fact that the operators always come in pair (from the unitarity in the dS bulk), the inversion function satisfies certain positivity condition,</p>
+<div class="arithmatex">\[\begin{equation}
+I_{\Delta, \ell} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_3^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_4^{\dagger}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\bar{I}_{\Delta, \ell} \equiv I_{\Delta, \ell}(-1)^{\ell} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_4^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_3^{\dagger}
+\end{equation}\]</div>
+<h3 id="mft">MFT</h3>
+<p>The inversion function of four-point function is </p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger} \mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle_{\mathrm{MFT}} &amp;=\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger}\right\rangle\left\langle\mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle+\left\langle\mathcal{O}_1 \mathcal{O}_4\right\rangle\left\langle\mathcal{O}_2^{\dagger} \mathcal{O}_3^{\dagger}\right\rangle+\left\langle\mathcal{O}_1 \mathcal{O}_3^{\dagger}\right\rangle\left\langle\mathcal{O}_2^{\dagger} \mathcal{O}_4\right\rangle \\
+&amp;=\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger}\right\rangle\left\langle\mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle+\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell}^{\mathrm{MFT}} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)+\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell}^\delta \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)
+\end{aligned}
+\end{equation}\]</div>
+<p>The contribution of the second term is </p>
+<div class="arithmatex">\[\begin{equation}
+I_{\Delta, \ell}^{\mathrm{MFT}}=(-1)^{\ell} \frac{2^{\ell-1} \Gamma\left(\ell+\frac{d}{2}\right)}{\pi^{\frac{d}{2}} \Gamma(\ell+1)} \frac{\Gamma(i \mu) \Gamma(-i \mu)}{\Gamma\left(\frac{d}{2}+i \mu\right) \Gamma\left(\frac{d}{2}-i \mu\right)} \frac{\Gamma(\Delta-1) \Gamma(d-\Delta-1) \Gamma(\Delta+\ell) \Gamma(d-\Delta+\ell)}{\Gamma\left(\Delta-\frac{d}{2}\right) \Gamma\left(-\Delta+\frac{d}{2}\right) \Gamma(\Delta+\ell-1) \Gamma(d-\Delta+\ell-1)} .
+\end{equation}\]</div>
+<p>which violates the positivity condition at odd spins.</p>
+<h3 id="local-terms">Local terms</h3>
+<p>A more careful calculation gives</p>
+<div class="arithmatex">\[\begin{equation}
+\langle\phi(\eta, x) \phi(\eta, y)\rangle \underset{\eta \rightarrow 0^{-}}{\sim}(-\eta)^{d+2 i \mu} \frac{\Gamma(-i \mu) \Gamma\left(\frac{d}{2}+i \mu\right)}{4 \pi^{\frac{d}{2}+1}} \frac{1}{|x-y|^{d+2 i \mu}}+\text { c.c. }+(-\eta)^d \frac{\operatorname{coth}(\pi \mu)}{2 \mu} \delta^d(x-y) .
+\end{equation}\]</div>
+<p>This can be understood from the late-time behaviour of <span class="arithmatex">\(\f\)</span></p>
+<div class="arithmatex">\[\begin{equation}
+\phi(x, \eta) \underset{\eta \rightarrow 0^{-}}{\sim} b(-\eta)^{\Delta} \mathcal{O}(x)+b^*(-\eta)^{\Delta^*} \mathcal{O}(x)^{\dagger}, \quad \Delta=\frac{d}{2}+i \mu
+\end{equation}\]</div>
+<p>then </p>
+<div class="arithmatex">\[\begin{equation}
+\langle\phi(x, \eta) \phi(y, \eta)\rangle \underset{\eta \rightarrow 0^{-}}{\sim}(-\eta)^{2 \Delta} b^2\langle\mathcal{O}(x) \mathcal{O}(y)\rangle+(-\eta)^{2 \Delta^*} b^{* 2}\left\langle\mathcal{O}^{\dagger}(x) \mathcal{O}^{\dagger}(y)\right\rangle+2(-\eta)^d|b|^2\left\langle\mathcal{O}(x) \mathcal{O}^{\dagger}(y)\right\rangle
+\end{equation}\]</div>
+<p>Aka,</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\mathcal{O}(x) \mathcal{O}^{\dagger}(y)\right\rangle= C \delta^d(x-y)
+\end{equation}\]</div>
+<p>Due to this non-vanishing two-point function, the third term in the four-point functions gives nontrivial contributions, and the result is </p>
+<div class="arithmatex">\[\begin{equation}
+I_{\Delta, \ell}=I_{\Delta, \ell}^{\mathrm{MFT}}+I_{\Delta, \ell}^\delta=\left(1+(-1)^{\ell} \frac{1}{\cosh ^2(\pi \mu)}\right) I_{\Delta, \ell}^\delta .
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(I_{\Delta, \ell}^\delta\sim  C^2\)</span> is manifestly positive.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="../../js/random_text.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

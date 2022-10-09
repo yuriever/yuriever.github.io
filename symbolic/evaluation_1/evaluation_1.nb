@@ -1,0 +1,2293 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     98205,       2285]
+NotebookOptionsPosition[     93910,       2206]
+NotebookOutlinePosition[     94340,       2223]
+CellTagsIndexPosition[     94297,       2220]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "lily`"}]], "Code",
+ CellChangeTimes->{{3.873983149918378*^9, 3.873983154671152*^9}, {
+  3.873983436554804*^9, 3.873983436916552*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"4688a8b7-fd89-4ccf-9928-aaabf17813cb"],
+
+Cell[CellGroupData[{
+
+Cell["Sub-expressions", "Subsection",
+ CellChangeTimes->{{3.868360307250354*^9, 
+  3.86836031859904*^9}},ExpressionUUID->"97a14efc-de85-4b54-8d21-\
+cdbc3a1b12d0"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.868072837446722*^9, 3.8680728410839853`*^9}, {
+   3.868072993612274*^9, 3.8680731089738903`*^9}, {3.868073139670013*^9, 
+   3.8680731431522417`*^9}, {3.8680731748657217`*^9, 3.868073229440899*^9}, {
+   3.868074040347677*^9, 3.868074040631054*^9}, {3.868074247386303*^9, 
+   3.868074287446145*^9}, {3.868074402091631*^9, 3.868074416388975*^9}, {
+   3.868074460272471*^9, 3.868074481129107*^9}, {3.86807453979683*^9, 
+   3.868074598620102*^9}, {3.8680746403491287`*^9, 3.868074642737039*^9}, {
+   3.868074789008165*^9, 3.868074809199923*^9}, {3.868074847955641*^9, 
+   3.868074906636516*^9}, {3.868074943233528*^9, 3.868074969025695*^9}, {
+   3.868075034179491*^9, 3.868075053325945*^9}, {3.8680750839993057`*^9, 
+   3.868075098675708*^9}, {3.8680751910469007`*^9, 3.86807521971815*^9}, {
+   3.868075365161583*^9, 3.8680753729445753`*^9}, {3.868075413879199*^9, 
+   3.868075698206451*^9}, {3.868075789097538*^9, 3.868075903562899*^9}, {
+   3.868075939921463*^9, 3.868076044110771*^9}, {3.8680760797409554`*^9, 
+   3.868076099649325*^9}, {3.868076132707366*^9, 3.868076164565003*^9}, 
+   3.8680762402384357`*^9, {3.868076483762299*^9, 3.868076554064248*^9}, {
+   3.8680799549737453`*^9, 3.868079970574403*^9}, {3.868080048374864*^9, 
+   3.868080091943009*^9}, {3.868360275804521*^9, 3.8683602848385773`*^9}, {
+   3.8683603285667667`*^9, 3.868360367112012*^9}, {3.8683604984393272`*^9, 
+   3.868360499202731*^9}, {3.868360603608027*^9, 3.868360666009816*^9}, {
+   3.868361944353486*^9, 3.868361944556658*^9}, {3.86836515666917*^9, 
+   3.868365176506464*^9}, {3.868365435680327*^9, 3.868365439083246*^9}, {
+   3.8683656927373333`*^9, 3.868365697632778*^9}, {3.868365731733963*^9, 
+   3.8683657466591187`*^9}, {3.868366030135829*^9, 3.868366034954521*^9}, {
+   3.868366101532708*^9, 3.868366140722603*^9}, {3.868366231371475*^9, 
+   3.8683662329420557`*^9}, {3.868366316703269*^9, 3.868366353459511*^9}, {
+   3.8683664646314373`*^9, 3.8683665290665827`*^9}, {3.868366580777622*^9, 
+   3.868366580964386*^9}, {3.868366698475741*^9, 3.8683667074241056`*^9}, {
+   3.8683667398140697`*^9, 3.868366756893911*^9}, {3.8683669017580023`*^9, 
+   3.868366903064476*^9}, {3.8683727559169617`*^9, 3.868372767009883*^9}, {
+   3.8683983174384317`*^9, 3.868398344746455*^9}, 3.868407574128384*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"4e128196-bfdc-4116-abf6-50b4737809e8"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"subExpression", "//", "Attributes"}], " ", "=", " ", 
+       RowBox[{"{", "HoldFirst", "}"}]}], ";"}], "\n", 
+     RowBox[{"subExpression", "[", 
+      RowBox[{"expr_", ",", 
+       RowBox[{"wrapper_", ":", "HoldForm"}], ",", 
+       RowBox[{"opts", ":", 
+        RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}]}], " ", ":=", "\n", 
+    "    ", 
+    RowBox[{"Cases", "[", 
+     RowBox[{
+      RowBox[{"Unevaluated", "@", "expr"}], ",", "\n", "        ", 
+      RowBox[{"subexpr_", ":>", 
+       RowBox[{"wrapper", "@", "subexpr"}]}], ",", "\n", "        ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "Infinity"}], "}"}], ",", "\n", "        ", 
+      RowBox[{"FilterRules", "[", 
+       RowBox[{
+        RowBox[{"{", "opts", "}"}], ",", 
+        RowBox[{"Options", "[", "Cases", "]"}]}], "]"}], ",", "\n", 
+      "        ", 
+      RowBox[{"Heads", "->", "False"}]}], "\n", "    ", "]"}]}], ";"}], 
+  "*)"}]], "Code",
+ CellChangeTimes->{{3.8739835147063017`*^9, 
+  3.873983514711956*^9}},ExpressionUUID->"190dd173-15de-4bb8-9f83-\
+90a51d2ecf87"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"expr0", "=", 
+   RowBox[{"f", "[", 
+    RowBox[{"g", "[", "h", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"list", "=", 
+  RowBox[{
+   RowBox[{"subExpression", "[", 
+    RowBox[{"Evaluate", "@", "expr0"}], "]"}], "//", 
+   "ReleaseHold"}]}]}], "Code",
+ CellChangeTimes->{{3.868072837446722*^9, 3.8680728410839853`*^9}, {
+   3.868072993612274*^9, 3.8680731089738903`*^9}, {3.868073139670013*^9, 
+   3.8680731431522417`*^9}, {3.8680731748657217`*^9, 3.868073229440899*^9}, {
+   3.868074040347677*^9, 3.868074040631054*^9}, {3.868074247386303*^9, 
+   3.868074287446145*^9}, {3.868074402091631*^9, 3.868074416388975*^9}, {
+   3.868074460272471*^9, 3.868074481129107*^9}, {3.86807453979683*^9, 
+   3.868074598620102*^9}, {3.8680746403491287`*^9, 3.868074642737039*^9}, {
+   3.868074789008165*^9, 3.868074809199923*^9}, {3.868074847955641*^9, 
+   3.868074906636516*^9}, {3.868074943233528*^9, 3.868074969025695*^9}, {
+   3.868075034179491*^9, 3.868075053325945*^9}, {3.8680750839993057`*^9, 
+   3.868075098675708*^9}, {3.8680751910469007`*^9, 3.86807521971815*^9}, {
+   3.868075365161583*^9, 3.8680753729445753`*^9}, {3.868075413879199*^9, 
+   3.868075698206451*^9}, {3.868075789097538*^9, 3.868075903562899*^9}, {
+   3.868075939921463*^9, 3.868076044110771*^9}, {3.8680760797409554`*^9, 
+   3.868076099649325*^9}, {3.868076132707366*^9, 3.868076164565003*^9}, 
+   3.8680762402384357`*^9, {3.868076483762299*^9, 3.868076554064248*^9}, {
+   3.8680799549737453`*^9, 3.868079970574403*^9}, {3.868080048374864*^9, 
+   3.868080091943009*^9}, {3.868360275804521*^9, 3.8683602848385773`*^9}, {
+   3.8683603285667667`*^9, 3.868360367112012*^9}, {3.8683604984393272`*^9, 
+   3.868360499202731*^9}, {3.868360603608027*^9, 3.868360666009816*^9}, {
+   3.868361944353486*^9, 3.868361944556658*^9}, {3.86836515666917*^9, 
+   3.868365176506464*^9}, {3.868365435680327*^9, 3.868365439083246*^9}, {
+   3.8683656927373333`*^9, 3.868365697632778*^9}, {3.868365731733963*^9, 
+   3.8683657466591187`*^9}, {3.868366030135829*^9, 3.868366034954521*^9}, {
+   3.868366101532708*^9, 3.868366140722603*^9}, {3.868366231371475*^9, 
+   3.8683662329420557`*^9}, {3.868366316703269*^9, 3.868366353459511*^9}, {
+   3.8683664646314373`*^9, 3.8683665290665827`*^9}, {3.868366580777622*^9, 
+   3.868366580964386*^9}, {3.868366698475741*^9, 3.8683667074241056`*^9}, {
+   3.8683667398140697`*^9, 3.868366756893911*^9}, {3.8683669017580023`*^9, 
+   3.868366903064476*^9}, {3.8683727559169617`*^9, 3.868372767009883*^9}, {
+   3.8683983174384317`*^9, 3.868398344746455*^9}, 3.868407574128384*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"6232de1c-a313-4a57-b0a2-9746eb873b02"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"h", ",", 
+   RowBox[{"g", "[", "h", "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"g", "[", "h", "]"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.868806029018552*^9, 3.873983041379401*^9, {3.873983086830002*^9, 
+   3.873983101237397*^9}, 3.873983159988618*^9, 3.8739834018106937`*^9, 
+   3.873983520569829*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"a9814f3c-21fc-46da-b470-376277b61ab2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"tree0", "=", 
+  RowBox[{"expr0", "//", "ExpressionTree"}]}], "\n", 
+ RowBox[{"tree0", "//", 
+  RowBox[{"TreeCases", "[", "_", "]"}]}]}], "Code",
+ CellChangeTimes->{{3.868802153639291*^9, 3.868802193654977*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"bfe8fd1c-7107-45d8-818d-efa37fda2a93"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["Trees",
+   DynamicModuleBox[{Typeset`tree = HoldComplete[
+     Tree[$CellContext`f, {
+       Tree[$CellContext`g, {
+         Tree[$CellContext`h, None]}]}]]}, 
+    NamespaceBox[{
+      {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], LineBox[{{0., 2.}, {0., 1.}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], LineBox[{{0., 1.}, {0., 0.}}]}}, 
+      {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+       TagBox[InsetBox[
+         FrameBox["f",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0., 2.}],
+        "DynamicName",
+        BoxID -> "VertexID$1"], 
+       TagBox[InsetBox[
+         FrameBox["g",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0., 1.}],
+        "DynamicName",
+        BoxID -> "VertexID$2"], 
+       TagBox[InsetBox[
+         FrameBox["h",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0., 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$3"]}}]]],
+  AlignmentPoint->Center,
+  Axes->False,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ContentSelectable->Automatic,
+  DefaultBaseStyle->"TreeGraphics",
+  Epilog->{},
+  FormatType->StandardForm,
+  Frame->False,
+  FrameLabel->FormBox["False", StandardForm],
+  FrameStyle->{},
+  FrameTicks->None,
+  FrameTicksStyle->{},
+  GridLines->None,
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  LabelStyle->{},
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->Automatic,
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{
+  3.868806029360244*^9, 3.8739830466976433`*^9, {3.873983102447185*^9, 
+   3.8739831064449873`*^9}, 3.87398316106743*^9, 3.8739834026240473`*^9, 
+   3.873983521656402*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"3ea41c55-6928-42b8-a5e9-ef1f774b4fd0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[
+    NamespaceBox["Trees",
+     DynamicModuleBox[{Typeset`tree = HoldComplete[
+       Tree[$CellContext`h, None]]}, 
+      NamespaceBox[{{}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         TagBox[InsetBox[
+           FrameBox["h",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->0,
+            StripOnInput->False], {1., 1.}],
+          "DynamicName",
+          BoxID -> "VertexID$1"]}}]]],
+    AlignmentPoint->Center,
+    Axes->False,
+    AxesLabel->None,
+    AxesOrigin->Automatic,
+    AxesStyle->{},
+    Background->None,
+    BaseStyle->{},
+    BaselinePosition->Automatic,
+    ContentSelectable->Automatic,
+    DefaultBaseStyle->"TreeGraphics",
+    Epilog->{},
+    FormatType->StandardForm,
+    Frame->False,
+    FrameLabel->FormBox["False", StandardForm],
+    FrameStyle->{},
+    FrameTicks->None,
+    FrameTicksStyle->{},
+    GridLines->None,
+    GridLinesStyle->{},
+    ImageMargins->0.,
+    ImagePadding->All,
+    ImageSize->Automatic,
+    LabelStyle->{},
+    PlotLabel->None,
+    PlotRange->All,
+    PlotRangeClipping->False,
+    PlotRangePadding->0.1,
+    PlotRegion->Automatic,
+    Prolog->{},
+    RotateLabel->True,
+    Ticks->Automatic,
+    TicksStyle->{}], ",", 
+   GraphicsBox[
+    NamespaceBox["Trees",
+     DynamicModuleBox[{Typeset`tree = HoldComplete[
+       Tree[$CellContext`g, {
+         Tree[$CellContext`h, None]}]]}, 
+      NamespaceBox[{
+        {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+         AbsoluteThickness[1], Opacity[0.7], Arrowheads[Medium], 
+         LineBox[{{0., 1.}, {0., 0.}}]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         TagBox[InsetBox[
+           FrameBox["g",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->4,
+            StripOnInput->False], {0., 1.}],
+          "DynamicName",
+          BoxID -> "VertexID$1"], 
+         TagBox[InsetBox[
+           FrameBox["h",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->0,
+            StripOnInput->False], {0., 0.}],
+          "DynamicName",
+          BoxID -> "VertexID$2"]}}]]],
+    AlignmentPoint->Center,
+    Axes->False,
+    AxesLabel->None,
+    AxesOrigin->Automatic,
+    AxesStyle->{},
+    Background->None,
+    BaseStyle->{},
+    BaselinePosition->Automatic,
+    ContentSelectable->Automatic,
+    DefaultBaseStyle->"TreeGraphics",
+    Epilog->{},
+    FormatType->StandardForm,
+    Frame->False,
+    FrameLabel->FormBox["False", StandardForm],
+    FrameStyle->{},
+    FrameTicks->None,
+    FrameTicksStyle->{},
+    GridLines->None,
+    GridLinesStyle->{},
+    ImageMargins->0.,
+    ImagePadding->All,
+    ImageSize->Automatic,
+    LabelStyle->{},
+    PlotLabel->None,
+    PlotRange->All,
+    PlotRangeClipping->False,
+    PlotRangePadding->Automatic,
+    PlotRegion->Automatic,
+    Prolog->{},
+    RotateLabel->True,
+    Ticks->Automatic,
+    TicksStyle->{}], ",", 
+   GraphicsBox[
+    NamespaceBox["Trees",
+     DynamicModuleBox[{Typeset`tree = HoldComplete[
+       Tree[$CellContext`f, {
+         Tree[$CellContext`g, {
+           Tree[$CellContext`h, None]}]}]]}, 
+      NamespaceBox[{
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+         {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+          AbsoluteThickness[1], LineBox[{{0., 2.}, {0., 1.}}]}, 
+         {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+          AbsoluteThickness[1], LineBox[{{0., 1.}, {0., 0.}}]}}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         TagBox[InsetBox[
+           FrameBox["f",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->4,
+            StripOnInput->False], {0., 2.}],
+          "DynamicName",
+          BoxID -> "VertexID$1"], 
+         TagBox[InsetBox[
+           FrameBox["g",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->4,
+            StripOnInput->False], {0., 1.}],
+          "DynamicName",
+          BoxID -> "VertexID$2"], 
+         TagBox[InsetBox[
+           FrameBox["h",
+            Background->Directive[
+              RGBColor[
+              0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+            BaseStyle->GrayLevel[0],
+            FrameStyle->Directive[
+              RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+              AbsoluteThickness[1], 
+              Opacity[1]],
+            ImageSize->Automatic,
+            RoundingRadius->0,
+            StripOnInput->False], {0., 0.}],
+          "DynamicName",
+          BoxID -> "VertexID$3"]}}]]],
+    AlignmentPoint->Center,
+    Axes->False,
+    AxesLabel->None,
+    AxesOrigin->Automatic,
+    AxesStyle->{},
+    Background->None,
+    BaseStyle->{},
+    BaselinePosition->Automatic,
+    ContentSelectable->Automatic,
+    DefaultBaseStyle->"TreeGraphics",
+    Epilog->{},
+    FormatType->StandardForm,
+    Frame->False,
+    FrameLabel->FormBox["False", StandardForm],
+    FrameStyle->{},
+    FrameTicks->None,
+    FrameTicksStyle->{},
+    GridLines->None,
+    GridLinesStyle->{},
+    ImageMargins->0.,
+    ImagePadding->All,
+    ImageSize->Automatic,
+    LabelStyle->{},
+    PlotLabel->None,
+    PlotRange->All,
+    PlotRangeClipping->False,
+    PlotRangePadding->Automatic,
+    PlotRegion->Automatic,
+    Prolog->{},
+    RotateLabel->True,
+    Ticks->Automatic,
+    TicksStyle->{}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.868806029360244*^9, 3.8739830466976433`*^9, {3.873983102447185*^9, 
+   3.8739831064449873`*^9}, 3.87398316106743*^9, 3.8739834026240473`*^9, 
+   3.8739835217024307`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"db71c043-149a-47b5-ac18-62d02eb57d1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"exprlist", "=", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}]}], ";"}], "\n", 
+ RowBox[{"rulelist", "=", 
+  RowBox[{
+   RowBox[{"Outer", "[", 
+    RowBox[{"Rule", ",", "list", ",", "exprlist"}], "]"}], "//", 
+   "Flatten"}]}]}], "Code",
+ CellChangeTimes->{{3.868361511551206*^9, 3.868361512159882*^9}, 
+   3.868366275610627*^9, {3.8683728465843782`*^9, 3.868372848142825*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"097f8a5a-91d6-4cc2-8ee6-5039a845f09b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"h", "\[Rule]", "a"}], ",", 
+   RowBox[{"h", "\[Rule]", "b"}], ",", 
+   RowBox[{
+    RowBox[{"g", "[", "h", "]"}], "\[Rule]", "a"}], ",", 
+   RowBox[{
+    RowBox[{"g", "[", "h", "]"}], "\[Rule]", "b"}], ",", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"g", "[", "h", "]"}], "]"}], "\[Rule]", "a"}], ",", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"g", "[", "h", "]"}], "]"}], "\[Rule]", "b"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.868806029382324*^9, 3.87398304920479*^9, 
+  3.873983109810277*^9, 3.873983162679261*^9, 3.873983404990987*^9, 
+  3.87398352404736*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"b3f9dd93-dd10-4ffd-a4f6-5267e6198276"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Replace", "[", 
+    RowBox[{"expr0", ",", "#", ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "Infinity"}], "}"}]}], "]"}], "&"}], "/@", 
+  "rulelist"}]], "Code",
+ CellChangeTimes->{{3.868366062979322*^9, 3.868366086727728*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"ed7f42d2-fe1a-40f0-9639-d0cda9896a35"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"g", "[", "a", "]"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"g", "[", "b", "]"}], "]"}], ",", 
+   RowBox[{"f", "[", "a", "]"}], ",", 
+   RowBox[{"f", "[", "b", "]"}], ",", "a", ",", "b"}], "}"}]], "Output",
+ CellChangeTimes->{3.868806029389208*^9, 3.873983112041079*^9, 
+  3.873983163779749*^9, 3.873983405721712*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"94b73a89-f6dc-4851-87f7-064039b4be0d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Replace", "[", 
+  RowBox[{"expr0", ",", 
+   RowBox[{"g", "->", "a"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "Infinity"}], "}"}], ",", 
+   RowBox[{"Heads", "\[Rule]", "False"}]}], "]"}], "\n", 
+ RowBox[{"Replace", "[", 
+  RowBox[{"expr0", ",", 
+   RowBox[{"g", "->", "a"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "Infinity"}], "}"}], ",", 
+   RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}]}], "Code",
+ CellChangeTimes->{{3.868372585147094*^9, 3.8683726320191813`*^9}, {
+  3.868372966418688*^9, 3.8683730208819933`*^9}, {3.86839811840279*^9, 
+  3.868398136889892*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"0ffc9f1a-d3a6-47a6-b060-edcbbf05f63f"],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"g", "[", "h", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.8688060293935013`*^9, 3.8739831135804462`*^9, 
+  3.873983164669244*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"55f2b820-621e-48c3-8d27-7913d4c67b10"],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"a", "[", "h", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.8688060293935013`*^9, 3.8739831135804462`*^9, 
+  3.873983164671595*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"167d5006-6647-4c89-849f-a30f2fd265df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Replace", "[", 
+  RowBox[{"expr0", ",", 
+   RowBox[{
+    RowBox[{"f", "[", "g", "]"}], "->", "a"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "Infinity"}], "}"}], ",", 
+   RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}], "\n", 
+ RowBox[{"Replace", "[", 
+  RowBox[{"expr0", ",", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"g", "[", "x_", "]"}], "]"}], ":>", 
+    RowBox[{"a", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "Infinity"}], "}"}]}], "]"}]}], "Code",
+ CellChangeTimes->{{3.868372585147094*^9, 3.8683726320191813`*^9}, {
+  3.868372966418688*^9, 3.868373045893462*^9}, {3.868398218727092*^9, 
+  3.868398226745434*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"b64c9e27-decb-4e84-850b-b7b43bfbaa83"],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"g", "[", "h", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.868806029400963*^9, 3.87398311499009*^9, 
+  3.873983165458308*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"0ea6d8e9-8bfd-4683-882f-58a589bdd671"],
+
+Cell[BoxData[
+ RowBox[{"a", "[", "h", "]"}]], "Output",
+ CellChangeTimes->{3.868806029400963*^9, 3.87398311499009*^9, 
+  3.8739831654630623`*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"10452855-d0c1-4195-a18e-332830819255"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TreeForm", "Subsection",
+ CellChangeTimes->{{3.868360294607422*^9, 
+  3.8683603014318733`*^9}},ExpressionUUID->"34f14493-bb29-4a81-8350-\
+91febe46ade9"],
+
+Cell["The functions TF and exportSVG are in lilyric`.", "Text",
+ CellChangeTimes->{{3.868405200102694*^9, 3.868405216564969*^9}, {
+  3.868805288977139*^9, 3.8688052960642633`*^9}, {3.868806688773161*^9, 
+  3.868806689983879*^9}},ExpressionUUID->"03b1bc1a-ba68-4471-8d88-\
+6a79f97c42f9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"L", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "^", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}]}], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{"#", ",", "x"}], "]"}]}], ")"}], "&"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"L", "[", "n", "]"}], "//", "ExpressionTree"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "n", "]"}], "//", 
+   RowBox[{"TF", "[", "]"}]}], "//", 
+  RowBox[{"exportSVG", "[", "\"\<tree_example_Witt\>\"", "]"}]}]}], "Code",
+ CellChangeTimes->{{3.863621859545549*^9, 3.863621863188158*^9}, 
+   3.8636224100133247`*^9, {3.863626011995235*^9, 3.863626012534354*^9}, {
+   3.868071140868163*^9, 3.868071147200748*^9}, {3.868073307194695*^9, 
+   3.868073313803598*^9}, {3.868074006688285*^9, 3.868074011972086*^9}, {
+   3.868074154091535*^9, 3.868074186228428*^9}, {3.868405184576015*^9, 
+   3.868405197596271*^9}, {3.868407587871675*^9, 3.868407605949523*^9}, {
+   3.868802214813087*^9, 3.8688022186086397`*^9}, {3.868805343810773*^9, 
+   3.868805364384709*^9}, {3.868805394615584*^9, 3.868805400954081*^9}, {
+   3.868805575168589*^9, 3.868805579192842*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"aeaf58c5-277f-4c23-bf80-7e9084868b8a"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["Trees",
+   DynamicModuleBox[{Typeset`tree = HoldComplete[
+     Tree[Function, {
+       Tree[Times, {
+         Tree[Power, {
+           Tree[$CellContext`x, None], 
+           Tree[Plus, {
+             Tree[$CellContext`n, None], 
+             Tree[1, None]}]}], 
+         Tree[D, {
+           Tree[Slot, {
+             Tree[1, None]}], 
+           Tree[$CellContext`x, None]}]}]}]]}, 
+    NamespaceBox[{
+      {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.4470719035407653`, 3.3075929223788925`}, {
+         1.4470719035407653`, 2.4806946917841692`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.4470719035407653`, 2.4806946917841692`}, {
+         0.41344911529736156`, 1.6537964611894462`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.4470719035407653`, 2.4806946917841692`}, {
+         2.4806946917841692`, 1.6537964611894462`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.41344911529736156`, 1.6537964611894462`}, {0., 
+         0.8268982305947232}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.41344911529736156`, 1.6537964611894462`}, {
+         0.8268982305947231, 0.8268982305947232}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.8268982305947231, 0.8268982305947232}, {
+         0.41344911529736156`, 0.}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.8268982305947231, 0.8268982305947232}, {
+         1.2403473458920846`, 0.}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{2.4806946917841692`, 1.6537964611894462`}, {
+         2.067245576486808, 0.8268982305947232}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{2.4806946917841692`, 1.6537964611894462`}, {
+         2.8941438070815306`, 0.8268982305947232}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{2.067245576486808, 0.8268982305947232}, {2.067245576486808, 
+         0.}}]}}, 
+      {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+       TagBox[InsetBox[
+         FrameBox["Function",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {1.4470719035407653, 3.3075929223788925}],
+        "DynamicName",
+        BoxID -> "VertexID$1"], 
+       TagBox[InsetBox[
+         FrameBox["Times",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {1.4470719035407653, 2.4806946917841692}],
+        "DynamicName",
+        BoxID -> "VertexID$2"], 
+       TagBox[InsetBox[
+         FrameBox["Power",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.41344911529736156, 1.6537964611894462}],
+        "DynamicName",
+        BoxID -> "VertexID$3"], 
+       TagBox[InsetBox[
+         FrameBox["x",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0., 0.8268982305947232}],
+        "DynamicName",
+        BoxID -> "VertexID$4"], 
+       TagBox[InsetBox[
+         FrameBox["Plus",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.8268982305947231, 0.8268982305947232}],
+        "DynamicName",
+        BoxID -> "VertexID$5"], 
+       TagBox[InsetBox[
+         FrameBox["n",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0.41344911529736156, 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$6"], 
+       TagBox[InsetBox[
+         FrameBox["1",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.2403473458920846, 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$7"], 
+       TagBox[InsetBox[
+         FrameBox["D",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {2.4806946917841692, 1.6537964611894462}],
+        "DynamicName",
+        BoxID -> "VertexID$8"], 
+       TagBox[InsetBox[
+         FrameBox["Slot",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {2.067245576486808, 0.8268982305947232}],
+        "DynamicName",
+        BoxID -> "VertexID$9"], 
+       TagBox[InsetBox[
+         FrameBox["1",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {2.067245576486808, 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$10"], 
+       TagBox[InsetBox[
+         FrameBox["x",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameStyle->Directive[
+            RGBColor[0.2823529411764706, 0.4, 0.2823529411764706], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {2.8941438070815306, 0.8268982305947232}],
+        "DynamicName",
+        BoxID -> "VertexID$11"]}}]]],
+  AlignmentPoint->Center,
+  Axes->False,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ContentSelectable->Automatic,
+  DefaultBaseStyle->"TreeGraphics",
+  Epilog->{},
+  FormatType->StandardForm,
+  Frame->False,
+  FrameLabel->FormBox["False", StandardForm],
+  FrameStyle->{},
+  FrameTicks->None,
+  FrameTicksStyle->{},
+  GridLines->None,
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  LabelStyle->{},
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->Automatic,
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{3.868806029413692*^9, 3.873983119272067*^9, 
+  3.873983236492148*^9, 3.8739835322866783`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"b1349e8f-0a8b-47a8-b96d-5deb83ff5490"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+      11}, {{{1, 2}, {2, 3}, {3, 4}, {3, 5}, {5, 6}, {5, 7}, {2, 8}, {8, 9}, {
+       9, 10}, {8, 11}}, Null}, {
+      AnnotationRules -> {
+        6 -> {"Subexpression" -> HoldForm[$CellContext`n]}, 
+         2 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1) 
+             D[#, $CellContext`x]]}, 
+         1 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1) 
+             D[#, $CellContext`x]& ]}, 10 -> {"Subexpression" -> HoldForm[1]},
+          5 -> {"Subexpression" -> HoldForm[$CellContext`n + 1]}, 
+         11 -> {"Subexpression" -> HoldForm[$CellContext`x]}, 
+         8 -> {"Subexpression" -> HoldForm[
+             D[#, $CellContext`x]]}, 
+         3 -> {"Subexpression" -> 
+           HoldForm[$CellContext`x^($CellContext`n + 1)]}, 
+         4 -> {"Subexpression" -> HoldForm[$CellContext`x]}, 
+         9 -> {"Subexpression" -> HoldForm[#]}, 
+         7 -> {"Subexpression" -> HoldForm[1]}}, 
+       EdgeShapeFunction -> {"Line"}, EdgeStyle -> {
+         RGBColor[1, 0.5, 0.5]}, FormatType -> StandardForm, GraphLayout -> 
+       "LayeredDigraphEmbedding", VertexLabels -> {6 -> Placed[
+           HoldForm[$CellContext`n], Before], 3 -> Placed[Power, Before], 11 -> 
+         Placed[
+           HoldForm[$CellContext`x], Before], 5 -> Placed[Plus, Before], 8 -> 
+         Placed[D, Before], 7 -> Placed[
+           HoldForm[1], Before], 10 -> Placed[
+           HoldForm[1], Before], 9 -> Placed[Slot, Before], 4 -> Placed[
+           HoldForm[$CellContext`x], Before], 2 -> Placed[Times, Before], 1 -> 
+         Placed[Function, Before]}, VertexLabelStyle -> {
+         RGBColor[0.5, 0.5, 1]}, VertexShapeFunction -> {"Circle"}, 
+       VertexSize -> {Tiny}, VertexStyle -> {
+         RGBColor[0.87, 0.94, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {RGBColor[1, 0.5, 0.5], Opacity[0.7], LineBox[{{0., 4.}, {0., 3.}}], 
+        LineBox[{{0., 3.}, {-1., 2.}}], LineBox[{{0., 3.}, {0., 2.}}], 
+        LineBox[{{-1., 2.}, {-2., 1.}}], LineBox[{{-1., 2.}, {-1., 1.}}], 
+        LineBox[{{-1., 1.}, {-2., 0.}}], LineBox[{{-1., 1.}, {-1., 0.}}], 
+        LineBox[{{0., 2.}, {1., 1.}}], LineBox[{{0., 2.}, {0., 1.}}], 
+        LineBox[{{1., 1.}, {1., 0.}}]}, 
+       {RGBColor[0.87, 0.94, 1], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 4.}, 0.025], InsetBox[
+          StyleBox["Function",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-0.025, 4.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 3.}, 0.025], InsetBox[
+          StyleBox["Times",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-0.025, 3.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 2.}, 0.025], InsetBox[
+          StyleBox["Power",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-1.025, 2.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-2., 1.}, 0.025], InsetBox[
+          StyleBox["x",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-2.025, 1.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 1.}, 0.025], InsetBox[
+          StyleBox["Plus",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-1.025, 1.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-2., 0.}, 0.025], InsetBox[
+          StyleBox["n",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-2.025, 0.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-1., 0.}, 0.025], InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-1.025, 0.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 2.}, 0.025], InsetBox[
+          StyleBox["D",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-0.025, 2.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1., 1.}, 0.025], InsetBox[
+          StyleBox["Slot",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {0.975, 1.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1., 0.}, 0.025], InsetBox[
+          StyleBox["1",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {0.975, 0.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 1.}, 0.025], InsetBox[
+          StyleBox["x",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-0.025, 1.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->StandardForm,
+  FrameTicks->None,
+  ImageMargins->0.,
+  ImageSize->Automatic]], "Output",
+ CellChangeTimes->{3.868806029413692*^9, 3.873983119272067*^9, 
+  3.873983236492148*^9, 3.873983532467313*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"ffafba83-4174-4ee9-b5da-b37dae345fbd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "f", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"divergence", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Block", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"$RecursionLimit", "=", "20"}], ",", "f"}], "}"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"f", ":=", 
+         RowBox[{"-", "f"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Trace", "[", 
+         RowBox[{"f", ",", "f"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "f"}], "->", "\"\<-f\>\""}], "}"}]}], "//", 
+    "ReleaseHold"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"divergence", "//", 
+   RowBox[{"TF", "[", "List", "]"}]}], "//", 
+  RowBox[{"exportSVG", "[", "\"\<trace1\>\"", "]"}]}]}], "Code",
+ CellChangeTimes->{{3.8636220956324778`*^9, 3.863622111216934*^9}, {
+   3.863622311433044*^9, 3.863622314598051*^9}, {3.863622415195644*^9, 
+   3.863622479419939*^9}, {3.863625126247444*^9, 3.863625132217725*^9}, {
+   3.863625187405693*^9, 3.863625188580134*^9}, {3.863626465897623*^9, 
+   3.863626471445561*^9}, {3.8636270562257957`*^9, 3.863627176107574*^9}, {
+   3.863627267935248*^9, 3.863627317227868*^9}, {3.863627363321826*^9, 
+   3.863627442555543*^9}, {3.863627489983713*^9, 3.863627502611228*^9}, {
+   3.8680709965870256`*^9, 3.868070997176536*^9}, {3.868071155259308*^9, 
+   3.868071161532401*^9}, {3.868407529408078*^9, 3.868407561557654*^9}, {
+   3.868407625955061*^9, 3.868407648751637*^9}, {3.868805274577271*^9, 
+   3.8688052749912157`*^9}, {3.868805445101747*^9, 3.8688054603056393`*^9}, 
+   3.868805593438224*^9},
+ CellLabel->"In[13]:=",ExpressionUUID->"dd4292bd-6a65-41f0-8d29-71146d2d682f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "$RecursionLimit", "reclim2", 
+   "\"Recursion depth of \\!\\(\\*RowBox[{\\\"20\\\"}]\\) exceeded during \
+evaluation of \\!\\(\\*RowBox[{\\\"-\\\", \\\"f\\\"}]\\).\"", 2, 14, 1, 
+   17337850519820873981, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8688060295569763`*^9, 3.87398354053684*^9},
+ CellLabel->
+  "During evaluation of \
+In[13]:=",ExpressionUUID->"d3dfd437-add1-45e9-9dae-be9f204e2df4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+       RowBox[{"{", 
+        RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+         RowBox[{"{", 
+          RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+           RowBox[{"{", 
+            RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+               RowBox[{"{", 
+                RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"f", ",", "\<\"-f\"\>"}], "}"}]}], "}"}]}], 
+                    "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+                  "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+      "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8688060296155787`*^9, 3.8739835406243057`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"f1c0b17f-e720-4fc2-995f-53ef9eddb8d7"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+       20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+       38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 
+      51}, {{{1, 2}, {1, 3}, {1, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}, {
+       7, 10}, {10, 11}, {10, 12}, {10, 13}, {13, 14}, {13, 15}, {13, 16}, {
+       16, 17}, {16, 18}, {16, 19}, {19, 20}, {19, 21}, {19, 22}, {22, 23}, {
+       22, 24}, {22, 25}, {25, 26}, {25, 27}, {25, 28}, {28, 29}, {28, 30}, {
+       28, 31}, {31, 32}, {31, 33}, {31, 34}, {34, 35}, {34, 36}, {34, 37}, {
+       37, 38}, {37, 39}, {37, 40}, {40, 41}, {40, 42}, {40, 43}, {43, 44}, {
+       43, 45}, {43, 46}, {46, 47}, {46, 48}, {46, 49}, {49, 50}, {49, 51}}, 
+       Null}, {AnnotationRules -> {
+        6 -> {"Subexpression" -> HoldForm["-f"]}, 
+         38 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         23 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         1 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]]]]]]}, 
+         2 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         31 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f"]]]]]]]]}, 
+         21 -> {"Subexpression" -> HoldForm["-f"]}, 
+         36 -> {"Subexpression" -> HoldForm["-f"]}, 
+         24 -> {"Subexpression" -> HoldForm["-f"]}, 
+         18 -> {"Subexpression" -> HoldForm["-f"]}, 
+         12 -> {"Subexpression" -> HoldForm["-f"]}, 
+         10 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]]]}, 
+         49 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f"]]}, 
+         26 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         5 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         47 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         14 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         11 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         8 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         42 -> {"Subexpression" -> HoldForm["-f"]}, 
+         45 -> {"Subexpression" -> HoldForm["-f"]}, 
+         3 -> {"Subexpression" -> HoldForm["-f"]}, 
+         30 -> {"Subexpression" -> HoldForm["-f"]}, 
+         13 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]]}, 
+         19 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]}, 
+         27 -> {"Subexpression" -> HoldForm["-f"]}, 
+         51 -> {"Subexpression" -> HoldForm["-f"]}, 
+         35 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         17 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         4 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]]]]]}, 
+         32 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         41 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         46 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f"]]]}, 
+         22 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]}, 
+         43 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f"]]]]}, 
+         9 -> {"Subexpression" -> HoldForm["-f"]}, 
+         20 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         50 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         37 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f"]]]]]]}, 
+         39 -> {"Subexpression" -> HoldForm["-f"]}, 
+         48 -> {"Subexpression" -> HoldForm["-f"]}, 
+         40 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f"]]]]]}, 
+         29 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         44 -> {"Subexpression" -> HoldForm[$CellContext`f]}, 
+         28 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]}, 
+         34 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f"]]]]]]]}, 
+         7 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]]]]}, 
+         25 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]}, 
+         15 -> {"Subexpression" -> HoldForm["-f"]}, 
+         16 -> {"Subexpression" -> HoldForm[
+             ""[$CellContext`f, "-f", 
+              ""[$CellContext`f, "-f", 
+               ""[$CellContext`f, "-f", 
+                ""[$CellContext`f, "-f", 
+                 ""[$CellContext`f, "-f", 
+                  ""[$CellContext`f, "-f", 
+                   ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f", 
+                    ""[$CellContext`f, "-f"]]]]]]]]]]]]]}, 
+         33 -> {"Subexpression" -> HoldForm["-f"]}}, 
+       EdgeShapeFunction -> {"Line"}, EdgeStyle -> {
+         RGBColor[1, 0.5, 0.5]}, FormatType -> StandardForm, GraphLayout -> 
+       "LayeredDigraphEmbedding", VertexLabels -> {8 -> Placed[
+           HoldForm[$CellContext`f], Before], 12 -> Placed[
+           HoldForm["-f"], Before], 22 -> Placed["", Before], 14 -> Placed[
+           HoldForm[$CellContext`f], Before], 2 -> Placed[
+           HoldForm[$CellContext`f], Before], 29 -> Placed[
+           HoldForm[$CellContext`f], Before], 41 -> Placed[
+           HoldForm[$CellContext`f], Before], 38 -> Placed[
+           HoldForm[$CellContext`f], Before], 37 -> Placed["", Before], 13 -> 
+         Placed["", Before], 20 -> Placed[
+           HoldForm[$CellContext`f], Before], 21 -> Placed[
+           HoldForm["-f"], Before], 32 -> Placed[
+           HoldForm[$CellContext`f], Before], 46 -> Placed["", Before], 18 -> 
+         Placed[
+           HoldForm["-f"], Before], 47 -> Placed[
+           HoldForm[$CellContext`f], Before], 45 -> Placed[
+           HoldForm["-f"], Before], 25 -> Placed["", Before], 5 -> Placed[
+           HoldForm[$CellContext`f], Before], 7 -> Placed["", Before], 9 -> 
+         Placed[
+           HoldForm["-f"], Before], 17 -> Placed[
+           HoldForm[$CellContext`f], Before], 30 -> Placed[
+           HoldForm["-f"], Before], 50 -> Placed[
+           HoldForm[$CellContext`f], Before], 19 -> Placed["", Before], 16 -> 
+         Placed["", Before], 26 -> Placed[
+           HoldForm[$CellContext`f], Before], 51 -> Placed[
+           HoldForm["-f"], Before], 23 -> Placed[
+           HoldForm[$CellContext`f], Before], 49 -> Placed["", Before], 39 -> 
+         Placed[
+           HoldForm["-f"], Before], 34 -> Placed["", Before], 40 -> 
+         Placed["", Before], 11 -> Placed[
+           HoldForm[$CellContext`f], Before], 44 -> Placed[
+           HoldForm[$CellContext`f], Before], 6 -> Placed[
+           HoldForm["-f"], Before], 36 -> Placed[
+           HoldForm["-f"], Before], 33 -> Placed[
+           HoldForm["-f"], Before], 1 -> Placed["", Before], 15 -> Placed[
+           HoldForm["-f"], Before], 42 -> Placed[
+           HoldForm["-f"], Before], 3 -> Placed[
+           HoldForm["-f"], Before], 35 -> Placed[
+           HoldForm[$CellContext`f], Before], 28 -> Placed["", Before], 48 -> 
+         Placed[
+           HoldForm["-f"], Before], 4 -> Placed["", Before], 24 -> Placed[
+           HoldForm["-f"], Before], 10 -> Placed["", Before], 27 -> Placed[
+           HoldForm["-f"], Before], 43 -> Placed["", Before], 31 -> 
+         Placed["", Before]}, VertexLabelStyle -> {
+         RGBColor[0.5, 0.5, 1]}, VertexShapeFunction -> {"Circle"}, 
+       VertexSize -> {Tiny}, VertexStyle -> {
+         RGBColor[0.87, 0.94, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {RGBColor[1, 0.5, 0.5], Opacity[0.7], 
+        LineBox[{{0., 17.}, {-0.9999999998699991, 16.}}], 
+        LineBox[{{0., 17.}, {3.2807179195515346`*^-10, 16.}}], 
+        LineBox[{{0., 17.}, {1.000000000380723, 16.}}], 
+        LineBox[{{1.000000000380723, 16.}, {2.892619477279368*^-10, 15.}}], 
+        LineBox[{{1.000000000380723, 16.}, {1.0000000004233272`, 15.}}], 
+        LineBox[{{1.000000000380723, 16.}, {2.0000000005194494`, 15.}}], 
+        LineBox[{{2.0000000005194494`, 15.}, {1.0000000002789164`, 14.}}], 
+        LineBox[{{2.0000000005194494`, 15.}, {2.0000000004766463`, 14.}}], 
+        LineBox[{{2.0000000005194494`, 15.}, {3.0000000005663026`, 14.}}], 
+        LineBox[{{3.0000000005663026`, 14.}, {2.0000000003545892`, 13.}}], 
+        LineBox[{{3.0000000005663026`, 14.}, {3.000000000507171, 13.}}], 
+        LineBox[{{3.0000000005663026`, 14.}, {4.0000000006059935`, 13.}}], 
+        LineBox[{{4.0000000006059935`, 13.}, {3.0000000003777245`, 12.}}], 
+        LineBox[{{4.0000000006059935`, 13.}, {4.0000000005693295`, 12.}}], 
+        LineBox[{{4.0000000006059935`, 13.}, {5.000000000661188, 12.}}], 
+        LineBox[{{5.000000000661188, 12.}, {4.000000000528843, 11.}}], 
+        LineBox[{{5.000000000661188, 12.}, {5.000000000718359, 11.}}], 
+        LineBox[{{5.000000000661188, 12.}, {6.000000000807319, 11.}}], 
+        LineBox[{{6.000000000807319, 11.}, {5.000000000582176, 10.}}], 
+        LineBox[{{6.000000000807319, 11.}, {6.00000000078029, 10.}}], 
+        LineBox[{{6.000000000807319, 11.}, {7.000000000885819, 10.}}], 
+        LineBox[{{7.000000000885819, 10.}, {6.0000000005282175`, 9.}}], 
+        LineBox[{{7.000000000885819, 10.}, {7.000000000715886, 9.}}], 
+        LineBox[{{7.000000000885819, 10.}, {8.000000000838355, 9.}}], 
+        LineBox[{{8.000000000838355, 9.}, {7.000000000313918, 8.}}], 
+        LineBox[{{8.000000000838355, 9.}, {8.000000000488654, 8.}}], 
+        LineBox[{{8.000000000838355, 9.}, {9.000000000644746, 8.}}], 
+        LineBox[{{9.000000000644746, 8.}, {7.999999999918884, 7.}}], 
+        LineBox[{{9.000000000644746, 8.}, {9.000000000120025, 7.}}], 
+        LineBox[{{9.000000000644746, 8.}, {10.000000000293511`, 7.}}], 
+        LineBox[{{10.000000000293511`, 7.}, {8.999999999371141, 6.}}], 
+        LineBox[{{10.000000000293511`, 7.}, {9.999999999576318, 6.}}], 
+        LineBox[{{10.000000000293511`, 7.}, {10.999999999771177`, 6.}}], 
+        LineBox[{{10.999999999771177`, 6.}, {9.999999998903888, 5.}}], 
+        LineBox[{{10.999999999771177`, 6.}, {10.999999999061487`, 5.}}], 
+        LineBox[{{10.999999999771177`, 6.}, {11.99999999924492, 5.}}], 
+        LineBox[{{11.99999999924492, 5.}, {10.999999998507377`, 4.}}], 
+        LineBox[{{11.99999999924492, 5.}, {11.999999998746262`, 4.}}], 
+        LineBox[{{11.99999999924492, 5.}, {12.999999998955502`, 4.}}], 
+        LineBox[{{12.999999998955502`, 4.}, {11.999999998473555`, 3.}}], 
+        LineBox[{{12.999999998955502`, 4.}, {12.999999998685496`, 3.}}], 
+        LineBox[{{12.999999998955502`, 4.}, {13.999999998851706`, 3.}}], 
+        LineBox[{{13.999999998851706`, 3.}, {12.99999999833986, 2.}}], 
+        LineBox[{{13.999999998851706`, 3.}, {13.999999998539892`, 2.}}], 
+        LineBox[{{13.999999998851706`, 3.}, {14.999999998698769`, 2.}}], 
+        LineBox[{{14.999999998698769`, 2.}, {13.99999999792388, 1.}}], 
+        LineBox[{{14.999999998698769`, 2.}, {14.99999999810592, 1.}}], 
+        LineBox[{{14.999999998698769`, 2.}, {15.99999999823524, 1.}}], 
+        LineBox[{{15.99999999823524, 1.}, {15.593640032992965`, 0.}}], 
+        LineBox[{{15.99999999823524, 1.}, {16.59364003306581, 0.}}]}, 
+       {RGBColor[0.87, 0.94, 1], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 17.}, 0.025], InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], Offset[{-2, 0}, {-0.025, 17.}], 
+          ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.9999999998699991, 16.}, 0.025], InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {-1.024999999869999, 16.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.2807179195515346*^-10, 16.}, 0.025], InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {-0.02499999967192821, 16.}], ImageScaled[{1, 0.5}],
+          
+          BaseStyle->"Graphics"]}, {DiskBox[{1.000000000380723, 16.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {0.975000000380723, 16.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.892619477279368*^-10, 15.}, 0.025], InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {-0.024999999710738054, 15.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.0000000004233272, 15.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {0.9750000004233271, 15.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.0000000005194494, 15.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {1.9750000005194495, 15.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.0000000002789164, 14.}, 0.025],
+          InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {0.9750000002789164, 14.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.0000000004766463, 14.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {1.9750000004766464, 14.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{3.0000000005663026, 14.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {2.9750000005663026, 14.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.0000000003545892, 13.}, 0.025],
+          InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {1.9750000003545893, 13.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{3.000000000507171, 13.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {2.9750000005071713, 13.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4.0000000006059935, 13.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {3.9750000006059936, 13.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{3.0000000003777245, 12.}, 0.025],
+          InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {2.9750000003777246, 12.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4.0000000005693295, 12.}, 0.025],
+          InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {3.9750000005693296, 12.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000661188, 12.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {4.975000000661188, 12.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4.000000000528843, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {3.975000000528843, 11.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000718359, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {4.975000000718358, 11.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{6.000000000807319, 11.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {5.975000000807318, 11.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{5.000000000582176, 10.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {4.975000000582176, 10.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{6.00000000078029, 10.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {5.975000000780289, 10.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000885819, 10.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {6.975000000885819, 10.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{6.0000000005282175, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {5.975000000528217, 9.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000715886, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {6.975000000715886, 9.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.000000000838355, 9.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {7.975000000838355, 9.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.000000000313918, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {6.975000000313917, 8.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.000000000488654, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {7.975000000488654, 8.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.000000000644746, 8.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {8.975000000644746, 8.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{7.999999999918884, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {7.974999999918884, 7.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.000000000120025, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {8.975000000120025, 7.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.000000000293511, 7.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {9.97500000029351, 7.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{8.999999999371141, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {8.974999999371141, 6.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.999999999576318, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {9.974999999576317, 6.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999999771177, 6.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {10.974999999771176, 6.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{9.999999998903888, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {9.974999998903888, 5.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999999061487, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {10.974999999061486, 5.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{11.99999999924492, 5.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {11.97499999924492, 5.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{10.999999998507377, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {10.974999998507377, 4.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{11.999999998746262, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {11.974999998746261, 4.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{12.999999998955502, 4.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {12.974999998955502, 4.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{11.999999998473555, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {11.974999998473555, 3.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{12.999999998685496, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {12.974999998685496, 3.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{13.999999998851706, 3.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {13.974999998851706, 3.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{12.99999999833986, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {12.97499999833986, 2.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{13.999999998539892, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {13.974999998539891, 2.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{14.999999998698769, 2.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {14.974999998698769, 2.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{13.99999999792388, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {13.974999997923879, 1.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{14.99999999810592, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {14.97499999810592, 1.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{15.99999999823524, 1.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {15.974999998235239, 1.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{15.593640032992965, 0.}, 0.025], 
+         InsetBox[
+          StyleBox["f",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {15.568640032992965, 0.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}, {DiskBox[{16.59364003306581, 0.}, 0.025], 
+         InsetBox[
+          StyleBox["\<\"-f\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0.5, 0.5, 1],
+           FrontFaceColor->RGBColor[0.5, 0.5, 1],
+           BackFaceColor->RGBColor[0.5, 0.5, 1],
+           GraphicsColor->RGBColor[0.5, 0.5, 1],
+           FontColor->RGBColor[0.5, 0.5, 1]], 
+          Offset[{-2, 0}, {16.56864003306581, 0.}], ImageScaled[{1, 0.5}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->StandardForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{3.8688060296155787`*^9, 3.873983540854782*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"d0d6957e-c054-45fa-a77b-84d947833ce2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Non-standard evaluation", "Subsection",
+ CellChangeTimes->{{3.868405168015788*^9, 
+  3.868405175029995*^9}},ExpressionUUID->"cf7c15a5-b880-48b7-90c7-\
+7fc658b60d66"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"subExpressionUnhold", "[", "expr_", "]"}], ":=", "\n", "\t", 
+    RowBox[{"Cases", "[", 
+     RowBox[{"expr", ",", "_", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "Infinity"}], "}"}]}], "]"}]}], ";"}], "\n", 
+  "\t"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "=", "g"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"subExpressionUnhold", "[", 
+    RowBox[{"f", "[", 
+     RowBox[{"1", "+", "1"}], "]"}], "]"}], "//", "Trace"}], "//", 
+  "Column"}], "\n", 
+ RowBox[{"subExpression", "[", 
+  RowBox[{"f", "[", 
+   RowBox[{"1", "+", "1"}], "]"}], "]"}]}], "Code",
+ CellChangeTimes->{{3.868405364478826*^9, 3.868405387131814*^9}, {
+  3.8684054233158693`*^9, 3.868405543008144*^9}, {3.8684057952367067`*^9, 
+  3.8684058671240997`*^9}, {3.868405924405286*^9, 3.868405944833447*^9}, {
+  3.868405976955484*^9, 3.868406024155341*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"ed5ec732-a1dc-4672-aa9b-6628a7f9c3d4"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         TagBox["f",
+          HoldForm], ",", 
+         TagBox["g",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"1", "+", "1"}],
+          HoldForm], ",", 
+         TagBox["2",
+          HoldForm]}], "}"}], ",", 
+       TagBox[
+        RowBox[{"g", "[", "2", "]"}],
+        HoldForm]}], "}"}]},
+    {
+     TagBox[
+      RowBox[{"subExpressionUnhold", "[", 
+       RowBox[{"g", "[", "2", "]"}], "]"}],
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"Cases", "[", 
+       RowBox[{
+        RowBox[{"g", "[", "2", "]"}], ",", "_", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "\[Infinity]"}], "}"}]}], "]"}],
+      HoldForm]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         TagBox["\[Infinity]",
+          HoldForm], ",", 
+         TagBox["\[Infinity]",
+          HoldForm]}], "}"}], ",", 
+       TagBox[
+        RowBox[{"{", 
+         RowBox[{"0", ",", "\[Infinity]"}], "}"}],
+        HoldForm]}], "}"}]},
+    {
+     TagBox[
+      RowBox[{"Cases", "[", 
+       RowBox[{
+        RowBox[{"g", "[", "2", "]"}], ",", "_", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "\[Infinity]"}], "}"}]}], "]"}],
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"g", "[", "2", "]"}]}], "}"}],
+      HoldForm]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.868806055938286*^9, 3.8739835455911293`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"8c0705a2-cb55-42fb-b1f9-9b561f650edb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox["1",
+    HoldForm], ",", 
+   TagBox["1",
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"1", "+", "1"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"f", "[", 
+     RowBox[{"1", "+", "1"}], "]"}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{3.868806055938286*^9, 3.873983545600903*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"263836cf-646a-4358-85e5-ec8db9ddb287"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<System`*Hold*\>\"", "]"}]], "Code",
+ CellChangeTimes->{{3.868406349584812*^9, 3.868406354023622*^9}, {
+  3.868406390988933*^9, 3.868406392584453*^9}, {3.868406526168803*^9, 
+  3.8684065574006968`*^9}, {3.868406649901292*^9, 3.8684066503190947`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"49e68366-b3d2-4cc1-bce6-6295de72ceda"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Hold\"\>", ",", "\<\"HoldAll\"\>", 
+   ",", "\<\"HoldAllComplete\"\>", ",", "\<\"HoldComplete\"\>", 
+   ",", "\<\"HoldFirst\"\>", ",", "\<\"HoldForm\"\>", 
+   ",", "\<\"HoldPattern\"\>", ",", "\<\"HoldRest\"\>", 
+   ",", "\<\"NHoldAll\"\>", ",", "\<\"NHoldFirst\"\>", 
+   ",", "\<\"NHoldRest\"\>", ",", "\<\"ReleaseHold\"\>", 
+   ",", "\<\"SequenceHold\"\>", ",", "\<\"$ConditionHold\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8688060560347013`*^9, 3.873983547015562*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"c0538159-74fb-482e-ac57-261d7b490429"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", 
+  RowBox[{"\"\<System`*active*\>\"", ",", 
+   RowBox[{"IgnoreCase", "\[Rule]", "True"}]}], "]"}]], "Code",
+ CellChangeTimes->{{3.868406509794314*^9, 3.868406512099635*^9}, {
+  3.8684065598993883`*^9, 3.868406564483583*^9}, {3.868406841609157*^9, 
+  3.868406843053721*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"f2c82bb3-a00c-40a3-ba84-613dfffa444a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Active\"\>", ",", "\<\"ActiveClassification\"\>", 
+   ",", "\<\"ActiveClassificationObject\"\>", ",", "\<\"ActiveItem\"\>", 
+   ",", "\<\"ActivePrediction\"\>", ",", "\<\"ActivePredictionObject\"\>", 
+   ",", "\<\"ActiveStyle\"\>", ",", "\<\"ControlActive\"\>", 
+   ",", "\<\"IgnoringInactive\"\>", ",", "\<\"Inactive\"\>", 
+   ",", "\<\"InactiveStyle\"\>", ",", "\<\"Interactive\"\>", 
+   ",", "\<\"InteractiveTradingChart\"\>", 
+   ",", "\<\"ScheduledTaskActiveQ\"\>", 
+   ",", "\<\"$ControlActiveSetting\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.868806056114016*^9, 3.873983550638459*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"6d313b61-b8f3-438b-9146-aac0ff762455"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Code",
+ CellLabel->"In[24]:=",ExpressionUUID->"3fb60619-d43f-48ad-87ee-9a659b821c3f"]
+}, Open  ]]
+},
+WindowSize->{720, 872},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"lily.nb",
+ExpressionUUID->"a60ca2e1-c1e6-44b7-b6e8-9343b447f35e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 241, 4, 52, "Code",ExpressionUUID->"4688a8b7-fd89-4ccf-9928-aaabf17813cb"],
+Cell[CellGroupData[{
+Cell[824, 28, 162, 3, 54, "Subsection",ExpressionUUID->"97a14efc-de85-4b54-8d21-cdbc3a1b12d0"],
+Cell[989, 33, 2449, 33, 52, "Code",ExpressionUUID->"4e128196-bfdc-4116-abf6-50b4737809e8"],
+Cell[3441, 68, 1159, 31, 186, "Code",ExpressionUUID->"190dd173-15de-4bb8-9f83-90a51d2ecf87"],
+Cell[CellGroupData[{
+Cell[4625, 103, 2659, 41, 72, "Code",ExpressionUUID->"6232de1c-a313-4a57-b0a2-9746eb873b02"],
+Cell[7287, 146, 438, 10, 34, "Output",ExpressionUUID->"a9814f3c-21fc-46da-b470-376277b61ab2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7762, 161, 313, 6, 72, "Code",ExpressionUUID->"bfe8fd1c-7107-45d8-818d-efa37fda2a93"],
+Cell[8078, 169, 3210, 95, 388, "Output",ExpressionUUID->"3ea41c55-6928-42b8-a5e9-ef1f774b4fd0"],
+Cell[11291, 266, 7356, 222, 217, "Output",ExpressionUUID->"db71c043-149a-47b5-ac18-62d02eb57d1c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18684, 493, 497, 12, 72, "Code",ExpressionUUID->"097f8a5a-91d6-4cc2-8ee6-5039a845f09b"],
+Cell[19184, 507, 711, 19, 34, "Output",ExpressionUUID->"b3f9dd93-dd10-4ffd-a4f6-5267e6198276"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19932, 531, 356, 9, 52, "Code",ExpressionUUID->"ed7f42d2-fe1a-40f0-9639-d0cda9896a35"],
+Cell[20291, 542, 479, 11, 34, "Output",ExpressionUUID->"94b73a89-f6dc-4851-87f7-064039b4be0d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20807, 558, 682, 16, 72, "Code",ExpressionUUID->"0ffc9f1a-d3a6-47a6-b060-edcbbf05f63f"],
+Cell[21492, 576, 255, 5, 34, "Output",ExpressionUUID->"55f2b820-621e-48c3-8d27-7913d4c67b10"],
+Cell[21750, 583, 255, 5, 34, "Output",ExpressionUUID->"167d5006-6647-4c89-849f-a30f2fd265df"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22042, 593, 755, 19, 72, "Code",ExpressionUUID->"b64c9e27-decb-4e84-850b-b7b43bfbaa83"],
+Cell[22800, 614, 250, 5, 34, "Output",ExpressionUUID->"0ea6d8e9-8bfd-4683-882f-58a589bdd671"],
+Cell[23053, 621, 224, 4, 34, "Output",ExpressionUUID->"10452855-d0c1-4195-a18e-332830819255"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23326, 631, 158, 3, 54, "Subsection",ExpressionUUID->"34f14493-bb29-4a81-8350-91febe46ade9"],
+Cell[23487, 636, 286, 4, 51, "Text",ExpressionUUID->"03b1bc1a-ba68-4471-8d88-6a79f97c42f9"],
+Cell[CellGroupData[{
+Cell[23798, 644, 1298, 29, 110, "Code",ExpressionUUID->"aeaf58c5-277f-4c23-bf80-7e9084868b8a"],
+Cell[25099, 675, 9730, 257, 435, "Output",ExpressionUUID->"b1349e8f-0a8b-47a8-b96d-5deb83ff5490"],
+Cell[34832, 934, 7731, 156, 449, "Output",ExpressionUUID->"ffafba83-4174-4ee9-b5da-b37dae345fbd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42600, 1095, 1753, 37, 167, "Code",ExpressionUUID->"dd4292bd-6a65-41f0-8d29-71146d2d682f"],
+Cell[44356, 1134, 456, 10, 28, "Message",ExpressionUUID->"d3dfd437-add1-45e9-9dae-be9f204e2df4"],
+Cell[44815, 1146, 1739, 39, 77, "Output",ExpressionUUID->"f1c0b17f-e720-4fc2-995f-53ef9eddb8d7"],
+Cell[46557, 1187, 41566, 838, 364, "Output",ExpressionUUID->"d0d6957e-c054-45fa-a77b-84d947833ce2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88172, 2031, 171, 3, 54, "Subsection",ExpressionUUID->"cf7c15a5-b880-48b7-90c7-7fc658b60d66"],
+Cell[CellGroupData[{
+Cell[88368, 2038, 967, 25, 148, "Code",ExpressionUUID->"ed5ec732-a1dc-4672-aa9b-6628a7f9c3d4"],
+Cell[89338, 2065, 1807, 67, 123, "Output",ExpressionUUID->"8c0705a2-cb55-42fb-b1f9-9b561f650edb"],
+Cell[91148, 2134, 421, 15, 34, "Output",ExpressionUUID->"263836cf-646a-4358-85e5-ec8db9ddb287"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[91606, 2154, 370, 5, 52, "Code",ExpressionUUID->"49e68366-b3d2-4cc1-bce6-6295de72ceda"],
+Cell[91979, 2161, 601, 11, 77, "Output",ExpressionUUID->"c0538159-74fb-482e-ac57-261d7b490429"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92617, 2177, 389, 7, 52, "Code",ExpressionUUID->"f2c82bb3-a00c-40a3-ba84-613dfffa444a"],
+Cell[93009, 2186, 719, 12, 98, "Output",ExpressionUUID->"6d313b61-b8f3-438b-9146-aac0ff762455"]
+}, Open  ]],
+Cell[93743, 2201, 151, 2, 52, "Code",ExpressionUUID->"3fb60619-d43f-48ad-87ee-9a659b821c3f"]
+}, Open  ]]
+}
+]
+*)
+
