@@ -496,12 +496,12 @@
 
 <!-- 200907201707202205 -->
 
-<p>You can contact me via <code>lily-ric@outlook.com</code> or <a href="https://space.bilibili.com/23100384/">Yuriever@Bilibili</a>. Please email me if you find any broken link in this website.</p>
+<p>You can contact me via <code>lily-ric@outlook.com</code> or <a href="https://space.bilibili.com/23100384/">yurie@Bilibili</a>. Please email me if you find any broken link in this website.</p>
 <p>This website is made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
 <h2 id="to-do-list">To-do list</h2>
 <ul class="task-list">
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> autoresize of svg exported from mathematica</p>
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> autoresize of svg exported from Mathematica</p>
 </li>
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> overwriting main.html to hide the sidebar on all pages.</p>
@@ -537,26 +537,43 @@ https://www.ctrl.blog/entry/svg-embed-dark-mode.html</p>
 </ul>
 <h2 id="test-region">Test region</h2>
 <h3 id="stacked-card">Stacked card</h3>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C</label><label for="__tabbed_1_2">C++</label></div>
+<div class="admonition mark">
+<p class="admonition-title">Packages and pre-defined functions</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Packages</label><label for="__tabbed_1_2">Functions</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">packageList</span><span class="p">[</span><span class="s">&quot;xAct&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`xPerm`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`xTensor`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`xPert`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`Invar`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`xCoba`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`SymManipulator`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`xTras`&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;xAct`TexAct`&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="o">;</span><span class="w"></span>
+<span class="c">(*hide the version messages using Block when Needs*)</span><span class="w"></span>
+<span class="nb">Block</span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="vc">Print</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Needs</span><span class="o">/@</span><span class="nv">packageList</span><span class="p">[</span><span class="s">&quot;xAct&quot;</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+<span class="p">]</span><span class="o">;</span><span class="w"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c">(*hide the dollar symbols of local variables*)</span><span class="w"></span>
+<span class="nv">System`$PrePrint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">xAct`xTensor`ScreenDollarIndices</span><span class="o">;</span><span class="w"></span>
+<span class="c">(*hide the definition messages of objects*)</span><span class="w"></span>
+<span class="nv">xAct`xTensor`$DefInfoQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">False</span><span class="o">;</span><span class="w"></span>
+<span class="c">(*print the covariant derivatives as prefix*)</span><span class="w"></span>
+<span class="nv">xAct`xTensor`$CovDFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Prefix&quot;</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">measure</span><span class="o">::</span><span class="ne">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sqrt[-g]&quot;</span><span class="o">;</span><span class="w"></span>
+<span class="nv">tensorSim</span><span class="o">::</span><span class="ne">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x//ContractMetric//Simplification&quot;</span><span class="o">;</span><span class="w"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="nv">measure</span><span class="p">[</span><span class="nt">metric_</span><span class="o">?</span><span class="nv">xAct`xTensor`MetricQ</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Sqrt</span><span class="p">[</span><span class="nv">xAct`xTensor`SignDetOfMetric</span><span class="o">@</span><span class="nv">metric</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;Det&quot;</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="o">@</span><span class="nv">metric</span><span class="o">&lt;&gt;</span><span class="s">&quot;[]&quot;</span><span class="p">]]</span><span class="o">;</span><span class="w"></span>
+
+<span class="nv">tensorSim</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
+<span class="w">    </span><span class="nv">expr</span><span class="o">//</span><span class="nv">xAct`xTensor`ContractMetric</span><span class="o">//</span><span class="nv">xAct`xTensor`Simplification</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 </div>
 </div>

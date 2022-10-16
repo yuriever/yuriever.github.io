@@ -2,97 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yuriever.github.io/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/hotkey/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/mathjax_configuration/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/mkdocs/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/celestial_CFT/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/cftref/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/ds1/</loc>
-         <lastmod>2022-10-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://yuriever.github.io/lightnovel/uncollected/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/evaluation_1/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/interceptor/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/noncomm_algebra/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/noncomm_algebra_temp/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package_development/</loc>
-         <lastmod>2022-10-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://yuriever.github.io/symbolic/random_expression/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/xact_variation1/</loc>
-         <lastmod>2022-10-09</lastmod>
+         <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
