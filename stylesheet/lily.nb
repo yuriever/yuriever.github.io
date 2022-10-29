@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2569,         73]
+NotebookOptionsPosition[      1637,         54]
+NotebookOutlinePosition[      2105,         71]
+CellTagsIndexPosition[      2062,         68]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "Default.nb"],ExpressionUUID->"af89de24-854f-41a0-aa09-fb808e0ca5d0"],
+
+Cell[StyleData["Text"],
+ FontFamily->"Source Sans Pro",
+ FontSize->14,
+ FontWeight->"Regular",
+ FontSlant->"Plain",
+ FontVariations->{"StrikeThrough"->False,
+ "Underline"->False},
+ PrivateFontOptions->{"FontPostScriptName"->"Automatic"},
+ FontColor->RGBColor[0., 0., 0.],
+ Background->RGBColor[
+  0.87, 0.94, 1],ExpressionUUID->"ebbf2bda-7c4f-4738-b5ff-6b6661ecfcc9"],
+
+Cell[StyleData["InlineCell", StyleDefinitions -> StyleData["Code"]],ExpressionUUID->"7ea9de4f-a6f4-4716-a5f6-4d74f613affa"],
+
+Cell[StyleData["Code"],
+ FontFamily->"Source Code Pro",
+ FontSize->12,
+ FontWeight->"SemiBold",
+ FontSlant->"Plain",
+ PrivateFontOptions->{
+ "FontPostScriptName"->
+  "Automatic"},ExpressionUUID->"cba97ec2-550a-41e1-95df-95c5193b70a3"],
+
+Cell[StyleData["Input"],
+ FontFamily->"Source Code Pro",
+ FontSize->12,
+ FontWeight->"SemiBold",
+ FontSlant->"Plain",
+ PrivateFontOptions->{
+ "FontPostScriptName"->
+  "Automatic"},ExpressionUUID->"3619ea5c-e2af-4f02-8052-05a0ef5a9170"]
+},
+WindowSize->{720, 872},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DefaultInlineFormatType->"DefaultInputInlineFormatType",
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb",
+ExpressionUUID->"475501a4-2871-456b-a5b7-fcbe8b35c915"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 104, 0, 31, 49, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"af89de24-854f-41a0-aa09-fb808e0ca5d0"],
+Cell[665, 22, 367, 10, 65, 23, 0, "StyleData", "Text", "All",ExpressionUUID->"ebbf2bda-7c4f-4738-b5ff-6b6661ecfcc9"],
+Cell[1035, 34, 123, 0, 67, 68, 0, "StyleData", "InlineCell", "All",ExpressionUUID->"7ea9de4f-a6f4-4716-a5f6-4d74f613affa"],
+Cell[1161, 36, 234, 7, 67, 23, 0, "StyleData", "Code", "All",ExpressionUUID->"cba97ec2-550a-41e1-95df-95c5193b70a3"],
+Cell[1398, 45, 235, 7, 44, 24, 0, "StyleData", "Input", "All",ExpressionUUID->"3619ea5c-e2af-4f02-8052-05a0ef5a9170"]
+}
+]
+*)
+
