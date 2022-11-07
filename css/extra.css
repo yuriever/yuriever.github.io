@@ -7,20 +7,21 @@
     --md-typeset-a-color: rgba(100, 60, 200, 1);
     --md-footer-fg-color: rgba(100, 0, 255, 0.5);
     --md-footer-bg-color: rgba(255, 255, 255, 0.9);*/
-    --md-primary-fg-color: rgba(120, 70, 255, 0.8);
+    --md-primary-fg-color: rgba(120, 70, 255, 0.7);
+    /*--md-primary-fg-color: rgba(158, 79, 255, 0.727);*/
     --md-typeset-a-color: rgba(100, 60, 200, 1);
     --md-footer-fg-color: rgba(100, 0, 255, 0.5);
     --md-footer-bg-color: rgba(255, 255, 255, 0.9);
     --md-code-bg-color: rgb(249, 249, 249);
     /*Code highlighting color shades*/
-    --md-code-hl-number-color: rgb(176, 3, 34);
+    --md-code-hl-number-color: rgb(6, 3, 176);
     --md-code-hl-special-color: rgb(219, 20, 87);
     --md-code-hl-function-color: rgb(42, 123, 228);
     --md-code-hl-constant-color: rgb(42, 123, 228);
     --md-code-hl-keyword-color: rgb(17, 152, 69);
     --md-code-hl-string-color: rgb(178, 148, 0);
     --md-code-hl-name-color: rgb(34, 18, 220);
-    --md-code-hl-operator-color: rgb(105, 75, 0);
+    --md-code-hl-operator-color: rgb(196, 72, 10);
     --md-code-hl-punctuation-color: rgb(105, 75, 0);
     --md-code-hl-comment-color: rgb(153, 153, 153);
     --md-code-hl-variable-color: rgb(120, 75, 255);
