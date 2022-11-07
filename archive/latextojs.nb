@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     33533,        631]
-NotebookOptionsPosition[     32252,        599]
-NotebookOutlinePosition[     32640,        615]
-CellTagsIndexPosition[     32597,        612]
+NotebookDataLength[     41742,        782]
+NotebookOptionsPosition[     40163,        747]
+NotebookOutlinePosition[     40551,        763]
+CellTagsIndexPosition[     40508,        760]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,53 +21,72 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell["Iconized latex macros", "Subsection",
- CellChangeTimes->{{3.868140247895522*^9, 
-  3.868140264185461*^9}},ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-\
+ CellChangeTimes->{{3.868140247895522*^9, 3.868140264185461*^9}, {
+  3.876361569470841*^9, 
+  3.876361570904735*^9}},ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-\
 9c304826196d"],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"string", "//", "Clear"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{
-   RowBox[{"string", "[", "latex", "]"}], ":=", 
-   InterpretationBox[
-    DynamicModuleBox[{Typeset`open = False}, 
-     TemplateBox[{"String", 
-       StyleBox[
-       "\"latex macro examples\"", "IconizedCustomName", StripOnInput -> 
-        False], 
-       GridBox[{{
-          RowBox[{
-            TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
-            TagBox["String", "IconizedItem"]}]}, {
-          RowBox[{
-            TagBox["\"String length: \"", "IconizedLabel"], 
-            "\[InvisibleSpace]", 
-            TagBox["7616", "IconizedItem"]}]}, {
-          RowBox[{
-            TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
-            
-            TagBox["7680", "IconizedItem"]}]}}, 
-        GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
-        "Column", 
-        GridBoxItemSize -> {
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
-       Dynamic[Typeset`open]},
-      "IconizedObject"]],
-    "\[IndentingNewLine]\n% Size control of tilde, bar and hat\n% \
-https://tex.stackexchange.com/questions/365376\n\
+  RowBox[{"string", "[", "]"}], ":=", 
+  InterpretationBox[
+   DynamicModuleBox[{Typeset`open = False}, 
+    TemplateBox[{"String", "StringIcon", 
+      GridBox[{{
+         RowBox[{
+           TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["String", "IconizedItem"]}]}, {
+         RowBox[{
+           TagBox["\"String length: \"", "IconizedLabel"], 
+           "\[InvisibleSpace]", 
+           TagBox["9032", "IconizedItem"]}]}, {
+         RowBox[{
+           TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["9216", "IconizedItem"]}]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+      Dynamic[Typeset`open]},
+     "IconizedObject"]],
+   "\n% size control of tilde, bar and hat\n\
 \\newcommand{\\wave}[1]{\\widetilde{#1}}\n\
-\\renewcommand{\\bar}[1]{\\overline{#1}}\n\
-\\renewcommand{\\hat}[1]{\\widehat{#1}}\n\\renewcommand{\\geq}{\\geqslant}\n\
-\\renewcommand{\\leq}{\\leqslant}\n\n\n% Colors\n\
-\\newcommand{\\red}[1]{\\textcolor{red}{#1}}\n\
+\\AtBeginDocument{\\renewcommand{\\bar}[1]{\\overline{#1}}}\n\
+\\AtBeginDocument{\\renewcommand{\\hat}[1]{\\widehat{#1}}}\n\
+\\renewcommand{\\geq}{\\geqslant}\n\\renewcommand{\\leq}{\\leqslant}\n\n% to \
+suppress the numbering in align\n\\newcommand{\\nn}{\\nonumber}\n\n% colored \
+text\n\\newcommand{\\red}[1]{\\textcolor{red}{#1}}\n\
 \\newcommand{\\orange}[1]{\\textcolor{orange}{#1}}\n\
 \\newcommand{\\blue}[1]{\\textcolor{blue}{#1}}\n\
 \\newcommand{\\purple}[1]{\\textcolor{purple}{#1}}\n\
-\\newcommand{\\pink}[1]{\\textcolor{pink}{#1}}\n\\newcommand{\\tba}{\\red{to \
-be added}}\n\\newcommand{\\notethat}[1]{\\textcolor{red}{#1}}\n\
-\\newcommand{\\impliesthat}{$\\implies$}\n\n% complex coordinates\n\
+\\newcommand{\\pink}[1]{\\textcolor{pink}{#1}}\n\
+\\newcommand{\\notethat}[1]{\\textcolor{red}{#1}}\n\
+\\newcommand{\\impliesthat}{$\\implies$}\n\n% shortcuts used in CFT\n% vacuum\
+\n\\newcommand{\\vac}{\\ket{0}}\n% vacuum expectation value\n\
+\\renewcommand{\\vev}[1]{\\langle #1 \\rangle}\n% field operator\n\
+\\providecommand{\\op}{\\cO}\n\\renewcommand{\\op}{\\cO}\n% shadow operator\n\
+\\newcommand{\\opshadow}{\\wave{\\op}}\n\\newcommand{\\fshadow}{\\wave{\\f}}\n\
+% composite operator\n\\newcommand{\\opcomposite}{\\op_{e}}\n% singlet \
+structure\n\\newcommand{\\singletstructure}{r=1}\n% Gramian matrix\n\
+\\newcommand{\\gram}{G}\n% stripped four-point functions\n\
+\\newcommand{\\fourpt}{\\cG}\n% stripped blocks\n\
+\\newcommand{\\blockstripped}{g}\n% blocks with kinematical factors\n\
+\\newcommand{\\blockdressed}{G}\n% stripped partial waves\n\
+\\newcommand{\\CPWstripped}{\\psi}\n% partial waves with kinematical factors\n\
+\\newcommand{\\CPWdressed}{\\Psi}\n% highest weight module\n\
+\\newcommand{\\rep}[1]{\\cV_{#1}}\n% unitary module\n\\newcommand{\\urep}[1]{\
+\\cE_{#1}}\n% celestial sphere\n\\newcommand{\\csphere}{$\\mathcal{CS}^2$}\n% \
+celestial ring\n\\newcommand{\\cring}{$\\mathcal{CS}^1$}\n% transverse \
+momentum\n\\newcommand{\\pT}{p_{\\perp}} \n% transverse direction\n\
+\\newcommand{\\xT}{x_{\\perp}} \n% unit fm\n\
+\\newcommand{\\fm}{\\operatorname{fm}}\n% unit Gev\n\
+\\newcommand{\\GeV}[1]{\\operatorname{GeV}^{#1}}\n% in state\n\
+\\newcommand{\\ain}{a_{\\operatorname{in}}}\n% out state\n\
+\\newcommand{\\aout}{a_{\\operatorname{out}}}\n\n% vector p\n\
+\\newmathcommand{\\vp}{\\vec{p}}\n% vector x\n\
+\\newmathcommand{\\vx}{\\vec{x}}\n% complex coordinates\n\
 \\newcommand{\\hb}{\\bar{h}}\n\\newcommand{\\wbar}{\\bar{w}}\n\
 \\newcommand{\\zbar}{\\bar{z}}\n\\newcommand{\\Tbar}{\\bar{T}}\n\\newcommand{\
 \\Lbar}{\\bar{L}}\n\\newcommand{\\psib}{\\bar{\\psi}}\n% Dirac conjugate\n\
@@ -75,16 +94,16 @@ be added}}\n\\newcommand{\\notethat}[1]{\\textcolor{red}{#1}}\n\
 \\newcommand{\\Vcausal}{\\bar{V}_{\\pm}}\n% Special functions\n\
 \\newcommand{\\rising}[2]{#1^{\\overline{#2}}\\,}\n% Rising factorials \n\
 \\newcommand{\\falling}[2]{#1^{\\underline{#2}}\\,}\n% Falling factorials\n% \
-Hypergeometric functions\n\
-\\newcommand*{\\Fpq}[5]{{}_{#1}F_{#2}\\left(\\genfrac..{0pt}{}{#3}{#4};#5\\\
-right)}\n\\newcommand{\\Faa}{{}_{1}F_{1}}\n\\newcommand{\\Fba}{{}_{2}F_{1}}\n\
-\\newcommand{\\Fcb}{{}_{3}F_{2}}\n\n\n% Miscellaneous\n% linear span\n\
+Hypergeometric functions\n\\newcommand{\\Faa}{{}_{1}F_{1}}\n\
+\\newcommand{\\Fab}{{}_{1}F_{2}}\n\\newcommand{\\Fba}{{}_{2}F_{1}}\n\
+\\newcommand{\\Fcb}{{}_{3}F_{2}}\n\n\n% miscellaneous\n% discontinuity\n\
+\\newcommand{\\disc}{\\operatorname{Disc}}\n% phantom equal at the beginning\n\
+\\newcommand{\\peq}{\\phantom{=}}\n% linear span\n\
 \\newcommand{\\vspan}[1]{\\operatorname{span}\\set{ #1 }}\n% sets\n\
 \\newcommand{\\set}[1]{\\left\\{ #1 \\right\\}}\n% case\n\
 \\newcommand{\\case}[1]{\\begin{cases} #1 \\end{cases}}\n% left hand side\n\
 \\newcommand{\\lhs}{\\text{l.h.s}}\n% right hand side\n\
-\\newcommand{\\rhs}{\\text{r.h.s}}\n% used in align environment\n\
-\\newmathcommand{\\=}{&=} \n% to control spacings in integral\n\
+\\newcommand{\\rhs}{\\text{r.h.s}}\n% to control spacings in integral\n\
 \\newcommand{\\intt}[1]{\\int #1\\,}\n% to control spacings in integral\n\
 \\newcommand{\\inttt}[2]{\\int_{#2} #1\\,}\n% half\n\
 \\newcommand{\\half}{\\frac{1}{2}}\n% dot\n\\newmathcommand{\\.}{\\cdot}\n% \
@@ -92,15 +111,15 @@ times\n\\newcommand{\\x}{\\times}\n% tensor product\n\
 \\newcommand{\\ox}{\\otimes}\n% direct sum\n\\newcommand{\\os}{\\oplus}\n% \
 wedge product\n\\newcommand{\\w}{\\wedge}\n% infinity\n\\renewcommand{\\inf}{\
 \\infty}\n\\newcommand{\\oo}{\\infty}\n% partial\n\
-\\newcommand{\\p}{\\partial}\n% grad\n\\newcommand{\\n}{\\nabla}\n% square \
-root\n\\newcommand{\\sroot}{\\sqrt}\n% Sign function\n\
-\\newcommand{\\sign}{\\operatorname{sgn}}\n% diagonal matrix\n\
-\\newcommand{\\diag}[1]{\\operatorname{diag}\\left( #1 \\right)}\n\n% \
+\\newcommand{\\p}{\\partial}\n% grad\n\\newcommand{\\n}{\\nabla}\n% Sign \
+function\n\\newcommand{\\sign}{\\operatorname{sgn}}\n% diagonal matrix\n\
+\\newcommand{\\diag}[1]{\\operatorname{diag}\\left( #1 \\right)}\n% \
+Euler-Lagrangian operator\n\\newcommand{\\EL}{\\operatorname{EL}}\n\n% \
 \\newcommand{\\overset}[2]{A}{B}{A over B}\n% \
 \\newcommand{\\underset}[2]{A}{B}{A under B}\n% \
 \\newcommand{\\substack}[1]{A}\n% as multiline subscripts\n\
 \\newcommand{\\nsub}[2][n]{{#2}_{1}, \\dots, {#2}_{#1}}\n\
-\\newcommand{\\nsup}[2][n]{{#2}^{1}, \\dots, {#2}^{#1}}\n\n\n% Algebras\n% \
+\\newcommand{\\nsup}[2][n]{{#2}^{1}, \\dots, {#2}^{#1}}\n\n\n% algebras\n% \
 inverse limit\n\\newcommand{\\inverselimit}{\\varprojlim} \n% direct limit\n\
 \\newcommand{\\directlimit}{\\varinjlim} \n% image\n\
 \\newcommand{\\im}{\\operatorname{im}} \n% coimage\n\
@@ -114,7 +133,7 @@ inverse limit\n\\newcommand{\\inverselimit}{\\varprojlim} \n% direct limit\n\
 \\newcommand{\\End}{\\operatorname{End}} \n% outer automorphism\n\
 \\newcommand{\\Out}{\\operatorname{Out}} \n% inner automorphism\n\
 \\newcommand{\\Inn}{\\operatorname{Inn}} \n% identity\n\
-\\newcommand{\\id}{\\mathbbm{1}} \n% adjoint action of Lie algebra\n\
+\\newcommand{\\id}{\\operatorname{id}} \n% adjoint action of Lie algebra\n\
 \\newcommand{\\ad}{\\operatorname{ad}} \n% adjoint action of Lie group\n\
 \\newcommand{\\Ad}{\\operatorname{Ad}} \n% dimension\n% \
 \\newcommand{\\dim}{\\operatorname{dim}} \n% codimension\n\
@@ -125,10 +144,10 @@ space\n\\newcommand{\\dual}[1]{{#1}^\\vee}\n% inverse\n\
 \\renewcommand{\\-}{{-1}} \n% Hermitian conjugate\n\
 \\newcommand{\\+}{\\dagger}\n% Hilbert space\n\
 \\newmathcommand{\\H}{\\mathcal{H}}\n% Moduli spaces\n\
-\\newcommand{\\M}{\\mathcal{M}}\n\n\n% Categories\n\
+\\newcommand{\\M}{\\mathcal{M}}\n\n\n% categories\n\
 \\newcommand{\\setcat}{\\operatorname{Set}}\n\
 \\newcommand{\\veccat}{\\operatorname{Vec}}\n\
-\\newcommand{\\catcat}{\\operatorname{Cat}}\n% Vector spaces\n\
+\\newcommand{\\catcat}{\\operatorname{Cat}}\n% vector spaces\n\
 \\newcommand{\\Uvec}{\\mathbb{U}}\n\\newcommand{\\Vvec}{\\mathbb{V}}\n\
 \\newcommand{\\Wvec}{\\mathbb{W}}\n\n\n% Greek letters\n\
 \\renewcommand{\\a}{\\alpha}\n\\newmathcommand{\\b}{\\beta}\n\
@@ -142,28 +161,29 @@ space\n\\newcommand{\\dual}[1]{{#1}^\\vee}\n% inverse\n\
 \\newcommand{\\s}{\\sigma}\n\\newmathcommand{\\S}{\\Sigma}\n\\newmathcommand{\
 \\o}{\\omega}\n\\newmathcommand{\\O}{\\Omega}\n\\renewcommand{\\th}{\\theta}\n\
 \\newcommand{\\Th}{\\Theta}\n\\newmathcommand{\\t}{\\tau}\n\\newcommand{\\z}{\
-\\zeta}\n\n\n% Number systems\n% Reals\n\\newcommand{\\R}{\\mathbb{R}}\n\
+\\zeta}\n\n\n% number systems\n% reals\n\\newcommand{\\R}{\\mathbb{R}}\n\
 \\newcommand{\\Rnot}{\\mathbb{R}^{\\neq 0}}\n\
 \\newcommand{\\Rneq}{\\mathbb{R}^{\\neq 0}}\n\
 \\newcommand{\\Rgeq}{\\mathbb{R}^{\\geqslant 0}}\n\
 \\newcommand{\\Rpositive}{\\mathbb{R}^{> 0}}\n\
 \\newcommand{\\Rleq}{\\mathbb{R}^{\\leqslant 0}}\n\
-\\newcommand{\\Rnegative}{\\mathbb{R}^{< 0}}\n% Integers\n\
+\\newcommand{\\Rnegative}{\\mathbb{R}^{< 0}}\n% integers\n\
 \\newcommand{\\Z}{\\mathbb{Z}}\n\\newcommand{\\Znot}{\\mathbb{Z}^{\\geqslant \
 0}}\n\\newcommand{\\Zneq}{\\mathbb{Z}^{\\neq 0}}\n\
 \\newcommand{\\N}{\\mathbb{N}}\n\\newcommand{\\Zgeq}{\\mathbb{Z}^{\\geqslant \
 0}}\n\\newcommand{\\Zpositive}{\\mathbb{Z}^{> 0}}\n\
 \\newcommand{\\Zleq}{\\mathbb{Z}^{\\leqslant 0}}\n\
-\\newcommand{\\Znegative}{\\mathbb{Z}^{< 0}}\n% Rationals\n\\newcommand{\\Q}{\
+\\newcommand{\\Znegative}{\\mathbb{Z}^{< 0}}\n% rationals\n\\newcommand{\\Q}{\
 \\mathbb{Q}}\n\\newcommand{\\Qnot}{\\mathbb{Q}^{\\geqslant 0}}\n\\newcommand{\
 \\Qneq}{\\mathbb{Q}^{\\neq 0}}\n\\newcommand{\\Qgeq}{\\mathbb{Q}^{\\geqslant \
 0}}\n\\newcommand{\\Qpositive}{\\mathbb{Q}^{> 0}}\n\
 \\newcommand{\\Qleq}{\\mathbb{Q}^{\\leqslant 0}}\n\
-\\newcommand{\\Qnegative}{\\mathbb{Q}^{< 0}}\n% Complex numbers\n\
+\\newcommand{\\Qnegative}{\\mathbb{Q}^{< 0}}\n% complex numbers\n\
 \\providecommand{\\C}{\\mathbb{C}}\n\\renewcommand{\\C}{\\mathbb{C}}\n\
 \\newcommand{\\Cneq}{\\mathbb{C}^{\\neq 0}}\n\
-\\newcommand{\\Cnot}{\\mathbb{C}^{\\neq 0}}\n% Projectives\n\\newmathcommand{\
-\\P}{\\mathbb{P}}\n% p-adic numbers\n\\newcommand{\\Qp}{\\mathbb{Q}_{p}}\n\
+\\newcommand{\\Cnot}{\\mathbb{C}^{\\neq 0}}\n% projective\n\
+\\newmathcommand{\\P}{\\mathbb{P}}\n% p-adic numbers\n\
+\\newcommand{\\Qp}{\\mathbb{Q}_{p}}\n\
 \\newcommand{\\Zp}{\\mathbb{Z}_{p\\text{-adic}}}\n\
 \\newcommand{\\Up}{\\mathbb{U}_{p}}\n\n\n% Lie algebras and groups\n\
 \\newcommand{\\spin}{\\operatorname{Spin}}\n\
@@ -178,7 +198,7 @@ space\n\\newcommand{\\dual}[1]{{#1}^\\vee}\n% inverse\n\
 \\newcommand{\\plie}{\\mathfrak{p}}\n% Borel\n\
 \\newcommand{\\blie}{\\mathfrak{b}}\n% Cartan\n\
 \\newcommand{\\hlie}{\\mathfrak{h}}\n% compact\n\
-\\newcommand{\\klie}{\\mathfrak{k}}\n\n\n% Caligraphic Capitals\n\
+\\newcommand{\\klie}{\\mathfrak{k}}\n\n\n% calligraphic capitals\n\
 \\newcommand{\\cA}{\\mathcal{A}}\n\\newcommand{\\cB}{\\mathcal{B}}\n\
 \\newcommand{\\cC}{\\mathcal{C}}\n\\newcommand{\\cD}{\\mathcal{D}}\n\
 \\newcommand{\\cE}{\\mathcal{E}}\n\\newcommand{\\cF}{\\mathcal{F}}\n\
@@ -191,12 +211,16 @@ space\n\\newcommand{\\dual}[1]{{#1}^\\vee}\n% inverse\n\
 \\newcommand{\\cS}{\\mathcal{S}}\n\\newcommand{\\cT}{\\mathcal{T}}\n\
 \\newcommand{\\cU}{\\mathcal{U}}\n\\newcommand{\\cV}{\\mathcal{V}}\n\
 \\newcommand{\\cW}{\\mathcal{W}}\n\\newcommand{\\cX}{\\mathcal{X}}\n\
-\\newcommand{\\cY}{\\mathcal{Y}}\n\\newcommand{\\cZ}{\\mathcal{Z}}\n",
-    SelectWithContents->True,
-    Selectable->False]}], ";"}]}], "Code",
+\\newcommand{\\cY}{\\mathcal{Y}}\n\\newcommand{\\cZ}{\\mathcal{Z}}",
+   SelectWithContents->True,
+   Selectable->False]}]}], "Code",
  CellChangeTimes->{{3.8681496694091663`*^9, 3.868149713846833*^9}, {
-  3.868149751981865*^9, 3.868149771137306*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"]
+   3.868149751981865*^9, 3.868149771137306*^9}, 3.8763602448050747`*^9, {
+   3.876361078134543*^9, 3.876361103544978*^9}, 3.8763612261176558`*^9, {
+   3.876367112400291*^9, 3.876367113484725*^9}, {3.8763684692878847`*^9, 
+   3.8763684697475777`*^9}},
+ CellLabel->
+  "In[365]:=",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -206,28 +230,45 @@ Cell["To translate latex macros into js", "Subsection",
   3.861293291390017*^9}},ExpressionUUID->"d568c97f-4031-482a-9b04-\
 e455ae44140c"],
 
+Cell["\<\
+the following symbols in js should be enclosed by \[OpenCurlyQuote]\
+\[CloseCurlyQuote]
+. - +\
+\>", "Text",
+ CellChangeTimes->{{3.8763680151356497`*^9, 
+  3.876368066296423*^9}},ExpressionUUID->"4e798141-5946-4f22-9dbd-\
+f0836cf973cf"],
+
 Cell[BoxData[{
  RowBox[{
+  RowBox[{"macro", "//", "Clear"}], ";"}], "\n", 
+ RowBox[{
   RowBox[{
-   RowBox[{"macro", "[", "valid", "]"}], "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"ruleLaTeXToJS", "//", "Clear"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"macro", "[", "\"\<withpara\>\"", "]"}], "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"macro", "[", "\"\<plain\>\"", "]"}], "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"macro", "[", "unvalid", "]"}], "=", 
-    RowBox[{"{", "}"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{"macro", "[", "\"\<unvalid\>\"", "]"}], "=", 
+    RowBox[{"{", "}"}]}], ";"}], "\n"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"ruleLaTeXToJS", "[", "regulating", "]"}], "=", 
+    RowBox[{"ruleLaTeXToJS", "[", "\"\<regulating\>\"", "]"}], "=", 
     RowBox[{"{", "\[IndentingNewLine]", "\t", 
      RowBox[{
       RowBox[{
        RowBox[{"\"\< \>\"", ".."}], "->", "\"\< \>\""}], ",", 
       "\[IndentingNewLine]", "\t", 
       RowBox[{
-       RowBox[{"\"\<%\>\"", "~~", "rest___"}], "->", 
+       RowBox[{"\"\<%\>\"", "~~", "rest___"}], ":>", 
        RowBox[{"\"\<//\>\"", "~~", "rest"}]}], ",", "\[IndentingNewLine]", 
       "\t", 
       RowBox[{"\"\<\\\\renewcommand\>\"", "->", "\"\<\\\\newcommand\>\""}], 
@@ -235,73 +276,81 @@ Cell[BoxData[{
       RowBox[{"\"\<\\\\newmathcommand\>\"", "->", "\"\<\\\\newcommand\>\""}], 
       ",", "\[IndentingNewLine]", "\t", 
       RowBox[{
-       RowBox[{"\"\<\\\\providecommand\>\"", "~~", "__"}], ":>", 
-       "\"\<\>\""}]}], "\n", "}"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+       RowBox[{"\"\<\\\\providecommand\>\"", "~~", "__"}], ":>", "\"\<\>\""}],
+       ",", "\n", "\t", 
+      RowBox[{
+       RowBox[{"\"\<\\\\AtBeginDocument{\>\"", "~~", 
+        RowBox[{"Longest", "[", "string__", "]"}], "~~", "\"\<}\>\""}], ":>", 
+       "string"}]}], "\n", "}"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"ruleLaTeXToJS", "[", "withpara", "]"}], "=", 
+    RowBox[{"ruleLaTeXToJS", "[", "\"\<withpara\>\"", "]"}], "=", 
     RowBox[{"{", "\[IndentingNewLine]", "\t", 
      RowBox[{
       RowBox[{"\"\<\\\\newcommand{\\\\\>\"", "~~", 
        RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}[\>\"", "~~", 
        RowBox[{"num_", "?", "DigitQ"}], "~~", "\"\<]{\>\"", "~~", 
        RowBox[{"Longest", "[", "macroFunction__", "]"}], "~~", "\"\<}\>\""}], 
-      "\[IndentingNewLine]", "\t", ":>", 
+      ":>", "\n", "\t\t", 
       RowBox[{"Module", "[", 
        RowBox[{
-        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{
          RowBox[{"AppendTo", "[", 
           RowBox[{
-           RowBox[{"macro", "@", "valid"}], ",", "macroName"}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"macro", "@", "\"\<withpara\>\""}], ",", 
+           RowBox[{"\"\<\\\\\>\"", "~~", "macroName", "~~", 
+            RowBox[{"StringRepeat", "[", 
+             RowBox[{"\"\<{a}\>\"", ",", 
+              RowBox[{"ToExpression", "@", "num"}]}], "]"}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
          "macroName", "~~", "\"\<: ['{\>\"", "~~", "macroFunction", "~~", 
           "\"\<}', \>\"", "~~", "num", "~~", "\"\<]\>\""}]}]}], 
-       "\[IndentingNewLine]", "\t", "]"}]}], "\[IndentingNewLine]", "}"}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\n", 
+       "\[IndentingNewLine]", "\t\t", "]"}]}], "\[IndentingNewLine]", "}"}]}],
+    ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"ruleLaTeXToJS", "[", "plain", "]"}], "=", 
+    RowBox[{"ruleLaTeXToJS", "[", "\"\<plain\>\"", "]"}], "=", 
     RowBox[{"{", "\[IndentingNewLine]", "\t", 
      RowBox[{
       RowBox[{"\"\<\\\\newcommand{\\\\\>\"", "~~", 
        RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}{\>\"", "~~", 
        RowBox[{"Longest", "[", "macroFunction__", "]"}], "~~", "\"\<}\>\""}], 
-      "\[IndentingNewLine]", "\t", ":>", 
+      ":>", "\n", "\t\t", 
       RowBox[{"Module", "[", 
        RowBox[{
-        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{
          RowBox[{"AppendTo", "[", 
           RowBox[{
-           RowBox[{"macro", "@", "valid"}], ",", "macroName"}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"macro", "@", "\"\<plain\>\""}], ",", 
+           RowBox[{"\"\<\\\\\>\"", "~~", "macroName"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
          "macroName", "~~", "\"\<: '{\>\"", "~~", "macroFunction", "~~", 
-          "\"\<}'\>\""}]}]}], "\[IndentingNewLine]", "\t", "]"}]}], 
+          "\"\<}'\>\""}]}]}], "\[IndentingNewLine]", "\t\t", "]"}]}], 
      "\[IndentingNewLine]", "}"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"ruleLaTeXToJS", "[", "unvalid", "]"}], "=", 
+    RowBox[{"ruleLaTeXToJS", "[", "\"\<unvalid\>\"", "]"}], "=", 
     RowBox[{"{", "\[IndentingNewLine]", "\t", 
      RowBox[{
       RowBox[{"\"\<\\\\newcommand\>\"", "~~", "___", "~~", "\"\<{\\\\\>\"", "~~", 
        RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}\>\"", "~~",
-        "rest__"}], "\[IndentingNewLine]", "\t", ":>", 
+        "rest__"}], ":>", "\n", "\t\t", 
       RowBox[{"Module", "[", 
        RowBox[{
-        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{
          RowBox[{"AppendTo", "[", 
           RowBox[{
-           RowBox[{"macro", "@", "unvalid"}], ",", "macroName"}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t\t", "\"\<\>\""}]}], "\n", "\t", "]"}]}], 
-     "\[IndentingNewLine]", "}"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+           RowBox[{"macro", "@", "\"\<unvalid\>\""}], ",", "macroName"}], 
+          "]"}], ";", "\[IndentingNewLine]", "\t\t\t", "\"\<\>\""}]}], "\n", 
+       "\t\t", "]"}]}], "\[IndentingNewLine]", "}"}]}], ";"}], "\n"}], "\n", 
  RowBox[{
   RowBox[{"laTeXToJS", "[", "str_", "]"}], ":=", 
   RowBox[{"Module", "[", 
@@ -318,45 +367,78 @@ Cell[BoxData[{
            RowBox[{"str", "//", 
             RowBox[{
              RowBox[{"StringSplit", "[", 
-              RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}]}], "\n", "\t\t",
-            "//", 
-           RowBox[{"StringReplace", "[", 
-            RowBox[{"ruleLaTeXToJS", "@", "regulating"}], "]"}]}], 
-          "\[IndentingNewLine]", "\t\t", "//", 
+              RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}]}], "//", "\n", 
+           "\t\t", 
+           RowBox[{
+            RowBox[{"Nest", "[", 
+             RowBox[{
+              RowBox[{"StringReplace", "[", 
+               RowBox[{"ruleLaTeXToJS", "@", "\"\<regulating\>\""}], "]"}], 
+              ",", "#", ",", "2"}], "]"}], "&"}]}], "//", "\n", "\t\t", 
           RowBox[{"StringReplace", "[", 
-           RowBox[{"ruleLaTeXToJS", "@", "withpara"}], "]"}]}], 
-         "\[IndentingNewLine]", "\t\t", "//", 
+           RowBox[{"ruleLaTeXToJS", "@", "\"\<withpara\>\""}], "]"}]}], "//", 
+         "\n", "\t\t", 
          RowBox[{"StringReplace", "[", 
-          RowBox[{"ruleLaTeXToJS", "@", "plain"}], "]"}]}], 
-        "\[IndentingNewLine]", "\t\t", "//", 
+          RowBox[{"ruleLaTeXToJS", "@", "\"\<plain\>\""}], "]"}]}], "//", 
+        "\n", "\t\t", 
         RowBox[{"StringReplace", "[", 
-         RowBox[{"ruleLaTeXToJS", "@", "unvalid"}], "]"}]}], 
-       "\[IndentingNewLine]", "\t\t", "//", 
+         RowBox[{"ruleLaTeXToJS", "@", "\"\<unvalid\>\""}], "]"}]}], "//", 
+       "\n", "\t\t", 
        RowBox[{"DeleteCases", "[", "\"\<\>\"", "]"}]}]}], ";", 
-     "\[IndentingNewLine]", "\t\t", 
+     "\[IndentingNewLine]", "\t", 
      RowBox[{
-      RowBox[{"macro", "@", "valid"}], "//", "Print"}], ";", 
-     "\[IndentingNewLine]", "\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"macro", "@", "\"\<withpara\>\""}], "//", 
+        RowBox[{
+         RowBox[{"Riffle", "[", 
+          RowBox[{"#", ",", "\"\< \\\\\\\\ \\n \>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "]"}], "&"}]}], "//", 
+       "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"StringRiffle", "[", 
+         RowBox[{"#", ",", "\"\<\\\\, \>\""}], "]"}], "&"}]}], "//", 
+      "Print"}], ";", "\[IndentingNewLine]", "\t", 
      RowBox[{
-      RowBox[{"macro", "@", "unvalid"}], "//", "Print"}], ";", 
-     "\[IndentingNewLine]", "\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"macro", "@", "\"\<plain\>\""}], "//", 
+        RowBox[{
+         RowBox[{"Riffle", "[", 
+          RowBox[{"#", ",", "\"\< \\\\\\\\ \\n\>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "]"}], "&"}]}], "//", 
+       "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"StringRiffle", "[", 
+         RowBox[{"#", ",", "\"\<\\\\, \>\""}], "]"}], "&"}]}], "//", 
+      "Print"}], ";", "\[IndentingNewLine]", "\t", 
      RowBox[{
-      RowBox[{"macro", "@", "valid"}], "=", 
-      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+      RowBox[{"macro", "@", "\"\<unvalid\>\""}], "//", "Print"}], ";", "\n", 
+     "\t", 
      RowBox[{
-      RowBox[{"macro", "@", "unvalid"}], "=", 
+      RowBox[{"macro", "[", "\"\<withpara\>\"", "]"}], "=", 
+      RowBox[{"{", "}"}]}], ";", "\n", "\t", 
+     RowBox[{
+      RowBox[{"macro", "[", "\"\<plain\>\"", "]"}], "=", 
+      RowBox[{"{", "}"}]}], ";", "\n", "\t", 
+     RowBox[{
+      RowBox[{"macro", "[", "\"\<unvalid\>\"", "]"}], "=", 
       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
      RowBox[{
       RowBox[{"var", "[", "2", "]"}], "=", 
       RowBox[{
        RowBox[{
-        RowBox[{
-         RowBox[{"StringInsert", "[", 
-          RowBox[{"#", ",", "\"\<,\\n\>\"", ",", 
-           RowBox[{"-", "1"}]}], "]"}], "&"}], "/@", 
-        RowBox[{"var", "[", "1", "]"}]}], "//", 
-       RowBox[{
-        RowBox[{"StringExpression", "@@", "#"}], "&"}]}]}]}]}], 
+        RowBox[{"var", "[", "1", "]"}], "//", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{"StringInsert", "[", 
+           RowBox[{"#", ",", "\"\<,\\n\>\"", ",", 
+            RowBox[{"-", "1"}]}], "]"}], "&"}], "]"}]}], "//", "\n", "\t\t", 
+       RowBox[{"Apply", "[", "StringExpression", "]"}]}]}]}]}], 
    "\[IndentingNewLine]", "]"}]}]}], "Code",
  CellChangeTimes->{{3.8610086906362057`*^9, 3.861008723373094*^9}, {
    3.86100880092346*^9, 3.861008836550788*^9}, {3.861009092784589*^9, 
@@ -390,8 +472,23 @@ Cell[BoxData[{
    3.861294716826086*^9, 3.861294726275426*^9}, {3.8612947900746326`*^9, 
    3.86129489681594*^9}, {3.861296293593746*^9, 3.861296299843989*^9}, {
    3.868140615986183*^9, 3.868140630637508*^9}, {3.868140682807187*^9, 
-   3.8681408035204*^9}, {3.868140842719858*^9, 3.868140883269331*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"bf8d9de1-7346-414a-8f73-fcddebe15122"]
+   3.8681408035204*^9}, {3.868140842719858*^9, 3.868140883269331*^9}, {
+   3.876360546324151*^9, 3.8763605651707697`*^9}, {3.876360630780037*^9, 
+   3.8763606539631042`*^9}, 3.87636100491142*^9, 3.876361049079174*^9, {
+   3.876361091344397*^9, 3.876361100028863*^9}, {3.876361269525227*^9, 
+   3.8763612881977787`*^9}, {3.876361758259057*^9, 3.8763617598398542`*^9}, {
+   3.876361925654201*^9, 3.876361991115086*^9}, {3.876362030528244*^9, 
+   3.876362056969192*^9}, {3.87636213462354*^9, 3.876362156972989*^9}, {
+   3.876366104688628*^9, 3.876366212801983*^9}, {3.876366266014073*^9, 
+   3.876366279389936*^9}, {3.876366315666349*^9, 3.876366328195119*^9}, {
+   3.8763663946331253`*^9, 3.8763664091264668`*^9}, {3.876366581536295*^9, 
+   3.876366607776383*^9}, {3.8763666384459333`*^9, 3.876366706839312*^9}, {
+   3.87636688153338*^9, 3.876366896899225*^9}, {3.876367183062851*^9, 
+   3.876367209835273*^9}, {3.87636726315961*^9, 3.876367267006544*^9}, {
+   3.8763674085225477`*^9, 3.876367455063993*^9}, {3.876368480007854*^9, 
+   3.876368481665832*^9}},
+ CellLabel->
+  "In[367]:=",ExpressionUUID->"bf8d9de1-7346-414a-8f73-fcddebe15122"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -405,136 +502,181 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"string", "[", "latex", "]"}], "//", "laTeXToJS"}]], "Code",
+  RowBox[{"string", "[", "]"}], "//", "laTeXToJS"}]], "Code",
  CellChangeTimes->{{3.861086781140191*^9, 3.8610867940094213`*^9}, 
    3.861087469200451*^9, {3.861096755530514*^9, 3.861096756584894*^9}, {
    3.8612940083883963`*^9, 3.8612940195609837`*^9}, {3.8612943653247347`*^9, 
    3.861294366681142*^9}, {3.861294803704176*^9, 3.861294804364183*^9}, 
    3.8681416886251307`*^9, {3.868141795069429*^9, 3.868141803283523*^9}, {
-   3.868149589191339*^9, 3.868149589563443*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"a6e67374-722a-4f63-9796-dea87eeb2ebb"],
+   3.868149589191339*^9, 3.868149589563443*^9}, 3.876361243224683*^9, 
+   3.876361851688345*^9, 3.876367591195608*^9, 3.876368441850856*^9, 
+   3.876368493661571*^9},
+ CellLabel->
+  "In[379]:=",ExpressionUUID->"a6e67374-722a-4f63-9796-dea87eeb2ebb"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"\<\"wave\"\>", ",", "\<\"bar\"\>", ",", "\<\"hat\"\>", 
-   ",", "\<\"red\"\>", ",", "\<\"orange\"\>", ",", "\<\"blue\"\>", 
-   ",", "\<\"purple\"\>", ",", "\<\"pink\"\>", ",", "\<\"notethat\"\>", 
-   ",", "\<\"rising\"\>", ",", "\<\"falling\"\>", ",", "\<\"vspan\"\>", 
-   ",", "\<\"set\"\>", ",", "\<\"case\"\>", ",", "\<\"intt\"\>", 
-   ",", "\<\"inttt\"\>", ",", "\<\"diag\"\>", ",", "\<\"overset\"\>", 
-   ",", "\<\"underset\"\>", ",", "\<\"substack\"\>", ",", "\<\"dual\"\>", 
-   ",", "\<\"lie\"\>", ",", "\<\"geq\"\>", ",", "\<\"leq\"\>", 
-   ",", "\<\"tba\"\>", ",", "\<\"impliesthat\"\>", ",", "\<\"hb\"\>", 
-   ",", "\<\"wbar\"\>", ",", "\<\"zbar\"\>", ",", "\<\"Tbar\"\>", 
-   ",", "\<\"Lbar\"\>", ",", "\<\"psib\"\>", ",", "\<\"Vfuture\"\>", 
-   ",", "\<\"Vpast\"\>", ",", "\<\"Vcausal\"\>", ",", "\<\"Faa\"\>", 
-   ",", "\<\"Fba\"\>", ",", "\<\"Fcb\"\>", ",", "\<\"lhs\"\>", 
-   ",", "\<\"rhs\"\>", ",", "\<\"=\"\>", ",", "\<\"half\"\>", 
-   ",", "\<\".\"\>", ",", "\<\"x\"\>", ",", "\<\"ox\"\>", ",", "\<\"os\"\>", 
-   ",", "\<\"w\"\>", ",", "\<\"inf\"\>", ",", "\<\"oo\"\>", ",", "\<\"p\"\>", 
-   ",", "\<\"n\"\>", ",", "\<\"sroot\"\>", ",", "\<\"sign\"\>", 
-   ",", "\<\"inverselimit\"\>", ",", "\<\"directlimit\"\>", ",", "\<\"im\"\>",
-    ",", "\<\"coim\"\>", ",", "\<\"coker\"\>", ",", "\<\"opindex\"\>", 
-   ",", "\<\"spec\"\>", ",", "\<\"Diff\"\>", ",", "\<\"Hom\"\>", 
-   ",", "\<\"Aut\"\>", ",", "\<\"End\"\>", ",", "\<\"Out\"\>", 
-   ",", "\<\"Inn\"\>", ",", "\<\"id\"\>", ",", "\<\"ad\"\>", 
-   ",", "\<\"Ad\"\>", ",", "\<\"dim\"\>", ",", "\<\"codim\"\>", 
-   ",", "\<\"vol\"\>", ",", "\<\"Ind\"\>", ",", "\<\"rad\"\>", 
-   ",", "\<\"-\"\>", ",", "\<\"+\"\>", ",", "\<\"H\"\>", ",", "\<\"M\"\>", 
-   ",", "\<\"setcat\"\>", ",", "\<\"veccat\"\>", ",", "\<\"catcat\"\>", 
-   ",", "\<\"Uvec\"\>", ",", "\<\"Vvec\"\>", ",", "\<\"Wvec\"\>", 
-   ",", "\<\"a\"\>", ",", "\<\"b\"\>", ",", "\<\"c\"\>", ",", "\<\"d\"\>", 
-   ",", "\<\"D\"\>", ",", "\<\"e\"\>", ",", "\<\"ve\"\>", ",", "\<\"g\"\>", 
-   ",", "\<\"G\"\>", ",", "\<\"k\"\>", ",", "\<\"l\"\>", ",", "\<\"lm\"\>", 
-   ",", "\<\"L\"\>", ",", "\<\"f\"\>", ",", "\<\"vf\"\>", ",", "\<\"r\"\>", 
-   ",", "\<\"s\"\>", ",", "\<\"S\"\>", ",", "\<\"o\"\>", ",", "\<\"O\"\>", 
-   ",", "\<\"th\"\>", ",", "\<\"Th\"\>", ",", "\<\"t\"\>", ",", "\<\"z\"\>", 
-   ",", "\<\"R\"\>", ",", "\<\"Rnot\"\>", ",", "\<\"Rneq\"\>", 
-   ",", "\<\"Rgeq\"\>", ",", "\<\"Rpositive\"\>", ",", "\<\"Rleq\"\>", 
-   ",", "\<\"Rnegative\"\>", ",", "\<\"Z\"\>", ",", "\<\"Znot\"\>", 
-   ",", "\<\"Zneq\"\>", ",", "\<\"N\"\>", ",", "\<\"Zgeq\"\>", 
-   ",", "\<\"Zpositive\"\>", ",", "\<\"Zleq\"\>", ",", "\<\"Znegative\"\>", 
-   ",", "\<\"Q\"\>", ",", "\<\"Qnot\"\>", ",", "\<\"Qneq\"\>", 
-   ",", "\<\"Qgeq\"\>", ",", "\<\"Qpositive\"\>", ",", "\<\"Qleq\"\>", 
-   ",", "\<\"Qnegative\"\>", ",", "\<\"C\"\>", ",", "\<\"Cneq\"\>", 
-   ",", "\<\"Cnot\"\>", ",", "\<\"P\"\>", ",", "\<\"Qp\"\>", 
-   ",", "\<\"Zp\"\>", ",", "\<\"Up\"\>", ",", "\<\"spin\"\>", 
-   ",", "\<\"glie\"\>", ",", "\<\"gllie\"\>", ",", "\<\"sllie\"\>", 
-   ",", "\<\"isllie\"\>", ",", "\<\"ulie\"\>", ",", "\<\"sulie\"\>", 
-   ",", "\<\"olie\"\>", ",", "\<\"solie\"\>", ",", "\<\"isolie\"\>", 
-   ",", "\<\"splie\"\>", ",", "\<\"nlie\"\>", ",", "\<\"plie\"\>", 
-   ",", "\<\"blie\"\>", ",", "\<\"hlie\"\>", ",", "\<\"klie\"\>", 
-   ",", "\<\"cA\"\>", ",", "\<\"cB\"\>", ",", "\<\"cC\"\>", ",", "\<\"cD\"\>",
-    ",", "\<\"cE\"\>", ",", "\<\"cF\"\>", ",", "\<\"cG\"\>", 
-   ",", "\<\"cH\"\>", ",", "\<\"cI\"\>", ",", "\<\"cJ\"\>", ",", "\<\"cK\"\>",
-    ",", "\<\"cL\"\>", ",", "\<\"cM\"\>", ",", "\<\"cN\"\>", 
-   ",", "\<\"cO\"\>", ",", "\<\"cP\"\>", ",", "\<\"cQ\"\>", ",", "\<\"cR\"\>",
-    ",", "\<\"cS\"\>", ",", "\<\"cT\"\>", ",", "\<\"cU\"\>", 
-   ",", "\<\"cV\"\>", ",", "\<\"cW\"\>", ",", "\<\"cX\"\>", ",", "\<\"cY\"\>",
-    ",", "\<\"cZ\"\>"}], "}"}]], "Print",
- CellChangeTimes->{3.868149842304253*^9, 3.873983825146318*^9},
+Cell[BoxData["\<\" \\\\\\\\ \\n \\\\, \\\\wave{a}\\\\, \\\\bar{a}\\\\, \
+\\\\hat{a}\\\\, \\\\red{a}\\\\, \\\\orange{a}\\\\, \\\\blue{a}\\\\, \
+\\\\purple{a}\\\\, \\\\pink{a}\\\\, \\\\notethat{a}\\\\,  \\\\\\\\ \\n \\\\, \
+\\\\vev{a}\\\\, \\\\rep{a}\\\\, \\\\urep{a}\\\\, \\\\GeV{a}\\\\, \
+\\\\rising{a}{a}\\\\, \\\\falling{a}{a}\\\\, \\\\vspan{a}\\\\, \
+\\\\set{a}\\\\, \\\\case{a}\\\\,  \\\\\\\\ \\n \\\\, \\\\intt{a}\\\\, \
+\\\\inttt{a}{a}\\\\, \\\\diag{a}\\\\, \\\\overset{a}{a}\\\\, \
+\\\\underset{a}{a}\\\\, \\\\substack{a}\\\\, \\\\dual{a}\\\\, \
+\\\\lie{a}\"\>"], "Print",
+ CellChangeTimes->{
+  3.868149842304253*^9, 3.873983825146318*^9, 3.8763608134671173`*^9, 
+   3.8763612438031273`*^9, 3.8763618520269117`*^9, 3.876366155960243*^9, 
+   3.876366225749483*^9, 3.876366284425679*^9, 3.876366421733343*^9, {
+   3.876366648115641*^9, 3.8763666648344307`*^9}, 3.876366709706052*^9, {
+   3.876366886482048*^9, 3.876366902047934*^9}, 3.876367118284008*^9, {
+   3.876367192430608*^9, 3.876367212250719*^9}, 3.876367269475432*^9, 
+   3.87636745803465*^9, {3.876367591715342*^9, 3.876367600923048*^9}, {
+   3.876368442341568*^9, 3.8763684457119627`*^9}, {3.8763684912791348`*^9, 
+   3.876368493930512*^9}},
  CellLabel->
   "During evaluation of \
-In[13]:=",ExpressionUUID->"062e20fc-2ad9-4b2d-af27-2994d806ae44"],
+In[379]:=",ExpressionUUID->"6f05162e-68b3-42aa-a790-f87185e15520"],
+
+Cell[BoxData["\<\" \\\\\\\\ \\n\\\\, \\\\geq\\\\, \\\\leq\\\\, \\\\nn\\\\, \\\
+\\impliesthat\\\\, \\\\vac\\\\, \\\\op\\\\, \\\\opshadow\\\\, \
+\\\\fshadow\\\\, \\\\opcomposite\\\\,  \\\\\\\\ \\n\\\\, \\\\singletstructure\
+\\\\, \\\\gram\\\\, \\\\fourpt\\\\, \\\\blockstripped\\\\, \\\\blockdressed\\\
+\\, \\\\CPWstripped\\\\, \\\\CPWdressed\\\\, \\\\csphere\\\\, \\\\cring\\\\,  \
+\\\\\\\\ \\n\\\\, \\\\pT\\\\, \\\\xT\\\\, \\\\fm\\\\, \\\\ain\\\\, \\\\aout\\\
+\\, \\\\vp\\\\, \\\\vx\\\\, \\\\hb\\\\, \\\\wbar\\\\,  \\\\\\\\ \\n\\\\, \
+\\\\zbar\\\\, \\\\Tbar\\\\, \\\\Lbar\\\\, \\\\psib\\\\, \\\\Vfuture\\\\, \
+\\\\Vpast\\\\, \\\\Vcausal\\\\, \\\\Faa\\\\, \\\\Fab\\\\,  \\\\\\\\ \\n\\\\, \
+\\\\Fba\\\\, \\\\Fcb\\\\, \\\\disc\\\\, \\\\peq\\\\, \\\\lhs\\\\, \
+\\\\rhs\\\\, \\\\half\\\\, \\\\.\\\\, \\\\x\\\\,  \\\\\\\\ \\n\\\\, \
+\\\\ox\\\\, \\\\os\\\\, \\\\w\\\\, \\\\inf\\\\, \\\\oo\\\\, \\\\p\\\\, \
+\\\\n\\\\, \\\\sign\\\\, \\\\EL\\\\,  \\\\\\\\ \\n\\\\, \\\\inverselimit\\\\, \
+\\\\directlimit\\\\, \\\\im\\\\, \\\\coim\\\\, \\\\coker\\\\, \
+\\\\opindex\\\\, \\\\spec\\\\, \\\\Diff\\\\, \\\\Hom\\\\,  \\\\\\\\ \\n\\\\, \
+\\\\Aut\\\\, \\\\End\\\\, \\\\Out\\\\, \\\\Inn\\\\, \\\\id\\\\, \\\\ad\\\\, \
+\\\\Ad\\\\, \\\\dim\\\\, \\\\codim\\\\,  \\\\\\\\ \\n\\\\, \\\\vol\\\\, \
+\\\\Ind\\\\, \\\\rad\\\\, \\\\-\\\\, \\\\+\\\\, \\\\H\\\\, \\\\M\\\\, \
+\\\\setcat\\\\, \\\\veccat\\\\,  \\\\\\\\ \\n\\\\, \\\\catcat\\\\, \\\\Uvec\\\
+\\, \\\\Vvec\\\\, \\\\Wvec\\\\, \\\\a\\\\, \\\\b\\\\, \\\\c\\\\, \\\\d\\\\, \
+\\\\D\\\\,  \\\\\\\\ \\n\\\\, \\\\e\\\\, \\\\ve\\\\, \\\\g\\\\, \\\\G\\\\, \\\
+\\k\\\\, \\\\l\\\\, \\\\lm\\\\, \\\\L\\\\, \\\\f\\\\,  \\\\\\\\ \\n\\\\, \
+\\\\vf\\\\, \\\\r\\\\, \\\\s\\\\, \\\\S\\\\, \\\\o\\\\, \\\\O\\\\, \
+\\\\th\\\\, \\\\Th\\\\, \\\\t\\\\,  \\\\\\\\ \\n\\\\, \\\\z\\\\, \\\\R\\\\, \
+\\\\Rnot\\\\, \\\\Rneq\\\\, \\\\Rgeq\\\\, \\\\Rpositive\\\\, \\\\Rleq\\\\, \\\
+\\Rnegative\\\\, \\\\Z\\\\,  \\\\\\\\ \\n\\\\, \\\\Znot\\\\, \\\\Zneq\\\\, \\\
+\\N\\\\, \\\\Zgeq\\\\, \\\\Zpositive\\\\, \\\\Zleq\\\\, \\\\Znegative\\\\, \\\
+\\Q\\\\, \\\\Qnot\\\\,  \\\\\\\\ \\n\\\\, \\\\Qneq\\\\, \\\\Qgeq\\\\, \
+\\\\Qpositive\\\\, \\\\Qleq\\\\, \\\\Qnegative\\\\, \\\\C\\\\, \\\\Cneq\\\\, \
+\\\\Cnot\\\\, \\\\P\\\\,  \\\\\\\\ \\n\\\\, \\\\Qp\\\\, \\\\Zp\\\\, \
+\\\\Up\\\\, \\\\spin\\\\, \\\\glie\\\\, \\\\gllie\\\\, \\\\sllie\\\\, \
+\\\\isllie\\\\, \\\\ulie\\\\,  \\\\\\\\ \\n\\\\, \\\\sulie\\\\, \\\\olie\\\\, \
+\\\\solie\\\\, \\\\isolie\\\\, \\\\splie\\\\, \\\\nlie\\\\, \\\\plie\\\\, \
+\\\\blie\\\\, \\\\hlie\\\\,  \\\\\\\\ \\n\\\\, \\\\klie\\\\, \\\\cA\\\\, \
+\\\\cB\\\\, \\\\cC\\\\, \\\\cD\\\\, \\\\cE\\\\, \\\\cF\\\\, \\\\cG\\\\, \
+\\\\cH\\\\,  \\\\\\\\ \\n\\\\, \\\\cI\\\\, \\\\cJ\\\\, \\\\cK\\\\, \
+\\\\cL\\\\, \\\\cM\\\\, \\\\cN\\\\, \\\\cO\\\\, \\\\cP\\\\, \\\\cQ\\\\,  \\\\\
+\\\\ \\n\\\\, \\\\cR\\\\, \\\\cS\\\\, \\\\cT\\\\, \\\\cU\\\\, \\\\cV\\\\, \
+\\\\cW\\\\, \\\\cX\\\\, \\\\cY\\\\, \\\\cZ\\\\,  \\\\\\\\ \\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.868149842304253*^9, 3.873983825146318*^9, 3.8763608134671173`*^9, 
+   3.8763612438031273`*^9, 3.8763618520269117`*^9, 3.876366155960243*^9, 
+   3.876366225749483*^9, 3.876366284425679*^9, 3.876366421733343*^9, {
+   3.876366648115641*^9, 3.8763666648344307`*^9}, 3.876366709706052*^9, {
+   3.876366886482048*^9, 3.876366902047934*^9}, 3.876367118284008*^9, {
+   3.876367192430608*^9, 3.876367212250719*^9}, 3.876367269475432*^9, 
+   3.87636745803465*^9, {3.876367591715342*^9, 3.876367600923048*^9}, {
+   3.876368442341568*^9, 3.8763684457119627`*^9}, {3.8763684912791348`*^9, 
+   3.876368493936474*^9}},
+ CellLabel->
+  "During evaluation of \
+In[379]:=",ExpressionUUID->"4746e9b3-d1c1-48f8-9146-ac9c5df507af"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"\<\"Fpq\"\>", ",", "\<\"nsub\"\>", ",", "\<\"nsup\"\>"}], 
-  "}"}]], "Print",
- CellChangeTimes->{3.868149842304253*^9, 3.8739838251556053`*^9},
+  RowBox[{"\<\"nsub\"\>", ",", "\<\"nsup\"\>"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.868149842304253*^9, 3.873983825146318*^9, 3.8763608134671173`*^9, 
+   3.8763612438031273`*^9, 3.8763618520269117`*^9, 3.876366155960243*^9, 
+   3.876366225749483*^9, 3.876366284425679*^9, 3.876366421733343*^9, {
+   3.876366648115641*^9, 3.8763666648344307`*^9}, 3.876366709706052*^9, {
+   3.876366886482048*^9, 3.876366902047934*^9}, 3.876367118284008*^9, {
+   3.876367192430608*^9, 3.876367212250719*^9}, 3.876367269475432*^9, 
+   3.87636745803465*^9, {3.876367591715342*^9, 3.876367600923048*^9}, {
+   3.876368442341568*^9, 3.8763684457119627`*^9}, {3.8763684912791348`*^9, 
+   3.876368493943944*^9}},
  CellLabel->
   "During evaluation of \
-In[13]:=",ExpressionUUID->"ed052d3a-d4f2-4a4b-8308-8e88f1398754"]
+In[379]:=",ExpressionUUID->"1b6283b8-8616-4f51-b989-17e81c5b88dd"]
 }, Open  ]],
 
-Cell[BoxData["\<\"\[IndentingNewLine],\\n// Size control of tilde, bar and \
-hat,\\n// https://tex.stackexchange.com/questions/365376,\\nwave: \
+Cell[BoxData["\<\"// size control of tilde, bar and hat,\\nwave: \
 ['{\\\\widetilde{#1}}', 1],\\nbar: ['{\\\\overline{#1}}', 1],\\nhat: \
 ['{\\\\widehat{#1}}', 1],\\ngeq: '{\\\\geqslant}',\\nleq: \
-'{\\\\leqslant}',\\n// Colors,\\nred: ['{\\\\textcolor{red}{#1}}', \
+'{\\\\leqslant}',\\n// to suppress the numbering in align,\\nnn: \
+'{\\\\nonumber}',\\n// colored text,\\nred: ['{\\\\textcolor{red}{#1}}', \
 1],\\norange: ['{\\\\textcolor{orange}{#1}}', 1],\\nblue: \
 ['{\\\\textcolor{blue}{#1}}', 1],\\npurple: ['{\\\\textcolor{purple}{#1}}', \
-1],\\npink: ['{\\\\textcolor{pink}{#1}}', 1],\\ntba: '{\\\\red{to be \
-added}}',\\nnotethat: ['{\\\\textcolor{red}{#1}}', 1],\\nimpliesthat: \
-'{$\\\\implies$}',\\n// complex coordinates,\\nhb: '{\\\\bar{h}}',\\nwbar: '{\
-\\\\bar{w}}',\\nzbar: '{\\\\bar{z}}',\\nTbar: '{\\\\bar{T}}',\\nLbar: \
-'{\\\\bar{L}}',\\npsib: '{\\\\bar{\\\\psi}}',\\n// Dirac \
-conjugate,\\nVfuture: '{\\\\bar{V}_{+}}',\\nVpast: \
+1],\\npink: ['{\\\\textcolor{pink}{#1}}', 1],\\nnotethat: \
+['{\\\\textcolor{red}{#1}}', 1],\\nimpliesthat: '{$\\\\implies$}',\\n// \
+shortcuts used in CFT,\\n// vacuum,\\nvac: '{\\\\ket{0}}',\\n// vacuum \
+expectation value,\\nvev: ['{\\\\langle #1 \\\\rangle}', 1],\\n// field \
+operator,\\nop: '{\\\\cO}',\\n// shadow operator,\\nopshadow: \
+'{\\\\wave{\\\\op}}',\\nfshadow: '{\\\\wave{\\\\f}}',\\n// composite \
+operator,\\nopcomposite: '{\\\\op_{e}}',\\n// singlet \
+structure,\\nsingletstructure: '{r=1}',\\n// Gramian matrix,\\ngram: \
+'{G}',\\n// stripped four-point functions,\\nfourpt: '{\\\\cG}',\\n// \
+stripped blocks,\\nblockstripped: '{g}',\\n// blocks with kinematical \
+factors,\\nblockdressed: '{G}',\\n// stripped partial waves,\\nCPWstripped: \
+'{\\\\psi}',\\n// partial waves with kinematical factors,\\nCPWdressed: \
+'{\\\\Psi}',\\n// highest weight module,\\nrep: ['{\\\\cV_{#1}}', 1],\\n// \
+unitary module,\\nurep: ['{\\\\cE_{#1}}', 1],\\n// celestial \
+sphere,\\ncsphere: '{$\\\\mathcal{CS}^2$}',\\n// celestial ring,\\ncring: '{$\
+\\\\mathcal{CS}^1$}',\\n// transverse momentum,\\npT: '{p_{\\\\perp}}' ,\\n// \
+transverse direction,\\nxT: '{x_{\\\\perp}}' ,\\n// unit fm,\\nfm: \
+'{\\\\operatorname{fm}}',\\n// unit Gev,\\nGeV: \
+['{\\\\operatorname{GeV}^{#1}}', 1],\\n// in state,\\nain: \
+'{a_{\\\\operatorname{in}}}',\\n// out state,\\naout: \
+'{a_{\\\\operatorname{out}}}',\\n// vector p,\\nvp: '{\\\\vec{p}}',\\n// \
+vector x,\\nvx: '{\\\\vec{x}}',\\n// complex coordinates,\\nhb: \
+'{\\\\bar{h}}',\\nwbar: '{\\\\bar{w}}',\\nzbar: '{\\\\bar{z}}',\\nTbar: \
+'{\\\\bar{T}}',\\nLbar: '{\\\\bar{L}}',\\npsib: '{\\\\bar{\\\\psi}}',\\n// \
+Dirac conjugate,\\nVfuture: '{\\\\bar{V}_{+}}',\\nVpast: \
 '{\\\\bar{V}_{-}}',\\nVcausal: '{\\\\bar{V}_{\\\\pm}}',\\n// Special \
 functions,\\nrising: ['{#1^{\\\\overline{#2}}\\\\,}', 2],\\n// Rising \
 factorials ,\\nfalling: ['{#1^{\\\\underline{#2}}\\\\,}', 2],\\n// Falling \
-factorials,\\n// Hypergeometric functions,\\nFaa: '{{}_{1}F_{1}}',\\nFba: \
-'{{}_{2}F_{1}}',\\nFcb: '{{}_{3}F_{2}}',\\n// Miscellaneous,\\n// linear \
+factorials,\\n// Hypergeometric functions,\\nFaa: '{{}_{1}F_{1}}',\\nFab: \
+'{{}_{1}F_{2}}',\\nFba: '{{}_{2}F_{1}}',\\nFcb: '{{}_{3}F_{2}}',\\n// \
+miscellaneous,\\n// discontinuity,\\ndisc: '{\\\\operatorname{Disc}}',\\n// \
+phantom equal at the beginning,\\npeq: '{\\\\phantom{=}}',\\n// linear \
 span,\\nvspan: ['{\\\\operatorname{span}\\\\set{ #1 }}', 1],\\n// \
 sets,\\nset: ['{\\\\left\\\\{ #1 \\\\right\\\\}}', 1],\\n// case,\\ncase: ['{\
 \\\\begin{cases} #1 \\\\end{cases}}', 1],\\n// left hand side,\\nlhs: \
 '{\\\\text{l.h.s}}',\\n// right hand side,\\nrhs: '{\\\\text{r.h.s}}',\\n// \
-used in align environment,\\n=: '{&=}' ,\\n// to control spacings in \
-integral,\\nintt: ['{\\\\int #1\\\\,}', 1],\\n// to control spacings in \
-integral,\\ninttt: ['{\\\\int_{#2} #1\\\\,}', 2],\\n// half,\\nhalf: \
-'{\\\\frac{1}{2}}',\\n// dot,\\n.: '{\\\\cdot}',\\n// times,\\nx: \
-'{\\\\times}',\\n// tensor product,\\nox: '{\\\\otimes}',\\n// direct \
-sum,\\nos: '{\\\\oplus}',\\n// wedge product,\\nw: '{\\\\wedge}',\\n// \
+to control spacings in integral,\\nintt: ['{\\\\int #1\\\\,}', 1],\\n// to \
+control spacings in integral,\\ninttt: ['{\\\\int_{#2} #1\\\\,}', 2],\\n// \
+half,\\nhalf: '{\\\\frac{1}{2}}',\\n// dot,\\n.: '{\\\\cdot}',\\n// \
+times,\\nx: '{\\\\times}',\\n// tensor product,\\nox: '{\\\\otimes}',\\n// \
+direct sum,\\nos: '{\\\\oplus}',\\n// wedge product,\\nw: '{\\\\wedge}',\\n// \
 infinity,\\ninf: '{\\\\infty}',\\noo: '{\\\\infty}',\\n// partial,\\np: \
-'{\\\\partial}',\\n// grad,\\nn: '{\\\\nabla}',\\n// square root,\\nsroot: '{\
-\\\\sqrt}',\\n// Sign function,\\nsign: '{\\\\operatorname{sgn}}',\\n// \
-diagonal matrix,\\ndiag: ['{\\\\operatorname{diag}\\\\left( #1 \\\\right)}', \
-1],\\n// overset: ['{A}{B}{A over B}', 2],\\n// underset: ['{A}{B}{A under \
-B}', 2],\\n// substack: ['{A}', 1],\\n// as multiline subscripts,\\n// \
-Algebras,\\n// inverse limit,\\ninverselimit: '{\\\\varprojlim}' ,\\n// \
-direct limit,\\ndirectlimit: '{\\\\varinjlim}' ,\\n// image,\\nim: \
-'{\\\\operatorname{im}}' ,\\n// coimage,\\ncoim: '{\\\\operatorname{coim}}' ,\
-\\n// cokernel,\\ncoker: '{\\\\operatorname{coker}}' ,\\n// operator \
-index,\\nopindex: '{\\\\operatorname{index}}',\\n// spectrum,\\nspec: \
+'{\\\\partial}',\\n// grad,\\nn: '{\\\\nabla}',\\n// Sign function,\\nsign: \
+'{\\\\operatorname{sgn}}',\\n// diagonal matrix,\\ndiag: \
+['{\\\\operatorname{diag}\\\\left( #1 \\\\right)}', 1],\\n// Euler-Lagrangian \
+operator,\\nEL: '{\\\\operatorname{EL}}',\\n// overset: ['{A}{B}{A over B}', \
+2],\\n// underset: ['{A}{B}{A under B}', 2],\\n// substack: ['{A}', 1],\\n// \
+as multiline subscripts,\\n// algebras,\\n// inverse limit,\\ninverselimit: \
+'{\\\\varprojlim}' ,\\n// direct limit,\\ndirectlimit: '{\\\\varinjlim}' \
+,\\n// image,\\nim: '{\\\\operatorname{im}}' ,\\n// coimage,\\ncoim: \
+'{\\\\operatorname{coim}}' ,\\n// cokernel,\\ncoker: \
+'{\\\\operatorname{coker}}' ,\\n// operator index,\\nopindex: \
+'{\\\\operatorname{index}}',\\n// spectrum,\\nspec: \
 '{\\\\operatorname{spec}}' ,\\n// diffeomorphism,\\nDiff: \
 '{\\\\operatorname{Diff}}' ,\\n// hom set,\\nHom: '{\\\\operatorname{Hom}}' ,\
 \\n// automorphism,\\nAut: '{\\\\operatorname{Aut}}' ,\\n// \
 endomorphism,\\nEnd: '{\\\\operatorname{End}}' ,\\n// outer \
 automorphism,\\nOut: '{\\\\operatorname{Out}}' ,\\n// inner \
 automorphism,\\nInn: '{\\\\operatorname{Inn}}' ,\\n// identity,\\nid: \
-'{\\\\mathbbm{1}}' ,\\n// adjoint action of Lie algebra,\\nad: \
+'{\\\\operatorname{id}}' ,\\n// adjoint action of Lie algebra,\\nad: \
 '{\\\\operatorname{ad}}' ,\\n// adjoint action of Lie group,\\nAd: \
 '{\\\\operatorname{Ad}}' ,\\n// dimension,\\n// dim: \
 '{\\\\operatorname{dim}}' ,\\n// codimension,\\ncodim: \
@@ -543,9 +685,9 @@ automorphism,\\nInn: '{\\\\operatorname{Inn}}' ,\\n// identity,\\nid: \
 algebra,\\nrad: '{\\\\operatorname{rad}}' ,\\n// dual space,\\ndual: ['{{#1}^\
 \\\\vee}', 1],\\n// inverse,\\n-: '{{-1}}' ,\\n// Hermitian conjugate,\\n+: \
 '{\\\\dagger}',\\n// Hilbert space,\\nH: '{\\\\mathcal{H}}',\\n// Moduli \
-spaces,\\nM: '{\\\\mathcal{M}}',\\n// Categories,\\nsetcat: \
+spaces,\\nM: '{\\\\mathcal{M}}',\\n// categories,\\nsetcat: \
 '{\\\\operatorname{Set}}',\\nveccat: '{\\\\operatorname{Vec}}',\\ncatcat: \
-'{\\\\operatorname{Cat}}',\\n// Vector spaces,\\nUvec: \
+'{\\\\operatorname{Cat}}',\\n// vector spaces,\\nUvec: \
 '{\\\\mathbb{U}}',\\nVvec: '{\\\\mathbb{V}}',\\nWvec: '{\\\\mathbb{W}}',\\n// \
 Greek letters,\\na: '{\\\\alpha}',\\nb: '{\\\\beta}',\\nc: '{\\\\chi}',\\nd: \
 '{\\\\delta}',\\nD: '{\\\\Delta}',\\ne: '{\\\\epsilon}',\\nve: \
@@ -554,23 +696,23 @@ Greek letters,\\na: '{\\\\alpha}',\\nb: '{\\\\beta}',\\nc: '{\\\\chi}',\\nd: \
 '{\\\\Lambda}',\\nf: '{\\\\phi}',\\nvf: '{\\\\varphi}',\\nr: \
 '{\\\\rho}',\\ns: '{\\\\sigma}',\\nS: '{\\\\Sigma}',\\no: '{\\\\omega}',\\nO: \
 '{\\\\Omega}',\\nth: '{\\\\theta}',\\nTh: '{\\\\Theta}',\\nt: \
-'{\\\\tau}',\\nz: '{\\\\zeta}',\\n// Number systems,\\n// Reals,\\nR: \
+'{\\\\tau}',\\nz: '{\\\\zeta}',\\n// number systems,\\n// reals,\\nR: \
 '{\\\\mathbb{R}}',\\nRnot: '{\\\\mathbb{R}^{\\\\neq 0}}',\\nRneq: \
 '{\\\\mathbb{R}^{\\\\neq 0}}',\\nRgeq: '{\\\\mathbb{R}^{\\\\geqslant \
 0}}',\\nRpositive: '{\\\\mathbb{R}^{> 0}}',\\nRleq: \
 '{\\\\mathbb{R}^{\\\\leqslant 0}}',\\nRnegative: '{\\\\mathbb{R}^{< \
-0}}',\\n// Integers,\\nZ: '{\\\\mathbb{Z}}',\\nZnot: \
+0}}',\\n// integers,\\nZ: '{\\\\mathbb{Z}}',\\nZnot: \
 '{\\\\mathbb{Z}^{\\\\geqslant 0}}',\\nZneq: '{\\\\mathbb{Z}^{\\\\neq \
 0}}',\\nN: '{\\\\mathbb{N}}',\\nZgeq: '{\\\\mathbb{Z}^{\\\\geqslant \
 0}}',\\nZpositive: '{\\\\mathbb{Z}^{> 0}}',\\nZleq: \
 '{\\\\mathbb{Z}^{\\\\leqslant 0}}',\\nZnegative: '{\\\\mathbb{Z}^{< \
-0}}',\\n// Rationals,\\nQ: '{\\\\mathbb{Q}}',\\nQnot: \
+0}}',\\n// rationals,\\nQ: '{\\\\mathbb{Q}}',\\nQnot: \
 '{\\\\mathbb{Q}^{\\\\geqslant 0}}',\\nQneq: '{\\\\mathbb{Q}^{\\\\neq \
 0}}',\\nQgeq: '{\\\\mathbb{Q}^{\\\\geqslant 0}}',\\nQpositive: \
 '{\\\\mathbb{Q}^{> 0}}',\\nQleq: '{\\\\mathbb{Q}^{\\\\leqslant \
-0}}',\\nQnegative: '{\\\\mathbb{Q}^{< 0}}',\\n// Complex numbers,\\nC: \
+0}}',\\nQnegative: '{\\\\mathbb{Q}^{< 0}}',\\n// complex numbers,\\nC: \
 '{\\\\mathbb{C}}',\\nCneq: '{\\\\mathbb{C}^{\\\\neq 0}}',\\nCnot: \
-'{\\\\mathbb{C}^{\\\\neq 0}}',\\n// Projectives,\\nP: '{\\\\mathbb{P}}',\\n// \
+'{\\\\mathbb{C}^{\\\\neq 0}}',\\n// projective,\\nP: '{\\\\mathbb{P}}',\\n// \
 p-adic numbers,\\nQp: '{\\\\mathbb{Q}_{p}}',\\nZp: \
 '{\\\\mathbb{Z}_{p\\\\text{-adic}}}',\\nUp: '{\\\\mathbb{U}_{p}}',\\n// Lie \
 algebras and groups,\\nspin: '{\\\\operatorname{Spin}}',\\nlie: \
@@ -582,7 +724,7 @@ algebras and groups,\\nspin: '{\\\\operatorname{Spin}}',\\nlie: \
 '{\\\\mathfrak{sp}}',\\n// nilpotent,\\nnlie: '{\\\\mathfrak{n}}',\\n// \
 parabolic,\\nplie: '{\\\\mathfrak{p}}',\\n// Borel,\\nblie: \
 '{\\\\mathfrak{b}}',\\n// Cartan,\\nhlie: '{\\\\mathfrak{h}}',\\n// \
-compact,\\nklie: '{\\\\mathfrak{k}}',\\n// Caligraphic Capitals,\\ncA: \
+compact,\\nklie: '{\\\\mathfrak{k}}',\\n// calligraphic capitals,\\ncA: \
 '{\\\\mathcal{A}}',\\ncB: '{\\\\mathcal{B}}',\\ncC: '{\\\\mathcal{C}}',\\ncD: \
 '{\\\\mathcal{D}}',\\ncE: '{\\\\mathcal{E}}',\\ncF: '{\\\\mathcal{F}}',\\ncG: \
 '{\\\\mathcal{G}}',\\ncH: '{\\\\mathcal{H}}',\\ncI: '{\\\\mathcal{I}}',\\ncJ: \
@@ -592,13 +734,19 @@ compact,\\nklie: '{\\\\mathfrak{k}}',\\n// Caligraphic Capitals,\\ncA: \
 '{\\\\mathcal{S}}',\\ncT: '{\\\\mathcal{T}}',\\ncU: '{\\\\mathcal{U}}',\\ncV: \
 '{\\\\mathcal{V}}',\\ncW: '{\\\\mathcal{W}}',\\ncX: '{\\\\mathcal{X}}',\\ncY: \
 '{\\\\mathcal{Y}}',\\ncZ: '{\\\\mathcal{Z}}',\\n\"\>"], "Output",
- CellChangeTimes->{3.8681498423146257`*^9, 3.8739838251629963`*^9},
- CellLabel->"Out[13]=",ExpressionUUID->"80ddafd2-cbe4-4690-ae8e-87c2e0ea61b0"]
-}, Open  ]]
+ CellChangeTimes->{3.876368493948229*^9},
+ CellLabel->
+  "Out[379]=",ExpressionUUID->"7d7d3a2a-d569-4200-9bc4-3b33266d4785"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8763684647245083`*^9, 
+  3.876368464729218*^9}},ExpressionUUID->"d6b6c79c-bf46-4fad-834c-\
+f77ce37c3dc6"]
 }, Open  ]]
 },
 WindowSize->{720, 872},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
 StyleDefinitions->"lily.nb",
 ExpressionUUID->"a60ca2e1-c1e6-44b7-b6e8-9343b447f35e"
@@ -615,23 +763,26 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 169, 3, 54, "Subsection",ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-9c304826196d"],
-Cell[752, 27, 10112, 171, 78, "Code",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"]
+Cell[580, 22, 218, 4, 54, "Subsection",ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-9c304826196d"],
+Cell[801, 28, 11741, 194, 78, "Code",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10901, 203, 183, 3, 54, "Subsection",ExpressionUUID->"d568c97f-4031-482a-9b04-e455ae44140c"],
-Cell[11087, 208, 8536, 185, 946, "Code",ExpressionUUID->"bf8d9de1-7346-414a-8f73-fcddebe15122"]
+Cell[12579, 227, 183, 3, 54, "Subsection",ExpressionUUID->"d568c97f-4031-482a-9b04-e455ae44140c"],
+Cell[12765, 232, 245, 7, 70, "Text",ExpressionUUID->"4e798141-5946-4f22-9dbd-f0836cf973cf"],
+Cell[13013, 241, 11391, 249, 1136, "Code",ExpressionUUID->"bf8d9de1-7346-414a-8f73-fcddebe15122"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19660, 398, 152, 3, 54, "Subsection",ExpressionUUID->"dc86ceb4-d390-42af-8c00-9acbabd0898d"],
+Cell[24441, 495, 152, 3, 54, "Subsection",ExpressionUUID->"dc86ceb4-d390-42af-8c00-9acbabd0898d"],
 Cell[CellGroupData[{
-Cell[19837, 405, 589, 9, 52, "Code",ExpressionUUID->"a6e67374-722a-4f63-9796-dea87eeb2ebb"],
+Cell[24618, 502, 702, 12, 52, "Code",ExpressionUUID->"a6e67374-722a-4f63-9796-dea87eeb2ebb"],
 Cell[CellGroupData[{
-Cell[20451, 418, 4094, 61, 234, "Print",ExpressionUUID->"062e20fc-2ad9-4b2d-af27-2994d806ae44"],
-Cell[24548, 481, 288, 7, 24, "Print",ExpressionUUID->"ed052d3a-d4f2-4a4b-8308-8e88f1398754"]
+Cell[25345, 518, 1313, 21, 139, "Print",ExpressionUUID->"6f05162e-68b3-42aa-a790-f87185e15520"],
+Cell[26661, 541, 3675, 51, 519, "Print",ExpressionUUID->"4746e9b3-d1c1-48f8-9146-ac9c5df507af"],
+Cell[30339, 594, 828, 15, 24, "Print",ExpressionUUID->"1b6283b8-8616-4f51-b989-17e81c5b88dd"]
 }, Open  ]],
-Cell[24851, 491, 7373, 104, 5411, "Output",ExpressionUUID->"80ddafd2-cbe4-4690-ae8e-87c2e0ea61b0"]
-}, Open  ]]
+Cell[31182, 612, 8796, 126, 6482, "Output",ExpressionUUID->"7d7d3a2a-d569-4200-9bc4-3b33266d4785"]
+}, Open  ]],
+Cell[39993, 741, 154, 3, 29, InheritFromParent,ExpressionUUID->"d6b6c79c-bf46-4fad-834c-f77ce37c3dc6"]
 }, Open  ]]
 }
 ]

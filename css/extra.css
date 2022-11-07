@@ -3,23 +3,28 @@
 
 /*light mode颜色*/
 [data-md-color-scheme="sora"] {
-    --md-primary-fg-color: rgba(120, 0, 255, 0.6);
+    /*--md-primary-fg-color: rgba(120, 0, 255, 0.6);
+    --md-typeset-a-color: rgba(100, 60, 200, 1);
+    --md-footer-fg-color: rgba(100, 0, 255, 0.5);
+    --md-footer-bg-color: rgba(255, 255, 255, 0.9);*/
+    --md-primary-fg-color: rgba(120, 70, 255, 0.8);
     --md-typeset-a-color: rgba(100, 60, 200, 1);
     --md-footer-fg-color: rgba(100, 0, 255, 0.5);
     --md-footer-bg-color: rgba(255, 255, 255, 0.9);
-    /* Code highlighting color shades*/
-    --md-code-hl-number-color: rgb(178, 65, 0);
+    --md-code-bg-color: rgb(249, 249, 249);
+    /*Code highlighting color shades*/
+    --md-code-hl-number-color: rgb(176, 3, 34);
     --md-code-hl-special-color: rgb(219, 20, 87);
-    --md-code-hl-function-color: rgb(168, 70, 185);
-    --md-code-hl-constant-color: rgb(181, 89, 217);
-    --md-code-hl-keyword-color: rgb(14, 122, 56);
+    --md-code-hl-function-color: rgb(42, 123, 228);
+    --md-code-hl-constant-color: rgb(42, 123, 228);
+    --md-code-hl-keyword-color: rgb(17, 152, 69);
     --md-code-hl-string-color: rgb(178, 148, 0);
     --md-code-hl-name-color: rgb(34, 18, 220);
-    --md-code-hl-operator-color: rgb(0, 0, 0);
-    --md-code-hl-punctuation-color: rgb(0, 0, 0);
+    --md-code-hl-operator-color: rgb(105, 75, 0);
+    --md-code-hl-punctuation-color: rgb(105, 75, 0);
     --md-code-hl-comment-color: rgb(153, 153, 153);
-    --md-code-hl-variable-color: rgb(110, 89, 217);
-    --md-code-hl-color: rgba(220, 220, 220, 0.4);
+    --md-code-hl-variable-color: rgb(120, 75, 255);
+    --md-code-hl-color: rgba(220, 220, 220, 0.3);
     /*--md-code-bg-color: rgb(245, 245, 245);*/
 }
 
@@ -31,9 +36,20 @@
 /*dark mode颜色*/
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color: rgba(173, 129, 255, 0.827);
-    --md-primary-fg-color--light: rgba(98, 0, 255, 0.604);
-    --md-primary-fg-color--dark: rgba(173, 129, 255, 0.827);
-    --md-hue: 250;
+    --md-code-bg-color: rgba(20, 20, 20, 0.4);
+    /* Code highlighting color shades*/
+    --md-code-hl-number-color: rgb(178, 65, 0);
+    --md-code-hl-special-color: rgb(219, 20, 87);
+    --md-code-hl-function-color: rgb(80, 150, 240);
+    --md-code-hl-constant-color: rgb(80, 150, 240);
+    --md-code-hl-keyword-color: rgb(14, 122, 56);
+    --md-code-hl-string-color: rgb(178, 148, 0);
+    --md-code-hl-name-color: rgb(34, 18, 220);
+    --md-code-hl-operator-color: rgb(205, 140, 2);
+    --md-code-hl-punctuation-color: rgb(205, 140, 2);
+    --md-code-hl-comment-color: rgb(153, 153, 153);
+    --md-code-hl-variable-color: rgb(117, 94, 229);
+    --md-code-hl-color: rgba(220, 220, 220, 1);
 }
 
 
