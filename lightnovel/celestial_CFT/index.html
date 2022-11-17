@@ -19,7 +19,7 @@
     
     
       
-        <title>天穹对偶 - Sora</title>
+        <title>Celestial - Sora</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#celestial" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              天穹对偶
+              Celestial
             
           </span>
         </div>
@@ -362,7 +362,82 @@
                   
 
 
-<h1 id="_1">天穹对偶</h1>
+<h1 id="celestial">Celestial</h1>
+<div class="highlight"><pre><span></span><code>Celestial CFT  &amp;  Usual CFT  \\
+\hline
+Two Virasoro Algebras  &amp; Two Virasoro Algebras\\
+\hline
+\makecell[l]{Current Algebras\\(Bulk Gauge Theories)} &amp; Current Algebras  \\
+\hline
+Collinear Singularities &amp; OPE Singularities\\
+\hline
+\makecell[l]{Continuous Complex Weight Modules\\(Principal Series)} &amp; Discrete Weight Modules\\
+\hline
+Single-valued &amp; Locality  \\
+\hline
+$S^\dagger S=1$ &amp; \\
+\hline
+Spacetime Crossing &amp; \\
+\hline
+\makecell[l]{Supertranslations \&amp;\\Soft Symmetries} &amp; No Analog\\
+\hline
+\end{tabular}
+\caption{Partial comparisons of CCFT and usual CFT.}
+</code></pre></div>
+<p>+1+1
+\subsection{Conventions}
+Spacetime: Minkowski <span class="arithmatex">\(\R^{1,d-1}\)</span> or Klein <span class="arithmatex">\(\R^{2,d-2}\)</span>, in most places <span class="arithmatex">\(d=4\)</span>.</p>
+<p>Signature: <span class="arithmatex">\((-1,1,\dots ,1)\)</span> or <span class="arithmatex">\((-1,-1,1,\dots ,1)\)</span>.</p>
+<p>Charges are anti-Hermitian by default.</p>
+<p>In <span class="arithmatex">\(d=4\)</span> symmetry enhancement and soft theorem. The slogan is "Ward identities of local conformal symmetries \impliesthat soft theorem", and only in <span class="arithmatex">\(4d\)</span> we have Virasoro <span class="arithmatex">\(\times\)</span> Virasoro inside the BMS algebra.</p>
+<p>The kinematical aspects of celestial holography can be extended to other dimensions, say the conformal primary wave-function and the dictionaries.</p>
+<p>\textbf{Question:} to utilize the stuffs we are familiar with in <span class="arithmatex">\(3d\)</span>, whether can consider the <span class="arithmatex">\(2d\)</span> celestial CFT with boundaries or not?</p>
+<p>\subsection{Symmetry}</p>
+<p><span class="arithmatex">\(SO(1,d-1)\)</span>: Lorentzian symmetry on <span class="arithmatex">\(\R^{1,d-1}\)</span>, and \textbf{Euclidean} conformal symmetry on the celestial plane/sphere <span class="arithmatex">\(\R^{d-2}\to S^{d-2}\)</span>.</p>
+<p><span class="arithmatex">\(SO(2,d-2)\)</span>: Kleinian symmetry on <span class="arithmatex">\(\R^{2,d-2}\)</span>, and \textbf{Lorentzian} conformal symmetry on the celestial cylinder/torus <span class="arithmatex">\(S^{1}\x S^{d-3}\)</span>.</p>
+<p>\textbf{Exercise:} work out the Penrose diagram of the Klein metric [2101.09591],
+\begin{equation}
+     d s^2=d z d \bar{z}-d w d \bar{w}
+\end{equation}
+and the analytic continuation of black hole solutions [2112.03954].</p>
+<p>\textbf{Question:} are there relations between <span class="arithmatex">\(d\)</span>-dim observables and <span class="arithmatex">\((d-2)\)</span>-dim conformal covariant quantities, or just coincidence?</p>
+<p>\textbf{Answer:} from the CFT side, the natural objects are correlation functions. From the bulk side, observables near the infinity are better-defined than others due to the diffeomorphism, e.g. Mellin amplitudes in AdS, late-time correlators in dS and scattering amplitudes in flat spacetime. To discuss the putative holography, we focus on the scattering amplitudes at the first step.</p>
+<p>\textbf{Question:} what about form factors? How to reconstruct operators inside the bulk?</p>
+<p>\vspace{1em}</p>
+<p>Back to the scattering amplitudes, plane-waves <span class="arithmatex">\(\ket{p,\s}\)</span> are momentum eigenstates and manifest the translation symmetry. We need a basis manifesting the conformal symmetry.</p>
+<p>Lorentzian generators <span class="arithmatex">\(L^{\mu \nu}=-\left(x^{\mu} \partial^{\nu}-x^{\nu} \partial^{\mu}\right)\)</span> are anti-Hermitian when acting on the \textbf{physical} Hilbert space <span class="arithmatex">\(\Hsmatrix\)</span> of asymptotic states, and the conformal generators
+\begin{equation}
+    \begin{aligned}
+L_{0} &amp;=-\frac{i}{2}\left(J_{3}+i K_{3}\right), &amp; \bar{L}<em 3="3">{0} &amp;=\frac{i}{2}\left(J</em>-i K_{3}\right) \
+L_{1} &amp;=-\frac{i}{2}\left(J_{1}+i K_{1}+i\left(J_{2}+i K_{2}\right)\right), &amp; \bar{L}<em 1="1">{1} &amp;=\frac{i}{2}\left(J</em>-i K_{1}-i\left(J_{2}-i K_{2}\right)\right) \
+L_{-1} &amp;=\frac{i}{2}\left(J_{1}+i K_{1}-i\left(J_{2}+i K_{2}\right)\right), &amp; \bar{L}<em 1="1">{-1} &amp;=-\frac{i}{2}\left(J</em>-i K_{1}+i\left(J_{2}-i K_{2}\right)\right) .
+\end{aligned}
+\end{equation}
+admit the \textbf{Euclidean/dS} conjugation relations,
+\begin{equation}
+    L_{n}^{\dagger}=-\bar{L}_{n}
+\end{equation}</p>
+<p>\textbf{Exercise:} work out the <span class="arithmatex">\(3d\)</span> version of the generator identifications. [Hijano, Oblak]</p>
+<p>\subsubsection*{BPZ conjugation vs. Euclidean conjugation}</p>
+<p>BPZ conjugation relations of CFT, $D^{\dagger}=D,P^{\dagger}=K,\dots $ come from the radial quantization and are equivalent to the Lorentzian conjugation relations <span class="arithmatex">\(Q^{\dagger}_{L}=-Q_{L}\)</span>. </p>
+<p>Euclidean conjugation relations <span class="arithmatex">\(Q^{\dagger}_{E}=-Q_{E}\)</span> come from the space-time quantization, and are consistent with the conjugation relations in the dS bulk.</p>
+<p>\subsubsection{Conformal primary wavefunction}</p>
+<p>Back to the discussion of basis. Notice that <span class="arithmatex">\(D=K_{3}\)</span>, hence eigenstates of <span class="arithmatex">\(D\)</span> are boost eigenstates. following the logic of CFT, we should consider the "primary operators" <span class="arithmatex">\(\ket{\op(x)}:=\ket{x,\D}\)</span>, but with the Euclidean conjugation relations, and this is exactly the Euclidean principal series representation.</p>
+<p>[show this in the case of <span class="arithmatex">\(3d\)</span>.]
+[step1: conformal wavefunction]
+[step2: inner product from the Euclidean c.r.]</p>
+<p>We also need a relation between momentum basis and the conformal basis, i.e. the overlap <span class="arithmatex">\(\braket{x,\D}{p,\s}\)</span>, named as the conformal primary wavefunction. This can be done by solving the Ward identities.</p>
+<p>[comparing with the bulk-boundary operator]</p>
+<p>The slogan: "bulk-boundary propagator is an intertwiner." [also true in the holographic Schrodinger CFT.]</p>
+<p>\subsubsection{Inner product of CFT}</p>
+<p>The physical inner product is not CFT-like. \impliesthat shadow transform can rescue this.</p>
+<p>% 目前关于天穹CFT的工作集中于从一些线索试图限制天穹CFT，从散射振幅来定义天穹关联函数。直接构造也有可能，例如在弦理论中，从世界面上的二维CFT顶点算子的关联函数（对模空间积分等等）可以得到四维时空中的散射振幅，那么能否直接从弦理论出发构造CCFT呢，
+% [\text{String worldsheet CFT}\overset{\D\to \inf}{\longrightarrow}\text{CCFT}]
+% 构造天穹CFT是天穹对偶领域的核心问题。</p>
+<p>\section{Celestial CFT on Torus}</p>
+<p>\newpage
+\printbibliography
+\end{document}</p>
 
 
 
