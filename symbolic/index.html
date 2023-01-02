@@ -51,7 +51,7 @@
     
       <link rel="stylesheet" href="../css/curtain.css">
     
-      <link rel="stylesheet" href="../css/admonition_custom.css">
+      <link rel="stylesheet" href="../css/admonition.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paclet" class="md-skip">
+        <a href="#xact" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../img/Lacia_logo.png" alt="logo">
+  <img src="../img/Lacia-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -248,7 +248,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../img/Lacia_logo.png" alt="logo">
+  <img src="../img/Lacia-logo.png" alt="logo">
 
     </a>
     Sora
@@ -307,13 +307,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#paclet" class="md-nav__link">
-    Paclet
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#xact" class="md-nav__link">
@@ -442,13 +435,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paclet" class="md-nav__link">
-    Paclet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#xact" class="md-nav__link">
     xAct
   </a>
@@ -518,37 +504,46 @@
 
 <ul>
 <li>
-<p><a href="evaluation_0/">Expression and evaluation: basic syntax</a></p>
+<p><a href="tricks/">Some tricks</a></p>
 </li>
 <li>
-<p><a href="evaluation_1/">Expression and evaluation I: the standard evaluation sequence</a></p>
+<p><a href="evaluation-0/">Expression and evaluation: basic syntax</a></p>
+<ul>
+<li>Basic syntax and precedence of operators</li>
+</ul>
+</li>
+<li>
+<p><a href="evaluation-1/">Expression and evaluation I: the standard evaluation sequence</a></p>
 <ul>
 <li>Introduction to the evaluation of expressions by analogy with the moduli space.</li>
 </ul>
 </li>
 <li>
 <p>[Expression and evaluation II: non-standard evaluation]</p>
-<ul>
-<li>(in preparation) In-place evaluation and interceptor trick</li>
-</ul>
+<!--* (in preparation) In-place evaluation and interceptor trick-->
 </li>
 <li>
 <p>[Expression and evaluation III: the Wolfram model]</p>
-<ul>
-<li>(in preparation)</li>
-</ul>
-</li>
-<li>
-<p><a href="package_development/">Paclet and package development</a></p>
+<!--* (in preparation)-->
 </li>
 <li>
 <p><a href="xact-eom-and-emt/">Introduction to xAct packages I: equation of motion and stress tensor</a></p>
 </li>
 <li>
-<p><a href="noncomm_algebra/">Noncommutative algebras</a></p>
-<ul>
-<li>(in preparation) Lie algebras, Hopf algebras, and their representations via Mathematica</li>
+<p>[Noncommutative algebras]</p>
+<p><!--(symbolic/noncommutative-algebra.md)-->
+<!--* (in preparation) Lie algebras, Hopf algebras, and their representations via Mathematica--></p>
+</li>
 </ul>
+<!--## Packages-->
+<h2 class="nocount">Paclets and packages</h2>
+
+<ul>
+<li>
+<p><a href="package-development/">Package development and dependency</a></p>
+</li>
+<li>
+<p>[]</p>
 </li>
 </ul>
 <!--## External links-->
@@ -582,10 +577,6 @@
 <li>
 <p><a href="https://blog.wolfram.com/">Wolfram Blog: news, views and insights</a></p>
 </li>
-</ul>
-<h3 id="paclet">Paclet</h3>
-<ul>
-<li><a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">Paclets and paclet development</a> <code>tutorial/Paclets</code></li>
 </ul>
 <h3 id="xact">xAct</h3>
 <ul>
@@ -741,7 +732,7 @@
       
         <script src="../js/mathjax.js"></script>
       
-        <script src="../js/random_text.js"></script>
+        <script src="../js/random-text.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

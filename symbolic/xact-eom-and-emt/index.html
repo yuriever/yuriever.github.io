@@ -51,7 +51,7 @@
     
       <link rel="stylesheet" href="../../css/curtain.css">
     
-      <link rel="stylesheet" href="../../css/admonition_custom.css">
+      <link rel="stylesheet" href="../../css/admonition.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../../img/Lacia_logo.png" alt="logo">
+  <img src="../../img/Lacia-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -246,7 +246,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../../img/Lacia_logo.png" alt="logo">
+  <img src="../../img/Lacia-logo.png" alt="logo">
 
     </a>
     Sora
@@ -368,16 +368,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-issues" class="md-nav__link">
-    Other issues
+  <a href="#some-further-explanations" class="md-nav__link">
+    Some further explanations
   </a>
   
-    <nav class="md-nav" aria-label="Other issues">
+    <nav class="md-nav" aria-label="Some further explanations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#explanation-of-xactxpertperturbation" class="md-nav__link">
-    Explanation of xAct`xPert`Perturbation
+  <a href="#function-xactxpertperturbation" class="md-nav__link">
+    Function xAct`xPert`Perturbation
   </a>
   
 </li>
@@ -431,7 +431,7 @@ References:</p>
 </li>
 </ul>
 <h2 id="introduction">Introduction</h2>
-<p>In this page we introduce the abstract tensor computation functionality of the xAct packages by examples, and we illustrate how to derive equations of motions and simplify tensor expressions in the following listed theories.</p>
+<p>In this page we introduce by examples the abstract tensor computation functionality of the xAct packages, and we illustrate how to derive equations of motions and simplify tensor expressions in the following listed theories.</p>
 <table>
 <thead>
 <tr>
@@ -562,25 +562,25 @@ see e.g.
 <p><code class="highlight"><span class="nv">LieD</span><span class="p">,</span><span class="w"> </span><span class="nv">LieDToCovD</span><span class="p">,</span><span class="w"> </span><span class="nv">Bracket</span><span class="w"></span></code> - Lie derivative</p>
 </li>
 </ul>
-<h2 id="other-issues">Other issues</h2>
-<h3 id="explanation-of-xactxpertperturbation">Explanation of <code class="highlight"><span class="nv">xAct`xPert`Perturbation</span><span class="w"></span></code></h3>
+<h2 id="some-further-explanations">Some further explanations</h2>
+<h3 id="function-xactxpertperturbation">Function <code class="highlight"><span class="nv">xAct`xPert`Perturbation</span><span class="w"></span></code></h3>
 <p>扩展包 xPert 提供了变分与度规微扰的相关函数。变分函数 <code class="highlight"><span class="nv">Perturbation</span><span class="w"></span></code> 内置了变分满足的线性性和 Leibniz 规则，例如 <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span><span class="w"></span></code> 便是 <span class="arithmatex">\(\delta A_{a}\)</span>，被打印为 <span class="arithmatex">\(\triangle[A_{a}]\)</span>，例如对电磁场作用量的变分为</p>
-<div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="o">@</span><span class="nv">A</span><span class="o">//</span><span class="nv">Perturbation</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span><span class="w"></span>
 </code></pre></div>
 <p>对作用量中的三个因子的分别变分，展开给出三项，</p>
 <div class="arithmatex">\[\begin{equation}
-\triangle [\cL_{A}]=\tfrac{1}{4} \bigl(- \frac{F_{ab} F^{ab} \triangle [\overset{\overset{~}{~}}{g}]}{2 (- \overset{\overset{~}{~}}{g})^{1/2}} + (- \overset{\overset{~}{~}}{g})^{1/2} F^{ab} \triangle [F_{ab}] + (- \overset{\overset{~}{~}}{g})^{1/2} F_{ab} \triangle [F^{ab}]\bigr)
+\triangle [\cL_{A}]=
+\tfrac{1}{4} \bigl(- \frac{F_{ab} F^{ab} \triangle [\overset{\overset{~}{~}}{g}]}{2 (- \overset{\overset{~}{~}}{g})^{1/2}} + (- \overset{\overset{~}{~}}{g})^{1/2} F^{ab} \triangle [F_{ab}] + (- \overset{\overset{~}{~}}{g})^{1/2} F_{ab} \triangle [F^{ab}]\bigr)
 \end{equation}\]</div>
 <p>被变分的基本场为规范势 <span class="arithmatex">\(A\)</span> 而非场强 <span class="arithmatex">\(F\)</span>，因此利用规则 <code class="highlight"><span class="nv">ruleFToA</span><span class="w"></span></code> 展开 <span class="arithmatex">\(F\)</span>，</p>
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="o">@</span><span class="nv">A</span><span class="o">/.</span><span class="nv">ruleFToA</span><span class="o">//</span><span class="nv">tensorSim</span><span class="o">//</span><span class="nv">Perturbation</span><span class="w"></span>
 </code></pre></div>
-<div class="arithmatex">\[\begin{align}
+<div class="arithmatex">\[\begin{equation}
 \triangle [\cL_{A}]=
-{}&amp;\tfrac{1}{2} \Bigl[(- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a}\nn\\
-&amp; -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr].
-\end{align}\]</div>
+\tfrac{1}{2} \Bigl((- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a} -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr)
+\end{equation}\]</div>
 <p>注意 <span class="arithmatex">\(\delta A^{a}\)</span> 隐含度规缩并 <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>。需要将 <span class="arithmatex">\(\delta L\)</span> 展开成 <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span> 的形式，<span class="arithmatex">\(\delta A_{a}\)</span> 的系数给出场方程，<span class="arithmatex">\(\delta g\)</span> 的系数给出能动张量，括号中含有关于变分的协变导数，需要通过分部积分来消除。</p>
-<p>函数 <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span><span class="w"></span></code> 提供了抽取系数以及分部积分的功能，其中第一个自变量表示变分场，第二个自变量表示关于协变导数 <code class="highlight"><span class="nv">CD</span><span class="w"></span></code> 进行分部积分。此外，在声明度规时已自动定义了度规变分，由此可计算能动张量以及迹，</p>
+<p>基于 <code class="highlight"><span class="nv">Perturbation</span><span class="w"></span></code>，函数 <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span><span class="w"></span></code> 提供了抽取系数以及分部积分的功能，其中第一个自变量表示变分场，第二个自变量表示关于协变导数 <code class="highlight"><span class="nv">CD</span><span class="w"></span></code> 进行分部积分。</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -591,22 +591,22 @@ see e.g.
 <p>see e.g. variational bi-complex, formal geometry and BV-BRST.&#160;<a class="footnote-backref" href="#fnref:tag:formal" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:1">
-<p>Joseph Polchinski. Scale and Conformal Invariance in Quantum Field Theory. 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Joseph Polchinski. Scale and Conformal Invariance in Quantum Field Theory. Nucl. Phys. B, 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>R. Jackiw and S. -Y. Pi. Tutorial on Scale and Conformal Symmetries in Diverse Dimensions. 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>R. Jackiw and S. -Y. Pi. Tutorial on Scale and Conformal Symmetries in Diverse Dimensions. J. Phys. A, 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What Maxwell Theory in D≠4 teaches us about scale and conformal invariance. 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What Maxwell Theory in D≠4 teaches us about scale and conformal invariance. Nucl. Phys. B, 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Yu Nakayama. Scale invariance vs conformal invariance. 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Yu Nakayama. Scale invariance vs conformal invariance. Phys. Rept., 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory. 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory. JHEP, 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On Scale and Conformal Invariance in Four Dimensions. 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On Scale and Conformal Invariance in Four Dimensions. JHEP, 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -654,7 +654,7 @@ see e.g.
       
         <script src="../../js/mathjax.js"></script>
       
-        <script src="../../js/random_text.js"></script>
+        <script src="../../js/random-text.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

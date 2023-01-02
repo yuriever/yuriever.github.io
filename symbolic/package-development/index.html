@@ -12,14 +12,14 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/interceptor/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/package-development/">
       
       <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
     
     
       
-        <title>The interceptor trick - Sora</title>
+        <title>Package development and dependency - Sora</title>
       
     
     
@@ -51,7 +51,7 @@
     
       <link rel="stylesheet" href="../../css/curtain.css">
     
-      <link rel="stylesheet" href="../../css/admonition_custom.css">
+      <link rel="stylesheet" href="../../css/admonition.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-interceptor-trick" class="md-skip">
+        <a href="#package-development-and-dependency" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../../img/Lacia_logo.png" alt="logo">
+  <img src="../../img/Lacia-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The interceptor trick
+              Package development and dependency
             
           </span>
         </div>
@@ -246,7 +246,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
       
-  <img src="../../img/Lacia_logo.png" alt="logo">
+  <img src="../../img/Lacia-logo.png" alt="logo">
 
     </a>
     Sora
@@ -349,6 +349,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-type" class="md-nav__link">
+    Function type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-dependency" class="md-nav__link">
+    Package dependency
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
         </div>
     </div>
@@ -362,7 +391,200 @@
                   
 
 
-<h1 id="the-interceptor-trick">The interceptor trick</h1>
+<h1 id="package-development-and-dependency">Package development and dependency</h1>
+<p>References:</p>
+<ul>
+<li><a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">Paclets and paclet development</a> <code>tutorial/Paclets</code></li>
+</ul>
+<hr />
+<p>扩展包结构可概括为：</p>
+<div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*用Get强制重新读取扩展包p0.wl...*)</span><span class="w"></span>
+<span class="nb">Get</span><span class="o">/@</span><span class="p">{</span><span class="s">&quot;p0`&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+
+<span class="c">(*设定$Context为p`，Needs扩展包p1.wl...*)</span><span class="w"></span>
+<span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;p`&quot;</span><span class="p">,{</span><span class="s">&quot;p1`&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">}]</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*重载扩展包时清除上次的定义*)</span><span class="w"></span>
+<span class="nb">Unprotect</span><span class="o">@@</span><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;p`*&quot;</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+<span class="nb">ClearAll</span><span class="o">@@</span><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;p`*&quot;</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*声明公共函数*)</span><span class="w"></span>
+<span class="nv">foo</span><span class="o">::</span><span class="ne">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*设定$Context为p`Private`*)</span><span class="w"></span>
+<span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*函数定义*)</span><span class="w"></span>
+<span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">...;</span><span class="w"></span>
+
+<span class="c">(*结束当前$Context，恢复为p`*)</span><span class="w"></span>
+<span class="nb">End</span><span class="p">[]</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*保护所有未指名的符号*)</span><span class="w"></span>
+<span class="nv">protectAllExcept</span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;foo1&quot;</span><span class="w"></span>
+<span class="p">]</span><span class="o">;</span><span class="w"></span>
+
+<span class="c">(*恢复$Context，并添加p`至$ContextPath*)</span><span class="w"></span>
+<span class="nb">EndPackage</span><span class="p">[]</span><span class="o">;</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>
+<p>子扩展包的自动补全问题：母扩展包 <code class="highlight"><span class="nv">p`</span><span class="w"></span></code> 下的子扩展包 <code class="highlight"><span class="nv">p`p1`</span><span class="w"></span></code> 中的公共函数不会被自动补全。可见讨论 <a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a>。</p>
+<p>解决方案：将母扩展包解耦并重命名为 <code class="highlight"><span class="nv">p0`</span><span class="w"></span></code>，在 <code class="highlight"><span class="nv">p0`</span><span class="w"></span></code> 中启用子扩展包 <code class="highlight"><span class="nv">p`p1`</span><span class="w"></span></code>。</p>
+</li>
+</ul>
+<h2 id="function-type">Function type</h2>
+<ul>
+<li>
+<p>常数 (constant)，存储变量的列表以及列表操作函数；</p>
+</li>
+<li>
+<p>判别函数 (questing function)，用以界定变量的类型和范围，因此定义尽量完备；</p>
+</li>
+<li>
+<p>主体函数 (body function)，实现该扩展包的各种功能。为防止意外计算，需要定义再去定义，遵循自上到下的书写规则；</p>
+</li>
+<li>
+<p>打印函数 (format)，区分返回值和打印，分离函数之间传递的值和输出结果。</p>
+</li>
+</ul>
+<h2 id="naming">Naming</h2>
+<ul>
+<li>
+<p>同一类功能的函数以相同的前缀命名。</p>
+</li>
+<li>
+<p>判别函数的命名后缀为 <code class="highlight"><span class="nv">Q</span><span class="w"></span></code>。</p>
+</li>
+<li>
+<p>局部变量的名称为小写字母，全局变量 <code class="highlight"><span class="nv">foo</span><span class="w"></span></code> 的局部拷贝命名为 <code class="highlight"><span class="nv">$$foo</span><span class="w"></span></code>，重复模式的名称为单词复数 <code class="highlight"><span class="nt">foos__</span><span class="w"></span></code>，列表模式的名称为 <code class="highlight"><span class="nt">foolist_</span><span class="w"></span></code>，helper 函数命名为 <code class="highlight"><span class="nv">foo`foo1</span><span class="w"></span></code>。</p>
+</li>
+</ul>
+<h2 id="package-dependency">Package dependency</h2>
+<div class="highlight"><pre><span></span><code>lily`lily           # initialization
+lily`xact           # initialization
+lily`feyn           # initialization
+lily`temp           # working region
+</code></pre></div>
+<div class="admonition mark">
+<p class="admonition-title">Package lily`lily</p>
+<pre class="mermaid"><code>classDiagram
+
+list &lt;.. algebra
+list &lt;.. index
+base &lt;.. test
+base &lt;.. IO
+base &lt;.. temp
+MaTeX &lt;.. latex
+
+class base{
+    &lt;&lt;custom, debug&gt;&gt;
+    xxQ()
+}
+
+class temp{
+    &lt;&lt;workbench&gt;&gt;
+}
+
+class IO{
+    &lt;&lt;input, \n output&gt;&gt;
+    IO()
+}
+
+class test{
+    &lt;&lt;unit test&gt;&gt;
+    test()
+    week()
+    virtual()
+}
+
+class list{
+    &lt;&lt;data&gt;&gt;
+    data(type,member)
+    member()
+}
+
+class algebra{
+    &lt;&lt;associative \n algebra&gt;&gt;
+    operator
+    relation
+    printing
+}
+
+class index{
+    &lt;&lt;indexed \n objexts&gt;&gt;
+    variable
+    label
+}
+
+class number{
+    &lt;&lt;number field&gt;&gt;
+}
+
+class MaTeX{
+    &lt;&lt;latex \n compiling&gt;&gt;
+}
+
+class latex{
+    &lt;&lt;latex \n compiling&gt;&gt;
+}
+
+class matrix{
+    &lt;&lt;matrix,\n operator&gt;&gt;
+}
+
+class simplify{
+    &lt;&lt;expression \n simplification&gt;&gt;
+    together()
+    apart()
+}
+
+class lie{
+    &lt;&lt;Lie alg&gt;&gt;
+}
+
+class IBP{
+    &lt;&lt;integration \n by parts&gt;&gt;
+    IBP()
+}
+
+</code></pre>
+</div>
+<div class="admonition mark">
+<p class="admonition-title">Package lily`xact (unfinished)</p>
+<pre class="mermaid"><code>classDiagram
+
+class xCore{
+    &lt;&lt;debug tools&gt;&gt;
+}
+
+class xPerm{
+    &lt;&lt;permutation \n manipulation&gt;&gt;
+}
+
+class xTensor{
+    &lt;&lt;abstract tensor \n computations&gt;&gt;
+}
+
+class xCoba{
+    &lt;&lt;component tensor \n computations&gt;&gt;
+}
+
+class xPert{
+    &lt;&lt;component tensor \n computations&gt;&gt;
+}
+
+class TexAct{
+    &lt;&lt;latex format&gt;&gt;
+}
+
+class MaTeX{
+    latex compiling
+}
+
+</code></pre>
+</div>
 
 
 
@@ -407,7 +629,7 @@
       
         <script src="../../js/mathjax.js"></script>
       
-        <script src="../../js/random_text.js"></script>
+        <script src="../../js/random-text.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
