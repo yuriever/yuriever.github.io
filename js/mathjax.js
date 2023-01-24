@@ -338,8 +338,8 @@ window.MathJax = {
             cY: '{\\mathcal{Y}}',
             cZ: '{\\mathcal{Z}}',
         },
-        enviroments: {
-            //testenviroment: ['\\left\\{', '\\right\\}']
+        environments: {
+            //testenvironment: ['\\left\\{', '\\right\\}']
         },
     },
     // package physics options
