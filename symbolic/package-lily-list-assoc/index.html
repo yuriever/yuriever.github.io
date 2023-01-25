@@ -21,7 +21,7 @@
     
     
       
-        <title>Package lily`list/assoc - Sora</title>
+        <title>Package lily`assoc` - Sora</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#package-lilylistassoc" class="md-skip">
+        <a href="#package-lilyassoc" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Package lily`list/assoc
+              Package lily`assoc`
             
           </span>
         </div>
@@ -512,8 +512,8 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="package-lilylistassoc">Package <code class="highlight"><span class="nv">lily`list</span><span class="o">/</span><span class="nv">assoc</span></code></h1>
-<p>扩展包 <code class="highlight"><span class="nv">lily`list</span></code> 和 <code class="highlight"><span class="nv">lily`assoc</span></code> 的设计目的是管理数据结构，对应<strong>下值</strong>和<strong>关联</strong>两种设计思路。本页面仅详细讨论后者。</p>
+<h1 id="package-lilyassoc">Package <code class="highlight"><span class="nv">lily`assoc`</span></code></h1>
+<p>扩展包 <code class="highlight"><span class="nv">lily`list`</span></code> 和 <code class="highlight"><span class="nv">lily`assoc`</span></code> 的设计目的是管理数据结构，对应<strong>下值</strong>和<strong>关联</strong>两种设计思路。本页面仅详细讨论后者。</p>
 <h2 id="basic-ideas">Basic ideas</h2>
 <h3 id="_1">背景动机</h3>
 <p>有限生成代数由生成元列表 <code class="highlight"><span class="nv">operator</span></code> 和关系列表 <code class="highlight"><span class="nv">relation</span></code> 构成，此外在输出结果时，还需格式化表达式的规则列表 <code class="highlight"><span class="nv">printing</span></code>。多个不同的代数给出不同的列表三元组。</p>
@@ -522,7 +522,7 @@
 <p>有如下两种设计思路：</p>
 <ul>
 <li>
-<p>下值 <code class="highlight"><span class="nv">lily`list</span></code>：以成员为核心，类型为成员的上值，实例为成员的下值。成员的上值用于标记类型、结构和性质，下值用于存储数据。沿此思路得到扩展包 <code class="highlight"><span class="nv">lily`list</span></code>；</p>
+<p>下值：以成员为核心，类型为成员的上值，实例为成员的下值。成员的上值用于标记类型、结构和性质，下值用于存储数据。沿此思路得到扩展包 <code class="highlight"><span class="nv">lily`list`</span></code>；</p>
 <div class="highlight"><pre><span></span><code><span class="nv">dataType</span><span class="p">[</span><span class="nv">member1</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nv">type</span><span class="o">;</span>
 <span class="nv">dataType</span><span class="p">[</span><span class="nv">member2</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nv">type</span><span class="o">;</span>
 
@@ -534,7 +534,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>关联 <code class="highlight"><span class="nv">lily`assoc</span></code>：用多重关联存储数据，沿此思路得到扩展包 <code class="highlight"><span class="nv">lily`assoc</span></code>：</p>
+<p>关联：用多重关联存储数据，沿此思路得到扩展包 <code class="highlight"><span class="nv">lily`assoc`</span></code>：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span>
 <span class="w">    </span><span class="nv">instance1</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">member1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">member2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
 <span class="w">    </span><span class="nv">instance2</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">member1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">member2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
@@ -547,7 +547,7 @@
 <p>在有限生成代数的例子中，类型 <code class="highlight"><span class="nv">algebra</span></code> 包含成员 <code class="highlight"><span class="nv">operator</span><span class="p">,</span><span class="w"> </span><span class="nv">relation</span><span class="p">,</span><span class="w"> </span><span class="nv">printing</span></code>，实例 <code class="highlight"><span class="nv">alg1</span><span class="p">,</span><span class="w"> </span><span class="nv">alg2</span><span class="p">,</span><span class="w"> </span><span class="o">...</span></code> 标记不同的代数。其两种实现方式为</p>
 <ul>
 <li>
-<p>下值 <code class="highlight"><span class="nv">lily`list</span></code>：</p>
+<p>下值 <code class="highlight"><span class="nv">lily`list`</span></code>：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">dataType</span><span class="p">[</span><span class="nv">operator</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nv">algebra</span><span class="o">;</span>
 <span class="o">...</span>
 
@@ -557,7 +557,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>关联 <code class="highlight"><span class="nv">lily`assoc</span></code>：</p>
+<p>关联 <code class="highlight"><span class="nv">lily`assoc`</span></code>：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">algebra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span>
 <span class="w">    </span><span class="nv">alg1</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">operator</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">relation</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">printing</span><span class="o">-&gt;</span><span class="p">{}|&gt;,</span>
 <span class="w">    </span><span class="nv">alg2</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">operator</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">relation</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">printing</span><span class="o">-&gt;</span><span class="p">{}|&gt;,</span>
