@@ -369,6 +369,19 @@
     Data operation
   </a>
   
+    <nav class="md-nav" aria-label="Data operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-shortcuts" class="md-nav__link">
+    Some shortcuts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -518,33 +531,61 @@
 <h2 id="data-operation">Data operation</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraDefine</span></code></p>
+<p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
 <ul>
-<li><code class="highlight"><span class="nv">algebraDefineQ</span></code></li>
-<li><code class="highlight"><span class="nv">algebraDefineInternal</span></code></li>
+<li><code class="highlight"><span class="nv">algebraDefineQ</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">algebraDefineInternal</span><span class="p">[]</span></code></li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraDefault</span></code></p>
+<p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraAdd</span><span class="o">/</span><span class="nv">algebraDelete</span></code></p>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">/</span><span class="nv">algebraUnset</span></code></p>
+<p><code class="highlight"><span class="nv">algebraAdd</span><span class="o">|</span><span class="nv">algebraDelete</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">,</span><span class="nt">assoc_</span><span class="p">]</span></code> </p>
+<ul>
+<li>
+<p>The operator form <code class="highlight"><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">][</span><span class="nt">assoc_</span><span class="p">]</span></code> is supported but without string auto-completion.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraShow</span></code></p>
+<p>The argument <code class="highlight"><span class="nt">assoc_</span></code> accepts <code class="highlight"><span class="nt">_Rule</span><span class="o">|</span><span class="p">{</span><span class="nt">___Rule</span><span class="p">}</span><span class="o">|</span><span class="nt">_Association</span></code>. For example, the CCR can be added as,</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;|</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="s">&quot;relation&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">-&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="m">1</span><span class="p">}|&gt;</span>
+</code></pre></div>
+</li>
+</ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">operator</span><span class="o">/</span><span class="nv">relation</span><span class="o">/</span><span class="nv">printing</span></code></p>
+<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+</li>
+</ul>
+<h3 id="some-shortcuts">Some shortcuts</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[]</span></code> - return the members of the default algebra;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[]</span></code> - return the list of defined algebras;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[]</span></code> - return the list of default algebras;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[]</span></code> - reset/unset the default algebras;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nb">All</span><span class="p">]</span></code> - reset/unset all algebras except the predefined ones.</p>
 </li>
 </ul>
 <h2 id="functionality">Functionality</h2>
 <h3 id="pre-defined-algebras">Pre-defined algebras</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraInternal</span></code></p>
+<p><code class="highlight"><span class="nv">algebraInternal</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code></p>
 <ul>
 <li><code class="highlight"><span class="s">&quot;multiplication&quot;</span></code> - <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></li>
 <li><code class="highlight"><span class="s">&quot;tensorProduct&quot;</span></code> - <code class="highlight"><span class="nb">CircleTimes</span></code></li>
@@ -556,22 +597,22 @@
 <h3 id="questing-functions">Questing functions</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">/</span><span class="nv">operatorQ</span></code></p>
+<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">|</span><span class="nv">operatorQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">generatorQ</span></code></p>
+<p><code class="highlight"><span class="nv">generatorQ</span><span class="p">[</span><span class="nt">op_Symbol</span><span class="o">|</span><span class="nt">op_Symbol</span><span class="p">[</span><span class="o">___</span><span class="p">]]</span></code></p>
 </li>
 </ul>
 <h3 id="algebra-simplification">Algebra simplification</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraSimplify</span></code></p>
+<p><code class="highlight"><span class="nv">algebraSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraPrint</span></code></p>
+<p><code class="highlight"><span class="nv">algebraPrint</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraEquation</span></code></p>
+<p><code class="highlight"><span class="nv">algebraEquation</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
 </li>
 </ul>
 <p>Table of shortcuts:</p>
@@ -584,70 +625,79 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algS</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algS</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraSimplify</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algP</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraPrint</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algSP</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algSP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">algebraPrint</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algSS</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algSS</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algSSP</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algSSP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">algebraPrint</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algE</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algE</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraEquation</span></code></td>
 </tr>
 <tr>
-<td align="left"><code class="highlight"><span class="nv">algES</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algES</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td align="left"><code class="highlight"><span class="nv">algebraEquation</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nv">algEqualQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Equal</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nv">algSameQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
+<td align="left"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">SameQ</span></code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="commutator-adjoint-and-power">Commutator, adjoint and power</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">comm</span><span class="o">/</span><span class="nv">anticomm</span></code></p>
+<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code></p>
 <ul>
-<li><code class="highlight"><span class="nv">commSim</span></code></li>
-<li><code class="highlight"><span class="nv">commDefine</span></code></li>
-<li><code class="highlight"><span class="nv">jacobiIdentity</span></code></li>
+<li><code class="highlight"><span class="nv">commSim</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">commDefine</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_</span></code></li>
+<li><code class="highlight"><span class="nv">jacobiIdentity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">adjoint</span></code></p>
+<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code></p>
 <ul>
-<li><code class="highlight"><span class="nv">adjointExp</span></code></li>
+<li><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code></li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">operatorPower</span></code></p>
+<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code></p>
 <ul>
-<li><code class="highlight"><span class="nv">operatorExp</span></code></li>
+<li><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code></li>
 </ul>
 </li>
 </ul>
 <h3 id="inner-product">Inner product</h3>
 <p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;conjugate&quot;</span></code>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">innerProduct</span></code></li>
+<li><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
 <ul>
-<li><code class="highlight"><span class="nv">tensorRank</span></code></li>
+<li><code class="highlight"><span class="nv">tensorRank</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></li>
 </ul>
 <h3 id="scalar-extraction">Scalar extraction</h3>
 <ul>
-<li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">/</span><span class="nv">scalarExtract</span></code></li>
+<li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">|</span><span class="nv">scalarExtract</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code></li>
 </ul>
 
 <!-- Source file information -->
