@@ -1,0 +1,338 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12782,        330]
+NotebookOptionsPosition[     10763,        285]
+NotebookOutlinePosition[     11157,        301]
+CellTagsIndexPosition[     11114,        298]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["LaTeX macro example", "Subsection",ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-9c304826196d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"example", "=", "\n", 
+  "\"\<\n\\\\AtBeginDocument{\\\\renewcommand{\\\\bar}[1]{\\\\overline{#1}}}\n\
+\n% vacuum\n\\\\newcommand{\\\\vac}{\\\\ket{0}}\n% vacuum expectation value\n\
+\\\\renewcommand{\\\\vev}[1]{\\\\langle #1 \\\\rangle}\n\>\""}]], "Code",
+ CellLabel->"In[1]:=",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"],
+
+Cell[BoxData["\<\"\\n\\\\AtBeginDocument{\\\\renewcommand{\\\\bar}[1]{\\\\\
+overline{#1}}}\\n\\n% vacuum\\n\\\\newcommand{\\\\vac}{\\\\ket{0}}\\n% vacuum \
+expectation value\\n\\\\renewcommand{\\\\vev}[1]{\\\\langle #1 \\\\rangle}\\n\
+\"\>"], "Output",
+ CellLabel->"Out[1]=",ExpressionUUID->"70dfadb4-b8fd-4cbf-a685-16d17cd4ce16"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Converting LaTeX macros to MathJax", "Subsection",ExpressionUUID->"d568c97f-4031-482a-9b04-e455ae44140c"],
+
+Cell[TextData[{
+ "The symbols ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{".", " ", 
+    RowBox[{"-", " ", "+"}]}], TraditionalForm]],ExpressionUUID->
+  "9ebdcf7e-3142-419c-a9bb-2b0f9594aeb9"],
+ " in JavaScript should be enclosed by ",
+ Cell[BoxData[
+  FormBox["''", TraditionalForm]],ExpressionUUID->
+  "8aa999ac-6dda-490d-a79c-f5b22c28cb50"],
+ "."
+}], "Text",ExpressionUUID->"4e798141-5946-4f22-9dbd-f0836cf973cf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"macroConvert", "[", "string_", "]"}], " ", ":=", "\n", "    ", 
+   RowBox[{"Module", "[", " ", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"postOperation", ",", "conversion", ",", "result"}], "}"}], ",",
+      "\n", "        ", 
+     RowBox[{
+      RowBox[{"conversion", " ", "=", " ", 
+       RowBox[{"<|", "\n", "            ", 
+        RowBox[{
+         RowBox[{"\"\<with_parameter\>\"", "->", 
+          RowBox[{"{", "}"}]}], ",", "\n", "            ", 
+         RowBox[{"\"\<plain\>\"", "->", 
+          RowBox[{"{", "}"}]}], ",", "\n", "            ", 
+         RowBox[{"\"\<unvalid\>\"", "->", 
+          RowBox[{"{", "}"}]}], ",", "\n", "            ", 
+         RowBox[{"\"\<result\>\"", "->", "\"\<\>\""}]}], "\n", "        ", 
+        "|>"}]}], ";", "\n", "        ", 
+      RowBox[{"postOperation", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"DeleteCases", "[", "\"\<\>\"", "]"}], "/*", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{"StringInsert", "[", 
+           RowBox[{"#", ",", "\"\<,\\n\>\"", ",", 
+            RowBox[{"-", "1"}]}], "]"}], "&"}], "]"}], "/*", 
+        RowBox[{"Apply", "[", "StringExpression", "]"}]}]}], ";", "\n", 
+      "        ", 
+      RowBox[{"result", " ", "=", "\n", "            ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"string", "//", 
+             RowBox[{
+              RowBox[{"StringSplit", "[", 
+               RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}]}], "//", "\n", 
+            "\t\t\t\t", 
+            RowBox[{
+             RowBox[{"Nest", "[", 
+              RowBox[{
+               RowBox[{"StringReplace", "[", 
+                RowBox[{"macroConvert`rule", "[", "\"\<regulating\>\"", "]"}],
+                 "]"}], ",", "#", ",", "2"}], "]"}], "&"}]}], "//", "\n", 
+           "\t\t\t\t", 
+           RowBox[{"StringReplace", "[", 
+            RowBox[{"macroConvert`rule", "[", 
+             RowBox[{"conversion", ",", "\"\<with_parameter\>\""}], "]"}], 
+            "]"}]}], "//", "\n", "\t\t\t\t", 
+          RowBox[{"StringReplace", "[", 
+           RowBox[{"macroConvert`rule", "[", 
+            RowBox[{"conversion", ",", "\"\<plain\>\""}], "]"}], "]"}]}], "//",
+          "\n", "\t\t\t\t", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{"macroConvert`rule", "[", 
+           RowBox[{"conversion", ",", "\"\<unvalid\>\""}], "]"}], "]"}]}], "//",
+         "\n", "\t\t\t\t", "postOperation"}]}], ";", "\n", "        ", 
+      RowBox[{"AssociateTo", "[", 
+       RowBox[{"conversion", ",", 
+        RowBox[{"\"\<result\>\"", "->", "result"}]}], "]"}], ";", "\n", 
+      "        ", "conversion"}]}], "\n", "    ", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"macroConvert`rule", "//", "Attributes"}], "=", 
+   RowBox[{"{", "HoldFirst", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"macroConvert`rule", "[", "\"\<regulating\>\"", "]"}], " ", "=", 
+    " ", 
+    RowBox[{"{", "\n", "    ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\"\< \>\"", ".."}], "->", "\"\< \>\""}], ",", "\n", "    ", 
+      RowBox[{
+       RowBox[{"\"\<%\>\"", "~~", "rest___"}], ":>", 
+       RowBox[{"\"\<//\>\"", "~~", "rest"}]}], ",", "\n", "    ", 
+      RowBox[{"\"\<\\\\renewcommand\>\"", "->", "\"\<\\\\newcommand\>\""}], 
+      ",", "\n", "    ", 
+      RowBox[{"\"\<\\\\newmathcommand\>\"", "->", "\"\<\\\\newcommand\>\""}], 
+      ",", "\n", "    ", 
+      RowBox[{
+       RowBox[{"\"\<\\\\providecommand\>\"", "~~", "__"}], ":>", "\"\<\>\""}],
+       ",", "\n", "    ", 
+      RowBox[{
+       RowBox[{"\"\<\\\\AtBeginDocument{\>\"", "~~", 
+        RowBox[{"Longest", "[", "string__", "]"}], "~~", "\"\<}\>\""}], ":>", 
+       "string"}]}], "\n", "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"macroConvert`rule", "[", 
+     RowBox[{"conversion_", ",", "\"\<with_parameter\>\""}], "]"}], " ", ":=",
+     " ", 
+    RowBox[{"{", "\n", "    ", 
+     RowBox[{
+      RowBox[{"\"\<\\\\newcommand{\\\\\>\"", "~~", 
+       RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}[\>\"", "~~", 
+       RowBox[{"num_", "?", "DigitQ"}], "~~", "\"\<]{\>\"", "~~", 
+       RowBox[{"Longest", "[", "macroBody__", "]"}], "~~", "\"\<}\>\""}], ":>",
+       "\n", "        ", 
+      RowBox[{"Module", "[", " ", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", "\n", "            ", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{
+           RowBox[{"conversion", "[", "\"\<with_parameter\>\"", "]"}], ",", 
+           RowBox[{"\"\<\\\\\>\"", "~~", "macroName", "~~", 
+            RowBox[{"StringRepeat", "[", 
+             RowBox[{
+              RowBox[{"\"\<{\>\"", "<>", "\"\<a\>\"", "<>", "\"\<}\>\""}], 
+              ",", 
+              RowBox[{"ToExpression", "@", "num"}]}], "]"}]}]}], "]"}], ";", 
+         "\n", "            ", 
+         RowBox[{
+         "macroName", "~~", "\"\<: ['{\>\"", "~~", "macroBody", "~~", 
+          "\"\<}', \>\"", "~~", "num", "~~", "\"\<]\>\""}]}]}], "\n", 
+       "        ", "]"}]}], "\n", "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"macroConvert`rule", "[", 
+     RowBox[{"conversion_", ",", "\"\<plain\>\""}], "]"}], " ", ":=", " ", 
+    RowBox[{"{", "\n", "    ", 
+     RowBox[{
+      RowBox[{"\"\<\\\\newcommand{\\\\\>\"", "~~", 
+       RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}{\>\"", "~~", 
+       RowBox[{"Longest", "[", "macroBody__", "]"}], "~~", "\"\<}\>\""}], ":>",
+       "\n", "        ", 
+      RowBox[{"Module", "[", " ", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", "\n", "            ", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{
+           RowBox[{"conversion", "[", "\"\<plain\>\"", "]"}], ",", 
+           RowBox[{"\"\<\\\\\>\"", "~~", "macroName"}]}], "]"}], ";", "\n", 
+         "            ", 
+         RowBox[{
+         "macroName", "~~", "\"\<: '{\>\"", "~~", "macroBody", "~~", 
+          "\"\<}'\>\""}]}]}], "\n", "        ", "]"}]}], "\n", "}"}]}], ";"}],
+   "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"macroConvert`rule", "[", 
+    RowBox[{"conversion_", ",", "\"\<unvalid\>\""}], "]"}], " ", ":=", " ", 
+   RowBox[{"{", "\n", "    ", 
+    RowBox[{
+     RowBox[{"\"\<\\\\newcommand\>\"", "~~", "___", "~~", "\"\<{\\\\\>\"", "~~", 
+      RowBox[{"Shortest", "[", "macroName__", "]"}], "~~", "\"\<}\>\"", "~~", 
+      "rest__"}], ":>", "\n", "        ", 
+     RowBox[{"Module", "[", " ", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", "\n", "            ", 
+       RowBox[{
+        RowBox[{"AppendTo", "[", 
+         RowBox[{
+          RowBox[{"conversion", "[", "\"\<unvalid\>\"", "]"}], ",", 
+          "macroName"}], "]"}], ";", "\n", "            ", "\"\<\>\""}]}], 
+      "\n", "        ", "]"}]}], "\n", "}"}]}], ";"}]}], "Code",
+ CellLabel->"In[2]:=",ExpressionUUID->"78697beb-5705-4229-8a61-1187359bdebd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Result", "Subsection",ExpressionUUID->"dc86ceb4-d390-42af-8c00-9acbabd0898d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"conversion", "=", 
+   RowBox[{"example", "//", "macroConvert"}]}], ";"}]], "Code",
+ CellLabel->"In[8]:=",ExpressionUUID->"112f4839-8ca9-44ab-9cfa-5c80664380de"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conversion", "[", "\"\<with_parameter\>\"", "]"}]], "Code",
+ CellLabel->"In[9]:=",ExpressionUUID->"dd90a07d-9bc7-4adf-9147-5be2a2ade278"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"\\\\bar{a}\"\>", ",", "\<\"\\\\vev{a}\"\>"}], "}"}]], "Output",\
+
+ CellLabel->"Out[9]=",ExpressionUUID->"f9e0e328-2167-4b98-9d80-4b1c9a9d5209"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conversion", "[", "\"\<plain\>\"", "]"}]], "Code",
+ CellLabel->"In[10]:=",ExpressionUUID->"e55f52cd-7673-4150-8eda-edf5b33ebc2e"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"\\\\vac\"\>", "}"}]], "Output",
+ CellLabel->"Out[10]=",ExpressionUUID->"102909b2-11e3-4ccf-a93b-7c0ba2728074"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conversion", "[", "\"\<unvalid\>\"", "]"}]], "Code",
+ CellLabel->"In[11]:=",ExpressionUUID->"725555d2-8207-4f04-9d26-93cf743390e9"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellLabel->"Out[11]=",ExpressionUUID->"c55ac4da-a3ab-4560-a1e6-732b3dc3f595"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"conversion", "[", "\"\<result\>\"", "]"}]], "Code",
+ CellLabel->"In[12]:=",ExpressionUUID->"70467933-b26c-4043-826c-bfea9a9200c2"],
+
+Cell[BoxData["\<\"bar: ['{\\\\overline{#1}}', 1],\\n// vacuum,\\nvac: \
+'{\\\\ket{0}}',\\n// vacuum expectation value,\\nvev: ['{\\\\langle #1 \
+\\\\rangle}', 1],\\n\"\>"], "Output",
+ CellLabel->"Out[12]=",ExpressionUUID->"9b131d00-2ceb-436a-8860-788f0939ad8a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1680, 1022},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
+StyleDefinitions->"lily.nb",
+ExpressionUUID->"a60ca2e1-c1e6-44b7-b6e8-9343b447f35e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 96, 0, 54, "Subsection",ExpressionUUID->"e1d9b5c3-3c5e-42b1-be35-9c304826196d"],
+Cell[CellGroupData[{
+Cell[701, 26, 356, 5, 205, "Code",ExpressionUUID->"ef04201e-01ea-4fb5-9f74-61f5055bc4db"],
+Cell[1060, 33, 330, 4, 182, "Output",ExpressionUUID->"70dfadb4-b8fd-4cbf-a685-16d17cd4ce16"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1439, 43, 111, 0, 54, "Subsection",ExpressionUUID->"d568c97f-4031-482a-9b04-e455ae44140c"],
+Cell[1553, 45, 412, 12, 49, "Text",ExpressionUUID->"4e798141-5946-4f22-9dbd-f0836cf973cf"],
+Cell[1968, 59, 6963, 165, 1022, "Code",ExpressionUUID->"78697beb-5705-4229-8a61-1187359bdebd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8968, 229, 83, 0, 54, "Subsection",ExpressionUUID->"dc86ceb4-d390-42af-8c00-9acbabd0898d"],
+Cell[9054, 231, 195, 4, 52, "Code",ExpressionUUID->"112f4839-8ca9-44ab-9cfa-5c80664380de"],
+Cell[CellGroupData[{
+Cell[9274, 239, 161, 2, 52, "Code",ExpressionUUID->"dd90a07d-9bc7-4adf-9147-5be2a2ade278"],
+Cell[9438, 243, 187, 4, 34, "Output",ExpressionUUID->"f9e0e328-2167-4b98-9d80-4b1c9a9d5209"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9662, 252, 153, 2, 52, "Code",ExpressionUUID->"e55f52cd-7673-4150-8eda-edf5b33ebc2e"],
+Cell[9818, 256, 143, 2, 34, "Output",ExpressionUUID->"102909b2-11e3-4ccf-a93b-7c0ba2728074"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9998, 263, 155, 2, 52, "Code",ExpressionUUID->"725555d2-8207-4f04-9d26-93cf743390e9"],
+Cell[10156, 267, 124, 2, 34, "Output",ExpressionUUID->"c55ac4da-a3ab-4560-a1e6-732b3dc3f595"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10317, 274, 154, 2, 52, "Code",ExpressionUUID->"70467933-b26c-4043-826c-bfea9a9200c2"],
+Cell[10474, 278, 261, 3, 140, "Output",ExpressionUUID->"9b131d00-2ceb-436a-8860-788f0939ad8a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

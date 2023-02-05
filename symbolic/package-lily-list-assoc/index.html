@@ -401,14 +401,14 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    背景动机
+    背景动机与基本框架
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本框架
+    
   </a>
   
 </li>
@@ -540,11 +540,60 @@
 
 <!-- Page content -->
 <h1 id="package-lilyassoc">Package <code class="highlight"><span class="nv">lily`assoc`</span></code></h1>
-<p>扩展包 <code class="highlight"><span class="nv">lily`list`</span></code> 和 <code class="highlight"><span class="nv">lily`assoc`</span></code> 的设计目的是管理数据结构，对应<strong>下值</strong>和<strong>关联</strong>两种设计思路。本页面仅详细讨论后者。</p>
+<p>扩展包 <code class="highlight"><span class="nv">lily`assoc`</span></code> 和 <code class="highlight"><span class="nv">lily`list`</span></code> 的设计目的是处理数据结构的复合，对应<strong>关联</strong>和<strong>下值</strong>两种设计思路。本页面仅详细讨论前者。</p>
 <h2 id="basic-ideas">Basic ideas</h2>
-<h3 id="_1">背景动机</h3>
-<p>有限生成代数由生成元列表 <code class="highlight"><span class="nv">operator</span></code> 和关系列表 <code class="highlight"><span class="nv">relation</span></code> 构成，此外在输出结果时，还需格式化表达式的规则列表 <code class="highlight"><span class="nv">printing</span></code>。多个不同的代数给出不同的列表三元组。</p>
-<h3 id="_2">基本框架</h3>
+<h3 id="_1">背景动机与基本框架</h3>
+<p>有限生成代数由生成元列表 <code class="highlight"><span class="nv">operator</span></code> 和关系列表 <code class="highlight"><span class="nv">relation</span></code> 构成，此外在输出结果时，还需格式化表达式的规则列表 <code class="highlight"><span class="nv">printing</span></code>。由此可抽象出如下的对象</p>
+<ul>
+<li>
+<p>class: algebra</p>
+</li>
+<li>
+<p>attribute: name, operator, relation, printing</p>
+</li>
+<li>
+<p>method: define, unset, reset, add_elements, delete_elements</p>
+</li>
+</ul>
+<p>以 <code class="highlight"><span class="nv">operator</span></code> 为例，在 Python 中可实现为</p>
+<details class="mark">
+<summary>class algebra</summary>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Algebra</span><span class="p">():</span>
+    <span class="c1"># define</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="c1"># unset</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The algebra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has been unset.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The algebra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has been reset.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">add_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span>
+
+    <span class="k">def</span> <span class="nf">delete_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span>
+</code></pre></div>
+</details>
+<p>在此基础上，多个不同的代数对应不同的列表三元组，并且可复合为一个代数。</p>
+<ul>
+<li>
+<p>class: composite algebra</p>
+</li>
+<li>
+<p>instance attribute: algebra, operator_common, operator_default </p>
+</li>
+<li>
+<p>method: define, unset, protect, default</p>
+</li>
+</ul>
+<h3 id="_2"></h3>
 <p>由此可抽象出三重结构，类型 <code class="highlight"><span class="nv">type</span></code>，成员 <code class="highlight"><span class="nv">member</span></code>，实例 <code class="highlight"><span class="nv">instance</span></code>。</p>
 <p>有如下两种设计思路：</p>
 <ul>

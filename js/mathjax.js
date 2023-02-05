@@ -339,7 +339,7 @@ window.MathJax = {
             cZ: '{\\mathcal{Z}}',
         },
         environments: {
-            //testenvironment: ['\\left\\{', '\\right\\}']
+            eq: ['\\begin\{equation\}', '\\end\{equation\}']
         },
     },
     // package physics options

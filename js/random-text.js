@@ -10,6 +10,9 @@ let sora_subtitle_list = [
     },
     {
         text: "命名是存在的猜想，边界是存在的证明"
+    },
+    {
+        text: "Our imagination is stretched to the utmost, not, as in fiction, to imagine things which are not really there, but just to comprehend those things which are. -- Feynman"
     }
 ];
 

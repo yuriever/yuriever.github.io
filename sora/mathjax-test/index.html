@@ -385,6 +385,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-test" class="md-nav__link">
+    Environment test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-test" class="md-nav__link">
+    Macro test
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -436,8 +458,22 @@
 
 <!-- Page content -->
 <h1 id="mathjax-test">MathJax test</h1>
+<h2 id="environment-test">Environment test</h2>
+<div class="arithmatex">\[\begin{eq}
+ax+b\label{eq:1}
+\end{eq}\]</div>
+<div class="arithmatex">\[\begin{equation}
+ax+b\label{eq:2}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+wrogspelling
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation*}
+wrogspelling
+\end{equation*}\]</div>
+<p>The equations \eqref{eq:1} and \eqref{eq:2}.</p>
+<h2 id="macro-test">Macro test</h2>
 <div class="arithmatex">\[\begin{align}
- \\
  \, \wave{a}\, \bar{a}\, \hat{a}\, \red{a}\, \orange{a}\, \blue{a}\, \purple{a}\, \pink{a}\, \notethat{a}\,  \\
  \, \vev{a}\, \rep{a}\, \urep{a}\, \GeV{a}\, \rising{a}{a}\, \falling{a}{a}\, \vspan{a}\, \set{a}\, \case{a}\,  \\
  \, \intt{a}\, \inttt{a}{a}\, \diag{a}\, \overset{a}{a}\, \underset{a}{a}\, \substack{a}\, \dual{a}\, \lie{a}
