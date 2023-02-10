@@ -466,6 +466,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tricky-stuffs" class="md-nav__link">
+    Tricky stuffs
+  </a>
+  
+    <nav class="md-nav" aria-label="Tricky stuffs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#names" class="md-nav__link">
+    Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionspattern-and-filterrules" class="md-nav__link">
+    OptionsPattern and FilterRules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -539,6 +566,24 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">/.</span><span class="nb">Hold</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="nv">x</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="tricky-stuffs">Tricky stuffs</h2>
+<h3 id="names"><code class="highlight"><span class="nb">Names</span></code></h3>
+<p><code class="highlight"><span class="nb">Names</span><span class="p">[{</span><span class="s">&quot;context`*&quot;</span><span class="p">}]</span></code> will search all subcontexts while <code class="highlight"><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;context`*&quot;</span><span class="p">]</span></code> only search the first level, and the former causes unnecessary slow-down (according to the purpose).</p>
+<h3 id="optionspattern-and-filterrules"><code class="highlight"><span class="nb">OptionsPattern</span></code> and <code class="highlight"><span class="nb">FilterRules</span></code></h3>
+<p>The input options pattern in <code class="highlight"><span class="nb">OptionsPattern</span></code> and <code class="highlight"><span class="nb">FilterRules</span></code> should be enclosed by <code class="highlight"><span class="p">{}</span></code>, like</p>
+<div class="highlight"><pre><span></span><code><span class="nv">g</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">}</span><span class="o">;</span>
+<span class="nv">f</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">}</span><span class="o">;</span>
+<span class="nv">g</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">f</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span><span class="p">{</span>
+<span class="w">    </span><span class="nv">g</span><span class="p">[</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">g</span><span class="p">]]],</span>
+<span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">f</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">}</span><span class="o">;</span>
+
+<span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">b</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">}</span>
 </code></pre></div>
 
 <!-- Source file information -->
