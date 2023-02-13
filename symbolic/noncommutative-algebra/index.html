@@ -463,6 +463,29 @@ Y_m(u)&amp;=0 \qfor m \leq 0 \qor m \geq l
 <div class="arithmatex">\[\begin{equation}
 Y_m(u+l+2)=Y_{l-m}(u)
 \end{equation}\]</div>
+<!--For example, the Yang-Baxter equation can be implemented as
+
+<div class="highlight"><pre><span></span><code><span class="nv">algebraDefine</span><span class="p">[</span><span class="s">&quot;YBE&quot;</span><span class="p">]</span>
+<span class="nv">algebraDefault</span><span class="o">@</span><span class="p">{</span><span class="s">&quot;YBE&quot;</span><span class="p">,</span><span class="s">&quot;tensorProduct&quot;</span><span class="p">}</span>
+
+<span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">P</span><span class="p">,</span><span class="nv">Q</span><span class="p">,</span><span class="nv">R</span><span class="p">,</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="nv">z</span><span class="p">}</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;YBE&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="s">&quot;relation&quot;</span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="nv">P</span><span class="p">[]</span><span class="o">**</span><span class="p">(</span><span class="nt">x_</span><span class="o">⊗</span><span class="nt">y_</span><span class="p">)</span><span class="o">:&gt;</span><span class="nv">y</span><span class="o">⊗</span><span class="nv">x</span>
+<span class="p">}</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;YBE&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="s">&quot;printing&quot;</span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">    </span><span class="nt">op_</span><span class="o">?</span><span class="nv">generatorQ</span><span class="p">[</span><span class="nt">u_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">op</span><span class="p">,</span><span class="nv">u</span><span class="p">]</span>
+<span class="p">}</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;YBE&quot;</span><span class="p">]</span>
+
+<span class="nv">tensorRankSet</span><span class="p">[{</span><span class="nv">R</span><span class="p">[</span><span class="o">___</span><span class="p">],</span><span class="nv">P</span><span class="p">[</span><span class="o">___</span><span class="p">]},</span><span class="m">2</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">tensorRankSet</span><span class="p">[</span><span class="nv">Q</span><span class="p">[</span><span class="o">___</span><span class="p">],</span><span class="m">1</span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">P</span><span class="p">[]</span><span class="o">⊗</span><span class="nv">id</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="nv">x</span><span class="o">⊗</span><span class="nv">y</span><span class="o">⊗</span><span class="nv">z</span><span class="p">)</span><span class="o">//</span><span class="nv">algS</span>
+</code></pre></div>
+
+``` wl
+Out[]= y⊗x⊗z
+```-->
 <div class="footnote">
 <hr />
 <ol>

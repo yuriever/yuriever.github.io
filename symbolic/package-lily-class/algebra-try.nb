@@ -1,0 +1,365 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14155,        357]
+NotebookOptionsPosition[     12267,        318]
+NotebookOutlinePosition[     12820,        336]
+CellTagsIndexPosition[     12777,        333]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"alg", " ", "=", " ", 
+    RowBox[{"<|", "|>"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"algCheck", "[", "\"\<ifNotDefined\>\"", "]"}], "[", "name_", 
+    "]"}], " ", ":=", "\n", "    ", 
+   RowBox[{"If", "[", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"KeyExistsQ", "[", 
+       RowBox[{"alg", ",", "name"}], "]"}], "==", "False"}], ",", "\n", 
+     "        ", 
+     RowBox[{
+      RowBox[{"Print", "@", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", "\"\<The algebra `` has not been defined.\>\"",
+          "]"}], "[", "name", "]"}]}], ";", "\n", "        ", 
+      RowBox[{"Abort", "[", "]"}]}]}], "\n", "    ", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"algCheck", "[", "\"\<ifHasDefined\>\"", "]"}], "[", "name_", 
+     "]"}], " ", ":=", "\n", "    ", 
+    RowBox[{"If", "[", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"KeyExistsQ", "[", 
+        RowBox[{"alg", ",", "name"}], "]"}], "==", "True"}], ",", "\n", 
+      "        ", 
+      RowBox[{
+       RowBox[{"Print", "@", 
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", "\"\<The algebra `` has been defined.\>\"", 
+          "]"}], "[", "name", "]"}]}], ";", "\n", "        ", 
+       RowBox[{"Abort", "[", "]"}]}]}], "\n", "    ", "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"algDefine", "[", "name_", "]"}], " ", ":=", "\n", "    ", 
+    RowBox[{"Module", "[", " ", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\n", "        ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"algCheck", "[", "\"\<ifHasDefined\>\"", "]"}], "[", "name", 
+        "]"}], ";", "\n", "        ", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"alg", ",", 
+         RowBox[{"name", "->", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<operator\>\"", "->", 
+            RowBox[{"{", "}"}]}], "|>"}]}]}], "]"}], ";"}]}], "\n", "    ", 
+     "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"algUnset", "[", "name_", "]"}], " ", ":=", "\n", "    ", 
+    RowBox[{"Module", "[", " ", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\n", "        ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"algCheck", "[", "\"\<ifNotDefined\>\"", "]"}], "[", "name", 
+        "]"}], ";", "\n", "        ", 
+       RowBox[{"Print", "@", 
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", "\"\<The algebra `` has been unset.\>\"", 
+          "]"}], "[", "name", "]"}]}], ";", "\n", "        ", 
+       RowBox[{"KeyDropFrom", "[", 
+        RowBox[{"alg", ",", "name"}], "]"}], ";"}]}], "\n", "    ", "]"}]}], 
+   ";"}], "\n", "    "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"algReset", "[", "name_", "]"}], " ", ":=", "\n", "    ", 
+    RowBox[{"Module", "[", " ", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\n", "        ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"algCheck", "[", "\"\<ifNotDefined\>\"", "]"}], "[", "name", 
+        "]"}], ";", "\n", "        ", 
+       RowBox[{"Print", "@", 
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", "\"\<The algebra `` has been reset.\>\"", 
+          "]"}], "[", "name", "]"}]}], ";", "\n", "        ", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{"alg", ",", 
+         RowBox[{"name", "->", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<operator\>\"", "->", 
+            RowBox[{"{", "}"}]}], "|>"}]}]}], "]"}], ";"}]}], "\n", "    ", 
+     "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"algAdd", "[", "name_", "]"}], "[", "elements_", "]"}], " ", ":=",
+     "\n", "    ", 
+    RowBox[{"Module", "[", " ", 
+     RowBox[{
+      RowBox[{"{", "list", "}"}], ",", "\n", "        ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"algCheck", "[", "\"\<ifNotDefined\>\"", "]"}], "[", "name", 
+        "]"}], ";", "\n", "        ", 
+       RowBox[{"list", " ", "=", " ", 
+        RowBox[{"Union", "[", 
+         RowBox[{
+          RowBox[{"alg", "[", 
+           RowBox[{"name", ",", "\"\<operator\>\""}], "]"}], ",", 
+          "elements"}], "]"}]}], ";", "\n", "        ", 
+       RowBox[{"AssociateTo", "[", 
+        RowBox[{
+         RowBox[{"alg", "[", "name", "]"}], ",", 
+         RowBox[{"\"\<operator\>\"", "->", "list"}]}], "]"}], ";", "\n", 
+       "        ", 
+       RowBox[{"alg", "[", "name", "]"}]}]}], "\n", "    ", "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"algDelete", "[", "name_", "]"}], "[", "elements_", "]"}], " ", ":=",
+    "\n", "    ", 
+   RowBox[{"Module", "[", " ", 
+    RowBox[{
+     RowBox[{"{", "list", "}"}], ",", "\n", "        ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"algCheck", "[", "\"\<ifNotDefined\>\"", "]"}], "[", "name", 
+       "]"}], ";", "\n", "        ", 
+      RowBox[{"list", " ", "=", " ", 
+       RowBox[{"Complement", "[", 
+        RowBox[{
+         RowBox[{"alg", "[", 
+          RowBox[{"name", ",", "\"\<operator\>\""}], "]"}], ",", "elements"}],
+         "]"}]}], ";", "\n", "        ", 
+      RowBox[{"AssociateTo", "[", 
+       RowBox[{
+        RowBox[{"alg", "[", "name", "]"}], ",", 
+        RowBox[{"\"\<operator\>\"", "->", "list"}]}], "]"}], ";", "\n", 
+      "        ", 
+      RowBox[{"alg", "[", "name", "]"}]}]}], "\n", "    ", "]"}]}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.885127123554965*^9, 3.885127123577404*^9}, {
+  3.885128447141954*^9, 3.8851284703296003`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"d56b6bbf-0476-4d2c-8f2b-948a069977ca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"algDefine", "[", "\"\<alg1\>\"", "]"}], "\n", 
+ RowBox[{"algDefine", "[", "\"\<alg1\>\"", "]"}]}], "Code",
+ CellChangeTimes->{{3.88511199390516*^9, 3.8851119995766287`*^9}, {
+  3.885112435259123*^9, 3.885112435601179*^9}},
+ CellLabel->"In[75]:=",ExpressionUUID->"4ed6a18f-39de-4919-89d8-e83043f34408"],
+
+Cell[BoxData["\<\"The algebra alg1 has been defined.\"\>"], "Print",
+ CellChangeTimes->{{3.885112408675*^9, 3.885112447889771*^9}, 
+   3.8851124973659267`*^9, 3.885124616385995*^9, {3.8851247929677773`*^9, 
+   3.885124804815699*^9}, 3.885125226645443*^9, {3.885126806488914*^9, 
+   3.885126832590263*^9}, 3.885126867136217*^9, {3.88512704794035*^9, 
+   3.885127069287649*^9}, 3.885127126735981*^9, 3.885128474041415*^9, 
+   3.885135958372225*^9},
+ CellLabel->
+  "During evaluation of \
+In[75]:=",ExpressionUUID->"16fe1828-a89a-479c-8a7e-c7938092f539"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.885112436772766*^9, 3.885112447888801*^9}, 
+   3.8851124973634157`*^9, 3.885124616383524*^9, {3.885124792966015*^9, 
+   3.885124804700284*^9}, 3.885125226644288*^9, {3.885126806486318*^9, 
+   3.885126832591771*^9}, 3.885126867138383*^9, {3.88512704794248*^9, 
+   3.885127069299912*^9}, 3.885127126737837*^9, 3.8851284740424623`*^9, 
+   3.88513595837321*^9},
+ CellLabel->"Out[76]=",ExpressionUUID->"4e088e2a-ef0d-4881-bb74-ea8d24de4816"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"algUnset", "[", "\"\<alg1\>\"", "]"}], "\n", 
+ RowBox[{"algUnset", "[", "\"\<alg1\>\"", "]"}]}], "Code",
+ CellChangeTimes->{{3.88511206349648*^9, 3.885112087050047*^9}, {
+  3.885112451085683*^9, 3.8851124550261374`*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"a87e5710-dc13-46c8-a39d-4fd6ff29325c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"The algebra alg1 has been unset.\"\>"], "Print",
+ CellChangeTimes->{
+  3.885112415885296*^9, 3.885112455627993*^9, 3.8851124983336077`*^9, 
+   3.885124618099988*^9, 3.885124662468368*^9, {3.885124794186956*^9, 
+   3.885124805766882*^9}, 3.885125227934931*^9, {3.8851268194656763`*^9, 
+   3.8851268682621183`*^9}, {3.885127048598413*^9, 3.885127070064534*^9}, 
+   3.885127127918931*^9, 3.8851284747403917`*^9, 3.885135959012781*^9},
+ CellLabel->
+  "During evaluation of \
+In[77]:=",ExpressionUUID->"25e078f9-55ae-4f26-97c3-5e9a052a8c90"],
+
+Cell[BoxData["\<\"The algebra alg1 has not been defined.\"\>"], "Print",
+ CellChangeTimes->{
+  3.885112415885296*^9, 3.885112455627993*^9, 3.8851124983336077`*^9, 
+   3.885124618099988*^9, 3.885124662468368*^9, {3.885124794186956*^9, 
+   3.885124805766882*^9}, 3.885125227934931*^9, {3.8851268194656763`*^9, 
+   3.8851268682621183`*^9}, {3.885127048598413*^9, 3.885127070064534*^9}, 
+   3.885127127918931*^9, 3.8851284747403917`*^9, 3.885135959013652*^9},
+ CellLabel->
+  "During evaluation of \
+In[77]:=",ExpressionUUID->"23bc3bf5-8747-48b7-938c-f79c5d3713d3"]
+}, Open  ]],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{
+  3.885124618104733*^9, 3.885124662473818*^9, {3.8851247941924553`*^9, 
+   3.885124805769659*^9}, 3.885125227940978*^9, {3.885126819471817*^9, 
+   3.8851268682663517`*^9}, {3.88512704865821*^9, 3.885127070067174*^9}, 
+   3.885127127924424*^9, 3.8851284747434893`*^9, 3.885135959015039*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"635740e6-2444-4966-b680-3fdfa867eadd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"algDefine", "[", "\"\<alg1\>\"", "]"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"algAdd", "[", "\"\<alg1\>\"", "]"}], "[", 
+  RowBox[{"{", 
+   RowBox[{"x", ",", "y"}], "}"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"algDelete", "[", "\"\<alg1\>\"", "]"}], "[", 
+  RowBox[{"{", "x", "}"}], "]"}], "\n", 
+ RowBox[{"algReset", "[", "\"\<alg1\>\"", "]"}]}], "Code",
+ CellChangeTimes->{{3.885124621677621*^9, 3.88512466079941*^9}, {
+  3.8851268699579363`*^9, 3.885126880179761*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"c17b987d-6845-4577-a610-6f0eec6b5663"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"operator\"\>", "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.8851246326527567`*^9, 3.885124697752055*^9}, {
+   3.8851247958723087`*^9, 3.885124807482229*^9}, 3.8851252300612288`*^9, 
+   3.885126846469306*^9, 3.885126880469652*^9, 3.8851270714939737`*^9, 
+   3.885127129026987*^9, 3.885128476174035*^9, 3.8851359601527443`*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"7feaa307-a0b0-4ef2-a24d-305b4653421b"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"operator\"\>", "\[Rule]", 
+   RowBox[{"{", "y", "}"}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.8851246326527567`*^9, 3.885124697752055*^9}, {
+   3.8851247958723087`*^9, 3.885124807482229*^9}, 3.8851252300612288`*^9, 
+   3.885126846469306*^9, 3.885126880469652*^9, 3.8851270714939737`*^9, 
+   3.885127129026987*^9, 3.885128476174035*^9, 3.8851359601538553`*^9},
+ CellLabel->"Out[81]=",ExpressionUUID->"365b09b4-8533-4187-a6af-8c1027915dd8"],
+
+Cell[BoxData["\<\"The algebra alg1 has been reset.\"\>"], "Print",
+ CellChangeTimes->{
+  3.885124697757181*^9, {3.885124795876341*^9, 3.8851248074846573`*^9}, 
+   3.885125230063141*^9, 3.885126846474498*^9, 3.8851268804738903`*^9, 
+   3.8851270714968863`*^9, 3.885127129028778*^9, 3.885128476176402*^9, 
+   3.885135960154976*^9},
+ CellLabel->
+  "During evaluation of \
+In[79]:=",ExpressionUUID->"4dbb4ceb-6d9c-4907-8628-7eae48579888"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["alg"], "Code",
+ CellChangeTimes->{{3.885126848433865*^9, 3.885126859752627*^9}, {
+  3.885127073703773*^9, 3.8851270744015017`*^9}},
+ CellLabel->"In[83]:=",ExpressionUUID->"d666019e-4bb0-4581-a4bc-0679c0fe49be"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"alg1\"\>", "\[Rule]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{"\<\"operator\"\>", "\[Rule]", 
+     RowBox[{"{", "}"}]}], "\[RightAssociation]"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.885135961204956*^9},
+ CellLabel->"Out[83]=",ExpressionUUID->"7903455e-fa15-431b-a847-ff60353823ee"]
+}, Open  ]]
+},
+WindowSize->{840, 1022},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "reiko", 
+   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "lily.nb", CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"3251f115-5128-437d-aa96-9576f9ca3875"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5584, 156, 946, "Code",ExpressionUUID->"d56b6bbf-0476-4d2c-8f2b-948a069977ca"],
+Cell[CellGroupData[{
+Cell[6167, 180, 326, 5, 72, "Code",ExpressionUUID->"4ed6a18f-39de-4919-89d8-e83043f34408"],
+Cell[6496, 187, 551, 9, 24, "Print",ExpressionUUID->"16fe1828-a89a-479c-8a7e-c7938092f539"],
+Cell[7050, 198, 494, 7, 34, "Output",ExpressionUUID->"4e088e2a-ef0d-4881-bb74-ea8d24de4816"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7581, 210, 324, 5, 72, "Code",ExpressionUUID->"a87e5710-dc13-46c8-a39d-4fd6ff29325c"],
+Cell[CellGroupData[{
+Cell[7930, 219, 554, 9, 24, "Print",ExpressionUUID->"25e078f9-55ae-4f26-97c3-5e9a052a8c90"],
+Cell[8487, 230, 560, 9, 24, "Print",ExpressionUUID->"23bc3bf5-8747-48b7-938c-f79c5d3713d3"]
+}, Open  ]],
+Cell[9062, 242, 424, 6, 34, "Output",ExpressionUUID->"635740e6-2444-4966-b680-3fdfa867eadd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9523, 253, 581, 13, 129, "Code",ExpressionUUID->"c17b987d-6845-4577-a610-6f0eec6b5663"],
+Cell[10107, 268, 545, 9, 34, "Output",ExpressionUUID->"7feaa307-a0b0-4ef2-a24d-305b4653421b"],
+Cell[10655, 279, 520, 8, 34, "Output",ExpressionUUID->"365b09b4-8533-4187-a6af-8c1027915dd8"],
+Cell[11178, 289, 434, 8, 24, "Print",ExpressionUUID->"4dbb4ceb-6d9c-4907-8628-7eae48579888"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11649, 302, 224, 3, 52, "Code",ExpressionUUID->"d666019e-4bb0-4581-a4bc-0679c0fe49be"],
+Cell[11876, 307, 375, 8, 37, "Output",ExpressionUUID->"7903455e-fa15-431b-a847-ff60353823ee"]
+}, Open  ]]
+}
+]
+*)
+

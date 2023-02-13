@@ -392,36 +392,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#data-operation" class="md-nav__link">
-    Data operation
+  <a href="#class-methods" class="md-nav__link">
+    Class methods
   </a>
-  
-    <nav class="md-nav" aria-label="Data operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#some-shortcuts" class="md-nav__link">
-    Some shortcuts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functionality" class="md-nav__link">
-    Functionality
+  <a href="#functionalities" class="md-nav__link">
+    Functionalities
   </a>
   
-    <nav class="md-nav" aria-label="Functionality">
+    <nav class="md-nav" aria-label="Functionalities">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pre-defined-algebras" class="md-nav__link">
-    Pre-defined algebras
+  <a href="#pre-defined-internal-algebras" class="md-nav__link">
+    Pre-defined internal algebras
   </a>
   
 </li>
@@ -470,6 +457,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-do-list-and-other-issues" class="md-nav__link">
+    To-do list and other issues
+  </a>
   
 </li>
       
@@ -526,74 +520,67 @@
 
 <!-- Page content -->
 <h1 id="package-lilyalgebra">Package <code class="highlight"><span class="nv">lily`algebra`</span></code></h1>
-<p>This page provides the documentation of package <code class="highlight"><span class="nv">lily`algebra`</span></code> for implementing associative algebras.</p>
+<p>A Mathematica package for implementing and managing finitely presented associative algebras.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/lily-algebra">yuriever/lily-algebra</a>.</p>
 <ul>
 <li>
 <p>Dependency: </p>
 <ul>
-<li><code class="highlight"><span class="nv">lily`assoc`</span></code></li>
+<li><code class="highlight"><span class="nv">lily`class`</span></code></li>
 </ul>
 </li>
 <li>
-<p>Data type: </p>
+<p>Object:</p>
 <ul>
-<li><code class="highlight"><span class="s">&quot;algebra&quot;</span></code></li>
-</ul>
+<li>
+<p>class: compounded algebra</p>
 </li>
 <li>
-<p>Data instance: </p>
-<ul>
-<li><code class="highlight"><span class="s">&quot;algebra&quot;</span></code> - storing different algebras.</li>
-</ul>
+<p>instance: algebra</p>
 </li>
 <li>
-<p>Data member: </p>
-<ul>
-<li><code class="highlight"><span class="s">&quot;operator&quot;</span></code> - storing generators; </li>
-<li><code class="highlight"><span class="s">&quot;relation&quot;</span></code> - storing multiplication rules;</li>
-<li><code class="highlight"><span class="s">&quot;printing&quot;</span></code> - storing formatting rules.</li>
+<p>member: operator, relation, printing</p>
+</li>
 </ul>
 </li>
 </ul>
-<h2 id="data-operation">Data operation</h2>
+<h2 id="class-methods">Class methods</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code> - define and initiate algebras.</p>
 <ul>
-<li><code class="highlight"><span class="nv">algebraDefineQ</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="nv">algebraDefineInternal</span><span class="p">[]</span></code></li>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefineQ</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - check whether an algebra is defined.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefineInternal</span><span class="p">[]</span></code> - define the internal algebras, including <code class="highlight"><span class="s">&quot;conjugate&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tensorProduct&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;comultiplication&quot;</span></code>.</p>
+</li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code> - set default algebras to build the compounded algebra.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code> - reset/unset the algebras.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraAdd</span><span class="o">|</span><span class="nv">algebraDelete</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">,</span><span class="nt">assoc_</span><span class="p">]</span></code> </p>
-<ul>
-<li>
-<p>The operator form <code class="highlight"><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">][</span><span class="nt">assoc_</span><span class="p">]</span></code> is supported but without string auto-completion.</p>
-</li>
-<li>
-<p>The argument <code class="highlight"><span class="nt">assoc_</span></code> accepts <code class="highlight"><span class="nt">_Rule</span><span class="o">|</span><span class="p">{</span><span class="nt">___Rule</span><span class="p">}</span><span class="o">|</span><span class="nt">_Association</span></code>. For example, the CCR can be added as,</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;|</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="s">&quot;relation&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">-&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="m">1</span><span class="p">}|&gt;</span>
+<p><code class="highlight"><span class="nv">algebraAdd</span><span class="o">|</span><span class="nv">algebraDelete</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">,</span><span class="nt">assoc_</span><span class="p">]</span></code> - add to/delete from the algebras. The operator form is supported but without string auto-completion. The argument <code class="highlight"><span class="nt">assoc_</span></code> accepts <code class="highlight"><span class="nt">_Rule</span><span class="o">|</span><span class="p">{</span><span class="nt">___Rule</span><span class="p">}</span><span class="o">|</span><span class="nt">_Association</span></code>. For example, the CCR can be added as,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">algebraDefine</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="p">&lt;|</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="s">&quot;relation&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="m">1</span><span class="p">}|&gt;</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span>
 </code></pre></div>
 </li>
-</ul>
+<li>
+<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - show the algebra.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - return the members of the algebra.</p>
 </li>
 </ul>
-<h3 id="some-shortcuts">Some shortcuts</h3>
+<h3 class="nocount">Some shortcuts</h3>
+
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[]</span></code> - return the members of the default algebra;</p>
+<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span><span class="p">[]</span></code> - return the members of the default algebras.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[]</span></code> - return the list of defined algebras;</p>
@@ -602,44 +589,70 @@
 <p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[]</span></code> - return the list of default algebras;</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[]</span></code> - reset/unset the default algebras;</p>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[]</span></code> - reset/unset the default except internal algebras.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nb">All</span><span class="p">]</span></code> - reset/unset all algebras except the predefined ones.</p>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nb">All</span><span class="p">]</span></code> - reset/unset all the defined except internal algebras.</p>
 </li>
-</ul>
-<h2 id="functionality">Functionality</h2>
-<h3 id="pre-defined-algebras">Pre-defined algebras</h3>
-<ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraInternal</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code></p>
-<ul>
-<li><code class="highlight"><span class="s">&quot;multiplication&quot;</span></code> - <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></li>
-<li><code class="highlight"><span class="s">&quot;tensorProduct&quot;</span></code> - <code class="highlight"><span class="nb">CircleTimes</span></code></li>
-<li><code class="highlight"><span class="s">&quot;conjugate&quot;</span></code> - <code class="highlight"><span class="nb">SuperDagger</span></code></li>
-<li><code class="highlight"><span class="s">&quot;comultiplication&quot;</span></code> - <code class="highlight"><span class="nb">CircleTimes</span></code></li>
-</ul>
+<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[]</span></code> - show the default algebras.</p>
 </li>
 </ul>
+<h2 id="functionalities">Functionalities</h2>
+<h3 id="pre-defined-internal-algebras">Pre-defined internal algebras</h3>
+<ul>
+<li><code class="highlight"><span class="nv">algebraInternal</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - private symbol storing the internal algebras.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">System operator occupation</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="highlight"><span class="s">&quot;multiplication&quot;</span></code></td>
+<td align="left"><code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></td>
+<td align="left">associativity, linearity over <span class="arithmatex">\(\C\)</span></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="s">&quot;tensorProduct&quot;</span></code></td>
+<td align="left"><code class="highlight"><span class="nb">CircleTimes</span></code></td>
+<td align="left">strict tensor category with identity <code class="highlight"><span class="nv">id</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="s">&quot;conjugate&quot;</span></code></td>
+<td align="left"><code class="highlight"><span class="nb">SuperDagger</span></code></td>
+<td align="left">dagger structure</td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="s">&quot;comultiplication&quot;</span></code></td>
+<td align="left"><code class="highlight"><span class="nb">CircleTimes</span></code></td>
+<td align="left">coassociativity (<strong>TODO</strong>)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="questing-functions">Questing functions</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">|</span><span class="nv">operatorQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">|</span><span class="nv">operatorQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check whether the expression is C-number/Q-number by the default algebra.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">generatorQ</span><span class="p">[</span><span class="nt">op_Symbol</span><span class="o">|</span><span class="nt">op_Symbol</span><span class="p">[</span><span class="o">___</span><span class="p">]]</span></code></p>
+<p><code class="highlight"><span class="nv">generatorQ</span><span class="p">[</span><span class="nt">op_Symbol</span><span class="o">|</span><span class="nt">op_Symbol</span><span class="p">[</span><span class="o">___</span><span class="p">]]</span></code> - check whether the symbol is a generator the default algebra.</p>
 </li>
 </ul>
 <h3 id="algebra-simplification">Algebra simplification</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - simplify the expression by the default algebra.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraPrint</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraPrint</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - format the expression by the default algebra.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">algebraEquation</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">algebraEquation</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - return a formatted equation with the input at RHS and the simplified one at LHS.</p>
 </li>
 </ul>
 <p>Table of shortcuts:</p>
@@ -692,39 +705,69 @@
 <h3 id="commutator-adjoint-and-power">Commutator, adjoint and power</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - (n-)commutator.</p>
 <ul>
-<li><code class="highlight"><span class="nv">commSim</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="nv">commDefine</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_</span></code></li>
-<li><code class="highlight"><span class="nv">jacobiIdentity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
-<li><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
+<li>
+<p><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - (n-)anti-commutator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">jacobiIdentity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - the Jacobi identity.</p>
+</li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">commSim</span><span class="o">|</span><span class="nv">anticommSim</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - simplify the (anti-)commutator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">commDefine</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_</span></code> - define commutation relations with condition, order-reversing and anti-commutator. For example, the CCR can be packed into </p>
+<div class="highlight"><pre><span></span><code><span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">]</span><span class="o">:&gt;</span><span class="m">1</span>
+<span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">,</span><span class="s">&quot;reverse&quot;</span><span class="p">]</span><span class="o">:&gt;</span><span class="m">1</span><span class="o">/;</span><span class="nb">True</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="m">1</span><span class="o">+</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">:&gt;-</span><span class="m">1</span><span class="o">+</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">/;</span><span class="nb">True</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - power of operators, <span class="arithmatex">\(x^n\)</span>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - exponential of operators upto the max order <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\([e^{t x}]_n=\sum_{i=0}^{n}\frac{t^i}{i!} x^i\)</span>.</li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie algebra, <span class="arithmatex">\(\ad^n_x\cdot y\)</span>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">orderMax_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie group upto the max order <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\([\Ad_{x}(t)]_n\cdot y=[e^{t x}]_n\, y\, [e^{-t x}]_n\)</span>.</li>
 </ul>
 </li>
 </ul>
 <h3 id="inner-product">Inner product</h3>
 <p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;conjugate&quot;</span></code>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - inner product of two vectors. For operators <span class="arithmatex">\(x,y\)</span> this gives <span class="arithmatex">\(x^{\dagger}\cdot y\)</span>.</li>
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
+<p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;tensorProduct&quot;</span></code>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">tensorRank</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></li>
+<li>
+<p><code class="highlight"><span class="nv">id</span></code> - identity of tensor product.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorRankSet</span><span class="p">[</span><span class="nt">op_</span><span class="o">|</span><span class="p">{</span><span class="nt">ops__</span><span class="p">},</span><span class="nt">rank_</span><span class="p">]</span></code> - set the tensor rank of generators with respect to tensor product.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorRank</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - return the tensor rank of generators.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorThread</span></code> - composite tensors over multiplication according to tensorRank. </p>
+</li>
 </ul>
 <h3 id="scalar-extraction">Scalar extraction</h3>
 <ul>
-<li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">|</span><span class="nv">scalarExtract</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code></li>
+<li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">|</span><span class="nv">scalarExtract</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - separate scalars and operators in the expressions.</li>
+</ul>
+<h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
+<ul>
+<li>TODO: implement the comultiplication.</li>
 </ul>
 
 <!-- Source file information -->

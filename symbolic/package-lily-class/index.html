@@ -1,0 +1,896 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora...">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/package-lily-class/">
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Package lily`class` - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../css/list.css">
+    
+      <link rel="stylesheet" href="../../css/curtain.css">
+    
+      <link rel="stylesheet" href="../../css/admonition.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-WNRJZ9DTPF"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-WNRJZ9DTPF",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-WNRJZ9DTPF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#package-lilyclass" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Package lily`class`
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../" class="md-tabs__link">
+      Triangulated reality
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../lightnovel/" class="md-tabs__link">
+      Lightnovel
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../archive/" class="md-tabs__link">
+      Archive
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../workbench/" class="md-tabs__link">
+      Workbench
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../sora/" class="md-tabs__link">
+      Sora
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Triangulated reality
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lightnovel/" class="md-nav__link">
+        Lightnovel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/" class="md-nav__link">
+        Archive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workbench/" class="md-nav__link">
+        Workbench
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sora/" class="md-nav__link">
+        Sora
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivation-and-designing-ideas" class="md-nav__link">
+    Motivation and designing ideas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-attributes" class="md-nav__link">
+    Public attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-attributes" class="md-nav__link">
+    Private attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-constructors" class="md-nav__link">
+    Class constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-methods" class="md-nav__link">
+    Public methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-methods" class="md-nav__link">
+    Private methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    Decorators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-do-list-and-other-issues" class="md-nav__link">
+    To-do list and other issues
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="package-lilyclass">Package <code class="highlight"><span class="nv">lily`class`</span></code></h1>
+<p>The packages <code class="highlight"><span class="nv">lily`class`</span></code> and <code class="highlight"><span class="nv">lily`list`</span></code> are designed to manage a specific form of class composition, implemented by <code class="highlight"><span class="nb">Association</span></code> and <code class="highlight"><span class="nb">DownValues</span></code> respectively. </p>
+<p>In this page we focus on the former since there are several advantages over the latter: <code class="highlight"><span class="nb">Association</span></code> is immutable and faster to access, consumes less memory, and requires no symbol management.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/lily-class">yuriever/lily-class</a>.</p>
+<h2 id="motivation-and-designing-ideas">Motivation and designing ideas</h2>
+<p>A finitely presented algebra (or monoid, module, ...) consists of lists of generators <code class="highlight"><span class="nv">operator</span></code> and relations <code class="highlight"><span class="nv">relation</span></code>. Besides, a list of rules <code class="highlight"><span class="nv">printing</span></code> is also required when formatting the output. From above we can abstract the following object</p>
+<ul>
+<li>
+<p>class: algebra</p>
+</li>
+<li>
+<p>instance attribute: name, operator, relation, printing</p>
+</li>
+<li>
+<p>method: define, unset, reset, add_elements, delete_elements</p>
+</li>
+</ul>
+<p>Taking only <code class="highlight"><span class="nv">operator</span></code> as an example, it can be implemented as</p>
+<details class="mark">
+<summary>The class algebra in Python and Mathematica</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Mathematica</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Algebra</span><span class="p">():</span>
+
+    <span class="c1"># define</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="c1"># unset</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The algebra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has been unset.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The algebra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has been reset.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">add_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span>
+
+    <span class="k">def</span> <span class="nf">delete_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operator</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">alg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;||&gt;</span><span class="o">;</span>
+
+<span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifNotDefined&quot;</span><span class="p">][</span><span class="nt">name_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">If</span><span class="p">[</span><span class="w"> </span><span class="nb">KeyExistsQ</span><span class="p">[</span><span class="nv">alg</span><span class="p">,</span><span class="nv">name</span><span class="p">]</span><span class="o">==</span><span class="nb">False</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">Print</span><span class="o">@</span><span class="nb">StringTemplate</span><span class="p">[</span><span class="s">&quot;The algebra `` has not been defined.&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">Abort</span><span class="p">[]</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+<span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifHasDefined&quot;</span><span class="p">][</span><span class="nt">name_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">If</span><span class="p">[</span><span class="w"> </span><span class="nb">KeyExistsQ</span><span class="p">[</span><span class="nv">alg</span><span class="p">,</span><span class="nv">name</span><span class="p">]</span><span class="o">==</span><span class="nb">True</span><span class="p">,</span>
+<span class="w">        </span><span class="nb">Print</span><span class="o">@</span><span class="nb">StringTemplate</span><span class="p">[</span><span class="s">&quot;The algebra `` has been defined.&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">Abort</span><span class="p">[]</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">algDefine</span><span class="p">[</span><span class="nt">name_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifHasDefined&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">AssociateTo</span><span class="p">[</span><span class="nv">alg</span><span class="p">,</span><span class="nv">name</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{}|&gt;]</span><span class="o">;</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">algUnset</span><span class="p">[</span><span class="nt">name_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifNotDefined&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">Print</span><span class="o">@</span><span class="nb">StringTemplate</span><span class="p">[</span><span class="s">&quot;The algebra `` has been unset.&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">KeyDropFrom</span><span class="p">[</span><span class="nv">alg</span><span class="p">,</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">algReset</span><span class="p">[</span><span class="nt">name_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifNotDefined&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">Print</span><span class="o">@</span><span class="nb">StringTemplate</span><span class="p">[</span><span class="s">&quot;The algebra `` has been reset.&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">AssociateTo</span><span class="p">[</span><span class="nv">alg</span><span class="p">,</span><span class="nv">name</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="p">{}|&gt;]</span><span class="o">;</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">algAdd</span><span class="p">[</span><span class="nt">name_</span><span class="p">][</span><span class="nt">elements_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="vc">list</span><span class="p">},</span>
+<span class="w">        </span><span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifNotDefined&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="vc">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Union</span><span class="p">[</span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">,</span><span class="s">&quot;operator&quot;</span><span class="p">],</span><span class="nv">elements</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">AssociateTo</span><span class="p">[</span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">],</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="vc">list</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">algDelete</span><span class="p">[</span><span class="nt">name_</span><span class="p">][</span><span class="nt">elements_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="vc">list</span><span class="p">},</span>
+<span class="w">        </span><span class="nv">algCheck</span><span class="p">[</span><span class="s">&quot;ifNotDefined&quot;</span><span class="p">][</span><span class="nv">name</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="vc">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Complement</span><span class="p">[</span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">,</span><span class="s">&quot;operator&quot;</span><span class="p">],</span><span class="nv">elements</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nb">AssociateTo</span><span class="p">[</span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">],</span><span class="s">&quot;operator&quot;</span><span class="o">-&gt;</span><span class="vc">list</span><span class="p">]</span><span class="o">;</span>
+<span class="w">        </span><span class="nv">alg</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<p>Several different algebras correspond to different list triples and can be compounded into one algebra</p>
+<ul>
+<li>
+<p>class: compounded algebra</p>
+</li>
+<li>
+<p>instance attribute: algebra_list</p>
+</li>
+<li>
+<p>method: define, unset, protect</p>
+</li>
+</ul>
+<p>This leads to an abstraction of the three-layered structure: <code class="highlight"><span class="nv">compounded</span><span class="w"> </span><span class="nv">algebra</span><span class="o">-&gt;</span><span class="nv">algebra</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">operator</span><span class="p">,</span><span class="nv">relation</span><span class="p">,</span><span class="nv">printing</span><span class="p">}</span></code>, hereinafter referred as <code class="highlight"><span class="nv">class</span><span class="o">-&gt;</span><span class="nv">instance</span><span class="o">-&gt;</span><span class="nv">member</span></code> respectively.</p>
+<p>There are two designing ideas as follows:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nb">DownValues</span></code> - <code class="highlight"><span class="nv">member</span></code> is the core, <code class="highlight"><span class="nv">class</span></code> is the <code class="highlight"><span class="nb">UpValues</span></code> of the <code class="highlight"><span class="nv">member</span></code>, and <code class="highlight"><span class="nv">instance</span></code> is the <code class="highlight"><span class="nb">DownValues</span></code> of the <code class="highlight"><span class="nv">member</span></code>. Following this idea we get the package <code class="highlight"><span class="nv">lily`list`</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">classOf</span><span class="p">[</span><span class="nv">member1</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nv">class</span><span class="o">;</span>
+
+<span class="nv">member1</span><span class="p">[</span><span class="nv">instance1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
+<span class="nv">member1</span><span class="p">[</span><span class="nv">instance2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
+<span class="o">...</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Association</span></code> - the data is stored into nested associations. Following this idea we get the package <code class="highlight"><span class="nv">lily`class`</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span>
+<span class="w">    </span><span class="nv">instance1</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">member1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">member2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
+<span class="w">    </span><span class="nv">instance2</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">member1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">member2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="p">|&gt;</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="public-attributes">Public attributes</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">classData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of <code class="highlight"><span class="nt">class_</span></code>.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceData&quot;</span></code> - store the data of instances with members.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceCommonData&quot;</span></code> - store the common data of instances.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceDefaultList&quot;</span></code> - store the list of instances as default.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceDefine&quot;</span></code> - core of method <code class="highlight"><span class="nv">instanceDefine</span></code> according to member structures.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceReset&quot;</span></code> - core of method <code class="highlight"><span class="nv">instanceReset</span></code> according to member structures.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceAdd&quot;</span></code> - core of method <code class="highlight"><span class="nv">instanceAdd</span></code> according to member structures.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;instanceDelete&quot;</span></code> - core of method <code class="highlight"><span class="nv">instanceDelete</span></code> according to member structures.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;memberStructureUsage&quot;</span></code> - descriptions of member structures.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;memberList&quot;</span></code> - list of members.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;memberStructureData&quot;</span></code> - list of member structures</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;isClassProtected&quot;</span></code> - state of class protection.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefaultData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of default instance of class. The default instance is designed to be frequently called by external functions, hence is separated from <code class="highlight"><span class="nv">classData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code>. After instance operations the default values will be updated.</p>
+<div class="admonition mark">
+<p class="admonition-title">Updating the default instance</p>
+<pre class="mermaid"><code>graph TD
+
+
+common &amp; instance0 &amp; instance1 --- update{{update}}
+update --&gt; default
+instance2
+...
+</code></pre>
+</div>
+</li>
+</ul>
+<h3 id="private-attributes">Private attributes</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">memberStructure</span></code> - pre-defined data structures of members, including:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;listUnsorted&quot;</span></code> - unsorted list; duplicates allowed;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;listSorted&quot;</span></code> - sorted list; duplicates allowed;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;setUnsorted&quot;</span></code> - unsorted set; duplicates not allowed;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;setSorted&quot;</span></code> - sorted set; duplicates not allowed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">memberStructureQ</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code> - check whether the structure is pre-defined.</p>
+</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="class-constructors">Class constructors</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">classDefine</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - define and initiate the class.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">classDefine</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">memberList_</span><span class="p">,</span><span class="nt">structureList_</span><span class="p">,</span><span class="nt">commonValueList_</span><span class="p">]</span></code> - the arguments are name of class, names of members, data structures of members, and common values of members.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">classDefine</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">memberList_</span><span class="p">,</span><span class="nt">structure_</span><span class="o">:</span><span class="s">&quot;setUnsorted&quot;</span><span class="p">,</span><span class="nt">commomValue_</span><span class="o">:</span><span class="p">{}]</span></code> - a shortcut of arguments. The structures and common values will be duplicated according to the number of members.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">classDefineQ</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - check whether the class is defined.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">classProtect</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="o">_?</span><span class="nb">BooleanQ</span><span class="p">]</span></code> - protect the defined class against <code class="highlight"><span class="nv">classUnset</span></code>. The protected class will not be unset when reloading the package.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">classUnset</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - unset the class if defined and unprotected. When loading the package, unprotected class will be unset.</p>
+</li>
+</ul>
+<h3 id="public-methods">Public methods</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefine</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code> - define the instances.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefault</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code> - set the instances into default.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceReset</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code> - reset the instances.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceUnset</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code> - unset the instances, and update the default instance list.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceAdd</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">,</span><span class="nt">memberAssoc_</span><span class="p">]</span></code> - add elementlist to the instances. The <code class="highlight"><span class="nt">memberAssoc_</span></code> will be association-ized, hence rule, list of rules, association of rules are accepted.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDelete</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">,</span><span class="nt">memberAssoc_</span><span class="p">]</span></code> - delete elementlist from the instances. The <code class="highlight"><span class="nt">memberAssoc_</span></code> will be association-ized, hence rule, list of rules, association of rules are accepted.</p>
+</li>
+</ul>
+<h3 id="private-methods">Private methods</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">__</span><span class="p">]</span></code> - the inputs will be checked by this private method before calling public methods:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifClassNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifInstanceNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifInstanceHasDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifMemberNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">memberList_</span><span class="p">]</span></code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefaultUpdate</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - the default instance will be updated by this private method after calling public methods of default, reset, unset, add and delete.</p>
+</li>
+</ul>
+<h3 id="decorators">Decorators</h3>
+<p>The public instance methods can be intercepted by the decorators <code class="highlight"><span class="nv">instancePreIntercept</span><span class="p">,</span><span class="w"> </span><span class="nv">instancePostIntercept</span></code>, see the definition of <code class="highlight"><span class="nv">instance</span><span class="o">*</span><span class="nv">`kernel</span></code>. The APIs are</p>
+<div class="highlight"><pre><span></span><code><span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceReset&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceReset&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceUnset&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceUnset&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceAdd&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">member_</span><span class="p">,</span><span class="nt">list_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceAdd&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">member_</span><span class="p">,</span><span class="nt">list_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDelete&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">member_</span><span class="p">,</span><span class="nt">list_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceDelete&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">member_</span><span class="p">,</span><span class="nt">list_</span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+<h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
+<ul>
+<li>The names of classes instances, and members can be either strings or symbols, although symbols are not recommended.</li>
+</ul>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+  
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+        <script src="../../js/random-text.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  </body>
+</html>
