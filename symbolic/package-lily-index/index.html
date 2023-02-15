@@ -392,8 +392,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#data-operation" class="md-nav__link">
-    Data operation
+  <a href="#designing-ideas" class="md-nav__link">
+    Designing ideas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
   </a>
   
 </li>
@@ -458,49 +465,53 @@
 
 <!-- Page content -->
 <h1 id="package-lilyindex">Package <code class="highlight"><span class="nv">lily`index`</span></code></h1>
-<p>This page provides the documentation of package <code class="highlight"><span class="nv">lily`index`</span></code> for coding a variable indexed by label and script into a single symbol and decoding back:</p>
-<div class="highlight"><pre><span></span><code><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">variableIndex_Symbol</span>
-</code></pre></div>
-<p>For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>.</p>
-<p>The specified variables and labels are stored into data member <code class="highlight"><span class="s">&quot;variable&quot;</span></code> and <code class="highlight"><span class="s">&quot;label&quot;</span></code>. The allowed scripts include letters and digits. For different purposes the instance <code class="highlight"><span class="s">&quot;index&quot;</span></code> is provided.</p>
+<p>A Mathematica package for coding/decoding a variable indexed by label and script into/from a single symbol.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/lily-index">yuriever/lily-index</a>.</p>
 <ul>
 <li>
 <p>Dependency: </p>
 <ul>
-<li><code class="highlight"><span class="nv">lily`assoc`</span></code></li>
+<li><code class="highlight"><span class="nv">lily`class`</span></code></li>
 </ul>
 </li>
 <li>
-<p>Data type: </p>
-<ul>
-<li><code class="highlight"><span class="s">&quot;index&quot;</span></code></li>
-</ul>
-</li>
-<li>
-<p>Data instance: </p>
-<ul>
-<li><code class="highlight"><span class="s">&quot;index&quot;</span></code></li>
-</ul>
-</li>
-<li>
-<p>Data member: </p>
+<p>Object:</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="s">&quot;variable&quot;</span></code> - storing specified variables;</p>
+<p>class: <code class="highlight"><span class="s">&quot;index&quot;</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;label&quot;</span></code> - storing multi-letter labels;</p>
+<p>instance: <code class="highlight"><span class="s">&quot;context&quot;</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;scriptPositionByVariable&quot;</span></code> - storing the position of script associated with a variable.</p>
+<p>member: </p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;variable&quot;</span></code> - store specified variables;</p>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;labelPosition&quot;</span></code> - storing the position of labels.</p>
+<p><code class="highlight"><span class="s">&quot;label&quot;</span></code> - store specified labels;</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;scriptSiteByVariable&quot;</span></code> - store the position of scripts associated to variables.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;labelSite&quot;</span></code> - store the position of labels.</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="data-operation">Data operation</h2>
+</li>
+</ul>
+<h2 id="designing-ideas">Designing ideas</h2>
+<p>The package <code class="highlight"><span class="nv">lily`index`</span></code> provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>. </p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">_Symbol</span>
+</code></pre></div>
+<p>The allowed scripts include either letters or digits. 
+The specified variables and labels are stored in the members <code class="highlight"><span class="s">&quot;variable&quot;</span></code> and <code class="highlight"><span class="s">&quot;label&quot;</span></code>. 
+The positions of labels are stored in the member <code class="highlight"><span class="s">&quot;labelSite&quot;</span></code>. The positions of scripts are determined by the associated variable and are stored in the member <code class="highlight"><span class="s">&quot;scriptSiteByVariable&quot;</span></code>.</p>
+<p>The instances <code class="highlight"><span class="s">&quot;context&quot;</span></code> are to distinguish different sets of variables and labels. Then all the <code class="highlight"><span class="s">&quot;context&quot;</span></code> constitute an <code class="highlight"><span class="s">&quot;index&quot;</span></code>.</p>
+<h2 id="methods">Methods</h2>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">indexDefine</span></code></p>
@@ -512,7 +523,7 @@
 <p><code class="highlight"><span class="nv">indexDelete</span></code></p>
 </li>
 <li>
-<p>`#!wl indexDefine</p>
+<p><code class="highlight"><span class="nv">indexDefine</span></code></p>
 </li>
 </ul>
 <h2 id="functionality">Functionality</h2>

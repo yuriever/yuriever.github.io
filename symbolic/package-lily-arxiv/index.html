@@ -620,7 +620,7 @@
 <p><code class="highlight"><span class="s">&quot;YResolution&quot;</span><span class="o">-&gt;</span><span class="m">25</span></code> - the text elements extracted from the first page will be grouped according to the Y coordinate with resolution <code class="highlight"><span class="s">&quot;YResolution&quot;</span></code>.</p>
 </li>
 </ul>
-<p><strong>TODO: test and improve the accuracy.</strong></p>
+<p><strong>TODO: test and improve the accuracy (by SVM or some NN?)</strong></p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">searchByTitle</span><span class="p">[</span><span class="s">&quot;file&quot;</span><span class="o">|</span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - search by titles extracted from file or path, and return the best-matched items on arXiv with formatted names by fileNameFormatter. The best match item is picked by minimizing <code class="highlight"><span class="nb">EditDistance</span></code>. The typical output is like </p>

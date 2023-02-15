@@ -434,8 +434,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ownvalues-is-bad" class="md-nav__link">
-    OwnValues is bad
+  <a href="#ownvalues-is-hard-to-manage" class="md-nav__link">
+    OwnValues is hard to manage
   </a>
   
 </li>
@@ -555,8 +555,8 @@
 <h3 id="helper-functions">Helper functions</h3>
 <p>复杂的主体函数应分层，最外层提供用户接口，若干内层的 helper 函数实现不同功能，尽可能使函数的依赖关系为 tree-like 的结构。为了避免重复判定条件，仅在最外层使用判别函数。</p>
 <h2 id="pattern-matching-and-evaluation">Pattern matching and evaluation</h2>
-<h3 id="ownvalues-is-bad"><code class="highlight"><span class="nb">OwnValues</span></code> is bad</h3>
-<p>Public symbol 应避免直接定义为 <code class="highlight"><span class="nb">OwnValues</span></code> <code class="highlight"><span class="nv">foo</span><span class="o">=...</span></code>，而为 <code class="highlight"><span class="nv">foo</span><span class="p">[]</span><span class="o">=...</span></code>。</p>
+<h3 id="ownvalues-is-hard-to-manage"><code class="highlight"><span class="nb">OwnValues</span></code> is hard to manage</h3>
+<p>Public symbol 应避免直接定义为 <code class="highlight"><span class="nb">OwnValues</span></code> <code class="highlight"><span class="nv">foo</span><span class="o">=...</span></code>，<code class="highlight"><span class="nv">foo</span><span class="p">[]</span><span class="o">=...</span></code> 是更好的选择。</p>
 <h3 id="functions-with-attribute-holdall">Functions with attribute <code class="highlight"><span class="nb">HoldAll</span></code></h3>
 <p>如无必要，不使用 <code class="highlight"><span class="nb">HoldAll</span></code> 等属性，以防阻止期待的计算。</p>
 <h3 id="dummy-rules">Dummy rules</h3>
