@@ -526,10 +526,22 @@
 
 <!-- Page content -->
 <h1 id="package-lilyclass">Package <code class="highlight"><span class="nv">lily`class`</span></code></h1>
-<p>The packages <code class="highlight"><span class="nv">lily`class`</span></code> and <code class="highlight"><span class="nv">lily`list`</span></code> are designed to manage a specific form of class composition, implemented by <code class="highlight"><span class="nb">Association</span></code> and <code class="highlight"><span class="nb">DownValues</span></code> respectively. </p>
+<p>The packages <code class="highlight"><span class="nv">lily`class`</span></code> and <code class="highlight"><span class="nv">lily`list`</span></code> are designed to manage a specific form of class composition illustrated in the following flow chart, implemented by <code class="highlight"><span class="nb">Association</span></code> and <code class="highlight"><span class="nb">DownValues</span></code> respectively, </p>
 <p>In this page we focus on the former since there are several advantages over the latter: <code class="highlight"><span class="nb">Association</span></code> is immutable and faster to access, consumes less memory, and requires no symbol management.</p>
 <!--The GitHub repository is [yuriever/lily-class](https://github.com/yuriever/lily-class).-->
 
+<div class="admonition mark">
+<p class="admonition-title">Instance initializing and updating</p>
+<pre class="mermaid"><code>graph LR
+
+common --- define{{define/reset}}
+define --&gt; instance0 &amp; instance1 &amp; instance2 &amp; ...
+extra &amp; instance0 &amp; instance1  --- update{{update}}
+update --&gt; default
+subgraph instanceData
+instance0 &amp; instance1 &amp; ... &amp; instance2
+end</code></pre>
+</div>
 <h2 id="motivation-and-designing-ideas">Motivation and designing ideas</h2>
 <p>A finitely presented algebra (or monoid, module, ...) consists of lists of generators <code class="highlight"><span class="nv">operator</span></code> and relations <code class="highlight"><span class="nv">relation</span></code>. Besides, a list of rules <code class="highlight"><span class="nv">printing</span></code> is also required when formatting the output. From above we can abstract the following object</p>
 <ul>
@@ -671,7 +683,7 @@
 <p><code class="highlight"><span class="s">&quot;instanceData&quot;</span></code> - store the data of instances with members.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;instanceCommonData&quot;</span></code> - store the common data of instances, determining the behaviors of <code class="highlight"><span class="s">&quot;instanceDefine&quot;</span></code> and <code class="highlight"><span class="s">&quot;instanceReset&quot;</span></code>.</p>
+<p><code class="highlight"><span class="s">&quot;instanceCommonData&quot;</span></code> - store the common data of instances, determining the behaviors of <code class="highlight"><span class="nv">instanceDefine</span></code> and <code class="highlight"><span class="nv">instanceReset</span></code>.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="s">&quot;instanceExtraData&quot;</span></code> - store the extra data of instances, contributing to <code class="highlight"><span class="nv">instanceDefaultData</span></code>.</p>
@@ -709,19 +721,6 @@
 <p><code class="highlight"><span class="nv">instanceDefaultData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of default instance of class. The default instance is designed to be frequently called by external functions, hence is separated from <code class="highlight"><span class="nv">classData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code>. After instance operations the default values will be updated.</p>
 </li>
 </ul>
-<p>The structure of instance data can be summarized in the following flow chart.</p>
-<div class="admonition mark">
-<p class="admonition-title">instance data initializing and updating</p>
-<pre class="mermaid"><code>graph LR
-
-common --- define{{define/reset}}
-define --&gt; instance0 &amp; instance1 &amp; instance2 &amp; ...
-extra &amp; instance0 &amp; instance1  --- update{{update}}
-update --&gt; default
-subgraph instanceData
-instance0 &amp; instance1 &amp; ... &amp; instance2
-end</code></pre>
-</div>
 <h3 id="private-attributes">Private attributes</h3>
 <ul>
 <li>
@@ -757,7 +756,7 @@ end</code></pre>
 <p><code class="highlight"><span class="nv">memberStructure</span></code> - store the member structures.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">memberStructureQ</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code> - check whether the structure is defined.</p>
+<p><code class="highlight"><span class="nv">memberStructureQ</span><span class="p">[</span><span class="nt">structure_</span><span class="p">]</span></code> - check whether the structure is defined.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">memberStructureDefine</span><span class="p">[</span><span class="nt">structure_</span><span class="p">,</span><span class="nt">assoc_</span><span class="p">]</span></code> - define a new data structure of member.</p>
@@ -835,8 +834,11 @@ end</code></pre>
 </li>
 </ul>
 <h3 id="decorators">Decorators</h3>
-<p>The public instance methods can be intercepted by the decorators <code class="highlight"><span class="nv">instancePreIntercept</span><span class="p">,</span><span class="w"> </span><span class="nv">instancePostIntercept</span></code>, see the definition of <code class="highlight"><span class="nv">instance</span><span class="o">*</span><span class="nv">`kernel</span></code>. The APIs are</p>
-<div class="highlight"><pre><span></span><code><span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">property_</span><span class="p">]</span><span class="o">;</span>
+<p>The instance methods can be intercepted by the decorators <code class="highlight"><span class="nv">instancePreIntercept</span><span class="p">,</span><span class="w"> </span><span class="nv">instancePostIntercept</span></code>, see the definition of <code class="highlight"><span class="nv">instance</span><span class="o">*</span><span class="nv">`kernel</span></code>. The APIs are</p>
+<div class="highlight"><pre><span></span><code><span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefaultUpdate&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">defaultInstance_</span><span class="p">]</span><span class="o">;</span>
+<span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefaultUpdate&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">defaultInstance_</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">property_</span><span class="p">]</span><span class="o">;</span>
 <span class="nv">instancePostIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="p">,</span><span class="nt">property_</span><span class="p">]</span><span class="o">;</span>
 
 <span class="nv">instancePreIntercept</span><span class="p">[</span><span class="s">&quot;instanceDefine&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span><span class="o">;</span>
