@@ -680,9 +680,6 @@ end</code></pre>
 <p><code class="highlight"><span class="nv">classData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of <code class="highlight"><span class="nt">class_</span></code>.</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="s">&quot;instanceData&quot;</span></code> - store the data of instances with members.</p>
-</li>
-<li>
 <p><code class="highlight"><span class="s">&quot;instanceCommonData&quot;</span></code> - store the common data of instances, determining the behaviors of <code class="highlight"><span class="nv">instanceDefine</span></code> and <code class="highlight"><span class="nv">instanceReset</span></code>.</p>
 </li>
 <li>
@@ -718,7 +715,10 @@ end</code></pre>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">instanceDefaultData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of default instance of class. The default instance is designed to be frequently called by external functions, hence is separated from <code class="highlight"><span class="nv">classData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code>. After instance operations the default values will be updated.</p>
+<p><code class="highlight"><span class="nv">instanceData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of instances with members.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">instanceDefaultData</span><span class="p">[</span><span class="nt">class_</span><span class="p">]</span></code> - store the data of default instance of class. After instance operations the default values will be updated.</p>
 </li>
 </ul>
 <h3 id="private-attributes">Private attributes</h3>
