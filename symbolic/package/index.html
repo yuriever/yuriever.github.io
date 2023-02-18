@@ -501,17 +501,19 @@
 <span class="c">(*恢复$Context，并添加p`至$ContextPath*)</span>
 <span class="nb">EndPackage</span><span class="p">[]</span><span class="o">;</span>
 </code></pre></div>
-<ul>
-<li>
-<p>子扩展包的自动补全问题：母扩展包 <code class="highlight"><span class="nv">p`</span></code> 下的子扩展包 <code class="highlight"><span class="nv">p`p1`</span></code> 中的公共函数不会被自动补全。可见讨论 <a href="https://mathematica.stackexchange.com/questions/162386">Sub-packages and auto-completion</a>。</p>
-<p>解决方案：将母扩展包解耦并重命名为 <code class="highlight"><span class="nv">p0`</span></code>，在 <code class="highlight"><span class="nv">p0`</span></code> 中启用子扩展包 <code class="highlight"><span class="nv">p`p1`</span></code>。</p>
-<p><strong>该问题已在13.2版本中修复</strong></p>
-</li>
-</ul>
+<!--* 子扩展包的自动补全问题：母扩展包 ``#!wl p` `` 下的子扩展包 ``#!wl p`p1` `` 中的公共函数不会被自动补全。可见讨论 [Sub-packages and auto-completion](https://mathematica.stackexchange.com/questions/162386)。
+
+    解决方案：将母扩展包解耦并重命名为 ``#!wl p0` ``，在 ``#!wl p0` `` 中启用子扩展包 ``#!wl p`p1` ``。
+
+    **该问题已在13.2版本中修复**-->
+
 <h2 id="function-type">Function type</h2>
 <ul>
 <li>
 <p>常数 (constant)，存储变量的列表以及列表操作函数；</p>
+</li>
+<li>
+<p>对象 (object)，存储对象属性的关联，以及实现对象方法的函数；</p>
 </li>
 <li>
 <p>判别函数 (questing function)，用以界定变量的类型和范围，因此定义尽量完备；</p>
@@ -537,124 +539,22 @@
 </ul>
 <h2 id="package-dependency">Package dependency</h2>
 <div class="admonition mark">
-<p class="admonition-title">Package <code class="highlight"><span class="nv">lily`base`</span></code></p>
-<pre class="mermaid"><code>classDiagram
+<p class="admonition-title">Packages <code class="highlight"><span class="nv">lily`</span><span class="o">*</span><span class="err">`</span></code></p>
+<pre class="mermaid"><code>graph TD
 
-base ..&gt; test
-base ..&gt; IO
-base ..&gt; temp
-MaTeX ..&gt; latex
+base --&gt; test &amp; IO &amp; temp
 
-class base{
-    &lt;&lt;custom, debug&gt;&gt;
-    xxQ()
-}
+cls[class] --&gt; index &amp; algebra
 
-class temp{
-    &lt;&lt;workbench&gt;&gt;
-}
+MaTeX --&gt; latex
 
-class IO{
-    &lt;&lt;input, \n output&gt;&gt;
-    IO()
-}
-
-class test{
-    &lt;&lt;unit test&gt;&gt;
-    test()
-}
-
-class MaTeX{
-    &lt;&lt;latex compiling&gt;&gt;
-}
-
-class latex{
-    &lt;&lt;latex compiling&gt;&gt;
-}
+number &amp; matrix &amp; simplify &amp; lie &amp; IBP
 </code></pre>
 </div>
 <div class="admonition mark">
-<p class="admonition-title">Package <code class="highlight"><span class="nv">lily`</span><span class="o">*</span><span class="err">`</span></code></p>
-<pre class="mermaid"><code>classDiagram
-
-class number{
-    &lt;&lt;number field&gt;&gt;
-}
-
-class matrix{
-    &lt;&lt;matrix,\n operator&gt;&gt;
-}
-
-class simplify{
-    &lt;&lt;expression \n simplification&gt;&gt;
-    together()
-    apart()
-}
-
-class lie{
-    &lt;&lt;Lie alg&gt;&gt;
-}
-
-class IBP{
-    &lt;&lt;integration \n by parts&gt;&gt;
-    IBP()
-}
-</code></pre>
-</div>
-<div class="admonition mark">
-<p class="admonition-title">Package <code class="highlight"><span class="nv">lily`assoc`</span></code></p>
-<pre class="mermaid"><code>classDiagram
-
-assoc ..&gt; algebra
-assoc ..&gt; index
-
-class assoc{
-    &lt;&lt;data&gt;&gt;
-    data(type,member,instance)
-    instance()
-}
-
-class algebra{
-    &lt;&lt;associative algebra&gt;&gt;
-    operator
-    relation
-    printing
-}
-
-class index{
-    &lt;&lt;indexed objexts&gt;&gt;
-    variable
-    label
-}
-</code></pre>
-</div>
-<div class="admonition mark">
-<p class="admonition-title">Package <code class="highlight"><span class="nv">lily`list`</span></code></p>
-<pre class="mermaid"><code>classDiagram
-
-list ..&gt; list_algebra
-list ..&gt; list_index
-
-class list{
-    &lt;&lt;data&gt;&gt;
-    data(type,member,instance)
-    instance()
-}
-
-class list_algebra{
-    &lt;&lt;associative algebra&gt;&gt;
-    operator
-    relation
-    printing
-}
-
-class list_index{
-    &lt;&lt;indexed objects&gt;&gt;
-    variable
-    label
-}
-
-</code></pre>
+<p class="admonition-title">Deprecated packages</p>
+<pre class="mermaid"><code>graph TD
+list --&gt; cls1["list`index"] &amp; cls2["list`algebra"]</code></pre>
 </div>
 
 <!-- Source file information -->
