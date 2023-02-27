@@ -400,8 +400,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#connect-to-arxiv-and-recognize-id" class="md-nav__link">
-    Connect to arXiv and recognize ID
+  <a href="#recognize-arxiv-id" class="md-nav__link">
+    Recognize arXiv ID
   </a>
   
 </li>
@@ -414,8 +414,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#extract-search-and-download-by-arxiv-id" class="md-nav__link">
-    Extract, search and download by arXiv ID
+  <a href="#extract-search-download-and-generate-bibtex-by-arxiv-id" class="md-nav__link">
+    Extract, search, download and generate BibTeX by arXiv ID
   </a>
   
 </li>
@@ -494,16 +494,20 @@
 <h1 id="package-lilyarxiv">Package <code class="highlight"><span class="nv">lily`arxiv`</span></code></h1>
 <p>A Mathematica package for searching, downloading and renaming arXiv preprints by ID or title.</p>
 <p>The GitHub repository is <a href="https://github.com/yuriever/lily-arxiv">yuriever/lily-arxiv</a>.</p>
-<h2 id="list-of-symbols">List of symbols</h2>
-<h3 id="connect-to-arxiv-and-recognize-id">Connect to arXiv and recognize ID</h3>
+<p>This package uses the following APIs:</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">arXivConnect</span><span class="o">|</span><span class="nv">arXivDisconnect</span><span class="p">[]</span></code> - connect to or disconnect from the arXiv API.</p>
+<p><a href="https://github.com/inspirehep/rest-api-doc">INSPIRE REST API</a></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">arXivIDQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check whether a string is a valid arXiv ID. 
-    The new ID template after 2007 is <code>xxxx.xxxx(x)</code>, and the old one is <code>class/xxxxxxx</code>.</p>
+<p><a href="https://info.arxiv.org/help/api/index.html">arXiv API</a></p>
 </li>
+</ul>
+<h2 id="list-of-symbols">List of symbols</h2>
+<h3 id="recognize-arxiv-id">Recognize arXiv ID</h3>
+<ul>
+<li><code class="highlight"><span class="nv">arXivIDQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check whether a string is a valid arXiv ID. 
+    The new ID template after 2007 is <code>xxxx.xxxx(x)</code>, and the old one is <code>class/xxxxxxx</code>.</li>
 </ul>
 <h3 id="set-the-format-of-file-names">Set the format of file names</h3>
 <ul>
@@ -523,7 +527,7 @@
 <p><code class="highlight"><span class="nv">fileNameRegulate</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code> - regulate the file name with special characters like <code class="highlight"><span class="s">&quot;/&quot;</span></code> and <code class="highlight"><span class="s">&quot;\n&quot;</span></code>. The transformation rules are stored in <code class="highlight"><span class="nv">fileNameRegulate`ruleList</span></code>.</p>
 </li>
 </ul>
-<h3 id="extract-search-and-download-by-arxiv-id">Extract, search and download by arXiv ID</h3>
+<h3 id="extract-search-download-and-generate-bibtex-by-arxiv-id">Extract, search, download and generate BibTeX by arXiv ID</h3>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">extractID</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code> - extract all arXiv IDs from string, file name or path.</p>
@@ -553,7 +557,7 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">searchByID</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code>: search by IDs extracted from string, file or path, and return the found items on arXiv with formatted names by <code class="highlight"><span class="nv">fileNameFormatter</span></code>. </p>
+<p><code class="highlight"><span class="nv">searchByID</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code> - search by IDs extracted from string, file or path, and return the found items on arXiv with formatted names by <code class="highlight"><span class="nv">fileNameFormatter</span></code>. </p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">searchByID</span><span class="p">[</span><span class="s">&quot;string&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - the tag <code class="highlight"><span class="s">&quot;string&quot;</span></code> can be omitted. The typical output is like</p>
@@ -583,7 +587,7 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">downloadByID</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code>: download by IDs extracted from string, file or path to the target path, and return the file objects with formatted names by <code class="highlight"><span class="nv">fileNameFormatter</span></code>.</p>
+<p><code class="highlight"><span class="nv">downloadByID</span><span class="p">[</span><span class="o">__</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code> - download by IDs extracted from string, file or path to the target path, and return the file objects with formatted names by <code class="highlight"><span class="nv">fileNameFormatter</span></code>.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">downloadByID</span><span class="p">[</span><span class="nt">targetPath_</span><span class="p">,</span><span class="s">&quot;string&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - the tag <code class="highlight"><span class="s">&quot;string&quot;</span></code> can be omitted. The typical output is like</p>
@@ -597,6 +601,22 @@
 </li>
 </ul>
 <p>Default options are the same as <code class="highlight"><span class="nv">searchByID</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">generateBibTeXByID</span><span class="p">[</span><span class="o">__</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code> - export the found BibTeX entries on inspirehep by IDs extracted from string, file or path, and return the BibTeX keys.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">generateBibTeXByID</span><span class="p">[</span><span class="nt">targetPath_</span><span class="p">,</span><span class="nt">bibName_</span><span class="p">,</span><span class="s">&quot;string&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - the tag <code class="highlight"><span class="s">&quot;string&quot;</span></code> can be omitted. The typical output is like</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;key&quot;</span><span class="o">-&gt;</span><span class="s">&quot;author:YYYYxxx&quot;</span><span class="p">,</span><span class="s">&quot;ID&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;xxxx.xxxx&quot;</span><span class="p">},</span><span class="s">&quot;BibTeX&quot;</span><span class="o">-&gt;</span><span class="s">&quot;found BibTeX&quot;</span><span class="p">|&gt;}</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">generateBibTeXByID</span><span class="p">[</span><span class="nt">targetPath_</span><span class="p">,</span><span class="nt">bibName_</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">|</span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - the typical output is like</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;key&quot;</span><span class="o">-&gt;</span><span class="s">&quot;author:YYYYxxx&quot;</span><span class="p">,</span><span class="s">&quot;ID&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;xxxx.xxxx&quot;</span><span class="p">},</span><span class="s">&quot;BibTeX&quot;</span><span class="o">-&gt;</span><span class="s">&quot;found BibTeX&quot;</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">},</span><span class="s">&quot;IDLocation&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;foundInFirstPage&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">}|&gt;}</span>
+</code></pre></div>
+</li>
+</ul>
+<p>Default options are the same as <code class="highlight"><span class="nv">extractID</span></code>.</p>
 </li>
 </ul>
 <h3 id="extract-search-and-download-by-title">Extract, search and download by title</h3>
