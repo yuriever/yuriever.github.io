@@ -471,9 +471,9 @@
 S\sim e^{it\cH}&amp;=\id+ \int d p_{1} d p_{2} dp'_{1} dp'_{2} \d (p_{1}+p_{2}-p'_{1}-p'_{2}) 
 \nn
 \\
-&amp;\peq S(p_1,1,p_{2},2|p'_{1},1',p'_{2},2')\ain^\+(p_1,1)\ain^\+(p_{2},2)\ain(p'_{1},1')\ain(p'_{2},2')+\dots
+&amp;\peq S(p_1,1,p_{2},2|p'_{1},1',p'_{2},2')\instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p'_{1},1')\instate{a}(p'_{2},2')+\dots
 \end{align}\]</div>
-<p>这里假设了 <span class="arithmatex">\(\ain^\+\)</span> 生成的激发是稳定的，因此从 <span class="arithmatex">\(2\to2\)</span> 散射开始求和。</p>
+<p>这里假设了 <span class="arithmatex">\(\instate{a}^{\dagger}\)</span> 生成的激发是稳定的，因此从 <span class="arithmatex">\(2\to2\)</span> 散射开始求和。</p>
 <p>有能隙可回避红外发散问题。有渐近态意味存在出入态的升降算子，以及存在插值场 (interpolating field) 联系相互作用场和渐近场。
 局域指的是场算子代数中的局域算子满足因果局域性 (causal locality)，并且存在能动张量算子 <span class="arithmatex">\(T^{ab}(X)\)</span>，</p>
 <div class="arithmatex">\[\begin{equation}
@@ -486,7 +486,7 @@ S\sim e^{it\cH}&amp;=\id+ \int d p_{1} d p_{2} dp'_{1} dp'_{2} \d (p_{1}+p_{2}-p
 <p>且入射态是动量本征态，</p>
 <div class="arithmatex">\[\begin{equation}
 \left(\cP^\pm-m\sum_{i=1}^n e^{\pm\b_i} \right)
-\ain^\+(\b_1,1)\dots\ain^\+(\b_n,n)\ket{0}=0
+\instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0
 \end{equation}\]</div>
 <h2 id="integrability">Integrability</h2>
 <p>可积性的定义是存在充分多的高自旋守恒流 <span class="arithmatex">\(\p_a T^{a,\pm,(s)}(X)=0\)</span>，并且其守恒荷，</p>
@@ -500,7 +500,7 @@ Q^{\pm,(s)}=\int_{\S_t} dx\, T^{0,\pm,(s)}(t,x)
 <p>这里上指标 <span class="arithmatex">\((s)\)</span> 标记自旋数，<span class="arithmatex">\([M,Q^{(s)}]=sQ^{(s)}\)</span>。</p>
 <p>与动量算子的交换性意味可以同时对角化，</p>
 <div class="arithmatex">\[\begin{equation}
-\ppair{Q^{\pm,(s)}-q^{(s)}\sum_{i=1}^n e^{\pm s\b_i} }\ain^\+(\b_1,1)\dots\ain^\+(\b_n,n)\ket{0}=0
+\ppair{Q^{\pm,(s)}-q^{(s)}\sum_{i=1}^n e^{\pm s\b_i} }\instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0
 \end{equation}\]</div>
 <p>散射矩阵作为 <span class="arithmatex">\(\cH\)</span> 的积分算子，和 <span class="arithmatex">\(Q^{(s)}\)</span> 交换，在矩阵元水平上为，</p>
 <div class="arithmatex">\[\begin{equation}
@@ -512,10 +512,10 @@ S(n\to m)\sim \d_{n,m} \qand \set{\b_i}=\set{\b'_i}
 \end{equation}\]</div>
 <p>亦即，散射是完全弹性的，没有粒子产生消灭，出态动量是入态动量的轮换，</p>
 <div class="arithmatex">\[\begin{equation}
-S=\id+ \int d \b_1 d \b_2  \, S(\vp_1,\vp_2|1,2|1',2')\\
-\ain^\+(\vp_1,1)\ain^\+(\vp_2,2)\ain(\vp_1,1')\ain(\vp_2,2')+\dots
+S=\id+ \int d \b_1 d \b_2  \, S(p_1,p_2|1,2|1',2')
+\instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p'_{1},1')\instate{a}(p'_{2},2')+\dots
 \end{equation}\]</div>
-<p>其中<span class="arithmatex">\(S\)</span>吸收了一些运动学因子。这在微扰场论水平上意味着大量的图相消。</p>
+<p>其中 <span class="arithmatex">\(S\)</span> 吸收了一些运动学因子。这在微扰场论水平上意味着大量的图相消。</p>
 
 <!-- Source file information -->
 
