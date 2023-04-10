@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -170,7 +170,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -647,6 +647,10 @@
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">algebraSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - simplify the expression by the default algebra.</p>
+<p>Default options:</p>
+<ul>
+<li><code class="highlight"><span class="s">&quot;caching&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - cache the default algebra.</li>
+</ul>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">algebraPrint</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - format the expression by the default algebra.</p>
@@ -705,10 +709,10 @@
 <h3 id="commutator-adjoint-and-power">Commutator, adjoint and power</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - (n-)commutator.</p>
+<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (n-)commutator.</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - (n-)anti-commutator.</p>
+<p><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (n-)anti-commutator.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">jacobiIdentity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - the Jacobi identity.</p>
@@ -716,7 +720,7 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">commSim</span><span class="o">|</span><span class="nv">anticommSim</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">__</span><span class="p">]</span></code> - simplify the (anti-)commutator.</p>
+<p><code class="highlight"><span class="nv">commSim</span><span class="o">|</span><span class="nv">anticommSim</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - simplify the (anti-)commutator.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">commDefine</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_</span></code> - define commutation relations with condition, order-reversing and anti-commutator. For example, the CCR can be packed into </p>
@@ -743,7 +747,7 @@
 <h3 id="inner-product">Inner product</h3>
 <p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;conjugate&quot;</span></code>.</p>
 <ul>
-<li><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - inner product of two vectors. For operators <span class="arithmatex">\(x,y\)</span> this gives <span class="arithmatex">\(x^{\dagger}\cdot y\)</span>.</li>
+<li><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">___</span><span class="p">]</span></code> - inner product of two vectors. For operators <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot y\)</span>, and for a single operator <span class="arithmatex">\(x\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot x\)</span>.</li>
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
 <p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;tensorProduct&quot;</span></code>.</p>
@@ -758,7 +762,7 @@
 <p><code class="highlight"><span class="nv">tensorRank</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - return the tensor rank of generators.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">tensorThread</span></code> - composite tensors over multiplication according to tensorRank. </p>
+<p><code class="highlight"><span class="nv">tensorThread</span></code> - composite tensors over multiplication according to <code class="highlight"><span class="nv">tensorRank</span></code>. </p>
 </li>
 </ul>
 <h3 id="scalar-extraction">Scalar extraction</h3>
@@ -789,10 +793,10 @@
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
@@ -814,10 +818,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
       
@@ -825,7 +829,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       

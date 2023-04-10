@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/tricks/">
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/2dSmatrixintegrability/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Some tricks - Sora</title>
+        <title>Two-dimensional S-matrix bootstrap - Sora</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#some-tricks" class="md-skip">
+        <a href="#two-dimensional-s-matrix-bootstrap" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Some tricks
+              Two-dimensional S-matrix bootstrap
             
           </span>
         </div>
@@ -191,7 +191,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../" class="md-tabs__link">
+    <a href="../../symbolic/" class="md-tabs__link">
       Triangulated reality
     </a>
   </li>
@@ -203,7 +203,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../lightnovel/" class="md-tabs__link">
+    <a href="../" class="md-tabs__link">
       Lightnovel
     </a>
   </li>
@@ -298,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../symbolic/" class="md-nav__link">
         Triangulated reality
       </a>
     </li>
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lightnovel/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Lightnovel
       </a>
     </li>
@@ -392,104 +392,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#package" class="md-nav__link">
-    Package
+  <a href="#settings" class="md-nav__link">
+    Settings
   </a>
-  
-    <nav class="md-nav" aria-label="Package">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-in-package" class="md-nav__link">
-    Set in package
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decoupling" class="md-nav__link">
-    Decoupling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#helper-functions" class="md-nav__link">
-    Helper functions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pattern-matching-and-evaluation" class="md-nav__link">
-    Pattern matching and evaluation
+  <a href="#integrability" class="md-nav__link">
+    Integrability
   </a>
-  
-    <nav class="md-nav" aria-label="Pattern matching and evaluation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ownvalues-is-hard-to-manage" class="md-nav__link">
-    OwnValues is hard to manage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functions-with-attribute-holdall" class="md-nav__link">
-    Functions with attribute HoldAll
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dummy-rules" class="md-nav__link">
-    Dummy rules
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#injector-pattern" class="md-nav__link">
-    Injector pattern
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tricky-stuffs" class="md-nav__link">
-    Tricky stuffs
-  </a>
-  
-    <nav class="md-nav" aria-label="Tricky stuffs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#names" class="md-nav__link">
-    Names
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optionspattern-and-filterrules" class="md-nav__link">
-    OptionsPattern and FilterRules
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -545,46 +457,65 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="some-tricks">Some tricks</h1>
-<p>本页面为 Mathematica 技巧和经验的总结。</p>
-<h2 id="package">Package</h2>
-<h3 id="set-in-package"><code class="highlight"><span class="nb">Set</span></code> in package</h3>
-<p>当 <code>Set</code> 出现在扩展包中时，需注意相关的符号在扩展包反复被调用后的状态，或在定义前清除原始值。</p>
-<h3 id="decoupling">Decoupling</h3>
-<p>减少复杂的不同功能的函数、不同扩展包之间的关联。</p>
-<h3 id="helper-functions">Helper functions</h3>
-<p>复杂的主体函数应分层，最外层提供用户接口，若干内层的 helper 函数实现不同功能，尽可能使函数的依赖关系为 tree-like 的结构。为了避免重复判定条件，仅在最外层使用判别函数。</p>
-<h2 id="pattern-matching-and-evaluation">Pattern matching and evaluation</h2>
-<h3 id="ownvalues-is-hard-to-manage"><code class="highlight"><span class="nb">OwnValues</span></code> is hard to manage</h3>
-<p>Public symbol 应避免直接定义为 <code class="highlight"><span class="nb">OwnValues</span></code> <code class="highlight"><span class="nv">foo</span><span class="o">=...</span></code>，<code class="highlight"><span class="nv">foo</span><span class="p">[]</span><span class="o">=...</span></code> 是更好的选择。</p>
-<h3 id="functions-with-attribute-holdall">Functions with attribute <code class="highlight"><span class="nb">HoldAll</span></code></h3>
-<p>如无必要，不使用 <code class="highlight"><span class="nb">HoldAll</span></code> 等属性，以防阻止期待的计算。</p>
-<h3 id="dummy-rules">Dummy rules</h3>
-<p><code class="highlight"><span class="nb">ReplaceAll</span></code> 访问表达式的策略是自上到下的，匹配完的子表达式不再被匹配，因此：一方面，规则 <code class="highlight"><span class="p">{</span><span class="nt">x_foo</span><span class="o">:&gt;</span><span class="nv">x</span><span class="p">,</span><span class="o">...</span><span class="p">}</span></code> 可以防止 <code class="highlight"><span class="nb">Head</span></code> 为 <code class="highlight"><span class="nv">foo</span></code> 的子表达式被匹配，称为哑规则；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。</p>
-<h3 id="injector-pattern">Injector pattern</h3>
-<p><code class="highlight"><span class="nb">With</span></code> 可将表达式注入到 <code class="highlight"><span class="nb">Hold</span></code> 或带有 <code class="highlight"><span class="nb">HoldAll</span></code> 属性的函数中。另一个更灵活的技巧是如下的注入规则，</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">/.</span><span class="nb">Hold</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="nv">x</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span>
-</code></pre></div>
-<h2 id="tricky-stuffs">Tricky stuffs</h2>
-<h3 id="names"><code class="highlight"><span class="nb">Names</span></code></h3>
-<p><code class="highlight"><span class="nb">Names</span><span class="p">[{</span><span class="s">&quot;context`*&quot;</span><span class="p">}]</span></code> will search all subcontexts while <code class="highlight"><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;context`*&quot;</span><span class="p">]</span></code> only search the first level, and the former causes unnecessary slow-down (according to the purpose).</p>
-<h3 id="optionspattern-and-filterrules"><code class="highlight"><span class="nb">OptionsPattern</span></code> and <code class="highlight"><span class="nb">FilterRules</span></code></h3>
-<p>The input options pattern in <code class="highlight"><span class="nb">OptionsPattern</span></code> and <code class="highlight"><span class="nb">FilterRules</span></code> should be enclosed by <code class="highlight"><span class="p">{}</span></code>, like</p>
-<div class="highlight"><pre><span></span><code><span class="nv">g</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">}</span><span class="o">;</span>
-<span class="nv">f</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">}</span><span class="o">;</span>
-<span class="nv">g</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
-<span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nv">f</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span><span class="p">{</span>
-<span class="w">    </span><span class="nv">g</span><span class="p">[</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">g</span><span class="p">]]],</span>
-<span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">f</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
-<span class="p">}</span><span class="o">;</span>
-
-<span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">b</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">}</span>
-</code></pre></div>
+<h1 id="two-dimensional-s-matrix-bootstrap">Two-dimensional S-matrix bootstrap</h1>
+<h2 id="settings">Settings</h2>
+<p>本文讨论二维有能隙有渐近态的局域可积场论。</p>
+<p>二维笛卡尔坐标为 <span class="arithmatex">\(X=(t,x)\)</span>，光锥坐标 <span class="arithmatex">\(x^\pm=t\pm x\)</span>。动量 <span class="arithmatex">\(P=(\o,p)\)</span> 可用快度 <span class="arithmatex">\(\b\)</span> 以及光锥坐标 <span class="arithmatex">\(p^\pm=\o\pm p\)</span> 参数化，</p>
+<div class="arithmatex">\[\begin{align}
+&amp; \o^{2}- p^2=m^{2}  &amp;  \o &amp; =m \cosh\b  &amp;  p &amp;=m \sinh \b 
+\\
+&amp; p^+ p^-=m^{2}  &amp;  p^+ &amp; =m e^\b  &amp;  p^- &amp;=m e^{-\b }
+\end{align}\]</div>
+<p>散射矩阵定义为出入态之间的矩阵元，</p>
+<div class="arithmatex">\[\begin{align}
+S\sim e^{it\cH}&amp;=\id+ \int d p_{1} d p_{2} dp'_{1} dp'_{2} \d (p_{1}+p_{2}-p'_{1}-p'_{2}) 
+\nn
+\\
+&amp;\peq S(p_1,1,p_{2},2|p'_{1},1',p'_{2},2')\ain^\+(p_1,1)\ain^\+(p_{2},2)\ain(p'_{1},1')\ain(p'_{2},2')+\dots
+\end{align}\]</div>
+<p>这里假设了 <span class="arithmatex">\(\ain^\+\)</span> 生成的激发是稳定的，因此从 <span class="arithmatex">\(2\to2\)</span> 散射开始求和。</p>
+<p>有能隙可回避红外发散问题。有渐近态意味存在出入态的升降算子，以及存在插值场 (interpolating field) 联系相互作用场和渐近场。
+局域指的是场算子代数中的局域算子满足因果局域性 (causal locality)，并且存在能动张量算子 <span class="arithmatex">\(T^{ab}(X)\)</span>，</p>
+<div class="arithmatex">\[\begin{equation}
+[\f_1(X_1),\f_2(X_2)]=0 \qfor X_{12}\notin \Vcausal
+\end{equation}\]</div>
+<p>因而动量算子为</p>
+<div class="arithmatex">\[\begin{equation}
+\cP^\pm=\int_{\S_t} dx\, T^{0,\pm}(t,x)
+\end{equation}\]</div>
+<p>且入射态是动量本征态，</p>
+<div class="arithmatex">\[\begin{equation}
+\left(\cP^\pm-m\sum_{i=1}^n e^{\pm\b_i} \right)
+\ain^\+(\b_1,1)\dots\ain^\+(\b_n,n)\ket{0}=0
+\end{equation}\]</div>
+<h2 id="integrability">Integrability</h2>
+<p>可积性的定义是存在充分多的高自旋守恒流 <span class="arithmatex">\(\p_a T^{a,\pm,(s)}(X)=0\)</span>，并且其守恒荷，</p>
+<div class="arithmatex">\[\begin{equation}
+Q^{\pm,(s)}=\int_{\S_t} dx\, T^{0,\pm,(s)}(t,x)
+\end{equation}\]</div>
+<p>相互交换，</p>
+<div class="arithmatex">\[\begin{equation}
+[Q^{(s)},Q^{(s')}]=0
+\end{equation}\]</div>
+<p>这里上指标 <span class="arithmatex">\((s)\)</span> 标记自旋数，<span class="arithmatex">\([M,Q^{(s)}]=sQ^{(s)}\)</span>。</p>
+<p>与动量算子的交换性意味可以同时对角化，</p>
+<div class="arithmatex">\[\begin{equation}
+\ppair{Q^{\pm,(s)}-q^{(s)}\sum_{i=1}^n e^{\pm s\b_i} }\ain^\+(\b_1,1)\dots\ain^\+(\b_n,n)\ket{0}=0
+\end{equation}\]</div>
+<p>散射矩阵作为 <span class="arithmatex">\(\cH\)</span> 的积分算子，和 <span class="arithmatex">\(Q^{(s)}\)</span> 交换，在矩阵元水平上为，</p>
+<div class="arithmatex">\[\begin{equation}
+\ppair{\sum_{i=1}^n e^{\pm s\b_i}-\sum_{i=1}^m e^{\pm s\b_i'}} S(n\to m)=0
+\end{equation}\]</div>
+<p>充分多的守恒流导致该方程只有平凡解，</p>
+<div class="arithmatex">\[\begin{equation}
+S(n\to m)\sim \d_{n,m} \qand \set{\b_i}=\set{\b'_i}
+\end{equation}\]</div>
+<p>亦即，散射是完全弹性的，没有粒子产生消灭，出态动量是入态动量的轮换，</p>
+<div class="arithmatex">\[\begin{equation}
+S=\id+ \int d \b_1 d \b_2  \, S(\vp_1,\vp_2|1,2|1',2')\\
+\ain^\+(\vp_1,1)\ain^\+(\vp_2,2)\ain(\vp_1,1')\ain(\vp_2,2')+\dots
+\end{equation}\]</div>
+<p>其中<span class="arithmatex">\(S\)</span>吸收了一些运动学因子。这在微扰场论水平上意味着大量的图相消。</p>
 
 <!-- Source file information -->
 

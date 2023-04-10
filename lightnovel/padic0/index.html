@@ -12,23 +12,23 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/lightnovel/CFTref/">
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/padic0/">
       
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Materials on CFT - Sora</title>
+        <title>Introduction to p-adic physics - Sora</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lectures-on-cft" class="md-skip">
+        <a href="#introduction-to-p-adic-physics" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Materials on CFT
+              Introduction to p-adic physics
             
           </span>
         </div>
@@ -170,7 +170,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -382,6 +382,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -390,8 +392,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lectures-on-cft" class="md-nav__link">
-    Lectures on CFT
+  <a href="#p-adic-number" class="md-nav__link">
+    p-adic number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p-adic-group" class="md-nav__link">
+    p-adic group
   </a>
   
 </li>
@@ -445,16 +454,72 @@
   update to version 9.x
   https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
 -->
-<!--
-  <h1>Materials on CFT</h1>
--->
+<!---->
 
 <!-- Page content -->
-<h1>Materials on CFT
-    <span class="subtitle">Euclidean, Lorentzian, celestial, Carrollian, ...</span>
-</h1>
-
-<h2 id="lectures-on-cft">Lectures on CFT</h2>
+<h1 id="introduction-to-p-adic-physics">Introduction to p-adic physics</h1>
+<p>在本文中， <span class="arithmatex">\(\Z_{(p)}:=\Z/p\Z\)</span>，以区分素进整数 <span class="arithmatex">\(\Zp\)</span>。</p>
+<h2 id="p-adic-number">p-adic number</h2>
+<p>本节介绍素进数 (p-adic number)。
+实数是有理数关于绝对值 <span class="arithmatex">\(|\cdot|\)</span> 的完备化，而素进数 <span class="arithmatex">\(\Qp\)</span> 是有理数关于素进绝对值的完备化。下面分别介绍 <span class="arithmatex">\(\Qp\)</span> 的分析构造和代数构造。</p>
+<p><strong>分析构造：</strong> </p>
+<ul>
+<li>
+<p>从有理数的素分解出发 <span class="arithmatex">\(x=\pm \prod p_i^{a_i}\)</span>，关于素数 <span class="arithmatex">\(p_i\)</span> 的素进绝对值定义为，</p>
+<div class="arithmatex">\[\begin{equation}
+|x|_{p_i}=p_i^{-a_i}
+\end{equation}\]</div>
+<p>素进绝对值满足模长的定义，因此可以定义相应的 Cauchy 列，进而定义 Cauchy 列的等价类为有理数关于素进绝对值的完备化，由此得到素进数 <span class="arithmatex">\(\Qp\)</span>。</p>
+</li>
+<li>
+<p>素进整数定义为素进绝对值小于等于 <span class="arithmatex">\(1\)</span> 的素进数，<span class="arithmatex">\(\Zp:=\set{x\in \Qp : |x|_p\leq 1}\)</span>。素进单位元定义为素进绝对值等于 <span class="arithmatex">\(1\)</span> 的素进数，<span class="arithmatex">\(\Up:=\set{x\in \Qp : |x|_p= 1}\)</span>。</p>
+</li>
+</ul>
+<p><strong>代数构造：</strong></p>
+<ul>
+<li>
+<p>在直观上，素进绝对值描述的是有理数之间关于素数 <span class="arithmatex">\(p\)</span> 的距离。从整数出发，两个整数之差如果被 <span class="arithmatex">\(p\)</span> 整除，那么它们在 <span class="arithmatex">\(\Z\to \Z_p\)</span> 中的像相等，无法用 <span class="arithmatex">\(\Z_p\)</span> 区分两者；更精细的视角是用 <span class="arithmatex">\(\Z\to \Z_{p^2}\)</span> 来衡量整数，推而广之对任意的整数 <span class="arithmatex">\(n\geq 1\)</span> 可考虑映射 <span class="arithmatex">\(\Z\to \Z_{p^n}\)</span>，</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:Zp}
+\begin{array}{ccccccccccccc}
+    &amp;\Z: &amp;\quad &amp;\dots &amp;\longrightarrow &amp;\Z_{p^n} &amp;\longrightarrow &amp;\dots  &amp;\longrightarrow &amp;\Z_{p^2} &amp;\longrightarrow &amp;\Z_{p}
+\end{array}    
+\end{equation}\]</div>
+<p>由此，整数 <span class="arithmatex">\(x\in \Z\)</span> 可用一列同态像描述，例如取 <span class="arithmatex">\(p=2,\,x=13\)</span>，那么，</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{array}{ccccccccccccc}
+    &amp;\Z: &amp;\quad &amp;\dots &amp;\longrightarrow &amp;\Z_{16} &amp;\longrightarrow &amp;\Z_8 &amp;\longrightarrow &amp;\Z_{4} &amp;\longrightarrow &amp;\Z_2
+    \\
+    &amp; 13: &amp;\quad &amp;13 &amp;\longrightarrow &amp;13 &amp;\longrightarrow &amp;5 &amp;\longrightarrow &amp;1 &amp;\longrightarrow &amp;1
+\end{array}    
+\end{equation}\]</div>
+<p>当 <span class="arithmatex">\(n\geq 4\)</span> 时这个序列稳定到 <span class="arithmatex">\(x=13\)</span> 自身，亦即可在 <span class="arithmatex">\(\Z_{16}\)</span> 左面的 <span class="arithmatex">\(\Z_{2^n}\)</span> 中区分 <span class="arithmatex">\(13\)</span> 与 <span class="arithmatex">\(0\)</span>。
+等价的，可将任意整数 <span class="arithmatex">\(x\)</span> 唯一展开为多项式，</p>
+<div class="arithmatex">\[\begin{align}
+\label{eq:Zp2}
+    x &amp; =x_0 + x_1 p + x_2 p^2 +\dots \qquad x_n \in \set{0,1,\dots ,p-1} \\
+    13 &amp; =1 + 0\cdot  2 + 1\cdot  4 + 1\cdot  8 \nn
+\end{align}\]</div>
+<p>而同态像序列 <span class="arithmatex">\(\set{1,1,5,13,13,\dots}\)</span> 即该多项式的前 <span class="arithmatex">\(n\)</span> 项和。仿照小数记号可将此多项式写为 <span class="arithmatex">\(x=(\dots x_2x_1x_0.0)_2\)</span>，例如 <span class="arithmatex">\(13=1101.0_2\)</span>。</p>
+</li>
+<li>
+<p>多项式环可推广为形式幂级数环 <span class="arithmatex">\(k[x]\to k[[x]]\)</span>，类似的，对多项式 \eqref{eq:Zp2} 仿该构造，得到所有关于 <span class="arithmatex">\(p^n\)</span> 的形式幂级数的环 <span class="arithmatex">\(\Zp^{\text{alg}}\)</span>，此即 \eqref{eq:Zp} 在范畴意义下的极限，</p>
+<div class="arithmatex">\[\begin{equation}
+\Zp^\text{alg}=\inverselimit \Z_{p^n}=\Bpair{
+    \sum_{n=0}^\inf x_n p^ n\bigg| x_n \in \set{0,1,\dots ,p-1}
+}
+\end{equation}\]</div>
+<p>此时还未建立环 <span class="arithmatex">\(\Zp^\text{alg}\)</span> 与分析方法构造的 <span class="arithmatex">\(\Zp\)</span> 的等价性。两者的联系在于形式幂级数的尾部的素进绝对值必定收敛到 <span class="arithmatex">\(0\)</span> ，即，</p>
+<div class="arithmatex">\[\begin{equation}
+| p^N(x_N+ x_{N+1} p + \dots ) |_p \leq | p^N x_N |_p=p^{-N}\to 0 \qif N \to \inf    
+\end{equation}\]</div>
+<p>这表明 <span class="arithmatex">\(\Zp^\text{alg}\subset \Zp\)</span>。反之需说明由分析方法构造的素进整数有唯一的形式幂级数表达，略去。</p>
+</li>
+<li>
+<p>对于任意的环有局域化构造，"to make elements invertible in a consistent way"，即引入形式分数并保证其遵循通常的分数运算，由此构造素进数 <span class="arithmatex">\(\Qp\)</span>。</p>
+</li>
+</ul>
+<h2 id="p-adic-group">p-adic group</h2>
 
 <!-- Source file information -->
 
@@ -475,10 +540,10 @@
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
@@ -500,10 +565,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
       
@@ -511,7 +576,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       
