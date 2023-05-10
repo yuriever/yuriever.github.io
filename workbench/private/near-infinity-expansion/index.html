@@ -1,0 +1,909 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora...">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/workbench/private/near-infinity-expansion/">
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Near infinity expansion - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/curtain.css">
+    
+      <link rel="stylesheet" href="../../../css/admonition.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-WNRJZ9DTPF"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-WNRJZ9DTPF",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-WNRJZ9DTPF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extrapolation-and-reconstruction-dictionaries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Near infinity expansion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="sora" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label=""  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../symbolic/" class="md-tabs__link">
+      Triangulated reality
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../lightnovel/" class="md-tabs__link">
+      Lightnovel
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../archive/" class="md-tabs__link">
+      Archive
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      Workbench
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../sora/" class="md-tabs__link">
+      Sora
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../symbolic/" class="md-nav__link">
+        Triangulated reality
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lightnovel/" class="md-nav__link">
+        Lightnovel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/" class="md-nav__link">
+        Archive
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Workbench
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        Sora
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extrapolation-and-reconstruction-dictionaries" class="md-nav__link">
+    Extrapolation and reconstruction dictionaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Extrapolation and reconstruction dictionaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gkpw-vs-bdhm" class="md-nav__link">
+    GKPW vs. BDHM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds-case" class="md-nav__link">
+    dS case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    Comparison
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-trace-deformation" class="md-nav__link">
+    Double-trace deformation?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconstruction" class="md-nav__link">
+    Reconstruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds-case_1" class="md-nav__link">
+    dS case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flat-spacetime" class="md-nav__link">
+    Flat spacetime
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!--
+  <h1>Near infinity expansion</h1>
+-->
+
+<!-- Page content -->
+<!--
+2304.08292v1 An Embedding Space Approach to Carrollian CFT Correlators for Flat Space Holography, Jakob Salzer
+
+1210.4258v2 The Bootstrap Program for Boundary CFT_d, Pedro Liendo
+
+2107.13871v2 Towards the non-perturbative cosmological bootstrap, Matthijs Hogervorst
+
+2210.00516v1 Symmetry group at future null infinity I/ scalar theory, Wen-Bin Liu
+
+2209.02253v2 Massless Scalars and Higher-Spin BMS in Any Dimension, Xavier Bekaert
+
+2301.01810v1 Celestial Holography Revisited, Charlotte Sleight
+
+2302.04905v1 An Integer Basis for Celestial Amplitudes, Jordan Cotler
+
+9808017v2 Holographic Probes of Anti-de Sitter Spacetimes, Vijay Balasubramanian
+
+2209.01130v3 HKLL for the Non-Normalizable Mode, Budhaditya Bhattacharjee
+ -->
+
+<!--## Embedding formalism for defect CFTs-->
+
+<h2 id="extrapolation-and-reconstruction-dictionaries">Extrapolation and reconstruction dictionaries</h2>
+<p>In this page we assume the following conditions:</p>
+<ul>
+<li>
+<p>the spacetime is fixed to be AdS/dS/flat and gravity is treated as background field. In other words, the EFT expansion is controlled by <span class="arithmatex">\(G_{N}\)</span>.</p>
+</li>
+<li>
+<p>the matter field is a free massless scalar.</p>
+</li>
+</ul>
+<p>In the full quantum gravity, the trivial diffeomorphisms are gauge redandency, and candidates of observables should in the trivial representation of the gauge group, e.g. matrix elements near the asymptotic boundaries.</p>
+<p>Under our assumptions, the correlation functions in the bulk are valid observables, in the sense of perturbative expansion of <span class="arithmatex">\(G_{N}\)</span>.</p>
+<h3 id="gkpw-vs-bdhm">GKPW vs. BDHM</h3>
+<p>The GKPW dictionary states that the bulk and boundary path integrals are equal in the presence of deformations:</p>
+<div class="arithmatex">\[\begin{equation}
+Z_{\text{bulk}}[\f_0]=Z_{\text{CFT}}[\f_0]
+\end{equation}\]</div>
+<p>On the bulk side <span class="arithmatex">\(\phi_0\)</span> specifies the boundary conditions of the dynamical fields, while in
+the boundary CFT it provides the source terms of operator deformations of the CFT. The boundary correlation functions can be computed by varying the path integral with respect to the source.</p>
+<p>The BDHM dictionary states that the boundary correlation functions can be extracted from the leading behaviour of the bulk ones:</p>
+<div class="arithmatex">\[\begin{equation}
+\phi(z,x)=\phi_{0}(x) z^{d-\Delta}+{\op}(x) z^{\Delta}+... \qas z\to 0
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\phi(r, t, \hat{x})=\phi_{0}(t,\hat{x}) r^{\Delta-d}+\op(t, \hat{x})r^{-\Delta}+... \qas r \to \infty
+\end{equation}\]</div>
+<p>Here <span class="arithmatex">\(\op(t, \hat{x})\)</span> is a local operator in the boundary CFT located at the timelike infinity. The mass-dimension relation is <span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span>.</p>
+<p>For free theory the equivalence comes from that the bulk-to-boundary propagators are attained by extrapolation of bulk propagators with vanishing factors removed.
+For interacting theory, the argument is due to [1104.2621v2 Operator Dictionaries and Wave Functions in AdS::CFT and dS::CFT, Daniel Harlow.pdf]</p>
+<p>Holographic renormalization: separate the bulk path integral into the UV  and IR parts </p>
+<div class="arithmatex">\[\begin{aligned}
+Z_{\text{bulk}}[\f_0] &amp; =\int \mathcal{D} \bar{\phi} \int \mathcal{D} \phi|_{z&gt;\ell} e^{-S|_{z&gt;\ell}} \int \mathcal{D} \phi|_{\e&lt;z&lt;\ell} e^{-S|_{\e&lt;z&lt;\ell}} \\
+&amp; \equiv \int \mathcal{D} \bar{\phi} \Psi_{I R}[\bar{\phi} ; \ell] \Psi_{U V}[\f_0, \bar{\phi} ; \epsilon, \ell]
+\end{aligned}\]</div>
+<p>Note that <span class="arithmatex">\(\Psi_{I R}, \Psi_{U V}\)</span> are path integrals over fields located at <span class="arithmatex">\(\ell&lt;z&lt;\infty\)</span> and <span class="arithmatex">\(\epsilon&lt;z&lt;\ell\)</span> respectively. 
+The fields are joined by <span class="arithmatex">\(\phi(x, \ell)=\bar{\phi}(x)\)</span>. 
+The source is <span class="arithmatex">\(\phi(x, \epsilon)=\epsilon^{d-\Delta} \f_0(x)\)</span>, and the variation of <span class="arithmatex">\(\f_0(x)\)</span> only affects the UV path integral.</p>
+<p>The equivalence of the two dictionaries requires </p>
+<div class="arithmatex">\[\begin{equation}
+\lim _{\ell \rightarrow 0} \int \mathcal{D} \bar{\phi} \Psi_{I R}\left[\frac{\delta}{\delta \f_0\left(x_1\right)} \ldots \frac{\delta}{\delta \f_0\left(x_n\right)} \Psi_{U V}\right]_{\f_0=0}=\left.c^n \lim _{\ell \rightarrow 0} \ell^{-n \Delta} \int \mathcal{D} \bar{\phi} \Psi_{I R} \bar{\phi}\left(x_1\right) \ldots \bar{\phi}\left(x_n\right) \Psi_{U V}\right|_{\f_0=0}
+\end{equation}\]</div>
+<p>in which the limit of <span class="arithmatex">\(\e\to 0\)</span> is taken firstly. Hence we need to show </p>
+<div class="arithmatex">\[\begin{equation}
+\left.\frac{\delta \Psi_{U V}}{\delta \f_0(x)}\right|_{\f_0=0}=\left.\left(c \ell^{-\Delta} \bar{\phi}(x)+\ldots\right) \Psi_{U V}\right|_{\f_0=0},
+\end{equation}\]</div>
+<p>Turing on the mass term, the result is</p>
+<div class="arithmatex">\[\begin{equation}
+\Psi_{U V}=\exp \left(-\frac{\Delta}{2 \ell^d} \int d^d x\left[\left\{\bar{\phi}^2+\ldots\right\}-\f_0\left\{\frac{2(2 \Delta-d)}{\Delta} \ell^{d-\Delta} \bar{\phi}+\ldots\right\}+O\left(\f_0^2\right)\right]\right) .
+\end{equation}\]</div>
+<p>For other interactions we need to introduce counterterms into the effective action.</p>
+<p>The picture is that regarding <span class="arithmatex">\(z\)</span> as an auxillary imaginary temporal direction, <span class="arithmatex">\(\Psi_{U V}\)</span> is the wave-functional of <span class="arithmatex">\(\bar{\f}(x)\)</span>. The leading term indicates <span class="arithmatex">\(\Psi_{U V}\)</span> obeys a functional Schrodinger equation.</p>
+<h3 id="ds-case">dS case</h3>
+<p>For the dS case, <span class="arithmatex">\(z\)</span> is indeed the temporal direction. Maldacena's dictionary is </p>
+<div class="arithmatex">\[\begin{equation}
+Z_{\text{CFT}}[\bar{\f}]=\Psi[\bar{\f}]
+\end{equation}\]</div>
+<p>where the right side is the wave functional with <span class="arithmatex">\(\ket{x}\)</span>-like state <span class="arithmatex">\(\ket{\bar{\f}}\)</span>, where <span class="arithmatex">\(\bar{\f}\)</span> is the boundary value of <span class="arithmatex">\(\f\)</span> as the source of operator <span class="arithmatex">\(\op\)</span>. </p>
+<div class="arithmatex">\[\begin{aligned}
+\Psi[\phi]=\exp &amp; {\left[\int d x_1 d x_2 \phi\left(x_1\right) \phi\left(x_2\right) G_2\left(x_1, x_2\right)\right.} \\
+&amp; \left.+\int d x_1 d x_2 d x_3 \phi\left(x_1\right) \phi\left(x_2\right) \phi\left(x_3\right) G_3\left(x_1, x_2, x_3\right)+\ldots\right]
+\end{aligned}\]</div>
+<p>In dS bootstrap, the late-time expansion mimics the extrapolation dictionary</p>
+<div class="arithmatex">\[\begin{equation}
+\phi(z,x)=\op_{+}(x) (-z)^{\Delta^{+}}+\op_{-}(x) (-z)^{\Delta^{-}}+... \qas z \rightarrow 0^{-}
+\end{equation}\]</div>
+<p>The bulk massive scalar <span class="arithmatex">\(\f\)</span> in the Bunch-Davis vacuum can be expanded in the late-time limit as combinations of fiducial local operators in the future spacelike infinity.</p>
+<p>The two "operators" <span class="arithmatex">\(\op_{\pm}(x)\)</span> carry the principal series representation and are shadow to each other. 
+The mass-"dimension" relation is <span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span>.
+The two point functions include contact terms</p>
+<div class="arithmatex">\[\begin{equation}
+\vev{\op_{\pm}\op_{\pm}}= d^{\pm\pm}\,  |x_{12}|^{-2\D_{\pm}} \qquad \vev{\op_{+}\op_{-}}\sim d^{+-}\, \d(x_{12})
+\end{equation}\]</div>
+<h3 id="comparison">Comparison</h3>
+<p>Now similar to the AdS case</p>
+<div class="arithmatex">\[\begin{equation}
+\vev{F[\phi|_\ell]}=\int \mathcal{D} \tilde{\phi} \Psi_{I R}[\tilde{\phi}; \ell] \Psi_{U V}[\tilde{\phi} ; \ell] F[\tilde{\phi}]
+\end{equation}\]</div>
+<p>for dS we have </p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\phi\left(x_1\right) \phi\left(x_2\right) \ldots \phi\left(x_n\right)\right\rangle=\int D \phi \Psi[\phi] \Psi^*[\phi] \phi\left(x_1\right) \phi\left(x_2\right) \ldots \phi\left(x_n\right)
+\end{equation}\]</div>
+<p>As wave-functions, the phase part (c.f. the free part in the AdS case) of <span class="arithmatex">\(\Psi\)</span> does not contribute, and the result is </p>
+<div class="arithmatex">\[\begin{equation}
+\Psi[\tilde{\phi}, T]=\exp \left[i S_{\text {local }}+c_\delta(-i T)^{2(\delta-d)} \int \frac{d^d k}{(2 \pi)^d} \tilde{\phi}_{-\vec{k}} \tilde{\phi}_{\vec{k}}\left\{k^{2 \delta-d}+\ldots\right\}\right]
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\mathcal{Z}_T[J]=\exp \left[\frac{2(-T)^d}{c_\delta \cos (\pi(\delta-d))} \int \frac{d^d k}{(2 \pi)^d} J_{-\vec{k}} J_{\vec{k}}\left\{(-k T)^{d-2 \delta}+\ldots\right\}\right]
+\end{equation}\]</div>
+<p>The distinction between <span class="arithmatex">\(\mathrm{dS}\)</span> and AdS that we found in the last section boiled down to the presence for AdS of local terms of the form <span class="arithmatex">\(e^{-\frac{1}{\ell^d} \int d^d x \tilde{\phi}^2}\)</span> in the probability distribution for bulk expectation values of <span class="arithmatex">\(\tilde{\phi}\)</span>. Such terms are sharply peaked around <span class="arithmatex">\(\tilde{\phi}=0\)</span>, approaching a <span class="arithmatex">\(\delta\)</span>-function as <span class="arithmatex">\(\ell \rightarrow 0\)</span>. They are the manifestation of the "fixed" nature of the AdS boundary conditions, where we set the coefficient of the "non-normalizable" mode to zero by hand. In dS these "peaked" terms cancel between <span class="arithmatex">\(\Psi\)</span> and <span class="arithmatex">\(\Psi^*\)</span> and are not present in the probability distribution. This happens because in dS space we fixed the initial state of the system at some earlier time, while at the future boundary both modes are allowed to fluctuate. The late-time correlator is then dominated by the mode that falls off more slowly.</p>
+<ul>
+<li>In Euclidean <span class="arithmatex">\(A d S_{d+1}\)</span>, either the differentiation of the partition function with respect to boundary conditions or the extrapolation of bulk correlators of <span class="arithmatex">\(\phi\)</span> to the boundary produce CFT correlators of an operator of dimension <span class="arithmatex">\(\Delta=\frac{d}{2}+\frac{1}{2} \sqrt{d^2+4 m^2}\)</span>.</li>
+<li>In Lorentzian <span class="arithmatex">\(d S_{d+1}\)</span>, the extrapolated bulk two-point functions are a sum of two terms. One of these has the leading behavior of a CFT correlator of an operator of dimension <span class="arithmatex">\(d-\delta=\frac{d}{2}-\frac{1}{2} \sqrt{d^2-4 m^2}\)</span>, while the other has leading behavior charateristic of <span class="arithmatex">\(\delta=\)</span> <span class="arithmatex">\(\frac{d}{2}+\frac{1}{2} \sqrt{d^2-4 m^2}\)</span></li>
+<li>
+<p>In Lorentzian <span class="arithmatex">\(d S_{d+1}\)</span>, functional derivatives ofl the late-time Schrodinger wave-function produce CFT correlators only of dimension <span class="arithmatex">\(\delta\)</span>.</p>
+</li>
+<li>
+<p>In the AdS case, the dominant term corresponds to delta source on the boundary, while in the dS case, the two shadow terms are oscillating and get canceled by <span class="arithmatex">\(\Psi\Psi^{*}\)</span>.</p>
+</li>
+</ul>
+<h3 id="double-trace-deformation">Double-trace deformation?</h3>
+<p>The wave function</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle\phi\left(x_1\right) \phi\left(x_2\right) \ldots \phi\left(x_n\right)\right\rangle=\int D \phi \Psi[\phi] \Psi^*[\phi] \phi\left(x_1\right) \phi\left(x_2\right) \ldots \phi\left(x_n\right)
+\end{equation}\]</div>
+<p>can be interpreted as the vev of two CFTs coupled by sharing the common source <span class="arithmatex">\(\f\)</span>.</p>
+<div class="arithmatex">\[\begin{equation}
+\mathrm{CFT}_C \stackrel{?}{=} \mathrm{CFT}_{\Psi} \times \mathrm{CFT}_{\tilde{\Psi}}+\sum_i c_i \mathcal{O}_i \tilde{\mathcal{O}}_i
+\end{equation}\]</div>
+<h3 id="reconstruction">Reconstruction</h3>
+<p>In AdS/CFT, the bulk operator can be reconstructed by smearing with the bulk-boundary propagator</p>
+<div class="arithmatex">\[\begin{equation}
+\f(X)=c\inttt{d'P}{X\cdot P&gt;0}K(X,P)\op(P)
+\end{equation}\]</div>
+<p>Solving the EOM by expanding into eigenmodes renders</p>
+<div class="arithmatex">\[
+\phi(\tau, \rho, \Omega)=\sum_{n=0}^{+\infty} \sum_{l, m} a_{n l} \mathscr{Y}_l(\Omega) e^{-i(2 n+l+\Delta) \tau} \cos ^{\Delta} \rho \sin ^l \rho P_n^{\left(\Delta-\frac{d}{2}, l+\frac{d}{2}-1\right)}(-\cos 2 \rho)+\text { c.c. }
+\]</div>
+<p>with <span class="arithmatex">\(\mathscr{Y}_l\)</span> the <span class="arithmatex">\(l\)</span> 'th spherical harmonic and <span class="arithmatex">\(P_n^{(\alpha, \beta)}\)</span> the Jacobi polynomial. In the case of <span class="arithmatex">\(d=2\)</span> this becomes</p>
+<div class="arithmatex">\[
+\phi(\tau, \rho, \Omega)=\sum_{n=0}^{+\infty} \sum_{l, m} a_{n l} e^{i l \varphi} e^{-i(2 n+l+\Delta) \tau} \cos ^{\Delta} \rho \sin ^l \rho P_n^{(\Delta-1, l)}(-\cos 2 \rho)+\text { c.c. }
+\]</div>
+<p>In the absence of sources, the boundary value of the field is</p>
+<div class="arithmatex">\[
+\left\langle O_{\Delta}(\tau, \Omega)\right\rangle=\tilde{\phi}(\tau, \Omega)=\lim _{\rho \rightarrow \frac{\pi}{2}} \frac{\phi(\tau, \rho, \Omega)}{\cos ^{\Delta} \rho} .
+\]</div>
+<p>Notice that instead of working with operators, we are working with classical fields. we could lift the boundary condition to an operator equation by dropping expectation values and restoring the hats on <span class="arithmatex">\(O_{\Delta}\)</span> and <span class="arithmatex">\(\phi .^4\)</span>
+Let us first reconstruct the operator at the center of AdS. Because the field solution in the origin should be spherically symmetric only the <span class="arithmatex">\(l=0\)</span> mode can contribute and the solution reduces to</p>
+<div class="arithmatex">\[
+\phi(\tau, \rho=0, \Omega)=\sum_{n=0}^{+\infty} a_n e^{-i(2 n+\Delta) \tau} P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(-1)+\text { c.c. }
+\]</div>
+<p>The <span class="arithmatex">\(l=0\)</span> mode part of the boundary field on the other hand equals</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\tilde{\phi}^s(\tau, \Omega) &amp; =\sum_{n=0}^{+\infty} a_n e^{-i(2 n+\Delta) \tau} P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(+1)+\text { c.c. }, \\
+&amp; =\tilde{\phi}_{+}^s(\tau)+\tilde{\phi}_{-}^s(\tau)
+\end{aligned}
+\]</div>
+<p>when explicitly splitting up the field into positive and negative frequency modes. This relation can be solved for the coefficients <span class="arithmatex">\(a_n\)</span> :</p>
+<div class="arithmatex">\[
+a_n=\frac{1}{\pi \operatorname{Vol}\left(S^{d-1}\right) P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(+1)} \int_{-\frac{\pi}{2}}^{+\frac{\pi}{2}} d \tau \int d \Omega \sqrt{g_{\Omega}} e^{i(2 n+\Delta) \tau} \tilde{\phi}_{+}^s(\tau, \Omega)
+\]</div>
+<p>and plugging back into (3.7) results in</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\phi\left(\tau^{\prime}, \rho=0, \Omega^{\prime}\right)=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} d \tau \int d \Omega K_{+}\left(\tau, \Omega ; \tau^{\prime}, \rho=0, \Omega^{\prime}\right) \tilde{\phi}_{+}^s(\tau, \Omega)+\text { c.c }, \\
+\text { with } \quad K_{+}=\frac{1}{\pi \operatorname{Vol}\left(S^{d-1}\right)} \sum_{n=0}^{+\infty} e^{i(2 n+\Delta) \tau} \frac{P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(-1)}{P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(+1)} .
+\end{gathered}
+\]</div>
+<p>The Jacobi polynomials reduce to simple Gamma functions</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(-1)=\frac{(-1)^n(d+1)_n}{n !}, \\
+&amp; P_n^{\left(\Delta-\frac{d}{2}, \frac{d}{2}-1\right)}(+1)=\frac{\left(\Delta-\frac{d}{2}+1\right)_n}{n !},
+\end{aligned}
+\]</div>
+<p>with <span class="arithmatex">\((x)_n=\Gamma(x+n) / \Gamma(x)\)</span> the Pochhammer symbol. The smearing function becomes a sum over <span class="arithmatex">\(n\)</span> with Gamma function coefficients forming the standard hypergeometric series, and can be easily resummed to</p>
+<div class="arithmatex">\[
+K_{+}=\frac{e^{i \Delta \tau}}{\pi \operatorname{Vol}\left(S^{d-1}\right)}{ }_2 F_1\left(1, \frac{d}{2} ; \Delta-\frac{d}{2}+1,-e^{2 i \tau}\right) .
+\]</div>
+<p>For even dimensional AdS (i.e. odd <span class="arithmatex">\(d\)</span> ) and with the aid of hypergeometric identities, the smearing function becomes</p>
+<div class="arithmatex">\[
+\begin{aligned}
+K_{+}= &amp; \frac{e^{i \Delta \tau}}{\pi \operatorname{Vol}\left(S^{d-1}\right)}\left\{\frac{\left(\Delta-\frac{d}{2}\right) \Gamma\left(\frac{d}{2}-1\right)}{\Gamma\left(\frac{d}{2}\right)} e^{-2 i \tau}{ }_2 F_1\left(1,1+\frac{d}{2}-\Delta, 2-\frac{\Delta}{2},-e^{-2 i \tau}\right)\right. \\
+&amp; \left.+\frac{\Gamma\left(\Delta-\frac{d}{2}+1\right) \Gamma\left(1-\frac{d}{2}\right)}{\Gamma(\Delta-d+1)} e^{-i d \tau}{ }_2 F_1\left(d-\Delta, \frac{d}{2}, \frac{d}{2},-e^{-2 i \tau}\right)\right\} .
+\end{aligned}
+\]</div>
+<p>The above identities cannot be used for even <span class="arithmatex">\(d\)</span> because of singularities that apppear in the Gamma functions. <span class="arithmatex">\(K_{+}\)</span>is the smearing function by which an operator at the center is reconstructed using positive frequency modes. The negative frequency modes then automatically appear in the complex conjugated part. Reality of the bulk field then requires <span class="arithmatex">\(K_{+}^*=K_{-}\)</span>with <span class="arithmatex">\(K_{-}\)</span>the smearing function when we would have used negative frequency modes to express the coefficients <span class="arithmatex">\(a_n^*\)</span>. Notice that the range of integration in (3.11) is over all boundary operators that are spacelike separated from the bulk operator at the center.</p>
+<p>The smearing function is actually more of a distribution, it is only defined when integrated against the boundary operators. Said otherwise, <span class="arithmatex">\(K_{+}\)</span>is not unique and can be shifted by terms which vanish when integrated against the boundary operators and</p>
+<div class="arithmatex">\[
+K_{+} \rightarrow K_{+}+e^{i \Delta \tau} \sum_{n=1}^{+\infty} c_n e^{2 i n \tau}
+\]</div>
+<p>for any coefficient <span class="arithmatex">\(c_n\)</span>. Using this gauge freedom to fix <span class="arithmatex">\(K_{+}\)</span>the first term can be canceled and one is left with</p>
+<div class="arithmatex">\[
+K_{+}=\frac{\Gamma\left(\Delta-\frac{d}{2}+1\right) \Gamma\left(1-\frac{d}{2}\right)}{\pi \operatorname{Vol}\left(S^{d-1}\right) \Gamma(\Delta-d+1)}(2 \cos \tau)^{\Delta-d}
+\]</div>
+<p>This is a real expression so since <span class="arithmatex">\(K_{-}=K_{+}^*\)</span> we have that <span class="arithmatex">\(K=K_{+}=K_{-}\)</span>. For a bulk point at the origin <span class="arithmatex">\(\cos \tau=\sigma \cos \rho\)</span> with <span class="arithmatex">\(\sigma\)</span> the invariant distance function between the bulk and boundary point. This allows a simple extension to determine the smearing function for any bulk point. Anti- de Sitter space can be viewed as the goup manifold of the AdS isometry group <span class="arithmatex">\(S O(d, 2)\)</span>. Applying an isometry will generically map the bulk point at the origin to another point of AdS. Because of the isometry covariance of <span class="arithmatex">\(\mathrm{AdS}\)</span>, the smearing function can only be a function of the invariant distance 5 between the respective bulk and boundary point. We arrive at</p>
+<div class="arithmatex">\[
+K=\frac{\Gamma\left(\Delta-\frac{d}{2}+1\right) \Gamma\left(1-\frac{d}{2}\right)}{\pi \operatorname{Vol}\left(S^{d-1}\right) \Gamma(\Delta-d+1)}(2 \sigma \cos \rho)^{\Delta-d}
+\]</div>
+<p>for any bulk point. A similar procedure can be followed for even <span class="arithmatex">\(d\)</span>. The resulting smearing function in that case is</p>
+<div class="arithmatex">\[
+K=\frac{(-1)^{\frac{d-2}{2}} \Gamma\left(\Delta-\frac{d}{2}+1\right)}{2 \pi^{1+\frac{d}{2}} \Gamma(\Delta-d+1)} \lim _{\rho \rightarrow \frac{\pi}{2}}(2 \sigma \cos \rho)^{\Delta-d} \log (\sigma \cos \rho) .
+\]</div>
+<p>The smearing function has support on the boundary points that are spacelike separated from the bulk insertion point. It cannot have support on timelike separated points because the CFT operators on timelike separated points generically do not commute with the bulk operator. This is basically stating causality.</p>
+<h3 id="ds-case_1">dS case</h3>
+<p>In dS bootstrap, the all-order late-time expansion is </p>
+<div class="arithmatex">\[\begin{equation}
+\phi(z, x)
+=\sum_{k=\pm} c_{k}(-z)^{\Delta_k}{ }_0 F_1\left(\Delta_k-\frac{d}{2}+1, \frac{1}{4} z^2 \partial_x^2\right) \mathcal{O}_k(x)
+\end{equation}\]</div>
+<p>Now we look at how a local scalar operator with mass <span class="arithmatex">\(m^2&gt;\left(\frac{d}{2}\right)^2\)</span> in de Sitter space is constructed with a CFT located at the boundary. In the AdS construction the boundary is timelike, and the extra direction emerges from the boundary as a spatial direction. In de Sitter space, the boundaries are located at future and past infinity, which are spacelike boundaries, so what emerges from the CFT is the bulk time. From the boundary point of view the bulk time <span class="arithmatex">\(\eta\)</span> appears as a parameter in the definition of non-local CFT operators. As we will see, a local bulk operator that is far from the boundary will be highly non-local from the CFT point of view.</p>
+<p>According to the reasoning in the section above, a causal operator should have both components, schematically:</p>
+<div class="arithmatex">\[
+\Phi(\eta \rightarrow 0) \sim A \eta^{\Delta} \mathcal{O}_{+}+B \eta^{d-\Delta} \mathcal{O}_{-}
+\]</div>
+<p>With a certain linear combination, one can reproduce the Wightman function in the Euclidean vacuum. To construct the bulk operator, we evolve the initial data at <span class="arithmatex">\(\mathcal{I}^{-}\)</span>with the retarded Green's function, which is</p>
+<div class="arithmatex">\[
+\left.G_{r e t}\right|_{\eta^{\prime} \rightarrow 0} \approx c_{\Delta, d}(-\sigma-i \epsilon)^{\Delta-d}+c_{\Delta, d}^*(-\sigma-i \epsilon)^{-\Delta}-\text { c.c. }
+\]</div>
+<p>in the limit that <span class="arithmatex">\(\eta^{\prime} \rightarrow 0\)</span>. Here</p>
+<div class="arithmatex">\[
+\sigma=\frac{\eta^2+\eta^{\prime 2}-\left(\mathbf{x}-\mathbf{x}^{\prime}\right)^2}{2 \eta \eta^{\prime}}
+\]</div>
+<p>is a de Sitter invariant distance and</p>
+<div class="arithmatex">\[
+c_{\Delta, d}=\frac{\Gamma(2 \Delta-d) \Gamma(d-\Delta)}{2^{\Delta-d}(4 \pi)^{\frac{d+1}{2}} \Gamma\left(\Delta-\frac{d-1}{2}\right)}
+\]</div>
+<p>The bulk operator is constructed by evolving an operator near the boundary:</p>
+<div class="arithmatex">\[
+\Phi(\eta, \mathbf{x})=\int_{\left|\mathbf{x}^{\prime}\right|&lt;\eta} d^d x^{\prime}\left(\frac{1}{\eta^{\prime}}\right)^{d-1}\left(G_{r e t}\left(\eta, \mathbf{x} ; \eta^{\prime}, \mathbf{x}^{\prime}\right) \partial_{\eta^{\prime}} \Phi\left(\eta^{\prime}, \mathbf{x}^{\prime}\right)-\Phi\left(\eta^{\prime}, \mathbf{x}^{\prime}\right) \partial_{\eta^{\prime}} G_{r e t}\left(\eta, \mathbf{x} ; \eta^{\prime}, \mathbf{x}^{\prime}\right)\right)
+\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+\Phi\left(\eta^{\prime}, \mathbf{x}^{\prime}\right) \sim A\left(\eta^{\prime}\right)^{\Delta} \mathcal{O}_{+}\left(\mathbf{x}^{\prime}\right)+B\left(\eta^{\prime}\right)^{d-\Delta} \mathcal{O}_{-}\left(\mathbf{x}^{\prime}\right)
+\]</div>
+<p>By keeping both sets of operators, we are keeping both the positive and negative frequency parts of the solution <span class="arithmatex">\({ }^3\)</span>.
+Evaluating the integrand, we have the local operator in de Sitter space expressed as</p>
+<div class="arithmatex">\[
+\Phi(\eta, \mathbf{x})=A_{\Delta, d} \int_{\left|\mathbf{x}^{\prime}\right|&lt;\eta} d^d x^{\prime}\left(\frac{\eta^2-\mathbf{x}^{\prime 2}}{\eta}\right)^{\Delta-d} \mathcal{O}_{+}\left(\mathbf{x}+\mathbf{x}^{\prime}\right)+B_{\Delta, d} \int_{\left|\mathbf{x}^{\prime}\right|&lt;\eta} d^d x^{\prime}\left(\frac{\eta^2-\mathbf{x}^2}{\eta}\right)^{-\Delta} \mathcal{O}_{-}\left(\mathbf{x}+\mathbf{x}^{\prime}\right)
+\]</div>
+<p>prescription for a dimension <span class="arithmatex">\(\Delta\)</span> operator which reduces to the flat de Sitter space smearing function is</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Phi(\tau, \Omega) &amp; =\frac{2^{\Delta-d} \Gamma\left(\Delta-\frac{d}{2}+1\right)}{\pi^{\frac{d}{2}} \Gamma(\Delta-d+1)} \int d \Omega^{\prime}\left(\frac{\cos \left(\Omega-\Omega^{\prime}\right) \mp \sin \tau}{\cos \tau}\right)^{\Delta-d} \mathcal{O}_{+}\left(\Omega^{\prime}\right) \\
+&amp; +\frac{2^{-\Delta} \Gamma\left(\frac{d}{2}-\Delta+1\right)}{\pi^{\frac{d}{2}} \Gamma(1-\Delta)} \int d \Omega^{\prime}\left(\frac{\cos \left(\Omega-\Omega^{\prime}\right) \mp \sin \tau}{\cos \tau}\right)^{-\Delta} \mathcal{O}_{-}\left(\Omega^{\prime}\right)
+\end{aligned}
+\]</div>
+<p>respectively for <span class="arithmatex">\(\mathcal{I}^{ \pm}\)</span>smearing, with integration inside the bulk lightcone region. This will reproduce the Wightman function in the Euclidean vacuum, expressed in global coordinates.</p>
+<p>Now we see that in anti-de Sitter space, with the embedding coordinates, we can write down the smearing function in a very simple and manifestly AdS-invariant way:
+$$
+\Phi(X)=A_{\Delta, d} \int_{\partial A d S} d P(-2 P \cdot X)^{\Delta-d} \Theta(-P \cdot X) \mathcal{O}(P)
+$$</p>
+<p>Therefore for a scalar with <span class="arithmatex">\(m^2&gt;\left(\frac{d}{2}\right)^2\)</span> we have the smearing prescription in the embedding space:
+$$
+\Phi(X)=A_{\Delta, d} \int_{\partial d S} d P(2 P \cdot X)^{\Delta-d} \Theta(P \cdot X) \mathcal{O}<em _Delta_="\Delta," d="d">{+}(P)+B</em> \int_{\partial d S} d P(2 P \cdot X)^{-\Delta} \Theta(P \cdot X) \mathcal{O}_{-}(P)
+$$-*</p>
+<h2 id="flat-spacetime">Flat spacetime</h2>
+<p>BMS4 algebra</p>
+<div class="arithmatex">\[\begin{aligned}
+&amp; {\left[L_n, L_m\right]=(n-m) L_{n+m}, \quad\left[\bar{L}_n, \bar{L}_m\right]=(n-m) \bar{L}_{n+m}} \\
+&amp; {\left[L_n, M_{r, s}\right]=\left(\frac{n+1}{2}-r\right) M_{n+r, s}, \quad\left[\bar{L}_n, M_{r, s}\right]=\left(\frac{n+1}{2}-s\right) M_{r, n+s}} \\
+&amp; {\left[M_{p, q}, M_{r, s}\right]=0}
+\end{aligned}\]</div>
+<div class="arithmatex">\[\begin{align}
+&amp;L_0=\frac{J_3-i K_3}{2}, \quad L_{-1}=\frac{-J_1+i J_2+i K_1+K_2}{2}, \quad L_1=\frac{J_1+i J_2-i K_1+K_2}{2} \\
+&amp;\bar{L}_0=\frac{-J_3-i K_3}{2}, \quad \bar{L}_{-1}=\frac{J_1+i J_2+i K_1-K_2}{2}, \quad \bar{L}_1=\frac{-J_1+i J_2-i K_1-K_2}{2}
+\end{align}\]</div>
+<p>Poincare basis</p>
+<div class="arithmatex">\[\begin{align}
+&amp;\tilde{J}_{i j}=J_{i j}, \quad \tilde{J}_{i 0}=-\frac{1}{2}\left(P_i+K_i\right), \quad \tilde{J}_{i d}=\frac{1}{2}\left(P_i-K_i\right), \quad \tilde{J}_{0 d}=-D \\
+&amp;\tilde{P}_0=\frac{1}{\sqrt{2}}(H+K), \quad \tilde{P}_i=-\sqrt{2} B_i, \quad \tilde{P}_d=\frac{1}{\sqrt{2}}(K-H)
+\end{align}\]</div>
+<p>Carrollian conformal basis</p>
+<div class="arithmatex">\[\begin{align}
+&amp; D=L_0+\bar{L}_0, \quad J^{12}=-i\left(L_0-\bar{L}_0\right), \\
+&amp; B^1=-\frac{1}{2}\left(M_{0,1}+M_{1,0}\right), \quad B^2=\frac{i}{2}\left(M_{0,1}-M_{1,0}\right), \\
+&amp; P^0=-M_{0,0}, \quad P^1=L_{-1}+\bar{L}_{-1}, \quad P^2=-i\left(L_{-1}-\bar{L}_{-1}\right), \\
+&amp; K^0=M_{1,1}, \quad K^1=L_1+\bar{L}_1, \quad K^2=i\left(L_{-1}-\bar{L}_{-1}\right) .
+\end{align}\]</div>
+<p>Representations</p>
+<p>Bruhat-like decomposition: <span class="arithmatex">\(\glie=\lie{m}\os \lie{a} \os \lie{n} \os \bar{\lie{n}}\)</span></p>
+<div class="arithmatex">\[\begin{align}
+&amp; {[D, P]=p_D P, \quad[D, K]=k_D K} \\
+&amp; {[M, P]=p_M P, \quad[M, K]=k_M P, \quad[P, K]=d D+m M}
+\end{align}\]</div>
+<p>The rotation-part is <span class="arithmatex">\(\lie{m}=\set{J^{12},B^{1},B^{2}}\)</span></p>
+<p>Remarks:</p>
+<ul>
+<li>
+<p>Choosing an origin or inserting an operator to the celestial sphere means selecting a special null direction <span class="arithmatex">\(z\)</span>, hence special plane <span class="arithmatex">\(t-z\)</span> in the bulk.</p>
+</li>
+<li>
+<p>The BPZ-like conjugation of the Carrollian basis seemingly requires a double Wick rotation.</p>
+</li>
+<li>
+<p>The anti-Hermiticity in the Poincare basis implies the Carrollian basis is also anti-Hermitian, and in the conformal basis gives </p>
+</li>
+</ul>
+<div class="arithmatex">\[\begin{equation}
+L_{n}^{\dagger}=-\bar{L}_{n}
+\end{equation}\]</div>
+<ul>
+<li>
+<p>The nontrivial action of <span class="arithmatex">\(B\)</span> in finite-length multiplets means finite derivative operators in the transverse directions. But <span class="arithmatex">\(P^{0}\)</span> (and <span class="arithmatex">\(K^{0}\)</span>) generates infinitely many derivative operators. Together this implies:</p>
+<ul>
+<li>
+<p>the infinite-length multiplets are more symmetric with respect to the Poincare basis, and unitary reps can arise in this way (c.f. the construction of principal series representations);</p>
+</li>
+<li>
+<p>the finite-length multiplets must break the translation symmetries in the bulk.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The Bondi cooridnates of <span class="arithmatex">\(\RR^{d-1,1}\)</span> are <span class="arithmatex">\((u,r,\hat{x})\)</span> where <span class="arithmatex">\(u\)</span> is the retarded time, <span class="arithmatex">\(r\)</span> is the radius, and 
+the hat notation <span class="arithmatex">\(\hat{x}\in\sphere{d-2}\)</span> denotes the spherical coordinates of <span class="arithmatex">\(\sphere{d-2}\)</span> embedded into <span class="arithmatex">\(\RR^{d-1}\)</span>. The metric is</p>
+<div class="arithmatex">\[\begin{equation}
+d s^2=-d u^2-2 d u d r+r^2 ds^{2}_{\sphere{d-2}}
+\end{equation}\]</div>
+<!--For asymptotically flat spacetime, the higher order corrections to the flat metric encode the gravitational radiations.-->
+
+<p>For massless free scalar, the leading order of the near-infinity expansion is </p>
+<div class="arithmatex">\[\begin{equation}
+\phi(r,u,\hat{x})=\op(u,\hat{x}) r^{-\Delta}+... \qas r \rightarrow \oo
+\end{equation}\]</div>
+<p>and the operator <span class="arithmatex">\(\op(u,\hat{x})\)</span> carries the singlet scalar representation with <span class="arithmatex">\(\D=\frac{d-2}{2}\)</span> in Carrollian CFT. The two-point function is (upto possible <span class="arithmatex">\(i\e\)</span>-prescription)</p>
+<div class="arithmatex">\[\begin{equation}
+\vev{\op\op}=d\,  |\hat{x}_{12}|^{-d+2}
+\end{equation}\]</div>
+<p>The bulk field can be reconstructed as</p>
+<div class="arithmatex">\[\begin{equation}
+\phi_I^{(s)}(X)=-\frac{1}{2 \pi} \int d^2 w \varepsilon_I^{*+}(w, \bar{w}) \partial_{\tilde{u}} \bar{\phi}_{z \ldots z}^{(s)}\left(\tilde{u}=-q^\mu X_\mu, w, \bar{w}\right)+\text { h.c. }
+\end{equation}\]</div>
+<p>The bulk-to-boundary propagator is </p>
+<div class="arithmatex">\[\begin{equation}
+\partial_{u} \delta\left(q^\mu X_\mu+u\right)
+\end{equation}\]</div>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+  
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  </body>
+</html>
