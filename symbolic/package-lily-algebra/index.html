@@ -455,6 +455,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#checking-the-definitions" class="md-nav__link">
+    checking the definitions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -709,18 +716,10 @@
 <h3 id="commutator-adjoint-and-power">Commutator, adjoint and power</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (n-)commutator.</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">anticomm</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (n-)anti-commutator.</p>
+<p><code class="highlight"><span class="nv">comm</span><span class="o">|</span><span class="nv">commEven</span><span class="o">|</span><span class="nv">commOdd</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (n-)(anti-)commutator.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">jacobiIdentity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - the Jacobi identity.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">commSim</span><span class="o">|</span><span class="nv">anticommSim</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - simplify the (anti-)commutator.</p>
+<p><code class="highlight"><span class="nv">commSim</span><span class="o">|</span><span class="nv">comEvenSim</span><span class="o">|</span><span class="nv">comOddSim</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - simplify the (n-)(anti-)commutator.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">commDefine</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_</span></code> - define commutation relations with condition, order-reversing and anti-commutator. For example, the CCR can be packed into </p>
@@ -773,6 +772,15 @@
 <h3 id="scalar-extraction">Scalar extraction</h3>
 <ul>
 <li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">|</span><span class="nv">scalarExtract</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - separate scalars and operators in the expressions.</li>
+</ul>
+<h3 id="checking-the-definitions">checking the definitions</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">checkLieBracket</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the Jacobi identity of Lie algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkLieModule</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the definition of Lie modules.</p>
+</li>
 </ul>
 <h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
 <ul>
