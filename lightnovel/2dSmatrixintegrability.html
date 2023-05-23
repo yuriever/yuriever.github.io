@@ -1,0 +1,315 @@
+<!DOCTYPE html><html><head>
+      <title>Two-dimensional S-matrix bootstrap</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":true,"processEscapes":true,"processRefs":true,"inlineMath":[["\\(","\\)"],["$","$"]],"displayMath":[["\\[","\\]"],["$$","$$"],["\\begin{equation}","\\end{equation}"],["\\begin{align}","\\end{align}"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],"equationNumbers":{"autoNumber":"all","useLabelIds":true},"Macros":{"ppair":["{\\pqty{#1}}",1],"bpair":["{\\bqty{#1}}",1],"vpair":["{\\vqty{#1}}",1],"Bpair":["{\\Bqty{#1}}",1],"pmat":["{\\pmqty{#1}}",1],"Pmat":["{\\Pmqty{#1}}",1],"bmat":["{\\bmqty{#1}}",1],"vmat":["{\\vmqty{#1}}",1],"poisson":["{\\poissonbracket{#1}{#2}}",2],"matrixele":["{\\matrixel{#1}{#2}{#3}}",3],"ele":["{\\matrixel{#1}{#2}{#3}}",3],"qiff":"{\\qq{iff}}","matdet":["{\\matrixdeterminant{#1}}",1],"smatdet":["{\\smallmatrixdeterminant{#1}}",1],"hyperbolic":["{\\operatorname{H}_{#1}}",1],"lightcone":["{\\operatorname{C}_{#1}}",1],"lightconeproj":["{\\bar{\\operatorname{C}}_{#1}}",1],"ds":["{\\operatorname{dS}_{#1}}",1],"kds":["{\\operatorname{KdS}_{#1}}",1],"ads":["{\\operatorname{AdS}_{#1}}",1],"eads":["{\\operatorname{EAdS}_{#1}}",1],"sphere":["{\\operatorname{S}^{#1}}",1],"csphere":["{\\mathcal{CS}^{#1}}",1],"shadow":["{\\cS[#1]}",1],"lightray":["{\\cL[#1]}",1],"defect":"{\\cD}","hs":["{\\hspace{#1}}",1],"wave":["{\\widetilde{#1}}",1],"bar":["{\\overline{#1}}",1],"hat":["{\\widehat{#1}}",1],"geq":"{\\geqslant}","leq":"{\\leqslant}","case":["{\\begin{cases} #1 \\end{cases}}",1],"nn":"{\\nonumber}","red":["{\\textcolor{red}{#1}}",1],"orange":["{\\textcolor{orange}{#1}}",1],"blue":["{\\textcolor{blue}{#1}}",1],"purple":["{\\textcolor{purple}{#1}}",1],"pink":["{\\textcolor{pink}{#1}}",1],"notethat":["{\\textcolor{red}{#1}}",1],"impliesthat":"{$\\implies$}","peq":"{\\phantom{=}}","lhs":"{\\text{l.h.s}}","rhs":"{\\text{r.h.s}}","const":"{\\operatorname{const}}","vac":"{\\ket{0}}","vev":["{\\langle #1 \\rangle}",1],"op":"{\\cO}","opshadow":"{\\wave{\\op}}","fshadow":"{\\wave{\\f}}","opcomposite":"{\\op_{e}}","singletstructure":"{r=1}","gram":"{G}","fourpt":"{\\cG}","blockstripped":"{g}","blockdressed":"{G}","CPWstripped":"{\\psi}","CPWdressed":"{\\Psi}","rep":["{\\cV_{#1}}",1],"urep":["{\\cE_{#1}}",1],"urepdiscrete":["{\\cD_{#1}}",1],"udual":["{\\wave{#1}}",1],"pT":"{p_{\\perp}}","xT":"{x_{\\perp}}","instate":["{#1_{\\operatorname{in}}}",1],"outstate":["{#1_{\\operatorname{out}}}",1],"disc":"{\\operatorname{Disc}}","fm":"{\\operatorname{fm}}","GeV":["{\\operatorname{GeV}^{#1}}",1],"vp":"{\\vec{p}}","vx":"{\\vec{x}}","hb":"{\\bar{h}}","wbar":"{\\bar{w}}","zbar":"{\\bar{z}}","Tbar":"{\\bar{T}}","Lbar":"{\\bar{L}}","psib":"{\\bar{\\psi}}","Vfuture":"{\\bar{V}_{+}}","Vpast":"{\\bar{V}_{-}}","Vcausal":"{\\bar{V}_{\\pm}}","Faa":"{{}_{1}F_{1}}","Fab":"{{}_{1}F_{2}}","Fba":"{{}_{2}F_{1}}","Fcb":"{{}_{3}F_{2}}","intt":["{\\int #1\\,}",1],"inttt":["{\\int_{#2} #1\\,}",2],"intrange":["{\\int_{#2}^{#3} #1\\,}",3],"half":"{\\frac{1}{2}}","x":"{\\times}","ox":"{\\otimes}","os":"{\\oplus}","w":"{\\wedge}","inf":"{\\infty}","oo":"{\\infty}","p":"{\\partial}","n":"{\\nabla}","sign":"{\\operatorname{sgn}}","diag":["{\\operatorname{diag}\\left( #1 \\right)}",1],"EL":"{\\operatorname{EL}}","vspan":["{\\operatorname{span}\\{ #1 \\}}",1],"set":["{\\{ #1 \\}}",1],"modd":["{\\, \\operatorname{mod} #1 }",1],"inverselimit":"{\\varprojlim}","directlimit":"{\\varinjlim}","im":"{\\operatorname{im}}","coim":"{\\operatorname{coim}}","coker":"{\\operatorname{coker}}","opindex":"{\\operatorname{index}}","spec":"{\\operatorname{spec}}","Diff":"{\\operatorname{Diff}}","Hom":"{\\operatorname{Hom}}","Aut":"{\\operatorname{Aut}}","End":"{\\operatorname{End}}","Out":"{\\operatorname{Out}}","Inn":"{\\operatorname{Inn}}","id":"{\\operatorname{id}}","ad":"{\\operatorname{ad}}","Ad":"{\\operatorname{Ad}}","codim":"{\\operatorname{codim}}","vol":"{\\operatorname{vol}}","ind":"{\\operatorname{Ind}}","res":"{\\operatorname{Res}}","rad":"{\\operatorname{rad}}","dual":["{{#1}^\\vee}",1],"H":"{\\mathcal{H}}","innerproductmath":["{(#1,#2)}",2],"innerproductphy":["{#1 \\cdot #2}",2],"M":"{\\mathcal{M}}","ext":"{\\operatorname{Ext}}","tor":"{\\operatorname{Tor}}","setcat":"{\\operatorname{Set}}","veccat":"{\\operatorname{Vec}}","catcat":"{\\operatorname{Cat}}","catA":"{\\mathcal{A}}","catB":"{\\mathcal{B}}","catC":"{\\mathcal{C}}","catD":"{\\mathcal{D}}","catE":"{\\mathcal{E}}","catF":"{\\mathcal{F}}","catG":"{\\mathcal{G}}","Uvec":"{\\mathbb{U}}","Vvec":"{\\mathbb{V}}","Wvec":"{\\mathbb{W}}","a":"{\\alpha}","b":"{\\beta}","c":"{\\chi}","d":"{\\delta}","D":"{\\Delta}","e":"{\\epsilon}","ve":"{\\varepsilon}","g":"{\\gamma}","G":"{\\Gamma}","k":"{\\kappa}","l":"{\\lambda}","L":"{\\Lambda}","lm":"{\\lambda}","f":"{\\phi}","vf":"{\\varphi}","r":"{\\rho}","s":"{\\sigma}","S":"{\\Sigma}","o":"{\\omega}","O":"{\\Omega}","t":"{\\tau}","th":"{\\theta}","Th":"{\\Theta}","z":"{\\zeta}","R":"{\\mathbb{R}}","RR":"{\\mathbb{R}}","Rnot":"{\\mathbb{R}^{\\neq 0}}","Rneq":"{\\mathbb{R}^{\\neq 0}}","Rgeq":"{\\mathbb{R}^{\\geqslant 0}}","Rpositive":"{\\mathbb{R}^{> 0}}","Rleq":"{\\mathbb{R}^{\\leqslant 0}}","Rnegative":"{\\mathbb{R}^{< 0}}","Z":"{\\mathbb{Z}}","ZZ":"{\\mathbb{Z}}","N":"{\\mathbb{N}}","NN":"{\\mathbb{N}}","Znot":"{\\mathbb{Z}^{\\geqslant 0}}","Zneq":"{\\mathbb{Z}^{\\neq 0}}","Zgeq":"{\\mathbb{Z}^{\\geqslant 0}}","Zpositive":"{\\mathbb{Z}^{> 0}}","Zleq":"{\\mathbb{Z}^{\\leqslant 0}}","Znegative":"{\\mathbb{Z}^{< 0}}","Q":"{\\mathbb{Q}}","QQ":"{\\mathbb{Q}}","Qnot":"{\\mathbb{Q}^{\\geqslant 0}}","Qneq":"{\\mathbb{Q}^{\\neq 0}}","Qgeq":"{\\mathbb{Q}^{\\geqslant 0}}","Qpositive":"{\\mathbb{Q}^{> 0}}","Qleq":"{\\mathbb{Q}^{\\leqslant 0}}","Qnegative":"{\\mathbb{Q}^{< 0}}","C":"{\\mathbb{C}}","CC":"{\\mathbb{CC}}","Cneq":"{\\mathbb{C}^{\\neq 0}}","Cnot":"{\\mathbb{C}^{\\neq 0}}","P":"{\\mathbb{P}}","CP":"{\\mathbb{CP}}","RP":"{\\mathbb{RP}}","Qp":"{\\mathbb{Q}_{p}}","Zp":"{\\mathbb{Z}_{p}}","Up":"{\\mathbb{U}_{p}}","spin":"{\\operatorname{Spin}}","lie":["{\\mathfrak{#1}}",1],"glie":"{\\mathfrak{g}}","gllie":"{\\mathfrak{gl}}","sllie":"{\\mathfrak{sl}}","isllie":"{\\mathfrak{isl}}","ulie":"{\\mathfrak{u}}","sulie":"{\\mathfrak{su}}","olie":"{\\mathfrak{o}}","solie":"{\\mathfrak{so}}","isolie":"{\\mathfrak{iso}}","splie":"{\\mathfrak{sp}}","nlie":"{\\mathfrak{n}}","plie":"{\\mathfrak{p}}","blie":"{\\mathfrak{b}}","hlie":"{\\mathfrak{h}}","klie":"{\\mathfrak{k}}","cA":"{\\mathcal{A}}","cB":"{\\mathcal{B}}","cC":"{\\mathcal{C}}","cD":"{\\mathcal{D}}","cE":"{\\mathcal{E}}","cF":"{\\mathcal{F}}","cG":"{\\mathcal{G}}","cH":"{\\mathcal{H}}","cI":"{\\mathcal{I}}","cJ":"{\\mathcal{J}}","cK":"{\\mathcal{K}}","cL":"{\\mathcal{L}}","cM":"{\\mathcal{M}}","cN":"{\\mathcal{N}}","cO":"{\\mathcal{O}}","cP":"{\\mathcal{P}}","cQ":"{\\mathcal{Q}}","cR":"{\\mathcal{R}}","cS":"{\\mathcal{S}}","cT":"{\\mathcal{T}}","cU":"{\\mathcal{U}}","cV":"{\\mathcal{V}}","cW":"{\\mathcal{W}}","cX":"{\\mathcal{X}}","cY":"{\\mathcal{Y}}","cZ":"{\\mathcal{Z}}"}},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="two-dimensional-s-matrix-bootstrap">Two-dimensional S-matrix bootstrap</h1>
+
+<h2 class="mume-header" id="settings">Settings</h2>
+
+<p>&#x672C;&#x6587;&#x8BA8;&#x8BBA;&#x4E8C;&#x7EF4;&#x6709;&#x80FD;&#x9699;&#x6709;&#x6E10;&#x8FD1;&#x6001;&#x7684;&#x5C40;&#x57DF;&#x53EF;&#x79EF;&#x573A;&#x8BBA;&#x3002;</p>
+<p>&#x4E8C;&#x7EF4;&#x7B1B;&#x5361;&#x5C14;&#x5750;&#x6807;&#x4E3A; <span class="mathjax-exps">$X=(t,x)$</span>&#xFF0C;&#x5149;&#x9525;&#x5750;&#x6807; <span class="mathjax-exps">$x^\pm=t\pm x$</span>&#x3002;&#x52A8;&#x91CF; <span class="mathjax-exps">$P=(\o,p)$</span> &#x53EF;&#x7528;&#x5FEB;&#x5EA6; <span class="mathjax-exps">$\b$</span> &#x4EE5;&#x53CA;&#x5149;&#x9525;&#x5750;&#x6807; <span class="mathjax-exps">$p^\pm=\o\pm p$</span> &#x53C2;&#x6570;&#x5316;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{align}&amp; \o^{2}- p^2=m^{2}  &amp;  \o &amp; =m \cosh\b  &amp;  p &amp;=m \sinh \b  \\ &amp; p^+ p^-=m^{2}  &amp;  p^+ &amp; =m e^\b  &amp;  p^- &amp;=m e^{-\b }\end{align}</div><p></p>
+<p>&#x6563;&#x5C04;&#x77E9;&#x9635;&#x5B9A;&#x4E49;&#x4E3A;&#x51FA;&#x5165;&#x6001;&#x4E4B;&#x95F4;&#x7684;&#x77E9;&#x9635;&#x5143;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{align}S\sim e^{it\cH}&amp;=\id+ \int d p_{1} d p_{2} dp&apos;_{1} dp&apos;_{2} \d (p_{1}+p_{2}-p&apos;_{1}-p&apos;_{2})  \nn \\ &amp;\peq S(p_1,1,p_{2},2|p&apos;_{1},1&apos;,p&apos;_{2},2&apos;)\instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p&apos;_{1},1&apos;)\instate{a}(p&apos;_{2},2&apos;)+\dots\end{align}</div><p></p>
+<p>&#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x4E86; <span class="mathjax-exps">$\instate{a}^{\dagger}$</span> &#x751F;&#x6210;&#x7684;&#x6FC0;&#x53D1;&#x662F;&#x7A33;&#x5B9A;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4ECE; <span class="mathjax-exps">$2\to2$</span> &#x6563;&#x5C04;&#x5F00;&#x59CB;&#x6C42;&#x548C;&#x3002;</p>
+<p>&#x6709;&#x80FD;&#x9699;&#x53EF;&#x56DE;&#x907F;&#x7EA2;&#x5916;&#x53D1;&#x6563;&#x95EE;&#x9898;&#x3002;&#x6709;&#x6E10;&#x8FD1;&#x6001;&#x610F;&#x5473;&#x5B58;&#x5728;&#x51FA;&#x5165;&#x6001;&#x7684;&#x5347;&#x964D;&#x7B97;&#x5B50;&#xFF0C;&#x4EE5;&#x53CA;&#x5B58;&#x5728;&#x63D2;&#x503C;&#x573A; (interpolating field) &#x8054;&#x7CFB;&#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x573A;&#x548C;&#x6E10;&#x8FD1;&#x573A;&#x3002;<br>
+&#x5C40;&#x57DF;&#x6307;&#x7684;&#x662F;&#x573A;&#x7B97;&#x5B50;&#x4EE3;&#x6570;&#x4E2D;&#x7684;&#x5C40;&#x57DF;&#x7B97;&#x5B50;&#x6EE1;&#x8DB3;&#x56E0;&#x679C;&#x5C40;&#x57DF;&#x6027; (causal locality)&#xFF0C;&#x5E76;&#x4E14;&#x5B58;&#x5728;&#x80FD;&#x52A8;&#x5F20;&#x91CF;&#x7B97;&#x5B50; <span class="mathjax-exps">$T^{ab}(X)$</span>&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}[\f_1(X_1),\f_2(X_2)]=0 \qfor X_{12}\notin \Vcausal\end{equation}</div><p></p>
+<p>&#x56E0;&#x800C;&#x52A8;&#x91CF;&#x7B97;&#x5B50;&#x4E3A;</p>
+<p></p><div class="mathjax-exps">\begin{equation}\cP^\pm=\int_{\S_t} dx\, T^{0,\pm}(t,x)\end{equation}</div><p></p>
+<p>&#x4E14;&#x5165;&#x5C04;&#x6001;&#x662F;&#x52A8;&#x91CF;&#x672C;&#x5F81;&#x6001;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}\left(\cP^\pm-m\sum_{i=1}^n e^{\pm\b_i} \right) \instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0\end{equation}</div><p></p>
+<h2 class="mume-header" id="integrability">Integrability</h2>
+
+<p>&#x53EF;&#x79EF;&#x6027;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x5B58;&#x5728;&#x5145;&#x5206;&#x591A;&#x7684;&#x9AD8;&#x81EA;&#x65CB;&#x5B88;&#x6052;&#x6D41; <span class="mathjax-exps">$\p_a T^{a,\pm,(s)}(X)=0$</span>&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x5B88;&#x6052;&#x8377;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}Q^{\pm,(s)}=\int_{\S_t} dx\, T^{0,\pm,(s)}(t,x)\end{equation}</div><p></p>
+<p>&#x76F8;&#x4E92;&#x4EA4;&#x6362;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}[Q^{(s)},Q^{(s&apos;)}]=0\end{equation}</div><p></p>
+<p>&#x8FD9;&#x91CC;&#x4E0A;&#x6307;&#x6807; <span class="mathjax-exps">$(s)$</span> &#x6807;&#x8BB0;&#x81EA;&#x65CB;&#x6570;&#xFF0C;<span class="mathjax-exps">$[M,Q^{(s)}]=sQ^{(s)}$</span>&#x3002;</p>
+<p>&#x4E0E;&#x52A8;&#x91CF;&#x7B97;&#x5B50;&#x7684;&#x4EA4;&#x6362;&#x6027;&#x610F;&#x5473;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5BF9;&#x89D2;&#x5316;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}\ppair{Q^{\pm,(s)}-q^{(s)}\sum_{i=1}^n e^{\pm s\b_i} }\instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0\end{equation}</div><p></p>
+<p>&#x6563;&#x5C04;&#x77E9;&#x9635;&#x4F5C;&#x4E3A; <span class="mathjax-exps">$\cH$</span> &#x7684;&#x79EF;&#x5206;&#x7B97;&#x5B50;&#xFF0C;&#x548C; <span class="mathjax-exps">$Q^{(s)}$</span> &#x4EA4;&#x6362;&#xFF0C;&#x5728;&#x77E9;&#x9635;&#x5143;&#x6C34;&#x5E73;&#x4E0A;&#x4E3A;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}\ppair{\sum_{i=1}^n e^{\pm s\b_i}-\sum_{i=1}^m e^{\pm s\b_i&apos;}} S(n\to m)=0\end{equation}</div><p></p>
+<p>&#x5145;&#x5206;&#x591A;&#x7684;&#x5B88;&#x6052;&#x6D41;&#x5BFC;&#x81F4;&#x8BE5;&#x65B9;&#x7A0B;&#x53EA;&#x6709;&#x5E73;&#x51E1;&#x89E3;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}S(n\to m)\sim \d_{n,m} \qand \set{\b_i}=\set{\b&apos;_i}\end{equation}</div><p></p>
+<p>&#x4EA6;&#x5373;&#xFF0C;&#x6563;&#x5C04;&#x662F;&#x5B8C;&#x5168;&#x5F39;&#x6027;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x7C92;&#x5B50;&#x4EA7;&#x751F;&#x6D88;&#x706D;&#xFF0C;&#x51FA;&#x6001;&#x52A8;&#x91CF;&#x662F;&#x5165;&#x6001;&#x52A8;&#x91CF;&#x7684;&#x8F6E;&#x6362;&#xFF0C;</p>
+<p></p><div class="mathjax-exps">\begin{equation}S=\id+ \int d \b_1 d \b_2  \, S(p_1,p_2|1,2|1&apos;,2&apos;) \instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p&apos;_{1},1&apos;)\instate{a}(p&apos;_{2},2&apos;)+\dots\end{equation}</div><p></p>
+<p>&#x5176;&#x4E2D; <span class="mathjax-exps">$S$</span> &#x5438;&#x6536;&#x4E86;&#x4E00;&#x4E9B;&#x8FD0;&#x52A8;&#x5B66;&#x56E0;&#x5B50;&#x3002;&#x8FD9;&#x5728;&#x5FAE;&#x6270;&#x573A;&#x8BBA;&#x6C34;&#x5E73;&#x4E0A;&#x610F;&#x5473;&#x7740;&#x5927;&#x91CF;&#x7684;&#x56FE;&#x76F8;&#x6D88;&#x3002;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

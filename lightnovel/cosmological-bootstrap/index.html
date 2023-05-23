@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -539,27 +539,30 @@
 
 <!-- Page content -->
 <h1 id="introduction-to-cosmological-bootstrap">Introduction to cosmological bootstrap</h1>
-<p>This page is a recap of 2107.13871.</p>
+<p>This page is a recap of <em>Towards the non-perturbative cosmological bootstrap</em> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <ol>
 <li>
-<p>late-time correlation functions transform as conformal correlation functions under the isometry group <span class="arithmatex">\(SO(d + 1, 1)\)</span> of <span class="arithmatex">\(dS_{d+1}\)</span></p>
-</li>
-<li>
-<p>This suggests using conformal bootstrap methods to study QFT in dS.</p>
+<p>Late-time correlation functions transform as conformal correlation functions under the isometry group <span class="arithmatex">\(SO(d+1,1)\)</span> of <span class="arithmatex">\(dS_{d+1}\)</span>. This suggests using conformal bootstrap methods to study QFT in dS.</p>
 </li>
 <li>
 <p>Unitary conformal bootstrap:</p>
 <ol>
-<li>conformal block expansion (four identical operators):</li>
-</ol>
-<div class="arithmatex">\[\begin{equation}
-\left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
-=
-\sum_{\Delta, \ell} C_{\Delta, \ell}^2 G_{\Delta, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
-\end{equation}\]</div>
-<ol>
 <li>
-<p><span class="arithmatex">\(\wave{SO}(d,2)\)</span> AdS/Lorentzian unitarity: <span class="arithmatex">\(C_{\Delta, \ell}^2 \geq 0\)</span></p>
+<p>symmetry: <span class="arithmatex">\(\wave{SO}(d,2)\)</span></p>
+</li>
+<li>
+<p>object: CFT correlations functions</p>
+</li>
+<li>
+<p>conformal block expansion (four identical operators):</p>
+<div class="arithmatex">\[\begin{equation}
+    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+    =
+    \sum_{\Delta, \ell} C_{\Delta, \ell}^2 G_{\Delta, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
+\end{equation}\]</div>
+</li>
+<li>
+<p>AdS/Lorentzian unitarity: <span class="arithmatex">\(C_{\Delta, \ell}^2 \geq 0\)</span></p>
 </li>
 <li>
 <p>crossing symmetry: invariance under permutations of the positions <span class="arithmatex">\(x_{i}\)</span></p>
@@ -567,24 +570,24 @@
 </ol>
 </li>
 <li>
-<p>Idea of dS bootstrap:</p>
+<p>dS bootstrap:</p>
 <ol>
 <li>
-<p>Object: dS correlations functions in the late-time limit</p>
+<p>symmetry: <span class="arithmatex">\(SO(d+1,1)\)</span></p>
 </li>
 <li>
-<p>existence of SOC and convergence of OPE are problematic, hence lack of conformal block expansion.</p>
+<p>object: dS correlations functions in the late-time limit</p>
 </li>
 <li>
-<p>instead, consider the conformal partial wave expansion:</p>
+<p>existence of SOC and convergence of OPE are problematic, hence lack of conformal block expansion. Instead, we can consider the conformal partial wave expansion:</p>
 <div class="arithmatex">\[\begin{equation}
-\left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
-=
-\sum_{\ell} \int d \nu I_{\ell}(\nu) \Psi_{\frac{d}{2}+i \nu, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
+    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+    =
+    \sum_{\ell} \int d \nu I_{\ell}(\nu) \Psi_{\frac{d}{2}+i \nu, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
 \end{equation}\]</div>
 </li>
 <li>
-<p><span class="arithmatex">\(SO(d+1,1)\)</span> dS/Euclidean unitarity: <span class="arithmatex">\(I_{\ell}(\nu) \geq 0\)</span></p>
+<p>dS/Euclidean unitarity: <span class="arithmatex">\(I_{\ell}(\nu) \geq 0\)</span></p>
 </li>
 <li>
 <p>crossing symmetry still holds: invariance under permutation due to operators commuting at spacelike separation.</p>
@@ -598,20 +601,14 @@
 <div class="arithmatex">\[\begin{equation}
 d s^2=\frac{1}{\cos ^2 \tau}\left(-d \tau^2+d \Omega_d^2\right), \quad-\pi / 2 \leq \tau \leq \pi / 2
 \end{equation}\]</div>
-<p><span class="arithmatex">\(\R^{d,1}\)</span>
-<span class="arithmatex">\(\hookrightarrow\)</span>
-Lorentzian cylinder
-<span class="arithmatex">\(\hookleftarrow\)</span>
-dS Poincare patch</p>
-<p>Figure 2 of 1805.00098
+<p>This is copied from the figure 2 of <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, showing the embedding of <span class="arithmatex">\(\R^{d,1}\)</span> into the Lorentzian cylinder.
 <img src="../cosmological-bootstrap/lorentzian-cylinder.png" class="center" width="70%"></p>
-<p>Figure 1 of 2107.13871</p>
-<p><img src="../cosmological-bootstrap/ds-poincare.png" class="center" width="70%"></p>
 <p>The Poincare patch of dS is</p>
 <div class="arithmatex">\[\begin{equation}
 d s^2=\frac{-d \eta^2+d x^\mu d x_\mu}{\eta^2}
 \end{equation}\]</div>
-<p>where $ η &lt; 0,\, x\in\R^{d}$. The null surface at <span class="arithmatex">\(\eta=-\inf\)</span> is the horizon of the Poincare patch, and <span class="arithmatex">\(\eta=0\)</span> is the future infinity of dS.</p>
+<p>where <span class="arithmatex">\(\eta&lt;0,\, x\in\R^{d}\)</span>. The null surface at <span class="arithmatex">\(\eta=-\inf\)</span> is the horizon of the Poincare patch, and <span class="arithmatex">\(\eta=0\)</span> is the future infinity of dS. The following figure is copied from the figure 1 of <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p><img src="../cosmological-bootstrap/ds-poincare.png" class="center" width="70%"></p>
 <p>The Killing vectors in the Poincare coordinates are,</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{gathered}
@@ -621,7 +618,8 @@ K_\mu:\left(\eta^2-x^2\right) \frac{\partial}{\partial x^\mu}+2 x_\mu \eta \frac
 \end{equation}\]</div>
 <p>In the late-time limit <span class="arithmatex">\(\eta=0\)</span> they <strong>manifest</strong> the conformal symmetries of the future infinity.</p>
 <h2 id="massive-free-scalar-on-ds">Massive free scalar on dS</h2>
-<p>For simplicity we assume <span class="arithmatex">\(m^2&gt;d^2/4\)</span>. The action is,</p>
+<p>For simplicity we assume <span class="arithmatex">\(m^2&gt;d^2/4\)</span>. 
+The action is,</p>
 <div class="arithmatex">\[\begin{equation}
 S=\int d^d x \int_{-\infty}^0 \frac{d \eta}{(-\eta)^{d+1}}\left[\eta^2\left(\frac{1}{2} \dot{\phi}^2-\frac{1}{2}(\nabla \phi)^2\right)-\frac{1}{2} m^2 \phi^2\right]
 \end{equation}\]</div>
@@ -637,11 +635,12 @@ S=\int d^d x \int_{-\infty}^0 \frac{d \eta}{(-\eta)^{d+1}}\left[\eta^2\left(\fra
 <div class="arithmatex">\[\begin{equation}
 \left[a_k, a_{k^{\prime}}^{\dagger}\right]=(2 \pi)^d \delta^d\left(k-k^{\prime}\right)
 \end{equation}\]</div>
-<p>where <span class="arithmatex">\(f_k(\eta)\)</span> is some hypergeometric function. The behaviour at late time is</p>
+<p>where <span class="arithmatex">\(f_k(\eta)\)</span> is some hypergeometric function. 
+The behaviour at late time is</p>
 <div class="arithmatex">\[\begin{equation}
 \lim _{\eta \rightarrow 0} \phi(\eta,x)=\f^{+}(x) (-\eta)^{\Delta^{+}}+\f^{-}(x) (-\eta)^{\Delta^{-}}
 \end{equation}\]</div>
-<p>where the mass-"dimension" relation is <span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span>, c.f. in AdS/CFT the relation is <span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span>. </p>
+<p>where the mass-dimension relation is <span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span>, c.f. in AdS/CFT the relation is <span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span>. </p>
 <table>
 <thead>
 <tr>
@@ -668,7 +667,7 @@ S=\int d^d x \int_{-\infty}^0 \frac{d \eta}{(-\eta)^{d+1}}\left[\eta^2\left(\fra
 </tr>
 </tbody>
 </table>
-<p>The principal series rep (PSR) is just the function space <span class="arithmatex">\(L^2(\R^{d})\)</span> with suitable decay at <span class="arithmatex">\(x\to\inf\)</span>, and the action of the conformal group is exact the same as that of primary operators in unitary CFT.</p>
+<p>The principal series rep (PSR) is just the function space <span class="arithmatex">\(L^2(\RR^{d})\)</span> with suitable decay at <span class="arithmatex">\(x\to\inf\)</span>, and the action of the conformal group is exact the same as that of primary operators in unitary CFT.</p>
 <p>The shadow transform is a Weyl reflection on the weight lattice, and gives the equivalence between <span class="arithmatex">\(\Delta_{\pm}\)</span>. At the end point, the complementary series rep can be reducible due to the shadow transform, and splits into exceptional series reps.</p>
 <p>Since the theory is free, the Hilbert space is the Fock space building from the single-particle state, denoted as,</p>
 <div class="arithmatex">\[\begin{equation}
@@ -938,6 +937,17 @@ I_{\Delta, \ell}^{\mathrm{MFT}}=(-1)^{\ell} \frac{2^{\ell-1} \Gamma\left(\ell+\f
 I_{\Delta, \ell}=I_{\Delta, \ell}^{\mathrm{MFT}}+I_{\Delta, \ell}^\delta=\left(1+(-1)^{\ell} \frac{1}{\cosh ^2(\pi \mu)}\right) I_{\Delta, \ell}^\delta .
 \end{equation}\]</div>
 <p>where <span class="arithmatex">\(I_{\Delta, \ell}^\delta\sim  C^2\)</span> is manifestly positive.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Matthijs Hogervorst, Joao Penedones, and Kamran Salehi Vaziri. Towards the non-perturbative cosmological bootstrap. 7 2021. <a href="https://arxiv.org/abs/2107.13871">arXiv:2107.13871</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Petr Kravchuk and David Simmons-Duffin. Light-ray operators in conformal field theory. JHEP, 11:102, 2018. <a href="https://arxiv.org/abs/1805.00098">arXiv:1805.00098</a>, <a href="https://doi.org/10.1007/JHEP11(2018)102">doi:10.1007/JHEP11(2018)102</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 <!-- Source file information -->
 
@@ -986,7 +996,7 @@ I_{\Delta, \ell}=I_{\Delta, \ell}^{\mathrm{MFT}}+I_{\Delta, \ell}^\delta=\left(1
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
       
