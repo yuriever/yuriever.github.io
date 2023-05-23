@@ -358,9 +358,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Workbench
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Workbench
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#locally-visible-workbench" class="md-nav__link">
+    Locally visible workbench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-updated-directories" class="md-nav__link">
+    Manually updated directories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -400,6 +438,28 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#locally-visible-workbench" class="md-nav__link">
+    Locally visible workbench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-updated-directories" class="md-nav__link">
+    Manually updated directories
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
             </div>
@@ -452,7 +512,7 @@
 
 <!-- Page content -->
 <h1 id="workbench">Workbench</h1>
-<p>Locally visible workbench</p>
+<h2 id="locally-visible-workbench">Locally visible workbench</h2>
 <ul>
 <li>
 <p><a href="workbench/private/draft.md">Draft</a></p>
@@ -485,10 +545,28 @@
 <p><a href="workbench/private/shallow-water.md">Effective field theory of shallow water</a></p>
 </li>
 </ul>
-<p>Manually updated directories</p>
+<h2 id="manually-updated-directories">Manually updated directories</h2>
+<p><strong>TODO</strong>: write a Mathematica script for sync.</p>
 <ul>
-<li><code>~/Library/Mathematica/Applications</code> / <code>~/Mathematica-local</code></li>
-<li><code>~/.config/karabiner</code></li>
+<li>
+<p>Mathematica project</p>
+<div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="p">[{</span><span class="nb">$UserBaseDirectory</span><span class="p">,</span><span class="s">&quot;Applications&quot;</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>~/Library/Mathematica/Applications
+</code></pre></div>
+</li>
+<li>
+<p>Mathematica frontend preference</p>
+<div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="p">[{</span><span class="nb">$InstallationDirectory</span><span class="p">,</span><span class="s">&quot;SystemFiles&quot;</span><span class="p">,</span><span class="s">&quot;FrontEnd&quot;</span><span class="p">,</span><span class="s">&quot;TextResources&quot;</span><span class="p">,</span><span class="s">&quot;Macintosh&quot;</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/Applications/Mathematica.app/Contents/SystemFiles/FrontEnd/TextResources/Macintosh
+</code></pre></div>
+</li>
+<li>
+<p>Karabiner preference</p>
+<div class="highlight"><pre><span></span><code>~/.config/karabiner
+</code></pre></div>
+</li>
 </ul>
 
 <!-- Source file information -->

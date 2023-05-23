@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/archive/disable-option/">
+        <link rel="canonical" href="https://yuriever.github.io/archive/mac-tricks/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Disable key bindings of Option on Mac - Sora</title>
+        <title>Mac tricks - Sora</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#disable-key-bindings-of-option-on-mac" class="md-skip">
+        <a href="#mac-tricks" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Disable key bindings of Option on Mac
+              Mac tricks
             
           </span>
         </div>
@@ -385,6 +385,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disable-key-bindings-of-option-on-mac" class="md-nav__link">
+    Disable key bindings of Option on Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-the-universal-clipboard" class="md-nav__link">
+    Fix the universal clipboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-python-from-pyenv-to-homebrew" class="md-nav__link">
+    Link Python from pyenv to Homebrew
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -435,14 +464,54 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="disable-key-bindings-of-option-on-mac">Disable key bindings of Option on Mac</h1>
+<h1 id="mac-tricks">Mac tricks</h1>
+<p>System version: macOS Ventura 13.3.1</p>
+<hr />
+<h2 id="disable-key-bindings-of-option-on-mac">Disable key bindings of Option on Mac</h2>
 <p>References:</p>
 <ul>
-<li><a href="https://superuser.com/q/941286/1779050">Disable default option key binding</a></li>
+<li><a href="https://superuser.com/q/941286/1779050">https://superuser.com/q/941286/1779050</a></li>
 </ul>
 <hr />
-<p><code>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt;Others &gt; Unicode hex input</code></p>
-<p>System version: macOS Ventura 13.3.1</p>
+<p><code>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt; Others &gt; Unicode hex input</code></p>
+<h2 id="fix-the-universal-clipboard">Fix the universal clipboard</h2>
+<p>References:</p>
+<ul>
+<li><a href="https://discussions.apple.com/thread/253274114">https://discussions.apple.com/thread/253274114</a></li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code>defaults<span class="w"> </span>delete<span class="w"> </span>~/Library/Preferences/com.apple.coreservices.useractivityd.plist<span class="w"> </span>ClipboardSharingEnabled
+
+defaults<span class="w"> </span>write<span class="w"> </span>~/Library/Preferences/com.apple.coreservices.useractivityd.plist<span class="w"> </span>ClipboardSharingEnabled<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+<h2 id="link-python-from-pyenv-to-homebrew">Link Python from pyenv to Homebrew</h2>
+<p>References:</p>
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/q/30499795/19286626">How can I make homebrew's python and pyenv live together?</a></p>
+</li>
+<li>
+<p><a href="https://github.com/pyenv/pyenv">Simple Python Version Management: pyenv</a></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>在终端中取消 Homebrew 自带的 Python 关联，</p>
+<div class="highlight"><pre><span></span><code>brew unlink python@3.x
+</code></pre></div>
+</li>
+<li>
+<p>连接 pyenv 安装的特定版本的 Python，</p>
+<div class="highlight"><pre><span></span><code>ln -s ~/.pyenv/versions/3.x.x $(brew --cellar python)/3.x.x
+</code></pre></div>
+</li>
+<li>
+<p>Homebrew 自动设定其它关联，依据提示覆盖相关文件。</p>
+<div class="highlight"><pre><span></span><code>brew link --overwrite python@3.10
+</code></pre></div>
+</li>
+</ul>
 
 <!-- Source file information -->
 

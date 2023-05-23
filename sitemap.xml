@@ -31,22 +31,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/archive/disable-option/</loc>
-         <lastmod>2023-05-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://yuriever.github.io/archive/hotkey/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/archive/mathjax-configuration/</loc>
+         <loc>https://yuriever.github.io/archive/mac-tricks/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/archive/pyenv/</loc>
+         <loc>https://yuriever.github.io/archive/mathjax-configuration/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
