@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -413,13 +413,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#non-invertibility-of-toexpression-and-tostring" class="md-nav__link">
-    Non-invertibility of ToExpression and ToString
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -441,6 +434,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#invertible-conversion-of-expression-and-string" class="md-nav__link">
+    Invertible conversion of expression and string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#questing-functions" class="md-nav__link">
     Questing functions
   </a>
@@ -448,8 +448,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#kernel-functions" class="md-nav__link">
-    Kernel functions
+  <a href="#kernel-functions-indexizeindexify" class="md-nav__link">
+    Kernel functions: indexize/indexify
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-functions-indexsplit" class="md-nav__link">
+    Kernel functions: indexSplit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-functions" class="md-nav__link">
+    Other functions
   </a>
   
 </li>
@@ -557,9 +578,6 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 <p>Also for efficiency, the combinations of <code class="highlight"><span class="s">&quot;variable&quot;</span></code> and <code class="highlight"><span class="s">&quot;label&quot;</span></code> are cached in the member <code class="highlight"><span class="s">&quot;variableLabel&quot;</span></code>, while the string versions are cached in members <code class="highlight"><span class="s">&quot;*String&quot;</span></code>. These four members will be automatically updated when <code class="highlight"><span class="s">&quot;variable&quot;</span></code> and <code class="highlight"><span class="s">&quot;label&quot;</span></code> get changed.</p>
 <h3 id="instance">Instance</h3>
 <p>The instances <code class="highlight"><span class="s">&quot;context&quot;</span></code> are to distinguish different sets of variables and labels. Then all the <code class="highlight"><span class="s">&quot;context&quot;</span></code> constitute an <code class="highlight"><span class="s">&quot;index&quot;</span></code>.</p>
-<h3 id="non-invertibility-of-toexpression-and-tostring">Non-invertibility of <code class="highlight"><span class="nb">ToExpression</span></code> and <code class="highlight"><span class="nb">ToString</span></code></h3>
-<p>The kernel functions will first convert symbols to strings, use string pattern matching to perform evaluation, and finally convert back to symbols if necessary. The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>. To override this, we introduce the public symbol <code class="highlight"><span class="nv">null</span></code> representing empty string and the function pair <code class="highlight"><span class="nv">toSymbol</span><span class="p">,</span><span class="w"> </span><span class="nv">toString</span></code>. </p>
-<p>Every context and the default context contains the symbol <code class="highlight"><span class="nv">null</span></code> by default.</p>
 <h2 id="methods">Methods</h2>
 <ul>
 <li>
@@ -581,8 +599,7 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 <p><code class="highlight"><span class="nv">contextShow</span><span class="p">[</span><span class="nt">context_</span><span class="p">]</span></code> - show the context.</p>
 </li>
 </ul>
-<h3 class="nocount">Some shortcuts</h3>
-
+<p>List of shortcuts:</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">contextDefine</span><span class="p">[]</span></code> - return the list of defined contexts.</p>
@@ -600,7 +617,21 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 <p><code class="highlight"><span class="nv">contextShow</span><span class="p">[]</span></code> - show the default contexts.</p>
 </li>
 </ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="c">(*define and set default the context*)</span>
+<span class="nv">contextDefine</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">]</span>
+<span class="nv">contextAdd</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">][{</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="nv">f</span><span class="o">-&gt;</span><span class="nb">Superscript</span><span class="p">},{</span><span class="nv">star</span><span class="p">}]</span>
+<span class="nv">contextDefault</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="functionality">Functionality</h2>
+<h3 id="invertible-conversion-of-expression-and-string">Invertible conversion of expression and string</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - invertible version of <code class="highlight"><span class="nb">ToString</span></code> and <code class="highlight"><span class="nb">ToExpression</span></code>.</p>
+<p>The kernel functions will first convert symbols to strings, use string pattern matching to perform evaluation, and finally convert back to symbols if necessary. The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>. To override this, we introduce the public symbol <code class="highlight"><span class="nv">null</span></code> representing empty string and the function pair <code class="highlight"><span class="nv">toSymbol</span><span class="p">,</span><span class="w"> </span><span class="nv">toString</span></code>. </p>
+<p>By default, Every context and the default context contains the symbol <code class="highlight"><span class="nv">null</span></code>.</p>
+</li>
+</ul>
 <h3 id="questing-functions">Questing functions</h3>
 <ul>
 <li>
@@ -639,53 +670,13 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </ul>
 </li>
 </ul>
-<h3 id="kernel-functions">Kernel functions</h3>
-<p>The usages of kernel functions are as follows.</p>
-<div class="highlight"><pre><span></span><code><span class="c">(*define and set default the context*)</span>
-<span class="nv">contextDefine</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">]</span>
-<span class="nv">contextAdd</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">][{</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="nv">f</span><span class="o">-&gt;</span><span class="nb">Superscript</span><span class="p">},{</span><span class="nv">star</span><span class="p">}]</span>
-<span class="nv">contextDefault</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">]</span>
-</code></pre></div>
+<h3 id="kernel-functions-indexizeindexify">Kernel functions: <code class="highlight"><span class="nv">indexize</span><span class="o">/</span><span class="nv">indexify</span></code></h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - invertible version of <code class="highlight"><span class="nb">ToString</span></code> and <code class="highlight"><span class="nb">ToExpression</span></code>.</p>
+<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="o">_</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">..</span><span class="p">,</span><span class="nt">linker_</span><span class="p">][</span><span class="nt">variable_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - indexify the variable by checking the labels and scripts.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="o">__</span><span class="p">][</span><span class="nt">_Symbol</span><span class="p">]</span></code> - combination of <code class="highlight"><span class="nv">toString</span></code>, <code class="highlight"><span class="nv">toSymbol</span></code> and <code class="highlight"><span class="nb">Array</span></code>.</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">labelScripts___</span><span class="p">][</span><span class="nt">symbol_</span><span class="p">]</span></code> - specify the labels and scripts manually.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">dim_List</span><span class="p">,</span><span class="nt">args___</span><span class="p">][</span><span class="nt">symbol_</span><span class="p">]</span></code> - specify the scripts similar to <code class="highlight"><span class="nb">Array</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexPolynomial</span><span class="p">[</span><span class="o">___</span><span class="p">][</span><span class="nt">coefficient_</span><span class="p">][</span><span class="nt">variable_</span><span class="p">]</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexize</span></code>.</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="nv">c</span><span class="p">]</span><span class="o">@</span><span class="nv">x</span>
-<span class="nv">indexize</span><span class="p">[{</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
-<span class="nv">indexize</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
-<span class="nv">indexPolynomial</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">]</span>
-<span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">xa</span><span class="p">,</span><span class="nv">xb</span><span class="p">,</span><span class="nv">xc</span><span class="p">}</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x1</span><span class="p">,</span><span class="nv">x2</span><span class="p">}</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nv">x00</span><span class="p">,</span><span class="nv">x01</span><span class="p">},{</span><span class="nv">x10</span><span class="p">,</span><span class="nv">x11</span><span class="p">}}</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a0</span><span class="o">+</span><span class="nv">a2</span><span class="w"> </span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="nv">a4</span><span class="w"> </span><span class="nv">x</span><span class="o">^</span><span class="m">4</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a11</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a21</span><span class="w"> </span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a12</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="nv">a22</span><span class="w"> </span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="nv">y</span><span class="o">^</span><span class="m">2</span>
-</code></pre></div>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexify</span><span class="o">|</span><span class="nv">indexifyAll</span><span class="p">[</span><span class="o">_</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">..</span><span class="p">,</span><span class="nt">linker_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - indexify the variables in an expression by checking the labels and scripts. <code class="highlight"><span class="nv">indexify</span></code> will check the inputs by <code class="highlight"><span class="nv">labelScriptQ</span></code>, while <code class="highlight"><span class="nv">indexifyAll</span></code> accepts all inputs and hence is faster. The default value of <code class="highlight"><span class="nt">linker_</span></code> is <code class="highlight"><span class="nb">Subtract</span></code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[</span><span class="nv">star0</span><span class="p">][</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">]</span>
-<span class="nv">indexify</span><span class="p">[{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">},{</span><span class="m">0</span><span class="p">}][</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]</span>
-<span class="nv">indexify</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">],</span><span class="nv">g</span><span class="p">[</span><span class="nv">c</span><span class="p">,</span><span class="nv">d</span><span class="p">],</span><span class="nv">h</span><span class="p">][</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">xstar0</span><span class="o">^</span><span class="m">2</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nv">x0</span><span class="w"> </span><span class="nv">y0</span><span class="o">+</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="o">+</span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="o">+</span><span class="nv">x3</span><span class="w"> </span><span class="nv">y3</span>
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">h</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">xa</span><span class="o">^</span><span class="m">2</span><span class="p">,</span><span class="nv">xb</span><span class="o">^</span><span class="m">2</span><span class="p">],</span><span class="nv">g</span><span class="p">[</span><span class="nv">xc</span><span class="o">^</span><span class="m">2</span><span class="p">,</span><span class="nv">xd</span><span class="o">^</span><span class="m">2</span><span class="p">]]</span>
-</code></pre></div>
+<p><code class="highlight"><span class="nv">indexify</span><span class="p">[</span><span class="o">_</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">..</span><span class="p">,</span><span class="nt">linker_</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - indexify the variables of the specified context in an expression by checking the labels and scripts.</p>
 <p>Default options: </p>
 <ul>
 <li>
@@ -697,24 +688,48 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </ul>
 </li>
 <li>
+<p><code class="highlight"><span class="nv">indexizeAll</span><span class="o">|</span><span class="nv">indexifyAll</span></code> are similar to <code class="highlight"><span class="nv">indexize</span><span class="o">|</span><span class="nv">indexify</span></code> but without checking the labels and scripts.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">index</span><span class="o">*</span><span class="nv">UnHold</span><span class="o">|</span></code> - <code class="highlight"><span class="nv">index</span><span class="o">*</span></code> without <code class="highlight"><span class="nb">HoldAll</span></code> attributes.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">$indexLinker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">List</span></code> - control the header of indexize/indexify and related functions. The default value of linker in indexize/indexify and related functions.</p>
+</li>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="nb">Divide</span><span class="p">,</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">f1</span><span class="p">[</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="p">]</span><span class="w"> </span><span class="nv">f2</span><span class="p">[</span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="nv">f3</span><span class="p">[</span><span class="nv">x3</span><span class="w"> </span><span class="nv">y3</span><span class="p">]</span><span class="w"> </span><span class="nv">f4</span><span class="p">[</span><span class="nv">x4</span><span class="w"> </span><span class="nv">y4</span><span class="p">])</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="kernel-functions-indexsplit">Kernel functions: <code class="highlight"><span class="nv">indexSplit</span></code></h3>
+<ul>
+<li>
 <p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_Symbol</span><span class="p">,</span><span class="nt">splitter_</span><span class="o">:</span><span class="m">0</span><span class="p">]</span></code> - split the input into strings of the form: variable + label + script. The splitter accepts <code class="highlight"><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span></code>, whose meanings are explained by the following examples.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">xstar0</span><span class="p">,</span><span class="m">0</span><span class="p">]</span>
 <span class="nv">indexSplit</span><span class="p">[</span><span class="nv">xstar0</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
 <span class="nv">indexSplit</span><span class="p">[</span><span class="nv">xstar0</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+
 <span class="nv">indexSplit</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">0</span><span class="p">]</span><span class="o">//</span><span class="nb">Map</span><span class="p">[</span><span class="nv">toSymbol</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span><span class="s">&quot;variable&quot;</span><span class="o">-&gt;</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;label&quot;</span><span class="o">-&gt;</span><span class="s">&quot;star&quot;</span><span class="p">,</span><span class="s">&quot;script&quot;</span><span class="o">-&gt;</span><span class="s">&quot;0&quot;</span><span class="p">|&gt;</span>
 <span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span><span class="s">&quot;variableLabel&quot;</span><span class="o">-&gt;</span><span class="s">&quot;xstar&quot;</span><span class="p">,</span><span class="s">&quot;script&quot;</span><span class="o">-&gt;</span><span class="s">&quot;0&quot;</span><span class="p">|&gt;</span>
 <span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span><span class="s">&quot;variable&quot;</span><span class="o">-&gt;</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;labelScript&quot;</span><span class="o">-&gt;</span><span class="s">&quot;star0&quot;</span><span class="p">|&gt;</span>
+
 <span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">&lt;|</span><span class="s">&quot;variable&quot;</span><span class="o">-&gt;</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;label&quot;</span><span class="o">-&gt;</span><span class="nv">null</span><span class="p">,</span><span class="s">&quot;script&quot;</span><span class="o">-&gt;</span><span class="nv">null</span><span class="p">|&gt;</span>
 </code></pre></div>
 </li>
+</ul>
+<h3 id="formatting">Formatting</h3>
+<ul>
 <li>
 <p><code class="highlight"><span class="nv">indexForm</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span></code> - format indexed variables in the the expression with <code class="highlight"><span class="nb">Subsuperscript</span></code>. </p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">},{</span><span class="m">0</span><span class="p">},</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span><span class="o">//</span><span class="nv">indexForm</span>
+<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="nb">Divide</span><span class="p">,</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span><span class="o">//</span><span class="nv">indexForm</span>
 </code></pre></div>
 <div class="arithmatex">\[\begin{equation}
--f_{\text{}}^0\left(x_{\text{}0} y_{\text{}0}\right)+f_{\text{}}^1\left(x_{\text{}1} y_{\text{}1}\right)+f_{\text{}}^2\left(x_{\text{}2} y_{\text{}2}\right)+f_{\text{}}^3\left(x_{\text{}3} y_{\text{}3}\right)
+\frac{f_{\text{}}^1\left(x_{\text{}1} y_{\text{}1}\right) f_{\text{}}^2\left(x_{\text{}2} y_{\text{}2}\right)}{f_{\text{}}^3\left(x_{\text{}3} y_{\text{}3}\right) f_{\text{}}^4\left(x_{\text{}4} y_{\text{}4}\right)}
 \end{equation}\]</div>
 <p>Default options: </p>
 <ul>
@@ -723,9 +738,30 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </li>
 <li>
 <p><code class="highlight"><span class="nv">indexFormBack</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span></code> - collape the <code class="highlight"><span class="nb">Subsuperscript</span></code> in the expression back to indexed variable, e.g.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">},{</span><span class="m">0</span><span class="p">},</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span><span class="o">//</span><span class="nv">indexForm</span><span class="o">//</span><span class="nv">indexFormBack</span>
+<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="nb">Divide</span><span class="p">,</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span><span class="o">//</span><span class="nv">indexForm</span><span class="o">//</span><span class="nv">indexFormBack</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nv">f0</span><span class="p">[</span><span class="nv">x0</span><span class="w"> </span><span class="nv">y0</span><span class="p">]</span><span class="o">+</span><span class="nv">f1</span><span class="p">[</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="p">]</span><span class="o">+</span><span class="nv">f2</span><span class="p">[</span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="p">]</span><span class="o">+</span><span class="nv">f3</span><span class="p">[</span><span class="nv">x3</span><span class="w"> </span><span class="nv">y3</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">f1</span><span class="p">[</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="p">]</span><span class="w"> </span><span class="nv">f2</span><span class="p">[</span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="nv">f3</span><span class="p">[</span><span class="nv">x3</span><span class="w"> </span><span class="nv">y3</span><span class="p">]</span><span class="w"> </span><span class="nv">f4</span><span class="p">[</span><span class="nv">x4</span><span class="w"> </span><span class="nv">y4</span><span class="p">])</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="other-functions">Other functions</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">indexArray</span><span class="p">[</span><span class="o">___</span><span class="p">][</span><span class="nt">_Symbol</span><span class="p">]</span></code> - generate tensor of symbols by <code class="highlight"><span class="nb">Array</span></code>.</p>
+<ul>
+<li><code class="highlight"><span class="nv">indexPolynomial</span><span class="p">[</span><span class="o">___</span><span class="p">][</span><span class="nt">coefficient_</span><span class="p">][</span><span class="nt">variables___</span><span class="p">]</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexArray</span></code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
+<span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
+
+<span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">]</span>
+<span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x1</span><span class="p">,</span><span class="nv">x2</span><span class="p">}</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nv">x11</span><span class="p">,</span><span class="nv">x12</span><span class="p">},{</span><span class="nv">x21</span><span class="p">,</span><span class="nv">x22</span><span class="p">}}</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a0</span><span class="o">+</span><span class="nv">a1</span><span class="w"> </span><span class="nv">x</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a00</span><span class="o">+</span><span class="nv">a10</span><span class="w"> </span><span class="nv">x</span><span class="o">+</span><span class="nv">a01</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a11</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span>
 </code></pre></div>
 </li>
 </ul>
@@ -778,7 +814,7 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
       
