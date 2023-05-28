@@ -21,7 +21,7 @@
     
     
       
-        <title>Introduction to xAct packages I - Sora</title>
+        <title>Introduction to xAct packages - Sora</title>
       
     
     
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction to xAct packages I
+              Introduction to xAct packages
             
           </span>
         </div>
@@ -408,18 +408,12 @@
     Some further explanations
   </a>
   
-    <nav class="md-nav" aria-label="Some further explanations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#function-xactxpertperturbation" class="md-nav__link">
     Function xAct`xPert`Perturbation
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -473,11 +467,11 @@
   https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
 -->
 <!--
-  <h1>Introduction to xAct packages I</h1>
+  <h1>Introduction to xAct packages</h1>
 -->
 
 <!-- Page content -->
-<h1>Introduction to xAct packages I
+<h1>Introduction to xAct packages
     <span class="subtitle">Equations of motion and stress tensors</span>
 </h1>
 
@@ -574,7 +568,7 @@ see e.g.
 <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup>
 <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>。</p>
 <p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space<sup id="fnref:tag:integral"><a class="footnote-ref" href="#fn:tag:integral">1</a></sup> of the field configurations. The only information involved is a local coordinate chart with some differential structures like metric and complex structure, and the local chart can be open subset of smooth manifold or supermanifold, or even from some formal geometry<sup id="fnref:tag:formal"><a class="footnote-ref" href="#fn:tag:formal">2</a></sup>.</p>
-<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and IBP, to reduce the complexity of expressions step by step and finally approach to the target expression. The xAct packages provide a rather complete platform of this functionality.</p>
+<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions step by step and finally approach to the target expression. The xAct packages provide a rather complete platform of this functionality.</p>
 <h2 id="the-structure-of-the-notebook">The structure of the notebook</h2>
 <p>The main content is in <a href="xact-eom-and-emt.nb">this notebook - xact-eom-and-emt.nb</a> written in the following style:</p>
 <p><img src="../xact-eom-and-emt/xact-eom-and-emt-screenshot.svg" class="center"></p>
@@ -638,24 +632,25 @@ see e.g.
 </li>
 </ul>
 <h2 id="some-further-explanations">Some further explanations</h2>
-<h3 id="function-xactxpertperturbation">Function <code class="highlight"><span class="nv">xAct`xPert`Perturbation</span></code></h3>
-<p>扩展包 xPert 提供了变分与度规微扰的相关函数。变分函数 <code class="highlight"><span class="nv">Perturbation</span></code> 内置了变分满足的线性性和 Leibniz 规则，例如 <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> 便是 <span class="arithmatex">\(\delta A_{a}\)</span>，被打印为 <span class="arithmatex">\(\triangle[A_{a}]\)</span>，例如对电磁场作用量的变分为</p>
+<h1 id="function-xactxpertperturbation"><h3 class="nocount">Function <code class="highlight"><span class="nv">xAct`xPert`Perturbation</span></code></h3></h1>
+<p>The xPert package provides functions of variations and metric perturbations. The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz's rule of variations. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>, </p>
+<p>The variation of the electromagnetic field action is</p>
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
-<p>对作用量中的三个因子的分别变分，展开给出三项，</p>
+<p>The variation of three factors in the action are expanded to give three terms</p>
 <div class="arithmatex">\[\begin{equation}
 \triangle [\cL_{A}]=
 \tfrac{1}{4} \bigl(- \frac{F_{ab} F^{ab} \triangle [\overset{\overset{~}{~}}{g}]}{2 (- \overset{\overset{~}{~}}{g})^{1/2}} + (- \overset{\overset{~}{~}}{g})^{1/2} F^{ab} \triangle [F_{ab}] + (- \overset{\overset{~}{~}}{g})^{1/2} F_{ab} \triangle [F^{ab}]\bigr)
 \end{equation}\]</div>
-<p>被变分的基本场为规范势 <span class="arithmatex">\(A\)</span> 而非场强 <span class="arithmatex">\(F\)</span>，因此利用规则 <code class="highlight"><span class="nv">ruleFToA</span></code> 展开 <span class="arithmatex">\(F\)</span>，</p>
+<p>The fundamental field being varied is the gauge potential <span class="arithmatex">\(A\)</span> instead of the field strength <span class="arithmatex">\(F\)</span>, so we need to expand <span class="arithmatex">\(F\)</span> by the rule <code class="highlight"><span class="nv">ruleFToA</span></code>,</p>
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="o">@</span><span class="nv">A</span><span class="o">/.</span><span class="nv">ruleFToA</span><span class="o">//</span><span class="nv">tensorSim</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
 <div class="arithmatex">\[\begin{equation}
 \triangle [\cL_{A}]=
 \tfrac{1}{2} \Bigl((- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a} -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr)
 \end{equation}\]</div>
-<p>注意 <span class="arithmatex">\(\delta A^{a}\)</span> 隐含度规缩并 <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>。需要将 <span class="arithmatex">\(\delta L\)</span> 展开成 <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span> 的形式，<span class="arithmatex">\(\delta A_{a}\)</span> 的系数给出场方程，<span class="arithmatex">\(\delta g\)</span> 的系数给出能动张量，括号中含有关于变分的协变导数，需要通过分部积分来消除。</p>
-<p>基于 <code class="highlight"><span class="nv">Perturbation</span></code>，函数 <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span></code> 提供了抽取系数以及分部积分的功能，其中第一个自变量表示变分场，第二个自变量表示关于协变导数 <code class="highlight"><span class="nv">CD</span></code> 进行分部积分。</p>
+<p>The variation <span class="arithmatex">\(\delta A^{a}\)</span> contains metric contraction <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>, hence we need to expand <span class="arithmatex">\(\delta L\)</span> into <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span>. Then the coefficient of <span class="arithmatex">\(\delta A_{a}\)</span> gives the equation of motion, and that of <span class="arithmatex">\(\delta g\)</span> gives the stress tensor. There are covariant derivatives in the bracket, which can be eliminated by IBP. </p>
+<p>Based on <code class="highlight"><span class="nv">Perturbation</span></code>, <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span></code> provides the functionality of extracting coefficients and IBP, where the first argument specifies the variational field and the second one specifies IBP with respect to the covariance derivative <code class="highlight"><span class="nv">CD</span></code>.</p>
 <div class="footnote">
 <hr />
 <ol>
