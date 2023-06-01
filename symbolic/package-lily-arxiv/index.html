@@ -420,13 +420,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#extract-search-and-download-by-title" class="md-nav__link">
-    Extract, search and download by title
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -492,7 +485,7 @@
 
 <!-- Page content -->
 <h1 id="package-lilyarxiv">Package <code class="highlight"><span class="nv">lily`arxiv`</span></code></h1>
-<p>A Mathematica package for searching, downloading and renaming arXiv preprints by ID or title.</p>
+<p>A Mathematica package for downloading preprints and generating BibTeX by arXiv ID.</p>
 <p>The GitHub repository is <a href="https://github.com/yuriever/lily-arxiv">yuriever/lily-arxiv</a>.</p>
 <p>This package uses the following APIs:</p>
 <ul>
@@ -619,62 +612,6 @@
 <p>Default options are the same as <code class="highlight"><span class="nv">extractID</span></code>.</p>
 </li>
 </ul>
-<h3 id="extract-search-and-download-by-title">Extract, search and download by title</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">extractTitle</span><span class="p">[</span><span class="s">&quot;file&quot;</span><span class="o">|</span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - extract title from the first page of PDF by searching grouped texts with larger Y coordinates and fontsizes. This is similar to the Python package <a href="https://github.com/metebalci/pdftitle">pdftitle</a>. The typical output is like </p>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">}|&gt;}</span>
-</code></pre></div>
-<p>Default options:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;hidePath&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - if the tag is <code class="highlight"><span class="s">&quot;path&quot;</span></code>, the root path of file names will be hidden.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;mergeDuplicateTitle&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - the result will be gathered and sorted by <code class="highlight"><span class="s">&quot;title&quot;</span></code>. Otherwise there can be duplicate titles from different positions.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;titleExtractMethod&quot;</span><span class="o">-&gt;</span><span class="s">&quot;plusYAndFontSize&quot;</span></code> - select grouped texts by summing normalized Y coordinates and fontsizes. Another choice is <code class="highlight"><span class="s">&quot;sortYAndFontSize&quot;</span></code> by sorting larger Y coordinates and fontsizes.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;YResolution&quot;</span><span class="o">-&gt;</span><span class="m">25</span></code> - the text elements extracted from the first page will be grouped according to the Y coordinate with resolution <code class="highlight"><span class="s">&quot;YResolution&quot;</span></code>.</p>
-</li>
-</ul>
-<p><strong>TODO: test and improve the accuracy (by SVM or some NN?)</strong></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">searchByTitle</span><span class="p">[</span><span class="s">&quot;file&quot;</span><span class="o">|</span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - search by titles extracted from file or path, and return the best-matched items on arXiv with formatted names by fileNameFormatter. The best match item is picked by minimizing <code class="highlight"><span class="nb">EditDistance</span></code>. The typical output is like </p>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;item&quot;</span><span class="o">-&gt;</span><span class="s">&quot;formatted name&quot;</span><span class="p">,</span><span class="s">&quot;URL&quot;</span><span class="o">-&gt;</span><span class="s">&quot;URL.pdf&quot;</span><span class="p">,</span><span class="s">&quot;distance&quot;</span><span class="o">-&gt;</span><span class="nv">editDistance</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">},|&gt;}</span>
-</code></pre></div>
-<p>Default options:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;hidePath&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - if the tag is <code class="highlight"><span class="s">&quot;path&quot;</span></code>, the root path of file names will be hidden.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;mergeDuplicateTitle&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - the result will be gathered and sorted by <code class="highlight"><span class="s">&quot;title&quot;</span></code>. Otherwise there can be duplicate titles from different positions.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;titleExtractMethod&quot;</span><span class="o">-&gt;</span><span class="s">&quot;plusYAndFontSize&quot;</span></code> - select grouped texts by summing normalized Y coordinates and fontsizes. Another choice is <code class="highlight"><span class="s">&quot;sortYAndFontSize&quot;</span></code> by sorting larger Y coordinates and fontsizes.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;YResolution&quot;</span><span class="o">-&gt;</span><span class="m">25</span></code> - the text elements extracted from the first page will be grouped according to the Y coordinate with resolution <code class="highlight"><span class="s">&quot;YResolution&quot;</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;fileNameRegulate&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - special characters will be replaced in the formatted name by <code class="highlight"><span class="nv">fileNameRegulate</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;maxItems&quot;</span><span class="o">-&gt;</span><span class="m">10</span></code> - the number of items when searching a title.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">downloadByTitle</span><span class="p">[</span><span class="nt">targetPath_</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">|</span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_String</span><span class="o">|</span><span class="nt">_List</span><span class="p">]</span></code> - download by titles extracted from file or path to the target path, and return the file objects with formatted names by fileNameFormatter. The typical output is like </p>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;item&quot;</span><span class="o">-&gt;</span><span class="s">&quot;formatted name&quot;</span><span class="p">,</span><span class="s">&quot;URL&quot;</span><span class="o">-&gt;</span><span class="s">&quot;URL.pdf&quot;</span><span class="p">,</span><span class="s">&quot;distance&quot;</span><span class="o">-&gt;</span><span class="nv">editDistance</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">},</span><span class="s">&quot;fileObject&quot;</span><span class="o">-&gt;</span><span class="s">&quot;file.pdf&quot;</span><span class="p">|&gt;}</span>
-</code></pre></div>
-<p>Default options are the same as <code class="highlight"><span class="nv">searchByTitle</span></code>.</p>
-</li>
-</ul>
 <h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
 <ul>
 <li>
@@ -683,10 +620,60 @@
 <li>
 <p>Output: the returned value is either list of strings or dataset of associations storing relevant data, and downloading file is treated as side effect.</p>
 </li>
-<li>
-<p>TODO: rename files by ID or title.</p>
-</li>
 </ul>
+<!--### Extract, search and download by title
+
+* `#!wl extractTitle["file"|"path",opts_][_String|_List]` - extract title from the first page of PDF by searching grouped texts with larger Y coordinates and fontsizes. This is similar to the Python package [pdftitle](https://github.com/metebalci/pdftitle). The typical output is like 
+
+    <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">}|&gt;}</span>
+</code></pre></div>
+
+    Default options:
+
+    * `#!wl "hidePath"->True` - if the tag is `#!wl "path"`, the root path of file names will be hidden.
+
+    * `#!wl "mergeDuplicateTitle"->True` - the result will be gathered and sorted by `#!wl "title"`. Otherwise there can be duplicate titles from different positions.
+
+    * `#!wl "titleExtractMethod"->"plusYAndFontSize"` - select grouped texts by summing normalized Y coordinates and fontsizes. Another choice is `#!wl "sortYAndFontSize"` by sorting larger Y coordinates and fontsizes.
+
+    * `#!wl "YResolution"->25` - the text elements extracted from the first page will be grouped according to the Y coordinate with resolution `#!wl "YResolution"`.
+
+    __TODO: test and improve the accuracy (by SVM or some NN?)__
+
+* `#!wl searchByTitle["file"|"path",opts_][_String|_List]` - search by titles extracted from file or path, and return the best-matched items on arXiv with formatted names by fileNameFormatter. The best match item is picked by minimizing `#!wl EditDistance`. The typical output is like 
+
+    <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;item&quot;</span><span class="o">-&gt;</span><span class="s">&quot;formatted name&quot;</span><span class="p">,</span><span class="s">&quot;URL&quot;</span><span class="o">-&gt;</span><span class="s">&quot;URL.pdf&quot;</span><span class="p">,</span><span class="s">&quot;distance&quot;</span><span class="o">-&gt;</span><span class="nv">editDistance</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">},|&gt;}</span>
+</code></pre></div>
+
+    Default options:
+
+    * `#!wl "hidePath"->True` - if the tag is `#!wl "path"`, the root path of file names will be hidden.
+
+    * `#!wl "mergeDuplicateTitle"->True` - the result will be gathered and sorted by `#!wl "title"`. Otherwise there can be duplicate titles from different positions.
+
+    * `#!wl "titleExtractMethod"->"plusYAndFontSize"` - select grouped texts by summing normalized Y coordinates and fontsizes. Another choice is `#!wl "sortYAndFontSize"` by sorting larger Y coordinates and fontsizes.
+
+    * `#!wl "YResolution"->25` - the text elements extracted from the first page will be grouped according to the Y coordinate with resolution `#!wl "YResolution"`.
+
+    * `#!wl "fileNameRegulate"->True` - special characters will be replaced in the formatted name by `#!wl fileNameRegulate`.
+
+    * `#!wl "maxItems"->10` - the number of items when searching a title.
+
+* `#!wl downloadByTitle[targetPath_,"file"|"path",opts_][_String|_List]` - download by titles extracted from file or path to the target path, and return the file objects with formatted names by fileNameFormatter. The typical output is like 
+
+    <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{&lt;|</span><span class="s">&quot;title&quot;</span><span class="o">-&gt;</span><span class="s">&quot;extracted title&quot;</span><span class="p">,</span><span class="s">&quot;item&quot;</span><span class="o">-&gt;</span><span class="s">&quot;formatted name&quot;</span><span class="p">,</span><span class="s">&quot;URL&quot;</span><span class="o">-&gt;</span><span class="s">&quot;URL.pdf&quot;</span><span class="p">,</span><span class="s">&quot;distance&quot;</span><span class="o">-&gt;</span><span class="nv">editDistance</span><span class="p">,</span><span class="s">&quot;file&quot;</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&quot;file1&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">},</span><span class="s">&quot;fileObject&quot;</span><span class="o">-&gt;</span><span class="s">&quot;file.pdf&quot;</span><span class="p">|&gt;}</span>
+</code></pre></div>
+
+    Default options are the same as `#!wl searchByTitle`.
+
+
+## To-do list and other issues
+
+* The workflow can be found in [arxiv.pdf](https://github.com/yuriever/lily-arxiv/blob/main/arxiv/arxiv.pdf).
+
+* Output: the returned value is either list of strings or dataset of associations storing relevant data, and downloading file is treated as side effect.
+
+* TODO: rename files by ID or title.-->
 
 <!-- Source file information -->
 
