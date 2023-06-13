@@ -426,16 +426,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#functionality-without-context" class="md-nav__link">
-    Functionality without context*
+  <a href="#functionalities-without-context" class="md-nav__link">
+    Functionalities without context*
   </a>
   
-    <nav class="md-nav" aria-label="Functionality without context*">
+    <nav class="md-nav" aria-label="Functionalities without context*">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#invertible-conversion-of-expression-and-string" class="md-nav__link">
     Invertible conversion of expression and string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questing-function" class="md-nav__link">
+    Questing function
   </a>
   
 </li>
@@ -453,11 +460,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#functionality-with-context" class="md-nav__link">
-    Functionality with context*
+  <a href="#functionalities-with-context" class="md-nav__link">
+    Functionalities with context*
   </a>
   
-    <nav class="md-nav" aria-label="Functionality with context*">
+    <nav class="md-nav" aria-label="Functionalities with context*">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -484,13 +491,6 @@
           <li class="md-nav__item">
   <a href="#formatting" class="md-nav__link">
     Formatting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-functions" class="md-nav__link">
-    Other functions
   </a>
   
 </li>
@@ -643,14 +643,22 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 <span class="nv">contextAdd</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">][{</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="nv">f</span><span class="o">-&gt;</span><span class="nb">Superscript</span><span class="p">},{</span><span class="nv">star</span><span class="p">}]</span>
 <span class="nv">contextDefault</span><span class="p">[</span><span class="s">&quot;ctx&quot;</span><span class="p">]</span>
 </code></pre></div>
-<h2 id="functionality-without-context">Functionality without <code class="highlight"><span class="nv">context</span><span class="o">*</span></code></h2>
+<h2 id="functionalities-without-context">Functionalities without <code class="highlight"><span class="nv">context</span><span class="o">*</span></code></h2>
+<p>The following symbols are in <code class="highlight"><span class="nv">lily`preindex`</span></code> and do not depend on <code class="highlight"><span class="nv">lily`class`</span></code>.</p>
 <h3 id="invertible-conversion-of-expression-and-string">Invertible conversion of expression and string</h3>
 <ul>
+<li>
+<p><code class="highlight"><span class="nv">null</span></code> - represent the empty string under <code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span></code>.</p>
+</li>
 <li>
 <p><code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - invertible version of <code class="highlight"><span class="nb">ToString</span></code> and <code class="highlight"><span class="nb">ToExpression</span></code>.</p>
 <p>The kernel functions will first convert symbols to strings, use string pattern matching to perform evaluation, and finally convert back to symbols if necessary. The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>. To override this, we introduce the public symbol <code class="highlight"><span class="nv">null</span></code> representing empty string and the function pair <code class="highlight"><span class="nv">toSymbol</span><span class="p">,</span><span class="w"> </span><span class="nv">toString</span></code>. </p>
 <p>By default, Every context and the default context contains the symbol <code class="highlight"><span class="nv">null</span></code>.</p>
 </li>
+</ul>
+<h3 id="questing-function">Questing function</h3>
+<ul>
+<li><code class="highlight"><span class="nv">scriptQ</span><span class="p">[</span><span class="nt">_Integer</span><span class="o">|</span><span class="nt">_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - null/"", natural number or single letter.</li>
 </ul>
 <h3 id="kernel-function-indexize">Kernel function: <code class="highlight"><span class="nv">indexize</span></code></h3>
 <ul>
@@ -690,7 +698,7 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </code></pre></div>
 </li>
 </ul>
-<h2 id="functionality-with-context">Functionality with <code class="highlight"><span class="nv">context</span><span class="o">*</span></code></h2>
+<h2 id="functionalities-with-context">Functionalities with <code class="highlight"><span class="nv">context</span><span class="o">*</span></code></h2>
 <h3 id="questing-functions">Questing functions</h3>
 <ul>
 <li>
@@ -701,9 +709,6 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </li>
 <li>
 <p><code class="highlight"><span class="nv">variableLabelQ</span><span class="p">[</span><span class="nt">_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - Symbol/String: variableLabel/variableLabelString.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">scriptQ</span><span class="p">[</span><span class="nt">_Integer</span><span class="o">|</span><span class="nt">_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - null/"", natural number or single letter.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">labelScriptQ</span><span class="p">[</span><span class="nt">_Integer</span><span class="o">|</span><span class="nt">_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - label + script.</p>
@@ -795,7 +800,6 @@ The position of label <span class="arithmatex">\(\dagger\)</span> is stored in t
 </code></pre></div>
 </li>
 </ul>
-<h3 id="other-functions">Other functions</h3>
 <h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
 
 <!-- Source file information -->
