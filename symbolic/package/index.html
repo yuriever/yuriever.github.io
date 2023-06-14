@@ -385,6 +385,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workbench" class="md-nav__link">
+    Workbench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stable-packages" class="md-nav__link">
+    Stable packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unstable-packages" class="md-nav__link">
+    Unstable packages
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -436,23 +465,97 @@
 
 <!-- Page content -->
 <h1 id="package-dependency">Package dependency</h1>
+<h2 id="workbench">Workbench</h2>
 <div class="admonition mark">
-<p class="admonition-title">Packages <code class="highlight"><span class="nv">lily`</span><span class="o">*</span><span class="err">`</span></code></p>
+<p class="admonition-title"><code class="highlight"><span class="nv">lily`</span><span class="o">*</span><span class="err">`</span></code></p>
 <pre class="mermaid"><code>graph TD
 
-base --&gt; test &amp; IO &amp; temp
+subgraph lily`base`
+    base &amp; IO &amp; object &amp; test &amp; virtual &amp; week
+end
 
-cls[class] --&gt; index &amp; algebra
+subgraph lily`math`
+    hyper &amp; IBP &amp; lie &amp; matrix &amp; number &amp; simplify
+end
+
+base &amp; IO &amp; test &amp; simplify --&gt; lily</code></pre>
+</div>
+<div class="admonition mark">
+<p class="admonition-title">LaTeX</p>
+<pre class="mermaid"><code>graph TD
 
 MaTeX --&gt; latex
 
-number &amp; matrix &amp; simplify &amp; lie &amp; IBP
-</code></pre>
+latex --&gt; latex`algebra</code></pre>
+</div>
+<h2 id="stable-packages">Stable packages</h2>
+<div class="admonition mark">
+<p class="admonition-title">index and algebra</p>
+<pre class="mermaid"><code>graph TD
+
+subgraph lily`class`
+    cls
+end
+
+subgraph lily`index`
+    preindex &amp; index
+end
+
+subgraph lily`algebra`
+    algebra
+end
+
+cls[class] &amp; preindex --&gt; index
+
+cls --&gt; algebra</code></pre>
 </div>
 <div class="admonition mark">
-<p class="admonition-title">Deprecated packages</p>
+<p class="admonition-title">arXiv</p>
 <pre class="mermaid"><code>graph TD
-list --&gt; cls1["list`index"] &amp; cls2["list`algebra"]</code></pre>
+
+arxiv</code></pre>
+</div>
+<h2 id="unstable-packages">Unstable packages</h2>
+<div class="admonition mark">
+<p class="admonition-title">CFT</p>
+<pre class="mermaid"><code>graph TD
+
+subgraph lily`algebra`
+    algebra
+end
+
+subgraph lily`index`
+    index &amp; preindex
+end
+
+subgraph lily`catesian`
+    catesian
+end
+
+subgraph lily`cft`
+    embedding &amp; symmetry &amp; variable
+end
+
+subgraph lily`cft1d`
+    coordinate &amp; kinematics &amp; cft1d`symmetry
+end
+
+
+preindex --&gt; index
+
+preindex --&gt; catesian
+
+catesian --&gt; embedding
+
+catesian &amp; algebra --&gt; symmetry
+
+index --&gt; variable
+
+variable --&gt; coordinate
+
+coordinate --&gt; kinematics
+
+coordinate &amp; algebra --&gt; cft1d`symmetry</code></pre>
 </div>
 
 <!-- Source file information -->

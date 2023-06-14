@@ -792,6 +792,9 @@ end</code></pre>
 <h3 id="public-methods">Public methods</h3>
 <ul>
 <li>
+<p><code class="highlight"><span class="nv">instanceDefineQ</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instance_</span><span class="o">|</span><span class="nt">instanceList_</span><span class="p">]</span></code> - check whether the instance is defined, or split the list of instances into defined and undefined.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nv">instanceDefine</span><span class="p">[</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">,</span><span class="nt">property_</span><span class="o">:</span><span class="nb">Null</span><span class="p">]</span></code> - define the instances.</p>
 </li>
 <li>
@@ -816,16 +819,16 @@ end</code></pre>
 <p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="o">_</span><span class="p">][</span><span class="o">__</span><span class="p">]</span></code> - the inputs will be checked by this private method before calling public methods:</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifClassNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;classAbortUndef&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifInstanceNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;instanceReportUndefAndReturnDef&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifInstanceHasDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;instanceReportDefAndReturnUndef&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">instanceList_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;ifMemberNotDefined&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">memberList_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nv">instanceDefineCheck</span><span class="p">[</span><span class="s">&quot;memberAbortUndef&quot;</span><span class="p">][</span><span class="nt">class_</span><span class="p">,</span><span class="nt">memberList_</span><span class="p">]</span></code></p>
 </li>
 </ul>
 </li>
