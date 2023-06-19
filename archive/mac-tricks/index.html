@@ -399,8 +399,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-the-universal-clipboard" class="md-nav__link">
-    Fix the universal clipboard
+  <a href="#hide-files-on-terminal" class="md-nav__link">
+    Hide files on terminal
   </a>
   
 </li>
@@ -474,15 +474,8 @@
 </ul>
 <hr />
 <p><code>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt; Others &gt; Unicode hex input</code></p>
-<h2 id="fix-the-universal-clipboard">Fix the universal clipboard</h2>
-<p>References:</p>
-<ul>
-<li><a href="https://discussions.apple.com/thread/253274114">https://discussions.apple.com/thread/253274114</a></li>
-</ul>
-<hr />
-<div class="highlight"><pre><span></span><code>defaults<span class="w"> </span>delete<span class="w"> </span>~/Library/Preferences/com.apple.coreservices.useractivityd.plist<span class="w"> </span>ClipboardSharingEnabled
-
-defaults<span class="w"> </span>write<span class="w"> </span>~/Library/Preferences/com.apple.coreservices.useractivityd.plist<span class="w"> </span>ClipboardSharingEnabled<span class="w"> </span><span class="m">1</span>
+<h2 id="hide-files-on-terminal">Hide files on terminal</h2>
+<div class="highlight"><pre><span></span><code>chflags hidden /path/the_file
 </code></pre></div>
 <h2 id="link-python-from-pyenv-to-homebrew">Link Python from pyenv to Homebrew</h2>
 <p>References:</p>

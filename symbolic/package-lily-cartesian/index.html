@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/package/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/package-lily-cartesian/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Package dependency - Sora</title>
+        <title>Package lily`cartesian` - Sora</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#package-dependency" class="md-skip">
+        <a href="#package-lilycartesian" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Package dependency
+              Package lily`cartesian`
             
           </span>
         </div>
@@ -392,22 +392,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#workbench" class="md-nav__link">
-    Workbench
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stable-packages" class="md-nav__link">
-    Stable packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unstable-packages" class="md-nav__link">
-    Unstable packages
+  <a href="#functionalities" class="md-nav__link">
+    Functionalities
   </a>
   
 </li>
@@ -464,93 +450,43 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="package-dependency">Package dependency</h1>
-<h2 id="workbench">Workbench</h2>
-<div class="admonition mark">
-<p class="admonition-title"><code class="highlight"><span class="nv">lily`</span><span class="o">*</span><span class="err">`</span></code></p>
-<pre class="mermaid"><code>graph TD
-
-subgraph lily`base`
-    base &amp; IO &amp; object &amp; test &amp; virtual &amp; week
-end
-
-subgraph lily`math`
-    hyper &amp; IBP &amp; lie &amp; matrix &amp; number &amp; simplify
-end
-
-base &amp; IO &amp; test &amp; simplify --&gt; lily</code></pre>
-</div>
-<div class="admonition mark">
-<p class="admonition-title">LaTeX</p>
-<pre class="mermaid"><code>graph TD
-
-MaTeX --&gt; latex
-
-latex --&gt; latex`algebra</code></pre>
-</div>
-<h2 id="stable-packages">Stable packages</h2>
-<div class="admonition mark">
-<p class="admonition-title">index and algebra</p>
-<pre class="mermaid"><code>graph TD
-
-subgraph lily`class`
-    cls
-end
-
-subgraph lily`algebra`
-    algebra
-end
-
-subgraph lily`index`
-    preindex &amp; index &amp; catesian
-end
-
-cls --&gt; algebra
-
-cls[class] &amp; preindex --&gt; index
-
-preindex --&gt; catesian</code></pre>
-</div>
-<div class="admonition mark">
-<p class="admonition-title">arXiv</p>
-<pre class="mermaid"><code>graph TD
-
-arxiv</code></pre>
-</div>
-<h2 id="unstable-packages">Unstable packages</h2>
-<div class="admonition mark">
-<p class="admonition-title">CFT</p>
-<pre class="mermaid"><code>graph TD
-
-subgraph lily`algebra`
-    algebra
-end
-
-subgraph lily`index`
-    index &amp; catesian
-end
-
-subgraph lily`cft`
-    embedding &amp; symmetry &amp; variable
-end
-
-subgraph lily`cft1d`
-    coordinate &amp; kinematics &amp; cft1d`symmetry
-end
-
-
-catesian --&gt; embedding
-
-catesian &amp; algebra --&gt; symmetry
-
-index --&gt; variable
-
-variable --&gt; coordinate
-
-coordinate --&gt; kinematics
-
-coordinate &amp; algebra --&gt; cft1d`symmetry</code></pre>
-</div>
+<h1 id="package-lilycartesian">Package <code class="highlight"><span class="nv">lily`cartesian`</span></code></h1>
+<p>A Mathematica package handling Cartesian coordinates and metrics.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/lily-index">yuriever/lily-index</a>.</p>
+<h2 id="functionalities">Functionalities</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">initiateCartesian</span></code> - check whether the input metric and coordinates are valid, then write to the definitions of <code class="highlight"><span class="s">&quot;metric*&quot;</span></code> and <code class="highlight"><span class="s">&quot;coord*&quot;</span></code>. The first argument specifies the temporal and spatial coordinates, and the second is the flat relativistic or Carrollian metric.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">initiateCartesian</span><span class="p">[{{</span><span class="m">0</span><span class="p">},{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">}},</span><span class="nb">DiagonalMatrix</span><span class="o">@</span><span class="p">{</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The $metric and $coord are valid.&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coord</span><span class="o">|</span><span class="nv">coordS</span><span class="o">|</span><span class="nv">coordT</span></code> - indices of spacetime/space/time coordinates.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordQ</span><span class="o">|</span><span class="nv">coordSQ</span><span class="o">|</span><span class="nv">coordTQ</span></code> - test whether is a spacetime/space/time coordinate index.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordDim</span></code> - spacetime dimension.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordOrdering</span></code> - ordering of indices according to <code class="highlight"><span class="nv">coord</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordPart</span></code> - <code class="highlight"><span class="nb">Part</span></code> according to <code class="highlight"><span class="nv">coord</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">metric</span><span class="o">|</span><span class="nv">metricInv</span><span class="o">|</span><span class="nv">metricMat</span><span class="o">|</span><span class="nv">metricInvMat</span></code> - metric and inverse metric.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">super</span><span class="o">|</span><span class="nv">sub</span><span class="o">|</span><span class="nv">square</span><span class="o">|</span><span class="nv">dot</span></code> - generate atomic symbols of <span class="arithmatex">\(x^{a},x_{a},x^{a}x_{a},x^{a} y_{a}\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">superDV</span><span class="o">|</span><span class="nv">subDV</span><span class="o">|</span><span class="nv">squareDV</span><span class="o">|</span><span class="nv">dotDV</span></code> - generate <code class="highlight"><span class="nb">DownValues</span></code> symbols of <span class="arithmatex">\(x^{a},x_{a},x^{a}x_{a},x^{a} y_{a}\)</span>.</p>
+</li>
+</ul>
 
 <!-- Source file information -->
 

@@ -546,10 +546,10 @@
 <p><strong>TODO</strong>: write a Mathematica script for sync.</p>
 <ul>
 <li>
-<p>Mathematica project</p>
-<div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="p">[{</span><span class="nb">$UserBaseDirectory</span><span class="p">,</span><span class="s">&quot;Applications&quot;</span><span class="p">}]</span>
+<p>User Mathematica initialization file</p>
+<div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="o">@</span><span class="p">{</span><span class="nb">$UserBaseDirectory</span><span class="p">,</span><span class="s">&quot;Kernel&quot;</span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>~/Library/Mathematica/Applications
+<div class="highlight"><pre><span></span><code>~/Library/Mathematica/Kernel
 </code></pre></div>
 </li>
 <li>
@@ -557,11 +557,6 @@
 <div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="p">[{</span><span class="nb">$InstallationDirectory</span><span class="p">,</span><span class="s">&quot;SystemFiles&quot;</span><span class="p">,</span><span class="s">&quot;FrontEnd&quot;</span><span class="p">,</span><span class="s">&quot;TextResources&quot;</span><span class="p">,</span><span class="s">&quot;Macintosh&quot;</span><span class="p">}]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>/Applications/Mathematica.app/Contents/SystemFiles/FrontEnd/TextResources/Macintosh
-</code></pre></div>
-</li>
-<li>
-<p>Karabiner preference</p>
-<div class="highlight"><pre><span></span><code>~/.config/karabiner
 </code></pre></div>
 </li>
 </ul>
