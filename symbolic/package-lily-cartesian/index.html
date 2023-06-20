@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -396,6 +396,40 @@
     Functionalities
   </a>
   
+    <nav class="md-nav" aria-label="Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordweight" class="md-nav__link">
+    coord*|weight*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metric" class="md-nav__link">
+    metric*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-generation" class="md-nav__link">
+    Variable generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-shift" class="md-nav__link">
+    Variable shift
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -451,40 +485,98 @@
 
 <!-- Page content -->
 <h1 id="package-lilycartesian">Package <code class="highlight"><span class="nv">lily`cartesian`</span></code></h1>
-<p>A Mathematica package handling Cartesian coordinates and metrics.</p>
+<p>A Mathematica package handling Cartesian coordinates and metrics, suitable for lower dimensions.</p>
 <p>The GitHub repository is <a href="https://github.com/yuriever/lily-index">yuriever/lily-index</a>.</p>
 <h2 id="functionalities">Functionalities</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">initiateCartesian</span></code> - check whether the input metric and coordinates are valid, then write to the definitions of <code class="highlight"><span class="s">&quot;metric*&quot;</span></code> and <code class="highlight"><span class="s">&quot;coord*&quot;</span></code>. The first argument specifies the temporal and spatial coordinates, and the second is the flat relativistic or Carrollian metric.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">initiateCartesian</span><span class="p">[{{</span><span class="m">0</span><span class="p">},{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">}},</span><span class="nb">DiagonalMatrix</span><span class="o">@</span><span class="p">{</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">}]</span>
+<p><code class="highlight"><span class="nv">initiateCartesian</span></code> - check whether the input indices of coordinates and metric are valid, then write to the definitions of <code class="highlight"><span class="nv">coord</span><span class="o">*</span></code>, <code class="highlight"><span class="nv">weight</span><span class="o">*</span></code>, etc. The first and second arguments specifies the coordinates and weights of operators. The third and fourth arguments specifies the labels of coordinates and weights. The last argument specifies the relativistic or Carrollian metric.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">initiateCartesian</span><span class="p">[{{},{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}},{</span><span class="nv">h</span><span class="p">,</span><span class="nv">hb</span><span class="p">},{},{</span><span class="nv">shadow</span><span class="p">},{{</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">},{</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">,</span><span class="m">0</span><span class="p">}}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The $metric and $coord are valid.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The input coordinates, weights, labels and metric are valid.&quot;</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;The default contexts: coord, weight.&quot;</span>
 </code></pre></div>
 </li>
+</ul>
+<h3 id="coordweight"><code class="highlight"><span class="nv">coord</span><span class="o">*|</span><span class="nv">weight</span><span class="o">*</span></code></h3>
+<ul>
 <li>
-<p><code class="highlight"><span class="nv">coord</span><span class="o">|</span><span class="nv">coordS</span><span class="o">|</span><span class="nv">coordT</span></code> - indices of spacetime/space/time coordinates.</p>
+<p><code class="highlight"><span class="nv">coord</span><span class="o">|</span><span class="nv">coordS</span><span class="o">|</span><span class="nv">coordT</span></code> - spacetime/space/time coordinates.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">coordQ</span><span class="o">|</span><span class="nv">coordSQ</span><span class="o">|</span><span class="nv">coordTQ</span></code> - test whether is a spacetime/space/time coordinate index.</p>
+<p><code class="highlight"><span class="nv">coordQ</span><span class="o">|</span><span class="nv">coordSQ</span><span class="o">|</span><span class="nv">coordTQ</span><span class="p">[</span><span class="nt">symbols__</span><span class="p">]</span></code> - test whether is a spacetime/space/time coordinate.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordLabel</span></code> - labels of coordinates.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">weight</span></code> - weights of operators.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">weightLabel</span></code> - labels of weights.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">coordWeight</span></code> - <code class="highlight"><span class="nv">coord</span></code> + <code class="highlight"><span class="nv">weight</span></code>.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">coordDim</span></code> - spacetime dimension.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">coordOrdering</span></code> - ordering of indices according to <code class="highlight"><span class="nv">coord</span></code>.</p>
+<p><code class="highlight"><span class="nv">coordOrdering</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span></code> - ordering of coordinates.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">coordPart</span></code> - <code class="highlight"><span class="nb">Part</span></code> according to <code class="highlight"><span class="nv">coord</span></code>.</p>
+<p><code class="highlight"><span class="nv">coordPart</span><span class="p">[</span><span class="nt">pos___</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Part</span></code> according to <code class="highlight"><span class="nv">coord</span></code>.</p>
+</li>
+</ul>
+<h3 id="metric"><code class="highlight"><span class="nv">metric</span><span class="o">*</span></code></h3>
+<ul>
+<li><code class="highlight"><span class="nv">metric</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">metricInv</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">metricMat</span><span class="o">|</span><span class="nv">metricInvMat</span></code> - metric and inverse metric.</li>
+</ul>
+<h3 id="variable-generation">Variable generation</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">vars</span></code> - generate multiple coordinates and weights.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">vars</span><span class="p">[</span><span class="o">___</span><span class="p">]</span></code> - both coordinates and weights.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">metric</span><span class="o">|</span><span class="nv">metricInv</span><span class="o">|</span><span class="nv">metricMat</span><span class="o">|</span><span class="nv">metricInvMat</span></code> - metric and inverse metric.</p>
+<p><code class="highlight"><span class="nv">vars</span><span class="p">[{</span><span class="o">___</span><span class="p">},{</span><span class="o">___</span><span class="p">}]</span></code> - either coordinates or weights.</p>
+</li>
+</ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">super</span><span class="o">|</span><span class="nv">sub</span><span class="o">|</span><span class="nv">square</span><span class="o">|</span><span class="nv">dot</span></code> - generate atomic symbols of <span class="arithmatex">\(x^{a},x_{a},x^{a}x_{a},x^{a} y_{a}\)</span>.</p>
+<p><code class="highlight"><span class="nv">pats</span></code> - generate patterns of multiple coordinates and weights.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">pats</span><span class="p">[</span><span class="o">___</span><span class="p">]</span></code> - both coordinates and weights patterns.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">superDV</span><span class="o">|</span><span class="nv">subDV</span><span class="o">|</span><span class="nv">squareDV</span><span class="o">|</span><span class="nv">dotDV</span></code> - generate <code class="highlight"><span class="nb">DownValues</span></code> symbols of <span class="arithmatex">\(x^{a},x_{a},x^{a}x_{a},x^{a} y_{a}\)</span>.</p>
+<p><code class="highlight"><span class="nv">pats</span><span class="p">[{</span><span class="o">___</span><span class="p">},{</span><span class="o">___</span><span class="p">}]</span></code> - either coordinates or weights patterns.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">super</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">sub</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">square</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">dot</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - generate atomic symbols corresponding to <span class="arithmatex">\(x^{a},x_{a},x^{a}x_{a},x^{a} y_{a}\)</span>.</p>
+</li>
+</ul>
+<h3 id="variable-shift">Variable shift</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">shiftToZero</span><span class="p">[</span><span class="nt">indices__</span><span class="p">][</span><span class="nt">symbols__</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <span class="arithmatex">\(x_{1}\to 0\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">shiftToEqual</span><span class="p">[</span><span class="nt">rules__</span><span class="p">][</span><span class="nt">symbols__</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <span class="arithmatex">\(x_1 \to x_2\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">shiftToDiff</span><span class="p">[</span><span class="nt">rules__</span><span class="p">][</span><span class="nt">symbols__</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <span class="arithmatex">\(x_1\to x_{12} + x_{2}\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">shiftToDiffZero</span><span class="p">[</span><span class="nt">rules__</span><span class="p">][</span><span class="nt">symbols__</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <span class="arithmatex">\(x_1\to x_{12} + x_{2}, x_2\to 0\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">shiftToDiffBack</span><span class="p">[</span><span class="nt">rules__</span><span class="p">][</span><span class="nt">symbols__</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - <span class="arithmatex">\(x_{12}\to x_1 - x_2\)</span>.</p>
 </li>
 </ul>
 
@@ -535,7 +627,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
       

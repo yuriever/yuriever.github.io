@@ -2,152 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yuriever.github.io/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/hotkey/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/mac-tricks/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/archive/mathjax-configuration/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/2dSmatrixintegrability/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/cosmological-bootstrap/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/padic0/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/mathjax-test/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/regex/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/subtitle/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/tikz-test/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/web-dev/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/assoc-alg/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/evaluation-0/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/evaluation-1/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-algebra/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-arxiv/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-cartesian/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/symbolic/package-lily-cartesianIndex/</loc>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-class/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-index/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package-lily-preindex/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/package/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/paclet-package/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/tricks/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/xact-eom-and-emt/</loc>
-         <lastmod>2023-06-19</lastmod>
+         <lastmod>2023-06-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
