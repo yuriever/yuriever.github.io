@@ -532,15 +532,14 @@
 <p>The accepted keywords in <code class="highlight"><span class="nt">format_</span></code> include the following. If the preprint is not published yet, <code class="highlight"><span class="s">&quot;journal&quot;</span></code> will return an empty string.</p>
 <div class="highlight"><pre><span></span><code><span class="s">&quot;ID&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;date&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;author&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;firstAuthor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;firstThreeAuthor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;journal&quot;</span>
 </code></pre></div>
-<p>This function will translate the input format into a lambda function stored in the internal symbol <code class="highlight"><span class="nv">fileNameFormatter</span></code> which is further called by others.</p>
+<p>This function will translate the input format into a lambda function stored in the internal symbol <code class="highlight"><span class="nv">fileNameFormatter</span></code>, which is further called by others.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">fileNameInPath</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code> - return a list of PDF file names in the path.</p>
 </li>
-<li>
-<p><code class="highlight"><span class="nv">fileNameRegulate</span><span class="p">[</span><span class="nt">_String</span><span class="p">]</span></code> - regulate the file name with special characters like <code class="highlight"><span class="s">&quot;/&quot;</span></code> and <code class="highlight"><span class="s">&quot;\n&quot;</span></code>. The transformation rules are stored in <code class="highlight"><span class="nv">fileNameRegulate`ruleList</span></code>.</p>
-</li>
 </ul>
+<!--* `#!wl fileNameRegulate[_String]` - regulate the file name with special characters like `#!wl "/"` and `#!wl "\n"`. The transformation rules are stored in ``#!wl fileNameRegulate`ruleList``.-->
+
 <h3 id="extract-search-download-and-generate-bibtex-by-arxiv-id">Extract, search, download and generate BibTeX by arXiv ID</h3>
 <ul>
 <li>

@@ -392,8 +392,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#disable-key-bindings-of-option-on-mac" class="md-nav__link">
-    Disable key bindings of Option on Mac
+  <a href="#disable-key-bindings-of-option" class="md-nav__link">
+    Disable key bindings of Option
   </a>
   
 </li>
@@ -406,8 +406,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#link-python-from-pyenv-to-homebrew" class="md-nav__link">
-    Link Python from pyenv to Homebrew
+  <a href="#find-and-kill-process-on-port" class="md-nav__link">
+    Find and kill process on port
   </a>
   
 </li>
@@ -467,44 +467,14 @@
 <h1 id="mac-tricks">Mac tricks</h1>
 <p>System version: macOS Ventura 13.3.1</p>
 <hr />
-<h2 id="disable-key-bindings-of-option-on-mac">Disable key bindings of Option on Mac</h2>
-<p>References:</p>
-<ul>
-<li><a href="https://superuser.com/q/941286/1779050">https://superuser.com/q/941286/1779050</a></li>
-</ul>
-<hr />
+<h2 id="disable-key-bindings-of-option">Disable key bindings of <code>Option</code></h2>
 <p><code>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt; Others &gt; Unicode hex input</code></p>
 <h2 id="hide-files-on-terminal">Hide files on terminal</h2>
-<div class="highlight"><pre><span></span><code>chflags hidden /path/the_file
+<div class="highlight"><pre><span></span><code>chflags<span class="w"> </span>hidden<span class="w"> </span>/path/the-file
 </code></pre></div>
-<h2 id="link-python-from-pyenv-to-homebrew">Link Python from pyenv to Homebrew</h2>
-<p>References:</p>
-<ul>
-<li>
-<p><a href="https://stackoverflow.com/q/30499795/19286626">How can I make homebrew's python and pyenv live together?</a></p>
-</li>
-<li>
-<p><a href="https://github.com/pyenv/pyenv">Simple Python Version Management: pyenv</a></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>在终端中取消 Homebrew 自带的 Python 关联，</p>
-<div class="highlight"><pre><span></span><code>brew unlink python@3.x
+<h2 id="find-and-kill-process-on-port">Find and kill process on port</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-ti:xxxx,xxxx<span class="k">)</span>
 </code></pre></div>
-</li>
-<li>
-<p>连接 pyenv 安装的特定版本的 Python，</p>
-<div class="highlight"><pre><span></span><code>ln -s ~/.pyenv/versions/3.x.x $(brew --cellar python)/3.x.x
-</code></pre></div>
-</li>
-<li>
-<p>Homebrew 自动设定其它关联，依据提示覆盖相关文件。</p>
-<div class="highlight"><pre><span></span><code>brew link --overwrite python@3.10
-</code></pre></div>
-</li>
-</ul>
 
 <!-- Source file information -->
 
