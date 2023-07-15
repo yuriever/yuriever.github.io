@@ -418,6 +418,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#path-of-automators" class="md-nav__link">
+    Path of automators
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -474,14 +481,17 @@
 <p>System version: macOS Ventura 13.3.4</p>
 <hr />
 <h2 id="disable-key-bindings-of-option">Disable key bindings of <code>Option</code></h2>
-<p><code>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt; Others &gt; Unicode hex input</code></p>
+<p>System Preferences &gt; Keyboard &gt; Text input &gt; Input Sources &gt; + &gt; Others &gt; Unicode hex input</p>
 <h2 id="hide-or-show-files-on-terminal">Hide or show files on terminal</h2>
-<div class="highlight"><pre><span></span><code>chflags<span class="w"> </span>hidden<span class="w"> </span>/path/the-file
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>chflags<span class="w"> </span>nohidden<span class="w"> </span>/path/the-file
+<div class="highlight"><pre><span></span><code>chflags<span class="w"> </span>hidden<span class="w"> </span>&lt;path&gt;
+
+chflags<span class="w"> </span>nohidden<span class="w"> </span>&lt;path&gt;
 </code></pre></div>
 <h2 id="find-and-kill-process-on-port">Find and kill process on port</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-ti:xxxx,xxxx<span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-ti:&lt;port1&gt;,&lt;port2&gt;<span class="k">)</span>
+</code></pre></div>
+<h2 id="path-of-automators">Path of automators</h2>
+<div class="highlight"><pre><span></span><code>~/Library/Services
 </code></pre></div>
 
 <!-- Source file information -->
