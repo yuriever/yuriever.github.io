@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/evaluation-1/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/evaluation-sequence/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Expression and evaluation I - Sora</title>
+        <title>Standard evaluation sequence - Sora</title>
       
     
     
@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#moduli" class="md-skip">
+        <a href="#standard-evaluation-sequence" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Expression and evaluation I
+              Standard evaluation sequence
             
           </span>
         </div>
@@ -388,6 +388,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -485,22 +487,17 @@
   update to version 9.x
   https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
 -->
-<!--
-  <h1>Expression and evaluation I</h1>
--->
+<!---->
 
 <!-- Page content -->
-<h1>Expression and evaluation I
+<h1 id="standard-evaluation-sequence">Standard evaluation sequence</h1>
+<!--<h1>Expression and evaluation I
     <span class="subtitle">The standard evaluation sequence</span>
-</h1>
+</h1>-->
 
 <p>References:</p>
 <ul>
 <li>Mathematica documentation: <code>tutorial/Evaluation</code>, <code>tutorial/EvaluationOfExpressions</code></li>
-</ul>
-<p>Materials:</p>
-<ul>
-<li><a href="../evaluation/evaluation-1.nb">evaluation-1.nb</a></li>
 </ul>
 <h2 id="moduli">Moduli</h2>
 <!--It's convenient to treat a collection of similar objects as a unity, the properties of which reveal the relations between specific objects. Sometimes, the collection itself admits "nice" geometric structures, and we call it the moduli space.
@@ -566,7 +563,7 @@ In the following we will review the evaluation of expressions in Mathematica by 
 <div class="highlight"><pre><span></span><code><span class="nv">L</span><span class="p">[</span><span class="nt">n_</span><span class="p">]</span><span class="o">:=</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="p">(</span><span class="nv">n</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="nb">D</span><span class="p">[</span><span class="nf">#</span><span class="p">,</span><span class="nv">x</span><span class="p">])</span><span class="o">&amp;;</span>
 </code></pre></div>
 <p>作用在函数 <span class="arithmatex">\(f(x)\)</span> 上 <code class="highlight"><span class="nv">L</span><span class="p">[</span><span class="nv">n</span><span class="p">]</span><span class="o">@</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span></code>， 给出 <span class="arithmatex">\(x^{n+1} f'(x)\)</span>。<span class="arithmatex">\(L_{n}\)</span> 的树形式为 <code class="highlight"><span class="nv">L</span><span class="p">[</span><span class="nv">n</span><span class="p">]</span><span class="o">//</span><span class="nb">TreeForm</span></code>。</p>
-<p><img src="../evaluation/tree-example-Witt.svg" class="center" width="50%"></p>
+<p><img src="../evaluation-sequence/tree-example-Witt.svg" class="center" width="50%"></p>
 <h2 id="evaluation">Evaluation</h2>
 <p>表达式的集合 <strong>Expr</strong> 是一个无结构的平凡集合。对表达式的计算 (evaluation) 可实现表达式之间的形变 (deformation)。当然，计算类似于离散动力系统，此处并无良好定义的微分结构。</p>
 <p>特定对象 <span class="arithmatex">\(x_0\)</span> 的不同无穷小形变可记为 <span class="arithmatex">\(x_0 \mapsto x_0 + \d_i x_0,\,  \d_i x_0\in TM_{x_0}\)</span>，例如有效作用量的形变为</p>
@@ -574,29 +571,27 @@ In the following we will review the evaluation of expressions in Mathematica by 
 S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
 \end{equation}\]</div>
 <p>形变切方向的类似物即为规则 <code class="highlight"><span class="nb">Rule</span><span class="w"> </span><span class="p">(</span><span class="o">-&gt;</span><span class="p">)</span></code>。表达式的子表达式的集合可以实现为</p>
-<div class="highlight"><pre><span></span><code><span class="nv">subExpression</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
-<span class="w">    </span><span class="nb">Cases</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="o">_</span><span class="p">,{</span><span class="m">0</span><span class="p">,</span><span class="nb">Infinity</span><span class="p">}]</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="o">:=</span><span class="nb">Cases</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="o">_</span><span class="p">,{</span><span class="m">0</span><span class="p">,</span><span class="nb">Infinity</span><span class="p">}]</span><span class="o">;</span>
 </code></pre></div>
 <p>例如 <code class="highlight"><span class="nv">expr0</span><span class="o">=</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span></code> 的子表达式为，</p>
-<div class="highlight"><pre><span></span><code><span class="nv">expr0</span><span class="o">=</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span><span class="o">;</span>
-<span class="nv">list</span><span class="o">=</span><span class="nv">subExpression</span><span class="p">[</span><span class="nv">expr0</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="nv">subexpr</span><span class="p">[</span><span class="nv">expr0</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">h</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]}</span>
 </code></pre></div>
-<p>由于 <strong>Expr</strong> 过大，将其简单截断为 <code class="highlight"><span class="nv">exprlist</span><span class="o">=</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">}</span></code>。改变表达式 <code class="highlight"><span class="nv">expr0</span></code> 的规则的集合可以实现为</p>
+<p>由于 <strong>Expr</strong> 过大，将其简单截断为 <code class="highlight"><span class="nv">exprlist</span><span class="o">=</span><span class="p">{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span></code>。改变表达式 <code class="highlight"><span class="nv">expr0</span></code> 的规则的集合可以实现为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">exprlist</span><span class="o">=</span><span class="p">{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span><span class="o">;</span>
 <span class="nv">rulelist</span><span class="o">=</span><span class="nb">Outer</span><span class="p">[</span><span class="nb">Rule</span><span class="p">,</span><span class="nv">list</span><span class="p">,</span><span class="nv">exprlist</span><span class="p">]</span><span class="o">//</span><span class="nb">Flatten</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">h</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">h</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">}</span>
 </code></pre></div>
-<p>函数 <code class="highlight"><span class="nb">Replace</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">rule</span><span class="p">]</span></code> 会搜索 <code class="highlight"><span class="nv">expr</span></code> 中匹配 <code class="highlight"><span class="nv">rule</span></code> 的子表达式并进行替换，可实现表达式的形变，<code class="highlight"><span class="nv">expr0</span></code> 的全部形变为<sup id="fnref:tag:neighbor"><a class="footnote-ref" href="#fn:tag:neighbor">1</a></sup></p>
+<p>函数 <code class="highlight"><span class="nb">Replace</span><span class="p">[</span><span class="nt">expr_</span><span class="p">,</span><span class="nt">rule_</span><span class="p">]</span></code> 会搜索 <code class="highlight"><span class="nt">expr_</span></code> 中匹配 <code class="highlight"><span class="nt">rule_</span></code> 的子表达式并进行替换，可实现表达式的形变，<code class="highlight"><span class="nv">expr0</span></code> 的全部形变为<sup id="fnref:tag:neighbor"><a class="footnote-ref" href="#fn:tag:neighbor">1</a></sup></p>
 <div class="highlight"><pre><span></span><code><span class="nb">Replace</span><span class="p">[</span><span class="nv">expr0</span><span class="p">,</span><span class="nf">#</span><span class="p">,{</span><span class="m">0</span><span class="p">,</span><span class="nb">Infinity</span><span class="p">}]</span><span class="o">&amp;/@</span><span class="nv">rulelist</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">a</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">b</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">b</span><span class="p">],</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span>
 </code></pre></div>
 <p>如想仅替换 <code class="highlight"><span class="nv">g</span><span class="o">-&gt;</span><span class="nv">a</span></code> 需启用 <code class="highlight"><span class="nb">Replace</span></code> 的选项 <code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">True</span></code>，此时 <code class="highlight"><span class="nb">Replace</span></code> 会匹配表达式中的 <code class="highlight"><span class="nb">Head</span></code> 部分。但如想实现替换 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">a</span></code> 需要引入含有模式的延迟规则 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nt">x_</span><span class="p">]]</span><span class="o">:&gt;</span><span class="nv">a</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span></code>，此处模式 <code class="highlight"><span class="nt">x_</span></code> 用局部变量 <code class="highlight"><span class="nv">x</span></code> 指代 <strong>Expr</strong> 中的任意一个表达式，类似于 <span class="arithmatex">\(\forall x\in M\)</span>。</p>
 <details class="mark">
-<summary>Replace parts of the expression</summary>
+<summary>Replace parts of an expression</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Heads-&gt;True</label><label for="__tabbed_1_2">Pattern</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -618,11 +613,11 @@ S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
 </div>
 </div>
 </details>
-<p>模式 <code class="highlight"><span class="nb">Pattern</span><span class="p">[</span><span class="nv">name</span><span class="p">,</span><span class="nv">patt</span><span class="p">]</span></code> 提供了全称量词的类似物，含有模式的延迟规则 <code class="highlight"><span class="nv">patt</span><span class="o">:&gt;</span><span class="nv">target</span></code> 可作用到 <strong>Expr</strong> 中的每一个表达式上。类似于矢量场 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(M\)</span> 的每点指派无穷小形变。</p>
+<p>模式 <code class="highlight"><span class="nb">Pattern</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">patt_</span><span class="p">]</span></code> 提供了全称量词的类似物，含有模式的延迟规则 <code class="highlight"><span class="nt">patt_</span><span class="o">:&gt;</span><span class="nt">target_</span></code> 可作用到 <strong>Expr</strong> 中的每一个表达式上。类似于矢量场 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(M\)</span> 的每点指派无穷小形变。</p>
 <div class="arithmatex">\[\begin{equation}
 x \mapsto x+ f(x), \, \forall x\in M 
 \end{equation}\]</div>
-<p>需要指出的是，赋值函数 <code class="highlight"><span class="nb">Set</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="p">),</span><span class="w"> </span><span class="nb">SetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">:=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSet</span><span class="w"> </span><span class="p">(</span><span class="o">^=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">^:=</span><span class="p">)</span></code> 等的作用是在 Mathematica 的全局规则库中添加用户指定的规则。例如 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:=</span><span class="nv">x</span></code> 实际上是指定了符号 <code>f</code> 的下值 <code class="highlight"><span class="nb">DownValues</span></code>，</p>
+<p>需要指出的是，赋值函数 <code class="highlight"><span class="nb">Set</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="p">),</span><span class="w"> </span><span class="nb">SetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">:=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSet</span><span class="w"> </span><span class="p">(</span><span class="o">^=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">^:=</span><span class="p">)</span></code> 等的作用是在 Mathematica 的全局规则库中添加指定的规则。例如 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:=</span><span class="nv">x</span></code> 指定了符号 <code class="highlight"><span class="nv">f</span></code> 的下值 <code class="highlight"><span class="nb">DownValues</span></code>，</p>
 <div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:=</span><span class="nv">x</span><span class="o">;</span>
 <span class="nv">f</span><span class="o">//</span><span class="nb">DownValues</span>
 </code></pre></div>
@@ -638,58 +633,55 @@ x \mapsto x+ f(x), \, \forall x\in M
 <li>应用内置定义进行计算；</li>
 <li>重复上述步骤，直到表达式不再变化或溢出。</li>
 </ul>
-<p>可类比为矢量场的 flow 收敛到不动点或发散。后者例如递归溢出，</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Block</span><span class="p">[{</span><span class="vc">$RecursionLimit</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="vc">f</span><span class="p">},</span>
-<span class="w">    </span><span class="vc">f</span><span class="o">:=-</span><span class="vc">f</span><span class="o">;</span>
-<span class="w">    </span><span class="nb">Trace</span><span class="p">[</span><span class="vc">f</span><span class="p">,</span><span class="vc">f</span><span class="p">]</span>
-<span class="p">]</span><span class="o">//</span><span class="nb">ReleaseHold</span>
-</code></pre></div>
-<p>给出如下错误信息</p>
-<div class="highlight"><pre><span></span><code><span class="nb">$RecursionLimit</span><span class="o">::</span><span class="ne">reclim2</span><span class="o">:</span><span class="w"> </span><span class="nv">Recursion</span><span class="w"> </span><span class="nv">depth</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="nv">exceeded</span><span class="w"> </span><span class="nv">during</span><span class="w"> </span><span class="nv">evaluation</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="o">-</span><span class="nv">f</span><span class="o">.</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">,{</span><span class="nv">f</span><span class="p">,</span><span class="o">-</span><span class="nv">f</span><span class="p">}}}}}}}}}}}}}}}}}</span>
-</code></pre></div>
-<p><img src="../evaluation/trace-1.svg" class="center" width="50%"></p>
+<p>可类比为矢量场的 flow 收敛到不动点或发散，后者例如递归溢出。</p>
 <h3 id="non-standard-evaluation">Non-standard evaluation</h3>
-<p>计算依赖规则之间的顺序，类似于不同的矢量场不交换。因此选取合适的规则顺序方可得到目标表达式。
-标准计算序列在特定场景并不合适，例如上面的子表达式一例中，如果表达式含有可被全局规则库中的规则所计算的部分，结果为</p>
+<p>计算依赖规则之间的顺序，类似于不同的矢量场不交换。因此选取合适的规则顺序方可得到目标表达式。</p>
+<p>标准计算序列在特定场景并不合适，例如上面的子表达式一例中，如果表达式含有可被计算的部分，结果为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="o">=</span><span class="nv">g</span><span class="o">;</span>
-<span class="nv">subExpression</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
+<span class="nv">subexpr</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]}</span>
 </code></pre></div>
-<p>这是因为在执行标准计算时 <code class="highlight"><span class="nv">subExpression</span></code> 不具有 <code class="highlight"><span class="nb">OwnValues</span></code>，因此计算 <code class="highlight"><span class="nv">f</span><span class="o">=</span><span class="nv">g</span></code>，再计算 <code class="highlight"><span class="nv">g</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]</span></code>，最后计算 <code class="highlight"><span class="nv">subExpression</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]]</span><span class="o">=</span><span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]}</span></code>。</p>
+<p>这是因为在执行标准计算序列时，先计算 <code class="highlight"><span class="nv">f</span><span class="o">=</span><span class="nv">g</span></code>，再计算 <code class="highlight"><span class="nv">g</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]</span></code>，最后计算 <code class="highlight"><span class="nv">subexpr</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]]</span><span class="o">=</span><span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]}</span></code>。</p>
 <p>若想得到 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span></code> 的子表达式需要修改计算顺序，可用 <code class="highlight"><span class="nb">HoldFirst</span></code> 属性实现这一点：</p>
-<div class="highlight"><pre><span></span><code><span class="nv">subExpressionHold</span><span class="o">//</span><span class="nb">Attributes</span><span class="o">=</span><span class="p">{</span><span class="nb">HoldFirst</span><span class="p">}</span><span class="o">;</span>
-<span class="nv">subExpressionHold</span><span class="p">[</span><span class="nt">expr_</span><span class="p">,</span><span class="nt">wrapper_</span><span class="o">:</span><span class="nb">HoldForm</span><span class="p">,</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr2</span><span class="o">//</span><span class="nb">Attributes</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span><span class="nb">HoldFirst</span><span class="p">}</span><span class="o">;</span>
+<span class="nv">subexpr2</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">Cases</span><span class="p">[</span><span class="nb">Unevaluated</span><span class="o">@</span><span class="nv">expr</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">subexpr_</span><span class="o">:&gt;</span><span class="nv">wrapper</span><span class="o">@</span><span class="nv">subexpr</span><span class="p">,</span>
-<span class="w">        </span><span class="p">{</span><span class="m">0</span><span class="p">,</span><span class="nb">Infinity</span><span class="p">},</span>
-<span class="w">        </span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nb">Cases</span><span class="p">]],</span>
-<span class="w">        </span><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span>
+<span class="w">        </span><span class="nt">subexpr_</span><span class="o">:&gt;</span><span class="nb">Defer</span><span class="o">@</span><span class="nv">subexpr</span><span class="p">,</span>
+<span class="w">        </span><span class="p">{</span><span class="m">0</span><span class="p">,</span><span class="nb">Infinity</span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
 <p>带有 <code class="highlight"><span class="nb">HoldFirst</span></code> 属性的 <code class="highlight"><span class="nv">subExpression</span></code> 会保持输入 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span></code> 不变，直接匹配 <code class="highlight"><span class="nv">subExpression</span></code> 的下值。</p>
-<div class="highlight"><pre><span></span><code><span class="nv">subExpressionHold</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr2</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]}</span>
 </code></pre></div>
-<p>Mathematica 提供了若干调整计算顺序的内置函数，此时称之为非标准计算 (non-standard evaluation)，例如</p>
+<p>Mathematica 提供了若干调整计算顺序的内置函数，相关的计算称为非标准计算 (non-standard evaluation)，例如</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nb">Hold</span></code> family:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;System`*Hold*&quot;</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">Hold</span><span class="p">,</span><span class="nb">HoldAll</span><span class="p">,</span><span class="nb">HoldAllComplete</span><span class="p">,</span><span class="nb">HoldComplete</span><span class="p">,</span><span class="nb">HoldFirst</span><span class="p">,</span><span class="nb">HoldForm</span><span class="p">,</span><span class="nb">HoldPattern</span><span class="p">,</span><span class="nb">HoldRest</span><span class="p">,</span><span class="nb">NHoldAll</span><span class="p">,</span><span class="nb">NHoldFirst</span><span class="p">,</span><span class="nb">NHoldRest</span><span class="p">,</span><span class="nb">ReleaseHold</span><span class="p">,</span><span class="nb">SequenceHold</span><span class="p">,</span><span class="nb">$ConditionHold</span><span class="p">}</span>
+<p><code class="highlight"><span class="nb">Hold</span></code> family</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nb">Hold</span><span class="p">,</span><span class="nb">HoldAll</span><span class="p">,</span><span class="nb">HoldAllComplete</span><span class="p">,</span><span class="nb">HoldComplete</span><span class="p">,</span><span class="nb">HoldFirst</span><span class="p">,</span><span class="nb">HoldForm</span><span class="p">,</span><span class="nb">HoldPattern</span><span class="p">,</span><span class="nb">HoldRest</span><span class="p">,</span><span class="nb">NHoldAll</span><span class="p">,</span><span class="nb">NHoldFirst</span><span class="p">,</span><span class="nb">NHoldRest</span><span class="p">,</span><span class="nb">ReleaseHold</span><span class="p">,</span><span class="nb">SequenceHold</span><span class="p">}</span>
 </code></pre></div>
 </li>
 <li>
-<p><code class="highlight"><span class="nb">Evaluate</span></code> vs. <code class="highlight"><span class="nb">Unevaluated</span></code>: only effect the most outer level</p>
+<p><code class="highlight"><span class="nb">Inactive</span></code> family</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nb">Activate</span><span class="p">,</span><span class="nb">Inactive</span><span class="p">,</span><span class="nb">Inactivate</span><span class="p">,</span><span class="nb">IgnoringInactive</span><span class="p">}</span>
+</code></pre></div>
 </li>
-<li><code class="highlight"><span class="nb">Inactive</span><span class="p">,</span><span class="w"> </span><span class="nb">Inactivate</span><span class="p">,</span><span class="w"> </span><span class="nb">Activate</span><span class="p">,</span><span class="w"> </span><span class="nb">IgnoringInactive</span></code>: inactivate centain symbols as if with no definitions.</li>
-<li><code class="highlight"><span class="nb">Verbatim</span></code>: used in matching rules themselves.</li>
+<li>
+<p><code class="highlight"><span class="nb">Evaluate</span></code> vs. <code class="highlight"><span class="nb">Unevaluated</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Verbatim</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Defer</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Delayed</span></code></p>
+</li>
 </ul>
-<p>在下一篇中，我们会着重讲解这些非标准计算函数的应用。</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -700,11 +692,11 @@ x \mapsto x+ f(x), \, \forall x\in M
 <p>The "size" of <strong>Expr</strong> is controlled by two objects: the collection of valid trees and the collection of node indices. Nodes can be atomic or non-atomic, e.g. <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span></code> vs. <code class="highlight"><span class="p">(</span><span class="nv">f</span><span class="o">+</span><span class="nv">g</span><span class="p">)[</span><span class="nv">x</span><span class="p">]</span></code>.&#160;<a class="footnote-backref" href="#fnref:tag:expr" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:tag:treeform">
-<p>or the functions <code class="highlight"><span class="nv">ExpressionTree</span></code> and <code class="highlight"><span class="nv">ExpressionGraph</span></code>, see the Mathematica documentation: <code>guide/Trees</code>.&#160;<a class="footnote-backref" href="#fnref:tag:treeform" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>or the functions <code class="highlight"><span class="nv">ExpressionTree</span></code> and <code class="highlight"><span class="nv">ExpressionGraph</span></code>, see the Mathematica documentation: <code class="highlight"><span class="nv">guide</span><span class="o">/</span><span class="nv">Trees</span></code>.&#160;<a class="footnote-backref" href="#fnref:tag:treeform" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:tag:expression">
 <p>At the core of the Wolfram Language is the foundational idea that everything - data, programs, formulas, graphics, documents - can be represented as symbolic expressions. And it is this unifying concept that underlies the Wolfram Language's symbolic programming paradigm, and makes possible much of the unique power of the Wolfram Language and the Wolfram System.</p>
-<p>-- Mathematica documentation: <code>guide/Expressions</code>&#160;<a class="footnote-backref" href="#fnref:tag:expression" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>-- Mathematica documentation: <code class="highlight"><span class="nv">guide</span><span class="o">/</span><span class="nv">Expressions</span></code>&#160;<a class="footnote-backref" href="#fnref:tag:expression" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:tag:operad">
 <p><a href="https://www.math3ma.com/blog/what-is-an-operad-part-1">A mild introduction to operads @math3ma.com</a>.&#160;<a class="footnote-backref" href="#fnref:tag:operad" title="Jump back to footnote 5 in the text">&#8617;</a></p>

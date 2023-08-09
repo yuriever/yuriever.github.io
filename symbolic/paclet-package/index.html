@@ -419,6 +419,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-styles" class="md-nav__link">
+    Code styles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#some-tips" class="md-nav__link">
     Some tips
   </a>
@@ -436,13 +443,6 @@
           <li class="md-nav__item">
   <a href="#old-styled-initwl-files" class="md-nav__link">
     Old-styled init.wl files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#old-versioned-auto-completion" class="md-nav__link">
-    Old-versioned auto-completion
   </a>
   
 </li>
@@ -511,48 +511,38 @@
 </ul>
 <hr />
 <h2 id="paclet-and-package-structure">Paclet and package structure</h2>
-<div class="highlight"><pre><span></span><code>~/
-    PacletInfo.wl
-    Kernel/
-        p.wl
+<div class="highlight"><pre><span></span><code>PacletInfo.wl
+ResourceDefinition.nb
+README.md
+LICENSE
+Kernel/
+    p/
         p1.wl
-        ...
-    Workbench/
-        p.nb
-        ...
+        p2.wl
+    p.wl
+    common.wl
     ...
+AutoCompletionData/
+    specialArgFunctions.tr
+Documentation/
+    ...
+SampleData/
+    ...
+Workbench/
+    p.nb
+    ...
+...
 </code></pre></div>
-<div class="highlight"><span class="filename">PacletInfo.wl</span><pre><span></span><code><span class="nv">PacletObject</span><span class="p">[</span>
-<span class="w">    </span><span class="p">&lt;|</span>
-<span class="w">        </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;p&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;Version&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;0.0.1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;WolframVersion&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;13+&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;Extensions&quot;</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="s">&quot;Kernel&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="c">(*the root path of packages*)</span>
-<span class="w">                    </span><span class="s">&quot;Root&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;Kernel&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="c">(*the (sub)contexts*)</span>
-<span class="w">                    </span><span class="s">&quot;Context&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
-<span class="w">                        </span><span class="p">{</span>
-<span class="w">                            </span><span class="s">&quot;p`&quot;</span><span class="p">,</span>
-<span class="w">                            </span><span class="s">&quot;p`p1`&quot;</span>
-<span class="w">                        </span><span class="p">}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">    </span><span class="p">|&gt;</span>
-<span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*force to reload packages if necessary.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p1`&quot;</span><span class="p">]</span>
-
-<span class="c">(*set the context as p` and load the subcontext p`p1`.*)</span>
-<span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;p`&quot;</span><span class="p">,{</span><span class="s">&quot;p`p1`&quot;</span><span class="p">}]</span><span class="o">;</span>
+<div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*set the context as p`.*)</span>
+<span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;p`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*clear the definitions when reloading the package if necessary.*)</span>
-<span class="nb">Unprotect</span><span class="o">@@</span><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;p`*&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">ClearAll</span><span class="o">@@</span><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;p`*&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Unprotect</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*`*&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="c">(*load the common subcontext p`common`.*)</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`common`&quot;</span><span class="p">]</span>
 
 <span class="c">(*declare public symbols.*)</span>
 <span class="nv">foo</span><span class="o">::</span><span class="ne">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">;</span>
@@ -560,14 +550,15 @@
 <span class="c">(*set the private context.*)</span>
 <span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span>
 
-<span class="c">(*define the symbols.*)</span>
-<span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Identity</span><span class="o">;</span>
+<span class="c">(*load the definitions of public symbols.*)</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p1`&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p2`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*end the private context and revert to p`.*)</span>
 <span class="nb">End</span><span class="p">[]</span><span class="o">;</span>
 
 <span class="c">(*protect the public symbols if necessary.*)</span>
-<span class="nb">Protect</span><span class="o">@@</span><span class="nb">Names</span><span class="p">[</span><span class="s">&quot;p`*&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Protect</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*end the context, and add p` to $ContextPath.*)</span>
 <span class="nb">EndPackage</span><span class="p">[]</span><span class="o">;</span>
@@ -578,16 +569,16 @@
 <p><strong>Constant</strong> - storing global parameters.</p>
 </li>
 <li>
-<p><strong>Association</strong> - storing object-like data.</p>
+<p><strong>Association/List</strong> - storing data.</p>
 </li>
 <li>
 <p><strong>Questing function</strong> -  defining the type of variables. The definition should be complete.</p>
 </li>
 <li>
-<p><strong>Main function</strong> - implementint the functionalities of the package. To prevent unexpected evaluations, define it when it needs to be defined.</p>
+<p><strong>Main function</strong> - implementint the functionalities of the package.</p>
 </li>
 <li>
-<p><strong>Helper function</strong> - assisting the main function. The dependency should respect a top-down tree-like structure;</p>
+<p><strong>Helper function</strong> - assisting the main function. The dependency should respect a top-down tree-like structure.</p>
 </li>
 <li>
 <p><strong>Formatting function</strong> - formatting the output. It's better to separate the intermediate values passed between functions and the return values.</p>
@@ -602,7 +593,7 @@
 <p>The questing functions are named with the suffix <code class="highlight"><span class="o">*</span><span class="nv">Q</span></code>.</p>
 </li>
 <li>
-<p>The helper functions are named by specifying the subcontext <code class="highlight"><span class="nv">foo`foo1</span></code>.</p>
+<p>The helper functions are named by specifying the subcontext <code class="highlight"><span class="nv">`foo`foo1</span></code>.</p>
 </li>
 <li>
 <p>The local copy of the variable <code class="highlight"><span class="nv">foo</span></code> is named as <code class="highlight"><span class="nv">$$foo</span></code>.</p>
@@ -611,11 +602,21 @@
 <p>The name of local variables should reveal the types, e.g. repeated patterns <code class="highlight"><span class="nt">foos__</span></code>, list pattern <code class="highlight"><span class="nt">fooList_</span></code>.</p>
 </li>
 </ul>
+<h2 id="code-styles">Code styles</h2>
+<ul>
+<li>
+<p>To prevent unexpected evaluations, define it when it needs to be defined.</p>
+</li>
+<li>
+<p>To handle exceptions, define it completely.</p>
+</li>
+</ul>
 <h2 id="some-tips">Some tips</h2>
 <h3 id="subcontexts">Subcontexts</h3>
-<p>The <code class="highlight"><span class="nv">p1</span><span class="o">.</span><span class="nv">wl</span></code> file with subcontext <code class="highlight"><span class="nv">p`p1`</span></code> should be placed adjacent to the <code>p.wl</code> file, see <a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">paclets and paclet development</a>.</p>
-<p>When there are deeper levels of subcontexts such as <code class="highlight"><span class="nv">p`p1`p11</span></code>, the <code>p11.wl</code> file should be placed in a <code>~/Kernel/p1/</code> directory, with the subcontext hierarchy corresponding to the directory hierarchy. 
-The first level of the subcontext hierarchy, <code class="highlight"><span class="nv">p`</span></code>, is free and is mapped to the <code>~/Kernel/</code> directory itself.</p>
+<p>The <code class="highlight"><span class="nv">p1</span><span class="o">.</span><span class="nv">wl</span></code> file with subcontext <code class="highlight"><span class="nv">p`p1`</span></code> is placed in the <code>~/Kernel/</code> directory, adjacent to the <code>p.wl</code> file if exists.</p>
+<p>When there are deeper levels of subcontexts such as <code class="highlight"><span class="nv">p`p1`p11</span></code>, the <code>p11.wl</code> file should be placed in a <code>~/Kernel/p1/</code> directory, with the subcontext hierarchy corresponding to the directory hierarchy. </p>
+<p>The first level of the context hierarchy <code class="highlight"><span class="nv">p`</span></code>, often as the publisher's name, is free and is mapped to the <code>~/Kernel/</code> directory itself.</p>
+<p>For further explanations see <a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">paclets and paclet development</a>.</p>
 <h3 id="old-styled-initwl-files">Old-styled <code class="highlight"><span class="nv">init</span><span class="o">.</span><span class="nv">wl</span></code> files</h3>
 <p>Older packages use a special workaround allowing the context <code class="highlight"><span class="nv">p`</span></code> to be mapped to a <code>p.wl</code> file in a <code>p/</code> directory found in <code class="highlight"><span class="nb">$Path</span></code>.</p>
 <div class="highlight"><pre><span></span><code>p/
@@ -626,8 +627,9 @@ The first level of the subcontext hierarchy, <code class="highlight"><span class
 </code></pre></div>
 <p>If a context is mapped to a location in <code class="highlight"><span class="nb">$Path</span></code>, but there are no <code>.wl</code> files with appropriate names found there, the kernel searches for an <code>init.wl</code> file in the <code>p/Kernel/</code> subdirectory. The <code>init.wl</code> file includes a command such as <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p`&quot;</span><span class="p">]</span></code>, where the double context assists in mapping to a <code>p.wl</code> file in the <code>p/</code> root directory. </p>
 <p>In the new-styled paclet, this is supported but strongly discouraged.</p>
-<h3 id="old-versioned-auto-completion">Old-versioned auto-completion</h3>
-<p>In the old versions of Mathematica, the auto-completion with sub-package is problematic: under the parent package <code class="highlight"><span class="nv">p`</span></code>, the public functions in the sub-package <code class="highlight"><span class="nv">p`p1`</span></code> are not automatically completed, see <a href="https://mathematica.stackexchange.com/questions/162386">sub-packages and auto-completion</a>. The solution is to decouple the parent package and rename it as <code class="highlight"><span class="nv">p0`</span></code>, then load the sub-package <code class="highlight"><span class="nv">p`p1`</span></code> in <code class="highlight"><span class="nv">p0`</span></code>.</p>
+<!--### Old-versioned auto-completion
+
+In the old versions of Mathematica, the auto-completion with sub-package is problematic: under the parent package ``#!wl p` ``, the public functions in the sub-package ``#!wl p`p1` `` are not automatically completed, see [sub-packages and auto-completion](https://mathematica.stackexchange.com/questions/162386). The solution is to decouple the parent package and rename it as ``#!wl p0` ``, then load the sub-package ``#!wl p`p1` `` in ``#!wl p0` ``.-->
 
 <!-- Source file information -->
 

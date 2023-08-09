@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5173,        159]
+NotebookOptionsPosition[      4100,        132]
+NotebookOutlinePosition[      4687,        152]
+CellTagsIndexPosition[      4644,        149]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "//", "Options"}], "=", "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{"\"\<a\>\"", "->", "\"\<a1\>\""}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", "\n", "\t", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"OptionValue", "[", "\"\<a\>\"", "]"}], ",", 
+      RowBox[{"Options", "@", "f"}], ",", "opts"}], "}"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{"f", "[", "]"}], "\n", 
+ RowBox[{"f", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<a\>\"", "->", "\"\<a2\>\""}], ",", 
+     RowBox[{"{", "}"}]}], "}"}], "}"}], "]"}]}], "Code",
+ CellLabel->"In[1]:=",ExpressionUUID->"99970bdc-13fb-4cfd-9544-ba28dc52bb0c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a1\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"a\"\>", "\[Rule]", "\<\"a1\"\>"}], "}"}]}], "}"}]], "Output",\
+
+ CellLabel->"Out[3]=",ExpressionUUID->"63862054-5104-4728-9daf-9c988e337174"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a2\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"a\"\>", "\[Rule]", "\<\"a1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", "\<\"a2\"\>"}], ",", 
+      RowBox[{"{", "}"}]}], "}"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[4]=",ExpressionUUID->"4df08482-3502-4029-a9f2-51c51b451324"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "//", "Options"}], "=", "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<b\>\"", "->", "\"\<b1\>\""}], ",", 
+     RowBox[{"Splice", "@", 
+      RowBox[{"Options", "@", "f"}]}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"g", ",", 
+     RowBox[{"\"\<a\>\"", "->", "\"\<a0\>\""}]}], "]"}], ";"}], "\n"}], "\n", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", "\n", "\t", 
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"OptionValue", "[", "\"\<b\>\"", "]"}], ",", "\n", "\t\t", 
+      RowBox[{"OptionValue", "[", "\"\<a\>\"", "]"}], ",", "\n", "\t\t", 
+      RowBox[{"First", "@", 
+       RowBox[{"f", "[", 
+        RowBox[{"FilterRules", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"opts", ",", 
+            RowBox[{"Options", "@", "g"}]}], "}"}], ",", 
+          RowBox[{"Options", "[", "f", "]"}]}], "]"}], "]"}]}], ",", "\n", 
+      "\t\t", 
+      RowBox[{"First", "@", 
+       RowBox[{"f", "[", 
+        RowBox[{"FilterRules", "[", 
+         RowBox[{
+          RowBox[{"{", "opts", "}"}], ",", 
+          RowBox[{"Options", "[", "f", "]"}]}], "]"}], "]"}]}]}], "\n", "\t", 
+     "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{"g", "[", "]"}], "\n", 
+ RowBox[{"g", "[", 
+  RowBox[{
+   RowBox[{"\"\<b\>\"", "->", "\"\<b2\>\""}], ",", 
+   RowBox[{"\"\<a\>\"", "->", "\"\<a2\>\""}]}], "]"}]}], "Code",
+ CellLabel->"In[5]:=",ExpressionUUID->"b2a87fa8-b314-4421-89f5-922316edfbdc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"b1\"\>", ",", "\<\"a0\"\>", ",", "\<\"a0\"\>", 
+   ",", "\<\"a1\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[8]=",ExpressionUUID->"8a5b27c0-a353-47d1-b921-dccf07104e22"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"b2\"\>", ",", "\<\"a2\"\>", ",", "\<\"a2\"\>", 
+   ",", "\<\"a2\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[9]=",ExpressionUUID->"3fb59a48-47fb-416d-9d88-1459c2d114e8"]
+}, Open  ]]
+},
+Editable->True,
+WindowSize->{840, 1022},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowStatusArea->"",
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (June 3, 2023)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
+   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Yurie.nb", CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"24b72555-1a5c-4b74-ae9a-64b6bce1b53d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 797, 24, 210, "Code",ExpressionUUID->"99970bdc-13fb-4cfd-9544-ba28dc52bb0c"],
+Cell[1380, 48, 234, 6, 42, "Output",ExpressionUUID->"63862054-5104-4728-9daf-9c988e337174"],
+Cell[1617, 56, 389, 10, 42, "Output",ExpressionUUID->"4df08482-3502-4029-a9f2-51c51b451324"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2043, 71, 1613, 46, 378, "Code",ExpressionUUID->"b2a87fa8-b314-4421-89f5-922316edfbdc"],
+Cell[3659, 119, 211, 4, 42, "Output",ExpressionUUID->"8a5b27c0-a353-47d1-b921-dccf07104e22"],
+Cell[3873, 125, 211, 4, 42, "Output",ExpressionUUID->"3fb59a48-47fb-416d-9d88-1459c2d114e8"]
+}, Open  ]]
+}
+]
+*)
+

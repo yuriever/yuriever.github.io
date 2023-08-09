@@ -11,19 +11,19 @@
     --md-footer-fg-color: rgba(100, 0, 255, 0.5);
     --md-footer-bg-color: rgba(255, 255, 255, 0.9);
     /*code colors*/
-    --md-code-bg-color: rgb(249, 249, 249);
+    --md-code-bg-color: rgb(247, 247, 247);
     /*code highlighting color shades*/
     --md-code-hl-number-color: rgb(6, 3, 176);
     --md-code-hl-special-color: rgb(219, 20, 87);
-    --md-code-hl-function-color: rgb(42, 123, 228);
-    --md-code-hl-constant-color: rgb(42, 123, 228);
-    --md-code-hl-keyword-color: rgb(13, 122, 55);
-    --md-code-hl-string-color: rgb(178, 148, 0);
+    --md-code-hl-constant-color: rgb(134, 88, 228);
+    --md-code-hl-function-color: rgb(134, 88, 228);
+    --md-code-hl-keyword-color: rgb(17, 148, 67);
+    --md-code-hl-string-color: rgb(182, 152, 0);
     --md-code-hl-name-color: rgb(34, 18, 220);
-    --md-code-hl-operator-color: rgb(196, 72, 10);
+    --md-code-hl-operator-color: rgb(134, 88, 228);
     --md-code-hl-punctuation-color: rgb(105, 75, 0);
     --md-code-hl-comment-color: rgb(153, 153, 153);
-    --md-code-hl-variable-color: rgb(120, 75, 255);
+    --md-code-hl-variable-color: rgb(61, 140, 243);
     --md-code-hl-color: rgba(220, 220, 220, 0.3);
 }
 

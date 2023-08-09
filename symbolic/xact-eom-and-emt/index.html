@@ -496,14 +496,7 @@ References:</p>
 </ul>
 <p>Materials:</p>
 <ul>
-<li>
-<p><a href="xact-eom-and-emt.nb">xact-eom-and-emt.nb</a> - main notebook</p>
-</li>
-<li>
-<p><a href="../../stylesheet/lily.nb">lily.nb</a> - stylesheet, which can be put in the path:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">FileNameJoin</span><span class="o">@</span><span class="p">{</span><span class="nb">$UserBaseDirectory</span><span class="p">,</span><span class="s">&quot;SystemFiles&quot;</span><span class="p">,</span><span class="s">&quot;FrontEnd&quot;</span><span class="p">,</span><span class="s">&quot;StyleSheets&quot;</span><span class="p">}</span>
-</code></pre></div>
-</li>
+<li><a href="xact-eom-and-emt.nb">xact-eom-and-emt.nb</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>In this page we introduce by examples the abstract tensor computation functionality of the xAct packages, and we illustrate how to derive equations of motions and simplify tensor expressions in the following listed theories.</p>
@@ -576,7 +569,7 @@ see e.g.
 <p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space<sup id="fnref:tag:integral"><a class="footnote-ref" href="#fn:tag:integral">1</a></sup> of the field configurations. The only information involved is a local coordinate chart with some differential structures like metric and complex structure, and the local chart can be open subset of smooth manifold or supermanifold, or even from some formal geometry<sup id="fnref:tag:formal"><a class="footnote-ref" href="#fn:tag:formal">2</a></sup>.</p>
 <p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions step by step and finally approach to the target expression. The xAct packages provide a rather complete platform of this functionality.</p>
 <h2 id="the-structure-of-the-notebook">The structure of the notebook</h2>
-<p>The main content is in <a href="xact-eom-and-emt.nb">this notebook - xact-eom-and-emt.nb</a> written in the following style:</p>
+<p>The main content is written in <a href="xact-eom-and-emt.nb">this notebook - xact-eom-and-emt.nb</a>:</p>
 <p><img src="../xact-eom-and-emt/xact-eom-and-emt-screenshot.svg" class="center"></p>
 <p>In the notebook there are four sections to introduce useful functions in the xAct packages:</p>
 <ul>
