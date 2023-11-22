@@ -41,7 +41,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/lightnovel/2dSmatrixintegrability/</loc>
+         <loc>https://yuriever.github.io/lightnovel/S-matrix-integrability/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/lightnovel/Sturm-Liouville-theory/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -51,7 +56,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/lightnovel/padic0/</loc>
+         <loc>https://yuriever.github.io/lightnovel/p-adic/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/lightnovel/real-algebraic-geometry/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/lightnovel/schrodinger-CFT/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -106,17 +121,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/symbolic/packages/package-lily-cartesian/</loc>
+         <loc>https://yuriever.github.io/workbench/test/mathjax-test/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/symbolic/packages/package-lily-cartesianIndex/</loc>
+         <loc>https://yuriever.github.io/workbench/test/subtitle/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/symbolic/packages/package-lily-index/</loc>
+         <loc>https://yuriever.github.io/workbench/test/tikz-test/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/workbench/test/web-dev/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

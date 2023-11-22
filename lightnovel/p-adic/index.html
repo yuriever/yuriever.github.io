@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/lightnovel/2dSmatrixintegrability/">
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/p-adic/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Two-dimensional S-matrix bootstrap - Sora</title>
+        <title>Introduction to p-adic physics - Sora</title>
       
     
     
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#two-dimensional-s-matrix-bootstrap" class="md-skip">
+        <a href="#introduction-to-p-adic-physics" class="md-skip">
           Skip to content
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Two-dimensional S-matrix bootstrap
+              Introduction to p-adic physics
             
           </span>
         </div>
@@ -456,15 +456,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
-    Settings
+  <a href="#p-adic-number" class="md-nav__link">
+    p-adic number
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrability" class="md-nav__link">
-    Integrability
+  <a href="#p-adic-group" class="md-nav__link">
+    p-adic group
   </a>
   
 </li>
@@ -521,65 +521,69 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="two-dimensional-s-matrix-bootstrap">Two-dimensional S-matrix bootstrap</h1>
-<h2 id="settings">Settings</h2>
-<p>本文讨论二维有能隙有渐近态的局域可积场论。</p>
-<p>二维笛卡尔坐标为 <span class="arithmatex">\(X=(t,x)\)</span>，光锥坐标 <span class="arithmatex">\(x^\pm=t\pm x\)</span>。动量 <span class="arithmatex">\(P=(\o,p)\)</span> 可用快度 <span class="arithmatex">\(\b\)</span> 以及光锥坐标 <span class="arithmatex">\(p^\pm=\o\pm p\)</span> 参数化，</p>
-<div class="arithmatex">\[\begin{align}
-    &amp; \o^{2}- p^2=m^{2}  &amp;  \o &amp; =m \cosh\b  &amp;  p &amp;=m \sinh \b 
+<h1 id="introduction-to-p-adic-physics">Introduction to p-adic physics</h1>
+<p>在本文中， <span class="arithmatex">\(\ZZ_{(p)}:=\ZZ/p\ZZ\)</span>，以区分素进整数 <span class="arithmatex">\(\Zp\)</span>。</p>
+<h2 id="p-adic-number">p-adic number</h2>
+<p>本节介绍素进数 (p-adic number)。
+实数是有理数关于绝对值 <span class="arithmatex">\(|\cdot|\)</span> 的完备化，而素进数 <span class="arithmatex">\(\Qp\)</span> 是有理数关于素进绝对值的完备化。下面分别介绍 <span class="arithmatex">\(\Qp\)</span> 的分析构造和代数构造。</p>
+<p><strong>分析构造：</strong> </p>
+<ul>
+<li>
+<p>从有理数的素分解出发 <span class="arithmatex">\(x=\pm \prod p_i^{a_i}\)</span>，关于素数 <span class="arithmatex">\(p_i\)</span> 的素进绝对值定义为，</p>
+<div class="arithmatex">\[\begin{equation}
+|x|_{p_i}=p_i^{-a_i}
+\end{equation}\]</div>
+<p>素进绝对值满足模长的定义，因此可以定义相应的 Cauchy 列，进而定义 Cauchy 列的等价类为有理数关于素进绝对值的完备化，由此得到素进数 <span class="arithmatex">\(\Qp\)</span>。</p>
+</li>
+<li>
+<p>素进整数定义为素进绝对值小于等于 <span class="arithmatex">\(1\)</span> 的素进数，<span class="arithmatex">\(\Zp:=\set{x\in \Qp : |x|_p\leq 1}\)</span>。素进单位元定义为素进绝对值等于 <span class="arithmatex">\(1\)</span> 的素进数，<span class="arithmatex">\(\Up:=\set{x\in \Qp : |x|_p= 1}\)</span>。</p>
+</li>
+</ul>
+<p><strong>代数构造：</strong></p>
+<ul>
+<li>
+<p>在直观上，素进绝对值描述的是有理数之间关于素数 <span class="arithmatex">\(p\)</span> 的距离。从整数出发，两个整数之差如果被 <span class="arithmatex">\(p\)</span> 整除，那么它们在 <span class="arithmatex">\(\ZZ\to \ZZ_p\)</span> 中的像相等，无法用 <span class="arithmatex">\(\ZZ_p\)</span> 区分两者；更精细的视角是用 <span class="arithmatex">\(\ZZ\to \ZZ_{p^2}\)</span> 来衡量整数，推而广之对任意的整数 <span class="arithmatex">\(n\geq 1\)</span> 可考虑映射 <span class="arithmatex">\(\ZZ\to \ZZ_{p^n}\)</span>，</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:Zp}
+\begin{array}{ccccccccccccc}
+    &amp;\ZZ: &amp;\quad &amp;\dots &amp;\longrightarrow &amp;\ZZ_{p^n} &amp;\longrightarrow &amp;\dots  &amp;\longrightarrow &amp;\ZZ_{p^2} &amp;\longrightarrow &amp;\ZZ_{p}
+\end{array}    
+\end{equation}\]</div>
+<p>由此，整数 <span class="arithmatex">\(x\in \ZZ\)</span> 可用一列同态像描述，例如取 <span class="arithmatex">\(p=2,\,x=13\)</span>，那么，</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{array}{ccccccccccccc}
+    &amp;\ZZ: &amp;\quad &amp;\dots &amp;\longrightarrow &amp;\ZZ_{16} &amp;\longrightarrow &amp;\ZZ_8 &amp;\longrightarrow &amp;\ZZ_{4} &amp;\longrightarrow &amp;\ZZ_2
     \\
-    &amp; p^+ p^-=m^{2}  &amp;  p^+ &amp; =m e^\b  &amp;  p^- &amp;=m e^{-\b }
-\end{align}\]</div>
-<p>散射矩阵定义为出入态之间的矩阵元，</p>
+    &amp; 13: &amp;\quad &amp;13 &amp;\longrightarrow &amp;13 &amp;\longrightarrow &amp;5 &amp;\longrightarrow &amp;1 &amp;\longrightarrow &amp;1
+\end{array}    
+\end{equation}\]</div>
+<p>当 <span class="arithmatex">\(n\geq 4\)</span> 时这个序列稳定到 <span class="arithmatex">\(x=13\)</span> 自身，亦即可在 <span class="arithmatex">\(\ZZ_{16}\)</span> 左面的 <span class="arithmatex">\(\ZZ_{2^n}\)</span> 中区分 <span class="arithmatex">\(13\)</span> 与 <span class="arithmatex">\(0\)</span>。
+等价的，可将任意整数 <span class="arithmatex">\(x\)</span> 唯一展开为多项式，</p>
 <div class="arithmatex">\[\begin{align}
-S\sim e^{it\cH}&amp;=\id+ \int d p_{1} d p_{2} dp'_{1} dp'_{2} \d (p_{1}+p_{2}-p'_{1}-p'_{2}) 
-\nn
-\\
-&amp;\peq S(p_1,1,p_{2},2|p'_{1},1',p'_{2},2')\instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p'_{1},1')\instate{a}(p'_{2},2')+\dots
+\label{eq:Zp2}
+    x &amp; =x_0 + x_1 p + x_2 p^2 +\dots \qquad x_n \in \set{0,1,\dots ,p-1} \\
+    13 &amp; =1 + 0\cdot  2 + 1\cdot  4 + 1\cdot  8 \nn
 \end{align}\]</div>
-<p>这里假设了 <span class="arithmatex">\(\instate{a}^{\dagger}\)</span> 生成的激发是稳定的，因此从 <span class="arithmatex">\(2\to2\)</span> 散射开始求和。</p>
-<p>有能隙可回避红外发散问题。有渐近态意味存在出入态的升降算子，以及存在插值场 (interpolating field) 联系相互作用场和渐近场。
-局域指的是场算子代数中的局域算子满足因果局域性 (causal locality)，并且存在能动张量算子 <span class="arithmatex">\(T^{ab}(X)\)</span>，</p>
+<p>而同态像序列 <span class="arithmatex">\(\set{1,1,5,13,13,\dots}\)</span> 即该多项式的前 <span class="arithmatex">\(n\)</span> 项和。仿照小数记号可将此多项式写为 <span class="arithmatex">\(x=(\dots x_2x_1x_0.0)_2\)</span>，例如 <span class="arithmatex">\(13=1101.0_2\)</span>。</p>
+</li>
+<li>
+<p>多项式环可推广为形式幂级数环 <span class="arithmatex">\(k[x]\to k[[x]]\)</span>，类似的，对多项式 \eqref{eq:Zp2} 仿该构造，得到所有关于 <span class="arithmatex">\(p^n\)</span> 的形式幂级数的环 <span class="arithmatex">\(\Zp^{\text{alg}}\)</span>，此即 \eqref{eq:Zp} 在范畴意义下的极限，</p>
 <div class="arithmatex">\[\begin{equation}
-[\f_1(X_1),\f_2(X_2)]=0 \qfor X_{12}\notin \Vcausal
+\Zp^\text{alg}=\inverseLimit \ZZ_{p^n}=\Bpair{
+    \sum_{n=0}^\inf x_n p^ n\bigg| x_n \in \set{0,1,\dots ,p-1}
+}
 \end{equation}\]</div>
-<p>因而动量算子为</p>
+<p>此时还未建立环 <span class="arithmatex">\(\Zp^\text{alg}\)</span> 与分析方法构造的 <span class="arithmatex">\(\Zp\)</span> 的等价性。两者的联系在于形式幂级数的尾部的素进绝对值必定收敛到 <span class="arithmatex">\(0\)</span> ，即，</p>
 <div class="arithmatex">\[\begin{equation}
-\cP^\pm=\int_{\S_t} dx\, T^{0,\pm}(t,x)
+| p^N(x_N+ x_{N+1} p + \dots ) |_p \leq | p^N x_N |_p=p^{-N}\to 0 \qif N \to \inf    
 \end{equation}\]</div>
-<p>且入射态是动量本征态，</p>
-<div class="arithmatex">\[\begin{equation}
-\left(\cP^\pm-m\sum_{i=1}^n e^{\pm\b_i} \right)
-\instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0
-\end{equation}\]</div>
-<h2 id="integrability">Integrability</h2>
-<p>可积性的定义是存在充分多的高自旋守恒流 <span class="arithmatex">\(\p_a T^{a,\pm,(s)}(X)=0\)</span>，并且其守恒荷，</p>
-<div class="arithmatex">\[\begin{equation}
-Q^{\pm,(s)}=\int_{\S_t} dx\, T^{0,\pm,(s)}(t,x)
-\end{equation}\]</div>
-<p>相互交换，</p>
-<div class="arithmatex">\[\begin{equation}
-[Q^{(s)},Q^{(s')}]=0
-\end{equation}\]</div>
-<p>这里上指标 <span class="arithmatex">\((s)\)</span> 标记自旋数，<span class="arithmatex">\([M,Q^{(s)}]=sQ^{(s)}\)</span>。</p>
-<p>与动量算子的交换性意味可以同时对角化，</p>
-<div class="arithmatex">\[\begin{equation}
-\ppair{Q^{\pm,(s)}-q^{(s)}\sum_{i=1}^n e^{\pm s\b_i} }\instate{a}^{\dagger}(\b_1,1)\dots \instate{a}^{\dagger}(\b_n,n)\ket{0}=0
-\end{equation}\]</div>
-<p>散射矩阵作为 <span class="arithmatex">\(\cH\)</span> 的积分算子，和 <span class="arithmatex">\(Q^{(s)}\)</span> 交换，在矩阵元水平上为，</p>
-<div class="arithmatex">\[\begin{equation}
-\ppair{\sum_{i=1}^n e^{\pm s\b_i}-\sum_{i=1}^m e^{\pm s\b_i'}} S(n\to m)=0
-\end{equation}\]</div>
-<p>充分多的守恒流导致该方程只有平凡解，</p>
-<div class="arithmatex">\[\begin{equation}
-S(n\to m)\sim \d_{n,m} \qand \set{\b_i}=\set{\b'_i}
-\end{equation}\]</div>
-<p>亦即，散射是完全弹性的，没有粒子产生消灭，出态动量是入态动量的轮换，</p>
-<div class="arithmatex">\[\begin{equation}
-S=\id+ \int d \b_1 d \b_2  \, S(p_1,p_2|1,2|1',2')
-\instate{a}^{\dagger}(p_1,1)\instate{a}^{\dagger}(p_{2},2)\instate{a}(p'_{1},1')\instate{a}(p'_{2},2')+\dots
-\end{equation}\]</div>
-<p>其中 <span class="arithmatex">\(S\)</span> 吸收了一些运动学因子。这在微扰场论水平上意味着大量的图相消。</p>
+<p>这表明 <span class="arithmatex">\(\Zp^\text{alg}\subset \Zp\)</span>。反之需说明由分析方法构造的素进整数有唯一的形式幂级数表达，略去。</p>
+</li>
+<li>
+<p>引入形式分数进行局域化，构造素进数 <span class="arithmatex">\(\Qp\)</span>。</p>
+</li>
+</ul>
+<h2 id="p-adic-group">p-adic group</h2>
 
 <!-- Source file information -->
 
