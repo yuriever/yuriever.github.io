@@ -571,8 +571,6 @@
 <h2 id="paclet-and-package-structure">Paclet and package structure</h2>
 <div class="highlight"><pre><span></span><code>PacletInfo.wl
 ResourceDefinition.nb
-README.md
-LICENSE
 Kernel/
     p/
         p1.wl
@@ -583,8 +581,6 @@ Kernel/
 AutoCompletionData/
     specialArgFunctions.tr
 Documentation/
-    ...
-SampleData/
     ...
 Workbench/
     p.nb
@@ -645,7 +641,7 @@ Workbench/
 <h2 id="naming-conventions">Naming conventions</h2>
 <ul>
 <li>
-<p>The body functions with similar functionality are named with the same prefix.</p>
+<p>The main functions with similar functionality are named with the same prefix.</p>
 </li>
 <li>
 <p>The questing functions are named with the suffix <code class="highlight"><span class="o">*</span><span class="nv">Q</span></code>.</p>
@@ -653,17 +649,16 @@ Workbench/
 <li>
 <p>The helper functions are named by specifying the subcontext <code class="highlight"><span class="nv">`foo`foo1</span></code>.</p>
 </li>
-<li>
-<p>The local copy of the variable <code class="highlight"><span class="nv">foo</span></code> is named as <code class="highlight"><span class="nv">$$foo</span></code>.</p>
-</li>
-<li>
-<p>The name of local variables should reveal the types, e.g. repeated patterns <code class="highlight"><span class="nt">foos__</span></code>, list pattern <code class="highlight"><span class="nt">fooList_</span></code>.</p>
-</li>
+</ul>
+<!-- * The local copy of the variable `#!wl foo` is named as `#!wl $$foo`. -->
+
+<ul>
+<li>The name of local variables should reveal the types, e.g. repeated patterns <code class="highlight"><span class="nt">foos__</span></code>, list pattern <code class="highlight"><span class="nt">fooList_</span></code>.</li>
 </ul>
 <h2 id="code-styles">Code styles</h2>
 <ul>
 <li>
-<p>To prevent unexpected evaluations, define it when it needs to be defined.</p>
+<p>To prevent unexpected evaluations, define it only when needs to be defined.</p>
 </li>
 <li>
 <p>To handle exceptions, define it completely.</p>
@@ -684,7 +679,7 @@ Workbench/
     ...
 </code></pre></div>
 <p>If a context is mapped to a location in <code class="highlight"><span class="nb">$Path</span></code>, but there are no <code>.wl</code> files with appropriate names found there, the kernel searches for an <code>init.wl</code> file in the <code>p/Kernel/</code> subdirectory. The <code>init.wl</code> file includes a command such as <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p`&quot;</span><span class="p">]</span></code>, where the double context assists in mapping to a <code>p.wl</code> file in the <code>p/</code> root directory. </p>
-<p>In the new-styled paclet, this is supported but strongly discouraged.</p>
+<p>In the new-styled paclet, this is supported but discouraged.</p>
 <!--### Old-versioned auto-completion
 
 In the old versions of Mathematica, the auto-completion with sub-package is problematic: under the parent package ``#!wl p` ``, the public functions in the sub-package ``#!wl p`p1` `` are not automatically completed, see [sub-packages and auto-completion](https://mathematica.stackexchange.com/questions/162386). The solution is to decouple the parent package and rename it as ``#!wl p0` ``, then load the sub-package ``#!wl p`p1` `` in ``#!wl p0` ``.-->

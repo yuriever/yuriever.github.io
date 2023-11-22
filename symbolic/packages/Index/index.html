@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/packages/package-lily-preindex/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/packages/Index/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Package lily`preindex` - Sora</title>
+        <title>Yurie/Index - Sora</title>
       
     
     
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#package-lilypreindex" class="md-skip">
+        <a href="#yurieindex" class="md-skip">
           Skip to content
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Package lily`preindex`
+              Yurie/Index
             
           </span>
         </div>
@@ -471,15 +471,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#invertible-conversion-of-expression-and-string" class="md-nav__link">
-    Invertible conversion of expression and string
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#questing-function" class="md-nav__link">
-    Questing function
+  <a href="#helper-functions" class="md-nav__link">
+    Helper functions
   </a>
   
 </li>
@@ -548,48 +541,39 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="package-lilypreindex">Package <code class="highlight"><span class="nv">lily`preindex`</span></code></h1>
+<h1 id="yurieindex">Yurie/Index</h1>
 <p>A Mathematica package for coding a indexed variable into a single symbol.</p>
-<p>The GitHub repository is <a href="https://github.com/yuriever/lily-index">yuriever/lily-index</a>.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/Yurie-Index">yuriever/Yurie-Index</a>.</p>
 <h2 id="designing-idea">Designing idea</h2>
-<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>. To override this, we introduce the public symbol <code class="highlight"><span class="nv">null</span></code> representing empty string and the function pair <code class="highlight"><span class="nv">toSymbol</span><span class="p">,</span><span class="w"> </span><span class="nv">toString</span></code>. </p>
-<p>The kernel functions will first convert symbols to strings, use string pattern matching to perform evaluation, and finally convert back to symbols if necessary. </p>
-<p>In the package <code class="highlight"><span class="nv">lily`index`</span><span class="o">*</span></code>, by default, Every context and the default context contains the symbol <code class="highlight"><span class="nv">null</span></code>.</p>
+<p>This package provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">_Subsuperscript</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">_Symbol</span>
+</code></pre></div>
+<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>, and to override this we introduce the public function <code class="highlight"><span class="nv">toString</span></code>. </p>
+<p>The kernel functions will convert symbols to strings, use string pattern matching, and finally convert back to symbols if necessary. </p>
 <h2 id="functionalities">Functionalities</h2>
-<h3 id="invertible-conversion-of-expression-and-string">Invertible conversion of expression and string</h3>
+<h3 id="helper-functions">Helper functions</h3>
 <ul>
-<li>
-<p><code class="highlight"><span class="nv">null</span></code> - represent the empty string under <code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">toString</span><span class="o">|</span><span class="nv">toSymbol</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - invertible version of <code class="highlight"><span class="nb">ToString</span></code> and <code class="highlight"><span class="nb">ToExpression</span></code>.</p>
-</li>
-</ul>
-<h3 id="questing-function">Questing function</h3>
-<ul>
-<li><code class="highlight"><span class="nv">scriptQ</span><span class="p">[</span><span class="nt">_Integer</span><span class="o">|</span><span class="nt">_Symbol</span><span class="o">|</span><span class="nt">_String</span><span class="p">]</span></code> - null/"", natural number or single letter.</li>
+<li><code class="highlight"><span class="nv">toString</span></code> - map <code class="highlight"><span class="nb">Null</span></code> to empty string.</li>
 </ul>
 <h3 id="kernel-functions">Kernel functions</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">_Symbol</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">..</span><span class="p">,</span><span class="nt">linker_Symbol</span><span class="o">:</span><span class="nb">List</span><span class="p">][</span><span class="nt">variable_</span><span class="p">]</span></code> - indexize the variable.</p>
+<p><code class="highlight"><span class="nv">indexize</span></code> - indexify a list of variables.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexizeByVariable</span><span class="p">[</span><span class="nt">_Symbol</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">..</span><span class="p">,</span><span class="nt">linker_Symbol</span><span class="o">:</span><span class="nb">List</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">_List</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - indexize the specified variables in an expression.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexizeByVariable</span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="nv">c</span><span class="w"> </span><span class="nv">d</span><span class="p">,</span><span class="nb">Divide</span><span class="p">,</span><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">][{</span><span class="nv">f</span><span class="p">,</span><span class="nv">x</span><span class="p">}][</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">fa</span><span class="p">[</span><span class="nv">xa</span><span class="w"> </span><span class="nv">y</span><span class="p">]</span><span class="w"> </span><span class="nv">fb</span><span class="p">[</span><span class="nv">xb</span><span class="w"> </span><span class="nv">y</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="nv">fc</span><span class="p">[</span><span class="nv">xc</span><span class="w"> </span><span class="nv">y</span><span class="p">]</span><span class="w"> </span><span class="nv">fd</span><span class="p">[</span><span class="nv">xd</span><span class="w"> </span><span class="nv">y</span><span class="p">])</span>
-</code></pre></div>
+<p><code class="highlight"><span class="nv">indexify</span></code> - indexify the specified variables in an expression.</p>
 <p>Default options: </p>
 <ul>
-<li><code class="highlight"><span class="s">&quot;head&quot;</span><span class="o">-&gt;</span><span class="nb">False</span></code> - the variables as heads will not be indexified. This option is originated from the option <code class="highlight"><span class="s">&quot;Heads&quot;</span></code> of <code class="highlight"><span class="nb">Replace</span></code>.</li>
+<li>
+<p><code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span></code> - head variables will not be indexified. This option is inherited from <code class="highlight"><span class="nb">Replace</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Transpose</span><span class="o">-&gt;</span><span class="nb">False</span></code> - Lacia-Breakpoint-2023-11-22-11:45</p>
+</li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexizeHold</span><span class="o">|</span><span class="nv">indexizeByVariableHold</span></code> - the <code class="highlight"><span class="nb">HoldAll</span></code> versions of <code class="highlight"><span class="nv">indexize</span><span class="o">|</span><span class="nv">indexizeByVariable</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexArray</span><span class="p">[</span><span class="o">___</span><span class="p">][</span><span class="nt">_Symbol</span><span class="p">]</span></code> - generate tensor of symbols by <code class="highlight"><span class="nb">Array</span></code>.</p>
+<p><code class="highlight"><span class="nv">indexArray</span></code> - generate tensor of symbols by <code class="highlight"><span class="nb">Array</span></code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
 <span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
 </code></pre></div>
@@ -598,13 +582,16 @@
 </code></pre></div>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexPolynomial</span><span class="p">[</span><span class="o">___</span><span class="p">][</span><span class="nt">coefficient_</span><span class="p">][</span><span class="nt">variables___</span><span class="p">]</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexArray</span></code>.</p>
+<p><code class="highlight"><span class="nv">indexPolynomial</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexArray</span></code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">]</span>
 <span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a0</span><span class="o">+</span><span class="nv">a1</span><span class="w"> </span><span class="nv">x</span>
 <span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a00</span><span class="o">+</span><span class="nv">a10</span><span class="w"> </span><span class="nv">x</span><span class="o">+</span><span class="nv">a01</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a11</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span>
 </code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexSplit</span></code> - split <code class="highlight"><span class="nb">Symbol</span><span class="o">|</span><span class="nb">String</span></code> into variable + (label +) index.</p>
 </li>
 </ul>
 
