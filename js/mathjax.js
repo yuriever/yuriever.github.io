@@ -134,6 +134,22 @@ window.MathJax = {
                 "\\operatorname{PC}_{#1}",
                 "1"
             ],
+            "ds": [
+                "\\operatorname{dS}_{#1}",
+                "1"
+            ],
+            "kds": [
+                "\\operatorname{KdS}_{#1}",
+                "1"
+            ],
+            "ads": [
+                "\\operatorname{AdS}_{#1}",
+                "1"
+            ],
+            "eads": [
+                "\\operatorname{EAdS}_{#1}",
+                "1"
+            ],
             "rep": [
                 "\\mathcal{V}_{#1}",
                 "1"

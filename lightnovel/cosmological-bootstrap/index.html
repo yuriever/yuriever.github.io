@@ -456,13 +456,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ds-poincare-patch" class="md-nav__link">
-    dS Poincare patch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#massive-free-scalar-on-ds" class="md-nav__link">
     Massive free scalar on dS
   </a>
@@ -474,15 +467,49 @@
     Interacting QFTs on dS
   </a>
   
-    <nav class="md-nav" aria-label="Interacting QFTs on dS">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave-functional-gkpw-vs-near-infinity-correlator-bdhm" class="md-nav__link">
+    Wave-functional (GKPW) vs. near-infinity correlator (BDHM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Wave-functional (GKPW) vs. near-infinity correlator (BDHM)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ads-case" class="md-nav__link">
+    AdS case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds-case" class="md-nav__link">
+    dS case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-idea-of-cosmological-bootstrap" class="md-nav__link">
+    Main idea of cosmological bootstrap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kallenlehmann-decomposition" class="md-nav__link">
     Kallen–Lehmann decomposition
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Kallen–Lehmann decomposition">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#boundary-operators-from-the-late-time-expansion" class="md-nav__link">
@@ -603,84 +630,47 @@
 
 <!-- Page content -->
 <h1 id="cosmological-bootstrap">Cosmological bootstrap</h1>
-<p>This page is a recap of <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
-<ol>
-<li>
-<p>Late-time correlation functions transform as conformal correlation functions under the isometry group <span class="arithmatex">\(SO(d+1,1)\)</span> of <span class="arithmatex">\(dS_{d+1}\)</span>. This suggests using conformal bootstrap methods to study QFT in dS.</p>
-</li>
-<li>
-<p>Unitary conformal bootstrap:</p>
-<ol>
-<li>
-<p>symmetry: <span class="arithmatex">\(\wave{SO}(d,2)\)</span></p>
-</li>
-<li>
-<p>object: CFT correlations functions</p>
-</li>
-<li>
-<p>conformal block expansion (four identical operators):</p>
-<div class="arithmatex">\[\begin{equation}
-    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
-    =
-    \sum_{\Delta, \ell} C_{\Delta, \ell}^2 G_{\Delta, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
-\end{equation}\]</div>
-</li>
-<li>
-<p>AdS/Lorentzian unitarity: <span class="arithmatex">\(C_{\Delta, \ell}^2 \geq 0\)</span></p>
-</li>
-<li>
-<p>crossing symmetry: invariance under permutations of the positions <span class="arithmatex">\(x_{i}\)</span></p>
-</li>
-</ol>
-</li>
-<li>
-<p>dS bootstrap:</p>
-<ol>
-<li>
-<p>symmetry: <span class="arithmatex">\(SO(d+1,1)\)</span></p>
-</li>
-<li>
-<p>object: dS correlations functions in the late-time limit</p>
-</li>
-<li>
-<p>existence of SOC and convergence of OPE are problematic, hence lack of conformal block expansion. Instead, we can consider the conformal partial wave expansion:</p>
-<div class="arithmatex">\[\begin{equation}
-    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
-    =
-    \sum_{\ell} \int d \nu I_{\ell}(\nu) \Psi_{\frac{d}{2}+i \nu, \ell}^{12,34}\left(x_1, x_2, x_3, x_4\right)
-\end{equation}\]</div>
-</li>
-<li>
-<p>dS/Euclidean unitarity: <span class="arithmatex">\(I_{\ell}(\nu) \geq 0\)</span></p>
-</li>
-<li>
-<p>crossing symmetry still holds: invariance under permutation due to operators commuting at spacelike separation.</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="ds-poincare-patch">dS Poincare patch</h2>
-<p>In the following we adopt the convention <span class="arithmatex">\(Q^{\dagger}=-Q\)</span>, <span class="arithmatex">\(R=1\)</span>.</p>
-<p>Global dS is conformally equivalent to part of the Lorentzian cylinder, useful in the analysis of CFT on dS,</p>
-<div class="arithmatex">\[\begin{equation}
-d s^2=\frac{1}{\cos ^2 \tau}\left(-d \tau^2+d \Omega_d^2\right), \quad-\pi / 2 \leq \tau \leq \pi / 2
-\end{equation}\]</div>
-<p>This is copied from the figure 2 of [@Kravchuk:2018htv], showing the embedding of <span class="arithmatex">\(\RR^{d,1}\)</span> into the Lorentzian cylinder.
-<img src="../cosmological-bootstrap/lorentzian-cylinder.png" class="center" width="70%"></p>
-<p>The Poincare patch of dS is</p>
-<div class="arithmatex">\[\begin{equation}
-d s^2=\frac{-d \eta^2+d x^\mu d x_\mu}{\eta^2}
-\end{equation}\]</div>
-<p>where <span class="arithmatex">\(\eta&lt;0,\, x\in\RR^{d}\)</span>. The null surface at <span class="arithmatex">\(\eta=-\inf\)</span> is the horizon of the Poincare patch, and <span class="arithmatex">\(\eta=0\)</span> is the future infinity of dS. The following figure is copied from the figure 1 of <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
-<p><img src="../cosmological-bootstrap/ds-poincare.png" class="center" width="70%"></p>
-<p>The Killing vectors in the Poincare coordinates are,</p>
-<div class="arithmatex">\[\begin{equation}
-\begin{gathered}
-D: \eta \frac{\partial}{\partial \eta}+x^\mu \frac{\partial}{\partial x^\mu}, \quad P_\mu: \frac{\partial}{\partial x^\mu}, \\
-K_\mu:\left(\eta^2-x^2\right) \frac{\partial}{\partial x^\mu}+2 x_\mu \eta \frac{\partial}{\partial \eta}+2 x_\mu x^\nu \frac{\partial}{\partial x^\nu}, \quad M_{\mu \nu}: x_\nu \frac{\partial}{\partial x^\mu}-x_\mu \frac{\partial}{\partial x^\nu} .
-\end{gathered}
-\end{equation}\]</div>
-<p>In the late-time limit <span class="arithmatex">\(\eta=0\)</span> they <strong>manifest</strong> the conformal symmetries of the future infinity.</p>
+<p>This page is a recap of <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup>. 
+We follow the convention of <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">3</a></sup>. 
+The convention of conjugation is <span class="arithmatex">\(Q^{\dagger}=-Q\)</span>.
+The radius of AdS/dS is <span class="arithmatex">\(R=1\)</span>.
+$
+\newcommand{\order}[1]{O(#1)}
+\newcommand{\bulk}{\text{bulk}}
+\newcommand{\bdry}{\text{bdry}}
+\newcommand{\IR}{\text{IR}}
+\newcommand{\UV}{\text{UV}}
+\newcommand{\eom}{\operatorname{EOM}}
+\newcommand{\conformalGroupE}{G_{\text{E}}}
+\newcommand{\conformalGroupL}{G_{\text{L}}}
+$</p>
+<p>Mass-dimension relation of scalar:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">mass-dimension relation</th>
+<th style="text-align: left;">lower-boundedness of bulk Hamiltonian: <span class="arithmatex">\(m\geq m_{\text{BF}}\)</span></th>
+<th style="text-align: left;">representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AdS</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta\in\RR\)</span> s.t. unitarity bound <sup id="fnref:BF"><a class="footnote-ref" href="#fn:BF">1</a></sup></td>
+<td style="text-align: left;">discrete series of <span class="arithmatex">\(\conformalGroupL\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">dS</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span></td>
+<td style="text-align: left;">$\Delta\in \halfdim+i \RR $ or <span class="arithmatex">\(\Delta\in(0,d)\)</span> <sup id="fnref:tachyon"><a class="footnote-ref" href="#fn:tachyon">2</a></sup></td>
+<td style="text-align: left;">principal/complementary series of <span class="arithmatex">\(\conformalGroupE\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In the full quantum gravity, the "trivial" diffeomorphisms are gauge redundancy, and candidates of observables should be in the trivial representation of the gauge group of trivial diffeomorphisms, e.g. matrix elements near the asymptotic boundaries.</p>
+<p>But if we treat the gravity as a background field, i.e. the EFT expansion is controlled by <span class="arithmatex">\(G_{N}\)</span>, the correlation functions in the bulk are also valid observables, in the sense of <span class="arithmatex">\(G_{N}\)</span>-expansion.</p>
 <h2 id="massive-free-scalar-on-ds">Massive free scalar on dS</h2>
 <p>For simplicity we assume <span class="arithmatex">\(m^2&gt;d^2/4\)</span>. 
 The action is,</p>
@@ -705,34 +695,7 @@ The behaviour at late time is</p>
 \lim _{\eta \rightarrow 0} \phi(\eta,x)=\f^{+}(x) (-\eta)^{\Delta^{+}}+\f^{-}(x) (-\eta)^{\Delta^{-}}
 \end{equation}\]</div>
 <p>where the mass-dimension relation is <span class="arithmatex">\(\Delta(d-\Delta)=m^2\)</span>, c.f. in AdS/CFT the relation is <span class="arithmatex">\(\Delta(\Delta-d)=m^2\)</span>. </p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">mass</th>
-<th style="text-align: left;">dimension</th>
-<th style="text-align: left;">rep</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(m^2&gt;d^2/4\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\Delta_{\pm}=\frac{d}{2}\pm i \nu \text { with } \nu \in \mathbb{R}\)</span></td>
-<td style="text-align: left;">principal series</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(0&lt;m^2&lt;d^2/4\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\D\in(0,d)\)</span></td>
-<td style="text-align: left;">complementary series</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(m=d/2\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\D=d/2\)</span></td>
-<td style="text-align: left;">exceptional series</td>
-</tr>
-</tbody>
-</table>
 <p>The principal series rep (PSR) is just the function space <span class="arithmatex">\(L^2(\RR^{d})\)</span> with suitable decay at <span class="arithmatex">\(x\to\inf\)</span>, and the action of the conformal group is exact the same as that of primary operators in unitary CFT.</p>
-<p>The shadow transform is a Weyl reflection on the weight lattice, and gives the equivalence between <span class="arithmatex">\(\Delta_{\pm}\)</span>. At the end point, the complementary series rep can be reducible due to the shadow transform, and splits into exceptional series reps.</p>
 <p>Since the theory is free, the Hilbert space is the Fock space building from the single-particle state, denoted as,</p>
 <div class="arithmatex">\[\begin{equation}
 |\Delta, k\rangle:=a_k^{\dagger}|\Omega\rangle,
@@ -742,7 +705,7 @@ The behaviour at late time is</p>
 \left\langle\Delta, k \vert \Delta, k^{\prime}\right\rangle=(2 \pi)^d \delta^d\left(k-k^{\prime}\right)
 \end{equation}\]</div>
 <p>where <span class="arithmatex">\(|\Omega\rangle\)</span> is named as the Bunch-Davies vacuum.</p>
-<p>The subspace of single-particle state should be an irrep of the isometry group <span class="arithmatex">\(SO(d+1,1)\)</span>. Under the assumption <span class="arithmatex">\(m^2&gt;d^2/4\)</span> it can be identified with the principal series rep (PSR). Then multi-particle states are in tensor products of PSRs, which can be further decomposed into direct integrals of PSRs.</p>
+<p>The subspace of single-particle state should be an irrep of the isometry group <span class="arithmatex">\(\sogroup(d+1,1)\)</span>. Under the assumption <span class="arithmatex">\(m^2&gt;d^2/4\)</span> it can be identified with the principal series rep (PSR). Then multi-particle states are in tensor products of PSRs, which can be further decomposed into direct integrals of PSRs.</p>
 <p>Direct calculation shows,</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
@@ -765,7 +728,7 @@ M_{\mu \nu}|\Delta, x\rangle &amp;=\left(x_\nu \partial_\mu-x_\mu \partial_\nu\r
 K_\mu|\Delta, x\rangle &amp;=\left(2 x_\mu(x \cdot \partial)-x^2 \partial_\mu+2 \Delta x_\mu\right)|\Delta, x\rangle
 \end{aligned}
 \end{equation}\]</div>
-<p>Aka, <span class="arithmatex">\(|\Delta, x\rangle\)</span> transforms as an primary "operator" acting on the vacuum <span class="arithmatex">\(\op_{\D}(x)|\Omega\rangle\)</span>. But unlike the physical primary operators, the inner product is local</p>
+<p>Aka, <span class="arithmatex">\(|\Delta, x\rangle\)</span> transforms as an primary "operator" acting on the vacuum <span class="arithmatex">\(\op_{\Delta}(x)|\Omega\rangle\)</span>. But unlike the physical primary operators, the inner product is local</p>
 <div class="arithmatex">\[\begin{equation}
 \left\langle\Delta, x \vert \Delta, x^{\prime}\right\rangle=\delta^{(d)}\left(x-x^{\prime}\right)
 \end{equation}\]</div>
@@ -817,13 +780,171 @@ K_\mu|\Delta, x\rangle &amp;=\left(2 x_\mu(x \cdot \partial)-x^2 \partial_\mu+2 
 <p>in-in formalism.</p>
 </li>
 </ol>
-<p>In this page we escape these calculations as our inputs.</p>
-<p>Alternatively we can consider the non-perturbative properties of correlation functions.</p>
-<h3 id="kallenlehmann-decomposition">Kallen–Lehmann decomposition</h3>
+<p>see section 3 of <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">4</a></sup>.</p>
+<h2 id="wave-functional-gkpw-vs-near-infinity-correlator-bdhm">Wave-functional (GKPW) vs. near-infinity correlator (BDHM)</h2>
+<h3 id="ads-case">AdS case</h3>
+<p>In AdS/CFT, 
+the Banks-Douglas-Horowitz-Martinec (BDHM) dictionary states that the boundary correlation functions can be extracted as</p>
+<div class="arithmatex">\[\begin{equation}
+    \vev{{\op}(x)\dots }=\lim_{z\to0}z^{-\Delta}\vev{\f(x,z)\dots }
+\end{equation}\]</div>
+<p>from the near-infinity expansions</p>
+<div class="arithmatex">\[\begin{equation}
+    \phi(z,x)\sim\phi_{0}(x) z^{\wave\Delta}+{\op}(x) z^{\Delta}+\dots 
+    \qas 
+    z\to 0
+\end{equation}\]</div>
+<p>with the non-normalizable mode <span class="arithmatex">\(\phi_{0}\)</span> turned off. From this expansion the bulk-to-boundary propagator is defined as </p>
+<div class="arithmatex">\[\begin{equation}
+    K_{\Delta}=\lim_{z\to0} z^{-\Delta}G_{\Delta}
+\end{equation}\]</div>
+<p>and the Feynman diagrams of bulk correlation functions reduce to the Witten diagrams.</p>
+<p>The Gubser-Klebanov-Polyakov-Witten (GKPW) dictionary states that the bulk and boundary partition functionals are equal under deformations:</p>
+<div class="arithmatex">\[\begin{equation}
+    Z_{\bdry}[\f_0]=Z_{\bulk}[\f_0]
+\end{equation}\]</div>
+<p>On the bulk side <span class="arithmatex">\(\phi_0\)</span> specifies the boundary condition of the field <span class="arithmatex">\(\phi\)</span>, and on the boundary side <span class="arithmatex">\(\phi_0\)</span> provides the source term of the deformation <span class="arithmatex">\(\int \phi_{0} \op\)</span>. 
+The boundary correlation functions are Taylor coefficients of this functional <span class="arithmatex">\(Z_{\bdry}[\f_0]\)</span>.</p>
+<p>For free theory the equivalence is trivial since the solution of <span class="arithmatex">\(\eom[\phi]=0\)</span> with boundary behaviour <span class="arithmatex">\(\phi_{0}\)</span> is given by the convolution with <span class="arithmatex">\(K_{\Delta}\)</span>, and <span class="arithmatex">\(Z_{\bulk}[\f_0]\)</span> can be calculated explicitly.
+For interacting theory, the equivalence is due to an argument of holographic renormalization <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup>, see also section 12 of the lecture <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup>.</p>
+<p>The main idea is to separate the bulk path integral into the UV and IR parts:</p>
+<div class="arithmatex">\[\begin{align}
+    Z_{\bulk}[\f_0] 
+    &amp;=
+    \inttt{D \bar{\phi}}{z=l} 
+    \inttt{D \phi}{z&gt;l} e^{-S|_{z&gt;\ell}} \inttt{D \phi}{z&lt;l} e^{-S|_{z&lt;l}} 
+    \\
+    &amp;=
+    \inttt{D \bar{\phi}}{z=l} 
+    \Psi_{\IR}[\bar{\phi},l] \Psi_{\UV}[\phi_0,\bar{\phi},l]
+\end{align}\]</div>
+<p>where the fields are joined by <span class="arithmatex">\(\phi(x,l)=\bar{\phi}(x)\)</span>. The boundary correlation functions from the variation of <span class="arithmatex">\(\f_0(x)\)</span> are related to the UV functional <span class="arithmatex">\(\Psi_{\UV}[\phi_0,\bar{\phi},l]\)</span>, and the equivalence of BDHM and GKPW reduces to</p>
+<div class="arithmatex">\[\begin{equation}
+    \frac{1}{\Psi_{\UV}}\frac{\delta \Psi_{\UV}}{\delta \f_0(x)}\eval{}_{\f_0=0}
+    \sim
+    l^{-\Delta} (\bar{\phi}(x)+\order{l})
+\end{equation}\]</div>
+<p>For example, for the mass deformation, the UV functional justifies the above relation</p>
+<div class="arithmatex">\[\begin{equation}
+    \log\Psi_{\UV}\sim
+    -\intt{d^d x} \left[
+        a l^{-d}(\bar{\phi}^2+\dots)
+        +b l^{-\Delta}\f_0(\bar{\phi}+\dots)
+        +\order{\f_0^2}
+    \right]
+\end{equation}\]</div>
+<p>The picture is that regarding <span class="arithmatex">\(z\)</span> as an auxillary imaginary temporal direction, <span class="arithmatex">\(\Psi_{\UV}\)</span> is the wave-functional of <span class="arithmatex">\(\bar{\f}(x)\)</span>. The leading term <span class="arithmatex">\(e^{-a l^{-d}\bar{\phi}^2}\)</span> indicates <span class="arithmatex">\(\Psi_{\UV}\)</span> obeys a functional diffusive equation with <span class="arithmatex">\(\delta\)</span>-function initial condition at <span class="arithmatex">\(z=0\)</span>.</p>
+<blockquote>
+<p>Before moving on to interactions, we will comment on an intuitive interpretation of this formula for <span class="arithmatex">\(\Psi_{\UV}\)</span>. 
+The wave function obeys a functional Schrodinger equation, and we see that gradient terms are suppressed at small <span class="arithmatex">\(l\)</span>, so the fields at each boundary point behave as approximately separate quantum mechanical systems evolving in Euclidean time <span class="arithmatex">\(l\)</span>. 
+We can then think of the boundary conditions as imposing a <span class="arithmatex">\(\delta\)</span>-function initial condition at <span class="arithmatex">\(l=0\)</span> and the wave function as spreading out via diffusion as we move into the bulk. 
+The leading behaviour <span class="arithmatex">\(e^{-a l^{-d}\bar{\phi}^2}\)</span> i is typical of such processes, and although we won’t show it here if we neglect all gradients and solve the Schrodinger equation for a single boundary point with appropriate boundary conditions this produces exactly the two leading terms we found above.</p>
+</blockquote>
+<h3 id="ds-case">dS case</h3>
+<p>By the late-time expansion of the bulk operator on <span class="arithmatex">\(\ds{d+1}\)</span></p>
+<div class="arithmatex">\[\begin{equation}
+    \phi(z,x)
+    \sim
+    \op_{+}(x) (-z)^{\Delta^{+}}+\op_{-}(x) (-z)^{\Delta^{-}}+... \qas z \rightarrow 0^{-}
+\end{equation}\]</div>
+<p>the late-time correlation functions transform as Euclidean conformal correlation functions, which inspires studying QFT on dS by the conformal bootstrap.
+Notice that different from the AdS case, for heavy scalars the two leading terms are both oscillatory and marginally normalizable.</p>
+<p>For example,
+the two "operators" <span class="arithmatex">\(\op_{\pm}\)</span> from the free massive scalar <span class="arithmatex">\(\f\)</span> in the Bunch-Davis vacuum carry the principal/complementary series representation and are shadow to each other. 
+The two point functions include a contact term</p>
+<div class="arithmatex">\[\begin{equation}
+\vev{\op_{\pm}\op_{\pm}}= d^{\pm\pm}|x_{12}|^{-2\Delta_{\pm}} 
+\qquad 
+\vev{\op_{+}\op_{-}}= d^{+-}\d(x_{12})
+\end{equation}\]</div>
+<p>Contrarily, the Strominger-Maldacena dictionary states the boundary partition functional is equal to the late-time wave-functional</p>
+<div class="arithmatex">\[\begin{equation}
+Z_{\bdry}[\bar{\f}]=\Psi_{\bulk}[\bar{\f}]
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(\bar{\f}\)</span> is the boundary value of <span class="arithmatex">\(\f\)</span> and the right side is the wave functional w.r.t. the basis <span class="arithmatex">\(\ket{\bar{\f}}\)</span>.
+Then the Taylor coefficients also transform as Euclidean conformal correlation functions of "operators" <span class="arithmatex">\(\op\)</span> sourced by <span class="arithmatex">\(\bar{\f}\)</span>,</p>
+<div class="arithmatex">\[\begin{align}
+    \log\Psi[\bar\phi]
+    = 
+    &amp; \intt{d^{d} x_1 d^{d} x_2} \bar\phi(x_1) \bar\phi(x_2) G_2[\op] 
+    \\
+    &amp; +\intt{d^{d} x_1 d^{d} x_2 d^{d} x_3} \bar\phi(x_1) \bar\phi(x_2) \bar\phi(x_3) G_3[\op] +\dots 
+\end{align}\]</div>
+<p>Formally, the late-time correlation functions can be computed from the wave-functional by</p>
+<div class="arithmatex">\[\begin{equation}
+    \vev{\bar\phi\dots }
+    =
+    \intt{D \bar\phi} \Psi[\bar\phi] \Psi^*[\bar\phi] \bar\phi\dots 
+\end{equation}\]</div>
+<p>which is different from the AdS case, see section 3 of <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">6</a></sup></p>
+<div class="arithmatex">\[\begin{equation}
+    \vev{\bar\phi\dots }
+    =
+    \intt{D \bar\phi} \Psi_{\IR}[\bar\phi] \Psi_{\UV}[\bar\phi,\phi_{0}=0] \bar\phi\dots
+\end{equation}\]</div>
+<p>The functional <span class="arithmatex">\(\Psi[\bar\phi]\)</span> is related to <span class="arithmatex">\(\Psi_{\IR}[\bar\phi]\)</span> by analytical continuation, and the other two are not related.</p>
+<p>For example, for massive scalars, </p>
+<h2 id="main-idea-of-cosmological-bootstrap">Main idea of cosmological bootstrap</h2>
+<ul>
+<li>
+<p>Unitary conformal bootstrap:</p>
+<ol>
+<li>
+<p>symmetry: <span class="arithmatex">\(\wave{\sogroup}(d,2)\)</span></p>
+</li>
+<li>
+<p>object: CFT correlations functions</p>
+</li>
+<li>
+<p>conformal block expansion (four identical operators):</p>
+<div class="arithmatex">\[\begin{equation}
+    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+    =
+    \sum_{\Delta, J} p_{\Delta, J} G_{\Delta, J}^{12,34}
+\end{equation}\]</div>
+</li>
+<li>
+<p>AdS/Lorentzian unitarity: <span class="arithmatex">\(p_{\Delta, J} \geq 0\)</span></p>
+</li>
+<li>
+<p>crossing symmetry ~ invariance under permutations of the positions <span class="arithmatex">\(x_{i}\)</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Cosmological bootstrap:</p>
+<ol>
+<li>
+<p>symmetry: <span class="arithmatex">\(\sogroup(d+1,1)\)</span></p>
+</li>
+<li>
+<p>object: dS correlations functions in the late-time limit</p>
+</li>
+<li>
+<p>existence of state-operator correspondence and convergence of OPE are not guaranteed, hence a priori there is no conformal block expansion. 
+Instead, we can consider the conformal partial wave expansion:</p>
+<div class="arithmatex">\[\begin{equation}
+    \left\langle\mathcal{O}\left(x_1\right) \mathcal{O}\left(x_2\right) \mathcal{O}\left(x_3\right) \mathcal{O}\left(x_4\right)\right\rangle
+    =
+    \sum_{J} \intt{\frac{d\Delta}{2\pi i}}I_{\Delta,J} \Psi_{\Delta, J}^{12,34}
+    +
+    \text{discrete series for odd } d
+\end{equation}\]</div>
+</li>
+<li>
+<p>dS/Euclidean unitarity: <span class="arithmatex">\(I_{\Delta,J} \geq 0\)</span></p>
+</li>
+<li>
+<p>crossing symmetry still holds: invariance under permutation due to operators commuting at spacelike separation.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="kallenlehmann-decomposition">Kallen–Lehmann decomposition</h2>
 <p>KL decomposition is the integral transform of two-point functions with the kernel of the free two-point function. </p>
 <p>From flat to the dS case, the complete basis of energy eigenstates are replaced by the PSR basis, and in result the integral is over the principal series,</p>
 <div class="arithmatex">\[\begin{equation}
-\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle=\langle\phi\rangle^2+\sum_{\ell} \int \frac{d \Delta}{2 \pi i} \frac{1}{N(\Delta, \ell)} \int \frac{d^d k}{(2 \pi)^d}\langle\Omega|\phi(\eta, x)| \Delta, k\rangle_{\mu_1 \ldots \mu_{\ell}}^{\mu_1 \ldots \mu_{\ell}}\left\langle\Delta, k\left|\phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle
+\left\langle\Omega\left|\phi(\eta, x) \phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle=\langle\phi\rangle^2+\sum_{J} \int \frac{d \Delta}{2 \pi i} \frac{1}{N(\Delta, J)} \int \frac{d^d k}{(2 \pi)^d}\langle\Omega|\phi(\eta, x)| \Delta, k\rangle_{\mu_1 \ldots \mu_{J}}^{\mu_1 \ldots \mu_{J}}\left\langle\Delta, k\left|\phi\left(\eta^{\prime}, x^{\prime}\right)\right| \Omega\right\rangle
 \end{equation}\]</div>
 <p>and it can be collected into</p>
 <div class="arithmatex">\[\begin{equation}
@@ -942,41 +1063,41 @@ G_\delta(\xi)=\frac{1}{2^\delta} \xi^\delta
 <div class="arithmatex">\[\begin{equation}
 \Delta=\delta+\mathbb{N}
 \end{equation}\]</div>
-<p>The symmetry of CFT on dS is enhanced to <span class="arithmatex">\(\wave{SO}(d+1,2)\)</span>. The late-time expansion can be derived by expanding <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span> on the slice <span class="arithmatex">\(\eta=0\)</span>, and the summation counts the order of <span class="arithmatex">\(\eta\)</span>-derivatives of <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span>, and the primaries on constant <span class="arithmatex">\(\eta\)</span> form a series <span class="arithmatex">\(\Delta=\delta+\mathbb{N}\)</span>.
-This corresponds to decompose the rep of <span class="arithmatex">\(\wave{SO}(d+1,2)\)</span> into <span class="arithmatex">\(SO(d+1,1)\)</span>.</p>
+<p>The symmetry of CFT on dS is enhanced to <span class="arithmatex">\(\wave{\sogroup}(d+1,2)\)</span>. The late-time expansion can be derived by expanding <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span> on the slice <span class="arithmatex">\(\eta=0\)</span>, and the summation counts the order of <span class="arithmatex">\(\eta\)</span>-derivatives of <span class="arithmatex">\(\f_{\d}(\eta,x)\)</span>, and the primaries on constant <span class="arithmatex">\(\eta\)</span> form a series <span class="arithmatex">\(\Delta=\delta+\mathbb{N}\)</span>.
+This corresponds to decompose the rep of <span class="arithmatex">\(\wave{\sogroup}(d+1,2)\)</span> into <span class="arithmatex">\(\sogroup(d+1,1)\)</span>.</p>
 <h2 id="higher-point-functions">Higher-point functions</h2>
-<p>From the late-time expansion we get a set of boundary operators, transforming as the primary operators in CFT, and the correlation functions of this set can define a CFT on the future infinity. This CFT lacks features of flat-space CFT, e.g. the existence of SOC and the convergence of OPE, and there is no local stress-energy tensor in the operator spectrum.</p>
+<p>From the late-time expansion we get a set of boundary operators, transforming as the primary operators in CFT, and the correlation functions of this set can define a CFT on the future infinity. This CFT lacks features of flat-space CFT, e.g. the existence of \sogroupC and the convergence of OPE, and there is no local stress-energy tensor in the operator spectrum.</p>
 <p>To test the proterties of this fictitious CFT, we can extract the dynamical information from the four-point functions.</p>
 <p>Recall the conformal partial wave expansion is</p>
 <div class="arithmatex">\[\begin{equation}
-\left\langle\mathcal{O}_1 \mathcal{O}_2 \mathcal{O}_3 \mathcal{O}_4\right\rangle=\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)+\left\langle\mathcal{O}_1 \mathcal{O}_2\right\rangle\left\langle\mathcal{O}_3 \mathcal{O}_4\right\rangle
+\left\langle\mathcal{O}_1 \mathcal{O}_2 \mathcal{O}_3 \mathcal{O}_4\right\rangle=\sum_{J} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, J} \Psi_{\Delta, J}^{\Delta_i}\left(x_i\right)+\left\langle\mathcal{O}_1 \mathcal{O}_2\right\rangle\left\langle\mathcal{O}_3 \mathcal{O}_4\right\rangle
 \end{equation}\]</div>
-<p>where <span class="arithmatex">\(\Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)\)</span> is the conformal partial wave,</p>
+<p>where <span class="arithmatex">\(\Psi_{\Delta, J}^{\Delta_i}\left(x_i\right)\)</span> is the conformal partial wave,</p>
 <div class="arithmatex">\[\begin{equation}
-\Psi_{\Delta, \ell}^{\Delta i}\left(x_i\right):=\int d^d x\left\langle\mathcal{O}_1\left(x_1\right) \mathcal{O}_2\left(x_2\right) \mathcal{O}_{\mu_1 \ldots \mu_{\ell}}(x)\right\rangle\left\langle\tilde{\mathcal{O}}^{\mu_1 \ldots \mu_{\ell}}(x) \mathcal{O}_3\left(x_3\right) \mathcal{O}_4\left(x_4\right)\right\rangle
+\Psi_{\Delta, J}^{\Delta i}\left(x_i\right):=\int d^d x\left\langle\mathcal{O}_1\left(x_1\right) \mathcal{O}_2\left(x_2\right) \mathcal{O}_{\mu_1 \ldots \mu_{J}}(x)\right\rangle\left\langle\tilde{\mathcal{O}}^{\mu_1 \ldots \mu_{J}}(x) \mathcal{O}_3\left(x_3\right) \mathcal{O}_4\left(x_4\right)\right\rangle
 \end{equation}\]</div>
 <p>which is orthogonal and complete,</p>
 <div class="arithmatex">\[\begin{equation}
-\int \frac{d^d x_1 \ldots d^d x_4}{\operatorname{vol}(\operatorname{SO}(d+1,1))} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right) \Psi_{\tilde{\Delta}^{\prime}, \ell^{\prime}}^{\tilde{\Delta}_i}\left(x_i\right)=2 \pi n_{\Delta, \ell} \delta_{\ell, \ell^{\prime}} \delta\left(\nu-\nu^{\prime}\right)
+\int \frac{d^d x_1 \ldots d^d x_4}{\operatorname{vol}(\operatorname{\sogroup}(d+1,1))} \Psi_{\Delta, J}^{\Delta_i}\left(x_i\right) \Psi_{\tilde{\Delta}^{\prime}, J^{\prime}}^{\tilde{\Delta}_i}\left(x_i\right)=2 \pi n_{\Delta, J} \delta_{J, J^{\prime}} \delta\left(\nu-\nu^{\prime}\right)
 \end{equation}\]</div>
 <p>Due to the fact that the operators always come in pair (from the unitarity in the dS bulk), the inversion function satisfies certain positivity condition,</p>
 <div class="arithmatex">\[\begin{equation}
-I_{\Delta, \ell} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_3^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_4^{\dagger}
+I_{\Delta, J} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_3^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_4^{\dagger}
 \end{equation}\]</div>
 <div class="arithmatex">\[\begin{equation}
-\bar{I}_{\Delta, \ell} \equiv I_{\Delta, \ell}(-1)^{\ell} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_4^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_3^{\dagger}
+\bar{I}_{\Delta, J} \equiv I_{\Delta, J}(-1)^{J} \geq 0 \quad \text { if }: \quad \mathcal{O}_1=\mathcal{O}_4^{\dagger} \quad \text { and } \quad \mathcal{O}_2=\mathcal{O}_3^{\dagger}
 \end{equation}\]</div>
 <h3 id="mft">MFT</h3>
 <p>The inversion function of four-point function is </p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger} \mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle_{\mathrm{MFT}} &amp;=\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger}\right\rangle\left\langle\mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle+\left\langle\mathcal{O}_1 \mathcal{O}_4\right\rangle\left\langle\mathcal{O}_2^{\dagger} \mathcal{O}_3^{\dagger}\right\rangle+\left\langle\mathcal{O}_1 \mathcal{O}_3^{\dagger}\right\rangle\left\langle\mathcal{O}_2^{\dagger} \mathcal{O}_4\right\rangle \\
-&amp;=\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger}\right\rangle\left\langle\mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle+\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell}^{\mathrm{MFT}} \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)+\sum_{\ell} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, \ell}^\delta \Psi_{\Delta, \ell}^{\Delta_i}\left(x_i\right)
+&amp;=\left\langle\mathcal{O}_1 \mathcal{O}_2^{\dagger}\right\rangle\left\langle\mathcal{O}_3^{\dagger} \mathcal{O}_4\right\rangle+\sum_{J} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, J}^{\mathrm{MFT}} \Psi_{\Delta, J}^{\Delta_i}\left(x_i\right)+\sum_{J} \int_{\frac{d}{2}}^{\frac{d}{2}+i \infty} \frac{d \Delta}{2 \pi i} I_{\Delta, J}^\delta \Psi_{\Delta, J}^{\Delta_i}\left(x_i\right)
 \end{aligned}
 \end{equation}\]</div>
 <p>The contribution of the second term is </p>
 <div class="arithmatex">\[\begin{equation}
-I_{\Delta, \ell}^{\mathrm{MFT}}=(-1)^{\ell} \frac{2^{\ell-1} \Gamma\left(\ell+\frac{d}{2}\right)}{\pi^{\frac{d}{2}} \Gamma(\ell+1)} \frac{\Gamma(i \mu) \Gamma(-i \mu)}{\Gamma\left(\frac{d}{2}+i \mu\right) \Gamma\left(\frac{d}{2}-i \mu\right)} \frac{\Gamma(\Delta-1) \Gamma(d-\Delta-1) \Gamma(\Delta+\ell) \Gamma(d-\Delta+\ell)}{\Gamma\left(\Delta-\frac{d}{2}\right) \Gamma\left(-\Delta+\frac{d}{2}\right) \Gamma(\Delta+\ell-1) \Gamma(d-\Delta+\ell-1)} .
+I_{\Delta, J}^{\mathrm{MFT}}=(-1)^{J} \frac{2^{J-1} \Gamma\left(J+\frac{d}{2}\right)}{\pi^{\frac{d}{2}} \Gamma(J+1)} \frac{\Gamma(i \mu) \Gamma(-i \mu)}{\Gamma\left(\frac{d}{2}+i \mu\right) \Gamma\left(\frac{d}{2}-i \mu\right)} \frac{\Gamma(\Delta-1) \Gamma(d-\Delta-1) \Gamma(\Delta+J) \Gamma(d-\Delta+J)}{\Gamma\left(\Delta-\frac{d}{2}\right) \Gamma\left(-\Delta+\frac{d}{2}\right) \Gamma(\Delta+J-1) \Gamma(d-\Delta+J-1)} .
 \end{equation}\]</div>
 <p>which violates the positivity condition at odd spins.</p>
 <h3 id="local-terms">Local terms</h3>
@@ -998,20 +1119,32 @@ I_{\Delta, \ell}^{\mathrm{MFT}}=(-1)^{\ell} \frac{2^{\ell-1} \Gamma\left(\ell+\f
 \end{equation}\]</div>
 <p>Due to this non-vanishing two-point function, the third term in the four-point functions gives nontrivial contributions, and the result is </p>
 <div class="arithmatex">\[\begin{equation}
-I_{\Delta, \ell}=I_{\Delta, \ell}^{\mathrm{MFT}}+I_{\Delta, \ell}^\delta=\left(1+(-1)^{\ell} \frac{1}{\cosh ^2(\pi \mu)}\right) I_{\Delta, \ell}^\delta .
+I_{\Delta, J}=I_{\Delta, J}^{\mathrm{MFT}}+I_{\Delta, J}^\delta=\left(1+(-1)^{J} \frac{1}{\cosh ^2(\pi \mu)}\right) I_{\Delta, J}^\delta .
 \end{equation}\]</div>
-<p>where <span class="arithmatex">\(I_{\Delta, \ell}^\delta\sim  C^2\)</span> is manifestly positive.</p>
+<p>where <span class="arithmatex">\(I_{\Delta, J}^\delta\sim  C^2\)</span> is manifestly positive.</p>
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:BF">
+<p>The BF bound is more stringent than the unitarity bound.&#160;<a class="footnote-backref" href="#fnref:BF" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tachyon">
+<p>There are also discussions on dS tachyon, which corresponds to the exceptional series.&#160;<a class="footnote-backref" href="#fnref:tachyon" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 <li id="fn:1">
-<p>Matthijs Hogervorst, João Penedones, and Kamran Salehi Vaziri. Towards the non-perturbative cosmological bootstrap. <em>JHEP</em>, 02:162, 2023. <a href="https://arxiv.org/abs/2107.13871">arXiv:2107.13871</a>, <a href="https://doi.org/10.1007/JHEP02(2023)162">doi:10.1007/JHEP02(2023)162</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Matthijs Hogervorst, João Penedones, and Kamran Salehi Vaziri. Towards the non-perturbative cosmological bootstrap. <em>JHEP</em>, 02:162, 2023. <a href="https://arxiv.org/abs/2107.13871">arXiv:2107.13871</a>, <a href="https://doi.org/10.1007/JHEP02(2023)162">doi:10.1007/JHEP02(2023)162</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Lorenzo Di Pietro, Victor Gorbenko, and Shota Komatsu. Analyticity and unitarity for cosmological correlators. <em>JHEP</em>, 03:023, 2022. <a href="https://arxiv.org/abs/2108.01695">arXiv:2108.01695</a>, <a href="https://doi.org/10.1007/JHEP03(2022)023">doi:10.1007/JHEP03(2022)023</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Lorenzo Di Pietro, Victor Gorbenko, and Shota Komatsu. Analyticity and unitarity for cosmological correlators. <em>JHEP</em>, 03:023, 2022. <a href="https://arxiv.org/abs/2108.01695">arXiv:2108.01695</a>, <a href="https://doi.org/10.1007/JHEP03(2022)023">doi:10.1007/JHEP03(2022)023</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Manuel Loparco, Joao Penedones, Kamran Salehi Vaziri, and Zimo Sun. The Källén-Lehmann representation in de Sitter spacetime. 5 2023. <a href="https://arxiv.org/abs/2306.00090">arXiv:2306.00090</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Manuel Loparco, Joao Penedones, Kamran Salehi Vaziri, and Zimo Sun. The Källén-Lehmann representation in de Sitter spacetime. 5 2023. <a href="https://arxiv.org/abs/2306.00090">arXiv:2306.00090</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Daniel Harlow and Douglas Stanford. Operator Dictionaries and Wave Functions in AdS/CFT and dS/CFT. 4 2011. <a href="https://arxiv.org/abs/1104.2621">arXiv:1104.2621</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Jared Kaplan. Lectures on ads/cft from the bottom up. 2016. URL: <a href="https://sites.krieger.jhu.edu/jared-kaplan/files/2016/05/AdSCFTCourseNotesCurrentPublic.pdf">https://sites.krieger.jhu.edu/jared-kaplan/files/2016/05/AdSCFTCourseNotesCurrentPublic.pdf</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
