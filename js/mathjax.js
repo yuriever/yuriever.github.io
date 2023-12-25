@@ -428,7 +428,6 @@ window.MathJax = {
         },
     },
     showProcessingMessages: true,
-    // package physics options
     options: {
         ignoreHtmlClass: '.',
         processHtmlClass: 'arithmatex'
