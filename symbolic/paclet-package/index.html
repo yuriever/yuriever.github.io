@@ -547,31 +547,34 @@ Kernel/
     p/
         p1.wl
         p2.wl
+        Common.wl
+        Usage.wl
     p.wl
-    common.wl
     ...
 ...
 </code></pre></div>
 <div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*set the context as p`.*)</span>
 <span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;p`&quot;</span><span class="p">]</span><span class="o">;</span>
 
-<span class="c">(*clear the definitions when reloading the package if necessary.*)</span>
+<span class="c">(*clear the definitions when reloading the package.*)</span>
 <span class="nb">Unprotect</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
 <span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
 <span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*`*&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*load the common subcontext p`common`.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`common`&quot;</span><span class="p">]</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`Common`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*declare public symbols.*)</span>
-<span class="nv">foo</span><span class="o">::</span><span class="ne">usage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">;</span>
-
-<span class="c">(*set the private context.*)</span>
-<span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`Usage`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*load the definitions of public symbols.*)</span>
 <span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p1`&quot;</span><span class="p">]</span><span class="o">;</span>
 <span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p2`&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="c">(*set the private context.*)</span>
+<span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="c">(*some codes here.*)</span>
 
 <span class="c">(*end the private context and revert to p`.*)</span>
 <span class="nb">End</span><span class="p">[]</span><span class="o">;</span>
