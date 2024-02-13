@@ -483,33 +483,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#some-tips" class="md-nav__link">
-    Some tips
-  </a>
-  
-    <nav class="md-nav" aria-label="Some tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subcontexts" class="md-nav__link">
-    Subcontexts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#old-styled-initwl-files" class="md-nav__link">
-    Old-styled init.wl files
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -570,20 +543,12 @@
 <hr />
 <h2 id="paclet-and-package-structure">Paclet and package structure</h2>
 <div class="highlight"><pre><span></span><code>PacletInfo.wl
-ResourceDefinition.nb
 Kernel/
     p/
         p1.wl
         p2.wl
     p.wl
     common.wl
-    ...
-AutoCompletionData/
-    specialArgFunctions.tr
-Documentation/
-    ...
-Workbench/
-    p.nb
     ...
 ...
 </code></pre></div>
@@ -664,22 +629,34 @@ Workbench/
 <p>To handle exceptions, define it completely.</p>
 </li>
 </ul>
-<h2 id="some-tips">Some tips</h2>
-<h3 id="subcontexts">Subcontexts</h3>
-<p>The <code class="highlight"><span class="nv">p1</span><span class="o">.</span><span class="nv">wl</span></code> file with subcontext <code class="highlight"><span class="nv">p`p1`</span></code> is placed in the <code>~/Kernel/</code> directory, adjacent to the <code>p.wl</code> file if exists.</p>
-<p>When there are deeper levels of subcontexts such as <code class="highlight"><span class="nv">p`p1`p11</span></code>, the <code>p11.wl</code> file should be placed in a <code>~/Kernel/p1/</code> directory, with the subcontext hierarchy corresponding to the directory hierarchy. </p>
-<p>The first level of the context hierarchy <code class="highlight"><span class="nv">p`</span></code>, often as the publisher's name, is free and is mapped to the <code>~/Kernel/</code> directory itself.</p>
-<p>For further explanations see <a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">paclets and paclet development</a>.</p>
-<h3 id="old-styled-initwl-files">Old-styled <code class="highlight"><span class="nv">init</span><span class="o">.</span><span class="nv">wl</span></code> files</h3>
-<p>Older packages use a special workaround allowing the context <code class="highlight"><span class="nv">p`</span></code> to be mapped to a <code>p.wl</code> file in a <code>p/</code> directory found in <code class="highlight"><span class="nb">$Path</span></code>.</p>
+<!-- ## Some tips
+
+### Subcontexts
+
+The `#!wl p1.wl` file with subcontext ``#!wl p`p1` `` is placed in the `~/Kernel/` directory, adjacent to the `p.wl` file if exists.
+
+When there are deeper levels of subcontexts such as ``#!wl p`p1`p11 ``, the `p11.wl` file should be placed in a `~/Kernel/p1/` directory, with the subcontext hierarchy corresponding to the directory hierarchy. 
+
+The first level of the context hierarchy ``#!wl p` ``, often as the publisher's name, is free and is mapped to the `~/Kernel/` directory itself.
+
+For further explanations see [paclets and paclet development](https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb).
+
+
+### Old-styled `#!wl init.wl` files
+
+Older packages use a special workaround allowing the context ``#!wl p` `` to be mapped to a `p.wl` file in a `p/` directory found in `#!wl $Path`.
+
 <div class="highlight"><pre><span></span><code>p/
     p.wl
     Kernel/
         init.wl
     ...
 </code></pre></div>
-<p>If a context is mapped to a location in <code class="highlight"><span class="nb">$Path</span></code>, but there are no <code>.wl</code> files with appropriate names found there, the kernel searches for an <code>init.wl</code> file in the <code>p/Kernel/</code> subdirectory. The <code>init.wl</code> file includes a command such as <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;p`p`&quot;</span><span class="p">]</span></code>, where the double context assists in mapping to a <code>p.wl</code> file in the <code>p/</code> root directory. </p>
-<p>In the new-styled paclet, this is supported but discouraged.</p>
+
+If a context is mapped to a location in `#!wl $Path`, but there are no `.wl` files with appropriate names found there, the kernel searches for an `init.wl` file in the `p/Kernel/` subdirectory. The `init.wl` file includes a command such as ``#!wl Get["p`p`"]``, where the double context assists in mapping to a `p.wl` file in the `p/` root directory. 
+
+In the new-styled paclet, this is supported but discouraged. -->
+
 <!--### Old-versioned auto-completion
 
 In the old versions of Mathematica, the auto-completion with sub-package is problematic: under the parent package ``#!wl p` ``, the public functions in the sub-package ``#!wl p`p1` `` are not automatically completed, see [sub-packages and auto-completion](https://mathematica.stackexchange.com/questions/162386). The solution is to decouple the parent package and rename it as ``#!wl p0` ``, then load the sub-package ``#!wl p`p1` `` in ``#!wl p0` ``.-->

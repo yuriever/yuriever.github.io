@@ -478,8 +478,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#preset-algebras" class="md-nav__link">
-    Preset algebras
+  <a href="#internal-algebras" class="md-nav__link">
+    Internal algebras
   </a>
   
 </li>
@@ -618,7 +618,7 @@
 <div class="highlight"><pre><span></span><code><span class="s">&quot;Yurie/Cluster&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;&gt;=1.0.0&quot;</span>
 </code></pre></div>
 <h2 id="example">Example</h2>
-<p>The CCR can be implemented as,</p>
+<p>The CCR can be implemented as</p>
 <div class="highlight"><pre><span></span><code><span class="nv">algebraDefine</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
 <span class="nv">algebraDefault</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
 <span class="p">&lt;|</span><span class="nv">operator</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="nv">relation</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="m">1</span><span class="p">}|&gt;</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
@@ -637,7 +637,7 @@
 <h2 id="methods">Methods</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span></code> - keywords.</p>
+<p><code class="highlight"><span class="nv">algebraCluster</span><span class="o">|</span><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span></code> - keywords.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">alg_</span><span class="p">]</span></code> - define algebras.</p>
@@ -680,7 +680,7 @@
 </li>
 </ul>
 <h2 id="functionalities">Functionalities</h2>
-<h3 id="preset-algebras">Preset algebras</h3>
+<h3 id="internal-algebras">Internal algebras</h3>
 <table>
 <thead>
 <tr>
@@ -761,19 +761,19 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algSE</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplifyEquation</span></code><sup id="fnref:tag:algSE"><a class="footnote-ref" href="#fn:tag:algSE">1</a></sup></td>
+<td style="text-align: left;">return an equation with the input at right side and the simplified one at left side.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algFSE</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplifyEquation</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span></code></td>
+<td style="text-align: left;">return an equation with the input at right side and the fully simplified one at left side.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algEqualQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Equal</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">x</span><span class="o">==</span><span class="nv">y</span></code> for operators.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algSameQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">SameQ</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">x</span><span class="o">===</span><span class="nv">y</span></code> for operators.</td>
 </tr>
 </tbody>
 </table>
@@ -837,7 +837,7 @@
 <p><code class="highlight"><span class="nv">id</span></code> - identity of tensor product.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">tensorThread</span></code> - composite tensors over multiplication according to tensor-rank. </p>
+<p><code class="highlight"><span class="nv">tensorCompose</span></code> - composite tensors over multiplication according to tensor-rank. </p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">tensorRankSet</span><span class="p">[</span><span class="nt">op_</span><span class="o">?</span><span class="nv">generatorQ</span><span class="p">,</span><span class="nt">rank_</span><span class="p">]</span></code> - set the tensor-rank of generators.</p>
@@ -845,19 +845,14 @@
 <li>
 <p><code class="highlight"><span class="nv">tensorRankGet</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - get the tensor-rank of operators.</p>
 </li>
+<li>
+<p><code class="highlight"><span class="nv">tensorRankEqualQ</span><span class="p">[</span><span class="nt">op1_</span><span class="p">,</span><span class="nt">op2_</span><span class="p">]</span></code> - check whether the ranks of two tensors are equal.</p>
+</li>
 </ul>
 <h2 id="to-do-list-and-other-issues">To-do list and other issues</h2>
 <ul>
 <li>TODO: implement the comultiplication.</li>
 </ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:tag:algSE">
-<p><code class="highlight"><span class="nv">algebraSimplifyEquation</span><span class="o">=</span><span class="p">(</span><span class="nf">#</span><span class="o">==</span><span class="nv">algebraSimplify</span><span class="p">[</span><span class="nf">#</span><span class="p">])</span><span class="o">&amp;</span></code>&#160;<a class="footnote-backref" href="#fnref:tag:algSE" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 <!-- Source file information -->
 

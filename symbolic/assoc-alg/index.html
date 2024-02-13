@@ -470,8 +470,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algebra-and-module-from-factorization-algebra" class="md-nav__link">
-    Algebra and module from factorization algebra
+  <a href="#to-do" class="md-nav__link">
+    To-do
   </a>
   
 </li>
@@ -529,24 +529,23 @@
 
 <!-- Page content -->
 <h1 id="implementing-associative-algebras-in-mathematica">Implementing associative algebras in Mathematica</h1>
-<p>References:</p>
 <p>We introduce implementation of noncommutative algebras via Mathematica.
 ​</p>
 <h2 id="designing-idea">Designing idea</h2>
-<p>What expressions are non-commutative? We store non-commutative operators in the list <code class="highlight"><span class="nv">$operatorCache</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator. </p>
-<div class="highlight"><pre><span></span><code><span class="nv">$operatorCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
+<p>What expressions are non-commutative? We can store non-commutative operators in the list <code class="highlight"><span class="nv">$operator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator. </p>
+<div class="highlight"><pre><span></span><code><span class="nv">$operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">scalarQ</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
-<span class="w">    </span><span class="nb">FreeQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nb">Alternatives</span><span class="o">@@</span><span class="nv">$operatorCache</span><span class="p">]</span><span class="o">;</span>
+<span class="w">    </span><span class="nb">FreeQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nb">Alternatives</span><span class="o">@@</span><span class="nv">$operator</span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
 <p>The function <code class="highlight"><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">]</span></code> returns True when <code class="highlight"><span class="nv">expr</span></code> is a scalar.</p>
-<p>We can specify a list of rules <code class="highlight"><span class="nv">$relationCache</span></code> to implement the relations of non-commutative multiplication, and then simplify expressions using the function <code class="highlight"><span class="nb">ReplaceRepeated</span></code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$relationCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
+<p>We can specify a list of rules <code class="highlight"><span class="nv">$relation</span></code> to implement the relations of non-commutative multiplication, and then simplify expressions using the function <code class="highlight"><span class="nb">ReplaceRepeated</span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">algebraSimplify</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
-<span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$relationCache</span><span class="p">]</span><span class="o">//</span><span class="nb">Simplify</span><span class="o">;</span>
+<span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$relation</span><span class="p">]</span><span class="o">//</span><span class="nb">Simplify</span><span class="o">;</span>
 </code></pre></div>
-<p>Before that, non-commutative multiplication needs to satisfy the rules of linearity and distributivity, which is independent of specific algebras:
+<p>Before that, non-commutative multiplication needs to satisfy the rules of linearity and distributivity, which is independent of specific algebras:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$relationInternal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">x_</span><span class="o">**</span><span class="nt">y_</span><span class="o">/;</span><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="o">||</span><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">y</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">x</span><span class="o">*</span><span class="nv">y</span><span class="p">,</span>
 <span class="w">    </span><span class="p">(</span><span class="nt">k_</span><span class="o">?</span><span class="nv">scalarQ</span><span class="o">*</span><span class="nt">x_</span><span class="p">)</span><span class="o">**</span><span class="nt">y_</span><span class="o">:&gt;</span><span class="nv">k</span><span class="o">*</span><span class="nv">x</span><span class="o">**</span><span class="nv">y</span><span class="p">,</span>
@@ -554,28 +553,31 @@
 <span class="w">    </span><span class="p">(</span><span class="nt">x_</span><span class="o">+</span><span class="nt">y_</span><span class="p">)</span><span class="o">**</span><span class="nt">z_</span><span class="o">:&gt;</span><span class="nv">x</span><span class="o">**</span><span class="nv">z</span><span class="o">+</span><span class="nv">y</span><span class="o">**</span><span class="nv">z</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">z_</span><span class="o">**</span><span class="p">(</span><span class="nt">x_</span><span class="o">+</span><span class="nt">y_</span><span class="p">)</span><span class="o">:&gt;</span><span class="nv">z</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">z</span><span class="o">**</span><span class="nv">y</span>
 <span class="p">}</span><span class="o">;</span>
-</code></pre></div></p>
-<p>Here we have overload the internal function <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code> with operator form <code class="highlight"><span class="o">**</span></code>. It has attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">,</span><span class="nb">Protected</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Flat</span></code> is just the associativity.</p>
+</code></pre></div>
+<p>Here we have overload the internal function <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code> with operator form <code class="highlight"><span class="o">**</span></code>. It has attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">,</span><span class="nb">Protected</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Flat</span></code> is just associativity.</p>
 <p>To make the results readable, we define additional formatting rules. 
-<div class="highlight"><pre><span></span><code><span class="nv">$printingCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="o">;</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="nv">$printing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="o">;</span><span class="w"> </span>
 
 <span class="nv">algebraPrint</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
-<span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$printingCache</span><span class="p">]</span><span class="o">;</span>
+<span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$printing</span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
-To ensure the convergence of <code class="highlight"><span class="nb">ReplaceRepeated</span></code>, we need to determine the ordering of operators. One simple choice is the Poincare-Birkhoff-Witt basis.</p>
+To ensure the convergence of <code class="highlight"><span class="nb">ReplaceRepeated</span></code>, we need to determine the ordering of operators, and a simple choice is the Poincare-Birkhoff-Witt basis.</p>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre><span></span><code>$operatorCache = {X,Y,H,v};
+<div class="highlight"><pre><span></span><code><span class="nv">$operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">H</span><span class="p">,</span><span class="nv">v</span><span class="p">}</span><span class="o">;</span>
 
-$relationCache = {
-    Splice@$relationInternal,
-    X**H:&gt;-2 X+H**X,
-    H**Y:&gt;-2 Y+Y**H,
-    X**Y:&gt;H+Y**X,
-    H**v[h_]:&gt;h v[h],
-    X**v[h_]:&gt;0
-};
+<span class="nv">$relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Splice</span><span class="o">@</span><span class="nv">$relationInternal</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">X</span><span class="o">**</span><span class="nv">H</span><span class="o">:&gt;-</span><span class="m">2</span><span class="w"> </span><span class="nv">X</span><span class="o">+</span><span class="nv">H</span><span class="o">**</span><span class="nv">X</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">H</span><span class="o">**</span><span class="nv">Y</span><span class="o">:&gt;-</span><span class="m">2</span><span class="w"> </span><span class="nv">Y</span><span class="o">+</span><span class="nv">Y</span><span class="o">**</span><span class="nv">H</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">X</span><span class="o">**</span><span class="nv">Y</span><span class="o">:&gt;</span><span class="nv">H</span><span class="o">+</span><span class="nv">Y</span><span class="o">**</span><span class="nv">X</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">H</span><span class="o">**</span><span class="nv">v</span><span class="p">[</span><span class="nt">h_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">h</span><span class="w"> </span><span class="nv">v</span><span class="p">[</span><span class="nv">h</span><span class="p">],</span>
+<span class="w">    </span><span class="nv">X</span><span class="o">**</span><span class="nv">v</span><span class="p">[</span><span class="nt">h_</span><span class="p">]</span><span class="o">:&gt;</span><span class="m">0</span>
+<span class="p">}</span><span class="o">;</span>
 </code></pre></div>
-<h2 id="algebra-and-module-from-factorization-algebra">Algebra and module from factorization algebra</h2>
+<h2 id="to-do">To-do</h2>
+<ul>
+<li>algebra and module from factorization algebra</li>
+</ul>
 
 <!-- Source file information -->
 
