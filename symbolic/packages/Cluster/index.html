@@ -582,11 +582,12 @@
 <pre class="mermaid"><code>graph LR
 
 common --- define{{define/reset}}
-define --&gt; instance0 &amp; instance1 &amp; instance2 &amp; ...
+define --&gt; instance1 &amp; instance2 &amp; instancen &amp; ...
 extra &amp; instance0 &amp; instance1  --- update{{update}}
 update --&gt; default
+
 subgraph instances
-instance0{{instance 0}} &amp; instance1{{instance 1}} &amp; ... &amp; instance2{{instance 2}}
+instance1{{instance 1}} &amp; instance2{{instance 2}} &amp; ... &amp; instancen{{instance n}}
 end</code></pre>
 </div>
 <h2 id="motivation-and-designing-idea">Motivation and designing idea</h2>
