@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/paclet-package/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/option/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Paclet and package - Sora</title>
+        <title>Inheritance of options - Sora</title>
       
     
     
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paclet-and-package" class="md-skip">
+        <a href="#inheritance-of-options" class="md-skip">
           Skip to content
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Paclet and package
+              Inheritance of options
             
           </span>
         </div>
@@ -456,29 +456,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paclet-and-package-structure" class="md-nav__link">
-    Paclet and package structure
+  <a href="#_1" class="md-nav__link">
+    基本用法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#symbol-types" class="md-nav__link">
-    Symbol types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#naming-convention" class="md-nav__link">
-    Naming convention
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-style" class="md-nav__link">
-    Code style
+  <a href="#_2" class="md-nav__link">
+    继承
   </a>
   
 </li>
@@ -535,88 +521,87 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="paclet-and-package">Paclet and package</h1>
-<p>References:</p>
+<h1 id="inheritance-of-options">Inheritance of options</h1>
+<p>本页面总结 Mathematica 选项功能的使用方法。</p>
+<h2 id="_1">基本用法</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a1&quot;</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nv">f</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">f</span><span class="p">[]</span>
+<span class="nv">f</span><span class="p">[{{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a2&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a3&quot;</span><span class="p">}}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a1&quot;</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a2&quot;</span>
+</code></pre></div>
+<p>以下 <code class="highlight"><span class="nv">opts</span></code> 称为输入选项，<code class="highlight"><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span></code> 称为默认选项。</p>
 <ul>
-<li><a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">Paclets and paclet development</a> <code>tutorial/Paclets</code></li>
+<li>
+<p>输入选项接受序列和（嵌套）列表 <sup id="fnref:nestlist"><a class="footnote-ref" href="#fn:nestlist">1</a></sup>。</p>
+</li>
+<li>
+<p>输入选项的关键词必须出现在默认选项中。</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">OptionValue</span></code> 优先搜索输入选项，其次搜索默认选项。</p>
+</li>
+<li>
+<p>对于输入选项或默认选项，重复的关键词中<strong>前面</strong>的优先级更高。这与关联的行为相反，例如 <code class="highlight"><span class="p">&lt;|</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">|&gt;</span></code> 返回 <code class="highlight"><span class="p">&lt;|</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">|&gt;</span></code>。</p>
+</li>
 </ul>
+<h2 id="_2">继承</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">g</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b1&quot;</span><span class="p">,</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">}</span><span class="o">;</span>
+<span class="nb">SetOptions</span><span class="p">[</span><span class="nv">g</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="p">{</span><span class="nb">Options</span><span class="o">@</span><span class="nv">g</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b1&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">},{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a1&quot;</span><span class="p">}}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">g1</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nv">g2</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nb">SetOptions</span><span class="p">[{</span><span class="nv">g1</span><span class="p">,</span><span class="nv">g2</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">g1</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">g1</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
+
+<span class="nv">g2</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
+
+<span class="nv">g1</span><span class="p">[]</span>
+<span class="nv">g2</span><span class="p">[]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;b0&quot;</span><span class="p">}</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;b0&quot;</span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p><code class="highlight"><span class="nb">FilterRules</span></code> 的两个参数接受（嵌套）列表模式，返回列表。</p>
+</li>
+<li>
+<p>函数 <code class="highlight"><span class="nv">g1</span></code> 和 <code class="highlight"><span class="nv">g2</span></code> 继承了 <code class="highlight"><span class="nv">f</span></code> 的默认选项，可用 <code class="highlight"><span class="nb">SetOptions</span></code> 改变默认选项的值。</p>
+</li>
+<li>
+<p>若改变了默认选项的值，需手动将其传递给 <code class="highlight"><span class="nv">f</span></code>：用 <code class="highlight"><span class="p">{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">g1</span><span class="p">}</span></code> 合并 <code class="highlight"><span class="nv">g1</span></code> 的输入选项与默认选项，用 <code class="highlight"><span class="nb">FilterRules</span></code> 过滤出 <code class="highlight"><span class="nv">f</span></code> 接受的选项。否则 <code class="highlight"><span class="nv">f</span></code> 调用自身的默认选项。</p>
+</li>
+<li>
+<p>需注意，若 <code class="highlight"><span class="nv">f</span></code> 接受的参数中含有列表，<code class="highlight"><span class="nb">FilterRules</span></code> 返回的列表可能会被匹配为列表而非输入选项，消歧义的写法为 <code class="highlight"><span class="nv">sequence</span><span class="o">@@</span><span class="nb">FilterRules</span></code>。</p>
+</li>
+</ul>
+<div class="footnote">
 <hr />
-<h2 id="paclet-and-package-structure">Paclet and package structure</h2>
-<div class="highlight"><pre><span></span><code>PacletInfo.wl
-Kernel/
-    Package/
-        Sub1.wl
-        Sub2.wl
-    Common.wl
-    Package.wl
-    Usage.wl
-    ...
-...
-</code></pre></div>
-<div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*set the context as Package`.*)</span>
-<span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;Package`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*clear the definitions when reloading the package.*)</span>
-<span class="nb">Unprotect</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*`*&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*load the common subcontext Package`Common`.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Common`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*declare public symbols.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Usage`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*load the definitions of public symbols.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Sub1`&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Sub2`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*set the private context.*)</span>
-<span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*some codes here.*)</span>
-
-<span class="c">(*end the private context and revert to Package`.*)</span>
-<span class="nb">End</span><span class="p">[]</span><span class="o">;</span>
-
-<span class="c">(*protect the public symbols if necessary.*)</span>
-<span class="nb">Protect</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*end the context, and add Package` to $ContextPath.*)</span>
-<span class="nb">EndPackage</span><span class="p">[]</span><span class="o">;</span>
-</code></pre></div>
-<h2 id="symbol-types">Symbol types</h2>
-<ul>
-<li>
-<p><strong>Constant</strong> - storing global parameters.</p>
+<ol>
+<li id="fn:nestlist">
+<p>接受（嵌套）列表为文档未指明的行为。默认选项也接受（嵌套）列表，在特定场景会报错，不影响功能。&#160;<a class="footnote-backref" href="#fnref:nestlist" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li>
-<p><strong>Association/List</strong> - storing data.</p>
-</li>
-<li>
-<p><strong>Questing function</strong> -  defining the type of variables. The definition should be complete.</p>
-</li>
-<li>
-<p><strong>Main function</strong> - implementint the functionalities of the package.</p>
-</li>
-<li>
-<p><strong>Helper function</strong> - assisting the main function. The dependency should respect a top-down tree-like structure.</p>
-</li>
-<li>
-<p><strong>Formatting function</strong> - formatting the output. It's better to separate the intermediate values passed between functions and the return values.</p>
-</li>
-</ul>
-<h2 id="naming-convention">Naming convention</h2>
-<p>Since there is no built-in type system in Mathematica, the names of symbols should reveal the types, e.g. questing function <code class="highlight"><span class="o">*</span><span class="nv">Q</span></code>, repeated patterns <code class="highlight"><span class="nt">foos__</span></code>, list pattern <code class="highlight"><span class="nt">fooList_</span></code>.</p>
-<h2 id="code-style">Code style</h2>
-<ul>
-<li>
-<p>To prevent unexpected evaluations, define it only when needs to be defined.</p>
-</li>
-<li>
-<p>To handle exceptions, define it completely.</p>
-</li>
-</ul>
+</ol>
+</div>
 
 <!-- Source file information -->
 
