@@ -449,6 +449,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-name-operations" class="md-nav__link">
+    File name operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-operations_1" class="md-nav__link">
+    File operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -500,6 +529,40 @@
 
 <!-- Page content -->
 <h1 id="file-operations">File operations</h1>
+<h2 id="file-name-operations">File name operations</h2>
+<p>Example 1</p>
+<div class="highlight"><pre><span></span><code><span class="nv">file</span><span class="p">[]</span><span class="o">=</span><span class="nb">FileNameJoin</span><span class="o">@</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c.txt&quot;</span><span class="p">}</span>
+
+<span class="nv">Comap</span><span class="p">[{</span><span class="nb">FileNameSplit</span><span class="p">,</span><span class="nb">FileBaseName</span><span class="p">,</span><span class="nb">FileExtension</span><span class="p">,</span><span class="nb">FileNameTake</span><span class="p">,</span><span class="nb">FileNameDrop</span><span class="p">,</span><span class="nb">DirectoryName</span><span class="p">}]</span><span class="o">@</span><span class="nv">file</span><span class="p">[]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a/b/c.txt&quot;</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c.txt&quot;</span><span class="p">},</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="s">&quot;txt&quot;</span><span class="p">,</span><span class="s">&quot;c.txt&quot;</span><span class="p">,</span><span class="s">&quot;a/b&quot;</span><span class="p">,</span><span class="s">&quot;a/b/&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Example 2</p>
+<div class="highlight"><pre><span></span><code><span class="nv">dir</span><span class="p">[]</span><span class="o">=</span><span class="nb">FileNameJoin</span><span class="o">@</span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">}</span>
+
+<span class="nv">Comap</span><span class="p">[{</span><span class="nb">FileNameSplit</span><span class="p">,</span><span class="nb">FileBaseName</span><span class="p">,</span><span class="nb">FileExtension</span><span class="p">,</span><span class="nb">FileNameTake</span><span class="p">,</span><span class="nb">FileNameDrop</span><span class="p">,</span><span class="nb">DirectoryName</span><span class="p">}]</span><span class="o">@</span><span class="nv">dir</span><span class="p">[]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a/b/c&quot;</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">},</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="s">&quot;a/b&quot;</span><span class="p">,</span><span class="s">&quot;a/b/&quot;</span><span class="p">}</span>
+</code></pre></div>
+<h2 id="file-operations_1">File operations</h2>
+<p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file names in the directories.</p>
+<p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
+<p><code class="highlight"><span class="nb">FileExistsQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - test whether a file exists.</p>
+<p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and gives <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
+<p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence and return the parent directory of the directory.</p>
+<p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span></code></p>
+<p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span></code></p>
+<p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
+<p><code class="highlight"><span class="nv">FileSystemTree</span></code></p>
+<p><code class="highlight"><span class="nb">CreateSearchIndex</span></code></p>
+<h2 id="constants">Constants</h2>
+<p><code class="highlight"><span class="nb">NotebookDirectory</span><span class="p">[]</span></code> - current notebook directory.</p>
+<p><code class="highlight"><span class="nb">$HomeDirectory</span></code> - home directory.</p>
+<p><code class="highlight"><span class="nb">$UserBaseDirectory</span></code> - directory for user-specific add-on files.</p>
+<p><code class="highlight"><span class="nv">$UserBasePacletsDirectory</span></code> - directory for user-specific paclet files.</p>
+<p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
 
 <!-- Source file information -->
 

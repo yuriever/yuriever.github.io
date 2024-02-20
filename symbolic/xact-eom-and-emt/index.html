@@ -474,13 +474,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#function-xactxpertperturbation" class="md-nav__link">
-    Function xAct`xPert`Perturbation
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -557,7 +550,7 @@ References:</p>
 <li><a href="xact-eom-and-emt.nb">xact-eom-and-emt.nb</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
-<p>We introduce by examples the abstract tensor computation functionality of the xAct packages, and illustrate how to derive equations of motions and simplify tensor expressions in the following theories.</p>
+<p>We introduce the abstract tensor computation functionality of the xAct packages, and illustrate how to derive equations of motions and simplify tensor expressions by the following examples.</p>
 <table>
 <thead>
 <tr>
@@ -584,7 +577,7 @@ References:</p>
 </tr>
 </tbody>
 </table>
-<p>The traces <span class="arithmatex">\(\tr T\)</span> of stress tensors <span class="arithmatex">\(T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}\)</span> of these four theories vanish at special dimensions and parameters, and in that cases the actions are invariant under the Weyl transformations.</p>
+<p>The traces <span class="arithmatex">\(\tr T\)</span> of stress tensors <span class="arithmatex">\(T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}\)</span> of these theories vanish at special dimensions and parameters, then the actions are invariant under the Weyl transformations <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>.</p>
 <table>
 <thead>
 <tr>
@@ -601,7 +594,7 @@ References:</p>
 </tr>
 <tr>
 <td style="text-align: left;">conformal scalar</td>
-<td style="text-align: left;"><span class="arithmatex">\(\tfrac{1}{2} (-2 + d) \phi \operatorname{EOM}(\f)\)</span> at <span class="arithmatex">\(c= - \frac{2 -  d}{4 (-1 + d)}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\tfrac{1}{2} (-2 + d) \phi \operatorname{EOM}[\f]\)</span> at <span class="arithmatex">\(c= - \frac{2 -  d}{4 (-1 + d)}\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(d=2\)</span> or <span class="arithmatex">\(c= - \frac{2 -  d}{4 (-1 + d)}\)</span></td>
 </tr>
 <tr>
@@ -616,10 +609,19 @@ References:</p>
 </tr>
 </tbody>
 </table>
-<p>Notice that: 1) only in <span class="arithmatex">\(d=4\)</span> the free abelian gauge field is conformally invariant; 2) due to the non-minimally coupled term <span class="arithmatex">\(R \phi^2\)</span>, the conformal scalar is better behaved than the free scalar on curved manifold. 
-see e.g. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>.</p>
-<p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space<sup id="fnref:tag:integral"><a class="footnote-ref" href="#fn:tag:integral">1</a></sup> of the field configurations. The only information involved is a local coordinate chart with some differential structures like metric and complex structure, and the local chart can be open subset of smooth manifold or supermanifold, or even from some formal geometry<sup id="fnref:tag:formal"><a class="footnote-ref" href="#fn:tag:formal">2</a></sup>.</p>
-<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions step by step and finally approach to the target expression. The xAct packages provide a rather complete platform of this functionality.</p>
+<p>Notice that:</p>
+<ul>
+<li>
+<p>only in <span class="arithmatex">\(d=4\)</span> the free abelian gauge theory is conformally invariant; </p>
+</li>
+<li>
+<p>due to the non-minimally coupled term <span class="arithmatex">\(R \phi^2\)</span>, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds. </p>
+</li>
+</ul>
+<p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space <sup id="fnref:integral"><a class="footnote-ref" href="#fn:integral">1</a></sup> of the field configurations. 
+The relevant information involved is a local chart with additional geometrical structures.</p>
+<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to the target expression. 
+The xAct packages provide a rather complete platform of this functionality.</p>
 <h2 id="the-structure-of-the-notebook">The structure of the notebook</h2>
 <p>The main content is written in <a href="xact-eom-and-emt.nb">this notebook - xact-eom-and-emt.nb</a>:</p>
 <p><img src="../xact-eom-and-emt/xact-eom-and-emt-screenshot.svg" class="center"></p>
@@ -683,8 +685,8 @@ see e.g. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup 
 </li>
 </ul>
 <h2 id="some-further-explanations">Some further explanations</h2>
-<h1 id="function-xactxpertperturbation"><h3 class="nocount">Function <code class="highlight"><span class="nv">xAct`xPert`Perturbation</span></code></h3></h1>
-<p>The xPert package provides functions of variations and metric perturbations. The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz's rule of variations. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>, </p>
+<p>The xPert package provides functionalities like variations and metric perturbations. 
+The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz rule. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>, </p>
 <p>The variation of the electromagnetic field action is</p>
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
@@ -705,29 +707,26 @@ see e.g. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup 
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:tag:integral">
-<p>In most cases the field configurations are assumed to be compactly supported or fast decayed at infinity, ensuring that the integral in the action <span class="arithmatex">\(S\)</span> is algebraic, aka, is a linear map from field configurations to <span class="arithmatex">\(\CC\)</span>, <span class="arithmatex">\(\CC[[\hbar,m,g,\dots ]]\)</span> or even some peculiar rings.&#160;<a class="footnote-backref" href="#fnref:tag:integral" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:tag:formal">
-<p>see e.g. variational bi-complex, formal geometry and BV-BRST.&#160;<a class="footnote-backref" href="#fnref:tag:formal" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:integral">
+<p>In simple situations the field configurations are assumed to be compactly supported or fast decayed at infinity, ensuring that the integral in the action <span class="arithmatex">\(S\)</span> is algebraic, aka, is a linear map from field configurations to <span class="arithmatex">\(\CC\)</span> or <span class="arithmatex">\(\CC[[\hbar,m,g,\dots ]]\)</span>.&#160;<a class="footnote-backref" href="#fnref:integral" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:1">
-<p>Joseph Polchinski. Scale and Conformal Invariance in Quantum Field Theory. <em>Nucl. Phys. B</em>, 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Joseph Polchinski. Scale and Conformal Invariance in Quantum Field Theory. <em>Nucl. Phys. B</em>, 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Yu Nakayama. Scale invariance vs conformal invariance. <em>Phys. Rept.</em>, 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Yu Nakayama. Scale invariance vs conformal invariance. <em>Phys. Rept.</em>, 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On Scale and Conformal Invariance in Four Dimensions. <em>JHEP</em>, 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On Scale and Conformal Invariance in Four Dimensions. <em>JHEP</em>, 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory. <em>JHEP</em>, 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the Asymptotics of 4D Quantum Field Theory. <em>JHEP</em>, 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What Maxwell Theory in D≠4 teaches us about scale and conformal invariance. <em>Nucl. Phys. B</em>, 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What Maxwell Theory in D≠4 teaches us about scale and conformal invariance. <em>Nucl. Phys. B</em>, 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>R. Jackiw and S. -Y. Pi. Tutorial on Scale and Conformal Symmetries in Diverse Dimensions. <em>J. Phys. A</em>, 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>R. Jackiw and S. -Y. Pi. Tutorial on Scale and Conformal Symmetries in Diverse Dimensions. <em>J. Phys. A</em>, 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

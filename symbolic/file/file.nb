@@ -1,0 +1,504 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17793,        496]
+NotebookOptionsPosition[     13883,        427]
+NotebookOutlinePosition[     14475,        447]
+CellTagsIndexPosition[     14432,        444]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], ";"}]], "Code",
+ CellLabel->
+  "In[313]:=",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"file", "[", "]"}], "=", 
+   RowBox[{"FileNameJoin", "@", 
+    RowBox[{"{", 
+     RowBox[{"\"\<a\>\"", ",", "\"\<b\>\"", ",", "\"\<c.txt\>\""}], "}"}]}]}],
+   "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Comap", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "FileNameSplit", ",", "FileBaseName", ",", "FileExtension", ",", 
+     "FileNameTake", ",", "FileNameDrop", ",", "DirectoryName"}], "}"}], 
+   "]"}], "@", 
+  RowBox[{"file", "[", "]"}]}]}], "Code",
+ CellLabel->
+  "In[314]:=",ExpressionUUID->"97c13944-4f9e-4d69-b747-e2d46a5d1fa8"],
+
+Cell[BoxData["\<\"a/b/c.txt\"\>"], "Output",
+ CellLabel->
+  "Out[314]=",ExpressionUUID->"bdb139ca-5df4-4255-8d75-fa1989281b12"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"a\"\>", ",", "\<\"b\"\>", ",", "\<\"c.txt\"\>"}], "}"}], 
+   ",", "\<\"c\"\>", ",", "\<\"txt\"\>", ",", "\<\"c.txt\"\>", 
+   ",", "\<\"a/b\"\>", ",", "\<\"a/b/\"\>"}], "}"}]], "Output",
+ CellLabel->
+  "Out[315]=",ExpressionUUID->"3e99b730-af50-4dbf-82c4-637d2c14b4bf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"dir", "[", "]"}], "=", 
+   RowBox[{"FileNameJoin", "@", 
+    RowBox[{"{", 
+     RowBox[{"\"\<a\>\"", ",", "\"\<b\>\"", ",", "\"\<c\>\""}], "}"}]}]}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Comap", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "FileNameSplit", ",", "FileBaseName", ",", "FileExtension", ",", 
+     "FileNameTake", ",", "FileNameDrop", ",", "DirectoryName"}], "}"}], 
+   "]"}], "@", 
+  RowBox[{"dir", "[", "]"}]}]}], "Code",
+ CellLabel->
+  "In[316]:=",ExpressionUUID->"46263954-39af-4fde-b7e6-651a4aad0d40"],
+
+Cell[BoxData["\<\"a/b/c\"\>"], "Output",
+ CellLabel->
+  "Out[316]=",ExpressionUUID->"e97eb36e-e118-4481-ad99-1145e43c0ce1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"a\"\>", ",", "\<\"b\"\>", ",", "\<\"c\"\>"}], "}"}], 
+   ",", "\<\"c\"\>", ",", "\<\"\"\>", ",", "\<\"c\"\>", ",", "\<\"a/b\"\>", 
+   ",", "\<\"a/b/\"\>"}], "}"}]], "Output",
+ CellLabel->
+  "Out[317]=",ExpressionUUID->"9980cc6c-5dc5-4f98-8562-2e123fc56b78"]
+}, Open  ]],
+
+Cell["", "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"base", "=", 
+  RowBox[{"File", "@", 
+   RowBox[{"FileNameJoin", "@", 
+    RowBox[{"{", 
+     RowBox[{
+     "$HomeDirectory", ",", "\"\<Downloads\>\"", ",", "\"\<test\>\""}], 
+     "}"}]}]}]}]], "Code",
+ CellLabel->
+  "In[320]:=",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+
+Cell[BoxData[
+ RowBox[{"File", "[", 
+  TemplateBox[{"\"/Users/Reiko/Downloads/test\""},
+   "FileArgument"], "]"}]], "Output",
+ CellLabel->
+  "Out[320]=",ExpressionUUID->"e70a9f25-ab2c-492a-b56f-1efe35c97b3e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"DeleteDirectory", "[", 
+  RowBox[{"base", ",", 
+   RowBox[{"DeleteContents", "->", "True"}]}], "]"}]], "Code",
+ CellLabel->
+  "In[332]:=",ExpressionUUID->"6a30cae3-92cc-406a-a028-5b0353db966e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CreateDirectory", "[", "base", "]"}]], "Code",
+ CellLabel->
+  "In[333]:=",ExpressionUUID->"05cb7c34-1eea-4392-ac0e-5556f2a89700"],
+
+Cell[BoxData["\<\"/Users/Reiko/Downloads/test\"\>"], "Output",
+ CellLabel->
+  "Out[333]=",ExpressionUUID->"fc1fe20c-9745-4d6a-99cd-95dfe0f1da86"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"dir", "[", "n", "]"}], "=", 
+     RowBox[{"FileNameJoin", "@", 
+      RowBox[{"{", 
+       RowBox[{
+       "$HomeDirectory", ",", "\"\<Downloads\>\"", ",", "\"\<test\>\"", ",", 
+        RowBox[{"\"\<sub\>\"", "<>", 
+         RowBox[{"ToString", "[", "n", "]"}]}]}], "}"}]}]}], ";", "\n", "\t", 
+    
+    RowBox[{
+     RowBox[{"file", "[", "n", "]"}], "=", 
+     RowBox[{"FileNameJoin", "@", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"dir", "[", "n", "]"}], ",", 
+        RowBox[{"\"\<file\>\"", "<>", 
+         RowBox[{"ToString", "[", "n", "]"}], "<>", "\"\<.txt\>\""}]}], 
+       "}"}]}]}], ";", "\n", "\t", 
+    RowBox[{"CreateFile", "[", 
+     RowBox[{
+      RowBox[{"file", "[", "n", "]"}], ",", 
+      RowBox[{"OverwriteTarget", "->", "True"}], ",", 
+      RowBox[{"CreateIntermediateDirectories", "->", "True"}]}], "]"}]}], ",",
+    "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"Range", "[", "5", "]"}]}], "}"}]}], "\n", "]"}]], "Code",
+ CellLabel->
+  "In[334]:=",ExpressionUUID->"6f80982f-dc6b-4882-a2c9-b7bf109e46fe"],
+
+Cell["", "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+    RowBox[{"{", "All", "}"}], ",", 
+    RowBox[{"dir", "/@", 
+     RowBox[{"Range", "[", "5", "]"}]}]}], "]"}], "//", "Column"}]], "Code",
+ CellLabel->
+  "In[295]:=",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+    RowBox[{"file___", "/;", 
+     RowBox[{
+      RowBox[{"FileType", "[", "file", "]"}], "==", "Directory"}]}], ",", 
+    "base", ",", "Infinity"}], "]"}], "//", "Column"}], "\n", 
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+    RowBox[{"file___", "/;", 
+     RowBox[{"DirectoryQ", "[", "file", "]"}]}], ",", "base", ",", 
+    "Infinity"}], "]"}], "//", "Column"}]}], "Code",
+ CellLabel->
+  "In[286]:=",ExpressionUUID->"e46ad26d-60cb-46a3-b873-e79bb549a3db"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+    RowBox[{"file___", "/;", 
+     RowBox[{
+      RowBox[{"FileType", "[", "file", "]"}], "===", "File"}]}], ",", "base", 
+    ",", "Infinity"}], "]"}], "//", "Column"}], "\n", 
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+    RowBox[{"file___", "/;", 
+     RowBox[{"!", 
+      RowBox[{"DirectoryQ", "[", "file", "]"}]}]}], ",", "base", ",", 
+    "Infinity"}], "]"}], "//", "Column"}]}], "Code",
+ CellLabel->
+  "In[291]:=",ExpressionUUID->"094f17a9-f304-4313-beab-e564b5ec2d92"],
+
+Cell["", "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Comap", "[", 
+    RowBox[{"{", 
+     RowBox[{"Identity", ",", "DirectoryQ", ",", "FileExistsQ"}], "}"}], 
+    "]"}], "@", 
+   RowBox[{"dir", "[", "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Comap", "[", 
+    RowBox[{"{", 
+     RowBox[{"Identity", ",", "DirectoryQ", ",", "FileExistsQ"}], "}"}], 
+    "]"}], "@", 
+   RowBox[{"file", "[", "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Comap", "[", 
+    RowBox[{"{", 
+     RowBox[{"Identity", ",", "DirectoryQ", ",", "FileExistsQ"}], "}"}], 
+    "]"}], "@", 
+   RowBox[{"file", "[", "1", "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Comap", "[", 
+   RowBox[{"{", 
+    RowBox[{"Identity", ",", "DirectoryQ", ",", "FileExistsQ"}], "}"}], "]"}],
+   "@", 
+  RowBox[{"dir", "[", "1", "]"}]}]}], "Code",
+ CellLabel->
+  "In[342]:=",ExpressionUUID->"ada39ebb-95ee-4935-8831-8ea5387d2097"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a/b/c\"\>", ",", "False", ",", "False"}], "}"}]], "Output",
+ CellLabel->
+  "Out[342]=",ExpressionUUID->"65fe2bef-70c4-4dfb-b9f6-38a6c2dd29b1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a/b/c.txt\"\>", ",", "False", ",", "False"}], "}"}]], "Output",\
+
+ CellLabel->
+  "Out[343]=",ExpressionUUID->"b3ab6974-5bd8-4d3d-a2c2-5cc3d90d048e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/Reiko/Downloads/test/sub1/file1.txt\"\>", ",", "False", 
+   ",", "True"}], "}"}]], "Output",
+ CellLabel->
+  "Out[344]=",ExpressionUUID->"7f103c99-974b-43dd-83cd-a6adb3c280d2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/Reiko/Downloads/test/sub1\"\>", ",", "True", ",", 
+   "True"}], "}"}]], "Output",
+ CellLabel->
+  "Out[345]=",ExpressionUUID->"70397472-8fea-456e-a387-9be7b72f907c"]
+}, Open  ]],
+
+Cell["", "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileSystemMap", "[", 
+  RowBox[{"FileDate", ",", "base", ",", "Infinity"}], "]"}]], "Code",
+ CellLabel->
+  "In[361]:=",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"sub1\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file1.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 21 Feb 2024 02:47:31\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "2", ",", "21", ",", "2", ",", "47", ",", 
+                "31.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub2\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file2.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 21 Feb 2024 02:47:31\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "2", ",", "21", ",", "2", ",", "47", ",", 
+                "31.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub3\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file3.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 21 Feb 2024 02:47:31\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "2", ",", "21", ",", "2", ",", "47", ",", 
+                "31.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub4\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file4.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 21 Feb 2024 02:47:31\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "2", ",", "21", ",", "2", ",", "47", ",", 
+                "31.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub5\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file5.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 21 Feb 2024 02:47:31\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "2", ",", "21", ",", "2", ",", "47", ",", 
+                "31.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->
+  "Out[361]=",ExpressionUUID->"e638ab74-91d4-4292-9f6b-e42c27681e14"]
+}, Open  ]],
+
+Cell["", "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$UserBaseDirectory"], "Code",
+ CellLabel->
+  "In[363]:=",ExpressionUUID->"bb9ac6e6-3794-439d-a7b8-9423fb170f07"],
+
+Cell[BoxData["\<\"/Users/Reiko/Library/Mathematica\"\>"], "Output",
+ CellLabel->
+  "Out[363]=",ExpressionUUID->"6050a47d-2519-4905-badf-9d2e352df9cd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$UserDocumentsDirectory"], "Code",
+ CellLabel->
+  "In[364]:=",ExpressionUUID->"59a6f2b5-c926-45cf-9e0b-6f74e5b58e01"],
+
+Cell[BoxData["\<\"/Users/Reiko/Documents\"\>"], "Output",
+ CellLabel->
+  "Out[364]=",ExpressionUUID->"39b48936-c8ea-4899-b918-4adc0586bbcf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$WolframDocumentsDirectory"], "Code",
+ CellLabel->
+  "In[365]:=",ExpressionUUID->"0aa33aa0-39b3-4f18-861d-83efa17d9c0b"],
+
+Cell[BoxData["\<\"/Users/Reiko/Documents/Wolfram\"\>"], "Output",
+ CellLabel->
+  "Out[365]=",ExpressionUUID->"711e0e09-89a8-4b5f-9b34-7259a6234ddf"]
+}, Open  ]]
+},
+Editable->True,
+WindowSize->{840, 1022},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowStatusArea->"",
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
+   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
+  "Yurie.nb", CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"24b72555-1a5c-4b74-ae9a-64b6bce1b53d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 170, 4, 67, "Code",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
+Cell[CellGroupData[{
+Cell[753, 28, 570, 17, 116, "Code",ExpressionUUID->"97c13944-4f9e-4d69-b747-e2d46a5d1fa8"],
+Cell[1326, 47, 127, 2, 42, "Output",ExpressionUUID->"bdb139ca-5df4-4255-8d75-fa1989281b12"],
+Cell[1456, 51, 342, 8, 42, "Output",ExpressionUUID->"3e99b730-af50-4dbf-82c4-637d2c14b4bf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1835, 64, 564, 17, 116, "Code",ExpressionUUID->"46263954-39af-4fde-b7e6-651a4aad0d40"],
+Cell[2402, 83, 123, 2, 42, "Output",ExpressionUUID->"e97eb36e-e118-4481-ad99-1145e43c0ce1"],
+Cell[2528, 87, 331, 8, 42, "Output",ExpressionUUID->"9980cc6c-5dc5-4f98-8562-2e123fc56b78"]
+}, Open  ]],
+Cell[2874, 98, 71, 0, 62, "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
+Cell[CellGroupData[{
+Cell[2970, 102, 308, 9, 67, "Code",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+Cell[3281, 113, 208, 5, 51, "Output",ExpressionUUID->"e70a9f25-ab2c-492a-b56f-1efe35c97b3e"]
+}, Open  ]],
+Cell[3504, 121, 217, 5, 67, "Code",ExpressionUUID->"6a30cae3-92cc-406a-a028-5b0353db966e"],
+Cell[CellGroupData[{
+Cell[3746, 130, 153, 3, 67, "Code",ExpressionUUID->"05cb7c34-1eea-4392-ac0e-5556f2a89700"],
+Cell[3902, 135, 145, 2, 42, "Output",ExpressionUUID->"fc1fe20c-9745-4d6a-99cd-95dfe0f1da86"]
+}, Open  ]],
+Cell[4062, 140, 1155, 32, 188, "Code",ExpressionUUID->"6f80982f-dc6b-4882-a2c9-b7bf109e46fe"],
+Cell[5220, 174, 71, 0, 62, "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
+Cell[5294, 176, 287, 8, 67, "Code",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+Cell[5584, 186, 532, 15, 92, "Code",ExpressionUUID->"e46ad26d-60cb-46a3-b873-e79bb549a3db"],
+Cell[6119, 203, 550, 16, 92, "Code",ExpressionUUID->"094f17a9-f304-4313-beab-e564b5ec2d92"],
+Cell[6672, 221, 71, 0, 62, "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
+Cell[CellGroupData[{
+Cell[6768, 225, 899, 29, 212, "Code",ExpressionUUID->"ada39ebb-95ee-4935-8831-8ea5387d2097"],
+Cell[7670, 256, 186, 4, 42, "Output",ExpressionUUID->"65fe2bef-70c4-4dfb-b9f6-38a6c2dd29b1"],
+Cell[7859, 262, 192, 5, 42, "Output",ExpressionUUID->"b3ab6974-5bd8-4d3d-a2c2-5cc3d90d048e"],
+Cell[8054, 269, 226, 5, 42, "Output",ExpressionUUID->"7f103c99-974b-43dd-83cd-a6adb3c280d2"],
+Cell[8283, 276, 215, 5, 42, "Output",ExpressionUUID->"70397472-8fea-456e-a387-9be7b72f907c"]
+}, Open  ]],
+Cell[8513, 284, 71, 0, 62, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
+Cell[CellGroupData[{
+Cell[8609, 288, 198, 4, 67, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+Cell[8810, 294, 4034, 95, 215, "Output",ExpressionUUID->"e638ab74-91d4-4292-9f6b-e42c27681e14"]
+}, Open  ]],
+Cell[12859, 392, 71, 0, 62, "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"],
+Cell[CellGroupData[{
+Cell[12955, 396, 126, 2, 67, "Code",ExpressionUUID->"bb9ac6e6-3794-439d-a7b8-9423fb170f07"],
+Cell[13084, 400, 150, 2, 42, "Output",ExpressionUUID->"6050a47d-2519-4905-badf-9d2e352df9cd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13271, 407, 131, 2, 67, "Code",ExpressionUUID->"59a6f2b5-c926-45cf-9e0b-6f74e5b58e01"],
+Cell[13405, 411, 140, 2, 42, "Output",ExpressionUUID->"39b48936-c8ea-4899-b918-4adc0586bbcf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13582, 418, 134, 2, 67, "Code",ExpressionUUID->"0aa33aa0-39b3-4f18-861d-83efa17d9c0b"],
+Cell[13719, 422, 148, 2, 42, "Output",ExpressionUUID->"711e0e09-89a8-4b5f-9b34-7259a6234ddf"]
+}, Open  ]]
+}
+]
+*)
+
