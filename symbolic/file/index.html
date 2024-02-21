@@ -583,6 +583,7 @@
 </tr>
 </tbody>
 </table>
+<p><code class="highlight"><span class="n">FileNameJoin</span><span class="p">[</span><span class="nv">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system. </p>
 <h2 id="file-operations_1">File operations</h2>
 <table>
 <thead>
@@ -635,7 +636,7 @@
 <p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file names in the directories.</p>
 <p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
 <p><code class="highlight"><span class="nb">FileExistsQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - test whether a file exists.</p>
-<p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and gives <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
+<p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and return <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
 <p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence and return the parent directory of the directory.</p>
 <p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span></code></p>
 <p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span></code></p>
