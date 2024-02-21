@@ -1,4 +1,0 @@
-{
-	"a/b/c": {"ToString @* FileNameSplit": "{a, b, c}", "FileBaseName": "c", "FileExtension": "", "FileNameTake": "c", "FileNameDrop": "a/b", "DirectoryName": "a/b/"},
-	"a/b/c.txt": {"ToString @* FileNameSplit": "{a, b, c.txt}", "FileBaseName": "c", "FileExtension": "txt", "FileNameTake": "c.txt", "FileNameDrop": "a/b", "DirectoryName": "a/b/"}
-}
