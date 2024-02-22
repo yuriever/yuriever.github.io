@@ -480,9 +480,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#constants" class="md-nav__link">
+  <a href="#file-constants" class="md-nav__link">
     <span class="md-ellipsis">
-      Constants
+      File constants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-operations-based-on-file-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      File operations based on file constants
     </span>
   </a>
   
@@ -583,7 +592,7 @@
 </tr>
 </tbody>
 </table>
-<p><code class="highlight"><span class="n">FileNameJoin</span><span class="p">[</span><span class="nv">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system. </p>
+<p><code class="highlight"><span class="nb">FileNameJoin</span><span class="p">[</span><span class="nt">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system. </p>
 <h2 id="file-operations_1">File operations</h2>
 <table>
 <thead>
@@ -643,12 +652,15 @@
 <p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
 <p><code class="highlight"><span class="nv">FileSystemTree</span></code></p>
 <p><code class="highlight"><span class="nb">CreateSearchIndex</span></code></p>
-<h2 id="constants">Constants</h2>
+<h2 id="file-constants">File constants</h2>
 <p><code class="highlight"><span class="nb">NotebookDirectory</span><span class="p">[]</span></code> - current notebook directory.</p>
 <p><code class="highlight"><span class="nb">$HomeDirectory</span></code> - home directory.</p>
 <p><code class="highlight"><span class="nb">$UserBaseDirectory</span></code> - directory for user-specific add-on files.</p>
 <p><code class="highlight"><span class="nv">$UserBasePacletsDirectory</span></code> - directory for user-specific paclet files.</p>
 <p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
+<p><code class="highlight"><span class="nb">$Path</span></code></p>
+<h2 id="file-operations-based-on-file-constants">File operations based on file constants</h2>
+<p><code class="highlight"><span class="nb">FindFile</span></code></p>
 
 <!-- Source file information -->
 
