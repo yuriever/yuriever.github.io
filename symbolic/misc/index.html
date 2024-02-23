@@ -462,18 +462,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dummy-rule" class="md-nav__link">
+  <a href="#replace-vs-replaceall" class="md-nav__link">
     <span class="md-ellipsis">
-      Dummy rule
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#injection-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      Injection pattern
+      Replace vs. ReplaceAll
     </span>
   </a>
   
@@ -586,13 +577,37 @@
 
 <!-- Page content -->
 <h1 id="miscellaneous">Miscellaneous</h1>
-<h2 id="dummy-rule">Dummy rule</h2>
-<p><code class="highlight"><span class="nb">ReplaceAll</span></code> 访问表达式的策略是自上到下的，匹配完的子表达式不再被匹配，因此：一方面，规则 <code class="highlight"><span class="p">{</span><span class="nt">x_head</span><span class="o">:&gt;</span><span class="nv">x</span><span class="p">,</span><span class="o">...</span><span class="p">}</span></code> 可以防止 <code class="highlight"><span class="nb">Head</span></code> 为 <code class="highlight"><span class="nv">head</span></code> 的子表达式被匹配，称为哑规则；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。</p>
-<h2 id="injection-pattern">Injection pattern</h2>
-<p><code class="highlight"><span class="nb">With</span><span class="o">|</span><span class="nb">Replace</span><span class="o">|</span><span class="nb">RuleCondition</span></code> 可将表达式注入到 <code class="highlight"><span class="nb">Hold</span></code> 或带有 <code class="highlight"><span class="nb">HoldAll</span></code> 属性的函数中。另一个更灵活的技巧是如下的注入规则，</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">/.</span><span class="nb">Hold</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="nv">x</span><span class="p">]</span>
+<h2 id="replace-vs-replaceall">Replace vs. ReplaceAll</h2>
+<p><code class="highlight"><span class="nb">ReplaceAll</span></code> 的策略是从外到内、广度优先的，匹配完的子表达式不再被匹配；
+<code class="highlight"><span class="nb">Replace</span></code> 访问表达式的策略是从内到外、深度优先的。
+此外，<code class="highlight"><span class="nb">Replace</span></code> 的默认选项为 <code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span></code>。
+例如</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ReplaceAll</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">g</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">ReplaceAll</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="o">-&gt;</span><span class="nv">g</span><span class="p">]</span>
+<span class="nb">Replace</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">g</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nb">All</span><span class="p">]</span>
+<span class="nb">Replace</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="o">-&gt;</span><span class="nv">g</span><span class="p">,</span><span class="nb">All</span><span class="p">,</span><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">g</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">g</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">g</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">g</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+</code></pre></div>
+<p>对于 <code class="highlight"><span class="nb">ReplaceAll</span></code> 而言，一方面，规则 <code class="highlight"><span class="p">{</span><span class="nt">x_head</span><span class="o">:&gt;</span><span class="nv">x</span><span class="p">,</span><span class="o">...</span><span class="p">}</span></code> 可以防止 <code class="highlight"><span class="nb">Head</span></code> 为 <code class="highlight"><span class="nv">head</span></code> 的子表达式被匹配，称为哑规则 (dummy rule)；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。例如</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ReplaceAll</span><span class="p">[{</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nv">x</span><span class="p">},{</span><span class="nt">x_f</span><span class="o">:&gt;</span><span class="nv">x</span><span class="p">,</span><span class="nv">x</span><span class="o">-&gt;</span><span class="nv">y</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nv">y</span><span class="p">}</span>
+</code></pre></div>
+<p><code class="highlight"><span class="nb">With</span><span class="o">|</span><span class="nb">ReplaceAll</span></code> 等函数可将表达式注入到带有 <code class="highlight"><span class="nb">HoldAll</span></code> 属性的函数中。其中，注入规则 (injection pattern) 是一个比较灵活的技巧，</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ReplaceAll</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">],</span><span class="nb">Hold</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">x</span><span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+<p><code class="highlight"><span class="nb">RuleCondition</span></code> 是一个常用且稳定的无文档函数，可实现替换时的计算 (in-place evaluation)。例如</p>
+<div class="highlight"><pre><span></span><code><span class="nb">ReplaceAll</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">Identity</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">ReplaceAll</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nb">RuleCondition</span><span class="o">@</span><span class="nb">Identity</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Identity</span><span class="p">[</span><span class="nv">x</span><span class="p">]]</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="helper-function">Helper function</h2>
 <p>复杂的主体函数应分层，最外层提供用户接口，若干内层的 helper 函数实现不同功能，尽可能使函数的依赖关系为 tree-like 的结构。为了避免重复判定条件，仅在最外层使用判别函数。</p>

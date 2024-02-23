@@ -10,20 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    105104,       2063]
-NotebookOptionsPosition[    102638,       2018]
-NotebookOutlinePosition[    103230,       2038]
-CellTagsIndexPosition[    103187,       2035]
+NotebookDataLength[    105048,       2062]
+NotebookOptionsPosition[    102583,       2017]
+NotebookOutlinePosition[    103175,       2037]
+CellTagsIndexPosition[    103132,       2034]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[{
  RowBox[{"<<", "Lacia`Base`Constant`"}], "\n", 
- RowBox[{"<<", "Lacia`Base`"}], "\n", 
  RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], ";"}]}], "Code",
- CellLabel->"In[1]:=",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
+  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], ";"}]}], "Code",ExpressionUUID\
+->"87a75edb-6a7f-4804-b901-529341a04998"],
 
 Cell["", "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
 
@@ -42,7 +41,7 @@ Cell[BoxData[{
     RowBox[{"{", 
      RowBox[{"\"\<a\>\"", ",", "\"\<b\>\"", ",", "\"\<c.txt\>\""}], "}"}]}]}],
    ";"}]}], "Code",
- CellLabel->"In[3]:=",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
+ CellLabel->"In[10]:=",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
 
 Cell[CellGroupData[{
 
@@ -79,7 +78,7 @@ Cell[BoxData[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<filename.csv\>\""}],
        "}"}]}], ",", 
     RowBox[{"Out", "[", "]"}]}], "]"}], ";"}]}], "Code",
- CellLabel->"In[5]:=",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
+ CellLabel->"In[12]:=",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
 
 Cell[BoxData[
  TagBox[
@@ -854,7 +853,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellLabel->"Out[7]=",ExpressionUUID->"134d29f0-183c-432d-81c3-24852fd93c10"]
+ CellLabel->"Out[14]=",ExpressionUUID->"c7120ba7-7900-4685-8ec6-8999ccea3ad7"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
@@ -908,13 +907,13 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{"n", ",", 
      RowBox[{"Range", "[", "5", "]"}]}], "}"}]}], "\n", "]"}]}], "Code",
- CellLabel->"In[9]:=",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+ CellLabel->"In[16]:=",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
 
 Cell[BoxData[
  RowBox[{"File", "[", 
   TemplateBox[{"\"/Users/Reiko/Downloads/test\""},
    "FileArgument"], "]"}]], "Output",
- CellLabel->"Out[9]=",ExpressionUUID->"0a83406d-13bf-4042-8e64-f55c6ae0510b"]
+ CellLabel->"Out[16]=",ExpressionUUID->"6c692782-5aca-4abb-91d2-9d0d15882536"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
@@ -928,7 +927,7 @@ Cell[BoxData[
     RowBox[{"{", "All", "}"}], ",", 
     RowBox[{"dir", "/@", 
      RowBox[{"Range", "[", "5", "]"}]}]}], "]"}], "//", "Column"}]], "Code",
- CellLabel->"In[13]:=",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+ CellLabel->"In[20]:=",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -942,7 +941,7 @@ Cell[BoxData[
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellLabel->"Out[13]=",ExpressionUUID->"4930bfef-d0b7-40d0-8e88-31d3b35d5ac8"]
+ CellLabel->"Out[20]=",ExpressionUUID->"7bbb91a5-f5e4-4784-910d-25968b812a7d"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1002,8 +1001,8 @@ Cell[BoxData[{
    RowBox[{"funList", "=", 
     RowBox[{"{", 
      RowBox[{
-     "FileType", ",", "FileExistsQ", ",", "DirectoryQ", ",", 
-      "ParentDirectory", ",", "FileFormat"}], "}"}]}], ";"}], "\n"}], "\n", 
+     "FileExistsQ", ",", "FileType", ",", "FileFormat", ",", "DirectoryQ", 
+      ",", "ParentDirectory"}], "}"}]}], ";"}], "\n"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -1027,19 +1026,22 @@ Cell[BoxData[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<file.csv\>\""}], 
       "}"}]}], ",", 
     RowBox[{"Out", "[", "]"}]}], "]"}], ";"}]}], "Code",
- CellLabel->"In[18]:=",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
+ CellLabel->"In[21]:=",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
 
 Cell[BoxData[
  TagBox[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
     "InitialData" -> <|
-      "FileType" -> <|
-        "a/b/c" -> None, "a/b/c.txt" -> None, "/Downloads/test/sub1" -> 
-         Directory, "/Downloads/test/sub1/file1.txt" -> File|>, 
-       "FileExistsQ" -> <|
+      "FileExistsQ" -> <|
         "a/b/c" -> False, "a/b/c.txt" -> False, "/Downloads/test/sub1" -> 
          True, "/Downloads/test/sub1/file1.txt" -> True|>, 
+       "FileType" -> <|
+        "a/b/c" -> None, "a/b/c.txt" -> None, "/Downloads/test/sub1" -> 
+         Directory, "/Downloads/test/sub1/file1.txt" -> File|>, 
+       "FileFormat" -> <|
+        "a/b/c" -> $Failed, "a/b/c.txt" -> $Failed, "/Downloads/test/sub1" -> 
+         "Directory", "/Downloads/test/sub1/file1.txt" -> "Text"|>, 
        "DirectoryQ" -> <|
         "a/b/c" -> False, "a/b/c.txt" -> False, "/Downloads/test/sub1" -> 
          True, "/Downloads/test/sub1/file1.txt" -> False|>, 
@@ -1047,10 +1049,7 @@ Cell[BoxData[
         "a/b/c" -> ParentDirectory["a/b/c"], "a/b/c.txt" -> 
          ParentDirectory["a/b/c.txt"], "/Downloads/test/sub1" -> 
          "/Downloads/test", "/Downloads/test/sub1/file1.txt" -> 
-         ParentDirectory["/Downloads/test/sub1/file1.txt"]|>, 
-       "FileFormat" -> <|
-        "a/b/c" -> $Failed, "a/b/c.txt" -> $Failed, "/Downloads/test/sub1" -> 
-         "Directory", "/Downloads/test/sub1/file1.txt" -> "Text"|>|>, 
+         ParentDirectory["/Downloads/test/sub1/file1.txt"]|>|>, 
      "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, 
           TypeSystem`PackageScope`KeyDummy[1]} -> 1, {All, "a/b/c"} -> 
@@ -1266,6 +1265,85 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
+                 Mouseover["FileExistsQ", 
+                  Style[
+                  "FileExistsQ", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                    Key["FileExistsQ"]}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key["FileExistsQ"]}, "RowHeader", False], "Mouse"], 
+              ImageSize -> {{168.00000000000003`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["False"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key["FileExistsQ"], 
+                 Key["a/b/c"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["False"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key["FileExistsQ"], 
+                 Key["a/b/c.txt"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["True"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key["FileExistsQ"], 
+                 Key["/Downloads/test/sub1"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["True"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key["FileExistsQ"], 
+                 Key["/Downloads/test/sub1/file1.txt"]}, "Item", False], 
+               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
                  Mouseover["FileType", 
                   Style[
                   "FileType", FontColor -> 
@@ -1357,9 +1435,9 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
-                 Mouseover["FileExistsQ", 
+                 Mouseover["FileFormat", 
                   Style[
-                  "FileExistsQ", FontColor -> 
+                  "FileFormat", FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1375,22 +1453,25 @@ Cell[BoxData[
                    TypeSystem`NestedGrid`PackagePrivate`localHold[
                     TypeSystem`NestedGrid`PackagePrivate`localHold[
                     TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
-                    Key["FileExistsQ"]}, 1]]], 
+                    Key["FileFormat"]}, 1]]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileExistsQ"]}, "RowHeader", False], "Mouse"], 
+                 Key["FileFormat"]}, "RowHeader", False], "Mouse"], 
               ImageSize -> {{168.00000000000003`, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
              GrayLevel[0.95], Alignment -> {Left, Baseline}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["False"], 
+               RawBoxes[
+                StyleBox["$Failed", FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileExistsQ"], 
+                 Key["FileFormat"], 
                  Key["a/b/c"]}, "Item", False], "Mouse"], 
               ImageSize -> {{60, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
@@ -1398,37 +1479,39 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["False"], 
+               RawBoxes[
+                StyleBox["$Failed", FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileExistsQ"], 
+                 Key["FileFormat"], 
                  Key["a/b/c.txt"]}, "Item", False], "Mouse"], 
               ImageSize -> {{60, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
-              Annotation[
-               RawBoxes["True"], 
+              Annotation["Directory", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileExistsQ"], 
+                 Key["FileFormat"], 
                  Key["/Downloads/test/sub1"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{60, Full}, Automatic}, 
+              ImageSize -> {{100.80000000000001`, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
-              Annotation[
-               RawBoxes["True"], 
+              Annotation["Text", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileExistsQ"], 
+                 Key["FileFormat"], 
                  Key["/Downloads/test/sub1/file1.txt"]}, "Item", False], 
-               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+               "Mouse"], 
+              ImageSize -> {{44.800000000000004`, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}, {
             Item[
@@ -1604,90 +1687,6 @@ Cell[BoxData[
                  Key["ParentDirectory"], 
                  Key["/Downloads/test/sub1/file1.txt"]}, "Item", False], 
                "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover["FileFormat", 
-                  Style[
-                  "FileFormat", FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
-                    Key["FileFormat"]}, 1]]], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileFormat"]}, "RowHeader", False], "Mouse"], 
-              ImageSize -> {{168.00000000000003`, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
-             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes[
-                StyleBox["$Failed", FontFamily -> Dynamic[
-                   CurrentValue[{"StyleHints", "CodeFont"}]], 
-                 ShowStringCharacters -> True]], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileFormat"], 
-                 Key["a/b/c"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{60, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes[
-                StyleBox["$Failed", FontFamily -> Dynamic[
-                   CurrentValue[{"StyleHints", "CodeFont"}]], 
-                 ShowStringCharacters -> True]], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileFormat"], 
-                 Key["a/b/c.txt"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{60, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation["Directory", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileFormat"], 
-                 Key["/Downloads/test/sub1"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{100.80000000000001`, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation["Text", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
-                 Key["FileFormat"], 
-                 Key["/Downloads/test/sub1/file1.txt"]}, "Item", False], 
-               "Mouse"], 
-              ImageSize -> {{44.800000000000004`, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}}, 
           BaseStyle -> {
@@ -1997,7 +1996,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellLabel->"Out[20]=",ExpressionUUID->"0691f8b5-a695-4295-82bc-0d9cb8fa7fe7"]
+ CellLabel->"Out[23]=",ExpressionUUID->"cf166640-a683-46f4-bd3c-abac4a904336"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
@@ -2018,7 +2017,7 @@ Cell["", "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
 },
 Editable->True,
 WindowSize->{840, 1022},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowStatusArea->"",
 FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
 StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
@@ -2037,34 +2036,34 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 254, 5, 116, "Code",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
-Cell[815, 27, 71, 0, 62, "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
-Cell[889, 29, 510, 15, 92, "Code",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
+Cell[558, 20, 194, 4, 92, "Code",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
+Cell[755, 26, 71, 0, 62, "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
+Cell[829, 28, 511, 15, 92, "Code",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
 Cell[CellGroupData[{
-Cell[1424, 48, 1128, 33, 188, "Code",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
-Cell[2555, 83, 42254, 773, 285, "Output",ExpressionUUID->"134d29f0-183c-432d-81c3-24852fd93c10"]
+Cell[1365, 47, 1129, 33, 188, "Code",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
+Cell[2497, 82, 42255, 773, 285, "Output",ExpressionUUID->"c7120ba7-7900-4685-8ec6-8999ccea3ad7"]
 }, Open  ]],
-Cell[44824, 859, 71, 0, 62, "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
+Cell[44767, 858, 71, 0, 62, "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
 Cell[CellGroupData[{
-Cell[44920, 863, 1641, 47, 332, "Code",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
-Cell[46564, 912, 203, 4, 51, "Output",ExpressionUUID->"0a83406d-13bf-4042-8e64-f55c6ae0510b"]
+Cell[44863, 862, 1642, 47, 332, "Code",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+Cell[46508, 911, 204, 4, 51, "Output",ExpressionUUID->"6c692782-5aca-4abb-91d2-9d0d15882536"]
 }, Open  ]],
-Cell[46782, 919, 71, 0, 62, "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
+Cell[46727, 918, 71, 0, 62, "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
 Cell[CellGroupData[{
-Cell[46878, 923, 283, 7, 67, "Code",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
-Cell[47164, 932, 592, 12, 131, "Output",ExpressionUUID->"4930bfef-d0b7-40d0-8e88-31d3b35d5ac8"]
+Cell[46823, 922, 283, 7, 67, "Code",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+Cell[47109, 931, 592, 12, 131, "Output",ExpressionUUID->"7bbb91a5-f5e4-4784-910d-25968b812a7d"]
 }, Open  ]],
-Cell[47771, 947, 593, 17, 92, "Code",ExpressionUUID->"9363bcd6-ce0d-4625-8061-2337b670b747"],
-Cell[48367, 966, 613, 18, 92, "Code",ExpressionUUID->"dba28f76-a760-4c52-9963-e2147124be09"],
-Cell[48983, 986, 71, 0, 62, "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
+Cell[47716, 946, 593, 17, 92, "Code",ExpressionUUID->"9363bcd6-ce0d-4625-8061-2337b670b747"],
+Cell[48312, 965, 613, 18, 92, "Code",ExpressionUUID->"dba28f76-a760-4c52-9963-e2147124be09"],
+Cell[48928, 985, 71, 0, 62, "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
 Cell[CellGroupData[{
-Cell[49079, 990, 1284, 39, 212, "Code",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
-Cell[50366, 1031, 51672, 968, 251, "Output",ExpressionUUID->"0691f8b5-a695-4295-82bc-0d9cb8fa7fe7"]
+Cell[49024, 989, 1284, 39, 212, "Code",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
+Cell[50311, 1030, 51672, 968, 251, "Output",ExpressionUUID->"cf166640-a683-46f4-bd3c-abac4a904336"]
 }, Open  ]],
-Cell[102053, 2002, 71, 0, 62, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
-Cell[102127, 2004, 194, 3, 67, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
-Cell[102324, 2009, 236, 5, 67, "Code",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
-Cell[102563, 2016, 71, 0, 62, "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
+Cell[101998, 2001, 71, 0, 62, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
+Cell[102072, 2003, 194, 3, 67, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+Cell[102269, 2008, 236, 5, 67, "Code",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
+Cell[102508, 2015, 71, 0, 62, "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
 }
 ]
 *)

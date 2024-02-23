@@ -480,18 +480,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-constants" class="md-nav__link">
+  <a href="#directories" class="md-nav__link">
     <span class="md-ellipsis">
-      File constants
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-operations-based-on-file-constants" class="md-nav__link">
-    <span class="md-ellipsis">
-      File operations based on file constants
+      Directories
     </span>
   </a>
   
@@ -592,6 +583,12 @@
 </tr>
 </tbody>
 </table>
+<p><code class="highlight"><span class="nb">FileNameSplit</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - split the file path into a list of path elements. </p>
+<p><code class="highlight"><span class="nb">FileBaseName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file name.</p>
+<p><code class="highlight"><span class="nb">FileExtension</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file extension.</p>
+<p><code class="highlight"><span class="nb">FileNameTake</span><span class="o">|</span><span class="nb">FileNameDrop</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Take</span><span class="o">|</span><span class="nb">Drop</span></code> for file path.</p>
+<p><code class="highlight"><span class="nb">DirectoryName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the directory path.</p>
+<hr />
 <p><code class="highlight"><span class="nb">FileNameJoin</span><span class="p">[</span><span class="nt">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system. </p>
 <h2 id="file-operations_1">File operations</h2>
 <table>
@@ -606,6 +603,13 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">FileExistsQ</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">True</td>
+</tr>
+<tr>
 <td style="text-align: left;">FileType</td>
 <td style="text-align: left;">None</td>
 <td style="text-align: left;">None</td>
@@ -613,11 +617,11 @@
 <td style="text-align: left;">File</td>
 </tr>
 <tr>
-<td style="text-align: left;">FileExistsQ</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">True</td>
-<td style="text-align: left;">True</td>
+<td style="text-align: left;">FileFormat</td>
+<td style="text-align: left;">$Failed</td>
+<td style="text-align: left;">$Failed</td>
+<td style="text-align: left;">Directory</td>
+<td style="text-align: left;">Text</td>
 </tr>
 <tr>
 <td style="text-align: left;">DirectoryQ</td>
@@ -633,34 +637,30 @@
 <td style="text-align: left;">/Downloads/test</td>
 <td style="text-align: left;">ParentDirectory["/Downloads/test/sub1/file1.txt"]</td>
 </tr>
-<tr>
-<td style="text-align: left;">FileFormat</td>
-<td style="text-align: left;">$Failed</td>
-<td style="text-align: left;">$Failed</td>
-<td style="text-align: left;">Directory</td>
-<td style="text-align: left;">Text</td>
-</tr>
 </tbody>
 </table>
-<p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file names in the directories.</p>
-<p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
 <p><code class="highlight"><span class="nb">FileExistsQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - test whether a file exists.</p>
+<p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
+<p><code class="highlight"><span class="nb">FileFormat</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - try to return the file type.</p>
 <p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and return <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
-<p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence and return the parent directory of the directory.</p>
-<p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span></code></p>
-<p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span></code></p>
-<p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
-<p><code class="highlight"><span class="nv">FileSystemTree</span></code></p>
-<p><code class="highlight"><span class="nb">CreateSearchIndex</span></code></p>
-<h2 id="file-constants">File constants</h2>
+<p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence of the directory and and return the parent directory.</p>
+<hr />
+<p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code></p>
+<p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file paths in the directories.</p>
+<p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span><span class="p">[</span><span class="nt">f_</span><span class="p">,</span><span class="nt">dir_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
+<p><code class="highlight"><span class="nv">FileSystemTree</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - return the file tree.</p>
+<h2 id="directories">Directories</h2>
 <p><code class="highlight"><span class="nb">NotebookDirectory</span><span class="p">[]</span></code> - current notebook directory.</p>
 <p><code class="highlight"><span class="nb">$HomeDirectory</span></code> - home directory.</p>
+<p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
 <p><code class="highlight"><span class="nb">$UserBaseDirectory</span></code> - directory for user-specific add-on files.</p>
 <p><code class="highlight"><span class="nv">$UserBasePacletsDirectory</span></code> - directory for user-specific paclet files.</p>
-<p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
-<p><code class="highlight"><span class="nb">$Path</span></code></p>
-<h2 id="file-operations-based-on-file-constants">File operations based on file constants</h2>
-<p><code class="highlight"><span class="nb">FindFile</span></code></p>
+<p><code class="highlight"><span class="nb">$Path</span></code> - the list of directories to find an external file.</p>
+<hr />
+<p><code class="highlight"><span class="nb">Directory</span><span class="p">[]</span></code> - return the working directory.</p>
+<p><code class="highlight"><span class="nb">SetDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - set the working directory.</p>
+<p><code class="highlight"><span class="nb">ResetDirectory</span><span class="p">[]</span></code> - revert to the previous working directory.</p>
 
 <!-- Source file information -->
 
