@@ -1,0 +1,7 @@
+"","a/b/c","a/b/c.txt"
+"ToString @* FileNameSplit","{a, b, c}","{a, b, c.txt}"
+"FileBaseName","c","c"
+"FileExtension","","txt"
+"FileNameTake","c","c.txt"
+"FileNameDrop","a/b","a/b"
+"DirectoryName","a/b/","a/b/"
