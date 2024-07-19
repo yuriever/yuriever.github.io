@@ -1,0 +1,9 @@
+.gitattributes
+.DS_Store
+custom
+docs
+site
+mkdocs.yml
+poetry.lock
+poetry.toml
+pyproject.toml
