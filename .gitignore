@@ -1,5 +1,6 @@
 .gitattributes
 .DS_Store
+.vscode
 custom
 docs
 site
