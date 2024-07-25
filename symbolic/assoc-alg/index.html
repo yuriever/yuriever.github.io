@@ -504,10 +504,9 @@
 
 <!-- Page content -->
 <h1 id="implementing-associative-algebras-in-mathematica">Implementing associative algebras in Mathematica</h1>
-<p>We introduce implementation of noncommutative algebras via Mathematica.
-​</p>
+<p>We introduce implementation of noncommutative algebras via Mathematica.</p>
 <h2 id="designing-idea">Designing idea</h2>
-<p>What expressions are noncommutative? We can specify and store noncommutative operators in the list <code class="highlight"><span class="nv">$operator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator. </p>
+<p>What expressions are noncommutative? We can specify and store noncommutative operators in the list <code class="highlight"><span class="nv">$operator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">scalarQ</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
@@ -534,7 +533,7 @@
 <span class="p">}</span><span class="o">;</span>
 </code></pre></div>
 <p>Here we have overload the internal function <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code> with operator form <code class="highlight"><span class="o">**</span></code> by adding the attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span></code>.</p>
-<p>To make the results readable, we define additional formatting rules. </p>
+<p>To make the results readable, we define additional formatting rules.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$printing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="o">;</span><span class="w"> </span>
 
 <span class="nv">algebraPrint</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>

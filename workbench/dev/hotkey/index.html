@@ -506,17 +506,17 @@
 </ul>
 <hr />
 <h2 id="introduction">Introduction</h2>
-<p>Mac 端的 Karabiner 可以复现 Win 端的 AutoHotkey 的一部分功能。配置文件的格式为 JSON，默认目录为
+<p>Mac 端的 Karabiner 可以复现 Win 端的 AutoHotkey 的一部分功能。配置文件的格式为 JSON，默认目录为</p>
 <div class="highlight"><pre><span></span><code>~/.config/karabiner/assets/complex_modifications/xxx.json
-</code></pre></div></p>
-<p>配置文件 <code>xxx.json</code> 的结构为
+</code></pre></div>
+<p>配置文件 <code>xxx.json</code> 的结构为</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test shortcuts&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="err">...</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>数组 <code>rules</code> 存储了快捷键的配置信息，其结构如下。<code>from</code> 为快捷键以及修饰键，<code>to</code> 为激活的一系列按键或其它事件。</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>

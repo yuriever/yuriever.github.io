@@ -587,19 +587,19 @@ References:</p>
 <p>Notice that:</p>
 <ul>
 <li>
-<p>only in <span class="arithmatex">\(d=4\)</span> the free abelian gauge theory is conformally invariant; </p>
+<p>only in <span class="arithmatex">\(d=4\)</span> the free abelian gauge theory is conformally invariant;</p>
 </li>
 <li>
-<p>due to the non-minimally coupled term <span class="arithmatex">\(R \phi^2\)</span>, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds. </p>
+<p>due to the non-minimally coupled term <span class="arithmatex">\(R \phi^2\)</span>, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds.</p>
 </li>
 </ul>
-<p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space <sup id="fnref:integral"><a class="footnote-ref" href="#fn:integral">1</a></sup> of the field configurations. 
+<p>The variational calculus in this page is purely symbolic: there is no need to specify the global topology of the underlying manifold and the function space <sup id="fnref:integral"><a class="footnote-ref" href="#fn:integral">1</a></sup> of the field configurations.
 The relevant information involved is a local chart with additional geometrical structures.</p>
-<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to the target expression. 
+<p>At the low-level of computation, the variational calculus is to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to the target expression.
 The xAct packages provide a rather complete platform of this functionality.</p>
 <h2 id="the-structure-of-the-notebook">The structure of the notebook</h2>
 <p>The main content is written in <a href="xact-eom-and-emt.nb">this notebook - xact-eom-and-emt.nb</a>:</p>
-<p><img src="../xact-eom-and-emt/xact-eom-and-emt-screenshot.svg" class="center"></p>
+<p><img src="../xact-eom-and-emt/xact-eom-and-emt-screenshot.svg" class="center" alt="xact-eom-and-emt-screenshot"></p>
 <p>In the notebook there are four sections to introduce useful functions in the xAct packages:</p>
 <ul>
 <li>
@@ -644,7 +644,7 @@ The xAct packages provide a rather complete platform of this functionality.</p>
 <p><code class="highlight"><span class="nv">Validate</span></code> - checking xAct syntax like index balancing</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">CommuteCovDs</span><span class="p">,</span><span class="w"> </span><span class="nv">SortCovDs</span></code> - sorting successive covariant derivatives with the commutators </p>
+<p><code class="highlight"><span class="nv">CommuteCovDs</span><span class="p">,</span><span class="w"> </span><span class="nv">SortCovDs</span></code> - sorting successive covariant derivatives with the commutators</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">StrongGenSet</span><span class="p">,</span><span class="w"> </span><span class="nb">Symmetric</span></code> - tensor symmetry</p>
@@ -660,8 +660,8 @@ The xAct packages provide a rather complete platform of this functionality.</p>
 </li>
 </ul>
 <h2 id="some-further-explanations">Some further explanations</h2>
-<p>The xPert package provides functionalities like variations and metric perturbations. 
-The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz rule. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>, </p>
+<p>The xPert package provides functionalities like variations and metric perturbations.
+The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz rule. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>,</p>
 <p>The variation of the electromagnetic field action is</p>
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
@@ -677,7 +677,7 @@ The function <code class="highlight"><span class="nv">Perturbation</span></code>
 \triangle [\cL_{A}]=
 \tfrac{1}{2} \Bigl((- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a} -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr)
 \end{equation}\]</div>
-<p>The variation <span class="arithmatex">\(\delta A^{a}\)</span> contains metric contraction <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>, hence we need to expand <span class="arithmatex">\(\delta L\)</span> into <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span>. Then the coefficient of <span class="arithmatex">\(\delta A_{a}\)</span> gives the equation of motion, and that of <span class="arithmatex">\(\delta g\)</span> gives the stress tensor. There are covariant derivatives in the bracket, which can be eliminated by IBP. </p>
+<p>The variation <span class="arithmatex">\(\delta A^{a}\)</span> contains metric contraction <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>, hence we need to expand <span class="arithmatex">\(\delta L\)</span> into <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span>. Then the coefficient of <span class="arithmatex">\(\delta A_{a}\)</span> gives the equation of motion, and that of <span class="arithmatex">\(\delta g\)</span> gives the stress tensor. There are covariant derivatives in the bracket, which can be eliminated by IBP.</p>
 <p>Based on <code class="highlight"><span class="nv">Perturbation</span></code>, <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span></code> provides the functionality of extracting coefficients and IBP, where the first argument specifies the variational field and the second one specifies IBP with respect to the covariance derivative <code class="highlight"><span class="nv">CD</span></code>.</p>
 <div class="footnote">
 <hr />

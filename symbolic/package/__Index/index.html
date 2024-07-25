@@ -522,11 +522,11 @@
 <p>A Mathematica package for coding a indexed variable into a single symbol.</p>
 <p>The GitHub repository is <a href="https://github.com/yuriever/Yurie-Index">yuriever/Yurie-Index</a>.</p>
 <h2 id="designing-idea">Designing idea</h2>
-<p>This package provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>. </p>
+<p>This package provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">_Subsuperscript</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">_Symbol</span>
 </code></pre></div>
-<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>, and to override this we introduce the public function <code class="highlight"><span class="nv">toString</span></code>. </p>
-<p>The kernel functions will convert symbols to strings, use string pattern matching, and finally convert back to symbols if necessary. </p>
+<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>, and to override this we introduce the public function <code class="highlight"><span class="nv">toString</span></code>.</p>
+<p>The kernel functions will convert symbols to strings, use string pattern matching, and finally convert back to symbols if necessary.</p>
 <h2 id="functionalities">Functionalities</h2>
 <h3 id="helper-functions">Helper functions</h3>
 <ul>
@@ -539,7 +539,7 @@
 </li>
 <li>
 <p><code class="highlight"><span class="nv">indexify</span></code> - indexify the specified variables in an expression.</p>
-<p>Default options: </p>
+<p>Default options:</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span></code> - head variables will not be indexified. This option is inherited from <code class="highlight"><span class="nb">Replace</span></code>.</p>
