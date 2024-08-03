@@ -66,7 +66,11 @@ window.MathJax = {
 				"\\{ #1 \\}",
 				"1"
 			],
-			"spanset":[
+			"linearspan":[
+				"\\{ #1 \\}",
+				"1"
+			],
+			"ideal":[
 				"\\langle #1 \\rangle",
 				"1"
 			],
@@ -296,6 +300,8 @@ window.MathJax = {
 			"Adjoint":"\\operatorname{Ad}",
 			"induce":"\\operatorname{Ind}",
 			"restrict":"\\operatorname{Res}",
+			"sym":"\\operatorname{Sym}",
+			"alt":"\\operatorname{Alt}",
 			"inverseLimit":"\\varprojlim",
 			"directLimit":"\\varinjlim",
 			"directIntegral":"\\int^{\\oplus}",
