@@ -1,3 +1,3 @@
 # Sora
 
-Yurie's personal website.
+yuriever's personal website.
