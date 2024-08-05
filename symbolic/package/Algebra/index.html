@@ -704,6 +704,7 @@
 <tr>
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Functionality</th>
+<th>Printing</th>
 <th style="text-align: left;">System symbol occupation</th>
 </tr>
 </thead>
@@ -711,26 +712,31 @@
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">&quot;Algebra&quot;</span></code></td>
 <td style="text-align: left;">associativity</td>
+<td><code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></td>
 <td style="text-align: left;"><code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">&quot;Tensor&quot;</span></code></td>
-<td style="text-align: left;">tensor product with identity <code class="highlight"><span class="nv">id</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nb">CircleTimes</span></code></td>
+<td style="text-align: left;">tensor product</td>
+<td><code class="highlight"><span class="nb">CircleTimes</span></code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">&quot;Conjugate&quot;</span></code></td>
 <td style="text-align: left;">dagger structure</td>
+<td><code class="highlight"><span class="nb">SuperDagger</span></code></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">&quot;Coalgebra&quot;</span></code></td>
 <td style="text-align: left;">coassociativity</td>
+<td><code class="highlight"><span class="s">&quot;\[CapitalDelta]&quot;</span></code></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">&quot;Bialgebra&quot;</span></code></td>
 <td style="text-align: left;">bialgebra structure</td>
+<td><code class="highlight"><span class="s">&quot;\[Epsilon]&quot;</span></code></td>
 <td style="text-align: left;"></td>
 </tr>
 </tbody>
@@ -812,18 +818,19 @@
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
 <p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;Tensor&quot;</span></code>, <code class="highlight"><span class="s">&quot;Coalgebra&quot;</span></code> and/or <code class="highlight"><span class="s">&quot;Bialgebra&quot;</span></code>.</p>
+<p>When the tensor product is involved, the base field <span class="arithmatex">\(k\)</span> is considered to be embedded into the algebra <span class="arithmatex">\(A\)</span> via the unit map <span class="arithmatex">\(k \to A\)</span>.</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">id</span></code> - identity of tensor product.</p>
+<p><code class="highlight"><span class="nv">tensor</span><span class="p">[</span><span class="nt">ops__</span><span class="p">]</span></code> - tensor product.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">comultiply</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - comultiplication of coalgebra.</p>
+<p><code class="highlight"><span class="nv">comultiply</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - comultiplication of coalgebra, <span class="arithmatex">\(\Delta:A\to A\ox A\)</span>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">counit</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - counit of coalgebra.</p>
+<p><code class="highlight"><span class="nv">counit</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - counit of coalgebra, <span class="arithmatex">\(\epsilon:A\to k\)</span>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">antipode</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - antipode of Hopf algebra.</p>
+<p><code class="highlight"><span class="nv">antipode</span><span class="p">[</span><span class="nt">op_</span><span class="p">]</span></code> - antipode of Hopf algebra, <span class="arithmatex">\(S:A\to A\)</span>.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">tensorRankEqualQ</span><span class="p">[</span><span class="nt">op1_</span><span class="p">,</span><span class="nt">op2_</span><span class="p">]</span></code> - check whether the ranks of two tensors are equal.</p>
