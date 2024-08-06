@@ -540,9 +540,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scalar-extraction" class="md-nav__link">
+  <a href="#operator-separation" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalar extraction
+      Operator separation
     </span>
   </a>
   
@@ -637,25 +637,30 @@
 
 <span class="nv">algebraDefault</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
 
-<span class="p">&lt;|</span><span class="nv">operator</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="nv">relation</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="m">1</span><span class="p">}|&gt;</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="p">&lt;|</span><span class="nv">operator</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">},</span><span class="nv">relation</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">id</span><span class="p">}|&gt;</span><span class="o">//</span><span class="nv">algebraAdd</span><span class="p">[</span><span class="s">&quot;CCR&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="nv">operatorPower</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">**</span><span class="nv">operatorPower</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">algS</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="o">+</span><span class="m">4</span><span class="w"> </span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">p</span><span class="o">**</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">**</span><span class="nv">x</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="nv">id</span><span class="o">+</span><span class="m">4</span><span class="w"> </span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">p</span><span class="o">**</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">**</span><span class="nv">x</span>
 </code></pre></div>
 <p>The relation can be packed by <code class="highlight"><span class="nv">commDefine</span></code> like</p>
-<div class="highlight"><pre><span></span><code><span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">]</span><span class="o">:&gt;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">id</span>
 
-<span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">,</span><span class="nb">Reverse</span><span class="p">]</span><span class="o">:&gt;</span><span class="m">1</span><span class="o">/;</span><span class="nb">True</span>
+<span class="nv">commDefine</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">p</span><span class="p">,</span><span class="nb">Reverse</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">id</span><span class="o">/;</span><span class="nb">True</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="m">1</span><span class="o">+</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">:&gt;</span><span class="nv">id</span><span class="o">+</span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span>
 
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">:&gt;-</span><span class="m">1</span><span class="o">+</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">/;</span><span class="nb">True</span>
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">p</span><span class="o">**</span><span class="nv">x</span><span class="o">:&gt;-</span><span class="nv">id</span><span class="o">+</span><span class="nv">x</span><span class="o">**</span><span class="nv">p</span><span class="o">/;</span><span class="nb">True</span>
 </code></pre></div>
 <h2 id="methods">Methods</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">algebraCluster</span><span class="o">|</span><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span></code> - keywords.</p>
+<p><code class="highlight"><span class="nv">id</span></code> - identity operator.</p>
+<p>The base field <span class="arithmatex">\(k\)</span> and its embedding in the algebra <span class="arithmatex">\(A\)</span> should be distinguished.
+The identity operator is the image of <span class="arithmatex">\(1\)</span> under the unit map <span class="arithmatex">\(\eta: k\to A\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">operator</span><span class="o">|</span><span class="nv">relation</span><span class="o">|</span><span class="nv">printing</span></code> - keywords.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs__</span><span class="p">]</span></code> - define algebras.</p>
@@ -739,6 +744,12 @@
 <td><code class="highlight"><span class="s">&quot;\[Epsilon]&quot;</span></code></td>
 <td style="text-align: left;"></td>
 </tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">&quot;Antipode&quot;</span></code></td>
+<td style="text-align: left;">antipode of Hopf algebra</td>
+<td><code class="highlight"><span class="s">&quot;S&quot;</span></code></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
 <h3 id="questing-functions">Questing functions</h3>
@@ -817,8 +828,7 @@
 </li>
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
-<p>This functionality needs the algebra <code class="highlight"><span class="s">&quot;Tensor&quot;</span></code>, <code class="highlight"><span class="s">&quot;Coalgebra&quot;</span></code> and/or <code class="highlight"><span class="s">&quot;Bialgebra&quot;</span></code>.</p>
-<p>When the tensor product is involved, the base field <span class="arithmatex">\(k\)</span> is considered to be embedded into the algebra <span class="arithmatex">\(A\)</span> via the unit map <span class="arithmatex">\(k \to A\)</span>.</p>
+<p>This functionality needs the algebras <code class="highlight"><span class="s">&quot;Tensor&quot;</span></code>, <code class="highlight"><span class="s">&quot;Coalgebra&quot;</span></code>, <code class="highlight"><span class="s">&quot;Bialgebra&quot;</span></code> and/or <code class="highlight"><span class="s">&quot;Antipode&quot;</span></code>.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">tensor</span><span class="p">[</span><span class="nt">ops__</span><span class="p">]</span></code> - tensor product.</p>
@@ -876,9 +886,9 @@
 <p><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - exponential of operators upto the max order <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\([e^{t x}]_n=\sum_{i=0}^{n}\frac{t^i}{i!} x^i\)</span>.</p>
 </li>
 </ul>
-<h3 id="scalar-extraction">Scalar extraction</h3>
+<h3 id="operator-separation">Operator separation</h3>
 <ul>
-<li><code class="highlight"><span class="nv">scalarSeparate</span><span class="o">|</span><span class="nv">scalarExtract</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - separate/extract scalars from operators in the expressions.</li>
+<li><code class="highlight"><span class="nv">operatorSeparate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - separate scalars and operators in a linear combination.</li>
 </ul>
 <h3 id="definition-checking">Definition checking</h3>
 <ul>
@@ -892,7 +902,10 @@
 <p><code class="highlight"><span class="nv">checkAssociativity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the associativity of multiplication.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication.</p>
+<p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkAntipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the antipode of Hopf algebra.</p>
 </li>
 </ul>
 <h2 id="other-issues">Other issues</h2>
