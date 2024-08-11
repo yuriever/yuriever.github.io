@@ -10,19 +10,20 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    105048,       2062]
-NotebookOptionsPosition[    102583,       2017]
-NotebookOutlinePosition[    103175,       2037]
-CellTagsIndexPosition[    103132,       2034]
+NotebookDataLength[    126299,       2600]
+NotebookOptionsPosition[    123568,       2549]
+NotebookOutlinePosition[    124157,       2569]
+CellTagsIndexPosition[    124114,       2566]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[{
- RowBox[{"<<", "Lacia`Base`Constant`"}], "\n", 
  RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], ";"}]}], "Code",ExpressionUUID\
-->"87a75edb-6a7f-4804-b901-529341a04998"],
+  RowBox[{"<<", "Lacia`Base`Constant`"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], ";"}]}], "Code",
+ CellLabel->"In[42]:=",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
 
 Cell["", "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
 
@@ -41,7 +42,7 @@ Cell[BoxData[{
     RowBox[{"{", 
      RowBox[{"\"\<a\>\"", ",", "\"\<b\>\"", ",", "\"\<c.txt\>\""}], "}"}]}]}],
    ";"}]}], "Code",
- CellLabel->"In[10]:=",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
+ CellLabel->"In[44]:=",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
 
 Cell[CellGroupData[{
 
@@ -78,7 +79,7 @@ Cell[BoxData[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<filename.csv\>\""}],
        "}"}]}], ",", 
     RowBox[{"Out", "[", "]"}]}], "]"}], ";"}]}], "Code",
- CellLabel->"In[12]:=",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
+ CellLabel->"In[46]:=",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
 
 Cell[BoxData[
  TagBox[
@@ -94,7 +95,7 @@ Cell[BoxData[
        "DirectoryName" -> <|"a/b/c" -> "a/b/", "a/b/c.txt" -> "a/b/"|>|>, 
      "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, 
-          TypeSystem`PackageScope`KeyDummy[0]} -> 1, {All, "a/b/c"} -> 
+          TypeSystem`PackageScope`KeyDummy[2]} -> 1, {All, "a/b/c"} -> 
         1, {All, "a/b/c.txt"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
@@ -114,7 +115,7 @@ Cell[BoxData[
          TypeSystem`Atom[String]}], 6], "Meta" -> <||>, "RowTarget" -> 20, 
      "ColumnTarget" -> 10, "Shape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, 
-          TypeSystem`PackageScope`KeyDummy[0]} -> 1, {All, "a/b/c"} -> 
+          TypeSystem`PackageScope`KeyDummy[2]} -> 1, {All, "a/b/c"} -> 
         1, {All, "a/b/c.txt"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
@@ -786,41 +787,44 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         TypeSystem`NestedGrid`PackagePrivate`localHold[
         TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
      TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
-    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
-     Framed[
-      Dynamic[
-       Replace[
-       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
-        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
-           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
-            Blank[]], 
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
-            Blank[]], 
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
-            Blank[]]] :> (
-          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
-           TypeSystem`NestedGrid`PackagePrivate`path$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
-           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
-           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
-          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
-           TypeSystem`NestedGrid`PackagePrivate`path$, 
-            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
-         Spacer[10], Blank[] :> Spacer[10]}], 
-       TrackedSymbols :> {
-        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
-      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
-      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Dynamic[
+     Replace[
+      Replace[
+      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+       TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+          Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+           Blank[]], 
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+           Blank[]], 
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+           Blank[]]] :> (
+         Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+          TypeSystem`NestedGrid`PackagePrivate`path$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+          TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+          TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+         TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+          TypeSystem`NestedGrid`PackagePrivate`path$, 
+           TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+        Spacer[10], Blank[] :> Spacer[10]}], 
+      Pattern[TypeSystem`NestedGrid`PackagePrivate`bar, 
+        Except[
+         Alternatives[
+          Blank[Spacer], ""]]] :> 
+      TypeSystem`NestedGrid`PackagePrivate`makeFramedPathbar[
+       TypeSystem`NestedGrid`PackagePrivate`bar]], 
+     TrackedSymbols :> {
+      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], 
     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
     DynamicWrapperBox[
      DynamicBox[ToBoxes[
@@ -835,13 +839,15 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{559., {126.91754150390625`, 134.08245849609375`}},
+      ImageSizeCache->{
+       557.6500000000001, {113.40808868408203`, 120.57300567626953`}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{559., {126.91754150390625`, 134.08245849609375`}}],
+     ImageSizeCache->{
+      557.6500000000001, {113.40808868408203`, 120.57300567626953`}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -853,7 +859,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellLabel->"Out[14]=",ExpressionUUID->"c7120ba7-7900-4685-8ec6-8999ccea3ad7"]
+ CellLabel->"Out[48]=",ExpressionUUID->"60c5dda4-7b70-4a3a-8f25-401052082856"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
@@ -907,13 +913,13 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{"n", ",", 
      RowBox[{"Range", "[", "5", "]"}]}], "}"}]}], "\n", "]"}]}], "Code",
- CellLabel->"In[16]:=",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+ CellLabel->"In[54]:=",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
 
 Cell[BoxData[
  RowBox[{"File", "[", 
   TemplateBox[{"\"/Users/Reiko/Downloads/test\""},
    "FileArgument"], "]"}]], "Output",
- CellLabel->"Out[16]=",ExpressionUUID->"6c692782-5aca-4abb-91d2-9d0d15882536"]
+ CellLabel->"Out[54]=",ExpressionUUID->"d1ee836b-c7c1-4131-aa81-a8d1fbf3e8ec"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
@@ -927,7 +933,7 @@ Cell[BoxData[
     RowBox[{"{", "All", "}"}], ",", 
     RowBox[{"dir", "/@", 
      RowBox[{"Range", "[", "5", "]"}]}]}], "]"}], "//", "Column"}]], "Code",
- CellLabel->"In[20]:=",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+ CellLabel->"In[58]:=",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -941,7 +947,7 @@ Cell[BoxData[
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellLabel->"Out[20]=",ExpressionUUID->"7bbb91a5-f5e4-4784-910d-25968b812a7d"]
+ CellLabel->"Out[58]=",ExpressionUUID->"62c1eb2d-88f7-4d06-806c-8a4bc17d41e0"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1026,7 +1032,7 @@ Cell[BoxData[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<file.csv\>\""}], 
       "}"}]}], ",", 
     RowBox[{"Out", "[", "]"}]}], "]"}], ";"}]}], "Code",
- CellLabel->"In[21]:=",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
+ CellLabel->"In[63]:=",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
 
 Cell[BoxData[
  TagBox[
@@ -1052,7 +1058,7 @@ Cell[BoxData[
          ParentDirectory["/Downloads/test/sub1/file1.txt"]|>|>, 
      "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, 
-          TypeSystem`PackageScope`KeyDummy[1]} -> 1, {All, "a/b/c"} -> 
+          TypeSystem`PackageScope`KeyDummy[4]} -> 1, {All, "a/b/c"} -> 
         1, {All, "a/b/c.txt"} -> 1, {All, "/Downloads/test/sub1"} -> 
         1, {All, "/Downloads/test/sub1/file1.txt"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
@@ -1078,7 +1084,7 @@ Cell[BoxData[
          TypeSystem`AnyType}], 5], "Meta" -> <||>, "RowTarget" -> 20, 
      "ColumnTarget" -> 10, "Shape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, 
-          TypeSystem`PackageScope`KeyDummy[1]} -> 1, {All, "a/b/c"} -> 
+          TypeSystem`PackageScope`KeyDummy[4]} -> 1, {All, "a/b/c"} -> 
         1, {All, "a/b/c.txt"} -> 1, {All, "/Downloads/test/sub1"} -> 
         1, {All, "/Downloads/test/sub1/file1.txt"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
@@ -1929,41 +1935,44 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         TypeSystem`NestedGrid`PackagePrivate`localHold[
         TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
      TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
-    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
-     Framed[
-      Dynamic[
-       Replace[
-       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
-        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
-           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
-            Blank[]], 
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
-            Blank[]], 
-           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
-            Blank[]]] :> (
-          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
-           TypeSystem`NestedGrid`PackagePrivate`path$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
-           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
-           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
-          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
-           TypeSystem`NestedGrid`PackagePrivate`localHold[
-            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
-          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
-           TypeSystem`NestedGrid`PackagePrivate`path$, 
-            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
-         Spacer[10], Blank[] :> Spacer[10]}], 
-       TrackedSymbols :> {
-        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
-      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
-      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Dynamic[
+     Replace[
+      Replace[
+      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+       TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+          Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+           Blank[]], 
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+           Blank[]], 
+          Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+           Blank[]]] :> (
+         Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+          TypeSystem`NestedGrid`PackagePrivate`path$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+          TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+          TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+         TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+         TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+          TypeSystem`NestedGrid`PackagePrivate`path$, 
+           TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+        Spacer[10], Blank[] :> Spacer[10]}], 
+      Pattern[TypeSystem`NestedGrid`PackagePrivate`bar, 
+        Except[
+         Alternatives[
+          Blank[Spacer], ""]]] :> 
+      TypeSystem`NestedGrid`PackagePrivate`makeFramedPathbar[
+       TypeSystem`NestedGrid`PackagePrivate`bar]], 
+     TrackedSymbols :> {
+      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], 
     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
     DynamicWrapperBox[
      DynamicBox[ToBoxes[
@@ -1978,13 +1987,15 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{1189., {109.91754150390625`, 117.08245849609375`}},
+      ImageSizeCache->{
+       1188.2109416127205`, {96.78443908691406, 103.94935607910156`}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{1189., {109.91754150390625`, 117.08245849609375`}}],
+     ImageSizeCache->{
+      1188.2109416127205`, {96.78443908691406, 103.94935607910156`}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -1996,30 +2007,551 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellLabel->"Out[23]=",ExpressionUUID->"cf166640-a683-46f4-bd3c-abac4a904336"]
+ CellLabel->"Out[65]=",ExpressionUUID->"6b5e1a51-0554-4f49-8875-55ae27d5ad71"]
 }, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"FileSystemMap", "[", 
   RowBox[{"FileDate", ",", "base", ",", "Infinity"}], "]"}]], "Code",
- CellLabel->"In[64]:=",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+ CellLabel->"In[67]:=",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"sub1\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file1.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 11 Aug 2024 13:41:17\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           "TimeZoneLabel"]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+                "17.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub2\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file2.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 11 Aug 2024 13:41:17\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           "TimeZoneLabel"]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+                "17.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub3\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file3.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 11 Aug 2024 13:41:17\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           "TimeZoneLabel"]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+                "17.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub4\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file4.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 11 Aug 2024 13:41:17\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           "TimeZoneLabel"]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+                "17.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"sub5\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"file5.txt\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 11 Aug 2024 13:41:17\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+             StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+           "TimeZoneLabel"]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+                "17.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", "8.`"}], "]"}]},
+       "DateObject",
+       Editable->False]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\".DS_Store\"\>", "\[Rule]", 
+    TemplateBox[{
+      RowBox[{"\"Sun 11 Aug 2024 13:41:23\"", 
+        StyleBox[
+         RowBox[{"\"GMT\"", "\[InvisibleSpace]", "+", "\[InvisibleSpace]", 
+           StyleBox["8", NumberMarks -> False, StripOnInput -> False]}], 
+         "TimeZoneLabel"]}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            
+            RowBox[{"2024", ",", "8", ",", "11", ",", "13", ",", "41", ",", 
+              "23.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+          "8.`"}], "]"}]},
+     "DateObject",
+     Editable->False]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[67]=",ExpressionUUID->"1bb66adf-8832-4c84-91a4-c72c1e497b84"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"FileSystemTree", "[", 
   RowBox[{
    RowBox[{"First", "@", "base"}], ",", 
    RowBox[{"TreeLayout", "->", "Left"}]}], "]"}]], "Code",
- CellLabel->"In[65]:=",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
+ CellLabel->"In[68]:=",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["Trees",
+   DynamicModuleBox[{Typeset`tree = HoldComplete[
+     Tree[
+     "/Users/Reiko/Downloads/test", <|
+      "sub1" -> Tree[
+        "/Users/Reiko/Downloads/test/sub1", <|
+         "file1.txt" -> 
+          Tree["/Users/Reiko/Downloads/test/sub1/file1.txt", None, {
+            TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+             "FileSystem"}]|>, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}], "sub2" -> 
+       Tree["/Users/Reiko/Downloads/test/sub2", <|
+         "file2.txt" -> 
+          Tree["/Users/Reiko/Downloads/test/sub2/file2.txt", None, {
+            TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+             "FileSystem"}]|>, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}], "sub3" -> 
+       Tree["/Users/Reiko/Downloads/test/sub3", <|
+         "file3.txt" -> 
+          Tree["/Users/Reiko/Downloads/test/sub3/file3.txt", None, {
+            TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+             "FileSystem"}]|>, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}], "sub4" -> 
+       Tree["/Users/Reiko/Downloads/test/sub4", <|
+         "file4.txt" -> 
+          Tree["/Users/Reiko/Downloads/test/sub4/file4.txt", None, {
+            TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+             "FileSystem"}]|>, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}], "sub5" -> 
+       Tree["/Users/Reiko/Downloads/test/sub5", <|
+         "file5.txt" -> 
+          Tree["/Users/Reiko/Downloads/test/sub5/file5.txt", None, {
+            TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+             "FileSystem"}]|>, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}], ".DS_Store" -> 
+       Tree["/Users/Reiko/Downloads/test/.DS_Store", None, {
+         TreeElementLabelFunction -> "FileSystem", ParentEdgeLabelFunction -> 
+          "FileSystem"}]|>, {
+      TreeLayout -> Left, TreeElementLabelFunction -> "FileSystem", 
+       ParentEdgeLabelFunction -> "FileSystem"}]]}, 
+    NamespaceBox[{
+      {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.6212607441973945, -2.1049538557690797`*^-16}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.621260744197395, -0.588947071863242}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.6212607441973954, -1.1778941437264838`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.6212607441973959, -1.7668412155897257`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.6212607441973963, -2.355788287452967}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0., -1.4723676796581053`}, {
+         0.6212607441973967, -2.9447353593162093`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.6212607441973945, -2.1049538557690797`*^-16}, {
+         1.2425214883947902`, 0.}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.621260744197395, -0.588947071863242}, {
+         1.2425214883947906`, -0.5889470718632418}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.6212607441973954, -1.1778941437264838`}, {
+         1.242521488394791, -1.1778941437264836`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.6212607441973959, -1.7668412155897257`}, {
+         1.242521488394791, -1.7668412155897255`}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{0.6212607441973963, -2.355788287452967}, {
+         1.2425214883947924`, -2.355788287452967}}]}}, 
+      {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"test\"\>",
+            "\"/Users/Reiko/Downloads/test\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0., -1.4723676796581053}],
+        "DynamicName",
+        BoxID -> "VertexID$1"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"sub1\"\>",
+            "\"/Users/Reiko/Downloads/test/sub1\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test/sub1", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.6212607441973945, -2.1049538557690797*^-16}],
+        "DynamicName",
+        BoxID -> "VertexID$2"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"file1.txt\"\>",
+            "\"/Users/Reiko/Downloads/test/sub1/file1.txt\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/sub1/file1.txt", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.2425214883947902, 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$3"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"sub2\"\>",
+            "\"/Users/Reiko/Downloads/test/sub2\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test/sub2", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.621260744197395, -0.588947071863242}],
+        "DynamicName",
+        BoxID -> "VertexID$4"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"file2.txt\"\>",
+            "\"/Users/Reiko/Downloads/test/sub2/file2.txt\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/sub2/file2.txt", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.2425214883947906, -0.5889470718632418}],
+        "DynamicName",
+        BoxID -> "VertexID$5"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"sub3\"\>",
+            "\"/Users/Reiko/Downloads/test/sub3\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test/sub3", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.6212607441973954, -1.1778941437264838}],
+        "DynamicName",
+        BoxID -> "VertexID$6"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"file3.txt\"\>",
+            "\"/Users/Reiko/Downloads/test/sub3/file3.txt\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/sub3/file3.txt", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.242521488394791, -1.1778941437264836}],
+        "DynamicName",
+        BoxID -> "VertexID$7"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"sub4\"\>",
+            "\"/Users/Reiko/Downloads/test/sub4\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test/sub4", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.6212607441973959, -1.7668412155897257}],
+        "DynamicName",
+        BoxID -> "VertexID$8"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"file4.txt\"\>",
+            "\"/Users/Reiko/Downloads/test/sub4/file4.txt\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/sub4/file4.txt", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.242521488394791, -1.7668412155897255}],
+        "DynamicName",
+        BoxID -> "VertexID$9"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"sub5\"\>",
+            "\"/Users/Reiko/Downloads/test/sub5\"",
+            TooltipStyle->"TextStyling"],
+           Annotation[#, "/Users/Reiko/Downloads/test/sub5", "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0.6212607441973963, -2.355788287452967}],
+        "DynamicName",
+        BoxID -> "VertexID$10"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\"file5.txt\"\>",
+            "\"/Users/Reiko/Downloads/test/sub5/file5.txt\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/sub5/file5.txt", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.2425214883947924, -2.355788287452967}],
+        "DynamicName",
+        BoxID -> "VertexID$11"], 
+       TagBox[InsetBox[
+         FrameBox[
+          TagBox[
+           TooltipBox["\<\".DS_Store\"\>",
+            "\"/Users/Reiko/Downloads/test/.DS_Store\"",
+            TooltipStyle->"TextStyling"],
+           
+           Annotation[#, "/Users/Reiko/Downloads/test/.DS_Store", 
+            "Tooltip"]& ],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0.6212607441973967, -2.9447353593162093}],
+        "DynamicName",
+        BoxID -> "VertexID$12"]}}]]],
+  AlignmentPoint->Center,
+  Axes->False,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ContentSelectable->Automatic,
+  DefaultBaseStyle->"TreeGraphics",
+  DisplayFunction->Identity,
+  Epilog->{},
+  FormatType->StandardForm,
+  Frame->False,
+  FrameLabel->None,
+  FrameStyle->{},
+  FrameTicks->None,
+  FrameTicksStyle->{},
+  GridLines->None,
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  LabelStyle->{},
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->Automatic,
+  TicksStyle->{}]], "Output",
+ CellLabel->"Out[68]=",ExpressionUUID->"2e46fad5-ac37-4385-aef9-f50d1c9c7e55"]
+}, Open  ]],
 
 Cell["", "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
 },
 Editable->True,
-WindowSize->{840, 1022},
+WindowSize->{1680, 1022},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowStatusArea->"",
-FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
 StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
    "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
   "Yurie.nb", CharacterEncoding -> "UTF-8"],
@@ -2036,34 +2568,40 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 194, 4, 92, "Code",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
-Cell[755, 26, 71, 0, 62, "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
-Cell[829, 28, 511, 15, 92, "Code",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
+Cell[558, 20, 235, 5, 113, "Code",ExpressionUUID->"87a75edb-6a7f-4804-b901-529341a04998"],
+Cell[796, 27, 71, 0, 60, "Text",ExpressionUUID->"c44bc543-7158-46fa-93b4-148d766e50c9"],
+Cell[870, 29, 511, 15, 89, "Code",ExpressionUUID->"4be35900-3989-48d9-9bfb-effe6edc1f15"],
 Cell[CellGroupData[{
-Cell[1365, 47, 1129, 33, 188, "Code",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
-Cell[2497, 82, 42255, 773, 285, "Output",ExpressionUUID->"c7120ba7-7900-4685-8ec6-8999ccea3ad7"]
+Cell[1406, 48, 1129, 33, 184, "Code",ExpressionUUID->"666c9dd4-3fd6-4f1d-bcd1-4cc4417676ed"],
+Cell[2538, 83, 42360, 778, 255, "Output",ExpressionUUID->"60c5dda4-7b70-4a3a-8f25-401052082856"]
 }, Open  ]],
-Cell[44767, 858, 71, 0, 62, "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
+Cell[44913, 864, 71, 0, 60, "Text",ExpressionUUID->"10ab094e-b8f2-42f6-9c8b-b619e017e677"],
 Cell[CellGroupData[{
-Cell[44863, 862, 1642, 47, 332, "Code",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
-Cell[46508, 911, 204, 4, 51, "Output",ExpressionUUID->"6c692782-5aca-4abb-91d2-9d0d15882536"]
+Cell[45009, 868, 1642, 47, 325, "Code",ExpressionUUID->"026be6cc-941f-4f92-945a-f70a06487af5"],
+Cell[46654, 917, 204, 4, 48, "Output",ExpressionUUID->"d1ee836b-c7c1-4131-aa81-a8d1fbf3e8ec"]
 }, Open  ]],
-Cell[46727, 918, 71, 0, 62, "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
+Cell[46873, 924, 71, 0, 60, "Text",ExpressionUUID->"76d82f44-c405-476c-b24b-8c436c72bc06"],
 Cell[CellGroupData[{
-Cell[46823, 922, 283, 7, 67, "Code",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
-Cell[47109, 931, 592, 12, 131, "Output",ExpressionUUID->"7bbb91a5-f5e4-4784-910d-25968b812a7d"]
+Cell[46969, 928, 283, 7, 66, "Code",ExpressionUUID->"39e5a75f-692e-4a93-877d-21b105219771"],
+Cell[47255, 937, 592, 12, 123, "Output",ExpressionUUID->"62c1eb2d-88f7-4d06-806c-8a4bc17d41e0"]
 }, Open  ]],
-Cell[47716, 946, 593, 17, 92, "Code",ExpressionUUID->"9363bcd6-ce0d-4625-8061-2337b670b747"],
-Cell[48312, 965, 613, 18, 92, "Code",ExpressionUUID->"dba28f76-a760-4c52-9963-e2147124be09"],
-Cell[48928, 985, 71, 0, 62, "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
+Cell[47862, 952, 593, 17, 89, "Code",ExpressionUUID->"9363bcd6-ce0d-4625-8061-2337b670b747"],
+Cell[48458, 971, 613, 18, 89, "Code",ExpressionUUID->"dba28f76-a760-4c52-9963-e2147124be09"],
+Cell[49074, 991, 71, 0, 60, "Text",ExpressionUUID->"c34693af-0090-4c7d-ba9c-ab60f3417123"],
 Cell[CellGroupData[{
-Cell[49024, 989, 1284, 39, 212, "Code",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
-Cell[50311, 1030, 51672, 968, 251, "Output",ExpressionUUID->"cf166640-a683-46f4-bd3c-abac4a904336"]
+Cell[49170, 995, 1284, 39, 207, "Code",ExpressionUUID->"50941ddd-1dc0-4ed7-b21a-66a45530eeeb"],
+Cell[50457, 1036, 51775, 973, 221, "Output",ExpressionUUID->"6b5e1a51-0554-4f49-8875-55ae27d5ad71"]
 }, Open  ]],
-Cell[101998, 2001, 71, 0, 62, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
-Cell[102072, 2003, 194, 3, 67, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
-Cell[102269, 2008, 236, 5, 67, "Code",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
-Cell[102508, 2015, 71, 0, 62, "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
+Cell[102247, 2012, 71, 0, 60, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
+Cell[CellGroupData[{
+Cell[102343, 2016, 194, 3, 66, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
+Cell[102540, 2021, 4600, 109, 70, "Output",ExpressionUUID->"1bb66adf-8832-4c84-91a4-c72c1e497b84"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107177, 2135, 236, 5, 66, "Code",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
+Cell[107416, 2142, 16062, 402, 561, "Output",ExpressionUUID->"2e46fad5-ac37-4385-aef9-f50d1c9c7e55"]
+}, Open  ]],
+Cell[123493, 2547, 71, 0, 60, "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
 }
 ]
 *)

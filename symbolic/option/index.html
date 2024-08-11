@@ -527,23 +527,23 @@
 </li>
 </ul>
 <h2 id="_2">继承</h2>
-<div class="highlight"><pre><span></span><code><span class="nv">g1</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="nv">correct</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
 <span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
 
-<span class="nv">g2</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
+<span class="nv">wrong</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
 <span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
 
-<span class="nb">SetOptions</span><span class="p">[{</span><span class="nv">g1</span><span class="p">,</span><span class="nv">g2</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">SetOptions</span><span class="p">[{</span><span class="nv">correct</span><span class="p">,</span><span class="nv">wrong</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">]</span><span class="o">;</span>
 
-<span class="nv">g1</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
-<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">g1</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
+<span class="nv">correct</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">correct</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
 
-<span class="nv">g2</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="nv">wrong</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
 <span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
 
-<span class="nv">g1</span><span class="p">[]</span>
+<span class="nv">correct</span><span class="p">[]</span>
 
-<span class="nv">g2</span><span class="p">[]</span>
+<span class="nv">wrong</span><span class="p">[]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;b0&quot;</span><span class="p">}</span>
 

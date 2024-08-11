@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/evaluation-sequence/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/evaluation/">
       
       
       
@@ -589,8 +589,10 @@
 <p><strong>原子：</strong> 与树的结构相似，不存在非平凡子表达式的称为原子 (atom)，例如数、符号、字符串。</p>
 <p><strong>复合：</strong> 树可以拼接，若干表达式可以复合为复杂度更高的表达式，此处复合 (composite) 指树的拼接，形如 <code class="highlight"><span class="nv">f0</span><span class="p">[</span><span class="nv">f1</span><span class="p">,</span><span class="nv">f2</span><span class="p">,</span><span class="o">...</span><span class="p">]</span></code>，类似于 operad <sup id="fnref:operad"><a class="footnote-ref" href="#fn:operad">4</a></sup>。</p>
 <p><strong>合成：</strong> 树构成森林，对应于合成 (compound)，形如 <code class="highlight"><span class="nv">f1</span><span class="o">;</span><span class="nv">f2</span><span class="o">;...</span></code>，类似于张量积。</p>
-<p>例如：表达式 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">y</span><span class="p">,</span><span class="nv">z</span><span class="p">]]</span></code> 的树形式为</p>
-<p><img src="../evaluation-sequence/tree-example.png" class="center" width="30%" alt="tree-example"></p>
+<p>例如：表达式 <code class="highlight"><span class="nv">a</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="o">+</span><span class="nv">b</span><span class="o">^</span><span class="m">2</span></code> 的树形式为</p>
+<!-- <img src="../evaluation/tree-example.png" class="center" width="30%" alt="tree-example"> -->
+
+<p><img alt="tree-example" src="tree-example.png" /></p>
 <h2 id="evaluation">Evaluation</h2>
 <p>表达式的集合 <strong>Expr</strong> 是一个无结构的平凡集合。对表达式的计算 (evaluation) 可实现表达式之间的形变 (deformation)。当然，计算类似于离散动力系统，并无良好的微分结构。</p>
 <p>特定对象 <span class="arithmatex">\(x_0\)</span> 的不同无穷小形变可记为 <span class="arithmatex">\(x_0 \mapsto x_0 + \d_i x_0,\,  \d_i x_0\in TM_{x_0}\)</span>，例如有效作用量的形变为</p>

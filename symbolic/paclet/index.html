@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/paclet-package/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/paclet/">
       
       
       
@@ -425,9 +425,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paclet-and-package-structure" class="md-nav__link">
+  <a href="#paclet-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Paclet and package structure
+      Paclet structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package structure
     </span>
   </a>
   
@@ -518,24 +527,26 @@
 <li><a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">Paclets and paclet development</a> <code>tutorial/Paclets</code></li>
 </ul>
 <hr />
-<h2 id="paclet-and-package-structure">Paclet and package structure</h2>
+<h2 id="paclet-structure">Paclet structure</h2>
+<p>Syntactic dependence:</p>
+<p><img alt="paclet" src="paclet.png" /></p>
+<p>File structure:</p>
 <div class="highlight"><pre><span></span><code>PacletInfo.wl
 Kernel/
-    Package/
-        Sub1.wl
-        Sub2.wl
-    Common.wl
     Package.wl
+    Package/
+        Context1.wl
+        Context2.wl
+    Constant.wl
+    Variable.wl
+    Common.wl
     Usage.wl
     ...
 ...
 </code></pre></div>
+<h2 id="package-structure">Package structure</h2>
 <div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*set the context as Package`.*)</span>
 <span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;Package`&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="c">(*clear the definitions when reloading the package if necessary.*)</span>
-<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">ClearAll</span><span class="p">[</span><span class="s">&quot;`*`*&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*declare public symbols.*)</span>
 <span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Usage`&quot;</span><span class="p">]</span><span class="o">;</span>
@@ -544,8 +555,8 @@ Kernel/
 <span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Common`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*load the definitions of public symbols.*)</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Sub1`&quot;</span><span class="p">]</span><span class="o">;</span>
-<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Sub2`&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Context1`&quot;</span><span class="p">]</span><span class="o">;</span>
+<span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Package`Context2`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*set the private context.*)</span>
 <span class="nb">Begin</span><span class="p">[</span><span class="s">&quot;`Private`&quot;</span><span class="p">]</span><span class="o">;</span>
@@ -561,10 +572,10 @@ Kernel/
 <h2 id="symbol-types">Symbol types</h2>
 <ul>
 <li>
-<p>Constant - store global parameters.</p>
+<p>Constant - public/private constants.</p>
 </li>
 <li>
-<p>Association/List - store data.</p>
+<p>Variable - public/private variables.</p>
 </li>
 <li>
 <p>Questing function -  define the type of variables. The definition should be complete.</p>

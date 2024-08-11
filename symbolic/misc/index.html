@@ -470,9 +470,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ownvalues-are-hard-to-manage" class="md-nav__link">
+  <a href="#public-variable" class="md-nav__link">
     <span class="md-ellipsis">
-      Ownvalues are hard to manage
+      Public variable
     </span>
   </a>
   
@@ -581,21 +581,21 @@
 <span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="helper-function">Helper function</h2>
-<p>复杂的主体函数应分层，最外层提供用户接口，若干内层的 helper 函数实现不同功能，尽可能使函数的依赖关系为 tree-like 的结构。为了避免重复判定条件，仅在最外层使用判别函数。</p>
+<p>复杂的主体函数应分层，最外层提供用户接口，若干内层的 helper 函数实现不同功能，尽可能使函数的依赖关系为树状结构。为了避免重复判定条件，仅在最外层使用判别函数。</p>
 <h2 id="hold-like-attributes">Hold-like attributes</h2>
 <p>需注意 <code class="highlight"><span class="nb">HoldAll</span></code> 或类似属性在多层函数之间的正确传递。</p>
 <h2 id="set-in-package">Set in package</h2>
 <p>当 <code>Set</code> 出现在扩展包中时，需注意相关符号在扩展包多次被调用后的状态，或在定义前清除原始值。</p>
 <h2 id="decoupling">Decoupling</h2>
 <p>减少不同功能的函数与扩展包之间的关联。</p>
-<h2 id="ownvalues-are-hard-to-manage">Ownvalues are hard to manage</h2>
-<p>公共符号应避免直接定义为 <code class="highlight"><span class="nv">foo</span><span class="o">=...</span></code>，<code class="highlight"><span class="nv">foo</span><span class="p">[]</span><span class="o">=...</span></code> 是更好的选择，原因在于：</p>
+<h2 id="public-variable">Public variable</h2>
+<p>处理公共变量 <code class="highlight"><span class="nv">var</span><span class="o">=...</span></code> 时：</p>
 <ul>
 <li>
-<p>不具有扩展性。</p>
+<p>需注意状态的管理；</p>
 </li>
 <li>
-<p>与 <code class="highlight"><span class="nb">HoldAll</span></code> 等非标准计算的交互具有技巧性；</p>
+<p>与 <code class="highlight"><span class="nb">HoldAll</span></code> 等非标准计算的交互。</p>
 </li>
 </ul>
 <h2 id="names">Names</h2>

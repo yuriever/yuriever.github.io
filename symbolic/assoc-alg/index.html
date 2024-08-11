@@ -506,30 +506,38 @@
 <h1 id="implementing-associative-algebras-in-mathematica">Implementing associative algebras in Mathematica</h1>
 <p>We introduce implementation of noncommutative algebras via Mathematica.</p>
 <h2 id="designing-idea">Designing idea</h2>
-<p>What expressions are noncommutative? We can specify and store noncommutative operators in the list <code class="highlight"><span class="nv">$operator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator.</p>
+<p>In practice, we define an (associative) algebra <span class="arithmatex">\(A\)</span> using generators and relations, i.e., as a quotient of the free algebra.
+We require that the set of generators <span class="arithmatex">\(G(A)\)</span> and the set of relations <span class="arithmatex">\(R(A)\)</span> can be expressed with a finite number of symbols, which covers a broader range than finitely presented algebras.</p>
+<p>What expressions are noncommutative? We can store the generators <span class="arithmatex">\(G(A)\)</span> in the list <code class="highlight"><span class="nv">$operator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">scalarQ</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">FreeQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nb">Alternatives</span><span class="o">@@</span><span class="nv">$operator</span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
 <p>The function <code class="highlight"><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">]</span></code> returns <code class="highlight"><span class="nb">True</span></code> when <code class="highlight"><span class="nv">expr</span></code> is a scalar.</p>
-<p>We then implement the relations of noncommutative multiplication by a list of rules <code class="highlight"><span class="nv">$relation</span></code>, and simplify expressions using the function <code class="highlight"><span class="nb">ReplaceRepeated</span></code>.</p>
+<p>We then implement the relations <span class="arithmatex">\(R(A)\)</span> by a list of rules <code class="highlight"><span class="nv">$relation</span></code>, and simplify expressions using the function <code class="highlight"><span class="nb">ReplaceRepeated</span></code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">algebraSimplify</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$relation</span><span class="p">]</span><span class="o">//</span><span class="nb">Simplify</span><span class="o">;</span>
 </code></pre></div>
-<p>Noncommutative multiplication needs to satisfy the rules of linearity and distributivity, which is independent of specific algebras:</p>
+<p>Noncommutative multiplication needs to satisfy the rules of identity, linearity and distributivity:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">NonCommutativeMultiply</span><span class="o">//</span><span class="nb">Unprotect</span><span class="o">;</span>
 
 <span class="nb">NonCommutativeMultiply</span><span class="o">//</span><span class="nb">Attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span><span class="o">;</span>
 
 <span class="nv">$relationInternal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">x_</span><span class="o">**</span><span class="nt">y_</span><span class="o">/;</span><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="o">||</span><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">y</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">x</span><span class="o">*</span><span class="nv">y</span><span class="p">,</span>
+<span class="w">    </span><span class="c">(*linearity*)</span>
 <span class="w">    </span><span class="p">(</span><span class="nt">k_</span><span class="o">?</span><span class="nv">scalarQ</span><span class="o">*</span><span class="nt">x_</span><span class="p">)</span><span class="o">**</span><span class="nt">y_</span><span class="o">:&gt;</span><span class="nv">k</span><span class="o">*</span><span class="nv">x</span><span class="o">**</span><span class="nv">y</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">x_</span><span class="o">**</span><span class="p">(</span><span class="nt">k_</span><span class="o">?</span><span class="nv">scalarQ</span><span class="o">*</span><span class="nt">y_</span><span class="p">)</span><span class="o">:&gt;</span><span class="nv">k</span><span class="o">*</span><span class="nv">x</span><span class="o">**</span><span class="nv">y</span><span class="p">,</span>
 <span class="w">    </span><span class="p">(</span><span class="nt">x_</span><span class="o">+</span><span class="nt">y_</span><span class="p">)</span><span class="o">**</span><span class="nt">z_</span><span class="o">:&gt;</span><span class="nv">x</span><span class="o">**</span><span class="nv">z</span><span class="o">+</span><span class="nv">y</span><span class="o">**</span><span class="nv">z</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">z_</span><span class="o">**</span><span class="p">(</span><span class="nt">x_</span><span class="o">+</span><span class="nt">y_</span><span class="p">)</span><span class="o">:&gt;</span><span class="nv">z</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">z</span><span class="o">**</span><span class="nv">y</span>
+<span class="w">    </span><span class="nt">z_</span><span class="o">**</span><span class="p">(</span><span class="nt">x_</span><span class="o">+</span><span class="nt">y_</span><span class="p">)</span><span class="o">:&gt;</span><span class="nv">z</span><span class="o">**</span><span class="nv">x</span><span class="o">+</span><span class="nv">z</span><span class="o">**</span><span class="nv">y</span><span class="p">,</span>
+<span class="w">    </span><span class="c">(*zero*)</span>
+<span class="w">    </span><span class="m">0</span><span class="o">**_-&gt;</span><span class="m">0</span><span class="p">,</span>
+<span class="w">    </span><span class="o">_**</span><span class="m">0</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">,</span>
+<span class="w">    </span><span class="c">(*identity*)</span>
+<span class="w">    </span><span class="nv">id</span><span class="o">**</span><span class="nt">x_</span><span class="o">:&gt;</span><span class="nv">x</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">x_</span><span class="o">**</span><span class="nv">id</span><span class="o">:&gt;</span><span class="nv">x</span>
 <span class="p">}</span><span class="o">;</span>
 </code></pre></div>
 <p>Here we have overload the internal function <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code> with operator form <code class="highlight"><span class="o">**</span></code> by adding the attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span></code>.</p>
@@ -539,8 +547,9 @@
 <span class="nv">algebraPrint</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="nv">$printing</span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
-<p>To ensure the convergence of <code class="highlight"><span class="nb">ReplaceRepeated</span></code>, we need to determine the ordering of operators, and a simple choice is the Poincare-Birkhoff-Witt basis.</p>
+<p>To ensure the convergence of <code class="highlight"><span class="nb">ReplaceRepeated</span></code>, we need to specify the ordering of operators, and a simple choice is the Poincare-Birkhoff-Witt type basis.</p>
 <h2 id="example">Example</h2>
+<p>Verma module of <span class="arithmatex">\(\sllie(2)\)</span>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">H</span><span class="p">,</span><span class="nv">v</span><span class="p">}</span><span class="o">;</span>
 
 <span class="nv">$relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
