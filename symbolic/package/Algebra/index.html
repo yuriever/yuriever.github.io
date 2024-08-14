@@ -868,19 +868,33 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 <h3 id="adjoint">Adjoint</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie algebra, <span class="arithmatex">\(\adjoint^n_x\cdot y\)</span>.</p>
+<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie algebra. For <span class="arithmatex">\(x,y\in \glie\)</span>, <span class="arithmatex">\(\adjoint^{0}_x(y)=y\)</span> and
+    \begin{equation}
+        \adjoint^n_x(y)
+        =[x,\adjoint^{n-1}_x(y)]
+        \, .
+    \end{equation}</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie group upto the max order <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\([\Adjoint_{x}(t)]_n\cdot y=[e^{t x}]_n\, y\, [e^{-t x}]_n\)</span>.</p>
+<p><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">t_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of formal Lie group trancated at the certain order. For <span class="arithmatex">\(x,y\in \glie\)</span> and <span class="arithmatex">\(t\in \CC\)</span>,
+    \begin{equation}
+        \Adjoint_{t x}(y)|<em i="0">{n}=
+        \sum</em>(y)
+        \, .
+    \end{equation}}^{n}\frac{t^{i}}{i!}\adjoint^{i}_{x</p>
 </li>
 </ul>
 <h3 id="power">Power</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - power of operators, <span class="arithmatex">\(x^n\)</span>.</p>
+<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - power of the operator.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">parameter_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - exponential of operators upto the max order <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\([e^{t x}]_n=\sum_{i=0}^{n}\frac{t^i}{i!} x^i\)</span>.</p>
+<p><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">t_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - exponential of the operator trancated at the certain order. For <span class="arithmatex">\(x\in A\)</span> and <span class="arithmatex">\(t\in\CC\)</span>,
+    \begin{equation}
+        e^{t x}|<em i="0">n=\sum</em> x^i
+        \, .
+    \end{equation}}^{n}\frac{t^i}{i!</p>
 </li>
 </ul>
 <h3 id="operator-separation">Operator separation</h3>
@@ -890,19 +904,43 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 <h3 id="definition-checking">Definition checking</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">checkLieBracket</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the Jacobi identity of Lie algebra.</p>
+<p><code class="highlight"><span class="nv">checkLieBracket</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the Jacobi identity of Lie algebra. For <span class="arithmatex">\(x,y,z\in\glie\)</span>,
+    \begin{equation}
+        [[x,y],z]=[x,[y,z]]-[y,[x,z]]
+        \, .
+    \end{equation}</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkLieModule</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the action on Lie module.</p>
+<p><code class="highlight"><span class="nv">checkLieModule</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the action on Lie module. For $x,y\in \glie $ and <span class="arithmatex">\(v\in V\)</span>,
+    \begin{equation}
+        [x,y] (v)=x(y(v))-y(x(v))
+        \, .
+    \end{equation}</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkAssociativity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the associativity of multiplication.</p>
+<p><code class="highlight"><span class="nv">checkAssociativity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the associativity of multiplication. For <span class="arithmatex">\(x,y,z\in A\)</span>,
+    \begin{equation}
+        (x y) z =x (y z)
+        \, .
+    \end{equation}</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication.</p>
+<p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication. For <span class="arithmatex">\(x\in A\)</span>,
+    \begin{equation}
+        x_{(1)(1)}\ox x_{(1)(2)}\ox x_{(2)}
+        =
+        x_{(1)}\ox x_{(2)(1)}\ox x_{(2)(2)}
+        \, .
+    \end{equation}</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkAntipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the antipode of Hopf algebra.</p>
+<p><code class="highlight"><span class="nv">checkAntipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the antipode of Hopf algebra. For <span class="arithmatex">\(x\in A\)</span>,
+    \begin{equation}
+        S(x_{(1)})x_{(2)}
+        =x_{(1)}S(x_{(2)})
+        =\epsilon(x)\id
+        \, .
+    \end{equation}</p>
 </li>
 </ul>
 <h2 id="other-issues">Other issues</h2>
@@ -911,7 +949,7 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 <p><code class="highlight"><span class="nb">Needs</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will retain the previously defined algebras, while <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will clear them.</p>
 </li>
 <li>
-<p>The accepted pattern for algebra names is <code class="highlight"><span class="nt">_String</span></code>.</p>
+<p>The accepted pattern of algebra names is <code class="highlight"><span class="nt">_String</span></code>.</p>
 </li>
 </ul>
 
