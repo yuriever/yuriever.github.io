@@ -918,19 +918,20 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 \end{equation}\]</div>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">checkAssociativity</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the associativity of multiplication. For <span class="arithmatex">\(x,y,z\in A\)</span>,</p>
-<div class="arithmatex">\[\begin{equation}
-    (x y) z =x (y z)
-    \, .
-\end{equation}\]</div>
-</li>
-<li>
 <p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication. For <span class="arithmatex">\(x\in A\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
     x_{(1)(1)}\ox x_{(1)(2)}\ox x_{(2)}
     =
     x_{(1)}\ox x_{(2)(1)}\ox x_{(2)(2)}
     \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkCounitality</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the counitality of counit. For <span class="arithmatex">\(x\in A\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    \epsilon(x_{(1)})x_{(2)}=
+    x_{(1)}\epsilon(x_{(2)})=
+    x
 \end{equation}\]</div>
 </li>
 <li>
