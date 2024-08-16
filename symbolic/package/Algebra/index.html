@@ -920,8 +920,10 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 <li>
 <p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication. For <span class="arithmatex">\(x\in A\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
+    \sum
     x_{(1)(1)}\ox x_{(1)(2)}\ox x_{(2)}
     =
+    \sum
     x_{(1)}\ox x_{(2)(1)}\ox x_{(2)(2)}
     \, .
 \end{equation}\]</div>
@@ -929,17 +931,25 @@ The identity operator is the image of <span class="arithmatex">\(1\)</span> unde
 <li>
 <p><code class="highlight"><span class="nv">checkCounitality</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the counitality of counit. For <span class="arithmatex">\(x\in A\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
-    \epsilon(x_{(1)})x_{(2)}=
-    x_{(1)}\epsilon(x_{(2)})=
+    \sum
+    \epsilon(x_{(1)})x_{(2)}
+    =
+    \sum
+    x_{(1)}\epsilon(x_{(2)})
+    =
     x
 \end{equation}\]</div>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">checkAntipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the antipode of Hopf algebra. For <span class="arithmatex">\(x\in A\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
+    \sum
     S(x_{(1)})x_{(2)}
-    =x_{(1)}S(x_{(2)})
-    =\epsilon(x)\id
+    =
+    \sum
+    x_{(1)}S(x_{(2)})
+    =
+    \epsilon(x)\id
     \, .
 \end{equation}\]</div>
 </li>
