@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/package/MathForm/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__Algebra/idea/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Yurie/MathForm - Sora</title>
+        <title>Designing idea - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yuriemathform" class="md-skip">
+        <a href="#designing-idea" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Yurie/MathForm
+              Designing idea
             
           </span>
         </div>
@@ -425,18 +425,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public" class="md-nav__link">
+  <a href="#expression-tree" class="md-nav__link">
     <span class="md-ellipsis">
-      Public
+      Expression tree
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#private" class="md-nav__link">
+  <a href="#attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      Private
+      Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      File structure
     </span>
   </a>
   
@@ -494,56 +503,132 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="yuriemathform">Yurie/MathForm</h1>
-<p>The paclet <code>Yurie/MathForm</code> improves the parser of <code>TeXForm</code>.</p>
-<h2 id="public">Public</h2>
+<h1 id="designing-idea">Designing idea</h1>
+<h2 id="expression-tree">Expression tree</h2>
+<p>Nodes of expression tree:</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">texForm</span></code> - postprocess the string from <code class="highlight"><span class="nb">TeXForm</span></code> by the rules in <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
+<p><code class="highlight"><span class="nt">_Plus</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as a LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Pattern</th>
-<th style="text-align: left;"></th>
-<th style="text-align: left;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="k">\f</span></code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}</span></code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}{</span>b<span class="nb">}</span></code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}</span></code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">},{</span><span class="nv">c</span><span class="p">,</span><span class="nv">d</span><span class="p">}]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}{</span>c,d<span class="nb">}</span></code></td>
-</tr>
-</tbody>
-</table>
+<p><code class="highlight"><span class="nt">_Times</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="o">_?</span><span class="nv">generatorQ</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nt">_tensor</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nt">_NonCommutativeMultiply</span></code></p>
 </li>
 </ul>
-<h2 id="private">Private</h2>
+<h2 id="attributes">Attributes</h2>
 <ul>
-<li><code class="highlight"><span class="nv">$texAssoc</span></code> - association of predefined rules.</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Generator&quot;</span></code></p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">generatorQ</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">|</span><span class="nv">operatorQ</span></code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Relation&quot;</span></code></p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">relation</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraSimplify</span></code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Printing&quot;</span></code></p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">printing</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraPrint</span></code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Rank&quot;</span></code></p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">tensorank</span></code> - public function; handling the nodes <code class="highlight"><span class="o">_?</span><span class="nv">generatorQ</span><span class="o">|</span><span class="nt">_tensor</span><span class="o">|</span><span class="nt">_NonCommutativeMultiply</span><span class="o">|</span><span class="nt">_Times</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorankSafe</span></code> - check whether the expression is valid.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Parity&quot;</span></code></p>
+<ul>
+<li><code class="highlight"><span class="nv">parity</span></code> - return the parity of the expression by the default algebra.</li>
+</ul>
+</li>
+</ul>
+<h2 id="file-structure">File structure</h2>
+<p>Core:</p>
+<ul>
+<li>
+<p>Init.wl</p>
+<ul>
+<li>
+<p>class initialization</p>
+</li>
+<li>
+<p>caching data into states</p>
+</li>
+<li>
+<p>internal algebra initialization</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Algebra.wl</p>
+<ul>
+<li>attributes and methods</li>
+</ul>
+</li>
+<li>
+<p>Core.wl</p>
+</li>
+<li>
+<p>Variable.wl</p>
+<ul>
+<li>states</li>
+</ul>
+</li>
+<li>
+<p>Internal.wl</p>
+<ul>
+<li>internal algebras</li>
+</ul>
+</li>
+</ul>
+<p>Extension</p>
+<ul>
+<li>
+<p>Conjugate.wl</p>
+</li>
+<li>
+<p>Tensor.wl</p>
+</li>
+<li>
+<p>Utility.wl</p>
+</li>
+<li>
+<p>Check.wl</p>
+</li>
 </ul>
 
 <!-- Source file information -->

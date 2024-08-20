@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/dev/web-dev/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__MathForm/doc/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Website development - Sora</title>
+        <title>Yurie/MathForm - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#website-development" class="md-skip">
+        <a href="#yuriemathform" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Website development
+              Yurie/MathForm
             
           </span>
         </div>
@@ -204,7 +204,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../symbolic/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -238,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../workbench/" class="md-tabs__link">
         
   
     
@@ -325,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../symbolic/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -365,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../workbench/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,18 +425,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#completed" class="md-nav__link">
+  <a href="#public" class="md-nav__link">
     <span class="md-ellipsis">
-      Completed
+      Public
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#discarded" class="md-nav__link">
+  <a href="#private" class="md-nav__link">
     <span class="md-ellipsis">
-      Discarded
+      Private
     </span>
   </a>
   
@@ -494,47 +494,58 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="website-development">Website development</h1>
-<h2 id="completed">Completed</h2>
-<ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> overwrite <code>main.html</code> to hide the sidebar on all pages.</p>
+<h1 id="yuriemathform">Yurie/MathForm</h1>
+<p>This paclet improves the parser of LaTeX.</p>
+<h2 id="public">Public</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">texForm</span></code> - postprocess the string from <code class="highlight"><span class="nb">TeXForm</span></code> by the rules in <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> BibTeX by <code>mkdocs-bibtex</code></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> customize <code>admonition.css</code></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> customize the code highlighter</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> subtitle</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> mma code block</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> TikZ support by <code>tikzjax</code></p>
-<p><a href="https://tikzjax.com/v1/tikzjax.js">https://tikzjax.com/v1/tikzjax.js</a></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> <code>pybtex</code> cannot handle entries with empty journal field and should be modified. Using <code>pandoc</code> with a <code>csl</code> file is slow to build the site.</p>
-<p>see this issue: <a href="https://github.com/shyamd/mkdocs-bibtex/issues/144">https://github.com/shyamd/mkdocs-bibtex/issues/144</a></p>
+<li>
+<p><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as a LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
 </li>
 </ul>
-<h2 id="discarded">Discarded</h2>
-<ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> SVG 图片在夜晚模式下的填充颜色的适配问题，see e.g.</p>
-<p><a href="https://stackoverflow.com/questions/67187091/">https://stackoverflow.com/questions/67187091/</a></p>
-<p><a href="https://www.ctrl.blog/entry/svg-embed-dark-mode.html">https://www.ctrl.blog/entry/svg-embed-dark-mode.html</a></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> arXiv API:</p>
-<p><a href="https://arxiv.org/help/api">https://arxiv.org/help/api</a></p>
-</li>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}{</span>b<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">},{</span><span class="nv">c</span><span class="p">,</span><span class="nv">d</span><span class="p">}]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}{</span>c,d<span class="nb">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h2 id="private">Private</h2>
+<ul>
+<li><code class="highlight"><span class="nv">$texAssoc</span></code> - association of predefined rules.</li>
 </ul>
 
 <!-- Source file information -->

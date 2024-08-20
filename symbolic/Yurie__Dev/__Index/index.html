@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/dev/web-dev/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__Dev/__Index/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Website development - Sora</title>
+        <title>Yurie/Index - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#website-development" class="md-skip">
+        <a href="#yurieindex" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Website development
+              Yurie/Index
             
           </span>
         </div>
@@ -204,7 +204,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../symbolic/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -238,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../workbench/" class="md-tabs__link">
         
   
     
@@ -325,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../symbolic/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -365,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../workbench/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,20 +425,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#completed" class="md-nav__link">
+  <a href="#designing-idea" class="md-nav__link">
     <span class="md-ellipsis">
-      Completed
+      Designing idea
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#discarded" class="md-nav__link">
+  <a href="#functionalities" class="md-nav__link">
     <span class="md-ellipsis">
-      Discarded
+      Functionalities
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helper functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -494,46 +518,61 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="website-development">Website development</h1>
-<h2 id="completed">Completed</h2>
-<ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> overwrite <code>main.html</code> to hide the sidebar on all pages.</p>
+<h1 id="yurieindex">Yurie/Index</h1>
+<p>A Mathematica package for coding a indexed variable into a single symbol.</p>
+<p>The GitHub repository is <a href="https://github.com/yuriever/Yurie-Index">yuriever/Yurie-Index</a>.</p>
+<h2 id="designing-idea">Designing idea</h2>
+<p>This package provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">_Subsuperscript</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">_Symbol</span>
+</code></pre></div>
+<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>, and to override this we introduce the public function <code class="highlight"><span class="nv">toString</span></code>.</p>
+<p>The kernel functions will convert symbols to strings, use string pattern matching, and finally convert back to symbols if necessary.</p>
+<h2 id="functionalities">Functionalities</h2>
+<h3 id="helper-functions">Helper functions</h3>
+<ul>
+<li><code class="highlight"><span class="nv">toString</span></code> - map <code class="highlight"><span class="nb">Null</span></code> to empty string.</li>
+</ul>
+<h3 id="kernel-functions">Kernel functions</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">indexize</span></code> - indexify a list of variables.</p>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> BibTeX by <code>mkdocs-bibtex</code></p>
+<li>
+<p><code class="highlight"><span class="nv">indexify</span></code> - indexify the specified variables in an expression.</p>
+<p>Default options:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span></code> - head variables will not be indexified. This option is inherited from <code class="highlight"><span class="nb">Replace</span></code>.</p>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> customize <code>admonition.css</code></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> customize the code highlighter</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> subtitle</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> mma code block</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> TikZ support by <code>tikzjax</code></p>
-<p><a href="https://tikzjax.com/v1/tikzjax.js">https://tikzjax.com/v1/tikzjax.js</a></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked/> <code>pybtex</code> cannot handle entries with empty journal field and should be modified. Using <code>pandoc</code> with a <code>csl</code> file is slow to build the site.</p>
-<p>see this issue: <a href="https://github.com/shyamd/mkdocs-bibtex/issues/144">https://github.com/shyamd/mkdocs-bibtex/issues/144</a></p>
+<li>
+<p><code class="highlight"><span class="nb">Transpose</span><span class="o">-&gt;</span><span class="nb">False</span></code> - Lacia-Breakpoint-2023-11-22-11:45</p>
 </li>
 </ul>
-<h2 id="discarded">Discarded</h2>
-<ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> SVG 图片在夜晚模式下的填充颜色的适配问题，see e.g.</p>
-<p><a href="https://stackoverflow.com/questions/67187091/">https://stackoverflow.com/questions/67187091/</a></p>
-<p><a href="https://www.ctrl.blog/entry/svg-embed-dark-mode.html">https://www.ctrl.blog/entry/svg-embed-dark-mode.html</a></p>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled/> arXiv API:</p>
-<p><a href="https://arxiv.org/help/api">https://arxiv.org/help/api</a></p>
+<li>
+<p><code class="highlight"><span class="nv">indexArray</span></code> - generate tensor of symbols by <code class="highlight"><span class="nb">Array</span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
+
+<span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x1</span><span class="p">,</span><span class="nv">x2</span><span class="p">}</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nv">x11</span><span class="p">,</span><span class="nv">x12</span><span class="p">},{</span><span class="nv">x21</span><span class="p">,</span><span class="nv">x22</span><span class="p">}}</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexPolynomial</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexArray</span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">]</span>
+
+<span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a0</span><span class="o">+</span><span class="nv">a1</span><span class="w"> </span><span class="nv">x</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a00</span><span class="o">+</span><span class="nv">a10</span><span class="w"> </span><span class="nv">x</span><span class="o">+</span><span class="nv">a01</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a11</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span>
+</code></pre></div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexSplit</span></code> - split <code class="highlight"><span class="nb">Symbol</span><span class="o">|</span><span class="nb">String</span></code> into variable + (label +) index.</p>
 </li>
 </ul>
 

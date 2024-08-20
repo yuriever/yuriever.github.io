@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/package/Cluster/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__Cluster/idea/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Yurie/Cluster - Sora</title>
+        <title>Designing idea - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yuriecluster" class="md-skip">
+        <a href="#designing-idea" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Yurie/Cluster
+              Designing idea
             
           </span>
         </div>
@@ -425,16 +425,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation-and-designing-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Motivation and designing idea
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation and designing idea">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#motivation" class="md-nav__link">
     <span class="md-ellipsis">
       Motivation
@@ -442,69 +432,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#designing-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Designing idea
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Methods
+      Implementation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-constructors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cluster constructors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public methods
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Private methods
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -560,10 +503,59 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="yuriecluster">Yurie/Cluster</h1>
-<p>The paclet <code>Yurie/Cluster</code> is designed to manage a specific form of object composition illustrated by the following flow chart.</p>
+<h1 id="designing-idea">Designing idea</h1>
+<h2 id="motivation">Motivation</h2>
+<p>A finitely presented algebra (or monoid, module, ...) consists of lists of generators <code class="highlight"><span class="nv">operator</span></code> and relations <code class="highlight"><span class="nv">relation</span></code>. From above we can abstract the object as</p>
+<ul>
+<li>
+<p>class: algebra</p>
+</li>
+<li>
+<p>instance attribute: name, operator, relation</p>
+</li>
+<li>
+<p>method: define, unset, reset, change_elements</p>
+</li>
+</ul>
+<p>Then different algebras correspond to different list-triples and can be composited into one algebra</p>
+<ul>
+<li>
+<p>class: composite_algebra</p>
+</li>
+<li>
+<p>instance attribute: algebra_list</p>
+</li>
+<li>
+<p>method: init, del, ...</p>
+</li>
+</ul>
+<p>This leads to an abstraction of a three-layered structure, referred as</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">composite algebra</td>
+<td style="text-align: left;">cluster</td>
+</tr>
+<tr>
+<td style="text-align: left;">algebra</td>
+<td style="text-align: left;">star</td>
+</tr>
+<tr>
+<td style="text-align: left;">operator, relation, printing</td>
+<td style="text-align: left;">planet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="structure">Structure</h2>
+<p>This kind of class composition can be illustrated by the following diagram.</p>
 <div class="admonition mark">
-<p class="admonition-title">instance initializing and updating</p>
+<p class="admonition-title">Instance initializing and updating</p>
 <pre class="mermaid"><code>graph LR
 
 common --- define{{define/reset}}
@@ -575,35 +567,8 @@ subgraph instances
 instance1{{instance 1}} &amp; instance2{{instance 2}} &amp; ... &amp; instancen{{instance n}}
 end</code></pre>
 </div>
-<h2 id="motivation-and-designing-idea">Motivation and designing idea</h2>
-<h3 id="motivation">Motivation</h3>
-<p>A finitely presented algebra (or monoid, module, ...) consists of lists of generators <code class="highlight"><span class="nv">operator</span></code> and relations <code class="highlight"><span class="nv">relation</span></code>. Besides, a list of rules <code class="highlight"><span class="nv">printing</span></code> is also required for formatting the output. From above we can abstract the object as</p>
-<ul>
-<li>
-<p>class: algebra</p>
-</li>
-<li>
-<p>instance attribute: name, operator, relation, printing</p>
-</li>
-<li>
-<p>method: define, unset, reset, change_elements</p>
-</li>
-</ul>
-<p>Then different algebras correspond to different list-triples and can be composited into one algebra</p>
-<ul>
-<li>
-<p>class: composited_algebra</p>
-</li>
-<li>
-<p>instance attribute: algebra_list</p>
-</li>
-<li>
-<p>method: init, del, ...</p>
-</li>
-</ul>
-<p>This leads to an abstraction of a three-layered structure: <code class="highlight"><span class="p">{</span><span class="nv">composited</span><span class="o">-</span><span class="nv">algebra</span><span class="p">,</span><span class="nv">algebra</span><span class="p">,{</span><span class="nv">operator</span><span class="p">,</span><span class="nv">relation</span><span class="p">,</span><span class="nv">printing</span><span class="p">}}</span></code>, hereinafter referred as <code class="highlight"><span class="p">{</span><span class="nv">cluster</span><span class="p">,</span><span class="nv">star</span><span class="p">,</span><span class="nv">planet</span><span class="p">}</span></code> respectively.</p>
-<h3 id="designing-idea">Designing idea</h3>
-<p>There are two designing ideas as follows:</p>
+<h2 id="implementation">Implementation</h2>
+<p>There are two styles of implementation:</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nb">DownValues</span></code> - <code class="highlight"><span class="nv">cluster</span></code> is the <code class="highlight"><span class="nb">UpValues</span></code> of the <code class="highlight"><span class="nv">star</span></code>, and <code class="highlight"><span class="nv">planet</span></code> is the <code class="highlight"><span class="nb">DownValues</span></code> of the <code class="highlight"><span class="nv">star</span></code>.</p>
@@ -612,6 +577,7 @@ end</code></pre>
 <span class="nv">star1</span><span class="p">[</span><span class="nv">planet1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">star1</span><span class="p">[</span><span class="nv">planet2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
+
 <span class="o">...</span>
 </code></pre></div>
 </li>
@@ -626,107 +592,6 @@ end</code></pre>
 </li>
 </ul>
 <p>We choose the latter since there are several advantages: <code class="highlight"><span class="nb">Association</span></code> is immutable and is faster to access, consumes less memory, and requires no symbol management.</p>
-<h2 id="attributes">Attributes</h2>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">cluster</span><span class="p">[</span><span class="nt">data_Association</span><span class="p">]</span></code> - store the data with the following keys:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;ClusterName&quot;</span></code> - name of cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetList&quot;</span></code> - list of planets.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetCommonData&quot;</span></code> - common data of planets across stars, determining the behaviors of <code class="highlight"><span class="nv">starDefine</span></code> and <code class="highlight"><span class="nv">starReset</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetExtraData&quot;</span></code> - extra data of planets, contributing to <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetMergeData&quot;</span></code> - core of method <code class="highlight"><span class="nv">starMerge</span></code>, determining how to merge stars into the default star.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarList&quot;</span></code> - list of stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarData&quot;</span></code> - data of stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> - list of stars contributing to the default, changed by <code class="highlight"><span class="nv">starDefault</span></code> and <code class="highlight"><span class="nv">starUnset</span></code>, determining <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> - data of default star. <strong>After star operations the default data will be updated automatically.</strong></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="methods">Methods</h2>
-<h3 id="cluster-constructors">Cluster constructors</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">clusterQ</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - check whether the input is a cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterInit</span><span class="p">[{</span><span class="nt">clusterName_</span><span class="p">,</span><span class="nt">context_</span><span class="p">},</span><span class="nt">planetList_</span><span class="p">,</span><span class="nt">commonList_</span><span class="p">,</span><span class="nt">extraList_</span><span class="p">,</span><span class="nt">mergeList_</span><span class="p">]</span></code> - initiate cluster and bind to the symbol <code class="highlight"><span class="nv">context`clusterName</span></code>. The arguments are the name of cluster with context, then names, common values, extra values and merge methods of planets.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterPropGet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - get property of the cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterPropSet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - set property of the cluster.</p>
-</li>
-</ul>
-<h3 id="public-methods">Public methods</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefine</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - define the stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - set the stars into default.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starReset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - reset the stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - unset the stars, and update the default star list.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starMerge</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">]</span></code> - merge planet data to the stars. The third argument will be association-ized, hence rule, list of rules, association of rules are accepted.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starChange</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">,</span><span class="nt">planetFunctionData_</span><span class="p">]</span></code> - change planet data to the stars by the functions.</p>
-</li>
-</ul>
-<h3 id="private-methods">Private methods</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefineQ</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">star_</span><span class="o">|</span><span class="nt">starList_</span><span class="p">]</span></code> - check whether the star is defined, or split the list of stars into defined and undefined.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - check the input before calling public methods:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportUndefAndReturnDef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportDefAndReturnUndef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;planetAborUndeff&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUpdateDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - update <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> by <code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> after <code class="highlight"><span class="nv">starDefault</span></code>, <code class="highlight"><span class="nv">starReset</span></code>, <code class="highlight"><span class="nv">starUnset</span></code>, <code class="highlight"><span class="nv">starMerge</span></code> and <code class="highlight"><span class="nv">starChange</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUpdateDefaultWhenUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - remove the stars both in the input and the default star list, used by <code class="highlight"><span class="nv">starUnset</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starPreIntercept</span><span class="o">|</span><span class="nv">starPostIntercept</span></code> - modify the behaviours of star methods.</p>
-</li>
-</ul>
 
 <!-- Source file information -->
 

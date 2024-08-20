@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/package/__Index/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__Cluster/doc/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Yurie/Index - Sora</title>
+        <title>Yurie/Cluster - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yurieindex" class="md-skip">
+        <a href="#yuriecluster" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Yurie/Index
+              Yurie/Cluster
             
           </span>
         </div>
@@ -425,37 +425,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#designing-idea" class="md-nav__link">
+  <a href="#attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      Designing idea
+      Attributes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functionalities" class="md-nav__link">
+  <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Functionalities
+      Methods
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Functionalities">
+    <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#helper-functions" class="md-nav__link">
+  <a href="#cluster-constructors" class="md-nav__link">
     <span class="md-ellipsis">
-      Helper functions
+      Cluster constructors
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kernel-functions" class="md-nav__link">
+  <a href="#public-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Kernel functions
+      Public methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private methods
     </span>
   </a>
   
@@ -518,61 +527,169 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="yurieindex">Yurie/Index</h1>
-<p>A Mathematica package for coding a indexed variable into a single symbol.</p>
-<p>The GitHub repository is <a href="https://github.com/yuriever/Yurie-Index">yuriever/Yurie-Index</a>.</p>
-<h2 id="designing-idea">Designing idea</h2>
-<p>This package provides the functionality of coding/decoding a variable indexed by label and script into/from a single symbol. For example, <code class="highlight"><span class="s">&quot;x&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;dagger&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;0&quot;</span></code> will be coded as <code class="highlight"><span class="nv">xdagger0</span></code> and formatted as <span class="arithmatex">\(x^{\dagger}_{0}\)</span>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">_Subsuperscript</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s">&quot;variable&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;label&quot;</span><span class="o">&lt;&gt;</span><span class="s">&quot;script&quot;</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="nt">_Symbol</span>
-</code></pre></div>
-<p>The system function pair <code class="highlight"><span class="nb">ToExpression</span><span class="p">,</span><span class="w"> </span><span class="nb">ToString</span></code> is non-invertible at <code class="highlight"><span class="nb">Null</span></code>, and to override this we introduce the public function <code class="highlight"><span class="nv">toString</span></code>.</p>
-<p>The kernel functions will convert symbols to strings, use string pattern matching, and finally convert back to symbols if necessary.</p>
-<h2 id="functionalities">Functionalities</h2>
-<h3 id="helper-functions">Helper functions</h3>
+<h1 id="yuriecluster">Yurie/Cluster</h1>
+<p>This paclet is designed to implement a specific form of class composition.</p>
+<div class="admonition mark">
+<p class="admonition-title">Static</p>
+<pre class="mermaid"><code>graph LR
+
+PlanetCommonData(PlanetCommonData)
+PlanetMergeData(PlanetMergeData)
+
+StarList(StarList)
+StarData(StarData)
+
+starDefine{{starDefine}}
+starReset{{starReset}}
+starUnset{{starUnset}}
+starMerge{{starMerge}}
+starChange{{starChange}}
+
+PlanetCommonData --- starDefine --&gt; StarList &amp; StarData
+
+PlanetCommonData --- starReset --&gt; StarData
+
+starUnset --&gt; StarList &amp; StarData
+
+PlanetMergeData --- starMerge --&gt; StarData
+
+starChange --&gt; StarData
+
+linkStyle 1,5 stroke:red;
+linkStyle 2,4,6,8,9 stroke:blue;
+linkStyle 0,3,7 stroke:green;
+
+classDef data fill:#f3e9ff;
+class PlanetCommonData,PlanetMergeData,StarList,StarData data;</code></pre>
+</div>
+<div class="admonition mark">
+<p class="admonition-title">Dynamic</p>
+<pre class="mermaid"><code>graph LR
+
+PlanetExtraData(PlanetExtraData)
+StarDefaultList(StarDefaultList)
+StarDefaultData(StarDefaultData)
+
+starDefault{{starDefault}}
+starUnset{{starUnset}}
+starRMC{{starReset/starMerge/starChange}}
+starUpdateDefault[[starUpdateDefault]]
+starUpdateDefaultWhenUnset[[starUpdateDefaultWhenUnset]]
+
+starDefault --&gt; StarDefaultList
+
+starDefault &amp; starUnset &amp; starRMC --- starUpdateDefault --&gt; StarDefaultData
+
+PlanetExtraData &amp; StarDefaultList --- starUpdateDefault
+
+starUnset --- starUpdateDefaultWhenUnset --&gt; StarDefaultList
+
+linkStyle 1,2,3 stroke:red;
+linkStyle 0,6,7,8 stroke:blue;
+linkStyle 5 stroke:green;
+
+classDef data fill:#f3e9ff;
+class PlanetExtraData,StarDefaultList,StarDefaultData data;</code></pre>
+</div>
+<h2 id="attributes">Attributes</h2>
 <ul>
-<li><code class="highlight"><span class="nv">toString</span></code> - map <code class="highlight"><span class="nb">Null</span></code> to empty string.</li>
+<li>
+<p><code class="highlight"><span class="nv">cluster</span><span class="p">[</span><span class="nt">data_Association</span><span class="p">]</span></code> - store the data with the following keys:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;ClusterName&quot;</span></code> - name of cluster.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;PlanetList&quot;</span></code> - list of planets.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;PlanetCommonData&quot;</span></code> - common data of planets across stars, determining the behaviors of <code class="highlight"><span class="nv">starDefine</span></code> and <code class="highlight"><span class="nv">starReset</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;PlanetExtraData&quot;</span></code> - extra data of planets, contributing to <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;PlanetMergeData&quot;</span></code> - core of method <code class="highlight"><span class="nv">starMerge</span></code>, determining how to merge stars into the default star.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;StarList&quot;</span></code> - list of stars.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;StarData&quot;</span></code> - data of stars.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> - list of stars contributing to the default, changed by <code class="highlight"><span class="nv">starDefault</span></code> and <code class="highlight"><span class="nv">starUnset</span></code>, determining which part of <code class="highlight"><span class="s">&quot;StarData&quot;</span></code> contributing to <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> - data of default star. After star operations the default data will be updated automatically.</p>
+</li>
 </ul>
-<h3 id="kernel-functions">Kernel functions</h3>
+</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="cluster-constructors">Cluster constructors</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">indexize</span></code> - indexify a list of variables.</p>
+<p><code class="highlight"><span class="nv">clusterQ</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - check whether the input is a cluster.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexify</span></code> - indexify the specified variables in an expression.</p>
-<p>Default options:</p>
+<p><code class="highlight"><span class="nv">clusterInit</span><span class="p">[{</span><span class="nt">clusterName_</span><span class="p">,</span><span class="nt">context_</span><span class="p">},</span><span class="nt">planetList_</span><span class="p">,</span><span class="nt">commonList_</span><span class="p">,</span><span class="nt">extraList_</span><span class="p">,</span><span class="nt">mergeList_</span><span class="p">]</span></code> - initiate the cluster and bind it to the symbol <code class="highlight"><span class="nv">context`clusterName</span></code>. The arguments are the name of cluster with context, then names, common values, extra values and merge methods of planets.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">clusterPropGet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - get property of the cluster.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">clusterPropSet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - set property of the cluster.</p>
+</li>
+</ul>
+<h3 id="public-methods">Public methods</h3>
 <ul>
 <li>
-<p><code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">False</span></code> - head variables will not be indexified. This option is inherited from <code class="highlight"><span class="nb">Replace</span></code>.</p>
+<p><code class="highlight"><span class="nv">starDefine</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - define the stars.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nb">Transpose</span><span class="o">-&gt;</span><span class="nb">False</span></code> - Lacia-Breakpoint-2023-11-22-11:45</p>
+<p><code class="highlight"><span class="nv">starDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - set the stars to default.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starReset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - reset the stars.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - unset the stars, and update the default star list.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starMerge</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">]</span></code> - merge planet data to the stars. The third argument will be association-ized, hence rule, list of rules, association of rules are accepted.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starChange</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">,</span><span class="nt">planetFunctionData_</span><span class="p">]</span></code> - change planet data to the stars by the functions.</p>
+</li>
+</ul>
+<h3 id="private-methods">Private methods</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">starDefineSplit</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - split the list of stars into defined and undefined.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - check the input before calling public methods:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportUndefAndReturnDef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportDefAndReturnUndef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;planetAborUndeff&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
 </li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexArray</span></code> - generate tensor of symbols by <code class="highlight"><span class="nb">Array</span></code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
-
-<span class="nv">indexArray</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">}]</span><span class="o">@</span><span class="nv">x</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x1</span><span class="p">,</span><span class="nv">x2</span><span class="p">}</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="nv">x11</span><span class="p">,</span><span class="nv">x12</span><span class="p">},{</span><span class="nv">x21</span><span class="p">,</span><span class="nv">x22</span><span class="p">}}</span>
-</code></pre></div>
+<p><code class="highlight"><span class="nv">starUpdateDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - update <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> by <code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> after <code class="highlight"><span class="nv">starDefault</span></code>, <code class="highlight"><span class="nv">starReset</span></code>, <code class="highlight"><span class="nv">starUnset</span></code>, <code class="highlight"><span class="nv">starMerge</span></code> and <code class="highlight"><span class="nv">starChange</span></code>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexPolynomial</span></code> - generate multi-variable polynomials by <code class="highlight"><span class="nv">indexArray</span></code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">]</span>
-
-<span class="nv">indexPolynomial</span><span class="p">[{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},{</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">}][</span><span class="nv">a</span><span class="p">][</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a0</span><span class="o">+</span><span class="nv">a1</span><span class="w"> </span><span class="nv">x</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="o">=</span><span class="w"> </span><span class="nv">a00</span><span class="o">+</span><span class="nv">a10</span><span class="w"> </span><span class="nv">x</span><span class="o">+</span><span class="nv">a01</span><span class="w"> </span><span class="nv">y</span><span class="o">+</span><span class="nv">a11</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span>
-</code></pre></div>
+<p><code class="highlight"><span class="nv">starUpdateDefaultWhenUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - remove the stars in both the input and the default star list, used by <code class="highlight"><span class="nv">starUnset</span></code>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexSplit</span></code> - split <code class="highlight"><span class="nb">Symbol</span><span class="o">|</span><span class="nb">String</span></code> into variable + (label +) index.</p>
+<p><code class="highlight"><span class="nv">starPreIntercept</span><span class="o">|</span><span class="nv">starPostIntercept</span></code> - modify the behaviors of star methods.</p>
 </li>
 </ul>
 
