@@ -562,17 +562,22 @@
 <p><code class="highlight"><span class="s">&quot;Rank&quot;</span></code></p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">tensorank</span></code> - public function; handling the nodes <code class="highlight"><span class="o">_?</span><span class="nv">generatorQ</span><span class="o">|</span><span class="nt">_tensor</span><span class="o">|</span><span class="nt">_NonCommutativeMultiply</span><span class="o">|</span><span class="nt">_Times</span></code>.</p>
+<p><code class="highlight"><span class="nv">tensorankUnsafe</span></code> - faster; only handling the nodes <code class="highlight"><span class="o">_?</span><span class="nv">generatorQ</span><span class="o">|</span><span class="nt">_tensor</span><span class="o">|</span><span class="nt">_NonCommutativeMultiply</span><span class="o">|</span><span class="nt">_Times</span></code>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">tensorankSafe</span></code> - check whether the expression is valid.</p>
+<p><code class="highlight"><span class="nv">tensorank</span></code> - check whether the expression is valid; return <code class="highlight"><span class="nb">Indeterminate</span></code> if it does not have a definite rank.</p>
 </li>
 </ul>
 </li>
 <li>
 <p><code class="highlight"><span class="s">&quot;Parity&quot;</span></code></p>
 <ul>
-<li><code class="highlight"><span class="nv">parity</span></code> - return the parity of the expression by the default algebra.</li>
+<li>
+<p><code class="highlight"><span class="nv">parityUnsafe</span></code> - similar to <code class="highlight"><span class="nv">tensorankUnsafe</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">parity</span></code> - similar to <code class="highlight"><span class="nv">tensorank</span></code>.</p>
+</li>
 </ul>
 </li>
 </ul>
