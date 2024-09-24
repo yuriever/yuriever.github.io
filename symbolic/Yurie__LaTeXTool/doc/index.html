@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__Cluster/doc/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie__LaTeXTool/doc/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Yurie/Cluster - Sora</title>
+        <title>Yurie/LaTeXTool - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yuriecluster" class="md-skip">
+        <a href="#yurielatextool" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Yurie/Cluster
+              Yurie/LaTeXTool
             
           </span>
         </div>
@@ -425,53 +425,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
+  <a href="#public" class="md-nav__link">
     <span class="md-ellipsis">
-      Attributes
+      Public
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-constructors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cluster constructors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public methods
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Private methods
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -527,171 +485,9 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="yuriecluster">Yurie/Cluster</h1>
-<p>A Mathematica paclet for implementing a specific form of class composition.</p>
-<div class="admonition mark">
-<p class="admonition-title">Static</p>
-<pre class="mermaid"><code>graph LR
-
-PlanetCommonData(PlanetCommonData)
-PlanetMergeData(PlanetMergeData)
-
-StarList(StarList)
-StarData(StarData)
-
-starDefine{{starDefine}}
-starReset{{starReset}}
-starUnset{{starUnset}}
-starMerge{{starMerge}}
-starChange{{starChange}}
-
-PlanetCommonData --- starDefine --&gt; StarList &amp; StarData
-
-PlanetCommonData --- starReset --&gt; StarData
-
-starUnset --&gt; StarList &amp; StarData
-
-PlanetMergeData --- starMerge --&gt; StarData
-
-starChange --&gt; StarData
-
-linkStyle 1,5 stroke:red;
-linkStyle 2,4,6,8,9 stroke:blue;
-linkStyle 0,3,7 stroke:green;
-
-classDef data fill:#f3e9ff;
-class PlanetCommonData,PlanetMergeData,StarList,StarData data;</code></pre>
-</div>
-<div class="admonition mark">
-<p class="admonition-title">Dynamic</p>
-<pre class="mermaid"><code>graph LR
-
-PlanetExtraData(PlanetExtraData)
-StarDefaultList(StarDefaultList)
-StarDefaultData(StarDefaultData)
-
-starDefault{{starDefault}}
-starUnset{{starUnset}}
-starRMC{{starReset/starMerge/starChange}}
-starUpdateDefault[[starUpdateDefault]]
-starUpdateDefaultWhenUnset[[starUpdateDefaultWhenUnset]]
-
-starDefault --&gt; StarDefaultList
-
-starDefault &amp; starUnset &amp; starRMC --- starUpdateDefault --&gt; StarDefaultData
-
-PlanetExtraData &amp; StarDefaultList --- starUpdateDefault
-
-starUnset --- starUpdateDefaultWhenUnset --&gt; StarDefaultList
-
-linkStyle 1,2,3 stroke:red;
-linkStyle 0,6,7,8 stroke:blue;
-linkStyle 5 stroke:green;
-
-classDef data fill:#f3e9ff;
-class PlanetExtraData,StarDefaultList,StarDefaultData data;</code></pre>
-</div>
-<h2 id="attributes">Attributes</h2>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">cluster</span><span class="p">[</span><span class="nt">data_Association</span><span class="p">]</span></code> - store the data with the following keys:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;ClusterName&quot;</span></code> - name of cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetList&quot;</span></code> - list of planets.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetCommonData&quot;</span></code> - common data of planets across stars, determining the behaviors of <code class="highlight"><span class="nv">starDefine</span></code> and <code class="highlight"><span class="nv">starReset</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetExtraData&quot;</span></code> - extra data of planets, contributing to <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;PlanetMergeData&quot;</span></code> - core of method <code class="highlight"><span class="nv">starMerge</span></code>, determining how to merge stars into the default star.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarList&quot;</span></code> - list of stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarData&quot;</span></code> - data of stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> - list of stars contributing to the default, changed by <code class="highlight"><span class="nv">starDefault</span></code> and <code class="highlight"><span class="nv">starUnset</span></code>, determining which part of <code class="highlight"><span class="s">&quot;StarData&quot;</span></code> contributing to <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> - data of default star. After star operations the default data will be updated automatically.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="methods">Methods</h2>
-<h3 id="cluster-constructors">Cluster constructors</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">clusterQ</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - check whether the input is a cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterInit</span><span class="p">[{</span><span class="nt">clusterName_</span><span class="p">,</span><span class="nt">context_</span><span class="p">},</span><span class="nt">planetList_</span><span class="p">,</span><span class="nt">commonList_</span><span class="p">,</span><span class="nt">extraList_</span><span class="p">,</span><span class="nt">mergeList_</span><span class="p">]</span></code> - initiate the cluster and bind it to the symbol <code class="highlight"><span class="nv">context`clusterName</span></code>. The arguments are the name of cluster with context, then names, common values, extra values and merge methods of planets.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterPropGet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - get property of the cluster.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">clusterPropSet</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">propertyOrItsList_</span><span class="p">]</span></code> - set property of the cluster.</p>
-</li>
-</ul>
-<h3 id="public-methods">Public methods</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefine</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - define the stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - set the stars to default.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starReset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - reset the stars.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - unset the stars, and update the default star list.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starMerge</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">]</span></code> - merge planet data to the stars. The third argument will be association-ized, hence rule, list of rules, association of rules are accepted.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starChange</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">,</span><span class="nt">planetData_</span><span class="p">,</span><span class="nt">planetFunctionData_</span><span class="p">]</span></code> - change planet data to the stars by the functions.</p>
-</li>
-</ul>
-<h3 id="private-methods">Private methods</h3>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefineSplit</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - split the list of stars into defined and undefined.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - check the input before calling public methods:</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportUndefAndReturnDef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;starReportDefAndReturnUndef&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starDefineCheck</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="s">&quot;planetAborUndeff&quot;</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code></p>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUpdateDefault</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">]</span></code> - update <code class="highlight"><span class="s">&quot;StarDefaultData&quot;</span></code> by <code class="highlight"><span class="s">&quot;StarDefaultList&quot;</span></code> after <code class="highlight"><span class="nv">starDefault</span></code>, <code class="highlight"><span class="nv">starReset</span></code>, <code class="highlight"><span class="nv">starUnset</span></code>, <code class="highlight"><span class="nv">starMerge</span></code> and <code class="highlight"><span class="nv">starChange</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starUpdateDefaultWhenUnset</span><span class="p">[</span><span class="nt">cluster_</span><span class="p">,</span><span class="nt">starList_</span><span class="p">]</span></code> - remove the stars in both the input and the default star list, used by <code class="highlight"><span class="nv">starUnset</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">starPreIntercept</span><span class="o">|</span><span class="nv">starPostIntercept</span></code> - modify the behaviors of star methods.</p>
-</li>
-</ul>
+<h1 id="yurielatextool">Yurie/LaTeXTool</h1>
+<p>LaTeX tools.</p>
+<h2 id="public">Public</h2>
 
 <!-- Source file information -->
 
