@@ -433,6 +433,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      To-do
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -491,22 +500,119 @@
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">LaTeXFormat</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - format the LaTeX file.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">LaTeXParser</span></code> - a simple parser of LaTeX.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">MathJaxOverwriteMacro</span></code> - overwrite the macros in JSON files used by MathJax.</p>
+<p>The file will be firstly formatted by <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a>, then successively by the steps controlled by the following options.</p>
 <ul>
-<li>The key <code class="highlight"><span class="nx">macros</span></code> is matched by the hint:</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;SurroundEquationWithPercent&quot;</span></code></p>
+<ul>
+<li>
+<p>surround equations with percentage symbol;</p>
+</li>
+<li>
+<p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
+</li>
+<li>
+<p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c">%</span>
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    a+b
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+<span class="c">%</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    a+b
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">// LaTeXTool-MathJax-Begin</span>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;EquationMarkSpacing&quot;</span></code></p>
+<ul>
+<li>
+<p>adjust spacings before punctuation marks in equation environment;</p>
+</li>
+<li>
+<p>accepts <code class="highlight"><span class="nb">None</span></code> or one of the followings:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s">&quot;\\;&quot;</span><span class="p">,</span><span class="s">&quot;\\,&quot;</span><span class="p">,</span><span class="s">&quot;\\:&quot;</span><span class="p">,</span><span class="s">&quot;\\&gt;&quot;</span><span class="p">,</span><span class="s">&quot;\\ &quot;</span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>skip equations surrounded by the magic comments</p>
+<div class="highlight"><pre><span></span><code><span class="c">% LaTeXFormat-EMS-Off</span>
+...
+<span class="c">% LaTeXFormat-EMS-On</span>
+</code></pre></div>
+</li>
+<li>
+<p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    a+b
+    <span class="k">\,</span> .
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    a+b.
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">LaTeXParser</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - a simple parser of LaTeX.</p>
+<ul>
+<li>
+<p>Parse <code class="highlight"><span class="k">\newcommand</span></code>, <code class="highlight"><span class="k">\newenvironment</span></code> and <code class="highlight"><span class="k">\usepackage</span></code>.</p>
+</li>
+<li>
+<p>To disable parsing of a line, add the magic comment <code class="highlight"><span class="c">% LaTeXParser-Skip</span></code> at the end of that line. To disable parsing of a block, use the magic comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c">% LaTeXParser-Off</span>
+...
+<span class="c">% LaTeXParser-On</span>
+</code></pre></div>
+</li>
+<li>
+<p>The option <code class="highlight"><span class="s">&quot;SkipType&quot;</span></code> allows typed magic comments and accepts <code class="highlight"><span class="nb">Automatic</span><span class="o">|</span><span class="nt">_String</span><span class="o">|</span><span class="p">{</span><span class="nt">__String</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Automatic</span></code> for non-typed ones.</p>
+<p>For example, the magic comment <code class="highlight"><span class="c">% LaTeXParser-MathJax-Skip</span></code> will be triggered by setting the option as <code class="highlight"><span class="s">&quot;SkipType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;MathJax&quot;</span></code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MathJaxJSOverwrite</span><span class="p">[</span><span class="nt">macro_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - overwrite the macros in JSON files used by MathJax.</p>
+<ul>
+<li>
+<p>The matching is hinted by the magic comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// MathJaxJSOverwrite-Macro-Begin</span>
 <span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="p">},</span>
-<span class="c1">// LaTeXTool-MathJax-End</span>
+<span class="c1">// MathJaxJSOverwrite-Macro-End</span>
 </code></pre></div>
 </li>
+</ul>
+</li>
+</ul>
+<h2 id="to-do">To-do</h2>
+<ul>
+<li>The parser of <code class="highlight"><span class="k">\newenvironment</span></code> has not been implemented.</li>
 </ul>
 
 <!-- Source file information -->

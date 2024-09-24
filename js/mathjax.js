@@ -32,7 +32,7 @@ window.MathJax = {
 			url: (id, base) => base + '#' + encodeURIComponent(id)
 		},
 		useLabelIds: true,
-		// LaTeXTool-MathJax-Begin
+		// MathJaxJSOverwrite-Macro-Begin
 		macros: {
 			"a":"\\alpha",
 			"b":"\\beta",
@@ -60,6 +60,10 @@ window.MathJax = {
 			"x":"\\xi",
 			"y":"\\psi",
 			"z":"\\zeta",
+			"check":[
+				"\\widecheck{#1}",
+				1
+			],
 			"bar":[
 				"\\overline{#1}",
 				1
@@ -74,6 +78,7 @@ window.MathJax = {
 			],
 			"eq":"=",
 			"eqq":"\\equiv",
+			"eqqq":"\\coloneq",
 			"geq":"\\geqslant",
 			"ge":"\\geqslant",
 			"leq":"\\leqslant",
@@ -149,6 +154,7 @@ window.MathJax = {
 			],
 			"residue":"\\operatorname{Res}",
 			"disc":"\\operatorname{Disc}",
+			"id":"\\text{\\usefont{U}{bbold}{m}{n}1}",
 			"tp":"{\\scriptscriptstyle \\mathsf{T} }",
 			"dual":"\\prime",
 			"ip":[
@@ -296,6 +302,9 @@ window.MathJax = {
 			],
 			"shadow":"\\mathcal{S}",
 			"lightray":"\\mathcal{L}",
+			"schannel":"\\ifmmode {(s)} \\else $s$-channel \\fi",
+			"tchannel":"\\ifmmode {(t)} \\else $t$-channel \\fi",
+			"uchannel":"\\ifmmode {(u)} \\else $u$-channel \\fi",
 			"vac":"\\ket{0}",
 			"vev":[
 				"\\langle #1 \\rangle",
@@ -453,7 +462,7 @@ window.MathJax = {
 				1
 			]
 		},
-		// LaTeXTool-MathJax-End
+		// MathJaxJSOverwrite-Macro-End
 		environments: {
 		}
 	},
