@@ -425,18 +425,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public" class="md-nav__link">
+  <a href="#latex-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Public
+      LaTeX conversion
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#private" class="md-nav__link">
+  <a href="#label-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Private
+      Label conversion
     </span>
   </a>
   
@@ -496,7 +496,7 @@
 <!-- Page content -->
 <h1 id="yuriemathform">Yurie/MathForm</h1>
 <p>A Mathematica paclet for improving LaTeX conversion.</p>
-<h2 id="public">Public</h2>
+<h2 id="latex-conversion">LaTeX conversion</h2>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">texForm</span></code> - postprocess the string from <code class="highlight"><span class="nb">TeXForm</span></code> by the rules in <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
@@ -543,9 +543,81 @@
 </tbody>
 </table>
 <p></center></p>
-<h2 id="private">Private</h2>
+<h2 id="label-conversion">Label conversion</h2>
 <ul>
-<li><code class="highlight"><span class="nv">$texAssoc</span></code> - association of predefined rules.</li>
+<li>
+<p><code class="highlight"><span class="nv">labelJoin</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">label_</span><span class="p">]</span></code> - join the variable and label into a symbol.</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">labelJoin</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">x1</span>
+</code></pre></div>
+</li>
+<li>
+<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">label_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">labelJoin</span><span class="p">[{</span><span class="nt">var_</span><span class="p">,</span><span class="nt">label_</span><span class="p">}]</span></code> is also supported.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">labelSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - split the symbol into a labeled variable.</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">//</span><span class="nv">labelSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>A symbol in <code class="highlight"><span class="nt">vars__</span></code> will be recognized as a variable, and the rest as a label.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">labelSplit</span><span class="p">[{</span><span class="nt">vars__</span><span class="p">},</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> is also supported.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;LabelPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span></code></p>
+<ul>
+<li>
+<p>This option controls the format of the split pair of vairable and label. Other conventional choices can be</p>
+<ul>
+<li><code class="highlight"><span class="nb">Superscript</span></code></li>
+<li><code class="highlight"><span class="nb">Construct</span></code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;LabelType&quot;</span><span class="o">-&gt;</span><span class="nb">Automatic</span></code></p>
+<ul>
+<li>
+<p>This option controls the pattern of labels. Other choices are</p>
+<ul>
+<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="o">_</span></code> - any pure function for string pattern matching</li>
+</ul>
+</li>
+<li>
+<p>Sometimes there can be conflict between variable and label, e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="nv">b1</span><span class="p">]</span>
+</code></pre></div>
+<p>comparing with</p>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;LabelType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">zb</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <!-- Source file information -->

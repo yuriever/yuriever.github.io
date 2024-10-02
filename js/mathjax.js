@@ -113,7 +113,7 @@ window.MathJax = {
 			"oo":"\\infty",
 			"HH":"\\mathcal{H}",
 			"half":"\\frac{1}{2}",
-			"sign":"\\operatorname{sgn}",
+			"sign":"\\operatorname{sign}",
 			"set":[
 				"\\{ #1 \\}",
 				1
@@ -152,7 +152,7 @@ window.MathJax = {
 				3
 			],
 			"residue":"\\operatorname{Res}",
-			"disc":"\\operatorname{Disc}",
+			"Disc":"\\operatorname{Disc}",
 			"tp":"{\\scriptscriptstyle \\mathsf{T} }",
 			"dual":"\\prime",
 			"ip":[
@@ -172,8 +172,8 @@ window.MathJax = {
 			"Adjoint":"\\operatorname{Ad}",
 			"induce":"\\operatorname{Ind}",
 			"restrict":"\\operatorname{Res}",
-			"sym":"\\operatorname{Sym}",
-			"alt":"\\operatorname{Alt}",
+			"Sym":"\\operatorname{Sym}",
+			"Alt":"\\operatorname{Alt}",
 			"inverseLimit":"\\varprojlim",
 			"directLimit":"\\varinjlim",
 			"directIntegral":"\\int^{\\oplus}",
@@ -306,8 +306,6 @@ window.MathJax = {
 				"d^{2}z_{#1}",
 				1
 			],
-			"shadow":"\\mathcal{S}",
-			"lightray":"\\mathcal{L}",
 			"vac":"\\ket{0}",
 			"vev":[
 				"\\langle #1 \\rangle",
@@ -326,15 +324,6 @@ window.MathJax = {
 				2
 			],
 			"op":"\\mathcal{O}",
-			"CF":"\\mathcal{G}",
-			"CFStripped":"\\mathcal{G}",
-			"CFKinematical":"K",
-			"CB":"G",
-			"CBStripped":"G",
-			"CPW":"\\Psi",
-			"CPWStripped":"\\Psi",
-			"CPWC":"\\rho",
-			"CPWCWithS":"\\hat{\\rho}",
 			"sphere":[
 				"\\operatorname{S}^{#1}",
 				1
@@ -367,18 +356,6 @@ window.MathJax = {
 				"\\operatorname{KdS}_{#1}",
 				1
 			],
-			"rep":[
-				"\\mathcal{V}_{#1}",
-				1
-			],
-			"urep":[
-				"\\mathcal{E}_{#1}",
-				1
-			],
-			"unitaryDual":[
-				"\\widetilde{#1}",
-				1
-			],
 			"vx":"\\vec{x}",
 			"vy":"\\vec{y}",
 			"vp":"\\vec{p}",
@@ -396,8 +373,22 @@ window.MathJax = {
 				1
 			],
 			"halfdim":"\\frac{d}{2}",
-			"fm":"\\operatorname{fm}",
-			"GeV":"\\operatorname{GeV}",
+			"shadow":"\\mathcal{S}",
+			"lightray":"\\mathcal{L}",
+			"CF":"\\mathcal{G}",
+			"CFK":"K",
+			"CB":"G",
+			"CPW":"\\Psi",
+			"CPWC":"\\rho",
+			"CPWCWithS":"\\hat{\\rho}",
+			"rep":[
+				"\\mathcal{V}_{#1}",
+				1
+			],
+			"urep":[
+				"\\mathcal{E}_{#1}",
+				1
+			],
 			"eqqq":":=",
 			"id":"\\mathbf{1}",
 			"schannel":"(s)",
