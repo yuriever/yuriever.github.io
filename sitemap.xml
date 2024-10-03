@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://yuriever.github.io/symbolic/Yurie__Index/doc/</loc>
+         <lastmod>2024-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__LaTeXTool/doc/</loc>
          <lastmod>2024-10-03</lastmod>
          <changefreq>daily</changefreq>
