@@ -2,147 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yuriever.github.io/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/lightnovel/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/sora/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/lightnovel/2024-fall-quantum-physics-TA/</loc>
+         <lastmod>2024-10-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/lightnovel/2024-fall-quantum-physics-TA/homework-1-discussion/</loc>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/alg/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/evaluation/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/file/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/misc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/option/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/paclet/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/xAct/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Algebra/doc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Algebra/example/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Algebra/idea/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Cluster/doc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Cluster/idea/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Dev/__Index/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__Index/doc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__LaTeXTool/doc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__LaTeXTool/idea/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie__MathForm/doc/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/dev/hotkey/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/dev/mathjax-config/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/dev/subtitle/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/dev/web-dev/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/test/env/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/test/macro/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://yuriever.github.io/workbench/test/tikz/</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
