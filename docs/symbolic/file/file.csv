@@ -1,0 +1,6 @@
+"","a/b/c","a/b/c.txt","/Downloads/test/sub1","/Downloads/test/sub1/file1.txt"
+"FileExistsQ","False","False","True","True"
+"FileType","None","None","Directory","File"
+"FileFormat","$Failed","$Failed","Directory","Text"
+"DirectoryQ","False","False","True","False"
+"ParentDirectory","ParentDirectory[""a/b/c""]","ParentDirectory[""a/b/c.txt""]","/Downloads/test","ParentDirectory[""/Downloads/test/sub1/file1.txt""]"

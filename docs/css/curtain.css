@@ -1,0 +1,40 @@
+span.curtain a.external,
+span.curtain a.external:visited,
+span.curtain a.extiw,
+span.curtain a.extiw:visited {
+    color: #252525
+}
+
+.curtain,
+.curtain a,
+a .curtain,
+.curtain a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none
+}
+
+body:not(.curtain_toggle_on) .curtain:hover,
+body:not(.curtain_toggle_on) .curtain:active,
+body:not(.curtain_toggle_on) .curtain.off {
+    transition: color .13s linear;
+    color: #fff
+}
+
+body:not(.curtain_toggle_on) .curtain:hover a,
+body:not(.curtain_toggle_on) a:hover .curtain,
+body:not(.curtain_toggle_on) .curtain.off a,
+body:not(.curtain_toggle_on) a:hover .curtain.off {
+    transition: color .13s linear;
+    color: #add8e6
+}
+
+body:not(.curtain_toggle_on) .curtain.off .new,
+body:not(.curtain_toggle_on) .curtain.off .new:hover,
+body:not(.curtain_toggle_on) .new:hover .curtain.off,
+body:not(.curtain_toggle_on) .curtain.off .new,
+body:not(.curtain_toggle_on) .curtain.off .new:hover,
+body:not(.curtain_toggle_on) .new:hover .curtain.off {
+    transition: color .13s linear;
+    color: #ba0000
+}
