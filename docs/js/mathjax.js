@@ -389,6 +389,7 @@ window.MathJax = {
 				"\\mathcal{E}_{#1}",
 				1
 			],
+			"hbar":"\\rlap{\\unicode{xAF}}h",
 			"eqqq":":=",
 			"id":"\\mathbf{1}",
 			"schannel":"(s)",

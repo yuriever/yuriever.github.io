@@ -235,6 +235,7 @@ ${}$
 &\CPWCWithS\\
 &\rep{*}\\
 &\urep{*}\\
+&\hbar\\
 &\eqqq\\
 &\id\\
 &\schannel\\
