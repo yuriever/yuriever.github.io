@@ -1,4 +1,4 @@
-# Yurie/Index
+# [Yurie/Index](https://github.com/yuriever/Yurie-Index)
 
 A Mathematica paclet for converting between indexed variables and symbols.
 

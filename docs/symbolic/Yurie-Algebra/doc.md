@@ -1,4 +1,4 @@
-# Yurie/Algebra
+# [Yurie/Algebra](https://github.com/yuriever/Yurie-Algebra)
 
 A Mathematica paclet for implementing and managing finitely presented associative algebras.
 

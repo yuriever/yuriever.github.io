@@ -1,4 +1,4 @@
-# Yurie/LaTeXTool
+# [Yurie/LaTeXTool](https://github.com/yuriever/Yurie-LaTeXTool)
 
 LaTeX tools.
 

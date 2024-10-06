@@ -1,4 +1,4 @@
-# Yurie/MathForm
+# [Yurie/MathForm](https://github.com/yuriever/Yurie-MathForm)
 
 A Mathematica paclet for improving LaTeX conversion.
 

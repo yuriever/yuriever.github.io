@@ -1,4 +1,4 @@
-# Yurie/Cluster
+# [Yurie/Cluster](https://github.com/yuriever/Yurie-Cluster)
 
 A Mathematica paclet for implementing a specific form of class composition.
 

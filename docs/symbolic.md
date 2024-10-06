@@ -27,49 +27,49 @@ title: Triangulated reality
 
 ## Paclets
 
-* [Yurie/BlueArXiv](https://resources.wolframcloud.com/PacletRepository/resources/Yurie/BlueArXiv/)
+* [Yurie/BlueArXiv](https://github.com/yuriever/Yurie-BlueArXiv)
 
     * A Mathematica paclet for downloading preprints and generating BibTeX by arXiv IDs.
 
     * [Documentation](https://resources.wolframcloud.com/PacletRepository/resources/Yurie/BlueArXiv/)
 
-* [Yurie/Cluster](symbolic/Yurie__Cluster/doc.md)
+* [Yurie/Cluster](https://github.com/yuriever/Yurie-Cluster)
 
     * A Mathematica paclet for implementing a specific form of class composition.
 
-    * [Documentation](symbolic/Yurie__Cluster/doc.md)
+    * [Documentation](symbolic/Yurie-Cluster/doc.md)
 
-    * [Designing idea](symbolic/Yurie__Cluster/idea.md)
+    * [Designing idea](symbolic/Yurie-Cluster/idea.md)
 
-* [Yurie/Algebra](symbolic/Yurie__Algebra/doc.md)
+* [Yurie/Algebra](https://github.com/yuriever/Yurie-Algebra)
 
     * A Mathematica paclet for implementing and managing finitely presented associative algebras.
 
-    * [Documentation](symbolic/Yurie__Algebra/doc.md)
+    * [Documentation](symbolic/Yurie-Algebra/doc.md)
 
-    * [Example](symbolic/Yurie__Algebra/example.md)
+    * [Example](symbolic/Yurie-Algebra/example.md)
 
-    * [Designing idea](symbolic/Yurie__Algebra/idea.md)
+    * [Designing idea](symbolic/Yurie-Algebra/idea.md)
 
-* [Yurie/MathForm](symbolic/Yurie__MathForm/doc.md)
+* [Yurie/MathForm](https://github.com/yuriever/Yurie-MathForm)
 
     * A Mathematica paclet for improving LaTeX conversion.
 
-    * [Documentation](symbolic/Yurie__MathForm/doc.md)
+    * [Documentation](symbolic/Yurie-MathForm/doc.md)
 
-* [Yurie/LaTeXTool](symbolic/Yurie__LaTeXTool/doc.md)
+* [Yurie/LaTeXTool](https://github.com/yuriever/Yurie-LaTeXTool)
 
     * LaTeX tools.
 
-    * [Documentation](symbolic/Yurie__LaTeXTool/doc.md)
+    * [Documentation](symbolic/Yurie-LaTeXTool/doc.md)
 
-    * [Designing idea](symbolic/Yurie__LaTeXTool/idea.md)
+    * [Designing idea](symbolic/Yurie-LaTeXTool/idea.md)
 
-* [Yurie/Index](symbolic/Yurie__Index/doc.md)
+* [Yurie/Index](https://github.com/yuriever/Yurie-Index)
 
     * A Mathematica paclet for converting between indexed variables and symbols.
 
-    * [Documentation](symbolic/Yurie__Index/doc.md)
+    * [Documentation](symbolic/Yurie-Index/doc.md)
 
 ## External links
 
