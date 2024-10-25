@@ -12,7 +12,7 @@ LaTeX tools.
 
     and then successively by the steps controlled by the following options.
 
-    * `#!wl "SurroundEquationWithPercent"->True`
+    * `#!wl "SurroundEquationWithPercent"->False`
 
         * surround equations with percentage symbol;
 
@@ -114,6 +114,68 @@ LaTeX tools.
         },
         // MathJaxJSOverwrite-Macro-End
         ```
+
+* `#!wl MarkdownFormat[opts_][file_]` - format the Markdown file.
+
+    The file will be firstly formatted by [AutoCorrect](https://github.com/huacnlee/autocorrect) and then successively by the steps controlled by the following options.
+
+    * `#!wl "SurroundInlineEquationWithBlank"->True`
+
+        * surround inline equations with blank;
+
+        * accepts `#!wl True` of `#!wl False`;
+
+        * skip inline equations surrounded by the magic comments
+
+            ``` markdown
+            <!-- MarkdownFormat-IEB-Off -->
+            ...
+            <!-- MarkdownFormat-IEB-Off -->
+            ```
+
+        * Example:
+
+            === "After"
+
+                ``` markdown
+                测试，$a$ 测试
+                ```
+
+            === "Before"
+
+                ``` markdown
+                测试，$a$测试
+                ```
+
+    * `#!wl "SurroundBlockEquationWithEmptyLine"->True`
+
+        * surround block equations with empty line;
+
+        * accepts `#!wl True` of `#!wl False`;
+
+        * Example:
+
+            === "After"
+
+                ``` markdown
+                测试
+
+                \begin{equation}
+                    a+b
+                \end{equation}
+
+                测试
+                ```
+
+            === "Before"
+
+                ``` markdown
+                测试
+                \begin{equation}
+                    a+b
+                \end{equation}
+                测试
+                ```
 
 ## To-do
 

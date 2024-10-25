@@ -83,12 +83,60 @@ window.MathJax = {
 			"leq":"\\leqslant",
 			"le":"\\leqslant",
 			"peq":"\\phantom{{}={}}",
+			"mod":"\\bmod",
+			"half":"\\frac{1}{2}",
+			"xx":"\\times",
+			"ox":"\\otimes",
+			"oxx":"\\bigotimes",
+			"os":"\\oplus",
+			"oss":"\\bigoplus",
+			"ww":"\\wedge",
+			"vv":"\\vee",
+			"oo":"\\infty",
+			"pp":"\\partial",
+			"HH":"\\mathcal{H}",
+			"ip":[
+				"(#1,#2)",
+				2
+			],
+			"directIntegral":"\\int^{\\oplus}",
+			"set":[
+				"\\{ #1 \\}",
+				1
+			],
+			"linearspan":[
+				"\\{ #1 \\}",
+				1
+			],
+			"Re":"\\operatorname{Re}",
+			"Im":"\\operatorname{Im}",
+			"intt":[
+				"\\int #1\\,",
+				1
+			],
+			"inttt":[
+				"\\int_{#2} #1\\,",
+				2
+			],
+			"intrange":[
+				"\\int_{#2}^{#3} #1\\,",
+				3
+			],
+			"Res":"\\operatorname{Res}",
+			"Disc":"\\operatorname{Disc}",
+			"volume":"\\operatorname{Vol}",
+			"sign":"\\operatorname{sign}",
+			"diag":"\\operatorname{diag}",
 			"gm":[
 				"\\Gamma[#1]",
 				1
 			],
 			"poch":[
 				"(#1)_{#2}",
+				2
+			],
+			"multiGamma":[
+				"\\Gamma\\biggl[\\genfrac..{0pt}{}{#1}{#2}\\biggr]",
 				2
 			],
 			"Faa":"{}_{1}F_{1}",
@@ -99,73 +147,15 @@ window.MathJax = {
 				"\\,{}_{#1}F_{#2}\\biggl(\\genfrac..{0pt}{}{#3}{#4};#5\\biggr)",
 				5
 			],
-			"multiGamma":[
-				"\\Gamma\\biggl[\\genfrac..{0pt}{}{#1}{#2}\\biggr]",
-				2
-			],
-			"xx":"\\times",
-			"ox":"\\otimes",
-			"oxbig":"\\bigotimes",
-			"os":"\\oplus",
-			"osbig":"\\bigoplus",
-			"ww":"\\wedge",
-			"vv":"\\vee",
-			"oo":"\\infty",
-			"HH":"\\mathcal{H}",
-			"half":"\\frac{1}{2}",
-			"sign":"\\operatorname{sign}",
-			"set":[
-				"\\{ #1 \\}",
-				1
-			],
-			"linearspan":[
-				"\\{ #1 \\}",
-				1
-			],
-			"ideal":[
-				"\\langle #1 \\rangle",
-				1
-			],
-			"lhs":"\\text{l.h.s}",
-			"rhs":"\\text{r.h.s}",
-			"const":"\\mathrm{const.}",
-			"pp":"\\partial",
-			"diag":"\\operatorname{diag}",
-			"modulo":"\\bmod",
-			"Re":"\\operatorname{Re}",
-			"Im":"\\operatorname{Im}",
-			"volume":"\\operatorname{Vol}",
-			"intt":[
-				"\\int #1\\,",
-				1
-			],
-			"inttt":[
-				"\\int_{#2} #1\\,",
-				2
-			],
-			"intttt":[
-				"\\int_{#2}^{#3} #1\\,",
-				3
-			],
-			"intrange":[
-				"\\int_{#2}^{#3} #1\\,",
-				3
-			],
-			"residue":"\\operatorname{Res}",
-			"Disc":"\\operatorname{Disc}",
 			"tp":"{\\scriptscriptstyle \\mathsf{T} }",
+			"tr":"{\\scriptscriptstyle \\mathsf{T} }",
 			"dual":"\\prime",
-			"ip":[
-				"(#1,#2)",
-				2
-			],
 			"inj":"\\rightarrowtail",
 			"surj":"\\twoheadrightarrow",
 			"im":"\\operatorname{im}",
 			"coim":"\\operatorname{coim}",
 			"coker":"\\operatorname{coker}",
 			"codim":"\\operatorname{codim}",
-			"Spec":"\\operatorname{Spec}",
 			"Aut":"\\operatorname{Aut}",
 			"End":"\\operatorname{End}",
 			"adjoint":"\\operatorname{ad}",
@@ -176,7 +166,48 @@ window.MathJax = {
 			"Alt":"\\operatorname{Alt}",
 			"inverseLimit":"\\varprojlim",
 			"directLimit":"\\varinjlim",
-			"directIntegral":"\\int^{\\oplus}",
+			"ideal":[
+				"\\langle #1 \\rangle",
+				1
+			],
+			"Spec":"\\operatorname{Spec}",
+			"lie":[
+				"\\mathfrak{#1}",
+				1
+			],
+			"glie":"\\mathfrak{g}",
+			"UEA":[
+				"\\operatorname{U}(#1)",
+				1
+			],
+			"UEAC":[
+				"\\operatorname{ZU}(#1)",
+				1
+			],
+			"nlie":"\\mathfrak{n}",
+			"plie":"\\mathfrak{p}",
+			"blie":"\\mathfrak{b}",
+			"hlie":"\\mathfrak{h}",
+			"klie":"\\mathfrak{k}",
+			"gllie":"\\mathfrak{gl}",
+			"glgroup":"\\operatorname{GL}",
+			"olie":"\\mathfrak{o}",
+			"ogroup":"\\operatorname{O}",
+			"solie":"\\mathfrak{so}",
+			"sogroup":"\\operatorname{SO}",
+			"spingroup":"\\operatorname{Spin}",
+			"isolie":"\\mathfrak{iso}",
+			"isogroup":"\\operatorname{ISO}",
+			"ulie":"\\mathfrak{u}",
+			"ugroup":"\\operatorname{U}",
+			"sulie":"\\mathfrak{su}",
+			"sugroup":"\\operatorname{SU}",
+			"sllie":"\\mathfrak{sl}",
+			"slgroup":"\\operatorname{SL}",
+			"splie":"\\mathfrak{sp}",
+			"spgroup":"\\operatorname{Sp}",
+			"Diff":"\\operatorname{Diff}",
+			"Vir":"\\operatorname{Vir}",
 			"cat":[
 				"\\mathsf{#1}",
 				1
@@ -220,42 +251,6 @@ window.MathJax = {
 			"Qp":"\\mathbb{Q}_{p}",
 			"Zp":"\\mathbb{Z}_{p}",
 			"Up":"\\mathbb{U}_{p}",
-			"lie":[
-				"\\mathfrak{#1}",
-				1
-			],
-			"glie":"\\mathfrak{g}",
-			"UEA":[
-				"\\operatorname{U}(#1)",
-				1
-			],
-			"UEAC":[
-				"\\operatorname{ZU}(#1)",
-				1
-			],
-			"nlie":"\\mathfrak{n}",
-			"plie":"\\mathfrak{p}",
-			"blie":"\\mathfrak{b}",
-			"hlie":"\\mathfrak{h}",
-			"klie":"\\mathfrak{k}",
-			"gllie":"\\mathfrak{gl}",
-			"glgroup":"\\operatorname{GL}",
-			"olie":"\\mathfrak{o}",
-			"ogroup":"\\operatorname{O}",
-			"solie":"\\mathfrak{so}",
-			"sogroup":"\\operatorname{SO}",
-			"spingroup":"\\operatorname{Spin}",
-			"isolie":"\\mathfrak{iso}",
-			"isogroup":"\\operatorname{ISO}",
-			"ulie":"\\mathfrak{u}",
-			"ugroup":"\\operatorname{U}",
-			"sulie":"\\mathfrak{su}",
-			"sugroup":"\\operatorname{SU}",
-			"sllie":"\\mathfrak{sl}",
-			"slgroup":"\\operatorname{SL}",
-			"splie":"\\mathfrak{sp}",
-			"spgroup":"\\operatorname{Sp}",
-			"Diff":"\\operatorname{Diff}",
 			"cA":"\\mathcal{A}",
 			"cB":"\\mathcal{B}",
 			"cC":"\\mathcal{C}",
@@ -311,6 +306,10 @@ window.MathJax = {
 				"\\langle #1 \\rangle",
 				1
 			],
+			"ev":[
+				"\\langle #1 \\rangle",
+				1
+			],
 			"bra":[
 				"\\langle #1 |",
 				1
@@ -324,6 +323,14 @@ window.MathJax = {
 				2
 			],
 			"op":"\\mathcal{O}",
+			"abraket":[
+				"\\langle #1 \\rangle",
+				1
+			],
+			"sbraket":[
+				"[ #1 ]",
+				1
+			],
 			"sphere":[
 				"\\operatorname{S}^{#1}",
 				1
@@ -375,18 +382,19 @@ window.MathJax = {
 			"halfdim":"\\frac{d}{2}",
 			"shadow":"\\mathcal{S}",
 			"lightray":"\\mathcal{L}",
-			"CF":"\\mathcal{G}",
-			"CFK":"K",
+			"CO":"\\mathcal{G}",
+			"COK":"K",
 			"CB":"G",
+			"CBC":"p",
 			"CPW":"\\Psi",
 			"CPWC":"\\rho",
 			"CPWCWithS":"\\hat{\\rho}",
 			"rep":[
-				"\\mathcal{V}_{#1}",
+				"\\mathcal{M}_{#1}",
 				1
 			],
 			"urep":[
-				"\\mathcal{E}_{#1}",
+				"\\mathcal{P}_{#1}",
 				1
 			],
 			"hbar":"\\rlap{\\unicode{xAF}}h",
@@ -395,22 +403,6 @@ window.MathJax = {
 			"schannel":"(s)",
 			"tchannel":"(t)",
 			"uchannel":"(u)",
-			"pmat":[
-				"\\pmqty{#1}",
-				1
-			],
-			"bmat":[
-				"\\bmqty{#1}",
-				1
-			],
-			"cmat":[
-				"\\mqty{#1}",
-				1
-			],
-			"vmat":[
-				"\\vmqty{#1}",
-				1
-			],
 			"textInMath":[
 				"\\, \\text{ #1 }\\,",
 				1

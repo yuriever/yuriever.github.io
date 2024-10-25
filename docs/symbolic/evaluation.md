@@ -56,7 +56,7 @@ References:
 
 \begin{equation}
 S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
-.
+\, .
 \end{equation}
 
 形变切方向的类似物为规则 `#!wl Rule (->)`。表达式的子表达式的集合可以实现为
@@ -118,7 +118,7 @@ Out[] = f[a[h]]
 
 \begin{equation}
 x \mapsto x+ f(x), \, \forall x\in M
-.
+\, .
 \end{equation}
 
 需要指出的是，赋值函数 `#!wl Set (=), SetDelayed (:=), UpSet (^=), UpSetDelayed (^:=)` 等的作用是在 Mathematica 的全局规则库中添加指定的规则。

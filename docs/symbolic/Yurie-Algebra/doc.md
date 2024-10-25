@@ -181,7 +181,10 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
     For $x,y\in \glie$ and $t\in \CC$,
 
     \begin{equation}
-        \Adjoint_{t x}(y)|_{n}=
+        \Adjoint_{t x}(y)|_{n}
+        =
+        e^{t x}y e^{-t x}|_{n}
+        =
         \sum_{i=0}^{n}\frac{t^{i}}{i!}\adjoint^{i}_{x}(y)
         \, .
     \end{equation}
