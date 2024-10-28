@@ -34,6 +34,7 @@
         =
         -\intt{dx}\pp(\phi^{*}\phi) xV
         -\intt{dx}\phi^{*}\phi V
+        \, .
     \end{align}
 
     对于第二项利用定态 Schrodinger equation $(K+V)\phi=E\phi$ 有
@@ -42,6 +43,7 @@
         -\intt{dx}\phi^{*}V\phi
         =\intt{dx}\phi^{*}(K\phi)-E\intt{dx}\phi^{*}\phi
         =\bra{\phi}K\ket{\phi}-E
+        \, .
     \end{equation}
 
     类似的，对于第一项有
@@ -65,6 +67,7 @@
             -
             E\intt{dx}\pp\phi\phi^{*} x
         )
+        \, .
     \end{align}
 
     其中第三行利用了定态 Schrodinger equation 以及其复共轭。接下来：
@@ -77,6 +80,7 @@
     \begin{equation}
         0=\bra{\phi}\frac{d(xp)_H}{dt}\ket{\phi}=
         \bra{\phi}i[H,(xp)_{H}]\ket{\phi}
+        \, .
     \end{equation}
 
 * 细心的同学可能注意到，这两种方法——分析 vs. 代数——有一点点微妙的不同。原因在于这里默认了出现的算子均为自伴算子，能保证这点的一个充分条件是对势能添加足够的条件，例如是足够好的束缚势。对于自伴算子，分部积分的边界项贡献为零。
