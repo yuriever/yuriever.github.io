@@ -934,7 +934,10 @@
 <p><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">t_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of formal Lie group truncated at the given order.</p>
 <p>For <span class="arithmatex">\(x,y\in \glie\)</span> and <span class="arithmatex">\(t\in \CC\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
-    \Adjoint_{t x}(y)|_{n}=
+    \Adjoint_{t x}(y)|_{n}
+    =
+    e^{t x}y e^{-t x}|_{n}
+    =
     \sum_{i=0}^{n}\frac{t^{i}}{i!}\adjoint^{i}_{x}(y)
     \, .
 \end{equation}\]</div>

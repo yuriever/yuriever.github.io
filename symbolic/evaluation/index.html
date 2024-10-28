@@ -600,7 +600,7 @@
 <p>特定对象 <span class="arithmatex">\(x_0\)</span> 的不同无穷小形变可记为 <span class="arithmatex">\(x_0 \mapsto x_0 + \d_i x_0,\,  \d_i x_0\in TM_{x_0}\)</span>，例如有效作用量的形变为</p>
 <div class="arithmatex">\[\begin{equation}
 S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
-.
+\, .
 \end{equation}\]</div>
 <p>形变切方向的类似物为规则 <code class="highlight"><span class="nb">Rule</span><span class="w"> </span><span class="p">(</span><span class="o">-&gt;</span><span class="p">)</span></code>。表达式的子表达式的集合可以实现为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">subexpr</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="o">:=</span><span class="nb">Cases</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="nb">All</span><span class="p">]</span><span class="o">;</span>
@@ -637,7 +637,7 @@ S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
 <p>模式 <code class="highlight"><span class="nb">Pattern</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">patt_</span><span class="p">]</span></code> 提供了全称量词的类似物。含有模式的延迟规则 <code class="highlight"><span class="nt">patt_</span><span class="o">:&gt;</span><span class="nt">target_</span></code> 可作用到 <strong>Expr</strong> 中的每一个表达式上，这类似于矢量场 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(M\)</span> 的每点指派无穷小形变。</p>
 <div class="arithmatex">\[\begin{equation}
 x \mapsto x+ f(x), \, \forall x\in M
-.
+\, .
 \end{equation}\]</div>
 <p>需要指出的是，赋值函数 <code class="highlight"><span class="nb">Set</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="p">),</span><span class="w"> </span><span class="nb">SetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">:=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSet</span><span class="w"> </span><span class="p">(</span><span class="o">^=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">^:=</span><span class="p">)</span></code> 等的作用是在 Mathematica 的全局规则库中添加指定的规则。</p>
 <h3 id="standard-evaluation">Standard evaluation</h3>

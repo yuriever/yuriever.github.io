@@ -22,7 +22,7 @@
     
     
       
-        <title>第一次作业讨论 - Sora</title>
+        <title>第一周作业讨论 - Sora</title>
       
     
     
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第一次作业讨论
+              第一周作业讨论
             
           </span>
         </div>
@@ -494,44 +494,44 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="_1">第一次作业讨论</h1>
+<h1 id="_1">第一周作业讨论</h1>
 <h2 id="1">问题 1</h2>
 <ul>
 <li>
-<p>一些同学猜测<span class="arithmatex">\(\hbar\)</span>变大后“时间或空间会变得更不连续”。这个说法比较 tricky。物理系统可以大致分为两类：</p>
+<p>一些同学猜测 <span class="arithmatex">\(\hbar\)</span> 变大后“时间或空间会变得更不连续”。这个说法比较 tricky。物理系统可以大致分为两类：</p>
 <ul>
 <li>连续系统，例如 QFT，string theory；</li>
 <li>离散系统，例如各种格点模型。</li>
 </ul>
 <p>目前与实验观测符合最好的标准模型与广义相对论属于连续系统。在 Planck 长度之下正确的理论是什么，我们并不清楚。因此不应先验的想象成类似于格点模型的离散系统。</p>
-<p>更具体一点，在讨论量子引力的时候一个初步的方案是引力路径积分。回忆到路径积分的基本想法是对一个粒子的所有路径按照权重<span class="arithmatex">\(\exp{i\frac{ S}{\hbar}}\)</span>求和，积分区域是路径空间。
-当考虑量子引力的时候，<span class="arithmatex">\(S\)</span>除了包含描述物质场的标准模型作用量，还会包含描述引力的 Einstein-Hilbert action 及其高阶修正项，而积分区域是所有满足特定条件的几何<span class="arithmatex">\((M,g)\)</span>。</p>
-<p>在经典极限下<span class="arithmatex">\(\hbar\to0\)</span>，利用 saddle-point 近似可知，满足 Einstein equation 的几何占主要贡献，就还原为我们熟知的时空的经典几何图像。
-如果<span class="arithmatex">\(\hbar\)</span>变得较大，所有几何对振荡积分<span class="arithmatex">\(\exp{i\frac{ S}{\hbar}}\)</span>的贡献会变得同等重要，此时时空的经典几何图像就失效了。</p>
+<p>更具体一点，在讨论量子引力的时候一个初步的方案是引力路径积分。回忆到路径积分的基本想法是对一个粒子的所有路径按照权重 <span class="arithmatex">\(\exp{i\frac{ S}{\hbar}}\)</span> 求和，积分区域是路径空间。
+当考虑量子引力的时候，<span class="arithmatex">\(S\)</span> 除了包含描述物质场的标准模型作用量，还会包含描述引力的 Einstein-Hilbert action 及其高阶修正项，而积分区域是所有满足特定条件的几何 <span class="arithmatex">\((M,g)\)</span>。</p>
+<p>在经典极限下 <span class="arithmatex">\(\hbar\to0\)</span>，利用 saddle-point 近似可知，满足 Einstein equation 的几何占主要贡献，就还原为我们熟知的时空的经典几何图像。
+如果 <span class="arithmatex">\(\hbar\)</span> 变得较大，所有几何对振荡积分 <span class="arithmatex">\(\exp{i\frac{ S}{\hbar}}\)</span> 的贡献会变得同等重要，此时时空的经典几何图像就失效了。</p>
 </li>
 </ul>
 <h2 id="2">问题 2</h2>
 <ul>
 <li>
-<p>标度分析。半径应该正比于<span class="arithmatex">\(\frac{\hbar^2}{e^2 k m}\)</span>，基态能量应该正比于<span class="arithmatex">\(-\frac{e^4 k^2 m}{\hbar^2}\)</span>。</p>
+<p>标度分析。半径应该正比于 <span class="arithmatex">\(\frac{\hbar^2}{e^2 k m}\)</span>，基态能量应该正比于 <span class="arithmatex">\(-\frac{e^4 k^2 m}{\hbar^2}\)</span>。</p>
 </li>
 <li>
-<p>一些同学直接写下<span class="arithmatex">\(rp\sim \hbar\)</span>，这里可以进一步分析一下近似<span class="arithmatex">\(r\sim \sigma_x, p\sim \sigma_p\)</span>的原因。</p>
-<p>对于任意测试波函数，有
-\begin{equation}
+<p>一些同学直接写下 <span class="arithmatex">\(rp\sim \hbar\)</span>，这里可以进一步分析一下近似 <span class="arithmatex">\(r\sim \sigma_x, p\sim \sigma_p\)</span> 的原因。</p>
+<p>对于任意测试波函数，有</p>
+<div class="arithmatex">\[\begin{equation}
     \bra{\phi}H\ket{\phi}
     =
     \bra{\phi}\frac{p^{2}}{2m}-\frac{k e^{2}}{r}\ket{\phi}
     \geq E_{0}
-    .
-\end{equation}
-基态波函数<span class="arithmatex">\(\ket{\phi_{0}}\)</span>是球对称的，因此<span class="arithmatex">\(\bra{\phi_{0}}{\vp}\ket{\phi_{0}}=0 \implies \sigma_{p}^{2}=\bra{\phi_{0}}p^{2}\ket{\phi_{0}}\)</span>。我们需要的是对于类似于基态波函数的一类测试波函数，有
-\begin{equation}
+    \, .
+\end{equation}\]</div>
+<p>基态波函数 <span class="arithmatex">\(\ket{\phi_{0}}\)</span> 是球对称的，因此 <span class="arithmatex">\(\bra{\phi_{0}}{\vp}\ket{\phi_{0}}=0 \implies \sigma_{p}^{2}=\bra{\phi_{0}}p^{2}\ket{\phi_{0}}\)</span>。我们需要的是对于类似于基态波函数的一类测试波函数，有</p>
+<div class="arithmatex">\[\begin{equation}
     \bra{\phi_{0}}\frac{1}{r}\ket{\phi_{0}}\sim \frac{1}{\sigma_{r}}\sim \frac{\sigma_{p}}{\hbar}
-    .
-\end{equation}
-在已知基态波函数的时候容易验证这是成立的。有兴趣的同学可以尝试如何建立类似的估计，或者直接构造一个好的测试波函数，进而得到<span class="arithmatex">\(E_{0}\)</span>的上界。</p>
-<p>直观上，量子观测量是算子，而经典观测量类似于对角算子。尽管<span class="arithmatex">\(\vev{f(\op)}_{\phi}\neq f(\vev{\op})_{\phi}\)</span>，但在做这种半经典估计的时候，我们需要找到在什么物理条件下，对于特定的<span class="arithmatex">\(\phi,\op,f\)</span>有类似的估计。</p>
+    \, .
+\end{equation}\]</div>
+<p>在已知基态波函数的时候容易验证这是成立的。有兴趣的同学可以尝试如何建立类似的估计，或者直接构造一个好的测试波函数，进而得到 <span class="arithmatex">\(E_{0}\)</span> 的上界。</p>
+<p>直观上，量子观测量是算子，而经典观测量类似于对角算子。尽管 <span class="arithmatex">\(\vev{f(\op)}_{\phi}\neq f(\vev{\op})_{\phi}\)</span>，但在做这种半经典估计的时候，我们需要找到在什么物理条件下，对于特定的 <span class="arithmatex">\(\phi,\op,f\)</span> 有类似的估计。</p>
 </li>
 </ul>
 

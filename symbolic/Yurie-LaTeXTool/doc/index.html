@@ -507,7 +507,7 @@
 <p>and then successively by the steps controlled by the following options.</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="s">&quot;SurroundEquationWithPercent&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
+<p><code class="highlight"><span class="s">&quot;SurroundEquationWithPercent&quot;</span><span class="o">-&gt;</span><span class="nb">False</span></code></p>
 <ul>
 <li>
 <p>surround equations with percentage symbol;</p>
@@ -622,6 +622,81 @@
 <span class="p">},</span>
 <span class="c1">// MathJaxJSOverwrite-Macro-End</span>
 </code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MarkdownFormat</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - format the Markdown file.</p>
+<p>The file will be firstly formatted by <a href="https://github.com/huacnlee/autocorrect">AutoCorrect</a> and then successively by the steps controlled by the following options.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;SurroundInlineEquationWithBlank&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
+<ul>
+<li>
+<p>surround inline equations with blank;</p>
+</li>
+<li>
+<p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
+</li>
+<li>
+<p>skip inline equations surrounded by the magic comments</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- MarkdownFormat-IEB-Off --&gt;
+...
+&lt;!-- MarkdownFormat-IEB-Off --&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>测试，$a$ 测试
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>测试，$a$测试
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;SurroundBlockEquationWithEmptyLine&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
+<ul>
+<li>
+<p>surround block equations with empty line;</p>
+</li>
+<li>
+<p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
+</li>
+<li>
+<p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>测试
+
+\begin{equation}
+    a+b
+\end{equation}
+
+测试
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>测试
+\begin{equation}
+    a+b
+\end{equation}
+测试
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
 </li>
 </ul>
 </li>
