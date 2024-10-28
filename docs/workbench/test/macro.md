@@ -254,5 +254,8 @@ ${}$
 &\mathgreen{*}\\
 &\mathorange{*}\\
 &\mathpurple{*}\\
-&\mathpink{*}
+&\mathpink{*}\\
+&\const\\
+&\lhs\\
+&\rhs
 \end{align}
