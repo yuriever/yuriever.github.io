@@ -108,7 +108,7 @@
         \\
         &
         \bra{z}p^{2}\ket{z}=-\frac{1}{2} m \omega  \hbar  \left(-2 z z^*+\left(z^*\right)^2+z^2-1\right)
-        \, ,
+        \, .
     \end{align}
 
 * 在验证 coherent state 是湮灭算子的本征态时可以利用 BCH formula，
