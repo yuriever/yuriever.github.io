@@ -2,15 +2,15 @@
 
 LaTeX tools.
 
-## Public
+## Formatter
 
 * `#!wl LaTeXFormat[opts_][file_]` - format the LaTeX file.
 
-    The file will be firstly formatted by [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt) with the option
+    The file will be formatted firstly by [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt) and then successively by the steps controlled by the following options.
 
     * `#!wl "Indentation"->4`
 
-    and then successively by the steps controlled by the following options.
+        * inherited from [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt).
 
     * `#!wl "SurroundEquationWithPercent"->False`
 
@@ -87,37 +87,9 @@ LaTeX tools.
                 % LaTeXFormat-EMS-On
                 ```
 
-* `#!wl LaTeXParser[opts_][file_]` - a simple parser of LaTeX.
-
-    * Parse `#!tex \newcommand`, `#!tex \newenvironment` and `#!tex \usepackage`.
-
-    * To disable parsing of a line, add the magic comment `#!tex % LaTeXParser-Skip` at the end of that line. To disable parsing of a block, use the magic comments:
-
-        ``` tex
-        % LaTeXParser-Off
-        ...
-        % LaTeXParser-On
-        ```
-
-    * The option `#!wl "SkipType"` allows typed magic comments and accepts `#!wl Automatic|_String|{__String}`, where `#!wl Automatic` for non-typed ones.
-
-        For example, the magic comment `#!tex % LaTeXParser-MathJax-Skip` will be triggered by setting the option as `#!wl "SkipType"->"MathJax"`.
-
-* `#!wl MathJaxJSOverwrite[macro_][file_]` - overwrite the macros in JSON files used by MathJax.
-
-    * The matching is hinted by the magic comments:
-
-        ``` js
-        // MathJaxJSOverwrite-Macro-Begin
-        macros: {
-            ...
-        },
-        // MathJaxJSOverwrite-Macro-End
-        ```
-
 * `#!wl MarkdownFormat[opts_][file_]` - format the Markdown file.
 
-    The file will be firstly formatted by [AutoCorrect](https://github.com/huacnlee/autocorrect) and then successively by the steps controlled by the following options.
+    The file will be formatted firstly by [AutoCorrect](https://github.com/huacnlee/autocorrect) and then successively by the steps controlled by the following options.
 
     * `#!wl "SurroundInlineEquationWithBlank"->True`
 
@@ -147,9 +119,9 @@ LaTeX tools.
                 测试，$a$测试
                 ```
 
-    * `#!wl "SurroundBlockEquationWithEmptyLine"->True`
+    * `#!wl "SurroundEquationWithEmptyLine"->True`
 
-        * surround block equations with empty line;
+        * surround equations with empty line;
 
         * accepts `#!wl True` of `#!wl False`;
 
@@ -176,6 +148,42 @@ LaTeX tools.
                 \end{equation}
                 测试
                 ```
+
+    * `#!wl "EquationMarkSpacing"->None`
+
+        * similar to the one in `#!wl LaTeXFormat`.
+
+## Parser
+
+* `#!wl LaTeXParser[opts_][file_]` - a simple parser of LaTeX.
+
+    * Parse `#!tex \newcommand`, `#!tex \newenvironment` and `#!tex \usepackage`.
+
+    * To disable parsing of a line, add the magic comment `#!tex % LaTeXParser-Skip` at the end of that line. To disable parsing of a block, use the magic comments:
+
+        ``` tex
+        % LaTeXParser-Off
+        ...
+        % LaTeXParser-On
+        ```
+
+    * The option `#!wl "SkipType"` allows typed magic comments and accepts `#!wl Automatic|_String|{__String}`, where `#!wl Automatic` for non-typed ones.
+
+        For example, the magic comment `#!tex % LaTeXParser-MathJax-Skip` will be triggered by setting the option as `#!wl "SkipType"->"MathJax"`.
+
+## Other tools
+
+* `#!wl MathJaxJSOverwrite[macro_][file_]` - overwrite the macros in JSON files used by MathJax.
+
+    * The matching is hinted by the magic comments:
+
+        ``` js
+        // MathJaxJSOverwrite-Macro-Begin
+        macros: {
+            ...
+        },
+        // MathJaxJSOverwrite-Macro-End
+        ```
 
 ## To-do
 
