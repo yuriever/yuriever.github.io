@@ -425,9 +425,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public" class="md-nav__link">
+  <a href="#formatter" class="md-nav__link">
     <span class="md-ellipsis">
-      Public
+      Formatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other tools
     </span>
   </a>
   
@@ -496,16 +514,18 @@
 <!-- Page content -->
 <h1 id="yurielatextool"><a href="https://github.com/yuriever/Yurie-LaTeXTool">Yurie/LaTeXTool</a></h1>
 <p>LaTeX tools.</p>
-<h2 id="public">Public</h2>
+<h2 id="formatter">Formatter</h2>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">LaTeXFormat</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - format the LaTeX file.</p>
-<p>The file will be firstly formatted by <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a> with the option</p>
+<p>The file will be formatted firstly by <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a> and then successively by the steps controlled by the following options.</p>
 <ul>
-<li><code class="highlight"><span class="s">&quot;Indentation&quot;</span><span class="o">-&gt;</span><span class="m">4</span></code></li>
+<li>
+<p><code class="highlight"><span class="s">&quot;Indentation&quot;</span><span class="o">-&gt;</span><span class="m">4</span></code></p>
+<ul>
+<li>inherited from <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a>.</li>
 </ul>
-<p>and then successively by the steps controlled by the following options.</p>
-<ul>
+</li>
 <li>
 <p><code class="highlight"><span class="s">&quot;SurroundEquationWithPercent&quot;</span><span class="o">-&gt;</span><span class="nb">False</span></code></p>
 <ul>
@@ -593,41 +613,8 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">LaTeXParser</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - a simple parser of LaTeX.</p>
-<ul>
-<li>
-<p>Parse <code class="highlight"><span class="k">\newcommand</span></code>, <code class="highlight"><span class="k">\newenvironment</span></code> and <code class="highlight"><span class="k">\usepackage</span></code>.</p>
-</li>
-<li>
-<p>To disable parsing of a line, add the magic comment <code class="highlight"><span class="c">% LaTeXParser-Skip</span></code> at the end of that line. To disable parsing of a block, use the magic comments:</p>
-<div class="highlight"><pre><span></span><code><span class="c">% LaTeXParser-Off</span>
-...
-<span class="c">% LaTeXParser-On</span>
-</code></pre></div>
-</li>
-<li>
-<p>The option <code class="highlight"><span class="s">&quot;SkipType&quot;</span></code> allows typed magic comments and accepts <code class="highlight"><span class="nb">Automatic</span><span class="o">|</span><span class="nt">_String</span><span class="o">|</span><span class="p">{</span><span class="nt">__String</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Automatic</span></code> for non-typed ones.</p>
-<p>For example, the magic comment <code class="highlight"><span class="c">% LaTeXParser-MathJax-Skip</span></code> will be triggered by setting the option as <code class="highlight"><span class="s">&quot;SkipType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;MathJax&quot;</span></code>.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">MathJaxJSOverwrite</span><span class="p">[</span><span class="nt">macro_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - overwrite the macros in JSON files used by MathJax.</p>
-<ul>
-<li>
-<p>The matching is hinted by the magic comments:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// MathJaxJSOverwrite-Macro-Begin</span>
-<span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="p">},</span>
-<span class="c1">// MathJaxJSOverwrite-Macro-End</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-<li>
 <p><code class="highlight"><span class="nv">MarkdownFormat</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - format the Markdown file.</p>
-<p>The file will be firstly formatted by <a href="https://github.com/huacnlee/autocorrect">AutoCorrect</a> and then successively by the steps controlled by the following options.</p>
+<p>The file will be formatted firstly by <a href="https://github.com/huacnlee/autocorrect">AutoCorrect</a> and then successively by the steps controlled by the following options.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="s">&quot;SurroundInlineEquationWithBlank&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
@@ -663,10 +650,10 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;SurroundBlockEquationWithEmptyLine&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
+<p><code class="highlight"><span class="s">&quot;SurroundEquationWithEmptyLine&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
 <ul>
 <li>
-<p>surround block equations with empty line;</p>
+<p>surround equations with empty line;</p>
 </li>
 <li>
 <p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
@@ -697,6 +684,51 @@
 </div>
 </li>
 </ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;EquationMarkSpacing&quot;</span><span class="o">-&gt;</span><span class="nb">None</span></code></p>
+<ul>
+<li>similar to the one in <code class="highlight"><span class="nv">LaTeXFormat</span></code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="parser">Parser</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">LaTeXParser</span><span class="p">[</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - a simple parser of LaTeX.</p>
+<ul>
+<li>
+<p>Parse <code class="highlight"><span class="k">\newcommand</span></code>, <code class="highlight"><span class="k">\newenvironment</span></code> and <code class="highlight"><span class="k">\usepackage</span></code>.</p>
+</li>
+<li>
+<p>To disable parsing of a line, add the magic comment <code class="highlight"><span class="c">% LaTeXParser-Skip</span></code> at the end of that line. To disable parsing of a block, use the magic comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c">% LaTeXParser-Off</span>
+...
+<span class="c">% LaTeXParser-On</span>
+</code></pre></div>
+</li>
+<li>
+<p>The option <code class="highlight"><span class="s">&quot;SkipType&quot;</span></code> allows typed magic comments and accepts <code class="highlight"><span class="nb">Automatic</span><span class="o">|</span><span class="nt">_String</span><span class="o">|</span><span class="p">{</span><span class="nt">__String</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Automatic</span></code> for non-typed ones.</p>
+<p>For example, the magic comment <code class="highlight"><span class="c">% LaTeXParser-MathJax-Skip</span></code> will be triggered by setting the option as <code class="highlight"><span class="s">&quot;SkipType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;MathJax&quot;</span></code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-tools">Other tools</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">MathJaxJSOverwrite</span><span class="p">[</span><span class="nt">macro_</span><span class="p">][</span><span class="nt">file_</span><span class="p">]</span></code> - overwrite the macros in JSON files used by MathJax.</p>
+<ul>
+<li>
+<p>The matching is hinted by the magic comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// MathJaxJSOverwrite-Macro-Begin</span>
+<span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">},</span>
+<span class="c1">// MathJaxJSOverwrite-Macro-End</span>
+</code></pre></div>
 </li>
 </ul>
 </li>
