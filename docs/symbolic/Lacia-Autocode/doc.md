@@ -1,94 +1,79 @@
 # [Lacia/Autocode](https://github.com/yuriever/Lacia-Autocode)
 
-A Mathematica paclet for converting between indexed variables and symbols.
+Code tools.
 
 ## Public
 
-* `#!wl indexize[var_,index_]|indexize[{var_,index_}]` - join the variable and index into a symbol.
+* `#!wl convertNotebookToWLT[dir_,targetDir_]` - convert notebooks in the directory to *.wlt test files.
 
-    * Example:
+    * This function will syntactically import cells of type `#!wl "Input"|"Code"|"Output"|"Message"`, then regroup them into `#!wl {"Input"|"Code","Output","Message"}`, and convert the groups into `#!wl VerificationTest`.
+
+    * An input cell with more than one outputs will be reported as an error, since there is no syntactical way to separate the input cell. For example,
 
         ``` wl
-        indexize[z,1]
+        a
+        b
         ```
 
         ``` wl
-        Out[] = z1
+        Out[] = a
+        Out[] = b
         ```
 
-    * This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
+    * Option:
 
-* `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
+        * `#!wl "ExcludedFile"->{}` - exclude certain notebooks in the directory.
 
-    * Example:
+    * Notice:
 
-        ``` wl
-        z[1]+z[2]//indexJoin[z]
-        ```
-
-        ``` wl
-        Out[] = z1+z2
-        ```
-
-* `#!wl indexSplit[vars__|{vars__}][expr_]` - split the symbol into a indexed variable.
-
-    * Example:
-
-        ``` wl
-        z1+z2//indexSplit[z]
-        ```
-
-        ``` wl
-        Out[] = z[1]+z[2]
-        ```
-
-* Options of `#!wl indexJoin|indexSplit`
-
-    * `#!wl "IndexPosition"->Construct`
-
-        * This option controls the format of indexed vairables. The supported option values are
-
-            * `#!wl Construct`
-            * `#!wl Subscript`
-            * `#!wl Superscript`
-
-        * Example:
+        * Currently format definitions cannot be parsed correctly, use the following workaround instead:
 
             ``` wl
-            z1+z2//indexSplit[z,"IndexPosition"->Subscript]
+            ToExpression["Format[expr,format]:=expr1;"]
             ```
 
-            ``` wl
-            Out[] = Subscript[z,1]+Subscript[z,2]
-            ```
+            **TODO** check the code `#!wl NotebookImport[#,_->"HeldExpression"]&` to see how `#!wl NotebookImport` handles `#!wl Format`.
 
-    * `#!wl "IndexType"->All`
+        * **TODO** Another parser of input cell, controlled by `#!wl (*$reformatCode = False;*)` should be deprecated, since it cannot distinguish `#!wl Power` and `#!wl Superscript`.
 
-        * This option controls the pattern of indices. The supported option values are
+---
 
-            * `#!wl All`
-            * `#!wl "PositiveInteger"`
-            * `#!wl "PositiveIntegerOrSingleLetter"`
-            * `#!wl _Symbol` - any function for string pattern matching
+<!-- AST.wl -->
 
-        * Example:
+* `#!wl ASTHierarchy` - return the hierarchical structure of the AST.
 
-            Sometimes there can be conflict between variable and index, e.g.
+* `#!wl ASTHierarchyPrint` - print the hierarchical structure of the AST.
 
-            ``` wl
-            zb1//indexSplit[{z,zb}]
-            ```
+<!-- buildLibrary.wl -->
 
-            ``` wl
-            Out[] = z[b1]
-            ```
+* `#!wl buildLibrary` - build the library.
 
-            comparing with
+<!-- dependency.wl -->
 
-            ``` wl
-            zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
-            ```
+* `#!wl dependency` - symbol dependency from definitions.
 
-            ``` wl
-            Out[] = zb[1]
-            ```
+* `#!wl dependencyGraph` - symbol dependency graph from definitions.
+
+* `#!wl $dependencyLimit` - the fixed-point limit in dependency*.
+
+* `#!wl $dependencyExclusion` - the excluded contexts in dependency*.
+
+<!-- exportArgumentCompletion.wl -->
+
+* `#!wl exportArgumentCompletion` - export the argument completion data.
+
+* `#!wl $argumentFileName` - default name of the argument completion file.
+
+<!-- exportPublicSymbolUsage.wl -->
+
+* `#!wl exportPublicSymbolUsage` - export the usages of public symbols in the directory.
+
+* `#!wl $usageFileName` - default name of the usage file.
+
+<!-- reportSuspiciousSet.wl -->
+
+* `#!wl reportSuspiciousSet` - report suspicious set in the *.wl files in the directory.
+
+<!-- reportWLT.wl -->
+
+* `#!wl reportWLT` - report the unit test in the directory.
