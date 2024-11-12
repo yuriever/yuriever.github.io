@@ -5,17 +5,17 @@ title: Triangulated reality
 
 ## Articles
 
-* [Standard evaluation sequence](symbolic/evaluation.md)
+* [Standard evaluation sequence](symbolic/evaluation/evaluation.md)
 
     * Introduction to the evaluation of expressions by analogy with the moduli space.
 
-* [Paclet and package](symbolic/paclet.md)
+* [Paclet and package](symbolic/paclet/paclet.md)
 
-* [Inheritance of options](symbolic/option.md)
+* [Inheritance of options](symbolic/option/option.md)
 
-* [File operations](symbolic/file.md)
+* [File operations](symbolic/file/file.md)
 
-* [Miscellaneous](symbolic/misc.md)
+* [Miscellaneous](symbolic/misc/misc.md)
 
 ---
 
@@ -23,7 +23,9 @@ title: Triangulated reality
 
     * Lie algebras, Hopf algebras, and their representations via Mathematica.
 
-* [Introduction to xAct packages: equation of motion and stress tensor](symbolic/xAct.md)
+* [Introduction to xAct](symbolic/xAct/xAct.md)
+
+    * Equation of motion and stress tensor.
 
 ## Paclets
 
@@ -70,6 +72,12 @@ title: Triangulated reality
     * A Mathematica paclet for converting between indexed variables and symbols.
 
     * [Documentation](symbolic/Yurie-Index/doc.md)
+
+* [Lacia/Autocode](https://github.com/yuriever/Lacia-Autocode)
+
+    * A Mathematica paclet for converting between indexed variables and symbols.
+
+    * [Documentation](symbolic/Lacia-Autocode/doc.md)
 
 ## External links
 

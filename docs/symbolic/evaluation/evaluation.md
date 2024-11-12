@@ -36,17 +36,19 @@ References:
 
 表达式的结构可表示为树 (tree)，函数 `#!wl TreeForm` [^treeform] 给出表达式的树形式。可用 `#!wl Head, Level, Position, Part, Span, Length, Depth` 等函数访问表达式的内部结构。此外，函数 `#!wl LeafCount` 给出树的节点 (node) 或称叶子的总数，因此提供了一种表达式复杂度的度量。
 
-**原子：** 与树的结构相似，不存在非平凡子表达式的称为原子 (atom)，例如数、符号、字符串。
+* **原子：** 与树的结构相似，不存在非平凡子表达式的称为原子 (atom)，例如数、符号、字符串。
 
-**复合：** 树可以拼接，若干表达式可以复合为复杂度更高的表达式，此处复合 (composite) 指树的拼接，形如 `#!wl f0[f1,f2,...]`，类似于 operad [^operad]。
+* **复合：** 树可以拼接，若干表达式可以复合为复杂度更高的表达式，此处复合 (composite) 指树的拼接，形如 `#!wl f0[f1,f2,...]`，类似于 operad [^operad]。
 
-**合成：** 树构成森林，对应于合成 (compound)，形如 `#!wl f1;f2;...`，类似于张量积。
+* **合成：** 树构成森林，对应于合成 (compound)，形如 `#!wl f1;f2;...`，类似于张量积。
 
 例如：表达式 `#!wl a^2+2 a b+b^2` 的树形式为
 
-<!-- <img src="../evaluation/tree-example.png" class="center" width="30%" alt="tree-example"> -->
+<center>
 
-![tree-example](evaluation/tree-example.png)
+![tree-example](tree-example.svg)
+
+</center>
 
 ## Evaluation
 
@@ -55,8 +57,8 @@ References:
 特定对象 $x_0$ 的不同无穷小形变可记为 $x_0 \mapsto x_0 + \d_i x_0,\,  \d_i x_0\in TM_{x_0}$，例如有效作用量的形变为
 
 \begin{equation}
-S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
-\, .
+    S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
+    \, .
 \end{equation}
 
 形变切方向的类似物为规则 `#!wl Rule (->)`。表达式的子表达式的集合可以实现为

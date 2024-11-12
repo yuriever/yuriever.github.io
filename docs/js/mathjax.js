@@ -388,7 +388,7 @@ window.MathJax = {
 			"CBC":"p",
 			"CPW":"\\Psi",
 			"CPWC":"\\rho",
-			"CPWCWithS":"\\hat{\\rho}",
+			"CPWCWithS":"\\sigma",
 			"rep":[
 				"\\mathcal{M}_{#1}",
 				1

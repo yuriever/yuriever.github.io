@@ -10,7 +10,11 @@ References:
 
 Syntactic dependence:
 
-![paclet](paclet/paclet-1.png)
+<center>
+
+![paclet](paclet.png)
+
+</center>
 
 File structure:
 
@@ -32,28 +36,29 @@ Kernel/
 ## Package structure
 
 ``` wl title="p.wl"
-(*set the context as Package`.*)
+(*reset $Context|$ContextPath to Package`.*)
 BeginPackage["Package`"];
 
 (*declare public symbols.*)
 Get["Package`Usage`"];
 
-(*load the common subcontext Package`Common`.*)
+(*load common codes.*)
 Get["Package`Common`"];
 
-(*load the definitions of public symbols.*)
+(*load definitions of public symbols.*)
 Get["Package`Context1`"];
 Get["Package`Context2`"];
 
-(*set the private context.*)
+(*reset $Context to Package`Private`.*)
 Begin["`Private`"];
 
 (*some codes here.*)
 
-(*end the private context and revert to Package`.*)
+(*restore $Context to Package`.*)
 End[];
 
-(*end the context, and prepend Package` to $ContextPath.*)
+(*restore $Context|$ContextPath to the values before BeginPackage;*)
+(*prepends Package` to $ContextPath.*)
 EndPackage[];
 ```
 
