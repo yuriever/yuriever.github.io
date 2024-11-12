@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6232,        198]
+NotebookDataLength[      6072,        196]
 NotebookOptionsPosition[      4446,        160]
-NotebookOutlinePosition[      5034,        180]
-CellTagsIndexPosition[      4991,        177]
+NotebookOutlinePosition[      4874,        178]
+CellTagsIndexPosition[      4831,        175]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -163,9 +163,7 @@ WindowSize->{840, 1022},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowStatusArea->"",
 FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
-StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
-   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
-  "Yurie.nb", CharacterEncoding -> "UTF-8"],
+StyleDefinitions->"Yurie.nb",
 ExpressionUUID->"24b72555-1a5c-4b74-ae9a-64b6bce1b53d"
 ]
 (* End of Notebook Content *)

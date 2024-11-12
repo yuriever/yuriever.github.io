@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    126299,       2600]
+NotebookDataLength[    126139,       2598]
 NotebookOptionsPosition[    123568,       2549]
-NotebookOutlinePosition[    124157,       2569]
-CellTagsIndexPosition[    124114,       2566]
+NotebookOutlinePosition[    123997,       2567]
+CellTagsIndexPosition[    123954,       2564]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2548,13 +2548,11 @@ Cell[BoxData[
 Cell["", "Text",ExpressionUUID->"c5ec48a3-f0ca-4334-b648-b5530a8f8e74"]
 },
 Editable->True,
-WindowSize->{1680, 1022},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 1387},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 WindowStatusArea->"",
 FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
-StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "Reiko", 
-   "Library", "Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, 
-  "Yurie.nb", CharacterEncoding -> "UTF-8"],
+StyleDefinitions->"Yurie.nb",
 ExpressionUUID->"24b72555-1a5c-4b74-ae9a-64b6bce1b53d"
 ]
 (* End of Notebook Content *)
@@ -2595,7 +2593,7 @@ Cell[50457, 1036, 51775, 973, 221, "Output",ExpressionUUID->"6b5e1a51-0554-4f49-
 Cell[102247, 2012, 71, 0, 60, "Text",ExpressionUUID->"2b185014-052d-4785-966d-427f7b59ab13"],
 Cell[CellGroupData[{
 Cell[102343, 2016, 194, 3, 66, "Code",ExpressionUUID->"0f9ad94d-e4fe-42a1-9f57-ae869ae5ab1c"],
-Cell[102540, 2021, 4600, 109, 70, "Output",ExpressionUUID->"1bb66adf-8832-4c84-91a4-c72c1e497b84"]
+Cell[102540, 2021, 4600, 109, 98, "Output",ExpressionUUID->"1bb66adf-8832-4c84-91a4-c72c1e497b84"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[107177, 2135, 236, 5, 66, "Code",ExpressionUUID->"39514b3a-84e1-42e8-bf18-8ff9a798f48a"],
