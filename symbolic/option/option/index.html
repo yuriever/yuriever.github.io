@@ -22,7 +22,7 @@
     
     
       
-        <title>Inheritance of options - Sora</title>
+        <title>Optional Arguments - Sora</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inheritance-of-options" class="md-skip">
+        <a href="#optional-arguments" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inheritance of options
+              Optional Arguments
             
           </span>
         </div>
@@ -436,7 +436,25 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      继承
+      选项的继承
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      非局域选项的指定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
     </span>
   </a>
   
@@ -494,83 +512,111 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="inheritance-of-options">Inheritance of options</h1>
-<p>本页面总结 Mathematica 选项功能的使用方法。</p>
+<h1 id="optional-arguments">Optional Arguments</h1>
+<p>本页面介绍 Mathematica 的选项功能。</p>
 <h2 id="_1">基本用法</h2>
-<div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a1&quot;</span><span class="p">}</span><span class="o">;</span>
+<p>以下称 <code class="highlight"><span class="nb">OptionsPattern</span><span class="p">[]</span></code> 为输入选项，称 <code class="highlight"><span class="nb">Options</span><span class="p">[]</span></code> 为默认选项。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">child</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">}</span><span class="o">;</span>
 
-<span class="nv">f</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
+<span class="nv">child</span><span class="p">[</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
 
-<span class="nv">f</span><span class="p">[]</span>
-
-<span class="nv">f</span><span class="p">[{{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a2&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a3&quot;</span><span class="p">}}]</span>
+<span class="nv">child</span><span class="p">[{{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">}}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a1&quot;</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a2&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 </code></pre></div>
-<p>以下 <code class="highlight"><span class="nv">opts</span></code> 称为输入选项，<code class="highlight"><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span></code> 称为默认选项。</p>
+<h2 id="_2">选项的继承</h2>
+<p>此种用法适用于将简单函数从下到上的组合为复杂函数。</p>
+<p>先看一个错误例子：首先定义如下的函数 <code class="highlight"><span class="nv">parent</span></code>，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">child</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">x</span>
+<span class="p">}</span><span class="o">;</span>
+
+<span class="nv">parent</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nv">child</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">child</span><span class="p">]]</span><span class="o">;</span>
+</code></pre></div>
+<p>此处 <code class="highlight"><span class="nb">FilterRules</span></code> 会过滤出 <code class="highlight"><span class="nv">child</span></code> 接受的选项。若用 <code class="highlight"><span class="nb">SetOptions</span></code> 更新 <code class="highlight"><span class="nv">parent</span></code> 的默认选项，可以发现该更新并未正确传递给 <code class="highlight"><span class="nv">child</span></code>，</p>
+<div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">parent</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span>
+
+<span class="nv">parent</span><span class="p">[]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">a</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">b</span><span class="o">-&gt;</span><span class="nv">x</span><span class="p">}</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<p>其原因在于键 <code class="highlight"><span class="s">&quot;a&quot;</span></code> 并未出现在 <code class="highlight"><span class="nv">parent</span></code> 的输入选项中，因此 <code class="highlight"><span class="nv">child</span></code> 调用了自身的默认选项 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span></code>。</p>
+<p>正确的方法为</p>
+<div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">//</span><span class="nb">ClearAll</span><span class="o">;</span>
+
+<span class="nv">parent</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">child</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">x</span>
+<span class="p">}</span><span class="o">;</span>
+
+<span class="nv">parent</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nv">child</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">parent</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">child</span><span class="p">]]</span><span class="o">;</span>
+</code></pre></div>
+<p>此处用 <code class="highlight"><span class="p">{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">parent</span><span class="p">}</span></code> 手动合并了 <code class="highlight"><span class="nv">parent</span></code> 的输入选项与默认选项，再将其传递给 <code class="highlight"><span class="nv">child</span></code>。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">parent</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span>
+
+<span class="nv">parent</span><span class="p">[]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">a</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">b</span><span class="o">-&gt;</span><span class="nv">x</span><span class="p">}</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+<h2 id="_3">非局域选项的指定</h2>
+<p>上述继承的用法有时稍显笨重，特别是在顶层函数仅用来分离参数与选项，或检测参数类型，而非实现核心功能的时候。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">foo</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nv">foo</span><span class="p">[</span><span class="nt">args___</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nb">With</span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="vc">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ArgumentsOptions</span><span class="p">[</span><span class="nv">foo</span><span class="p">[</span><span class="nv">args</span><span class="p">],{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">},&lt;|</span><span class="s">&quot;Head&quot;</span><span class="o">-&gt;</span><span class="nb">HoldComplete</span><span class="p">,</span><span class="s">&quot;OptionsMode&quot;</span><span class="o">-&gt;</span><span class="s">&quot;Shortest&quot;</span><span class="p">|&gt;]},</span>
+<span class="w">        </span><span class="nv">ifoo</span><span class="p">[</span><span class="vc">sep</span><span class="p">]</span><span class="o">/;!</span><span class="nb">FailureQ</span><span class="p">[</span><span class="vc">sep</span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span>
+
+<span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ifoo</span><span class="p">[{</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]}]</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ifoo</span><span class="p">[{</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span><span class="p">],</span><span class="nb">HoldComplete</span><span class="p">[]}]</span>
+</code></pre></div>
+<p>可见 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span></code> 被正确的识别为了选项，而未出现在 <code class="highlight"><span class="nv">foo</span></code> 的默认选项中的 <code class="highlight"><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span></code> 被识别为了参数。接下来实现 <code class="highlight"><span class="nv">ifoo</span></code> 的部分功能，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ifoo</span><span class="p">[{</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nt">x_</span><span class="p">],</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nt">opts___</span><span class="p">]}]</span><span class="w"> </span><span class="o">:=</span>
+<span class="w">    </span><span class="nv">x</span><span class="o">+</span><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">foo</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+<p>此处 <code class="highlight"><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">foo</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="p">]</span></code> 自动接受了 <code class="highlight"><span class="nv">foo</span></code> 的输入选项与默认选项。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">foo</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
+
+<span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">+</span><span class="nv">x</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">x</span>
+</code></pre></div>
+<p>类似的，<code class="highlight"><span class="nb">OptionsPattern</span><span class="p">[</span><span class="nv">foo</span><span class="p">]</span></code> 亦可以实现此种非局域的选项指定。</p>
+<h2 id="_4">注意事项</h2>
 <ul>
-<li>
-<p>输入选项接受序列和（嵌套）列表 <sup id="fnref:nestlist"><a class="footnote-ref" href="#fn:nestlist">1</a></sup>。</p>
-</li>
-<li>
-<p>输入选项的关键词必须出现在默认选项中。</p>
-</li>
 <li>
 <p><code class="highlight"><span class="nb">OptionValue</span></code> 优先搜索输入选项，其次搜索默认选项。</p>
 </li>
 <li>
-<p>对于输入选项或默认选项，重复的关键词中<strong>前面</strong>的优先级更高。这与关联的行为相反，例如 <code class="highlight"><span class="p">&lt;|</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">|&gt;</span></code> 返回 <code class="highlight"><span class="p">&lt;|</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">|&gt;</span></code>。</p>
+<p>输入选项的键 (key) 应首先出现在默认选项中。</p>
+</li>
+<li>
+<p>若选项的键出现重复，<strong>前面</strong>的优先级更高。这与关联 (association) 的行为相反，关联的重复键中<strong>后面</strong>的优先级更高。</p>
+</li>
+<li>
+<p>需注意，若函数接受的参数中含有列表，<code class="highlight"><span class="nb">FilterRules</span></code> 返回的列表可能会被匹配为列表而非输入选项。</p>
+</li>
+<li>
+<p>此外，输入选项接受序列、列表和嵌套列表，后者为文档未指明的行为。默认选项也接受嵌套列表，在特定场景会报错，不影响功能。<code class="highlight"><span class="nb">FilterRules</span></code> 的两个参数接受列表和嵌套列表，返回列表。</p>
 </li>
 </ul>
-<h2 id="_2">继承</h2>
-<div class="highlight"><pre><span></span><code><span class="nv">correct</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
-<span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
-
-<span class="nv">wrong</span><span class="o">//</span><span class="nb">Options</span><span class="o">=</span>
-<span class="w">    </span><span class="p">{</span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">f</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="s">&quot;b0&quot;</span><span class="p">}</span><span class="o">;</span>
-
-<span class="nb">SetOptions</span><span class="p">[{</span><span class="nv">correct</span><span class="p">,</span><span class="nv">wrong</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="s">&quot;a0&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="nv">correct</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
-<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">correct</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
-
-<span class="nv">wrong</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="o">:=</span>
-<span class="w">    </span><span class="p">{</span><span class="nv">f</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">f</span><span class="p">]],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">],</span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]}</span><span class="o">;</span>
-
-<span class="nv">correct</span><span class="p">[]</span>
-
-<span class="nv">wrong</span><span class="p">[]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;b0&quot;</span><span class="p">}</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="s">&quot;a0&quot;</span><span class="p">,</span><span class="s">&quot;b0&quot;</span><span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>
-<p><code class="highlight"><span class="nb">FilterRules</span></code> 的两个参数接受（嵌套）列表模式，返回列表。</p>
-</li>
-<li>
-<p>函数 <code class="highlight"><span class="nv">g1</span></code> 和 <code class="highlight"><span class="nv">g2</span></code> 继承了 <code class="highlight"><span class="nv">f</span></code> 的默认选项，可用 <code class="highlight"><span class="nb">SetOptions</span></code> 改变默认选项的值。</p>
-</li>
-<li>
-<p>若改变了默认选项的值，需手动将其传递给 <code class="highlight"><span class="nv">f</span></code>：用 <code class="highlight"><span class="p">{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">g1</span><span class="p">}</span></code> 合并 <code class="highlight"><span class="nv">g1</span></code> 的输入选项与默认选项，用 <code class="highlight"><span class="nb">FilterRules</span></code> 过滤出 <code class="highlight"><span class="nv">f</span></code> 接受的选项。否则 <code class="highlight"><span class="nv">f</span></code> 调用自身的默认选项。</p>
-</li>
-<li>
-<p>需注意，若 <code class="highlight"><span class="nv">f</span></code> 接受的参数中含有列表，<code class="highlight"><span class="nb">FilterRules</span></code> 返回的列表可能会被匹配为列表而非输入选项，消歧义的写法为 <code class="highlight"><span class="nv">sequence</span><span class="o">@@</span><span class="nb">FilterRules</span></code>。</p>
-</li>
-</ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:nestlist">
-<p>接受（嵌套）列表为文档未指明的行为。默认选项也接受（嵌套）列表，在特定场景会报错，不影响功能。&#160;<a class="footnote-backref" href="#fnref:nestlist" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 <!-- Source file information -->
 
