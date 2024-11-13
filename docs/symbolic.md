@@ -19,7 +19,7 @@ title: Triangulated reality
 
 ---
 
-* [Implementing associative algebras in Mathematica](symbolic/alg.md)
+* [Implementing associative algebras in Mathematica](symbolic/algebra/algebra.md)
 
     * Lie algebras, Hopf algebras, and their representations via Mathematica.
 
