@@ -11,7 +11,7 @@ title: Triangulated reality
 
 * [Paclet and package](symbolic/paclet/paclet.md)
 
-* [Inheritance of options](symbolic/option/option.md)
+* [Optional Arguments](symbolic/option/option.md)
 
 * [File operations](symbolic/file/file.md)
 
@@ -75,7 +75,7 @@ title: Triangulated reality
 
 * [Lacia/Autocode](https://github.com/yuriever/Lacia-Autocode)
 
-    * A Mathematica paclet for converting between indexed variables and symbols.
+    * Code tools.
 
     * [Documentation](symbolic/Lacia-Autocode/doc.md)
 
