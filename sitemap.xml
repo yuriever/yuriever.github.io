@@ -41,11 +41,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://yuriever.github.io/symbolic/alg/</loc>
-         <lastmod>2024-11-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://yuriever.github.io/symbolic/Lacia-Autocode/doc/</loc>
          <lastmod>2024-11-13</lastmod>
          <changefreq>daily</changefreq>
@@ -97,6 +92,11 @@
     </url>
     <url>
          <loc>https://yuriever.github.io/symbolic/Yurie-MathForm/doc/</loc>
+         <lastmod>2024-11-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://yuriever.github.io/symbolic/algebra/algebra/</loc>
          <lastmod>2024-11-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
