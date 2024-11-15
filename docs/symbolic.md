@@ -67,12 +67,6 @@ title: Triangulated reality
 
     * [Designing idea](symbolic/Yurie-LaTeXTool/idea.md)
 
-* [Yurie/Index](https://github.com/yuriever/Yurie-Index)
-
-    * A Mathematica paclet for converting between indexed variables and symbols.
-
-    * [Documentation](symbolic/Yurie-Index/doc.md)
-
 * [Lacia/Autocode](https://github.com/yuriever/Lacia-Autocode)
 
     * Code tools.
