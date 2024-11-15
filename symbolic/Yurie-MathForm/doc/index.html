@@ -425,11 +425,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#texconvert" class="md-nav__link">
+    <span class="md-ellipsis">
+      TeXConvert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#texshow" class="md-nav__link">
     <span class="md-ellipsis">
       TeXShow
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="TeXShow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-of-texshow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options of texShow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -439,6 +463,21 @@
       Index
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-of-indexjoinindexsplit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options of indexJoin|indexSplit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -496,20 +535,9 @@
 <!-- Page content -->
 <h1 id="yuriemathform"><a href="https://github.com/yuriever/Yurie-MathForm">Yurie/MathForm</a></h1>
 <p>A Mathematica paclet for improving math layout.</p>
-<h2 id="texshow">TeXShow</h2>
+<h2 id="texconvert">TeXConvert</h2>
 <ul>
-<li>
-<p><code class="highlight"><span class="nv">texForm</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">texCopy</span></code> - copy the string from <code class="highlight"><span class="nv">texForm</span></code> and return the expression.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">texShow</span></code> - show the LaTeX of the expression.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
-</li>
+<li><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</li>
 </ul>
 <p><center></p>
 <table>
@@ -549,6 +577,22 @@
 </tbody>
 </table>
 <p></center></p>
+<h2 id="texshow">TeXShow</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">texForm</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">texCopy</span></code> - copy the string from <code class="highlight"><span class="nv">texForm</span></code> and return the expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">texShow</span></code> - show the LaTeX of the expression.</p>
+</li>
+</ul>
+<h3 id="options-of-texshow">Options of <code class="highlight"><span class="nv">texShow</span></code></h3>
+<ul>
+<li><strong>TODO</strong></li>
+</ul>
 <h2 id="index">Index</h2>
 <ul>
 <li>
@@ -590,8 +634,8 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Options of <code class="highlight"><span class="nv">indexJoin</span><span class="o">|</span><span class="nv">indexSplit</span></code></p>
+</ul>
+<h3 id="options-of-indexjoinindexsplit">Options of <code class="highlight"><span class="nv">indexJoin</span><span class="o">|</span><span class="nv">indexSplit</span></code></h3>
 <ul>
 <li>
 <p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code></p>
@@ -637,8 +681,6 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
 </code></pre></div>
-</li>
-</ul>
 </li>
 </ul>
 </li>
