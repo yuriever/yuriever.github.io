@@ -425,9 +425,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public" class="md-nav__link">
+  <a href="#texshow" class="md-nav__link">
     <span class="md-ellipsis">
-      Public
+      TeXShow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index
     </span>
   </a>
   
@@ -486,14 +495,20 @@
 
 <!-- Page content -->
 <h1 id="yuriemathform"><a href="https://github.com/yuriever/Yurie-MathForm">Yurie/MathForm</a></h1>
-<p>A Mathematica paclet for improving LaTeX conversion.</p>
-<h2 id="public">Public</h2>
+<p>A Mathematica paclet for improving math layout.</p>
+<h2 id="texshow">TeXShow</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">texForm</span></code> - postprocess the string from <code class="highlight"><span class="nb">TeXForm</span></code> by the rules in <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
+<p><code class="highlight"><span class="nv">texForm</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as a LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
+<p><code class="highlight"><span class="nv">texCopy</span></code> - copy the string from <code class="highlight"><span class="nv">texForm</span></code> and return the expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">texShow</span></code> - show the LaTeX of the expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">texSetMacro</span></code> - set the symbol as LaTeX macro and store the rule into <code class="highlight"><span class="nv">$texAssoc</span></code>.</p>
 </li>
 </ul>
 <p><center></p>
@@ -534,6 +549,100 @@
 </tbody>
 </table>
 <p></center></p>
+<h2 id="index">Index</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span><span class="o">|</span><span class="nv">indexize</span><span class="p">[{</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">}]</span></code> - join the variable and index into a symbol.</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span>
+</code></pre></div>
+</li>
+<li>
+<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Options of <code class="highlight"><span class="nv">indexJoin</span><span class="o">|</span><span class="nv">indexSplit</span></code></p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code></p>
+<ul>
+<li>
+<p>This option controls the format of indexed vairables. The supported option values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">Construct</span></code></li>
+<li><code class="highlight"><span class="nb">Subscript</span></code></li>
+<li><code class="highlight"><span class="nb">Superscript</span></code></li>
+</ul>
+</li>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code></p>
+<ul>
+<li>
+<p>This option controls the pattern of indices. The supported option values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">All</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
+</ul>
+</li>
+<li>
+<p>Example:</p>
+<p>Sometimes there can be conflict between variable and index, e.g.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
+</code></pre></div>
+<p>comparing with</p>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 <!-- Source file information -->
 
