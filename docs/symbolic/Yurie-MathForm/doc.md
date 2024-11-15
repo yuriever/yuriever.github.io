@@ -2,13 +2,7 @@
 
 A Mathematica paclet for improving math layout.
 
-## TeXShow
-
-* `#!wl texForm` - refine the string from `#!wl TeXForm`.
-
-* `#!wl texCopy` - copy the string from `#!wl texForm` and return the expression.
-
-* `#!wl texShow` - show the LaTeX of the expression.
+## TeXConvert
 
 * `#!wl texSetMacro` - set the symbol as LaTeX macro and store the rule into `#!wl $texAssoc`.
 
@@ -23,6 +17,18 @@ A Mathematica paclet for improving math layout.
 | `#!wl f[___List]` | `#!wl f[{a,b},{c,d}]` | `#!tex \f{a,b}{c,d}` |
 
 </center>
+
+## TeXShow
+
+* `#!wl texForm` - refine the string from `#!wl TeXForm`.
+
+* `#!wl texCopy` - copy the string from `#!wl texForm` and return the expression.
+
+* `#!wl texShow` - show the LaTeX of the expression.
+
+### Options of `#!wl texShow`
+
+* **TODO**
 
 ## Index
 
@@ -64,53 +70,53 @@ A Mathematica paclet for improving math layout.
         Out[] = z[1]+z[2]
         ```
 
-* Options of `#!wl indexJoin|indexSplit`
+### Options of `#!wl indexJoin|indexSplit`
 
-    * `#!wl "IndexPosition"->Construct`
+* `#!wl "IndexPosition"->Construct`
 
-        * This option controls the format of indexed vairables. The supported option values are
+    * This option controls the format of indexed vairables. The supported option values are
 
-            * `#!wl Construct`
-            * `#!wl Subscript`
-            * `#!wl Superscript`
+        * `#!wl Construct`
+        * `#!wl Subscript`
+        * `#!wl Superscript`
 
-        * Example:
+    * Example:
 
-            ``` wl
-            z1+z2//indexSplit[z,"IndexPosition"->Subscript]
-            ```
+        ``` wl
+        z1+z2//indexSplit[z,"IndexPosition"->Subscript]
+        ```
 
-            ``` wl
-            Out[] = Subscript[z,1]+Subscript[z,2]
-            ```
+        ``` wl
+        Out[] = Subscript[z,1]+Subscript[z,2]
+        ```
 
-    * `#!wl "IndexType"->All`
+* `#!wl "IndexType"->All`
 
-        * This option controls the pattern of indices. The supported option values are
+    * This option controls the pattern of indices. The supported option values are
 
-            * `#!wl All`
-            * `#!wl "PositiveInteger"`
-            * `#!wl "PositiveIntegerOrSingleLetter"`
-            * `#!wl _Symbol` - any function for string pattern matching
+        * `#!wl All`
+        * `#!wl "PositiveInteger"`
+        * `#!wl "PositiveIntegerOrSingleLetter"`
+        * `#!wl _Symbol` - any function for string pattern matching
 
-        * Example:
+    * Example:
 
-            Sometimes there can be conflict between variable and index, e.g.
+        Sometimes there can be conflict between variable and index, e.g.
 
-            ``` wl
-            zb1//indexSplit[{z,zb}]
-            ```
+        ``` wl
+        zb1//indexSplit[{z,zb}]
+        ```
 
-            ``` wl
-            Out[] = z[b1]
-            ```
+        ``` wl
+        Out[] = z[b1]
+        ```
 
-            comparing with
+        comparing with
 
-            ``` wl
-            zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
-            ```
+        ``` wl
+        zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
+        ```
 
-            ``` wl
-            Out[] = zb[1]
-            ```
+        ``` wl
+        Out[] = zb[1]
+        ```
