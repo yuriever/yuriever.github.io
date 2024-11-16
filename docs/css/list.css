@@ -1,4 +1,4 @@
-/*改变无序列表的标号*/
+/* 改变无序列表的标号 */
 article ul {
     list-style-type: disc !important;
 }

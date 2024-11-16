@@ -110,7 +110,7 @@ References:
     Out[] = {f[g[a]],f[g[b]],f[a],f[b],a,b}
     ```
 
-注意这里并不包含诸如 `#!wl g->a`的形变。若想实现这类形变，需启用 `#!wl Case|Replace` 的选项 `#!wl Heads->True`。另一种通用的方法是引入含有模式的延迟规则 `#!wl g[x_]:>a[x]`，此处模式 `#!wl x_` 用局部变量 `#!wl x` 指代 **Expr** 中的任意一个表达式，类似于 $\forall x\in M$。
+注意这里并不包含诸如 `#!wl g->a`的形变。若想实现这类形变，需启用 `#!wl Cases|Replace` 的选项 `#!wl Heads->True`。另一种通用的方法是引入含有模式的延迟规则 `#!wl g[x_]:>a[x]`，此处模式 `#!wl x_` 用局部变量 `#!wl x` 指代 **Expr** 中的任意一个表达式，类似于 $\forall x\in M$。
 
 !!! wl ""
 
