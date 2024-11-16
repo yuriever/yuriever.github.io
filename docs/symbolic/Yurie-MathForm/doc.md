@@ -2,9 +2,21 @@
 
 A Mathematica paclet for improving math layout.
 
-## TeXConvert
+* Due to [the known issue of `#!wl TeXForm`](https://mathematica.stackexchange.com/a/47740/86893), this paclet occupies `#!wl TraditionalForm`-definitions for better layout of `#!wl StandardForm` and `#!wl MF`.
 
-* `#!wl texSetMacro` - set the symbol as LaTeX macro and store the rule into `#!wl $texAssoc`.
+## MF
+
+* `#!wl MFString` - refine the string from `#!wl TeXForm`.
+
+* `#!wl MFStringCopy` - copy the string from `#!wl MFString` and return the expression.
+
+* `#!wl MF` - show the LaTeX of the expression.
+
+    * **TODO** Options of `#!wl MF`
+
+## MFDefine
+
+* `#!wl MFDefine` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
 
 <center>
 
@@ -18,23 +30,11 @@ A Mathematica paclet for improving math layout.
 
 </center>
 
-## TeXShow
-
-* `#!wl texForm` - refine the string from `#!wl TeXForm`.
-
-* `#!wl texCopy` - copy the string from `#!wl texForm` and return the expression.
-
-* `#!wl texShow` - show the LaTeX of the expression.
-
-### Options of `#!wl texShow`
-
-* **TODO**
-
 ## Index
 
 * `#!wl indexize[var_,index_]|indexize[{var_,index_}]` - join the variable and index into a symbol.
 
-    * Example:
+    !!! wl "Example"
 
         ``` wl
         indexize[z,1]
@@ -48,7 +48,7 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
 
-    * Example:
+    !!! wl "Example"
 
         ``` wl
         z[1]+z[2]//indexJoin[z]
@@ -58,9 +58,59 @@ A Mathematica paclet for improving math layout.
         Out[] = z1+z2
         ```
 
+    * `#!wl "IndexPosition"->Construct` - controls the format of indexed vairables.
+
+        !!! wl "Example"
+
+            ``` wl
+            z1+z2//indexSplit[z,"IndexPosition"->Subscript]
+            ```
+
+            ``` wl
+            Out[] = Subscript[z,1]+Subscript[z,2]
+            ```
+
+        * The supported values are
+
+            * `#!wl Construct`
+            * `#!wl Subscript`
+            * `#!wl Superscript`
+
+    * `#!wl "IndexType"->All` - controls the pattern of indices, and resolves possible conflicts between variable and index.
+
+        !!! wl "Example"
+
+            === "Correct"
+
+                ``` wl
+                zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
+                ```
+
+                ``` wl
+                Out[] = zb[1]
+                ```
+
+            === "Wrong"
+
+                ``` wl
+                zb1//indexSplit[{z,zb}]
+                ```
+
+                ``` wl
+                Out[] = z[b1]
+                ```
+
+        * The supported values are
+
+            * `#!wl All`
+            * `#!wl "PositiveInteger"`
+            * `#!wl "PositiveIntegerOrSingleLetter"`
+            * `#!wl _Symbol` - any function for string pattern matching
+
+
 * `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
 
-    * Example:
+    !!! wl "Example"
 
         ``` wl
         z1+z2//indexSplit[z]
@@ -70,53 +120,4 @@ A Mathematica paclet for improving math layout.
         Out[] = z[1]+z[2]
         ```
 
-### Options of `#!wl indexJoin|indexSplit`
-
-* `#!wl "IndexPosition"->Construct`
-
-    * This option controls the format of indexed vairables. The supported option values are
-
-        * `#!wl Construct`
-        * `#!wl Subscript`
-        * `#!wl Superscript`
-
-    * Example:
-
-        ``` wl
-        z1+z2//indexSplit[z,"IndexPosition"->Subscript]
-        ```
-
-        ``` wl
-        Out[] = Subscript[z,1]+Subscript[z,2]
-        ```
-
-* `#!wl "IndexType"->All`
-
-    * This option controls the pattern of indices. The supported option values are
-
-        * `#!wl All`
-        * `#!wl "PositiveInteger"`
-        * `#!wl "PositiveIntegerOrSingleLetter"`
-        * `#!wl _Symbol` - any function for string pattern matching
-
-    * Example:
-
-        Sometimes there can be conflict between variable and index, e.g.
-
-        ``` wl
-        zb1//indexSplit[{z,zb}]
-        ```
-
-        ``` wl
-        Out[] = z[b1]
-        ```
-
-        comparing with
-
-        ``` wl
-        zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
-        ```
-
-        ``` wl
-        Out[] = zb[1]
-        ```
+    * The options are the same as `#!wl indexJoin`.
