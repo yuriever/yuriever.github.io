@@ -1,40 +1,40 @@
-span.curtain a.external,
-span.curtain a.external:visited,
-span.curtain a.extiw,
-span.curtain a.extiw:visited {
+span.blackbox a.external,
+span.blackbox a.external:visited,
+span.blackbox a.extiw,
+span.blackbox a.extiw:visited {
     color: #252525
 }
 
-.curtain,
-.curtain a,
-a .curtain,
-.curtain a.new {
+.blackbox,
+.blackbox a,
+a .blackbox,
+.blackbox a.new {
     background-color: #252525;
     color: #252525;
     text-shadow: none
 }
 
-body:not(.curtain_toggle_on) .curtain:hover,
-body:not(.curtain_toggle_on) .curtain:active,
-body:not(.curtain_toggle_on) .curtain.off {
+body:not(.blackbox_toggle_on) .blackbox:hover,
+body:not(.blackbox_toggle_on) .blackbox:active,
+body:not(.blackbox_toggle_on) .blackbox.off {
     transition: color .13s linear;
     color: #fff
 }
 
-body:not(.curtain_toggle_on) .curtain:hover a,
-body:not(.curtain_toggle_on) a:hover .curtain,
-body:not(.curtain_toggle_on) .curtain.off a,
-body:not(.curtain_toggle_on) a:hover .curtain.off {
+body:not(.blackbox_toggle_on) .blackbox:hover a,
+body:not(.blackbox_toggle_on) a:hover .blackbox,
+body:not(.blackbox_toggle_on) .blackbox.off a,
+body:not(.blackbox_toggle_on) a:hover .blackbox.off {
     transition: color .13s linear;
     color: #add8e6
 }
 
-body:not(.curtain_toggle_on) .curtain.off .new,
-body:not(.curtain_toggle_on) .curtain.off .new:hover,
-body:not(.curtain_toggle_on) .new:hover .curtain.off,
-body:not(.curtain_toggle_on) .curtain.off .new,
-body:not(.curtain_toggle_on) .curtain.off .new:hover,
-body:not(.curtain_toggle_on) .new:hover .curtain.off {
+body:not(.blackbox_toggle_on) .blackbox.off .new,
+body:not(.blackbox_toggle_on) .blackbox.off .new:hover,
+body:not(.blackbox_toggle_on) .new:hover .blackbox.off,
+body:not(.blackbox_toggle_on) .blackbox.off .new,
+body:not(.blackbox_toggle_on) .blackbox.off .new:hover,
+body:not(.blackbox_toggle_on) .new:hover .blackbox.off {
     transition: color .13s linear;
     color: #ba0000
 }

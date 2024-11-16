@@ -44,7 +44,7 @@ A Mathematica paclet for improving math layout.
         Out[] = z1
         ```
 
-    * This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
+    This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
 
 * `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
 
