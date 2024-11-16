@@ -90,7 +90,7 @@ A Mathematica paclet for improving math layout.
                 Out[] = zb[1]
                 ```
 
-        === "Wrong"
+        === "Incorrect"
 
             !!! wl "Example"
 

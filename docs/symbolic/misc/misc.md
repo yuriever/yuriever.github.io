@@ -5,9 +5,9 @@
 `#!wl ReplaceAll` 的策略是从外到内、广度优先的，匹配完的子表达式不再被匹配；
 `#!wl Replace` 访问表达式的策略是从内到外、深度优先的。
 此外，`#!wl Replace` 的默认选项为 `#!wl Heads->False`。
-例如
+例如：
 
-!!! wl ""
+!!! wl "Example"
 
     ``` wl
     ReplaceAll[f[f[x]],f[x_]:>g[x]]
@@ -29,9 +29,9 @@
     Out[] = g[g[x]]
     ```
 
-对于 `#!wl ReplaceAll` 而言，一方面，规则 `#!wl {x_head:>x,...}` 可以防止 `#!wl Head` 为 `#!wl head` 的子表达式被匹配，称为哑规则 (dummy rule)；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。例如
+对于 `#!wl ReplaceAll` 而言，一方面，规则 `#!wl {x_head:>x,...}` 可以防止 `#!wl Head` 为 `#!wl head` 的子表达式被匹配，称为哑规则 (dummy rule)；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。例如：
 
-!!! wl ""
+!!! wl "Example"
 
     ``` wl
     ReplaceAll[{f[x],x},{x_f:>x,x->y}]
@@ -41,9 +41,9 @@
     Out[] = {f[x],y}
     ```
 
-`#!wl With|ReplaceAll` 等函数可将表达式注入到带有 `#!wl HoldAll` 属性的函数中。其中，注入规则 (injection pattern) 是一个比较灵活的技巧，
+`#!wl With|ReplaceAll` 等函数可将表达式注入到带有 `#!wl HoldAll` 属性的函数中。其中，注入模式 (injector pattern) 是一个比较灵活的技巧。例如：
 
-!!! wl ""
+!!! wl "Example"
 
     ``` wl
     ReplaceAll[Hold[1+1],Hold[x_]:>Hold[x,x]]
@@ -53,9 +53,9 @@
     Out[] = Hold[1+1,1+1]
     ```
 
-`#!wl RuleCondition` 是一个常用且稳定的无文档函数，可实现替换时的计算 (in-place evaluation)。例如
+`#!wl RuleCondition` 是一个常用且稳定的无文档函数，可实现替换时的计算 (in-place evaluation)。例如：
 
-!!! wl ""
+!!! wl "Example"
 
     ``` wl
     ReplaceAll[Hold[f[x]],f[x_]:>Identity[x]]

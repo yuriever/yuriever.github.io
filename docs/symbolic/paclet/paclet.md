@@ -4,8 +4,6 @@ References:
 
 * [Paclets and paclet development](https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb) `tutorial/Paclets`
 
----
-
 ## Paclet structure
 
 Syntactic dependence:
@@ -16,52 +14,54 @@ Syntactic dependence:
 
 </center>
 
-File structure:
+!!! wl "File structure"
 
-``` text
-PacletInfo.wl
-Kernel/
-    Package.wl
-    Package/
-        Context1.wl
-        Context2.wl
-    Constant.wl
-    Variable.wl
-    Common.wl
-    Usage.wl
+    ``` text
+    PacletInfo.wl
+    Kernel/
+        Package.wl
+        Package/
+            Context1.wl
+            Context2.wl
+        Constant.wl
+        Variable.wl
+        Common.wl
+        Usage.wl
+        ...
     ...
-...
-```
+    ```
 
 ## Package structure
 
-``` wl title="p.wl"
-(*reset $Context|$ContextPath to Package`.*)
-BeginPackage["Package`"];
+!!! wl "p.wl"
 
-(*declare public symbols.*)
-Get["Package`Usage`"];
-
-(*load common codes.*)
-Get["Package`Common`"];
-
-(*load definitions of public symbols.*)
-Get["Package`Context1`"];
-Get["Package`Context2`"];
-
-(*reset $Context to Package`Private`.*)
-Begin["`Private`"];
-
-(*some codes here.*)
-
-(*restore $Context to Package`.*)
-End[];
-
-(*restore $Context|$ContextPath to the values before BeginPackage;*)
-(*prepends Package` to $ContextPath.*)
-EndPackage[];
-```
-
+    ``` wl
+    (*reset $Context|$ContextPath to Package`.*)
+    BeginPackage["Package`"];
+    
+    (*declare public symbols.*)
+    Get["Package`Usage`"];
+    
+    (*load common codes.*)
+    Get["Package`Common`"];
+    
+    (*load definitions of public symbols.*)
+    Get["Package`Context1`"];
+    Get["Package`Context2`"];
+    
+    (*reset $Context to Package`Private`.*)
+    Begin["`Private`"];
+    
+    (*some codes here.*)
+    
+    (*restore $Context to Package`.*)
+    End[];
+    
+    (*restore $Context|$ContextPath to the values before BeginPackage;*)
+    (*prepends Package` to $ContextPath.*)
+    EndPackage[];
+    ```
+    
 ## Symbol types
 
 * Constant - public/private constants.
