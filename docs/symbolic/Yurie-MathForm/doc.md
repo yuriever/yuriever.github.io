@@ -78,9 +78,9 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "IndexType"->All` - controls the pattern of indices, and resolves possible conflicts between variable and index.
 
-        !!! wl "Example"
+        === "Correct"
 
-            === "Correct"
+            !!! wl "Example"
 
                 ``` wl
                 zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
@@ -90,7 +90,9 @@ A Mathematica paclet for improving math layout.
                 Out[] = zb[1]
                 ```
 
-            === "Wrong"
+        === "Wrong"
+
+            !!! wl "Example"
 
                 ``` wl
                 zb1//indexSplit[{z,zb}]
@@ -106,7 +108,6 @@ A Mathematica paclet for improving math layout.
             * `#!wl "PositiveInteger"`
             * `#!wl "PositiveIntegerOrSingleLetter"`
             * `#!wl _Symbol` - any function for string pattern matching
-
 
 * `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
 

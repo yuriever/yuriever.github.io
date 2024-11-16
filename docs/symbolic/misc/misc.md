@@ -7,59 +7,67 @@
 此外，`#!wl Replace` 的默认选项为 `#!wl Heads->False`。
 例如
 
-``` wl
-ReplaceAll[f[f[x]],f[x_]:>g[x]]
+!!! wl ""
 
-ReplaceAll[f[f[x]],f->g]
+    ``` wl
+    ReplaceAll[f[f[x]],f[x_]:>g[x]]
 
-Replace[f[f[x]],f[x_]:>g[x],All]
+    ReplaceAll[f[f[x]],f->g]
 
-Replace[f[f[x]],f->g,All,Heads->True]
-```
+    Replace[f[f[x]],f[x_]:>g[x],All]
 
-``` wl
-Out[] = g[f[x]]
+    Replace[f[f[x]],f->g,All,Heads->True]
+    ```
 
-Out[] = g[g[x]]
+    ``` wl
+    Out[] = g[f[x]]
 
-Out[] = g[g[x]]
+    Out[] = g[g[x]]
 
-Out[] = g[g[x]]
-```
+    Out[] = g[g[x]]
+
+    Out[] = g[g[x]]
+    ```
 
 对于 `#!wl ReplaceAll` 而言，一方面，规则 `#!wl {x_head:>x,...}` 可以防止 `#!wl Head` 为 `#!wl head` 的子表达式被匹配，称为哑规则 (dummy rule)；另一方面，其余的规则应避免此类不改变表达式的行为，以防止子表达式被遮蔽。例如
 
-``` wl
-ReplaceAll[{f[x],x},{x_f:>x,x->y}]
-```
+!!! wl ""
 
-``` wl
-Out[] = {f[x],y}
-```
+    ``` wl
+    ReplaceAll[{f[x],x},{x_f:>x,x->y}]
+    ```
+
+    ``` wl
+    Out[] = {f[x],y}
+    ```
 
 `#!wl With|ReplaceAll` 等函数可将表达式注入到带有 `#!wl HoldAll` 属性的函数中。其中，注入规则 (injection pattern) 是一个比较灵活的技巧，
 
-``` wl
-ReplaceAll[Hold[1+1],Hold[x_]:>Hold[x,x]]
-```
+!!! wl ""
 
-``` wl
-Out[] = Hold[1+1,1+1]
-```
+    ``` wl
+    ReplaceAll[Hold[1+1],Hold[x_]:>Hold[x,x]]
+    ```
+
+    ``` wl
+    Out[] = Hold[1+1,1+1]
+    ```
 
 `#!wl RuleCondition` 是一个常用且稳定的无文档函数，可实现替换时的计算 (in-place evaluation)。例如
 
-``` wl
-ReplaceAll[Hold[f[x]],f[x_]:>Identity[x]]
+!!! wl ""
 
-ReplaceAll[Hold[f[x]],f[x_]:>RuleCondition@Identity[x]]
-```
+    ``` wl
+    ReplaceAll[Hold[f[x]],f[x_]:>Identity[x]]
 
-``` wl
-Out[] = Hold[Identity[x]]
+    ReplaceAll[Hold[f[x]],f[x_]:>RuleCondition@Identity[x]]
+    ```
 
-Out[] = Hold[x]
-```
+    ``` wl
+    Out[] = Hold[Identity[x]]
+
+    Out[] = Hold[x]
+    ```
 
 ## Decoupling
 
@@ -75,7 +83,7 @@ Out[] = Hold[x]
 
 ## Set in package
 
-当 `Set` 出现在扩展包中时，需注意相关符号在扩展包多次被调用后的状态，或在定义前清除原始值。
+当 `#!wl Set` 出现在扩展包中时，需注意相关符号在扩展包多次被调用后的状态，或在定义前清除原始值。
 
 ## Public variable
 

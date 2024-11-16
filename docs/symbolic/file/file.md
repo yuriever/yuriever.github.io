@@ -15,19 +15,19 @@
 
 </center>
 
-`#!wl FileNameSplit[file_]` - split the file path into a list of path elements.
+* `#!wl FileNameSplit[file_]` - split the file path into a list of path elements.
 
-`#!wl FileBaseName[file_]` - return the file name.
+* `#!wl FileBaseName[file_]` - return the file name.
 
-`#!wl FileExtension[file_]` - return the file extension.
+* `#!wl FileExtension[file_]` - return the file extension.
 
-`#!wl FileNameTake|FileNameDrop[file_]` - `#!wl Take|Drop` for file path.
+* `#!wl FileNameTake|FileNameDrop[file_]` - `#!wl Take|Drop` for file path.
 
-`#!wl DirectoryName[file_]` - return the directory path.
+* `#!wl DirectoryName[file_]` - return the directory path.
 
 ---
 
-`#!wl FileNameJoin[list_]` - join the list of path elements into a file path according to the operating system.
+* `#!wl FileNameJoin[list_]` - join the list of path elements into a file path according to the operating system.
 
 ## File operations
 
@@ -43,46 +43,46 @@
 
 </center>
 
-`#!wl FileExistsQ[file_]` - test whether a file exists.
+* `#!wl FileExistsQ[file_]` - test whether a file exists.
 
-`#!wl FileType[file_]` - return `#!wl File|Directory` or `#!wl None` if the file does not exist.
+* `#!wl FileType[file_]` - return `#!wl File|Directory` or `#!wl None` if the file does not exist.
 
-`#!wl FileFormat[file_]` - try to return the file type.
+* `#!wl FileFormat[file_]` - try to return the file type.
 
-`#!wl DirectoryQ[file_]` - return `#!wl True` if the input is an existing directory, and return `#!wl False` if the input is not a directory or the directory does not exist.
+* `#!wl DirectoryQ[file_]` - return `#!wl True` if the input is an existing directory, and return `#!wl False` if the input is not a directory or the directory does not exist.
 
-`#!wl ParentDirectory[dir_]` - check existence of the directory and and return the parent directory.
+* `#!wl ParentDirectory[dir_]` - check existence of the directory and and return the parent directory.
 
 ---
 
-`#!wl CreateFile|DeleteFile|CopyFile|RenameFile[file_]`
+* `#!wl CreateFile|DeleteFile|CopyFile|RenameFile[file_]`
 
-`#!wl CreateDirectory|DeleteDirectory|CopyDirectory|RenameDirectory[dir_]`
+* `#!wl CreateDirectory|DeleteDirectory|CopyDirectory|RenameDirectory[dir_]`
 
-`#!wl FileNames[forms_,dirs_,depth_]` - return a list of file paths in the directories.
+* `#!wl FileNames[forms_,dirs_,depth_]` - return a list of file paths in the directories.
 
-`#!wl FileSystemMap|FileSystemScan[f_,dir_]` - `#!wl Map|Scan` for files.
+* `#!wl FileSystemMap|FileSystemScan[f_,dir_]` - `#!wl Map|Scan` for files.
 
-`#!wl FileSystemTree[dir_]` - return the file tree.
+* `#!wl FileSystemTree[dir_]` - return the file tree.
 
 ## Directories
 
-`#!wl NotebookDirectory[]` - current notebook directory.
+* `#!wl NotebookDirectory[]` - current notebook directory.
 
-`#!wl $HomeDirectory` - home directory.
+* `#!wl $HomeDirectory` - home directory.
 
-`#!wl $TemporaryDirectory` - system temporary directory.
+* `#!wl $TemporaryDirectory` - system temporary directory.
 
-`#!wl $UserBaseDirectory` - directory for user-specific add-on files.
+* `#!wl $UserBaseDirectory` - directory for user-specific add-on files.
 
-`#!wl $UserBasePacletsDirectory` - directory for user-specific paclet files.
+* `#!wl $UserBasePacletsDirectory` - directory for user-specific paclet files.
 
-`#!wl $Path` - the list of directories to find an external file.
+* `#!wl $Path` - the list of directories to find an external file.
 
 ---
 
-`#!wl Directory[]` - return the working directory.
+* `#!wl Directory[]` - return the working directory.
 
-`#!wl SetDirectory[dir_]` - set the working directory.
+* `#!wl SetDirectory[dir_]` - set the working directory.
 
-`#!wl ResetDirectory[]` - revert to the previous working directory.
+* `#!wl ResetDirectory[]` - revert to the previous working directory.

@@ -55,24 +55,28 @@ There are two styles of implementation:
 
 * `#!wl DownValues` - `#!wl cluster` is the `#!wl UpValues` of the `#!wl star`, and `#!wl planet` is the `#!wl DownValues` of the `#!wl star`.
 
-    ``` wl
-    clusterOf[star1] ^= cluster;
+    !!! wl ""
 
-    star1[planet1] = {};
-    
-    star1[planet2] = {};
+        ``` wl
+        clusterOf[star1] ^= cluster;
 
-    ...
-    ```
+        star1[planet1] = {};
+        
+        star1[planet2] = {};
+
+        ...
+        ```
 
 * `#!wl Association` - the data is stored into nested associations.
 
-    ``` wl
-    cluster[<|
-        star1-><|planet1->{},planet2->{},...|>,
-        star2-><|planet1->{},planet2->{},...|>,
-        ...
-    |>]
-    ```
+    !!! wl ""
+
+        ``` wl
+        cluster[<|
+            star1-><|planet1->{},planet2->{},...|>,
+            star2-><|planet1->{},planet2->{},...|>,
+            ...
+        |>]
+        ```
 
 We choose the latter since there are several advantages: `#!wl Association` is immutable and is faster to access, consumes less memory, and requires no symbol management.

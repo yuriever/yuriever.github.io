@@ -18,7 +18,7 @@ LaTeX tools.
 
         * accepts `#!wl True` of `#!wl False`;
 
-        * Example:
+        !!! wl "Example"
 
             === "After"
 

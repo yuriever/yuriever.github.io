@@ -6,18 +6,22 @@
 
 以下称 `#!wl OptionsPattern[]` 为输入选项，称 `#!wl Options[]` 为默认选项。例如：
 
-``` wl
-child//Options = {"a"->0};
+!!! wl ""
 
-child[OptionsPattern[]] :=
-    OptionValue["a"];
+    ``` wl
+    child//Options = {"a"->0};
+    
+    child[OptionsPattern[]] :=
+        OptionValue["a"];
+    ```
 
-child[{{"a"->1,"a"->2}}]
-```
+    ``` wl
+    child[{{"a"->1,"a"->2}}]
+    ```
 
-``` wl
-Out[] = 1
-```
+    ``` wl
+    Out[] = 1
+    ```
 
 ## 选项的继承
 
@@ -25,107 +29,123 @@ Out[] = 1
 
 先看一个错误例子：首先定义如下的函数 `#!wl parent`，
 
-``` wl
-parent//Options = {
-    Splice@Options@child,
-    "b"->x
-};
+!!! wl ""
 
-parent[opts:OptionsPattern[]] :=
-    child@FilterRules[{opts},Options[child]];
-```
+    ``` wl
+    parent//Options = {
+        Splice@Options@child,
+        "b"->x
+    };
+    
+    parent[opts:OptionsPattern[]] :=
+        child@FilterRules[{opts},Options[child]];
+    ```
 
 此处 `#!wl FilterRules` 会过滤出 `#!wl child` 接受的选项。若用 `#!wl SetOptions` 更新 `#!wl parent` 的默认选项，可以发现该更新并未正确传递给 `#!wl child`，
 
-``` wl
-SetOptions[parent,"a"->1]
+!!! wl ""
 
-parent[]
-```
+    ``` wl
+    SetOptions[parent,"a"->1]
+    
+    parent[]
+    ```
 
-``` wl
-Out[] = {a->1,b->x}
+    ``` wl
+    Out[] = {a->1,b->x}
 
-Out[] = 0
-```
+    Out[] = 0
+    ```
 
 其原因在于键 `#!wl "a"` 并未出现在 `#!wl parent` 的输入选项中，因此 `#!wl child` 调用了自身的默认选项 `#!wl "a"->0`。
 
 正确的方法为
 
-``` wl
-parent//ClearAll;
+!!! wl ""
 
-parent//Options = {
-    Splice@Options@child,
-    "b"->x
-};
-
-parent[opts:OptionsPattern[]] :=
-    child@FilterRules[{opts,Options@parent},Options[child]];
-```
+    ``` wl
+    parent//ClearAll;
+    
+    parent//Options = {
+        Splice@Options@child,
+        "b"->x
+    };
+    
+    parent[opts:OptionsPattern[]] :=
+        child@FilterRules[{opts,Options@parent},Options[child]];
+    ```
 
 此处用 `#!wl {opts,Options@parent}` 手动合并了 `#!wl parent` 的输入选项与默认选项，再将其传递给 `#!wl child`。
 
-``` wl
-SetOptions[parent,"a"->1]
+!!! wl ""
 
-parent[]
-```
+    ``` wl
+    SetOptions[parent,"a"->1]
+    
+    parent[]
+    ```
 
-``` wl
-Out[] = {a->1,b->x}
+    ``` wl
+    Out[] = {a->1,b->x}
 
-Out[] = 1
-```
+    Out[] = 1
+    ```
 
 ## 非局域选项的指定
 
 上述继承的用法有时稍显笨重，特别是在顶层函数仅用来分离参数与选项，或检测参数类型，而非实现核心功能的时候。例如：
 
-``` wl
-foo//Options = {"a"->0};
+!!! wl ""
 
-foo[args___] :=
-    With[ {sep = ArgumentsOptions[foo[args],{1,2},<|"Head"->HoldComplete,"OptionsMode"->"Shortest"|>]},
-        ifoo[sep]/;!FailureQ[sep]
-    ];
-```
+    ``` wl
+    foo//Options = {"a"->0};
 
-``` wl
-foo[x,"a"->1]
+    foo[args___] :=
+        With[ {sep = ArgumentsOptions[foo[args],{1,2},<|"Head"->HoldComplete,"OptionsMode"->"Shortest"|>]},
+            ifoo[sep]/;!FailureQ[sep]
+        ];
+    ```
 
-foo[x,"b"->y]
-```
+    ``` wl
+    foo[x,"a"->1]
 
-``` wl
-Out[] = ifoo[{HoldComplete[x],HoldComplete["a"->1]}]
+    foo[x,"b"->y]
+    ```
 
-Out[] = ifoo[{HoldComplete[x,"b"->y],HoldComplete[]}]
-```
+    ``` wl
+    Out[] = ifoo[{HoldComplete[x],HoldComplete["a"->1]}]
+
+    Out[] = ifoo[{HoldComplete[x,"b"->y],HoldComplete[]}]
+    ```
 
 可见 `#!wl "a"->1` 被正确的识别为了选项，而未出现在 `#!wl foo` 的默认选项中的 `#!wl "b"->y` 被识别为了参数。接下来实现 `#!wl ifoo` 的部分功能，
 
-``` wl
-ifoo[{HoldComplete[x_],HoldComplete[opts___]}] :=
-    x+OptionValue[foo,{opts},"a"];
-```
+!!! wl ""
+
+    ``` wl
+    ifoo[{HoldComplete[x_],HoldComplete[opts___]}] :=
+        x+OptionValue[foo,{opts},"a"];
+    ```
 
 此处 `#!wl OptionValue[foo,{opts},"a"]` 自动接受了 `#!wl foo` 的输入选项与默认选项。例如：
 
-``` wl
-SetOptions[foo,"a"->1];
+!!! wl ""
 
-foo[x]
+    ``` wl
+    SetOptions[foo,"a"->1];
+    ```
 
-foo[x,"a"->0]
-```
+    ``` wl
+    foo[x]
 
-``` wl
-Out[] = 1+x
+    foo[x,"a"->0]
+    ```
 
-Out[] = x
-```
+    ``` wl
+    Out[] = 1+x
+
+    Out[] = x
+    ```
 
 类似的，`#!wl OptionsPattern[foo]` 亦可以实现此种非局域的选项指定。
 

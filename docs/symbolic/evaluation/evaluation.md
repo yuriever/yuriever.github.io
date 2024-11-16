@@ -63,58 +63,68 @@ References:
 
 形变切方向的类似物为规则 `#!wl Rule (->)`。表达式的子表达式的集合可以实现为
 
-``` wl
-subexpr[expr_]:=Cases[expr,_,All];
-```
+!!! wl ""
+
+    ``` wl
+    subexpr[expr_]:=Cases[expr,_,All];
+    ```
 
 例如 `#!wl expr0=f[g[h]]` 的子表达式为，
 
-``` wl
-list=subexpr[expr0]
-```
+!!! wl ""
 
-``` wl
-Out[] = {h,g[h],f[g[h]]}
-```
+    ``` wl
+    list=subexpr[expr0]
+    ```
+
+    ``` wl
+    Out[] = {h,g[h],f[g[h]]}
+    ```
 
 由于 **Expr** 过大，将其简单截断为 `#!wl exprlist={a,b}`。改变表达式 `#!wl expr0` 的规则的集合可以实现为
 
-``` wl
-exprlist={a,b};
+!!! wl ""
 
-rulelist=Outer[Rule,list,exprlist]//Flatten
-```
+    ``` wl
+    exprlist={a,b};
 
-``` wl
-Out[] = {h->a,h->b,g[h]->a,g[h]->b,f[g[h]]->a,f[g[h]]->b}
-```
+    rulelist=Outer[Rule,list,exprlist]//Flatten
+    ```
+
+    ``` wl
+    Out[] = {h->a,h->b,g[h]->a,g[h]->b,f[g[h]]->a,f[g[h]]->b}
+    ```
 
 函数 `#!wl Replace[expr_,rule_]` 会搜索 `#!wl expr_` 中匹配 `#!wl rule_` 的子表达式并进行替换，可实现表达式的形变，`#!wl expr0` 的全部形变为 [^neighbor]
 
-``` wl
-Table[
-    Replace[expr0,rule,All],
-    {rule,rulelist}
-]
-```
+!!! wl ""
 
-``` wl
-Out[] = {f[g[a]],f[g[b]],f[a],f[b],a,b}
-```
+    ``` wl
+    Table[
+        Replace[expr0,rule,All],
+        {rule,rulelist}
+    ]
+    ```
+
+    ``` wl
+    Out[] = {f[g[a]],f[g[b]],f[a],f[b],a,b}
+    ```
 
 注意这里并不包含诸如 `#!wl g->a`的形变。若想实现这类形变，需启用 `#!wl Case|Replace` 的选项 `#!wl Heads->True`。另一种通用的方法是引入含有模式的延迟规则 `#!wl g[x_]:>a[x]`，此处模式 `#!wl x_` 用局部变量 `#!wl x` 指代 **Expr** 中的任意一个表达式，类似于 $\forall x\in M$。
 
-``` wl
-Replace[expr0,g->a,All,Heads->True]
+!!! wl ""
 
-Replace[expr0,g[x_]:>a[x],All]
-```
+    ``` wl
+    Replace[expr0,g->a,All,Heads->True]
 
-``` wl
-Out[] = f[a[h]]
+    Replace[expr0,g[x_]:>a[x],All]
+    ```
 
-Out[] = f[a[h]]
-```
+    ``` wl
+    Out[] = f[a[h]]
+
+    Out[] = f[a[h]]
+    ```
 
 模式 `#!wl Pattern[name_,patt_]` 提供了全称量词的类似物。含有模式的延迟规则 `#!wl patt_:>target_` 可作用到 **Expr** 中的每一个表达式上，这类似于矢量场 $f(x)$ 在 $M$ 的每点指派无穷小形变。
 
@@ -144,51 +154,49 @@ x \mapsto x+ f(x), \, \forall x\in M
 
 标准计算序列在特定场景并不合适，例如上面的子表达式一例中，如果表达式含有可被计算的部分，结果为
 
-``` wl
-f=g;
+!!! wl ""
 
-subexpr[f[1+1]]
-```
+    ``` wl
+    f=g;
 
-``` wl
-Out[] = {2,g[2]}
-```
+    subexpr[f[1+1]]
+    ```
+
+    ``` wl
+    Out[] = {2,g[2]}
+    ```
 
 这是因为在执行标准计算序列时，先计算 `#!wl f=g`，再计算 `#!wl g[1+1]=g[2]`，最后计算 `#!wl subexpr[g[2]]={2,g[2]}`。
 
 若想得到 `#!wl f[1+1]` 的子表达式需要修改计算顺序，可用 `#!wl HoldFirst` 属性实现这一点：
 
-``` wl
-subexpr2//Attributes={HoldFirst};
+!!! wl ""
 
-subexpr2[expr_]:=Cases[Unevaluated@expr,subexpr_:>HoldForm@subexpr,All];
-```
+    ``` wl
+    subexpr2//Attributes={HoldFirst};
+
+    subexpr2[expr_]:=Cases[Unevaluated@expr,subexpr_:>HoldForm@subexpr,All];
+    ```
 
 带有 `#!wl HoldFirst` 属性的 `#!wl subexpr2` 会保持输入 `#!wl f[1+1]` 不变，直接匹配 `#!wl subexpr2` 的下值。
 
-``` wl
-subexpr2[f[1+1]]
-```
+!!! wl ""
 
-``` wl
-Out[] = {1,1,1+1,f[1+1]}
-```
+    ``` wl
+    subexpr2[f[1+1]]
+    ```
+
+    ``` wl
+    Out[] = {1,1,1+1,f[1+1]}
+    ```
 
 Mathematica 提供了若干调整计算顺序的内置函数，相关的计算称为非标准计算 (non-standard evaluation)，例如
 
 * `#!wl Hold` family
 
-    ``` wl
-    {Hold,HoldAll,HoldAllComplete,HoldComplete,HoldFirst,HoldForm,HoldPattern,HoldRest,NHoldAll,NHoldFirst,NHoldRest,ReleaseHold,SequenceHold}
-    ```
-
 * `#!wl Inactive` family
 
-    ``` wl
-    {Activate,Inactive,Inactivate,IgnoringInactive}
-    ```
-
-* `#!wl Evaluate` vs. `#!wl Unevaluated`
+* `#!wl Evaluate|Unevaluated`
 
 * `#!wl Verbatim`
 

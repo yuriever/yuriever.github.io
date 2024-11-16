@@ -8,6 +8,8 @@
 
 * [TikZ](workbench/test/tikz.md)
 
+* [WL box](workbench/test/wlbox.md)
+
 <!-- ## Dev
 
 * [Website development](workbench/dev/web-dev.md)
