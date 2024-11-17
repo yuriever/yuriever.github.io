@@ -63,7 +63,7 @@ References:
 
 形变切方向的类似物为规则 `#!wl Rule (->)`。表达式的子表达式的集合可以实现为
 
-!!! wl ""
+!!! code
 
     ``` wl
     subexpr[expr_]:=Cases[expr,_,All];
@@ -71,7 +71,7 @@ References:
 
 例如 `#!wl expr0=f[g[h]]` 的子表达式为，
 
-!!! wl ""
+!!! code
 
     ``` wl
     list=subexpr[expr0]
@@ -83,7 +83,7 @@ References:
 
 由于 **Expr** 过大，将其简单截断为 `#!wl exprlist={a,b}`。改变表达式 `#!wl expr0` 的规则的集合可以实现为
 
-!!! wl ""
+!!! code
 
     ``` wl
     exprlist={a,b};
@@ -97,7 +97,7 @@ References:
 
 函数 `#!wl Replace[expr_,rule_]` 会搜索 `#!wl expr_` 中匹配 `#!wl rule_` 的子表达式并进行替换，可实现表达式的形变，`#!wl expr0` 的全部形变为 [^neighbor]
 
-!!! wl ""
+!!! code
 
     ``` wl
     Table[
@@ -112,7 +112,7 @@ References:
 
 注意这里并不包含诸如 `#!wl g->a` 的形变。若想实现这类形变，需启用 `#!wl Cases|Replace` 的选项 `#!wl Heads->True`。另一种通用的方法是引入含有模式的延迟规则 `#!wl g[x_]:>a[x]`，此处模式 `#!wl x_` 用局部变量 `#!wl x` 指代 **Expr** 中的任意一个表达式，类似于 $\forall x\in M$。
 
-!!! wl ""
+!!! code
 
     ``` wl
     Replace[expr0,g->a,All,Heads->True]
@@ -154,7 +154,7 @@ x \mapsto x+ f(x), \, \forall x\in M
 
 标准计算序列在特定场景并不合适，例如上面的子表达式一例中，如果表达式含有可被计算的部分，结果为
 
-!!! wl ""
+!!! code
 
     ``` wl
     f=g;
@@ -170,7 +170,7 @@ x \mapsto x+ f(x), \, \forall x\in M
 
 若想得到 `#!wl f[1+1]` 的子表达式需要修改计算顺序，可用 `#!wl HoldFirst` 属性实现这一点：
 
-!!! wl ""
+!!! code
 
     ``` wl
     subexpr2//Attributes={HoldFirst};
@@ -180,7 +180,7 @@ x \mapsto x+ f(x), \, \forall x\in M
 
 带有 `#!wl HoldFirst` 属性的 `#!wl subexpr2` 会保持输入 `#!wl f[1+1]` 不变，直接匹配 `#!wl subexpr2` 的下值。
 
-!!! wl ""
+!!! code
 
     ``` wl
     subexpr2[f[1+1]]

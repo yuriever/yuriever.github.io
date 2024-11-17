@@ -10,15 +10,17 @@ Code tools.
 
     * An input cell with more than one outputs will be reported as an error, since there is no syntactical way to separate the input cell. For example,
 
-        ``` wl
-        a
-        b
-        ```
+        !!! code
 
-        ``` wl
-        Out[] = a
-        Out[] = b
-        ```
+            ``` wl
+            a
+            b
+            ```
+
+            ``` wl
+            Out[] = a
+            Out[] = b
+            ```
 
     * Option:
 
@@ -28,9 +30,11 @@ Code tools.
 
         * Currently format definitions cannot be parsed correctly, use the following workaround instead:
 
-            ``` wl
-            ToExpression["Format[expr,format]:=expr1;"]
-            ```
+            !!! code
+
+                ``` wl
+                ToExpression["Format[expr,format]:=expr1;"]
+                ```
 
             **TODO** check the code `#!wl NotebookImport[#,_->"HeldExpression"]&` to see how `#!wl NotebookImport` handles `#!wl Format`.
 

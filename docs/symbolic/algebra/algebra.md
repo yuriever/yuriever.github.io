@@ -9,7 +9,7 @@ We require that the set of generators $G(A)$ and the set of relations $R(A)$ can
 
 What expressions are noncommutative? We can store the generators $G(A)$ in the list `#!wl $generator` and use `#!wl FreeQ` to determine whether an expression is a scalar or an operator.
 
-!!! wl ""
+!!! code
 
     ``` wl
     $generator = {};
@@ -22,7 +22,7 @@ The function `#!wl scalarQ[expr]` returns `#!wl True` when `#!wl expr` is a scal
 
 We then implement the relations $R(A)$ by a list of rules `#!wl $relation`, and simplify expressions using the function `#!wl ReplaceRepeated`.
 
-!!! wl ""
+!!! code
 
     ``` wl
     $relation = {};
@@ -33,7 +33,7 @@ We then implement the relations $R(A)$ by a list of rules `#!wl $relation`, and 
 
 Noncommutative multiplication needs to satisfy the rules of identity, linearity and distributivity:
 
-!!! wl ""
+!!! code
 
     ``` wl
     NonCommutativeMultiply//Unprotect;
@@ -59,7 +59,7 @@ Here we have overload the internal function `#!wl NonCommutativeMultiply` with o
 
 To make the results readable, we define additional formatting rules.
 
-!!! wl ""
+!!! code
 
     ``` wl
     $printing = {} ; 

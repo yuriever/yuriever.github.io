@@ -55,7 +55,7 @@ There are two styles of implementation:
 
 * `#!wl DownValues` - `#!wl cluster` is the `#!wl UpValues` of the `#!wl star`, and `#!wl planet` is the `#!wl DownValues` of the `#!wl star`.
 
-    !!! wl ""
+    !!! code
 
         ``` wl
         clusterOf[star1] ^= cluster;
@@ -69,7 +69,7 @@ There are two styles of implementation:
 
 * `#!wl Association` - the data is stored into nested associations.
 
-    !!! wl ""
+    !!! code
 
         ``` wl
         cluster[<|

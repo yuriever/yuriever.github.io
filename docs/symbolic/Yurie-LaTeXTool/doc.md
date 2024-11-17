@@ -18,7 +18,7 @@ LaTeX tools.
 
         * accepts `#!wl True` of `#!wl False`;
 
-        !!! wl "Example"
+        !!! code
 
             === "After"
 
@@ -44,19 +44,23 @@ LaTeX tools.
 
         * accepts `#!wl None` or one of the followings:
 
-            ``` wl
-            {"\\;","\\,","\\:","\\>","\\ "}
-            ```
+            !!! code
+
+                ``` wl
+                {"\\;","\\,","\\:","\\>","\\ "}
+                ```
 
         * skip equations surrounded by the magic comments
 
-            ``` tex
-            % LaTeXFormat-EMS-Off
-            ...
-            % LaTeXFormat-EMS-On
-            ```
+            !!! code
 
-        * Example:
+                ``` tex
+                % LaTeXFormat-EMS-Off
+                ...
+                % LaTeXFormat-EMS-On
+                ```
+
+        !!! code
 
             === "After"
 
@@ -99,13 +103,15 @@ LaTeX tools.
 
         * skip inline equations surrounded by the magic comments
 
-            ``` markdown
-            <!-- MarkdownFormat-IEB-Off -->
-            ...
-            <!-- MarkdownFormat-IEB-Off -->
-            ```
+            !!! code
 
-        * Example:
+                ``` markdown
+                <!-- MarkdownFormat-IEB-Off -->
+                ...
+                <!-- MarkdownFormat-IEB-Off -->
+                ```
+
+        !!! code
 
             === "After"
 
@@ -125,7 +131,7 @@ LaTeX tools.
 
         * accepts `#!wl True` of `#!wl False`;
 
-        * Example:
+        !!! code
 
             === "After"
 
@@ -161,11 +167,13 @@ LaTeX tools.
 
     * To disable parsing of a line, add the magic comment `#!tex % LaTeXParser-Skip` at the end of that line. To disable parsing of a block, use the magic comments:
 
-        ``` tex
-        % LaTeXParser-Off
-        ...
-        % LaTeXParser-On
-        ```
+        !!! code
+
+            ``` tex
+            % LaTeXParser-Off
+            ...
+            % LaTeXParser-On
+            ```
 
     * The option `#!wl "SkipType"` allows typed magic comments and accepts `#!wl Automatic|_String|{__String}`, where `#!wl Automatic` for non-typed ones.
 
@@ -177,13 +185,15 @@ LaTeX tools.
 
     * The matching is hinted by the magic comments:
 
-        ``` js
-        // MathJaxJSOverwrite-Macro-Begin
-        macros: {
-            ...
-        },
-        // MathJaxJSOverwrite-Macro-End
-        ```
+        !!! code
+
+            ``` js
+            // MathJaxJSOverwrite-Macro-Begin
+            macros: {
+                ...
+            },
+            // MathJaxJSOverwrite-Macro-End
+            ```
 
 ## To-do
 

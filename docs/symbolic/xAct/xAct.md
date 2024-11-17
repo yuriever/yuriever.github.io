@@ -104,7 +104,7 @@ The function `#!wl Perturbation` has built-in linearity and Leibniz rule. For ex
 
 The variation of the electromagnetic field action is
 
-!!! wl ""
+!!! code
 
     ``` wl
     action[abelianGauge]//Perturbation
@@ -119,7 +119,7 @@ There are three factors to be varied, giving the following terms respectively
 
 The fundamental field is the gauge potential $A$ instead of the field strength $F$, so we need to expand $F$ by the rule `#!wl ruleFToA`,
 
-!!! wl ""
+!!! code
 
     ``` wl
     action[A]/.ruleFToA//tensorSim//Perturbation

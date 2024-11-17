@@ -34,6 +34,8 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl indexize[var_,index_]|indexize[{var_,index_}]` - join the variable and index into a symbol.
 
+    This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
+
     !!! wl "Example"
 
         ``` wl
@@ -43,8 +45,6 @@ A Mathematica paclet for improving math layout.
         ``` wl
         Out[] = z1
         ```
-
-    This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
 
 * `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
 
@@ -60,6 +60,12 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "IndexPosition"->Construct` - controls the format of indexed vairables.
 
+        The supported values are
+
+        * `#!wl Construct`
+        * `#!wl Subscript`
+        * `#!wl Superscript`
+
         !!! wl "Example"
 
             ``` wl
@@ -70,17 +76,18 @@ A Mathematica paclet for improving math layout.
             Out[] = Subscript[z,1]+Subscript[z,2]
             ```
 
-        * The supported values are
-
-            * `#!wl Construct`
-            * `#!wl Subscript`
-            * `#!wl Superscript`
-
     * `#!wl "IndexType"->All` - controls the pattern of indices, and resolves possible conflicts between variable and index.
 
-        === "Correct"
+        The supported values are
 
-            !!! wl "Example"
+        * `#!wl All`
+        * `#!wl "PositiveInteger"`
+        * `#!wl "PositiveIntegerOrSingleLetter"`
+        * `#!wl _Symbol` - any function for string pattern matching
+
+        !!! wl "Example"
+
+            === "Correct"
 
                 ``` wl
                 zb1//indexSplit[{z,zb},"IndexType"->"PositiveInteger"]
@@ -90,9 +97,7 @@ A Mathematica paclet for improving math layout.
                 Out[] = zb[1]
                 ```
 
-        === "Incorrect"
-
-            !!! wl "Example"
+            === "Incorrect"
 
                 ``` wl
                 zb1//indexSplit[{z,zb}]
@@ -102,14 +107,9 @@ A Mathematica paclet for improving math layout.
                 Out[] = z[b1]
                 ```
 
-        * The supported values are
-
-            * `#!wl All`
-            * `#!wl "PositiveInteger"`
-            * `#!wl "PositiveIntegerOrSingleLetter"`
-            * `#!wl _Symbol` - any function for string pattern matching
-
 * `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
+
+    The options are the same as `#!wl indexJoin`.
 
     !!! wl "Example"
 
@@ -120,5 +120,3 @@ A Mathematica paclet for improving math layout.
         ``` wl
         Out[] = z[1]+z[2]
         ```
-
-    * The options are the same as `#!wl indexJoin`.

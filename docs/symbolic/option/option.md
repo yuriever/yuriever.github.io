@@ -116,7 +116,7 @@
 
 接下来部分实现 `#!wl ifoo` 的功能，
 
-!!! wl ""
+!!! code
 
     ``` wl
     ifoo[{HoldComplete[x_],HoldComplete[opts___]}] :=
@@ -125,7 +125,7 @@
 
 此处 `#!wl OptionValue[foo,{opts},"a"]` 自动接受了 `#!wl foo` 的输入选项与默认选项。
 
-!!! wl ""
+!!! code
 
     ``` wl
     SetOptions[foo,"a"->1];

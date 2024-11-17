@@ -78,6 +78,15 @@
 }
 
 /*  */
+/* box: plain */
+/*  */
+
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary {
+    display: none;
+}
+
+/*  */
 /* box: wolfram language */
 /*  */
 

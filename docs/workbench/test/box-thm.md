@@ -1,35 +1,37 @@
 # Box-thm
 
-test
-
 !!! theorem
 
     This is the content.
 
-!!! theorem "A"
+!!! theorem "title"
 
     This is the content.
 
-??? theorem "B"
+??? theorem "title"
 
     This is the content.
 
-!!! definition "C"
+!!! definition "title"
 
     This is the content.
 
-!!! lemma "D"
+!!! lemma "title"
 
     This is the content.
 
-!!! remark "D"
+!!! remark
 
     This is the content.
 
-!!! fact "D"
+!!! fact
 
     This is the content.
 
-!!! equation "D"
+!!! equation
+
+    This is the content.
+
+??? equation
 
     This is the content.

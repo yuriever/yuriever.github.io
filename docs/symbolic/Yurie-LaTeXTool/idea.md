@@ -8,16 +8,20 @@
 
 * inline
 
-    ``` wl
-    StartOfLine~~Shortest[Except["\n"]...]~~comment_~~"LaTeXTool-"~~type_~~"-Skip"~~EndOfLine
-    ```
+    !!! code
+
+        ``` wl
+        StartOfLine~~Shortest[Except["\n"]...]~~comment_~~"LaTeXTool-"~~type_~~"-Skip"~~EndOfLine
+        ```
 
 * block
 
-    ``` wl
-    comment_~~"LaTeXTool-"~~type_~~"-Off"~~Shortest[___]~~comment_~~"LaTeXTool-"~~type_~~"-On";
-    ```
+    !!! code
 
-    ``` wl
-    comment_~~"LaTeXTool-"~~type_~~"-Begin"~~Shortest[___]~~comment_~~"LaTeXTool-"~~type_~~"-End";
-    ```
+        ``` wl
+        comment_~~"LaTeXTool-"~~type_~~"-Off"~~Shortest[___]~~comment_~~"LaTeXTool-"~~type_~~"-On";
+        ```
+
+        ``` wl
+        comment_~~"LaTeXTool-"~~type_~~"-Begin"~~Shortest[___]~~comment_~~"LaTeXTool-"~~type_~~"-End";
+        ```
