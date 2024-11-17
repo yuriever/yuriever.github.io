@@ -41,7 +41,7 @@ function injectCounters() {
                     title.textContent = "";
                 }
                 // Prepend the label and counter to the title text
-                if (elementClass == "remark" || elementClass == "fact") {
+                if (elementClass === "remark" || elementClass === "fact") {
                     title.textContent = `${label}. ${title.textContent}`;
                 } else {
                     title.textContent = `${label} ${count}. ${title.textContent}`;
