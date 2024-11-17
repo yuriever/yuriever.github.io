@@ -18,4 +18,19 @@
             }
         }
     }
+
+    .theorem,
+    .definition,
+    .lemma,
+    .remark,
+    .fact,
+    .equation {
+        > .admonition-title,
+        > summary {
+            padding-left: 0rem;
+            &::before {
+                display: none;
+            }
+        }
+    }
 }

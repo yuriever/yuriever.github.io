@@ -163,10 +163,6 @@ test test test test test test test test test test test test test test test test
 
     This is a theorem:
 
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
 
     This is a theorem.
 
@@ -180,10 +176,6 @@ test test test test test test test test test test test test test test test tests
         a+b
     \end{equation}
 
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
 
     This is a theorem.
 
@@ -196,11 +188,6 @@ test test test test test test test test test test test test test test test test
     \begin{equation}
         a+b
     \end{equation}
-
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
 
 test test test test test test test test test test test test test test test test
 
@@ -232,11 +219,6 @@ test test test test test test test test test test test test test test test test
         a+b
     \end{equation}
 
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
-
 test test test test test test test test test test test test test test test test
 
 !!! definition "box title"
@@ -246,11 +228,6 @@ test test test test test test test test test test test test test test test test
     \begin{equation}
         a+b
     \end{equation}
-
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
 
 test test test test test test test test test test test test test test test test
 
@@ -262,11 +239,6 @@ test test test test test test test test test test test test test test test test
         a+b
     \end{equation}
 
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
-
 test test test test test test test test test test test test test test test test
 
 !!! remark "box title"
@@ -276,11 +248,6 @@ test test test test test test test test test test test test test test test test
     \begin{equation}
         a+b
     \end{equation}
-
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
 
 test test test test test test test test test test test test test test test test
 
@@ -292,11 +259,6 @@ test test test test test test test test test test test test test test test test
         a+b
     \end{equation}
 
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
-
 test test test test test test test test test test test test test test test test
 
 !!! equation "box title"
@@ -306,41 +268,3 @@ test test test test test test test test test test test test test test test test
     \begin{equation}
         a+b
     \end{equation}
-
-    \begin{align}
-        &a+b\\
-        &c+d
-    \end{align}
-
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%
-
-%

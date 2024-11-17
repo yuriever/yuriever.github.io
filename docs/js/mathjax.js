@@ -1,6 +1,6 @@
 window.MathJax = {
     loader: {
-        load: ["[tex]/tagformat", "[tex]/configmacros", "[tex]/physics"],
+        load: ["[tex]/tagformat", "[tex]/configmacros", "[tex]/physics"]
     },
     tex: {
         // packages included
@@ -8,16 +8,16 @@ window.MathJax = {
         // inline math mode delimiters
         physics: {
             italicdiff: true,
-            arrowdel: false,
+            arrowdel: false
         },
         inlineMath: [
             ["$", "$"],
-            ["\\(", "\\)"],
+            ["\\(", "\\)"]
         ],
         // display math mode delimiters
         displayMath: [
             ["$$", "$$"],
-            ["\\[", "\\]"],
+            ["\\[", "\\]"]
         ],
         // use \$ to escape the dollar sign
         processEscapes: true,
@@ -35,7 +35,7 @@ window.MathJax = {
             number: (n) => n.toString(),
             tag: (tag) => "(" + tag + ")",
             id: (id) => "mjx-eqn:" + id.replace(/\s/g, "_"),
-            url: (id, base) => base + "#" + encodeURIComponent(id),
+            url: (id, base) => base + "#" + encodeURIComponent(id)
         },
         useLabelIds: true,
         // MathJaxJSOverwrite-Macro-Begin
@@ -107,7 +107,7 @@ window.MathJax = {
             poch: ["(#1)_{#2}", 2],
             multiGamma: [
                 "\\Gamma\\biggl[\\genfrac..{0pt}{}{#1}{#2}\\biggr]",
-                2,
+                2
             ],
             Faa: "{}_{1}F_{1}",
             Fab: "{}_{1}F_{2}",
@@ -115,7 +115,7 @@ window.MathJax = {
             Fcb: "{}_{3}F_{2}",
             Fpq: [
                 "\\,{}_{#1}F_{#2}\\biggl(\\genfrac..{0pt}{}{#3}{#4};#5\\biggr)",
-                5,
+                5
             ],
             tp: "{\\scriptscriptstyle \\mathsf{T} }",
             tr: "{\\scriptscriptstyle \\mathsf{T} }",
@@ -300,14 +300,14 @@ window.MathJax = {
             mathpink: ["{\\color{pink} #1}", 1],
             const: "\\operatorname{const.}",
             lhs: "\\operatorname{l.h.s.}",
-            rhs: "\\operatorname{r.h.s.}",
+            rhs: "\\operatorname{r.h.s.}"
         },
         // MathJaxJSOverwrite-Macro-End
-        environments: {},
+        environments: {}
     },
     showProcessingMessages: true,
     options: {
         ignoreHtmlClass: ".",
-        processHtmlClass: "arithmatex",
-    },
+        processHtmlClass: "arithmatex"
+    }
 };

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sora_subtitle_list = [
         { text: "In solitude where we are least alone." },
-        { text: "The music is not in the notes, but in the silence between." },
+        { text: "The music is not in the notes, but in the silence between." }
     ];
 
     function getRandomFromList(list) {

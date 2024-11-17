@@ -12,7 +12,7 @@ function injectCounters() {
         lemma: { label: "Lemma", counter: () => ++sharedCounter },
         equation: { label: "Equation", counter: () => ++equationCounter },
         remark: { label: "Remark", counter: () => ++remarkCounter },
-        fact: { label: "Fact", counter: () => ++factCounter },
+        fact: { label: "Fact", counter: () => ++factCounter }
     };
 
     // Select all relevant elements
