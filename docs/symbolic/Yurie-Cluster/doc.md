@@ -2,7 +2,7 @@
 
 A Mathematica paclet for implementing a specific form of class composition.
 
-!!! mark "Static"
+!!! wl "Static"
 
     ``` mermaid 
     graph LR
@@ -37,7 +37,7 @@ A Mathematica paclet for implementing a specific form of class composition.
     class PlanetCommonData,PlanetMergeData,StarList,StarData data;
     ```
 
-!!! mark "Dynamic"
+!!! wl "Dynamic"
 
     ``` mermaid
     graph LR

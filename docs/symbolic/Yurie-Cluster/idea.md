@@ -34,7 +34,7 @@ This leads to an abstraction of a three-layered structure, referred as
 
 This kind of class composition can be illustrated by the following diagram.
 
-!!! mark "Instance initializing and updating"
+!!! wl "Instance initializing and updating"
 
     ``` mermaid
     graph LR
