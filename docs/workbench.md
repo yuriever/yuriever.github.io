@@ -10,6 +10,8 @@
 
 * [Box](workbench/test/box.md)
 
+* [Box-thm](workbench/test/box-thm.md)
+
 <!-- ## Dev
 
 * [Website development](workbench/dev/web-dev.md)

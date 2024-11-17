@@ -153,7 +153,7 @@ This is a theorem:
 
 test test test test test test test test test test test test test test test test
 
-!!! thm "LLL"
+!!! theorem "LLL"
 
     This is a theorem:
 
@@ -172,7 +172,7 @@ test test test test test test test test test test test test test test test test
 
 test test test test test test test test test test test test test test test tests
 
-!!! thm ""
+!!! theorem ""
 
     This is a theorem:
 
@@ -189,7 +189,7 @@ test test test test test test test test test test test test test test test tests
 
 test test test test test test test test test test test test test test test test
 
-!!! thm "0.1"
+!!! theorem "box title"
 
     This is a theorem:
 
@@ -204,7 +204,7 @@ test test test test test test test test test test test test test test test test
 
 test test test test test test test test test test test test test test test test
 
-??? thm "0.1"
+??? theorem "box title"
 
     This is a theorem:
 
@@ -214,7 +214,7 @@ test test test test test test test test test test test test test test test test
 
 test test test test test test test test test test test test test test test test
 
-??? def "0.1"
+??? definition "box title"
 
     This is a theorem:
 
@@ -223,6 +223,95 @@ test test test test test test test test test test test test test test test test
     \end{equation}
 
 test test test test test test test test test test test test test test test test
+
+!!! theorem "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
+test test test test test test test test test test test test test test test test
+
+!!! definition "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
+test test test test test test test test test test test test test test test test
+
+!!! lemma "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
+test test test test test test test test test test test test test test test test
+
+!!! remark "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
+test test test test test test test test test test test test test test test test
+
+!!! fact "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
+test test test test test test test test test test test test test test test test
+
+!!! equation "box title"
+
+    This is a theorem:
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+    \begin{align}
+        &a+b\\
+        &c+d
+    \end{align}
+
 
 %
 

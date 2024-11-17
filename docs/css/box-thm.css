@@ -1,0 +1,21 @@
+/*  */
+/* box: theorem */
+/*  */
+
+.md-typeset {
+    .admonition,
+    details {
+        &.theorem,
+        &.definition,
+        &.lemma,
+        &.remark,
+        &.fact,
+        &.equation {
+            font-size: 0.8rem;
+
+            &:last-child {
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+}

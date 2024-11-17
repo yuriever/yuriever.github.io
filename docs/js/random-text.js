@@ -11,7 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const subtitleElement = document.getElementById("sora_subtitle");
     if (subtitleElement) {
         subtitleElement.innerHTML = getRandomFromList(sora_subtitle_list).text;
-    } else {
-        console.warn("Element with ID 'sora_subtitle' not found.");
     }
 });
