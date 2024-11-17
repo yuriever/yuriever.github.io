@@ -12,6 +12,8 @@
 
 * [Box-thm](workbench/test/box-thm.md)
 
+* [WL cloud](workbench/test/wl-cloud.md)
+
 <!-- ## Dev
 
 * [Website development](workbench/dev/web-dev.md)

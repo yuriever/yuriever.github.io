@@ -2,33 +2,80 @@
 
 A Mathematica paclet for improving math layout.
 
-* Due to [the known issue of `#!wl TeXForm`](https://mathematica.stackexchange.com/a/47740/86893), this paclet occupies `#!wl TraditionalForm`-definitions for better layout of `#!wl StandardForm` and `#!wl MF`.
+* Due to [this known `#!wl TeXForm` issue](https://mathematica.stackexchange.com/a/47740/86893), this paclet aims to improve the `#!wl StandardForm|MF` outputs by occupying `#!wl TraditionalForm` definitions.
 
 ## MF
 
+!!! wl "Example"
+
+    ``` wl
+    MFArgConvert[]@{
+        f[_],
+        args[___]->"g",
+        argList[_List]->"h"
+    }
+    ```
+
+    ``` wl
+    args[f[x],f[y]]//MFString
+
+    argList[{f[x],f[y]}]//MFString
+    ```
+
+    ``` tex
+    \g{\f{x}}{\f{y}}
+
+    \h{
+        \f{x},
+        \f{y}
+    }
+    ```
+
 * `#!wl MFString` - refine the string from `#!wl TeXForm`.
 
-* `#!wl MFStringCopy` - copy the string from `#!wl MFString` and return the expression.
+    The expression will be converted to string by `#!wl TeXForm`, then refined according to `#!wl $MFAssoc` and the following options:
+
+    * `#!wl "RemoveLaTeXLRPair" -> True` - remove the `#!tex \left(...\right)` pair.
+
+* `#!wl MFCopy` - copy the string from `#!wl MFString` and return the original expression.
+
+    The options are the same as `#!wl MFString`.
 
 * `#!wl MF` - show the LaTeX of the expression.
 
-    * **TODO** Options of `#!wl MF`
+    The expression will be converted to LaTeX string by `#!wl MFString`, then compiled into PDF, controlled by the following options:
 
-## MFDefine
+    * `#!wl "Preamble"->{"\\usepackage{amsmath,amssymb}"}` - add to the preamble.
 
-* `#!wl MFDefine` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
+    * `#!wl "FontSize"->12` - adjust the font size.
 
-<center>
+    * `#!wl "LineSpacing"->{1.2,0}` - adjust the line spacing.
 
-| Pattern           |                       |                      |
-| :---------------- | :-------------------- | :------------------- |
-| `#!wl f`          | `#!wl f`              | `#!tex \f`           |
-| `#!wl f[_]`       | `#!wl f[a]`           | `#!tex \f{a}`        |
-| `#!wl f[___]`     | `#!wl f[a,b]`         | `#!tex \f{a}{b}`     |
-| `#!wl f[_List]`   | `#!wl f[{a,b}]`       | `#!tex \f{a,b}`      |
-| `#!wl f[___List]` | `#!wl f[{a,b},{c,d}]` | `#!tex \f{a,b}{c,d}` |
+    * `#!wl "Magnification"->1.5` - magnify the output.
 
-</center>
+    * `#!wl "CopyToClipboard"->True` - copy the string from `#!wl MFString` to clipboard.
+
+    * `#!wl "ClearCache"->False` - use the cache.
+
+    * `#!wl "Listable"->True` - convert list elements as separate PDFs.
+
+* `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
+
+    * The existing format values will be cleared and messaged.
+
+    * The supported conversion rules are as follows:
+
+        <center>
+
+        | Pattern           | Expression            | LaTeX                |
+        | :---------------- | :-------------------- | :------------------- |
+        | `#!wl f`          | `#!wl f`              | `#!tex \f`           |
+        | `#!wl f[_]`       | `#!wl f[a]`           | `#!tex \f{a}`        |
+        | `#!wl f[___]`     | `#!wl f[a,b]`         | `#!tex \f{a}{b}`     |
+        | `#!wl f[_List]`   | `#!wl f[{a,b}]`       | `#!tex \f{a,b}`      |
+        | `#!wl f[___List]` | `#!wl f[{a,b},{c,d}]` | `#!tex \f{a,b}{c,d}` |
+
+        </center>
 
 ## Index
 
