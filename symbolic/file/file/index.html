@@ -48,15 +48,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/const.css">
     
-      <link rel="stylesheet" href="../../../css/heading.css">
+      <link rel="stylesheet" href="../../../css/color.css">
     
       <link rel="stylesheet" href="../../../css/list.css">
     
-      <link rel="stylesheet" href="../../../css/curtain.css">
+      <link rel="stylesheet" href="../../../css/heading.css">
     
-      <link rel="stylesheet" href="../../../css/admonition.css">
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/box.css">
+    
+      <link rel="stylesheet" href="../../../css/box-test-color.css">
+    
+      <link rel="stylesheet" href="../../../css/box-theorem.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -548,13 +556,27 @@
 </tbody>
 </table>
 <p></center></p>
+<ul>
+<li>
 <p><code class="highlight"><span class="nb">FileNameSplit</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - split the file path into a list of path elements.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileBaseName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file name.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileExtension</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file extension.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileNameTake</span><span class="o">|</span><span class="nb">FileNameDrop</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Take</span><span class="o">|</span><span class="nb">Drop</span></code> for file path.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">DirectoryName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the directory path.</p>
+</li>
+</ul>
 <hr />
-<p><code class="highlight"><span class="nb">FileNameJoin</span><span class="p">[</span><span class="nt">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system.</p>
+<ul>
+<li><code class="highlight"><span class="nb">FileNameJoin</span><span class="p">[</span><span class="nt">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system.</li>
+</ul>
 <h2 id="file-operations_1">File operations</h2>
 <p><center></p>
 <table>
@@ -606,28 +628,74 @@
 </tbody>
 </table>
 <p></center></p>
+<ul>
+<li>
 <p><code class="highlight"><span class="nb">FileExistsQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - test whether a file exists.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileFormat</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - try to return the file type.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and return <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence of the directory and and return the parent directory.</p>
+</li>
+</ul>
 <hr />
+<ul>
+<li>
 <p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code></p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code></p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file paths in the directories.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span><span class="p">[</span><span class="nt">f_</span><span class="p">,</span><span class="nt">dir_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nv">FileSystemTree</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - return the file tree.</p>
+</li>
+</ul>
 <h2 id="directories">Directories</h2>
+<ul>
+<li>
 <p><code class="highlight"><span class="nb">NotebookDirectory</span><span class="p">[]</span></code> - current notebook directory.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">$HomeDirectory</span></code> - home directory.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">$UserBaseDirectory</span></code> - directory for user-specific add-on files.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nv">$UserBasePacletsDirectory</span></code> - directory for user-specific paclet files.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">$Path</span></code> - the list of directories to find an external file.</p>
+</li>
+</ul>
 <hr />
+<ul>
+<li>
 <p><code class="highlight"><span class="nb">Directory</span><span class="p">[]</span></code> - return the working directory.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">SetDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - set the working directory.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nb">ResetDirectory</span><span class="p">[]</span></code> - revert to the previous working directory.</p>
+</li>
+</ul>
 
 <!-- Source file information -->
 

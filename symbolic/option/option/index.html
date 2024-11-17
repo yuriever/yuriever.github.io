@@ -48,15 +48,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/const.css">
     
-      <link rel="stylesheet" href="../../../css/heading.css">
+      <link rel="stylesheet" href="../../../css/color.css">
     
       <link rel="stylesheet" href="../../../css/list.css">
     
-      <link rel="stylesheet" href="../../../css/curtain.css">
+      <link rel="stylesheet" href="../../../css/heading.css">
     
-      <link rel="stylesheet" href="../../../css/admonition.css">
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/box.css">
+    
+      <link rel="stylesheet" href="../../../css/box-test-color.css">
+    
+      <link rel="stylesheet" href="../../../css/box-theorem.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -516,18 +524,25 @@
 <p>本页面介绍 Mathematica 的选项功能。</p>
 <h2 id="_1">基本用法</h2>
 <p>以下称 <code class="highlight"><span class="nb">OptionsPattern</span><span class="p">[]</span></code> 为输入选项，称 <code class="highlight"><span class="nb">Options</span><span class="p">[]</span></code> 为默认选项。例如：</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">child</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">}</span><span class="o">;</span>
 
 <span class="nv">child</span><span class="p">[</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nb">OptionValue</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
-
-<span class="nv">child</span><span class="p">[{{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">}}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">child</span><span class="p">[{{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">}}]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 </code></pre></div>
+</div>
 <h2 id="_2">选项的继承</h2>
-<p>此种用法适用于将简单函数从下到上的组合为复杂函数。</p>
-<p>先看一个错误例子：首先定义如下的函数 <code class="highlight"><span class="nv">parent</span></code>，</p>
+<p>此种用法适用于将简单函数从下到上的组合为复杂函数。例如：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Incorrect</label><label for="__tabbed_1_2">Correct</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">child</span><span class="p">,</span>
 <span class="w">    </span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">x</span>
@@ -536,7 +551,6 @@
 <span class="nv">parent</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nv">child</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">child</span><span class="p">]]</span><span class="o">;</span>
 </code></pre></div>
-<p>此处 <code class="highlight"><span class="nb">FilterRules</span></code> 会过滤出 <code class="highlight"><span class="nv">child</span></code> 接受的选项。若用 <code class="highlight"><span class="nb">SetOptions</span></code> 更新 <code class="highlight"><span class="nv">parent</span></code> 的默认选项，可以发现该更新并未正确传递给 <code class="highlight"><span class="nv">child</span></code>，</p>
 <div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">parent</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span>
 
 <span class="nv">parent</span><span class="p">[]</span>
@@ -545,11 +559,12 @@
 
 <span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
 </code></pre></div>
-<p>其原因在于键 <code class="highlight"><span class="s">&quot;a&quot;</span></code> 并未出现在 <code class="highlight"><span class="nv">parent</span></code> 的输入选项中，因此 <code class="highlight"><span class="nv">child</span></code> 调用了自身的默认选项 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span></code>。</p>
-<p>正确的方法为</p>
-<div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">//</span><span class="nb">ClearAll</span><span class="o">;</span>
-
-<span class="nv">parent</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">parent</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">Splice</span><span class="o">@</span><span class="nb">Options</span><span class="o">@</span><span class="nv">child</span><span class="p">,</span>
 <span class="w">    </span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">x</span>
 <span class="p">}</span><span class="o">;</span>
@@ -557,7 +572,6 @@
 <span class="nv">parent</span><span class="p">[</span><span class="nv">opts</span><span class="o">:</span><span class="nb">OptionsPattern</span><span class="p">[]]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nv">child</span><span class="o">@</span><span class="nb">FilterRules</span><span class="p">[{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">parent</span><span class="p">},</span><span class="nb">Options</span><span class="p">[</span><span class="nv">child</span><span class="p">]]</span><span class="o">;</span>
 </code></pre></div>
-<p>此处用 <code class="highlight"><span class="p">{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">parent</span><span class="p">}</span></code> 手动合并了 <code class="highlight"><span class="nv">parent</span></code> 的输入选项与默认选项，再将其传递给 <code class="highlight"><span class="nv">child</span></code>。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">parent</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span>
 
 <span class="nv">parent</span><span class="p">[]</span>
@@ -566,8 +580,17 @@
 
 <span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 </code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>此处 <code class="highlight"><span class="nb">FilterRules</span></code> 会过滤出 <code class="highlight"><span class="nv">child</span></code> 接受的选项。</p>
+<p>在错误的例子中，若用 <code class="highlight"><span class="nb">SetOptions</span></code> 更新 <code class="highlight"><span class="nv">parent</span></code> 的默认选项，可以发现该更新未传递给 <code class="highlight"><span class="nv">child</span></code>。其原因在于键 <code class="highlight"><span class="s">&quot;a&quot;</span></code> 未出现在 <code class="highlight"><span class="nv">parent</span></code> 的输入选项中，因此 <code class="highlight"><span class="nv">child</span></code> 调用了自身的默认选项 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span></code>。</p>
+<p>在正确的例子中，我们用 <code class="highlight"><span class="p">{</span><span class="nv">opts</span><span class="p">,</span><span class="nb">Options</span><span class="o">@</span><span class="nv">parent</span><span class="p">}</span></code> 手动合并了 <code class="highlight"><span class="nv">parent</span></code> 的输入选项与默认选项，再将其传递给 <code class="highlight"><span class="nv">child</span></code>。</p>
 <h2 id="_3">非局域选项的指定</h2>
 <p>上述继承的用法有时稍显笨重，特别是在顶层函数仅用来分离参数与选项，或检测参数类型，而非实现核心功能的时候。例如：</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">foo</span><span class="o">//</span><span class="nb">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">}</span><span class="o">;</span>
 
 <span class="nv">foo</span><span class="p">[</span><span class="nt">args___</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
@@ -583,14 +606,19 @@
 
 <span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ifoo</span><span class="p">[{</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span><span class="p">],</span><span class="nb">HoldComplete</span><span class="p">[]}]</span>
 </code></pre></div>
-<p>可见 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span></code> 被正确的识别为了选项，而未出现在 <code class="highlight"><span class="nv">foo</span></code> 的默认选项中的 <code class="highlight"><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span></code> 被识别为了参数。接下来实现 <code class="highlight"><span class="nv">ifoo</span></code> 的部分功能，</p>
+</div>
+<p>可见 <code class="highlight"><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span></code> 被正确的识别为了选项，而未出现在 <code class="highlight"><span class="nv">foo</span></code> 的默认选项中的 <code class="highlight"><span class="s">&quot;b&quot;</span><span class="o">-&gt;</span><span class="nv">y</span></code> 被识别为了参数。</p>
+<p>接下来部分实现 <code class="highlight"><span class="nv">ifoo</span></code> 的功能，</p>
+<div class="admonition wl">
 <div class="highlight"><pre><span></span><code><span class="nv">ifoo</span><span class="p">[{</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nt">x_</span><span class="p">],</span><span class="nb">HoldComplete</span><span class="p">[</span><span class="nt">opts___</span><span class="p">]}]</span><span class="w"> </span><span class="o">:=</span>
 <span class="w">    </span><span class="nv">x</span><span class="o">+</span><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">foo</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="p">]</span><span class="o">;</span>
 </code></pre></div>
-<p>此处 <code class="highlight"><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">foo</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="p">]</span></code> 自动接受了 <code class="highlight"><span class="nv">foo</span></code> 的输入选项与默认选项。例如：</p>
+</div>
+<p>此处 <code class="highlight"><span class="nb">OptionValue</span><span class="p">[</span><span class="nv">foo</span><span class="p">,{</span><span class="nv">opts</span><span class="p">},</span><span class="s">&quot;a&quot;</span><span class="p">]</span></code> 自动接受了 <code class="highlight"><span class="nv">foo</span></code> 的输入选项与默认选项。</p>
+<div class="admonition wl">
 <div class="highlight"><pre><span></span><code><span class="nb">SetOptions</span><span class="p">[</span><span class="nv">foo</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">]</span><span class="o">;</span>
-
-<span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span>
 
 <span class="nv">foo</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">]</span>
 </code></pre></div>
@@ -598,6 +626,7 @@
 
 <span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">x</span>
 </code></pre></div>
+</div>
 <p>类似的，<code class="highlight"><span class="nb">OptionsPattern</span><span class="p">[</span><span class="nv">foo</span><span class="p">]</span></code> 亦可以实现此种非局域的选项指定。</p>
 <h2 id="_4">注意事项</h2>
 <ul>

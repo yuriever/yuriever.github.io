@@ -1,0 +1,100 @@
+/*  */
+/* tab */
+/*  */
+
+.md-typeset .tabbed-set {
+    margin: 0.4rem 0 0 0;
+    border: var(--sora-box-border);
+    border-radius: var(--sora-box-border-radius);
+}
+
+.md-typeset .tabbed-labels {
+    box-shadow: none;
+}
+
+.md-typeset .tabbed-labels>label {
+    font-size: 0.6rem;
+    margin-right: 0.4rem;
+    border: var(--sora-box-border);
+    border-radius: var(--sora-box-border-radius);
+    box-shadow: var(--md-shadow-z1);
+    background-color: rgba(220, 220, 220, 0.08);
+}
+
+.md-typeset .tabbed-content {
+    margin: 0.6rem 0 0 0;
+    border: var(--sora-box-border);
+    border-radius: var(--sora-box-border-radius);
+}
+
+/*  */
+/* box */
+/*  */
+
+.md-typeset .admonition,
+.md-typeset details {
+    margin: 0 0 0.5rem 0;
+    padding: 0 0.6rem;
+    border: var(--sora-box-border);
+    border-radius: var(--sora-box-border-radius);
+    background-color: rgba(220, 220, 220, 0.08);
+}
+
+.md-typeset details:not([open]) {
+    min-height: 2.4rem;
+    box-shadow: var(--md-shadow-z1);
+}
+
+html .md-typeset .admonition>:last-child,
+html .md-typeset details>:last-child {
+    margin-bottom: 0rem;
+}
+
+.md-typeset *>.admonition-title,
+.md-typeset *>summary {
+    font-size: 0.6rem;
+    margin: 0.3rem 0 -0.3rem 0;
+    border: var(--sora-box-border) !important;
+    border-radius: var(--sora-box-border-radius) !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.md-typeset *>.admonition-title::before,
+.md-typeset *>summary::before {
+    top: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-color: inherit;
+}
+
+[dir=ltr] .md-typeset .admonition-title,
+[dir=ltr] .md-typeset summary {
+    padding-left: 1.5rem;
+}
+
+[dir=ltr] .md-typeset .admonition-title:before,
+[dir=ltr] .md-typeset summary:before {
+    left: 0.1rem;
+}
+
+/*  */
+/* box: wolfram language */
+/*  */
+
+.md-typeset .wl>.admonition-title::before,
+.md-typeset .wl>summary::before {
+    background-color: rgb(255, 0, 0);
+    mask-image: var(--md-admonition-icon--wl);
+    mask-size: 75%;
+}
+
+/*  */
+/* box: mark */
+/*  */
+
+.md-typeset .mark>.admonition-title::before,
+.md-typeset .mark>summary::before {
+    background-color: rgba(90, 90, 90, 0.5);
+    mask-image: var(--md-admonition-icon--mark);
+    mask-size: 80%;
+}

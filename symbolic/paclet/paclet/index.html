@@ -48,15 +48,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/const.css">
     
-      <link rel="stylesheet" href="../../../css/heading.css">
+      <link rel="stylesheet" href="../../../css/color.css">
     
       <link rel="stylesheet" href="../../../css/list.css">
     
-      <link rel="stylesheet" href="../../../css/curtain.css">
+      <link rel="stylesheet" href="../../../css/heading.css">
     
-      <link rel="stylesheet" href="../../../css/admonition.css">
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/box.css">
+    
+      <link rel="stylesheet" href="../../../css/box-test-color.css">
+    
+      <link rel="stylesheet" href="../../../css/box-theorem.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -526,13 +534,13 @@
 <ul>
 <li><a href="https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb">Paclets and paclet development</a> <code>tutorial/Paclets</code></li>
 </ul>
-<hr />
 <h2 id="paclet-structure">Paclet structure</h2>
 <p>Syntactic dependence:</p>
 <p><center></p>
 <p><img alt="paclet" src="../paclet.png" /></p>
 <p></center></p>
-<p>File structure:</p>
+<div class="admonition wl">
+<p class="admonition-title">File structure</p>
 <div class="highlight"><pre><span></span><code>PacletInfo.wl
 Kernel/
     Package.wl
@@ -546,8 +554,11 @@ Kernel/
     ...
 ...
 </code></pre></div>
+</div>
 <h2 id="package-structure">Package structure</h2>
-<div class="highlight"><span class="filename">p.wl</span><pre><span></span><code><span class="c">(*reset $Context|$ContextPath to Package`.*)</span>
+<div class="admonition wl">
+<p class="admonition-title">p.wl</p>
+<div class="highlight"><pre><span></span><code><span class="c">(*reset $Context|$ContextPath to Package`.*)</span>
 <span class="nb">BeginPackage</span><span class="p">[</span><span class="s">&quot;Package`&quot;</span><span class="p">]</span><span class="o">;</span>
 
 <span class="c">(*declare public symbols.*)</span>
@@ -572,6 +583,7 @@ Kernel/
 <span class="c">(*prepends Package` to $ContextPath.*)</span>
 <span class="nb">EndPackage</span><span class="p">[]</span><span class="o">;</span>
 </code></pre></div>
+</div>
 <h2 id="symbol-types">Symbol types</h2>
 <ul>
 <li>

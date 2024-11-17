@@ -48,15 +48,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/const.css">
     
-      <link rel="stylesheet" href="../../../css/heading.css">
+      <link rel="stylesheet" href="../../../css/color.css">
     
       <link rel="stylesheet" href="../../../css/list.css">
     
-      <link rel="stylesheet" href="../../../css/curtain.css">
+      <link rel="stylesheet" href="../../../css/heading.css">
     
-      <link rel="stylesheet" href="../../../css/admonition.css">
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/box.css">
+    
+      <link rel="stylesheet" href="../../../css/box-test-color.css">
+    
+      <link rel="stylesheet" href="../../../css/box-theorem.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
     
       <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     
@@ -666,16 +674,20 @@ title: Introduction to xAct
 <p><strong>xPert</strong> provides functionalities like variations and metric perturbations.
 The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz rule. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>.</p>
 <p>The variation of the electromagnetic field action is</p>
+<div class="admonition wl">
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
+</div>
 <p>There are three factors to be varied, giving the following terms respectively</p>
 <div class="arithmatex">\[\begin{equation}
     \triangle [\cL_{A}]=
     \tfrac{1}{4} \bigl(- \frac{F_{ab} F^{ab} \triangle [\overset{\overset{~}{~}}{g}]}{2 (- \overset{\overset{~}{~}}{g})^{1/2}} + (- \overset{\overset{~}{~}}{g})^{1/2} F^{ab} \triangle [F_{ab}] + (- \overset{\overset{~}{~}}{g})^{1/2} F_{ab} \triangle [F^{ab}]\bigr)
 \end{equation}\]</div>
 <p>The fundamental field is the gauge potential <span class="arithmatex">\(A\)</span> instead of the field strength <span class="arithmatex">\(F\)</span>, so we need to expand <span class="arithmatex">\(F\)</span> by the rule <code class="highlight"><span class="nv">ruleFToA</span></code>,</p>
+<div class="admonition wl">
 <div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">A</span><span class="p">]</span><span class="o">/.</span><span class="nv">ruleFToA</span><span class="o">//</span><span class="nv">tensorSim</span><span class="o">//</span><span class="nv">Perturbation</span>
 </code></pre></div>
+</div>
 <div class="arithmatex">\[\begin{equation}
     \triangle [\cL_{A}]=
     \tfrac{1}{2} \Bigl((- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a} -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr)
