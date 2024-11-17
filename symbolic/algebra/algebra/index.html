@@ -60,9 +60,7 @@
     
       <link rel="stylesheet" href="../../../css/box.css">
     
-      <link rel="stylesheet" href="../../../css/box-test-color.css">
-    
-      <link rel="stylesheet" href="../../../css/box-theorem.css">
+      <link rel="stylesheet" href="../../../css/box-thm.css">
     
       <link rel="stylesheet" href="../../../css/misc.css">
     
@@ -517,7 +515,8 @@
 <p>In practice, we define an (associative) algebra <span class="arithmatex">\(A\)</span> using generators and relations, i.e., as a quotient of the free algebra.
 We require that the set of generators <span class="arithmatex">\(G(A)\)</span> and the set of relations <span class="arithmatex">\(R(A)\)</span> can be expressed with a finite number of symbols, which covers a broader range than finitely presented algebras.</p>
 <p>What expressions are noncommutative? We can store the generators <span class="arithmatex">\(G(A)\)</span> in the list <code class="highlight"><span class="nv">$generator</span></code> and use <code class="highlight"><span class="nb">FreeQ</span></code> to determine whether an expression is a scalar or an operator.</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">scalarQ</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
@@ -526,7 +525,8 @@ We require that the set of generators <span class="arithmatex">\(G(A)\)</span> a
 </div>
 <p>The function <code class="highlight"><span class="nv">scalarQ</span><span class="p">[</span><span class="nv">expr</span><span class="p">]</span></code> returns <code class="highlight"><span class="nb">True</span></code> when <code class="highlight"><span class="nv">expr</span></code> is a scalar.</p>
 <p>We then implement the relations <span class="arithmatex">\(R(A)\)</span> by a list of rules <code class="highlight"><span class="nv">$relation</span></code>, and simplify expressions using the function <code class="highlight"><span class="nb">ReplaceRepeated</span></code>.</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$relation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
 
 <span class="nv">algebraSimplify</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
@@ -534,7 +534,8 @@ We require that the set of generators <span class="arithmatex">\(G(A)\)</span> a
 </code></pre></div>
 </div>
 <p>Noncommutative multiplication needs to satisfy the rules of identity, linearity and distributivity:</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nb">NonCommutativeMultiply</span><span class="o">//</span><span class="nb">Unprotect</span><span class="o">;</span>
 
 <span class="nb">NonCommutativeMultiply</span><span class="o">//</span><span class="nb">Attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span><span class="o">;</span>
@@ -556,7 +557,8 @@ We require that the set of generators <span class="arithmatex">\(G(A)\)</span> a
 </div>
 <p>Here we have overload the internal function <code class="highlight"><span class="nb">NonCommutativeMultiply</span></code> with operator form <code class="highlight"><span class="o">**</span></code> by adding the attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span></code>.</p>
 <p>To make the results readable, we define additional formatting rules.</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$printing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="o">;</span><span class="w"> </span>
 
 <span class="nv">algebraPrint</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span>
@@ -638,11 +640,11 @@ We require that the set of generators <span class="arithmatex">\(G(A)\)</span> a
       
         <script src="../../../js/random-text.js"></script>
       
+        <script src="../../../js/box-thm.js"></script>
+      
         <script src="../../../js/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       

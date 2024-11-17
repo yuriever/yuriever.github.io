@@ -60,9 +60,7 @@
     
       <link rel="stylesheet" href="../../../css/box.css">
     
-      <link rel="stylesheet" href="../../../css/box-test-color.css">
-    
-      <link rel="stylesheet" href="../../../css/box-theorem.css">
+      <link rel="stylesheet" href="../../../css/box-thm.css">
     
       <link rel="stylesheet" href="../../../css/misc.css">
     
@@ -582,7 +580,8 @@ end</code></pre>
 <ul>
 <li>
 <p><code class="highlight"><span class="nb">DownValues</span></code> - <code class="highlight"><span class="nv">cluster</span></code> is the <code class="highlight"><span class="nb">UpValues</span></code> of the <code class="highlight"><span class="nv">star</span></code>, and <code class="highlight"><span class="nv">planet</span></code> is the <code class="highlight"><span class="nb">DownValues</span></code> of the <code class="highlight"><span class="nv">star</span></code>.</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nv">clusterOf</span><span class="p">[</span><span class="nv">star1</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nv">cluster</span><span class="o">;</span>
 
 <span class="nv">star1</span><span class="p">[</span><span class="nv">planet1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="o">;</span>
@@ -595,7 +594,8 @@ end</code></pre>
 </li>
 <li>
 <p><code class="highlight"><span class="nb">Association</span></code> - the data is stored into nested associations.</p>
-<div class="admonition wl">
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="nv">cluster</span><span class="p">[&lt;|</span>
 <span class="w">    </span><span class="nv">star1</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">planet1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">planet2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
 <span class="w">    </span><span class="nv">star2</span><span class="o">-&gt;</span><span class="p">&lt;|</span><span class="nv">planet1</span><span class="o">-&gt;</span><span class="p">{},</span><span class="nv">planet2</span><span class="o">-&gt;</span><span class="p">{},</span><span class="o">...</span><span class="p">|&gt;,</span>
@@ -661,11 +661,11 @@ end</code></pre>
       
         <script src="../../../js/random-text.js"></script>
       
+        <script src="../../../js/box-thm.js"></script>
+      
         <script src="../../../js/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       

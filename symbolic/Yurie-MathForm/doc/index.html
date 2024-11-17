@@ -60,9 +60,7 @@
     
       <link rel="stylesheet" href="../../../css/box.css">
     
-      <link rel="stylesheet" href="../../../css/box-test-color.css">
-    
-      <link rel="stylesheet" href="../../../css/box-theorem.css">
+      <link rel="stylesheet" href="../../../css/box-thm.css">
     
       <link rel="stylesheet" href="../../../css/misc.css">
     
@@ -577,6 +575,7 @@
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span><span class="o">|</span><span class="nv">indexize</span><span class="p">[{</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">}]</span></code> - join the variable and index into a symbol.</p>
+<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
@@ -584,7 +583,6 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span>
 </code></pre></div>
 </div>
-<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
@@ -598,6 +596,12 @@
 <ul>
 <li>
 <p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code> - controls the format of indexed vairables.</p>
+<p>The supported values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">Construct</span></code></li>
+<li><code class="highlight"><span class="nb">Subscript</span></code></li>
+<li><code class="highlight"><span class="nb">Superscript</span></code></li>
+</ul>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span><span class="p">]</span>
@@ -605,33 +609,27 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
 </code></pre></div>
 </div>
-<ul>
-<li>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">Construct</span></code></li>
-<li><code class="highlight"><span class="nb">Subscript</span></code></li>
-<li><code class="highlight"><span class="nb">Superscript</span></code></li>
-</ul>
-</li>
-</ul>
 </li>
 <li>
 <p><code class="highlight"><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code> - controls the pattern of indices, and resolves possible conflicts between variable and index.</p>
+<p>The supported values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">All</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
+</ul>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Correct</label><label for="__tabbed_1_2">Incorrect</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
 </code></pre></div>
 </div>
-</div>
 <div class="tabbed-block">
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
@@ -640,22 +638,12 @@
 </div>
 </div>
 </div>
-<ul>
-<li>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">All</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
-</ul>
-</li>
-</ul>
 </li>
 </ul>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
+<p>The options are the same as <code class="highlight"><span class="nv">indexJoin</span></code>.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
@@ -663,9 +651,6 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </code></pre></div>
 </div>
-<ul>
-<li>The options are the same as <code class="highlight"><span class="nv">indexJoin</span></code>.</li>
-</ul>
 </li>
 </ul>
 
@@ -723,11 +708,11 @@
       
         <script src="../../../js/random-text.js"></script>
       
+        <script src="../../../js/box-thm.js"></script>
+      
         <script src="../../../js/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       

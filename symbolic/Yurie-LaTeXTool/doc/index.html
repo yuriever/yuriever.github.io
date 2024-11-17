@@ -60,9 +60,7 @@
     
       <link rel="stylesheet" href="../../../css/box.css">
     
-      <link rel="stylesheet" href="../../../css/box-test-color.css">
-    
-      <link rel="stylesheet" href="../../../css/box-theorem.css">
+      <link rel="stylesheet" href="../../../css/box-thm.css">
     
       <link rel="stylesheet" href="../../../css/misc.css">
     
@@ -544,8 +542,8 @@
 <p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
 </li>
 </ul>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">After</label><label for="__tabbed_1_2">Before</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -574,18 +572,25 @@
 </li>
 <li>
 <p>accepts <code class="highlight"><span class="nb">None</span></code> or one of the followings:</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s">&quot;\\;&quot;</span><span class="p">,</span><span class="s">&quot;\\,&quot;</span><span class="p">,</span><span class="s">&quot;\\:&quot;</span><span class="p">,</span><span class="s">&quot;\\&gt;&quot;</span><span class="p">,</span><span class="s">&quot;\\ &quot;</span><span class="p">}</span>
 </code></pre></div>
+</div>
 </li>
 <li>
 <p>skip equations surrounded by the magic comments</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="c">% LaTeXFormat-EMS-Off</span>
 ...
 <span class="c">% LaTeXFormat-EMS-On</span>
 </code></pre></div>
+</div>
 </li>
-<li>
-<p>Example:</p>
+</ul>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">After</label><label for="__tabbed_2_2">Before</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -615,8 +620,7 @@
 </div>
 </div>
 </div>
-</li>
-</ul>
+</div>
 </li>
 </ul>
 </li>
@@ -635,13 +639,17 @@
 </li>
 <li>
 <p>skip inline equations surrounded by the magic comments</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code>&lt;!-- MarkdownFormat-IEB-Off --&gt;
 ...
 &lt;!-- MarkdownFormat-IEB-Off --&gt;
 </code></pre></div>
+</div>
 </li>
-<li>
-<p>Example:</p>
+</ul>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">After</label><label for="__tabbed_3_2">Before</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -654,8 +662,7 @@
 </div>
 </div>
 </div>
-</li>
-</ul>
+</div>
 </li>
 <li>
 <p><code class="highlight"><span class="s">&quot;SurroundEquationWithEmptyLine&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code></p>
@@ -666,8 +673,9 @@
 <li>
 <p>accepts <code class="highlight"><span class="nb">True</span></code> of <code class="highlight"><span class="nb">False</span></code>;</p>
 </li>
-<li>
-<p>Example:</p>
+</ul>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">After</label><label for="__tabbed_4_2">Before</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -690,8 +698,7 @@
 </div>
 </div>
 </div>
-</li>
-</ul>
+</div>
 </li>
 <li>
 <p><code class="highlight"><span class="s">&quot;EquationMarkSpacing&quot;</span><span class="o">-&gt;</span><span class="nb">None</span></code></p>
@@ -712,10 +719,13 @@
 </li>
 <li>
 <p>To disable parsing of a line, add the magic comment <code class="highlight"><span class="c">% LaTeXParser-Skip</span></code> at the end of that line. To disable parsing of a block, use the magic comments:</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="c">% LaTeXParser-Off</span>
 ...
 <span class="c">% LaTeXParser-On</span>
 </code></pre></div>
+</div>
 </li>
 <li>
 <p>The option <code class="highlight"><span class="s">&quot;SkipType&quot;</span></code> allows typed magic comments and accepts <code class="highlight"><span class="nb">Automatic</span><span class="o">|</span><span class="nt">_String</span><span class="o">|</span><span class="p">{</span><span class="nt">__String</span><span class="p">}</span></code>, where <code class="highlight"><span class="nb">Automatic</span></code> for non-typed ones.</p>
@@ -731,12 +741,15 @@
 <ul>
 <li>
 <p>The matching is hinted by the magic comments:</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// MathJaxJSOverwrite-Macro-Begin</span>
 <span class="nx">macros</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="p">},</span>
 <span class="c1">// MathJaxJSOverwrite-Macro-End</span>
 </code></pre></div>
+</div>
 </li>
 </ul>
 </li>
@@ -800,11 +813,11 @@
       
         <script src="../../../js/random-text.js"></script>
       
+        <script src="../../../js/box-thm.js"></script>
+      
         <script src="../../../js/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       
