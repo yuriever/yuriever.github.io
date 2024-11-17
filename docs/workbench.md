@@ -8,7 +8,7 @@
 
 * [TikZ](workbench/test/tikz.md)
 
-* [WL box](workbench/test/box.md)
+* [Box](workbench/test/box.md)
 
 <!-- ## Dev
 

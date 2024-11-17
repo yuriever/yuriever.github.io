@@ -5,7 +5,6 @@ This method is super slow.
 <!-- markdownlint-disable -->
 <script type="text/tikz">
 
-
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]

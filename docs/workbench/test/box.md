@@ -1,4 +1,4 @@
-# WL box
+# Box
 
 `#!wl test` test test test test test test test test test test test test test test test test
 
@@ -82,6 +82,20 @@ test test test test test test test test test test test test test test test test
         test := 2
         ```
 
+    === "Test2"
+
+        ``` wl
+        test := 2
+        ```
+
+!!! wl "Test"
+
+    === "Test1"
+
+        ``` wl
+        test := 2
+        ```
+
         ``` wl
         Out[] = 2
         ```
@@ -137,6 +151,8 @@ This is a theorem:
     &c+d
 \end{align}
 
+test test test test test test test test test test test test test test test test
+
 !!! thm "LLL"
 
     This is a theorem:
@@ -152,6 +168,10 @@ This is a theorem:
         &c+d
     \end{align}
 
+    This is a theorem.
+
+test test test test test test test test test test test test test test test tests
+
 !!! thm ""
 
     This is a theorem:
@@ -165,6 +185,10 @@ This is a theorem:
         &c+d
     \end{align}
 
+    This is a theorem.
+
+test test test test test test test test test test test test test test test test
+
 !!! thm "0.1"
 
     This is a theorem:
@@ -177,6 +201,8 @@ This is a theorem:
         &a+b\\
         &c+d
     \end{align}
+
+test test test test test test test test test test test test test test test test
 
 ??? thm "0.1"
 
@@ -197,7 +223,6 @@ test test test test test test test test test test test test test test test test
     \end{equation}
 
 test test test test test test test test test test test test test test test test
-
 
 %
 

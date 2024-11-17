@@ -8,12 +8,10 @@
     border-bottom: 1px solid rgb(240, 240, 240);
 }
 
-
 /* 目录放在右侧 */
 .md-sidebar--secondary {
     order: 1;
 }
-
 
 /* 隐藏 md-footer-meta */
 .md-footer {
@@ -24,7 +22,6 @@
     background-color: rgba(255, 255, 255, 0);
     height: 0;
 }
-
 
 /* footnotes 格式 */
 a.footnote-ref:before {
@@ -54,12 +51,10 @@ span.subtitle:before {
     white-space: pre;
 }
 
-
 /* 行距 */
 /* .md-grid {
     max-width: initial;
 } */
-
 
 /* img center */
 /* img.center {
