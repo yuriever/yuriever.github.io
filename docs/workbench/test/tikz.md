@@ -5,30 +5,30 @@ This method is super slow.
 <!-- markdownlint-disable -->
 <script type="text/tikz">
 
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
 
-%Straight Lines [id:da8464148405535428] 
+%Straight Lines [id:da8464148405535428]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (99.93,100.66) -- (59.93,40.66) ;
-%Straight Lines [id:da04344272633054724] 
+%Straight Lines [id:da04344272633054724]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (99.93,100.66) -- (59.93,160.66) ;
-%Straight Lines [id:da8343107970433916] 
+%Straight Lines [id:da8343107970433916]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (139.93,100.66) -- (180.03,160.6) ;
-%Straight Lines [id:da3783415253937581] 
+%Straight Lines [id:da3783415253937581]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (140.03,100.72) -- (179.93,40.66) ;
-%Straight Lines [id:da49445544499217897] 
+%Straight Lines [id:da49445544499217897]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (99.93,100.66) -- (139.93,100.66) ;
-%Straight Lines [id:da537700004356604] 
+%Straight Lines [id:da537700004356604]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (369.91,80.22) -- (429.93,40.25) ;
-%Straight Lines [id:da5915179115114773] 
+%Straight Lines [id:da5915179115114773]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (369.91,80.22) -- (309.93,40.19) ;
-%Straight Lines [id:da05758536628655775] 
+%Straight Lines [id:da05758536628655775]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (369.89,120.22) -- (309.93,160.28) ;
-%Straight Lines [id:da6649338248699579] 
+%Straight Lines [id:da6649338248699579]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (369.83,120.31) -- (429.87,160.25) ;
-%Straight Lines [id:da5075439388943179] 
+%Straight Lines [id:da5075439388943179]
 \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (369.91,80.22) -- (369.89,120.22) ;
 
 % Text Node

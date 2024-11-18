@@ -13,7 +13,7 @@ What expressions are noncommutative? We can store the generators $G(A)$ in the l
 
     ``` wl
     $generator = {};
-    
+
     scalarQ[expr_] :=
         FreeQ[expr,Alternatives@@$generator];
     ```
@@ -26,7 +26,7 @@ We then implement the relations $R(A)$ by a list of rules `#!wl $relation`, and 
 
     ``` wl
     $relation = {};
-    
+
     algebraSimplify[expr_] :=
         ReplaceRepeated[expr,$relation]//Simplify;
     ```
@@ -37,9 +37,9 @@ Noncommutative multiplication needs to satisfy the rules of identity, linearity 
 
     ``` wl
     NonCommutativeMultiply//Unprotect;
-    
+
     NonCommutativeMultiply//Attributes = {Flat,OneIdentity};
-    
+
     $relationInternal = {
         (*linearity*)
         (k_?scalarQ*x_)**y_:>k*x**y,
@@ -62,8 +62,8 @@ To make the results readable, we define additional formatting rules.
 !!! code
 
     ``` wl
-    $printing = {} ; 
-    
+    $printing = {} ;
+
     algebraPrint[expr_] :=
         ReplaceRepeated[expr,$printing];
     ```
@@ -76,7 +76,7 @@ To ensure the convergence of `#!wl ReplaceRepeated`, we need to specify the orde
 
     ``` wl
     $generator = {X,Y,H,v};
-    
+
     $relation = {
         Splice@$relationInternal,
         X**H:>-2 X+H**X,

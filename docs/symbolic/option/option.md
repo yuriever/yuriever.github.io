@@ -10,7 +10,7 @@
 
     ``` wl
     child//Options = {"a"->0};
-    
+
     child[OptionsPattern[]] :=
         OptionValue["a"];
     ```
@@ -27,23 +27,23 @@
 
 此种用法适用于将简单函数从下到上的组合为复杂函数。例如：
 
-=== "Incorrect"
+!!! wl "Example"
 
-    !!! wl "Example"
+    === "Incorrect"
 
         ``` wl
         parent//Options = {
             Splice@Options@child,
             "b"->x
         };
-        
+
         parent[opts:OptionsPattern[]] :=
             child@FilterRules[{opts},Options[child]];
         ```
 
         ``` wl
         SetOptions[parent,"a"->1]
-        
+
         parent[]
         ```
 
@@ -53,23 +53,21 @@
         Out[] = 0
         ```
 
-=== "Correct"
-
-    !!! wl "Example"
+    === "Correct"
 
         ``` wl
         parent//Options = {
             Splice@Options@child,
             "b"->x
         };
-        
+
         parent[opts:OptionsPattern[]] :=
             child@FilterRules[{opts,Options@parent},Options[child]];
         ```
 
         ``` wl
         SetOptions[parent,"a"->1]
-        
+
         parent[]
         ```
 

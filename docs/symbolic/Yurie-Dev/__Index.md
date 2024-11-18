@@ -54,7 +54,7 @@ The kernel functions will convert symbols to strings, use string pattern matchin
 
     ``` wl
     Out[] = a0+a1 x
-    
+
     Out[] = a00+a10 x+a01 y+a11 x y
     ```
 

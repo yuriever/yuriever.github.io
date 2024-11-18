@@ -4,7 +4,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 
 !!! wl "Static"
 
-    ``` mermaid 
+    ``` mermaid
     flowchart LR
 
     PlanetCommonData(PlanetCommonData)

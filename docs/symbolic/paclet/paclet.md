@@ -38,30 +38,30 @@ Syntactic dependence:
     ``` wl
     (*reset $Context|$ContextPath to Package`.*)
     BeginPackage["Package`"];
-    
+
     (*declare public symbols.*)
     Get["Package`Usage`"];
-    
+
     (*load common codes.*)
     Get["Package`Common`"];
-    
+
     (*load definitions of public symbols.*)
     Get["Package`Context1`"];
     Get["Package`Context2`"];
-    
+
     (*reset $Context to Package`Private`.*)
     Begin["`Private`"];
-    
+
     (*some codes here.*)
-    
+
     (*restore $Context to Package`.*)
     End[];
-    
+
     (*restore $Context|$ContextPath to the values before BeginPackage;*)
     (*prepends Package` to $ContextPath.*)
     EndPackage[];
     ```
-    
+
 ## Symbol types
 
 * Constant - public/private constants.

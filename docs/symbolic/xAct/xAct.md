@@ -55,7 +55,7 @@ Notice that:
 
 * due to the non-minimal coupling $R \phi^2$, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds.
 
-Here the computation of variational calculus is purely symbolic and there are no issues of global topology or function space [^integral]. The relevant data is simply a local chart equipped with geometrical structures. We need to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to some target expression. 
+Here the computation of variational calculus is purely symbolic and there are no issues of global topology or function space [^integral]. The relevant data is simply a local chart equipped with geometrical structures. We need to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to some target expression.
 
 ## The structure of the notebook
 

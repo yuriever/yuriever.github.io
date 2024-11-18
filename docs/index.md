@@ -12,5 +12,3 @@ hide:
 * [Workbench](workbench.md)
 
 * [Sora](sora.md)
-
-<!-- <h2 class="nocount">What's new</h2> -->
