@@ -564,15 +564,24 @@
 <p>This kind of class composition can be illustrated by the following diagram.</p>
 <div class="admonition wl">
 <p class="admonition-title">Instance initializing and updating</p>
-<pre class="mermaid"><code>graph LR
+<pre class="mermaid"><code>flowchart LR
 
-common --- define{{define/reset}}
+common(common)
+extra(extra)
+default(default)
+
+define{{define/reset}}
+update{{update}}
+
+common --- define
 define --&gt; instance1 &amp; instance2 &amp; instancen &amp; ...
-extra &amp; instance1 &amp; instance2  --- update{{update}}
+extra &amp; instance1 &amp; instance2  --- update
 update --&gt; default
 
-subgraph instances
-instance1{{instance 1}} &amp; instance2{{instance 2}} &amp; ... &amp; instancen{{instance n}}
+subgraph instances[" "]
+instance1(instance 1) &amp; instance2(instance 2) &amp; ...(...) &amp; instancen(instance n)
+
+style instances fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem
 end</code></pre>
 </div>
 <h2 id="implementation">Implementation</h2>

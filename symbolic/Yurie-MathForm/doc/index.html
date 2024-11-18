@@ -437,6 +437,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="MF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -503,9 +527,49 @@
 <h1 id="yuriemathform"><a href="https://github.com/yuriever/Yurie-MathForm">Yurie/MathForm</a></h1>
 <p>A Mathematica paclet for improving math layout.</p>
 <ul>
-<li>Due to <a href="https://mathematica.stackexchange.com/a/47740/86893">this known <code class="highlight"><span class="nb">TeXForm</span></code> issue</a>, this paclet aims to improve the <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nv">MF</span></code> outputs by occupying <code class="highlight"><span class="nb">TraditionalForm</span></code> definitions.</li>
+<li>
+<p>Due to <a href="https://mathematica.stackexchange.com/a/47740/86893">this known <code class="highlight"><span class="nb">TeXForm</span></code> issue</a>, this paclet aims to improve the <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nv">MF</span></code> outputs by occupying <code class="highlight"><span class="nb">TraditionalForm</span></code> definitions.</p>
+</li>
+<li>
+<p>The LaTeX template file <code>Source/template</code> is from <a href="http://szhorvat.net/mathematica/MaTeX">MaTeX</a>.</p>
+</li>
 </ul>
 <h2 id="mf">MF</h2>
+<div class="admonition wl">
+<p class="admonition-title">Flow chart</p>
+<pre class="mermaid"><code>
+flowchart LR
+
+Expression(Expression)
+TraditionalForm(TraditionalForm)
+TeXForm(TeXForm)
+LaTeXString(LaTeXString)
+PDF(PDF)
+
+$MFAssoc($MFAssoc)
+
+MFInterpret{{MFInterpret}}
+MFString{{MFString/MFCopy}}
+MFArgConvert{{MFArgConvert}}
+MFClear{{MFClear}}
+MF{{MF}}
+
+subgraph dataflow[" "]
+Expression --&gt; TraditionalForm --&gt; TeXForm
+TeXForm --- MFString --&gt; LaTeXString
+LaTeXString --- MF --&gt; PDF
+end
+
+MFArgConvert --&gt; $MFAssoc
+MFClear --&gt;|cancel| MFInterpret &amp; MFArgConvert
+MFInterpret --&gt; TraditionalForm
+$MFAssoc --&gt; MFString
+
+classDef data fill:#ffc6ec20;
+class MFInterpret,MFString,MFArgConvert,MFClear,$MFAssoc,MF data;
+
+style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
+</div>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[]</span><span class="o">@</span><span class="p">{</span>
@@ -526,6 +590,7 @@
 <span class="nb">}</span>
 </code></pre></div>
 </div>
+<h3 id="formatting">Formatting</h3>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">MFString</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
@@ -564,6 +629,12 @@
 <p><code class="highlight"><span class="s">&quot;Listable&quot;</span><span class="o">-&gt;</span><span class="nb">True</span></code> - convert list elements as separate PDFs.</p>
 </li>
 </ul>
+</li>
+</ul>
+<h3 id="format-definition">Format definition</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">MFInterpret</span></code> - set interpretable format values.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">MFArgConvert</span></code> - define LaTeX macro for the symbol and store the rule into <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
@@ -614,6 +685,9 @@
 </li>
 </ul>
 </li>
+<li>
+<p><code class="highlight"><span class="nv">MFClear</span></code> - clear format values and rules in <code class="highlight"><span class="nv">$MFAssoc</span></code> of the symbol, or all symbols under the context.</p>
+</li>
 </ul>
 <h2 id="index">Index</h2>
 <ul>
@@ -629,12 +703,12 @@
 </div>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
+<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </code></pre></div>
 </div>
 <ul>
@@ -686,13 +760,13 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
+<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
 <p>The options are the same as <code class="highlight"><span class="nv">indexJoin</span></code>.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
 </code></pre></div>
 </div>
 </li>
