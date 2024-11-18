@@ -37,15 +37,24 @@ This kind of class composition can be illustrated by the following diagram.
 !!! wl "Instance initializing and updating"
 
     ``` mermaid
-    graph LR
+    flowchart LR
 
-    common --- define{{define/reset}}
+    common(common)
+    extra(extra)
+    default(default)
+
+    define{{define/reset}}
+    update{{update}}
+
+    common --- define
     define --> instance1 & instance2 & instancen & ...
-    extra & instance1 & instance2  --- update{{update}}
+    extra & instance1 & instance2  --- update
     update --> default
-    
-    subgraph instances
-    instance1{{instance 1}} & instance2{{instance 2}} & ... & instancen{{instance n}}
+
+    subgraph instances[" "]
+    instance1(instance 1) & instance2(instance 2) & ...(...) & instancen(instance n)
+
+    style instances fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem
     end
     ```
 
@@ -61,7 +70,7 @@ There are two styles of implementation:
         clusterOf[star1] ^= cluster;
 
         star1[planet1] = {};
-        
+
         star1[planet2] = {};
 
         ...

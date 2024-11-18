@@ -5,7 +5,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 !!! wl "Static"
 
     ``` mermaid 
-    graph LR
+    flowchart LR
 
     PlanetCommonData(PlanetCommonData)
     PlanetMergeData(PlanetMergeData)
@@ -40,7 +40,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 !!! wl "Dynamic"
 
     ``` mermaid
-    graph LR
+    flowchart LR
 
     PlanetExtraData(PlanetExtraData)
     StarDefaultList(StarDefaultList)

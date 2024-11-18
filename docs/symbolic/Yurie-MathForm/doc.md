@@ -4,7 +4,46 @@ A Mathematica paclet for improving math layout.
 
 * Due to [this known `#!wl TeXForm` issue](https://mathematica.stackexchange.com/a/47740/86893), this paclet aims to improve the `#!wl StandardForm|MF` outputs by occupying `#!wl TraditionalForm` definitions.
 
+* The LaTeX template file `Source/template` is from [MaTeX](http://szhorvat.net/mathematica/MaTeX).
+
 ## MF
+
+!!! wl "Flow chart"
+
+    ``` mermaid
+
+    flowchart LR
+
+    Expression(Expression)
+    TraditionalForm(TraditionalForm)
+    TeXForm(TeXForm)
+    LaTeXString(LaTeXString)
+    PDF(PDF)
+
+    $MFAssoc($MFAssoc)
+
+    MFInterpret{{MFInterpret}}
+    MFString{{MFString/MFCopy}}
+    MFArgConvert{{MFArgConvert}}
+    MFClear{{MFClear}}
+    MF{{MF}}
+
+    subgraph dataflow[" "]
+    Expression --> TraditionalForm --> TeXForm
+    TeXForm --- MFString --> LaTeXString
+    LaTeXString --- MF --> PDF
+    end
+
+    MFArgConvert --> $MFAssoc
+    MFClear -->|cancel| MFInterpret & MFArgConvert
+    MFInterpret --> TraditionalForm
+    $MFAssoc --> MFString
+
+    classDef data fill:#ffc6ec20;
+    class MFInterpret,MFString,MFArgConvert,MFClear,$MFAssoc,MF data;
+
+    style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem
+    ```
 
 !!! wl "Example"
 
@@ -30,6 +69,8 @@ A Mathematica paclet for improving math layout.
         \f{y}
     }
     ```
+
+### Formatting
 
 * `#!wl MFString` - refine the string from `#!wl TeXForm`.
 
@@ -59,6 +100,10 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "Listable"->True` - convert list elements as separate PDFs.
 
+### Format definition
+
+* `#!wl MFInterpret` - set interpretable format values.
+
 * `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
 
     * The existing format values will be cleared and messaged.
@@ -77,6 +122,8 @@ A Mathematica paclet for improving math layout.
 
         </center>
 
+* `#!wl MFClear` - clear format values and rules in `#!wl $MFAssoc` of the symbol, or all symbols under the context.
+
 ## Index
 
 * `#!wl indexize[var_,index_]|indexize[{var_,index_}]` - join the variable and index into a symbol.
@@ -93,16 +140,16 @@ A Mathematica paclet for improving math layout.
         Out[] = z1
         ```
 
-* `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
+* `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
 
     !!! wl "Example"
 
         ``` wl
-        z[1]+z[2]//indexJoin[z]
+        z1+z2//indexSplit[z]
         ```
 
         ``` wl
-        Out[] = z1+z2
+        Out[] = z[1]+z[2]
         ```
 
     * `#!wl "IndexPosition"->Construct` - controls the format of indexed vairables.
@@ -154,16 +201,16 @@ A Mathematica paclet for improving math layout.
                 Out[] = z[b1]
                 ```
 
-* `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
+* `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
 
     The options are the same as `#!wl indexJoin`.
 
     !!! wl "Example"
 
         ``` wl
-        z1+z2//indexSplit[z]
+        z[1]+z[2]//indexJoin[z]
         ```
 
         ``` wl
-        Out[] = z[1]+z[2]
+        Out[] = z1+z2
         ```
