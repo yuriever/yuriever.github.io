@@ -76,7 +76,11 @@ A Mathematica paclet for improving math layout.
 
     The expression will be converted to string by `#!wl TeXForm`, then refined according to `#!wl $MFAssoc` and the following options:
 
-    * `#!wl "RemoveLaTeXLRPair" -> True` - remove the `#!tex \left(...\right)` pair.
+    * `#!wl "RemoveLeftRightPair"->True` - remove the `#!tex \left(...\right)` pair.
+
+    **TODO**
+    
+    * `#!wl BreakPlusTimes->True`
 
 * `#!wl MFCopy` - copy the string from `#!wl MFString` and return the original expression.
 
@@ -104,9 +108,29 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl MFInterpret` - set interpretable format values.
 
+    * The supported arguments are:
+
+        !!! code
+
+            ``` wl
+            MFInterpret[Format,format_.,{pattern_,definition_,interpretation_.}]
+            ```
+
+            ``` wl
+            MFInterpret[MakeBoxes,format_.,{pattern_,definition_,interpretation_.}]
+            ```
+
+            ``` wl
+            MFInterpret[__,{__List}] (*batch-operation*)
+            ```
+
+    * The arguments `#!wl format_` and `#!wl interpretation_` can be omitted.
+
+    * The supported formats are `#!wl StandardForm|TraditionalForm` or non-specified.
+
 * `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
 
-    * The existing format values will be cleared and messaged.
+    * The existing format values will be cleared and messaged, since the symbol name is used as the key in `#!wl $MFAssoc`.
 
     * The supported conversion rules are as follows:
 

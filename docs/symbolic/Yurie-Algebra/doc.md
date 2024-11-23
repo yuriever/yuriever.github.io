@@ -5,7 +5,7 @@ A Mathematica paclet for implementing and managing finitely presented associativ
 Dependency:
 
 ``` wl
-"Yurie/Cluster" -> ">=1.0.0"
+"Yurie/Cluster"->">=1.0.0"
 ```
 
 ## Attributes
