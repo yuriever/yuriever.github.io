@@ -2,7 +2,7 @@
 
 A Mathematica paclet for improving math layout.
 
-* Due to [this known `#!wl TeXForm` issue](https://mathematica.stackexchange.com/a/47740/86893), this paclet aims to improve the `#!wl StandardForm|MF` outputs by occupying `#!wl TraditionalForm` definitions.
+* Due to [this known `#!wl TeXForm` issue](https://mathematica.stackexchange.com/a/47740/86893), this paclet aims to improve `#!wl MF` output by utilizing `#!wl TraditionalForm`.
 
 * The LaTeX template file `Source/template` is from [MaTeX](http://szhorvat.net/mathematica/MaTeX).
 
@@ -82,7 +82,7 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "Linebreak"->True` - insert line breaks into long expressions.
 
-    * `#!wl "LinebreakThreshold"->5` - control the threshold of line breaking.
+    * `#!wl "LinebreakThreshold"->6` - control the threshold of line breaking.
 
     * `#!wl "LinebreakIgnore"->{}` - treat the sub-expressions matching with the specified patterns as symbols.
 
