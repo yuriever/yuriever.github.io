@@ -6,6 +6,8 @@ A Mathematica paclet for improving math layout.
 
 * The LaTeX template file `Source/template` is from [MaTeX](http://szhorvat.net/mathematica/MaTeX).
 
+* The exported LaTeX strings will be formatted by [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt).
+
 ## MF
 
 !!! wl "Flow chart"
@@ -78,13 +80,15 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "RemoveLeftRightPair"->True` - remove the `#!tex \left(...\right)` pair.
 
-    **TODO**
-    
-    * `#!wl BreakPlusTimes->True`
+    * `#!wl "Linebreak"->True` - insert line breaks into long expressions.
+
+    * `#!wl "LinebreakThreshold"->5` - control the threshold of line breaking.
+
+    * `#!wl "LinebreakIgnore"->{}` - treat the sub-expressions matching with the specified patterns as symbols.
 
 * `#!wl MFCopy` - copy the string from `#!wl MFString` and return the original expression.
 
-    The options are the same as `#!wl MFString`.
+    * The options are inherited from `#!wl MFString`.
 
 * `#!wl MF` - show the LaTeX of the expression.
 
@@ -103,6 +107,8 @@ A Mathematica paclet for improving math layout.
     * `#!wl "ClearCache"->False` - use the cache.
 
     * `#!wl "Listable"->True` - convert list elements as separate PDFs.
+
+    * The other options are inherited from `#!wl MFString`.
 
 ### Format definition
 
@@ -227,8 +233,6 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl indexJoin[vars__|{vars__}][expr_]` - join indexed variables into symbols in the expression.
 
-    The options are the same as `#!wl indexJoin`.
-
     !!! wl "Example"
 
         ``` wl
@@ -238,3 +242,5 @@ A Mathematica paclet for improving math layout.
         ``` wl
         Out[] = z1+z2
         ```
+
+    * The options are the same as `#!wl indexJoin`.

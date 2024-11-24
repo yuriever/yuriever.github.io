@@ -8,10 +8,6 @@ LaTeX tools.
 
     The file will be formatted firstly by [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt) and then successively by the steps controlled by the following options.
 
-    * `#!wl "Indentation"->4`
-
-        * inherited from [tex-fmt](https://github.com/WGUNDERWOOD/tex-fmt).
-
     * `#!wl "SurroundEquationWithPercent"->False`
 
         * surround equations with percentage symbol;
