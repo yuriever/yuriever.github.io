@@ -112,27 +112,43 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl MFInterpret` - set interpretable format values.
 
-    * The supported arguments are:
+    !!! wl "Usage"
 
-        !!! code
+        ``` wl
+        MFInterpret[Format,format_.,{pattern_,definition_,interpretation_.}]
+        ```
 
-            ``` wl
-            MFInterpret[Format,format_.,{pattern_,definition_,interpretation_.}]
-            ```
+        ``` wl
+        MFInterpret[MakeBoxes,format_.,{pattern_,definition_,interpretation_.}]
+        ```
 
-            ``` wl
-            MFInterpret[MakeBoxes,format_.,{pattern_,definition_,interpretation_.}]
-            ```
-
-            ``` wl
-            MFInterpret[__,{__List}] (*batch-operation*)
-            ```
+        ``` wl
+        MFInterpret[__,{__List}] (*batch-operation*)
+        ```
 
     * The arguments `#!wl format_` and `#!wl interpretation_` can be omitted.
 
     * The supported formats are `#!wl StandardForm|TraditionalForm` or non-specified.
 
 * `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
+
+    !!! wl "Example"
+
+        ``` wl
+        MFArgConvert[][f->"f"]
+        ```
+
+        ``` wl
+        MFArgConvert["{","}"][f[_]|f[___]->"f"]
+        ```
+
+        ``` wl
+        MFArgConvert["{","}",","][f[_List]|f[___List]->"f"]
+        ```
+
+        ``` wl
+        MFArgConvert[___][{__}] (*batch-operation*)
+        ```
 
     * The existing format values will be cleared and messaged, since the symbol name is used as the key in `#!wl $MFAssoc`.
 
