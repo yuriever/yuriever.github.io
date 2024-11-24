@@ -651,11 +651,8 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">MFInterpret</span></code> - set interpretable format values.</p>
-<ul>
-<li>
-<p>The supported arguments are:</p>
-<div class="admonition code">
-<p class="admonition-title">Code</p>
+<div class="admonition wl">
+<p class="admonition-title">Usage</p>
 <div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="nb">Format</span><span class="p">,</span><span class="nt">format_</span><span class="o">.</span><span class="p">,{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="o">.</span><span class="p">}]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="nb">MakeBoxes</span><span class="p">,</span><span class="nt">format_</span><span class="o">.</span><span class="p">,{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="o">.</span><span class="p">}]</span>
@@ -663,7 +660,7 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="o">__</span><span class="p">,{</span><span class="nt">__List</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
 </code></pre></div>
 </div>
-</li>
+<ul>
 <li>
 <p>The arguments <code class="highlight"><span class="nt">format_</span></code> and <code class="highlight"><span class="nt">interpretation_</span></code> can be omitted.</p>
 </li>
@@ -674,6 +671,17 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">MFArgConvert</span></code> - define LaTeX macro for the symbol and store the rule into <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[][</span><span class="nv">f</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span><span class="o">|</span><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="o">___</span><span class="p">][{</span><span class="o">__</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
+</code></pre></div>
+</div>
 <ul>
 <li>
 <p>The existing format values will be cleared and messaged, since the symbol name is used as the key in <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
