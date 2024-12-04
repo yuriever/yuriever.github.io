@@ -1,9 +1,12 @@
 # DLMF
 
 ${}$
-``` wl
-Yurie`Math`Constant`DLMFData
-```
+
+!!! code
+
+    ``` wl
+    Yurie`Math`Constant`DLMFData
+    ```
 
 \begin{align}
 &\text{5.5.5}& &\{\Gamma (z_{\_}):\to \frac{

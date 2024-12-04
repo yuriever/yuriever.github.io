@@ -23,6 +23,3 @@
 * [MathJax configuration](workbench/dev/mathjax-config.md)
 
 * [Customizing shortcuts via Karabiner](workbench/dev/hotkey.md) -->
-
-$a$
-
