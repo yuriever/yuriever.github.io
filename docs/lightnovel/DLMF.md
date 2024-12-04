@@ -1,0 +1,826 @@
+# DLMF
+
+${}$
+``` wl
+Yurie`Math`Constant`DLMFData
+```
+
+\begin{align}
+&\text{5.5.5}& &\{\Gamma (z_{\_}):\to \frac{
+        2^{z-1}
+        \Gamma (\frac{z}{2})
+        \Gamma (\frac{z}{2}+\frac{1}{2})
+}{\sqrt{\pi }}\}
+\\
+&\text{BinomialSwapA}& &\{\binom{a_{\_}}{n_{\_}}:\to
+    (-1)^n
+    \binom{n-a-1}{n}
+\}
+\\
+&\text{BinomialSwapN}& &\{\binom{a_{\_}}{n_{\_}}:\to \binom{a}{a-n}\}
+\\
+&\text{PochhammerSwapA}& &\{(a_{\_})_{n_{\_}}:\to
+    (-1)^n
+    (-a-n+1)_n
+\}
+\\
+&\text{5.2.6}& &\{(a_{\_})_{n_{\_}}:\to
+    (-1)^n
+    (-a-n+1)_n
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{5.2.8.1}& &\{(a_{\_})_{n_{\_}}/;EvenQ[n]:\to
+    2^n
+    (\frac{a}{2})_{\frac{n}{2}}
+    (\frac{a+1}{2})_{\frac{n}{2}}
+\}
+\\
+&\text{5.2.8.2}& &\{(a_{\_})_{n_{\_}}/;OddQ[n]:\to
+    2^n
+    (\frac{a}{2})_{\frac{n+1}{2}}
+    (\frac{a+1}{2})_{\frac{n-1}{2}}
+\}
+\\
+&\text{15.1.2}& &\{\,_2\tilde{F}_1(a_{\_},b_{\_};c_{\_};z_{\_}):\to \frac{
+        \Fpq{2}{1}{a,b}{c}{z}
+}{\Gamma (c)}\}
+\\
+&\text{15.4.20}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{1}/;-a-b+c>0:\to
+    \Gamma (c)
+    \frac{
+        \Gamma (c-a-b)
+    }{\Gamma (c-a) \Gamma (c-b)}
+\}
+\\
+&\text{15.5.11}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{
+        2 a-c
+        +(-a+b) z
+    }
+    (
+        (a-c)
+        (\Fpq{2}{1}{-1+a,b}{c}{z})
+        -a (z-1)
+        (\Fpq{2}{1}{1+a,b}{c}{z})
+    )
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.5.12}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{a-b}
+    (
+        a
+        (\Fpq{2}{1}{1+a,b}{c}{z})
+        -b
+        (\Fpq{2}{1}{a,1+b}{c}{z})
+    )
+\}
+\\
+&\text{15.5.13}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{a+b-c}
+    (
+        a (1-z)
+        (\Fpq{2}{1}{1+a,b}{c}{z})
+        +(b-c)
+        (\Fpq{2}{1}{a,-1+b}{c}{z})
+    )
+\}
+\\
+&\text{15.5.14}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{
+        c
+        (
+            a
+            +(b-c) z
+        )
+    }
+    (
+        a c (1-z)
+        (\Fpq{2}{1}{1+a,b}{c}{z})
+        -(c-a) (c-b) z
+        (\Fpq{2}{1}{a,b}{1+c}{z})
+    )
+\}
+\\
+&\text{15.5.15}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{a+1-c}
+    (
+        a
+        (\Fpq{2}{1}{1+a,b}{c}{z})
+        -(c-1)
+        (\Fpq{2}{1}{a,b}{-1+c}{z})
+    )
+\}
+\\
+&\text{15.5.16}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{c (1-z)}
+    (
+        c
+        (\Fpq{2}{1}{-1+a,b}{c}{z})
+        +(b-c) z
+        (\Fpq{2}{1}{a,b}{1+c}{z})
+    )
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.5.17}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{
+        -1+a
+        +(1+b-c) z
+    }
+    (
+        (a-c)
+        (\Fpq{2}{1}{-1+a,b}{c}{z})
+        +(c-1) (1-z)
+        (\Fpq{2}{1}{a,b}{-1+c}{z})
+    )
+\}
+\\
+&\text{15.5.18}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        1
+    }{
+        c
+        (
+            1-c
+            +(-1-a-b+2 c)
+            z
+        )
+    }
+    (
+        c (c-1) (z-1)
+        (\Fpq{2}{1}{a,b}{-1+c}{z})
+        +(c-a) (c-b) z
+        (\Fpq{2}{1}{a,b}{1+c}{z})
+    )
+\}
+\\
+&\text{15.8.1.1}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    (1-z)^{-a}
+    (\Fpq{2}{1}{a,-b+c}{c}{\frac{z}{-1+z}})
+\}
+\\
+&\text{15.8.1.2}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    (1-z)^{-b}
+    (\Fpq{2}{1}{-a+c,b}{c}{\frac{z}{-1+z}})
+\}
+\\
+&\text{15.8.1.3}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    (1-z)^{c-a-b}
+    (\Fpq{2}{1}{-a+c,-b+c}{c}{z})
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.8.2}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        (\pi  \Gamma (c))
+    }{\sin (\pi  (b-a))}
+    (
+        \frac{
+            (-z)^{-a}
+        }{
+            \Gamma (1+a-b)
+            \Gamma (b) \Gamma (-a+c)
+        }
+        (\Fpq{2}{1}{a,1+a-c}{1+a-b}{\frac{1}{z}})
+        -\frac{
+            (-z)^{-b}
+        }{
+            \Gamma (a)
+            \Gamma (1-a+b)
+            \Gamma (-b+c)
+        }
+        (\Fpq{2}{1}{b,1+b-c}{1-a+b}{\frac{1}{z}})
+    )
+\}
+\\
+&\text{15.8.3}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        (\pi  \Gamma (c))
+    }{\sin (\pi  (b-a))}
+    (
+        \frac{
+            (1-z)^{-a}
+        }{
+            \Gamma (1+a-b)
+            \Gamma (b) \Gamma (-a+c)
+        }
+        (\Fpq{2}{1}{a,-b+c}{1+a-b}{\frac{
+                    1
+        }{1-z}})
+        -\frac{
+            (1-z)^{-b}
+        }{
+            \Gamma (a)
+            \Gamma (1-a+b)
+            \Gamma (-b+c)
+        }
+        (\Fpq{2}{1}{b,-a+c}{1-a+b}{\frac{
+                    1
+        }{1-z}})
+    )
+\}
+\\
+&\text{15.8.4}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        (\pi  \Gamma (c))
+    }{\sin (
+            \pi
+            (c-a-b)
+    )}
+    (
+        \frac{
+            1
+        }{
+            \Gamma (a+b-c+1)
+            \Gamma (c-b) \Gamma (-a+c)
+        }
+        (\Fpq{2}{1}{a,b}{1+a+b-c}{1-z})
+        -\frac{
+            (1-z)^{c-a-b}
+        }{
+            \Gamma (a) \Gamma (b)
+            \Gamma (c-a-b+1)
+        }
+        (\Fpq{2}{1}{-a+c,-b+c}{1-a-b+c}{1-z})
+    )
+\}
+\\
+&\text{15.8.5}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}:\to
+    \frac{
+        (\pi  \Gamma (c))
+    }{\sin (
+            \pi
+            (c-a-b)
+    )}
+    (
+        \frac{
+            z^{-a}
+        }{
+            \Gamma (a+b-c+1)
+            \Gamma (c-b) \Gamma (-a+c)
+        }
+        (\Fpq{2}{1}{a,1+a-c}{1+a+b-c}{
+                1
+                -\frac{1}{z}
+        })
+        -\frac{
+            (
+                (1-z)^{c-a-b}
+                z^{a-c}
+            )
+        }{
+            \Gamma (a) \Gamma (b)
+            \Gamma (c-a-b+1)
+        }
+        (\Fpq{2}{1}{-a+c,1-a}{1-a-b+c}{
+                1
+                -\frac{1}{z}
+        })
+    )
+\}
+\\
+&\text{15.8.13}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;2 b-c=0:\to
+    (
+        1
+        -\frac{z}{2}
+    )^{-a}
+    (\Fpq{2}{1}{\frac{a}{2},\frac{1}{2}+\frac{a}{2}}{\frac{1}{2}+b}{(\frac{
+                    z
+    }{2-z})^2})
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.8.14}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;2 b-c=0:\to
+    (1-z)^{-\frac{a}{2}}
+    (\Fpq{2}{1}{\frac{a}{2},
+            b
+            -\frac{a}{2}
+        }{\frac{1}{2}+b}{\frac{
+                z^2
+    }{4 z-4}})
+\}
+\\
+&\text{15.8.15}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a-b-c+1=0:\to
+    (1+z)^{-a}
+    (\Fpq{2}{1}{\frac{a}{2},\frac{1}{2}+\frac{a}{2}}{1+a-b}{\frac{
+                4 z
+    }{(1+z)^2}})
+\}
+\\
+&\text{15.8.16}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a-b-c+1=0:\to
+    (1-z)^{-a}
+    (\Fpq{2}{1}{\frac{a}{2},\frac{1}{2}+\frac{a}{2}-b}{1+a-b}{\frac{
+                -4 z
+    }{(1-z)^2}})
+\}
+\\
+&\text{15.8.17}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-2 c+1=0:\to
+    (1-2 z)^{-a}
+    (\Fpq{2}{1}{\frac{a}{2},\frac{1}{2}+\frac{a}{2}}{\frac{1}{2} (1+a+b)}{\frac{
+                (4 z (z-1))
+    }{(1-2 z)^2}})
+\}
+\\
+&\text{15.8.18}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-2 c+1=0:\to \Fpq{2}{1}{\frac{a}{2},\frac{b}{2}}{\frac{1}{2} (a+b+1)}{4 (1-z) z}\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.8.19}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-1=0:\to
+    (1-2 z)^{1-a-c}
+    (1-z)^{-1+c}
+    (\Fpq{2}{1}{\frac{a+c}{2},\frac{1}{2} (-1+a+c)}{c}{\frac{
+                (4 z (z-1))
+    }{(1-2 z)^2}})
+\}
+\\
+&\text{15.8.20}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-1=0:\to
+    (1-z)^{c-1}
+    (\Fpq{2}{1}{\frac{-a+c}{2},\frac{1}{2} (-1+a+c)}{c}{4 (1-z) z})
+\}
+\\
+&\text{15.8.21}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a-b-c+1=0:\to
+    (1+\sqrt{z})^{-2 a}
+    (\Fpq{2}{1}{a,\frac{1}{2}+a-b}{1+2 a-2 b}{\frac{
+                4 \sqrt{z}
+    }{(1+\sqrt{z})^2}})
+\}
+\\
+&\text{15.8.22}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-2 c+1=0:\to
+    (\frac{
+            -1
+            +\sqrt{
+                1
+                -\frac{1}{z}
+            }
+        }{
+            1
+            +\sqrt{
+                1
+                -\frac{1}{z}
+            }
+    })^a
+    (\Fpq{2}{1}{a,\frac{a+b}{2}}{a+b}{\frac{
+                4
+                \sqrt{
+                    1
+                    -\frac{1}{z}
+                }
+            }{(
+                    1
+                    +\sqrt{
+                        1
+                        -\frac{1}{z}
+                    }
+    )^2}})
+\}
+\\
+&\text{15.8.23}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-1=0:\to
+    (
+        -1
+        +\sqrt{
+            1
+            -\frac{1}{z}
+        }
+    )^{1-a}
+    (
+        1
+        +\sqrt{
+            1
+            -\frac{1}{z}
+        }
+    )^{1+a-2 c}
+    (
+        1
+        -\frac{1}{z}
+    )^{-1+c}
+    (\Fpq{2}{1}{
+            -\frac{1}{2}
+            +c
+        ,-a+c}{-1+2 c}{\frac{
+                4
+                \sqrt{
+                    1
+                    -\frac{1}{z}
+                }
+            }{(
+                    1
+                    +\sqrt{
+                        1
+                        -\frac{1}{z}
+                    }
+    )^2}})
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{15.8.24}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a-b-c+1=0:\to
+    +\frac{
+        (
+            \sqrt{\pi }
+            (1-z)^{-a}
+            \Gamma (1+a-b)
+        )
+    }{
+        \Gamma (\frac{1}{2}+\frac{a}{2})
+        \Gamma (1+\frac{a}{2}-b)
+    }
+    (\Fpq{2}{1}{\frac{a}{2},\frac{1}{2}+\frac{a}{2}-b}{\frac{1}{2}}{\frac{(1+z)^2}{(-1+z)^2}})
+    -\frac{
+        (
+            2 \sqrt{\pi }
+            (1-z)^{-1-a}
+            (1+z)
+            \Gamma (1+a-b)
+        )
+    }{
+        \Gamma (\frac{a}{2})
+        \Gamma (\frac{1}{2}+\frac{a}{2}-b)
+    }
+    (\Fpq{2}{1}{\frac{1}{2}+\frac{a}{2},1+\frac{a}{2}-b}{\frac{3}{2}}{\frac{(1+z)^2}{(-1+z)^2}})
++\}
+\\
+&\text{15.8.25}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-2 c+1=0:\to
+    +\frac{
+        (
+            \sqrt{\pi }
+            \Gamma (\frac{1}{2} (1+a+b))
+        )
+    }{
+        \Gamma (\frac{1}{2}+\frac{a}{2})
+        \Gamma (\frac{1}{2}+\frac{b}{2})
+    }
+    (\Fpq{2}{1}{\frac{a}{2},\frac{b}{2}}{\frac{1}{2}}{(1-2 z)^2})
+    -\frac{
+        (
+            2 \sqrt{\pi } (1-2 z)
+            \Gamma (\frac{1}{2} (1+a+b))
+        )
+    }{
+        \Gamma (\frac{a}{2})
+        \Gamma (\frac{b}{2})
+    }
+    (\Fpq{2}{1}{\frac{1}{2}+\frac{a}{2},\frac{1}{2}+\frac{b}{2}}{\frac{3}{2}}{(1-2 z)^2})
++\}
+\\
+&\text{15.8.26}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{c_{\_}}{z_{\_}}/;a+b-1=0:\to
+    +\frac{
+        (
+            \sqrt{\pi }
+            (1-z)^{-1+c}
+            \Gamma (c)
+        )
+    }{
+        \Gamma (\frac{a}{2}+\frac{c}{2})
+        \Gamma (\frac{1}{2} (1-a+c))
+    }
+    (\Fpq{2}{1}{
+            \frac{c}{2}
+            -\frac{a}{2}
+            ,
+            \frac{c}{2}+\frac{a}{2}
+            -\frac{1}{2}
+    }{\frac{1}{2}}{(1-2 z)^2})
+    -\frac{
+        (
+            2 \sqrt{\pi } (1-2 z)
+            (1-z)^{-1+c}
+            \Gamma (c)
+        )
+    }{
+        \Gamma (
+            -\frac{a}{2}
+            +\frac{c}{2}
+        )
+        \Gamma (\frac{1}{2} (-1+a+c))
+    }
+    (\Fpq{2}{1}{
+            \frac{c}{2}
+            -\frac{a}{2}
+            +\frac{1}{2}
+    ,\frac{a}{2}+\frac{c}{2}}{\frac{3}{2}}{(1-2 z)^2})
++\}
+\\
+&\text{15.8.27}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{\frac{1}{2}}{z_{\_}}:\to
+    \frac{
+        (
+            \Gamma (\frac{1}{2}+a)
+            \Gamma (\frac{1}{2}+b)
+        )
+    }{
+        2 \sqrt{\pi }
+        \Gamma (\frac{1}{2}+a+b)
+    }
+    (
+        \Fpq{2}{1}{2 a,2 b}{\frac{1}{2}+a+b}{\frac{1}{2} (1-\sqrt{z})}
+        +\Fpq{2}{1}{2 a,2 b}{\frac{1}{2}+a+b}{\frac{1}{2} (1+\sqrt{z})}
+    )
+\}
+\\
+&\text{15.8.28}& &\{\Fpq{2}{1}{a_{\_},b_{\_}}{\frac{3}{2}}{z_{\_}}:\to
+    (
+        -\frac{
+            (
+                \Gamma (
+                    -\frac{1}{2}
+                    +a
+                )
+                \Gamma (
+                    -\frac{1}{2}
+                    +b
+                )
+            )
+        }{
+            4 \sqrt{\pi } \sqrt{z}
+            \Gamma (
+                -\frac{1}{2}
+                +a+b
+            )
+        }
+    )
+    (
+        \Fpq{2}{1}{-1+2 a,-1+2 b}{
+            -\frac{1}{2}
+            +a+b
+        }{\frac{1}{2} (1-\sqrt{z})}
+        -(\Fpq{2}{1}{-1+2 a,-1+2 b}{
+                -\frac{1}{2}
+                +a+b
+        }{\frac{1}{2} (1+\sqrt{z})})
+    )
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{16.4.14}& &\{HoldPattern[\Fpq{4}{3}{-n_{\_},a_{\_},b_{\_},c_{\_}}{d_{\_},e_{\_},f_{\_}}{1}]/;a+b+c-d-e-f-n+1=0:\to \frac{
+        (
+            (
+                (e-a)_n
+                (f-a)_n
+            )
+            (\Fpq{4}{3}{-n,a,-b+d,-c+d}{d,1+a-e-n,1+a-f-n}{1})
+        )
+}{(e)_n (f)_n}\}
+\\
+&\text{14.3.1}& &\{P_{a_{\_}}^{b_{\_}}(z_{\_}):\to
+    \frac{
+        (\frac{
+                1+z
+        }{1-z})^{b/2}
+    }{\Gamma (1-b)}
+    (\Fpq{2}{1}{1+a,-a}{1-b}{
+            \frac{1}{2}
+            -\frac{z}{2}
+    })
+\}
+\\
+&\text{14.3.2}& &\{Q_{a_{\_}}^{b_{\_}}(z_{\_}):\to
+    +\frac{
+        (
+            \pi
+            (\frac{
+                    1+z
+            }{1-z})^{b/2}
+            \cot (b \pi )
+        )
+    }{2 \Gamma (1-b)}
+    (\Fpq{2}{1}{1+a,-a}{1-b}{
+            \frac{1}{2}
+            -\frac{z}{2}
+    })
+    -\frac{
+        (
+            \pi
+            (\frac{1-z}{1+z})^{b/2}
+            \csc (b \pi ) \Gamma (1+a+b)
+        )
+    }{
+        2
+        \Gamma (1+a-b)
+        \Gamma (1+b)
+    }
+    (\Fpq{2}{1}{1+a,-a}{1+b}{
+            \frac{1}{2}
+            -\frac{z}{2}
+    })
++\}
+\\
+&\text{14.3.6}& &\{P_{a_{\_}}^{b_{\_}}(z_{\_}):\to
+    \frac{
+        (\frac{z+1}{z-1})^{b/2}
+    }{\Gamma (1-b)}
+    (\Fpq{2}{1}{1+a,-a}{1-b}{
+            \frac{1}{2}
+            -\frac{z}{2}
+    })
+\}
+\\
+&\text{14.3.7}& &\{Q_{a_{\_}}^{b_{\_}}(z_{\_}):\to
+    \exp (i \pi  b)
+    \frac{
+        (
+            \sqrt{\pi } \Gamma (a+b+1)
+            (z^2-1)^{b/2}
+        )
+    }{
+        2^{a+1}
+        z^{a+b+1}
+        \Gamma (a+\frac{3}{2})
+    }
+    (\Fpq{2}{1}{1+\frac{a}{2}+\frac{b}{2},\frac{1}{2}+\frac{a}{2}+\frac{b}{2}}{\frac{3}{2}+a}{\frac{1}{z^2}})
+\}
+\\
+\end{align}
+
+\begin{align}
+&\text{LegendreAtZ=0}& &\{P_{a_{\_}}(0):\to \frac{
+        \sqrt{\pi }
+    }{
+        \Gamma (
+            \frac{1}{2}
+            -\frac{a}{2}
+        )
+        \Gamma (1+\frac{a}{2})
+    },Q_{a_{\_}}(0):\to
+    -\frac{
+        (
+            \sqrt{\pi }
+            \Gamma (\frac{1+a}{2})
+            \sin (\frac{a \pi }{2})
+        )
+    }{
+        2
+        \Gamma (\frac{2+a}{2})
+    }
+    ,P_{a_{\_}}^{-1}(0):\to \frac{
+        \sqrt{\pi }
+    }{
+        \Gamma (\frac{3}{2}+\frac{a}{2})
+        \Gamma (
+            1
+            -\frac{a}{2}
+        )
+    },Q_{a_{\_}}^{-1}(0):\to \frac{
+        (
+            \sqrt{\pi }
+            \cos (\frac{a \pi }{2})
+            \Gamma (\frac{a}{2})
+        )
+    }{
+        4
+        \Gamma (\frac{3+a}{2})
+}\}
+\\
+&\text{LegendreAtB=1/2}& &\{P_{a_{\_}}^{\frac{1}{2}}(z_{\_}):\to \frac{
+        (
+            (
+                z
+                +i
+                \sqrt{1-z^2}
+            )^{
+                -\frac{1}{2}
+                -a
+            }
+            +(
+                +z
+                +i
+                \sqrt{1-z^2}
+            )^{\frac{1}{2}+a}
+        )
+    }{
+        \sqrt{2 \pi }
+        \sqrt[4]{1-z^2}
+    },Q_{a_{\_}}^{\frac{1}{2}}(z_{\_}):\to \frac{1}{2}
+    (-1)
+    i
+    (
+        -\frac{
+            (
+                \sqrt{\pi }
+                (
+                    z
+                    -i
+                    \sqrt{1-z^2}
+                )^{
+                    -\frac{1}{2}
+                    -a
+                }
+            )
+        }{
+            \sqrt{2}
+            \sqrt[4]{1-z^2}
+        }
+        +\frac{
+            (
+                \sqrt{\frac{\pi }{2}}
+                (
+                    z
+                    +i
+                    \sqrt{1-z^2}
+                )^{
+                    -\frac{1}{2}
+                    -a
+                }
+            )
+        }{\sqrt[4]{1-z^2}}
+    )
+    ,P_{a_{\_}}^{\frac{1}{2}}(z_{\_}):\to \frac{
+        (
+            (
+                z
+                +\sqrt{-1+z^2}
+            )^{\frac{1}{2}+a}
+            +(
+                +z
+                +\sqrt{-1+z^2}
+            )^{
+                -\frac{1}{2}
+                -a
+            }
+        )
+    }{
+        \sqrt{2 \pi }
+        \sqrt[4]{-1+z^2}
+    },Q_{a_{\_}}^{\frac{1}{2}}(z_{\_}):\to \frac{
+        (
+            i \sqrt{\pi }
+            (
+                z
+                +\sqrt{-1+z^2}
+            )^{
+                -\frac{1}{2}
+                -a
+            }
+        )
+    }{
+        \sqrt{2}
+        \sqrt[4]{-1+z^2}
+}\}
+\\
+&\text{WilsonPolynomialToHyper}& &\{wilsonPolynomial(a_{\_},b_{\_},c_{\_},d_{\_},n_{\_},x_{\_}):\to
+    \frac{
+        (\Gamma (a+b+n) \Gamma (a+c+n) \Gamma (a+d+n))
+    }{\Gamma (a+b) \Gamma (a+c) \Gamma (a+d)}
+    (\Fpq{4}{3}{-n,-1+a+b+c+d+n,a-i \sqrt{x},a+i \sqrt{x}}{a+b,a+c,a+d}{1})
+\}
+\\
+&\text{WilsonPolynomialFromHyper}& &\{HoldPattern[\Fpq{4}{3}{-n_{\_},a_{\_},b_{\_},c_{\_}}{d_{\_},e_{\_},f_{\_}}{1}]/;a+b+c-d-e-f-n+1=0:\to
+    \frac{
+        (\Gamma (d) \Gamma (e) \Gamma (f))
+    }{
+        \Gamma (1+a+b+c-d-e)
+        \Gamma (1+a+b+c-d-f)
+        \Gamma (1+a+b+c-e-f)
+    }
+    wilsonPolynomial(\frac{b+c}{2},
+        -\frac{b}{2}
+        -\frac{c}{2}
+        +d
+        ,
+        -\frac{b}{2}
+        -\frac{c}{2}
+        +e
+        ,
+        -\frac{b}{2}
+        -\frac{c}{2}
+        +f
+        ,n,\frac{1}{4}
+        (-1)
+        (b-c)^2
+    )
+\}
+\\
+&\text{JacobiPhiToHyper}& &\{jacobiPhi(a_{\_},b_{\_},c_{\_},z_{\_}):\to \Fpq{2}{1}{\frac{a+b+1-i c}{2}
+        ,\frac{1}{2}
+        (a+b+1+i c)
+}{a+1}{-\sinh^2(z)}\}
+\\
+\end{align}
