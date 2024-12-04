@@ -11,7 +11,7 @@ title: Triangulated reality
 
 * [Paclet and package](symbolic/paclet/paclet.md)
 
-* [Optional Arguments](symbolic/option/option.md)
+* [Optional arguments](symbolic/option/option.md)
 
 * [File operations](symbolic/file/file.md)
 

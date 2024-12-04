@@ -1,4 +1,4 @@
-# Optional Arguments
+# Optional arguments
 
 本页面介绍 Mathematica 的选项功能。
 
