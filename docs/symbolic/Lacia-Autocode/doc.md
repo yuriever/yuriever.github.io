@@ -78,6 +78,8 @@ Code tools.
 
 * `#!wl reportSuspiciousSet` - report suspicious set in the *.wl files in the directory.
 
+    * **TODO** currently `#!wl Unset` is not supported.
+
 <!-- reportWLT.wl -->
 
 * `#!wl reportWLT` - report the unit test in the directory.
