@@ -221,8 +221,10 @@ A Mathematica paclet for improving math layout.
         * `#!wl All`
         * `#!wl "PositiveInteger"`
         * `#!wl "PositiveIntegerOrSingleLetter"`
+        * `#!wl "PositiveIntegerOrGreekLetter"`
         * `#!wl "NaturalNumber"`
         * `#!wl "NaturalNumberOrSingleLetter"`
+        * `#!wl "NaturalNumberOrGreekLetter"`
         * `#!wl _Symbol` - any function for string pattern matching
 
         !!! wl "Example"
