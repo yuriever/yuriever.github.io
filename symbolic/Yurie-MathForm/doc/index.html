@@ -431,16 +431,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mf" class="md-nav__link">
-    <span class="md-ellipsis">
-      MF
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#formatting" class="md-nav__link">
     <span class="md-ellipsis">
       Formatting
@@ -448,25 +438,11 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#format-definition" class="md-nav__link">
     <span class="md-ellipsis">
       Format definition
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
-    <span class="md-ellipsis">
-      Index
     </span>
   </a>
   
@@ -534,7 +510,6 @@
 <p>The exported LaTeX strings will be formatted by <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a>.</p>
 </li>
 </ul>
-<h2 id="mf">MF</h2>
 <div class="admonition wl">
 <p class="admonition-title">Flow chart</p>
 <pre class="mermaid"><code>
@@ -590,7 +565,7 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <span class="nb">}</span>
 </code></pre></div>
 </div>
-<h3 id="formatting">Formatting</h3>
+<h2 id="formatting">Formatting</h2>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">MFString</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
@@ -647,7 +622,7 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="format-definition">Format definition</h3>
+<h2 id="format-definition">Format definition</h2>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">MFInterpret</span></code> - set interpretable format values.</p>
@@ -675,9 +650,13 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[][</span><span class="nv">f</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">|</span><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span><span class="o">|</span><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">&quot;f&quot;</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="o">___</span><span class="p">][{</span><span class="o">__</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
 </code></pre></div>
@@ -731,94 +710,6 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">MFClear</span></code> - clear format values and rules in <code class="highlight"><span class="nv">$MFAssoc</span></code> of the symbol, or all symbols under the context.</p>
-</li>
-</ul>
-<h2 id="index">Index</h2>
-<ul>
-<li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span><span class="o">|</span><span class="nv">indexize</span><span class="p">[{</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">}]</span></code> - join the variable and index into a symbol.</p>
-<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span>
-</code></pre></div>
-</div>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-</div>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code> - controls the format of indexed vairables.</p>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">Construct</span></code></li>
-<li><code class="highlight"><span class="nb">Subscript</span></code></li>
-<li><code class="highlight"><span class="nb">Superscript</span></code></li>
-</ul>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-</div>
-</li>
-<li>
-<p><code class="highlight"><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code> - controls the pattern of indices, and resolves possible conflicts between variable and index.</p>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">All</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrGreekLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumber&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumberOrSingleLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumberOrGreekLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
-</ul>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Correct</label><label for="__tabbed_1_2">Incorrect</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
-</li>
-</ul>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
-</code></pre></div>
-</div>
-<ul>
-<li>The options are the same as <code class="highlight"><span class="nv">indexJoin</span></code>.</li>
-</ul>
 </li>
 </ul>
 
