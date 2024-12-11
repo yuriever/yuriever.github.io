@@ -28,7 +28,7 @@ The kernel functions will convert symbols to strings, use string pattern matchin
 
     * `#!wl Heads->False` - head variables will not be indexified. This option is inherited from `#!wl Replace`.
 
-    * `#!wl Transpose->False` - Lacia-Breakpoint-2023-11-22-11:45
+    * `#!wl Transpose->False` - Yurie-Breakpoint-2023-11-22-11:45
 
 * `#!wl indexArray` - generate tensor of symbols by `#!wl Array`.
 

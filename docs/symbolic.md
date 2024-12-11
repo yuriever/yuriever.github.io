@@ -67,11 +67,11 @@ title: Triangulated reality
 
     * [Designing idea](symbolic/Yurie-LaTeXTool/idea.md)
 
-* [Lacia/Autocode](https://github.com/yuriever/Lacia-Autocode)
+* [Yurie/Autocode](https://github.com/yuriever/Yurie-Autocode)
 
     * Code tools.
 
-    * [Documentation](symbolic/Lacia-Autocode/doc.md)
+    * [Documentation](symbolic/Yurie-Autocode/doc.md)
 
 ## External links
 
