@@ -53,6 +53,12 @@ title: Triangulated reality
 
     * [Designing idea](symbolic/Yurie-Algebra/idea.md)
 
+* [Yurie/Math](https://github.com/yuriever/Yurie-Math)
+
+    * Math utilities.
+
+    * [Documentation](symbolic/Yurie-Math/doc.md)
+
 * [Yurie/MathForm](https://github.com/yuriever/Yurie-MathForm)
 
     * A Mathematica paclet for improving LaTeX conversion.
