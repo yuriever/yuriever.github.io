@@ -7,3 +7,4 @@ mkdocs.yml
 poetry.lock
 poetry.toml
 pyproject.toml
+.python-version
