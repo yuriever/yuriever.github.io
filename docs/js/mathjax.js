@@ -134,7 +134,7 @@ window.MathJax = {
         	"sign":"\\operatorname{sign}",
         	"diag":"\\operatorname{diag}",
         	"gm":[
-        		"\\Gamma[#1]",
+        		"\\Gamma\\left[#1\\right]",
         		1
         	],
         	"poch":[

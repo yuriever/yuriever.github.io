@@ -4,7 +4,7 @@ Math utilities.
 
 ## Index
 
-* `#!wl indexize[var_,index_]|indexize[{var_,index_}]` - join the variable and index into a symbol.
+* `#!wl indexize[var_,index_]` - join the variable and index(s) into a symbol.
 
     This is basically `#!wl ToExpression[ToString[var_]<>ToString[index_]]`, but treating `#!wl Null` as an empty string.
 
@@ -16,6 +16,18 @@ Math utilities.
 
         ``` wl
         Out[] = z1
+        ```
+
+* `#!wl indexify` - join the variable(s) and index(s) into a sequence of symbols.
+
+    !!! wl "Example"
+
+        ``` wl
+        indexify[{z,zb},1,2]
+        ```
+
+        ``` wl
+        Out[] = Sequence[z1,zb1,z2,zb2]
         ```
 
 * `#!wl indexSplit[vars__|{vars__}][expr_]` - split symbols into indexed variables in the expression.
@@ -95,4 +107,4 @@ Math utilities.
         Out[] = z1+z2
         ```
 
-    * The options are the same as `#!wl indexJoin`.
+    * The options are the same as `#!wl indexSplit`.
