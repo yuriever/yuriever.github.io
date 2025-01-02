@@ -80,7 +80,7 @@ Syntactic dependence:
 
 * The symbol names should indicate the types, since there is no inbuilt type system in Mathematica, e.g.,
 
-    * questing function `#!wl fooQ`;
+    * questing function `#!wl fooQ|fooNQ`;
     * pattern name `#!wl fooP`;
     * template object `#!wl fooT`;
     * repeated patterns `#!wl foos__`;
