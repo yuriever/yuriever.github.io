@@ -5,3 +5,5 @@
 * [homework-1](2024-fall-quantum-physics-TA/homework-1-discussion.md)
 
 * [homework-4](2024-fall-quantum-physics-TA/homework-4-discussion.md)
+
+* [homework-9](2024-fall-quantum-physics-TA/homework-9-discussion.md)
