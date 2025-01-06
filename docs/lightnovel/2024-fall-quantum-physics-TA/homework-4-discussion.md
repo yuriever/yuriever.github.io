@@ -1,4 +1,4 @@
-# 第四周作业讨论
+# 第 4 周作业讨论
 
 ## 问题 1.1
 
@@ -75,7 +75,7 @@
     * 第二与第四项组合出 $\pp(\phi^{*}\phi)$，分部积分消去 $x$，给出 $E$；
     * 第一与第三项由于 $K=-\pp^{2}$ 组合出 $\pp(\pp\phi^{*}\pp\phi)$，分部积分消去 $x$，再利用分部积分将 $\pp\phi^{*}\pp\phi$ 转化为 $\phi^{*}K\phi$。
 
-* 部分同学尝试利用 Heisenberg equation，且误认为 $\frac{d (xp)_{H}}{dt}=0$。需要注意对不含时的 Hamiltonian，Heisenberg picture 下的算子为 $\cO_{H}=e^{iHt}\cO e^{-iHt}$，另一方面定态 $\ket{\phi}$ 的时间演化是 trivial 的：$e^{-iHt}\ket{\phi}=e^{-iEt}\ket{\phi}$ ，这样才能说明
+* 部分同学尝试利用 Heisenberg equation，且误认为 $\frac{d (xp)_{H}}{dt}=0$。需要注意对不含时的 Hamiltonian，Heisenberg picture 下的算子为 $\cO_{H}=e^{iHt}\cO e^{-iHt}$，另一方面定态 $\ket{\phi}$ 的时间演化是 trivial 的：$e^{-iHt}\ket{\phi}=e^{-iEt}\ket{\phi}$，这样才能说明
 
     \begin{equation}
         0=\bra{\phi}\frac{d(xp)_H}{dt}\ket{\phi}=
