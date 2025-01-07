@@ -53,6 +53,12 @@ title: Triangulated reality
 
     * [Designing idea](symbolic/Yurie-Algebra/idea.md)
 
+* [Yurie/Tensor](https://github.com/yuriever/Yurie-Tensor)
+
+    * Abstract tensor algebra.
+
+    * [Documentation](symbolic/Yurie-Tensor/doc.md)
+
 * [Yurie/Math](https://github.com/yuriever/Yurie-Math)
 
     * Math utilities.
