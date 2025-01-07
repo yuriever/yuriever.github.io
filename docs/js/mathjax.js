@@ -454,9 +454,9 @@ window.MathJax = {
         		"{\\color{pink} #1}",
         		1
         	],
-        	"const":"\\operatorname{const.}",
-        	"lhs":"\\operatorname{l.h.s.}",
-        	"rhs":"\\operatorname{r.h.s.}"
+        	"const":"\\mathsf{const.}",
+        	"lhs":"\\mathsf{l.h.s.}",
+        	"rhs":"\\mathsf{r.h.s.}"
         },
         // MathJaxJSOverwrite-Macro-End
         environments: {}

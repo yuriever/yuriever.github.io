@@ -2,4 +2,4 @@
 
 Convention: $\hbar=c=1$.
 
-## 问题 4.2
+## 问题 
