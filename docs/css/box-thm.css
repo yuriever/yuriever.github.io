@@ -8,6 +8,7 @@
         &.theorem,
         &.definition,
         &.lemma,
+        &.proof,
         &.remark,
         &.fact,
         &.equation {
@@ -22,6 +23,7 @@
     .theorem,
     .definition,
     .lemma,
+    .proof,
     .remark,
     .fact,
     .equation {

@@ -2,6 +2,7 @@ function injectCounters() {
     // Separate counters
     let sharedCounter = 0; // Counter for theorem, definition, lemma
     let equationCounter = 0; // Counter for equation
+    let proofCounter = 0; // Counter for proof
     let remarkCounter = 0; // Counter for remark
     let factCounter = 0; // Counter for fact
 
@@ -11,13 +12,14 @@ function injectCounters() {
         definition: { label: "Definition", counter: () => ++sharedCounter },
         lemma: { label: "Lemma", counter: () => ++sharedCounter },
         equation: { label: "Equation", counter: () => ++equationCounter },
+        proof: { label: "Proof", counter: () => ++proofCounter },
         remark: { label: "Remark", counter: () => ++remarkCounter },
         fact: { label: "Fact", counter: () => ++factCounter }
     };
 
     // Select all relevant elements
     const elements = document.querySelectorAll(
-        ".theorem, .definition, .lemma, .equation, .remark, .fact"
+        ".theorem, .definition, .lemma, .equation, .proof, .remark, .fact"
     );
 
     elements.forEach((el) => {
@@ -41,7 +43,11 @@ function injectCounters() {
                     title.textContent = "";
                 }
                 // Prepend the label and counter to the title text
-                if (elementClass === "remark" || elementClass === "fact") {
+                if (
+                    elementClass === "proof" ||
+                    elementClass === "remark" ||
+                    elementClass === "fact"
+                ) {
                     title.textContent = `${label}. ${title.textContent}`;
                 } else {
                     title.textContent = `${label} ${count}. ${title.textContent}`;
