@@ -20,7 +20,23 @@
 
     This is the content.
 
+!!! proof
+
+    This is the content.
+
+!!! proof
+
+    This is the content.
+
 !!! remark
+
+    This is the content.
+
+!!! remark
+
+    This is the content.
+
+!!! fact
 
     This is the content.
 
