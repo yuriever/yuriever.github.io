@@ -1,11 +1,11 @@
-/* .md-typeset div.arithmatex {
-    overflow: initial;
-} */
+/*  */
+/* 内层 mjx-container 的边距应该较小，外层 div.arithmatex 的边距应与其它元素的边距保持一致 */
+/*  */
 
-::-webkit-scrollbar {
-    display: none;
+.md-typeset div.arithmatex {
+    margin: 1em 0;
 }
 
-/* mjx-container {
-    margin: 0 !important;
-} */
+mjx-container {
+    margin: 0.1rem !important;
+}
