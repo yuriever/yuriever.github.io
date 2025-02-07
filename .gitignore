@@ -4,7 +4,4 @@
 custom
 site
 mkdocs.yml
-poetry.lock
-poetry.toml
-pyproject.toml
-.python-version
+requirements.txt
