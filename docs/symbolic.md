@@ -112,7 +112,7 @@ title: Triangulated reality
 
 * [MaTeX](http://szhorvat.net/pelican/latex-typesetting-in-mathematica.html) - LaTeX typesetting in Mathematica.
 
-* [xAct](http://www.xact.es/index.html) - efficient tensor computer algebra for the Wolfram Language.
+* [xAct](https://josmar493.dreamhosters.com) - efficient tensor computer algebra for the Wolfram Language.
 
     * [xAct examples](https://github.com/xAct-contrib/examples/blob/master/README.md)
 
