@@ -1,16 +1,29 @@
-# Distribution
+# Distributions
+
+<span hidden> $
+\newcommand{\deltaComplex}[1]{\delta_{c}(#1)}
+\newcommand{\deltaComplexWithPi}[1]{2\pi\delta\left(i(#1)\right)}
+$ </span>
 
 ## Tempered distributions
 
 In this section we introduce by examples the regularization and normalization of distributions. For simplicity, we focus on tempered distributions on $\RR$.
 
-A tempered distribution $\phi\in \cS'(\RR)$ acting on the rapidly decreasing test function $f\in \cS(\RR)$ can be formally written as an integral $\phi(f)=\intt{d x}\phi(x) f(x)$ with the kernel $\phi(x)$.
+A tempered distribution $\phi\in \cS'(\RR)$ acting on the rapidly decreasing test function $f\in \cS(\RR)$ can be formally written as an integral
+
+\begin{equation}
+    \label{eq: functional}
+    \phi(f)=\intt{d x}\phi(x) f(x)
+    \, ,
+\end{equation}
+
+with the kernel $\phi(x)$.
 It is useful to conceptualize $f$ as a Gaussian wave-packet and $\phi$ as a possibly sharp observable.
 
 ### Regularization
 
-When the kernel $\phi(x)$ contains singularities, the integral is convergent only for a subspace $V_{\phi}\subset \cS(\RR)$ of test functions.
-The procedure of subtracting off all the divergences effectively extends the domain of $\phi$ from $V_{\phi}$ to $\cS(\RR)$, called regularization of distributions.
+When the kernel $\phi(x)$ contains singularities, the integral \eqref{eq: functional} is convergent only for a subspace $V_{\phi}\subset \cS(\RR)$ of test functions.
+To extend the domain of $\phi$ from $V_{\phi}$ to $\cS(\RR)$, we need to subtract off the divergences in \eqref{eq: functional} in a systematic way, and this procedure is called regularization of distributions.
 
 The extension is highly nonunique. We are interested in the case where a family of distributions $\phi_{a}(x)$ depends on the parameter $a$ analytically. Then the analyticity of $a$ can help choose a unique regularization of $\phi_{a}(x)$.
 
@@ -44,15 +57,15 @@ Notice that although $x^{-2}$ as a function is positive-definite, as a distribut
     ``` wl
     f[x_]:=1/(1+x^2);
 
-    Integrate[f[x],{x,-\[Infinity],\[Infinity]}]
+    Integrate[f[x],{x,-∞,∞}]
     
-    Integrate[(f[x]+f[-x]-2f[0])/x^2,{x,0,\[Infinity]}]
+    Integrate[(f[x]+f[-x]-2f[0])/x^2,{x,0,∞}]
     ```
 
     ``` wl
-    Out[] = \[Pi]
+    Out[] = π
 
-    Out[] = -\[Pi]
+    Out[] = -π
     ```
 
 ### Example 2: Hilbert transform
@@ -118,7 +131,14 @@ The distribution $x_{+}^{a}$ can be normalized as $\frac{1}{\Gamma[a+1]}x_{+}^{a
 
 ## Homogeneous tempered distributions
 
-In this section we consider distributional solutions to the functional equation $f(\lambda x)=\lambda^{a}f(x)$ for $x\in\RR,\, \lambda>0$, also called homogeneous tempered distributions.
+In this section we consider distributional solutions to the functional equation
+
+\begin{equation}
+    f(\lambda x)=\lambda^{a}f(x)
+    \, ,
+\end{equation}
+
+for $x\in\RR,\, \lambda>0$. These solutions are called homogeneous tempered distributions.
 
 ### Different bases
 
@@ -179,6 +199,26 @@ and the inverse relations are
 
 The poles of $x_{\pm}^{a}$ at $a=-1,-2,\dots$ get canceled due to the phase factor $e^{ia\pi}$, hence $(x \pm i\epsilon)^{a}$ is holomorphic w.r.t. $a\in\CC$.
 
+### Fourier transform
+
+The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fourier transform $f(p)$ vanishes at infinity,
+
+\begin{equation}
+    f(p)=\int_{\RR^d}d^d x\, f(x) e^{-ip\cdot x}\to 0  \textInMath{as} |p|\to \oo
+    \, .
+\end{equation}
+
+The intuition here is that decay properties of distributions are Fourier-transformed into regularity properties.
+
+Under the Fourier transform, the basis $|x|_{\epsilon}^{a}$ remains invariant due to parity. In particular, the Dirac $\delta$-functions are the Fourier transforms of powers
+
+\begin{equation}
+    \delta^{(n)}(x) =\inttt{\frac{dp}{2\pi}}{\RR}e^{ipx} (ip)^{n}
+    \, .
+\end{equation}
+
+The bases $x_{\pm}^{a}$ and $(x\pm i \epsilon)^{a}$ are Fourier transform pairs, revealing the Paley-Wiener type theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
+
 ### Higher dimensions
 
 For higher dimensions, the spherical-symmetric solution of $f(\lambda x)=\lambda^{a} f(x)$ for $x\in\RR^{n},\, \lambda>0$ is $|x|^{a}$. In the spherical coordinates $x=r\hat{x},\, \hat{x}\in\sphere{d-1}$, the action of $|x|^{a}$ on a test function is
@@ -191,7 +231,7 @@ For higher dimensions, the spherical-symmetric solution of $f(\lambda x)=\lambda
 \end{equation}
 
 hence the possible poles are at $a=-n-d,\, n\in\NN$. Futhermore, the poles for odd $n$-s are absent, since the scalar differential operators constructed from $\partial_x$ are $\square^{n}$.
-This implies $\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}$ is holomorphic w.r.t. $a\in\CC$, and the values at the removed poles $a=-2n-d$ are
+This implies $\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}$ is holomorphic w.r.t. $a\in\CC$, and the values at the removed poles are
 
 \begin{equation}
     \frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}\bigg|_{a=-2n-d}
@@ -210,31 +250,9 @@ Especially for $n=0$, we have
     \, .
 \end{equation}
 
-### Fourier transform
-
-The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fourier transform $\wave{f}(p)$ vanishes at infinity,
-
-\begin{equation}
-    \wave{f}(p)=\int_{\RR^d}d^d x\, f(x) e^{-ip\cdot x}\to 0  \textInMath{as} |p|\to \oo
-    \, .
-\end{equation}
-
-The intuition here is that decay properties of distributions are Fourier-transformed into regularity properties.
-
-Under the Fourier transform, the basis $|x|_{\epsilon}^{a}$ remains invariant due to parity. In particular, the Dirac $\delta$-functions are the Fourier transforms of powers
-
-\begin{equation}
-    \delta^{(n)}(x) =\inttt{\frac{dp}{2\pi}}{\RR}e^{ipx} (ip)^{n}
-    \, .
-\end{equation}
-
-The bases $x_{\pm}^{a}$ and $(x\pm i \epsilon)^{a}$ are Fourier transform pairs, revealing the Paley-Wiener type theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
-
 ### Summary
 
 The three bases are summarized into the following table.
-
-<center>
 
 | $a$                      | $-2$                                                | $(-2,-1)$               | $-1$                                          | $\cdots$ |
 | ------------------------ | --------------------------------------------------- | ----------------------- | --------------------------------------------- | -------- |
@@ -243,11 +261,7 @@ The three bases are summarized into the following table.
 | half-line                | $-$                                                 | $x_{\pm}^{a}$           | $-$                                           | $\cdots$ |
 | $i\epsilon$-prescription | $(x \pm i\epsilon)^{-2}$                            | $(x \pm i\epsilon)^{a}$ | $(x \pm i\epsilon)^{-1}$                      | $\cdots$ |
 
-</center>
-
 The regularized homogeneous distributions are summarized into the following table, where $n\in \NN$.
-
-<center>
 
 | Distributions                                                                         | Values                                                                                            | Removed poles |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
@@ -257,9 +271,7 @@ The regularized homogeneous distributions are summarized into the following tabl
 | $\displaystyle \frac{1}{\Gamma[\frac{a+2}{2}]}\abs{x}^{a}_{1}$                        | $\displaystyle \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)$                                   | $a = -2n-2$   |
 | $\displaystyle (x+i\epsilon )^a$                                                      | $\displaystyle x^{-n-1}-i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
 | $\displaystyle (x-i\epsilon )^a$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
-| $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \text{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
-
-</center>
+| $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \textInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
 
 ## Hyperfunctions
 
@@ -267,3 +279,261 @@ Hyperfunctions are another type of distributions related to analyticity, and sha
 
 Given a pair $(f,g)$ such that $f$ and $g$ are holomorphic on the upper and lower half planes respectively, the formal difference $f-g$ specifies a hyperfunction on $\RR$.
 This specification admits redundancy: for any holomorphic function $h$ on the whole complex plane the two pairs $(f,g)\sim (f+h,g+h)$ are equivalent.
+
+## Formal distributions
+
+As a formal distribution, the $\delta$-function is
+
+\begin{equation}
+    \delta(z-w)
+    =
+    \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
+    =
+    \frac{1}{z-w}\bigg|_{|z|>|w|}-\frac{1}{z-w}\bigg|_{|z|<|w|}
+    \, ,
+\end{equation}
+
+which simply restates the contour deformation
+
+\begin{equation}
+    \inttt{\frac{dz}{z-w}}{C_{w}}
+    =
+    \inttt{dz}{|z|=|w|+r}\frac{1}{z-w}
+    -
+    \inttt{dz}{|z|=|w|-r}\frac{1}{z-w}
+    \, .
+\end{equation}
+
+## Analytic functionals
+
+The $\delta$-function with complex argument $\deltaComplex{\Delta}$ is an analytic functional belonging to the Gelfand–Shilov space $Z'$, which is the dual space of analytic test functions.
+
+It is defined as the identity of the Mellin transform
+
+\begin{align}
+    \label{eq: complex Delta function and Mellin transform}
+    &\intrange{\frac{d\Delta'}{2\pi i}}{a-i\infty}{a+i\infty}\deltaComplex{\Delta-\Delta'}f(\Delta')=f(\Delta)
+    \, ,
+\end{align}
+
+and formally can be written as
+
+\begin{equation}
+    \deltaComplex{\Delta-\Delta'}
+    =
+    \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}
+    \, .
+\end{equation}
+
+As a generalization of the usual Dirac $\delta$-function, when $\Delta$ locates on the integration contour of \eqref{eq: complex Delta function and Mellin transform}, $\delta_{c}$ reduces to 
+
+\begin{equation}
+    \deltaComplex{\Delta-\Delta'}
+    =
+    2\pi \delta\left(\Im(\Delta-\Delta')\right)
+    \, ,
+    \textInMath{for} \Re\Delta=a
+    \, ,
+\end{equation}
+
+and when $\Delta$ leaves off the integration contour, $\deltaComplex{\Delta}$ admits the following approximation:
+
+\begin{equation}
+    \label{eq:complex Delta function approximation}
+    \deltaComplex{\Delta-\Delta'}
+    =
+    \begin{cases}
+        \displaystyle
+        \lim_{\epsilon\to0}
+        \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}e^{-\epsilon \omega}
+        =
+        \lim_{\epsilon\to0}\gm{\Delta-\Delta'}\epsilon^{\Delta'-\Delta}
+        \, ,
+        &
+        \textInMath{for} \Re\Delta>a
+        \, , 
+        \\
+        \displaystyle
+        \lim_{\epsilon\to0}
+        \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}e^{-\epsilon/\omega}
+        =
+        \lim_{\epsilon\to0}\gm{\Delta'-\Delta}\epsilon^{\Delta-\Delta'}
+        \, ,
+        &
+        \textInMath{for} \Re\Delta<a
+        \, .
+    \end{cases}
+\end{equation}
+
+!!! proof "Equation \eqref{eq:complex Delta function approximation}"
+
+    This can be proved by a contour deformation argument.
+
+    For $\Re\Delta>a$, we consider a test function $f(\Delta')$ that is analytic in the right half-plane $\Re\Delta'>a$, and decay to zero sufficiently fast as $\Delta'\to \oo$.
+    We integrate the left side of \eqref{eq:complex Delta function approximation}
+    with $f(\Delta')$, then enclose the contour to the right half plane and pick up poles at $\Delta'=\Delta+2n,\, n\in\NN$, leading to
+
+    \begin{align}
+        &\peq
+        \lim_{\epsilon\to 0}
+        \intrange{\frac{d\Delta}{2\pi i}}{a-i\oo}{a+i\oo}
+        \frac{1}{2}\gm{-\frac{\Delta}{2}} \epsilon^{\Delta}f(\Delta)
+        =
+        \lim_{\epsilon\to 0}\sum_{n=0}^{+\oo}\frac{(-1)^{n}}{n!}\epsilon^{2n}f(2n)
+        =
+        f(0)
+        \, ,
+    \end{align}
+
+    which justifies the defining property \eqref{eq: complex Delta function and Mellin transform}.
+
+### Mellin transform
+
+Under the Mellin transform, we have the following pairs:
+
+\begin{align}
+    &
+    f(\omega)
+    &&
+    \wave{f}(\Delta)
+    \\
+    &
+    \omega^{-\Delta'}
+    &&
+    \deltaComplex{\Delta-\Delta'}
+    \eqqq
+    \lim_{\omega_{0}\to 0^{+}}\half \gm{\frac{\Delta'-\Delta}{2}}\omega_{0}^{\Delta-\Delta'}
+    \\
+    &
+    \delta(\omega-\omega_{0})
+    &&
+    \omega_{0}^{\Delta-1}
+    \\
+    &
+    \delta(\omega)\eqqq \lim_{\omega_{0}\to 0^{+}} \delta(\omega-\omega_{0})
+    &&
+    \lim_{\omega_{0}\to 0^{+}}\omega_{0}^{\Delta-1}
+\end{align}
+
+
+\begin{equation}
+    \lim_{\omega_{0}\to0}\omega_{0}^{\Delta-1}
+    \mapsto
+    \lim_{\epsilon\to 0}
+    \frac{\deltaComplex{\Delta-1+\epsilon}}{\gm{\epsilon}}
+\end{equation}
+
+Now we check the consistency of the above Mellin pairs.
+
+
+
+## Miscellaneous
+
+The Dirac $\delta$-function admits the following approximations
+
+\begin{align}
+    &
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\sqrt{2\pi \epsilon}}e^{-x^2/2\epsilon}
+    \, ,
+    \\
+    &
+    \delta(x)
+    =
+    \lim_{p\to \oo}\frac{1}{\pi}\frac{\sin p x}{x}
+    \, ,
+    \\
+    &
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\pi} \frac{\epsilon}{x^2+\epsilon^2}
+    =
+    \lim_{\epsilon\to 0}-\frac{1}{\pi}\Im \frac{1}{x+i\epsilon}
+    \, ,
+    \\
+    &
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0} \frac{1}{\gm{\epsilon}} x_{+}^{-1+\epsilon}
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\gm{\epsilon}} |x|^{-1+2\epsilon}
+    \, ,
+\end{align}
+
+where $\epsilon>0$ and the following properties
+
+\begin{align}
+    &
+    \delta^{(n)}(a x)=\frac{\sign(a)}{a^{n+1}}\delta^{(n)}(x)
+    \, .
+\end{align}
+
+### An identity
+
+We consider the distribution $\theta(z)\delta(i(z-\zb))$ on $\RR^{2}$, which support on the positive real axis.
+In the Cartesian and radial coordinates, we have
+
+\begin{align}
+    \theta(z)\delta(i(z-\zb))
+    =
+    \frac{1}{2}\theta(x)\delta(y)
+    =
+    \frac{1}{2r}\delta(\theta)
+    \, .
+\end{align}
+
+As a periodic function of $\theta$, we can use the identity
+
+\begin{equation}
+    \delta(\theta)=\lim_{N\to\oo}\frac{1}{2\pi}\sum_{n=-N}^{N}e^{i n \theta}
+    \, ,
+\end{equation}
+
+to obtain
+
+\begin{align}
+    \theta(z)\delta(i(z-\zb))
+    =
+    \frac{1}{4\pi r}\sum_{n=-\oo}^{+\oo}e^{i n \theta}
+    =
+    \frac{1}{4\pi}\sum_{n=-\oo}^{+\oo}z^{\frac{n-1}{2}}\zb^{-\frac{n+1}{2}}
+    \, .
+\end{align}
+
+In this way, the distributional behavior of $\theta(z)\delta(i(z-\zb))$ can be understood as a divergent sum of powers of $(z,\zb)$.
+
+### Relation between $\delta$- formal and tempered distributions
+
+The Dirac $\delta$-function satisfies
+
+\begin{equation}
+    2\pi i\inttt{dx}{\RR} \delta(x-y)f(x)
+    =
+    \inttt{dx}{\RR}\left(\frac{1}{x-y-i\epsilon}-\frac{1}{x-y+i\epsilon}\right)f(x)
+    \, .
+\end{equation}
+
+We show that the two are equivalent.
+Without loss of generality for $w>0,r\in(0,w)$, the disk $|z|\leq w+r$ can be map to the upper half plane $\Re x\geq 0$ by the Mobius transformation $z(x)=(w+r) \frac{(r+2 w) (x-y)-i r \epsilon }{(r+2 w) (x-y)+i r \epsilon }$ such that $z(y+i\epsilon)=w$, and similarly the disk $|z|\geq w-r$ can be mapped to the lower half plane $\Re x\leq 0$ by $z(x)=(w-r)\frac{(r-2 w) (x-y)+i r \epsilon }{(r-2 w) (x-y)-i r \epsilon }$ with $z(y-i\epsilon)=w$. Hence we have
+
+\begin{equation}
+    \inttt{}{|z|=|w|+r}-\inttt{}{|z|=|w|-r}\frac{dz}{z-w}=
+    \inttt{dx}{\RR}\frac{1}{x-y-i\epsilon}-\inttt{dx}{\RR}\frac{1}{x-y+i\epsilon}
+    +
+    I(\epsilon)
+    \, ,
+\end{equation}
+
+where the error term
+
+\begin{equation}
+    I(\epsilon)=
+    \epsilon
+    \inttt{dx}{\RR}
+    \frac{2 i r^2 }{\left(r^2-4 w^2\right) (x-y)^2+r^2 \epsilon ^2-4 i r w \epsilon  (x-y)}\to 0
+    \, ,
+    \textInMath{as}
+    \epsilon\to 0
+    \, .
+\end{equation}

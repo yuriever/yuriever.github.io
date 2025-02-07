@@ -4,4 +4,6 @@
 
 * [DLMF](lightnovel/DLMF.md)
 
-* [Distribution](lightnovel/distribution.md)
+* [Distributions](lightnovel/distribution.md)
+
+* [Conventions for Celestial CFT](lightnovel/CCFTconvention.md)

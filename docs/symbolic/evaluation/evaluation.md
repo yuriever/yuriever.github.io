@@ -13,8 +13,6 @@ References:
 
 本文通过类比模空间来回顾 Mathematica 表达式的计算。
 
-<center>
-
 | Expr                                 | Moduli                            |
 | :----------------------------------- | :-------------------------------- |
 | expression `#!wl x0`                 | point $x_{0}$                     |
@@ -25,8 +23,6 @@ References:
 | standard evaluation sequence         | a special flow                    |
 | complexity                           | potential                         |
 | neighborhood/locality                | ? [^neighbor]                     |
-
-</center>
 
 ## Everything is an expression
 
@@ -44,11 +40,7 @@ References:
 
 例如：表达式 `#!wl a^2+2 a b+b^2` 的树形式为
 
-<center>
-
 ![tree-example](tree-example.svg)
-
-</center>
 
 ## Evaluation
 

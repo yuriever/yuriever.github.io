@@ -2,8 +2,6 @@
 
 ## File name operations
 
-<center>
-
 |               | a/b/c     | a/b/c.txt     |
 | :------------ | :-------- | :------------ |
 | FileNameSplit | {a, b, c} | {a, b, c.txt} |
@@ -12,8 +10,6 @@
 | FileNameTake  | c         | c.txt         |
 | FileNameDrop  | a/b       | a/b           |
 | DirectoryName | a/b/      | a/b/          |
-
-</center>
 
 * `#!wl FileNameSplit[file_]` - split the file path into a list of path elements.
 
@@ -31,8 +27,6 @@
 
 ## File operations
 
-<center>
-
 |                 | a/b/c                    | a/b/c.txt                    | /Downloads/test/sub1 | /Downloads/test/sub1/file1.txt                    |
 | :-------------- | :----------------------- | :--------------------------- | :------------------- | :------------------------------------------------ |
 | FileExistsQ     | False                    | False                        | True                 | True                                              |
@@ -40,8 +34,6 @@
 | FileFormat      | $Failed                  | $Failed                      | Directory            | Text                                              |
 | DirectoryQ      | False                    | False                        | True                 | False                                             |
 | ParentDirectory | ParentDirectory["a/b/c"] | ParentDirectory["a/b/c.txt"] | /Downloads/test      | ParentDirectory["/Downloads/test/sub1/file1.txt"] |
-
-</center>
 
 * `#!wl FileExistsQ[file_]` - test whether a file exists.
 

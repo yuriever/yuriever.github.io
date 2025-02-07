@@ -34,8 +34,6 @@ Dependency:
 
 * `#!wl algebraShow[alg_]` - show the algebra.
 
-<center>
-
 | Name                    | Meaning                                         |
 | :---------------------- | :---------------------------------------------- |
 | `#!wl algebraDefine[]`  | return the defined algebras.                    |
@@ -44,13 +42,9 @@ Dependency:
 | `#!wl algebraUnset[]`   | unset all the defined except internal algebras. |
 | `#!wl algebraShow[]`    | show the default algebras.                      |
 
-</center>
-
 ## Functionalities
 
 For an algebra $A$ over a base field $k$, the following operations are implemented.
-
-<center>
 
 | Name             |                      | Symbol                        | Formatting                    |
 | :--------------- | :------------------- | :---------------------------- | :---------------------------- |
@@ -62,11 +56,7 @@ For an algebra $A$ over a base field $k$, the following operations are implement
 | counit           | $\epsilon:A\to k$    | `#!wl counit`                 | `#!wl "\[Epsilon]"`           |
 | antipode         | $S:A\to A$           | `#!wl antipode`               | `#!wl "S"`                    |
 
-</center>
-
 The predefined algebras with their implemented structures are listed below.
-
-<center>
 
 | Algebra            | Operation                | Structure                               |
 | :----------------- | :----------------------- | :-------------------------------------- |
@@ -76,8 +66,6 @@ The predefined algebras with their implemented structures are listed below.
 | `#!wl "Coalgebra"` | comultiplication, counit | linearity                               |
 | `#!wl "Bialgebra"` | comultiplication, counit | morphism, identity                      |
 | `#!wl "Antipode"`  | antipode                 | linearity, anti-morphism, identity      |
-
-</center>
 
 There are several remarks.
 
@@ -114,8 +102,6 @@ There are several remarks.
 
 Table of shortcuts:
 
-<center>
-
 | Name                  | Meaning                                              |
 | :-------------------- | :--------------------------------------------------- |
 | `#!wl algS[_]`        | `#!wl algebraSimplify`                               |
@@ -125,8 +111,6 @@ Table of shortcuts:
 | `#!wl algFSP[_]`      | `#!wl algebraSimplify + FullSimplify + algebraPrint` |
 | `#!wl algEqualQ[_,_]` | `#!wl x==y` for operators.                           |
 | `#!wl algSameQ[_,_]`  | `#!wl x===y` for operators.                          |
-
-</center>
 
 ### Inner product
 

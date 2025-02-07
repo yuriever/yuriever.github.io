@@ -8,11 +8,7 @@ References:
 
 Syntactic dependence:
 
-<center>
-
 ![paclet](paclet.png)
-
-</center>
 
 !!! wl "File structure"
 

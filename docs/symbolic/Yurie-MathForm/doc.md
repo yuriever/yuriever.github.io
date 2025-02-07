@@ -160,8 +160,6 @@ A Mathematica paclet for improving math layout.
 
     * The supported conversion rules are as follows:
 
-        <center>
-
         | Pattern           | Expression            | LaTeX                |
         | :---------------- | :-------------------- | :------------------- |
         | `#!wl f`          | `#!wl f`              | `#!tex \f`           |
@@ -169,7 +167,5 @@ A Mathematica paclet for improving math layout.
         | `#!wl f[___]`     | `#!wl f[a,b]`         | `#!tex \f{a}{b}`     |
         | `#!wl f[_List]`   | `#!wl f[{a,b}]`       | `#!tex \f{a,b}`      |
         | `#!wl f[___List]` | `#!wl f[{a,b},{c,d}]` | `#!tex \f{a,b}{c,d}` |
-
-        </center>
 
 * `#!wl MFClear` - clear format values and rules in `#!wl $MFAssoc` of the symbol, or all symbols under the context.

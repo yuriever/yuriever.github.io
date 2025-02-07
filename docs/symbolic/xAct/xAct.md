@@ -25,8 +25,6 @@ Supplementary materials:
 
 We introduce the symbolic tensor functionality of **xAct**, and as examples, we derive equations of motion in the following theories.
 
-<center>
-
 | Theory                                     | Action                                                                                                  |
 | :----------------------------------------- | :------------------------------------------------------------------------------------------------------ |
 | free scalar                                | $S_{\text{f.s.}}=\frac{1}{2}\int\,{d^{d}x}\sqrt{-g}\,\partial^{a}\phi \partial_{a}\phi$                 |
@@ -34,11 +32,7 @@ We introduce the symbolic tensor functionality of **xAct**, and as examples, we 
 | abelian gauge field                        | $S_{\ugroup(1)}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}$                                             |
 | four-derivative scalar-tensor ($\fourpst$) | $S_{\fourpst}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,\a(\f) (\partial^{a}\phi \partial_{a}\phi)^2$         |
 
-</center>
-
 The traces $\trace{T}$ of stress tensors $T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}$ in these theories vanish at special dimensions and parameters, then the actions are invariant under Weyl transformations [@Polchinski:1987dy,@Nakayama:2013is,@Dymarsky:2013pqa,@Luty:2012ww,@El-Showk:2011xbs,@Jackiw:2011vz].
-
-<center>
 
 | Theory           | Trace of stress tensor                                                                             | Condition of Weyl-invariance              |
 | :--------------- | :------------------------------------------------------------------------------------------------- | :---------------------------------------- |
@@ -46,8 +40,6 @@ The traces $\trace{T}$ of stress tensors $T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delt
 | conformal scalar | $\tfrac{1}{2} (-2 + d) \phi \operatorname{EOM}[\f]$ at $c= - \frac{2 -  d}{4 (-1 + d)}$            | $d=2$ or $c= - \frac{2 -  d}{4 (-1 + d)}$ |
 | abelian gauge    | $\tfrac{1}{4} (-4 + d) F_{ab} F^{ab}$                                                              | $d=4$                                     |
 | $\fourpst$       | $\tfrac{1}{4} (-4 + d) \alpha (\phi) \nabla_{a}\phi \nabla^{a}\phi \nabla_{b}\phi \nabla^{b}\phi $ | $d=4$                                     |
-
-</center>
 
 Notice that:
 

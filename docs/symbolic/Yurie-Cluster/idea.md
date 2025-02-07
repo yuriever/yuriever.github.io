@@ -20,15 +20,11 @@ Then different algebras correspond to different list-triples and can be composit
 
 This leads to an abstraction of a three-layered structure, referred as
 
-<center>
-
 | Layer                        | Name    |
 | :--------------------------- | :------ |
 | composite algebra            | cluster |
 | algebra                      | star    |
 | operator, relation, printing | planet  |
-
-</center>
 
 ## Structure
 
