@@ -1,19 +1,15 @@
-/* h2 标题 添加下边框 */
-.md-typeset h2 {
-    margin: 1.6em 0 0.64em;
-    /* font-size: 1.4rem; */
-    line-height: 1.4;
-    letter-spacing: 0em;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid rgb(240, 240, 240);
-}
-
+/*  */
 /* 目录放在右侧 */
+/*  */
+
 .md-sidebar--secondary {
     order: 1;
 }
 
+/*  */
 /* 隐藏 md-footer-meta */
+/*  */
+
 .md-footer {
     display: none;
 }
@@ -23,51 +19,28 @@
     height: 0;
 }
 
-/* footnotes 格式 */
-a.footnote-ref:before {
-    content: "[";
-}
+/*  */
+/* 图片居中 */
+/*  */
 
-a.footnote-ref:after {
-    content: "]";
-}
-
-a.footnote-ref {
-    vertical-align: bottom;
-    color: rgb(118, 118, 255);
-}
-
-.md-typeset .footnote-ref {
-    font-size: 1em;
-}
-
-/* 副标题 */
-span.subtitle {
-    font-size: 16px;
-}
-
-span.subtitle:before {
-    content: "\a";
-    white-space: pre;
-}
-
-/* 行距 */
-/* .md-grid {
-    max-width: initial;
-} */
-
-/* img center */
-/* img.center {
+img {
     display: block;
-    max-width: 720px !important;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-    margin-top: 5%;
-} */
+    margin: 0 auto;
+}
 
+/*  */
+/* horizontal line */
+/*  */
+
+.md-typeset hr {
+    margin: 0.8rem 0;
+}
+
+/*  */
 /* fix the vertical spacing of mathjax display environment */
 /* https://github.com/mathjax/MathJax/issues/2936 */
+/*  */
+
 mjx-assistive-mml {
     right: 0;
     bottom: 0;

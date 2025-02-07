@@ -1,3 +1,11 @@
-.md-typeset div.arithmatex {
+/* .md-typeset div.arithmatex {
     overflow: initial;
+} */
+
+::-webkit-scrollbar {
+    display: none;
 }
+
+/* mjx-container {
+    margin: 0 !important;
+} */
