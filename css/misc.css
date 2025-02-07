@@ -1,0 +1,55 @@
+/*  */
+/* 目录放在右侧 */
+/*  */
+
+.md-sidebar--secondary {
+    order: 1;
+}
+
+/*  */
+/* 隐藏 md-footer-meta */
+/*  */
+
+.md-footer {
+    display: none;
+}
+
+.md-footer-meta {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0;
+}
+
+/*  */
+/* 图片居中 */
+/*  */
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*  */
+/* 水平线的边距 */
+/*  */
+
+.md-typeset hr {
+    margin: 0.8rem 0;
+}
+
+/*  */
+/* fix the vertical spacing of mathjax display environment */
+/* https://github.com/mathjax/MathJax/issues/2936 */
+/*  */
+
+mjx-assistive-mml {
+    right: 0;
+    bottom: 0;
+}
+
+/*  */
+/* 隐藏滚动条 */
+/*  */
+
+::-webkit-scrollbar {
+    display: none;
+}

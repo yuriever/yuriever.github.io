@@ -1,0 +1,20 @@
+/*  */
+/* footnote 格式 */
+/*  */
+
+a.footnote-ref:before {
+    content: "[";
+}
+
+a.footnote-ref:after {
+    content: "]";
+}
+
+a.footnote-ref {
+    vertical-align: bottom;
+    color: rgb(118, 118, 255);
+}
+
+.md-typeset .footnote-ref {
+    font-size: 1em;
+}
