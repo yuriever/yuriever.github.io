@@ -1,10 +1,10 @@
 window.MathJax = {
     loader: {
-        load: ["[tex]/tagformat", "[tex]/configmacros", "[tex]/physics"]
+        load: ["[tex]/tagformat", "[tex]/configmacros", "[tex]/physics", "[tex]/cases", "[tex]/empheq"]
     },
     tex: {
         // packages included
-        packages: { "[+]": ["tagformat", "configmacros", "physics"] },
+        packages: { "[+]": ["tagformat", "configmacros", "physics", "cases", "empheq"] },
         // inline math mode delimiters
         physics: {
             italicdiff: true,

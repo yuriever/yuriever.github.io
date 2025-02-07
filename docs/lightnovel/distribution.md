@@ -306,88 +306,121 @@ which simply restates the contour deformation
 
 ## Analytic functionals
 
-The $\delta$-function with complex argument $\deltaComplex{\Delta}$ is an analytic functional belonging to the Gelfand–Shilov space $Z'$, which is the dual space of analytic test functions.
+The $\delta$-function with complex argument $\delta_{c}$ is an analytic functional belonging to the Gelfand–Shilov space $Z'$, which is the dual space of analytic test functions.
 
 It is defined as the identity of the Mellin transform
 
 \begin{align}
     \label{eq: complex Delta function and Mellin transform}
-    &\intrange{\frac{d\Delta'}{2\pi i}}{a-i\infty}{a+i\infty}\deltaComplex{\Delta-\Delta'}f(\Delta')=f(\Delta)
+    &\intrange{\frac{d\Delta}{2\pi i}}{a-i\infty}{a+i\infty}\deltaComplex{\Delta-\Delta_{0}}f(\Delta)=f(\Delta_{0})
     \, ,
 \end{align}
 
 and formally can be written as
 
 \begin{equation}
-    \deltaComplex{\Delta-\Delta'}
+    \deltaComplex{\Delta-\Delta_{0}}
     =
-    \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}
+    \intrange{d\omega}{0}{\oo}\omega^{\Delta_{0}-\Delta-1}
     \, .
 \end{equation}
 
-As a generalization of the usual Dirac $\delta$-function, when $\Delta$ locates on the integration contour of \eqref{eq: complex Delta function and Mellin transform}, $\delta_{c}$ reduces to 
+As a generalization of the usual Dirac $\delta$-function, when $\Delta_{0}$ locates on the integration contour $\Delta\in a + i\RR$ in \eqref{eq: complex Delta function and Mellin transform}, $\delta_{c}$ reduces to
 
 \begin{equation}
-    \deltaComplex{\Delta-\Delta'}
+    \deltaComplex{\Delta-\Delta_{0}}
     =
-    2\pi \delta\left(\Im(\Delta-\Delta')\right)
+    2\pi \delta\left(\Im(\Delta-\Delta_{0})\right)
     \, ,
-    \textInMath{for} \Re\Delta=a
-    \, ,
+    \textInMath{for} \Re\Delta_{0}=a
+    \, .
 \end{equation}
 
-and when $\Delta$ leaves off the integration contour, $\deltaComplex{\Delta}$ admits the following approximation:
+When $\Delta_{0}$ leaves off the integration contour, $\delta_{c}$ admits the following approximations:
 
-\begin{equation}
-    \label{eq:complex Delta function approximation}
-    \deltaComplex{\Delta-\Delta'}
+\begin{numcases}{\deltaComplex{\Delta-\Delta_{0}}=}
+    \label{eq: complex Delta function approximation a}
+    \displaystyle
+    \lim_{\epsilon\to0}
+    \gm{\Delta_{0}-\Delta}\epsilon^{\Delta-\Delta_{0}}
     =
-    \begin{cases}
-        \displaystyle
-        \lim_{\epsilon\to0}
-        \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}e^{-\epsilon \omega}
-        =
-        \lim_{\epsilon\to0}\gm{\Delta-\Delta'}\epsilon^{\Delta'-\Delta}
-        \, ,
-        &
-        \textInMath{for} \Re\Delta>a
-        \, , 
-        \\
-        \displaystyle
-        \lim_{\epsilon\to0}
-        \intrange{d\omega}{0}{\oo}\omega^{\Delta-\Delta'-1}e^{-\epsilon/\omega}
-        =
-        \lim_{\epsilon\to0}\gm{\Delta'-\Delta}\epsilon^{\Delta-\Delta'}
-        \, ,
-        &
-        \textInMath{for} \Re\Delta<a
-        \, .
-    \end{cases}
-\end{equation}
+    \lim_{\epsilon\to0}
+    \intrange{d\omega}{0}{\oo}\omega^{\Delta_{0}-\Delta-1}e^{-\epsilon \omega}
+    \, ,
+    &
+    \textInMath{for} \Re\Delta_{0}>a
+    \, ,
+    \\
+    \label{eq: complex Delta function approximation b}
+    \displaystyle
+    \lim_{\epsilon\to0}
+    \gm{\Delta-\Delta_{0}}\epsilon^{\Delta_{0}-\Delta}
+    =
+    \lim_{\epsilon\to0}
+    \intrange{d\omega}{0}{\oo}\omega^{\Delta_{0}-\Delta-1}e^{-\epsilon/\omega}
+    \, ,
+    &
+    \textInMath{for} \Re\Delta_{0}<a
+    \, .
+\end{numcases}
 
-!!! proof "Equation \eqref{eq:complex Delta function approximation}"
+!!! proof "Equation \eqref{eq: complex Delta function approximation a}"
 
-    This can be proved by a contour deformation argument.
+    This can be shown by a contour deformation argument.
 
-    For $\Re\Delta>a$, we consider a test function $f(\Delta')$ that is analytic in the right half-plane $\Re\Delta'>a$, and decay to zero sufficiently fast as $\Delta'\to \oo$.
-    We integrate the left side of \eqref{eq:complex Delta function approximation}
-    with $f(\Delta')$, then enclose the contour to the right half plane and pick up poles at $\Delta'=\Delta+2n,\, n\in\NN$, leading to
+    For $\Re\Delta_{0}>a$, we consider a test function $f(\Delta)$ that is analytic in the region $a<\Re \Delta$ and decays sufficiently fast as $\Delta\to +\oo$.
+    As $\epsilon^{\Delta-\Delta_{0}}\to 0$, we can enclose the contour to the right and pick up the poles at $\Delta=\Delta_{0}+n,\, n\in\NN$, leading to
 
-    \begin{align}
-        &\peq
+    \begin{equation}
         \lim_{\epsilon\to 0}
         \intrange{\frac{d\Delta}{2\pi i}}{a-i\oo}{a+i\oo}
-        \frac{1}{2}\gm{-\frac{\Delta}{2}} \epsilon^{\Delta}f(\Delta)
+        \gm{\Delta_{0}-\Delta}\epsilon^{\Delta-\Delta_{0}}
+        f(\Delta)
         =
-        \lim_{\epsilon\to 0}\sum_{n=0}^{+\oo}\frac{(-1)^{n}}{n!}\epsilon^{2n}f(2n)
+        \lim_{\epsilon\to 0}\sum_{n=0}^{+\oo}\frac{(-1)^{n}}{n!}\epsilon^{n}f(\Delta_{0}+n)
         =
-        f(0)
+        f(\Delta_{0})
         \, ,
-    \end{align}
+    \end{equation}
 
     which justifies the defining property \eqref{eq: complex Delta function and Mellin transform}.
 
+    From the analysis above, we observe that only the term $n = 0$ needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for $f(\Delta)$ to be holomorphic in the strip $a < \Re \Delta < \Re \Delta_{0}$, to be meromorphic or contain branch cuts in the region $\Re \Delta_{0} < \Re \Delta$, and to decay sufficiently fast as $\Delta \to +\infty$.
+
+
+!!! remark 
+
+    Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation a} to the case $\Re\Delta_{0}=a$, there would appear an extra factor $\half$.
+
+    The reason is as follows: in this case the leading pole $\Delta=\Delta_{0}$ lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle $C_{\Delta_{0},\delta}\eqqq\set{\Delta:\Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}<\theta<\frac{3\pi}{2}}$ surrounding the leading pole:
+
+    \begin{align*}
+        &\peq
+        \lim_{\delta\to 0}
+        \inttt{\frac{d\Delta}{2\pi i}}{C_{\Delta_{0},\delta}}
+        \gm{\Delta_{0}-\Delta}\epsilon^{\Delta-\Delta_{0}}
+        f(\Delta)
+        \\
+        &=
+        \lim_{\delta\to 0}
+        f(\Delta_{0})
+        \inttt{\frac{d\Delta}{2\pi i}}{C_{\Delta_{0},\delta}}
+        \frac{\epsilon^{\Delta-\Delta_{0}}}{\Delta_{0}-\Delta}
+        \\
+        &=
+        \lim_{\delta\to 0}
+        -f(\Delta_{0})
+        \intrange{\frac{d\theta}{2\pi}}{\frac{\pi}{2}}{\frac{3\pi}{2}}
+        \epsilon^{\delta e^{i\theta}}
+        \\
+        &=
+        -\half f(\Delta_{0})
+        \, .
+    \end{align*}
+    
 ### Mellin transform
+
+Lacia-TimeStamp-2025-02-08-01:12:13
 
 Under the Mellin transform, we have the following pairs:
 
@@ -415,7 +448,6 @@ Under the Mellin transform, we have the following pairs:
     \lim_{\omega_{0}\to 0^{+}}\omega_{0}^{\Delta-1}
 \end{align}
 
-
 \begin{equation}
     \lim_{\omega_{0}\to0}\omega_{0}^{\Delta-1}
     \mapsto
@@ -424,8 +456,6 @@ Under the Mellin transform, we have the following pairs:
 \end{equation}
 
 Now we check the consistency of the above Mellin pairs.
-
-
 
 ## Miscellaneous
 
