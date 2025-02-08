@@ -1,5 +1,9 @@
 # Workbench
 
+* [DLMF](workbench/DLMF.md)
+
+* [Conventions for Celestial CFT](workbench/CCFTconvention.md)
+
 ## Test
 
 * [MathJax environment](workbench/test/env.md)
