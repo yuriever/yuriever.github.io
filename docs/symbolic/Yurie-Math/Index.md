@@ -1,8 +1,4 @@
-# [Yurie/Math](https://github.com/yuriever/Yurie-Math)
-
-Math utilities.
-
-## Index
+# Yurie/Math/Index
 
 * `#!wl indexize[var_,index_]` - join the variable and index(s) into a symbol.
 
