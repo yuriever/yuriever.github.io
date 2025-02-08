@@ -2,14 +2,18 @@
 /* 改变无序列表的标号 */
 /*  */
 
-article ul {
-    list-style-type: disc !important;
+.md-typeset ul {
+    list-style-type: disc;
 }
 
-article ul ul {
-    list-style-type: circle !important;
+.md-typeset ul ul {
+    list-style-type: circle;
 }
 
-/* article ul ul ul {
-    list-style-type: none !important;
-} */
+/*  */
+/* 改变无序列表的间距 */
+/*  */
+
+.md-typeset ul:not([hidden]) {
+    display: block;
+}
