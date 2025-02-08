@@ -77,13 +77,13 @@ title: Triangulated reality
 
 ### Books
 
-<!-- * [Mathematica summer school on theoretical physics](http://msstp.org/) -->
-
 * [The Wolfram language: fast introduction for programmers](https://www.wolfram.com/language/fast-introduction-for-programmers/)
 
 * [Introduction to machine learning](https://www.wolfram.com/language/introduction-machine-learning/)
 
 * [Mathematica programming: an advanced introduction](https://faculty.ksu.edu.sa/sites/default/files/mathprogrammingintro.pdf)
+
+* [Mathematica summer school on theoretical physics](http://msstp.org/)
 
 ### Talks
 
