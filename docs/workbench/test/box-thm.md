@@ -1,53 +1,129 @@
 # Box-thm
 
+Numbering:
+
+* definition, lemma, theorem;
+
+* proof; remark; fact;
+
+* equation.
+
 !!! theorem
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! theorem "title"
+    \begin{equation}
+        a+b
+    \end{equation}
 
-    This is the content.
+!!! theorem "Test"
 
-??? theorem "title"
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-    This is the content.
+    \begin{equation}
+        a+b
+    \end{equation}
 
-!!! definition "title"
+??? theorem "Test"
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! lemma "title"
+    \begin{equation}
+        a+b
+    \end{equation}
 
-    This is the content.
+!!! definition "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+??? definition "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+!!! lemma "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+??? lemma "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
 
 !!! proof
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! proof
+    \begin{equation}
+        a+b
+    \end{equation}
 
-    This is the content.
+??? proof
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
 
 !!! remark
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! remark
+    \begin{equation}
+        a+b
+    \end{equation}
 
-    This is the content.
+??? remark
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
 
 !!! fact
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! fact
+    \begin{equation}
+        a+b
+    \end{equation}
 
-    This is the content.
+??? fact
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
 
 !!! equation
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
 
 ??? equation
 
-    This is the content.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}

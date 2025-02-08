@@ -1,91 +1,94 @@
 # Box
 
-`#!wl test` test test test test test test test test test test test test test test test test
+## wl
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 ``` wl
-test := 1
+(a+b)^2//Expand
 ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! wl
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! wl ""
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
-test test test test test test test test test test test test test test test test
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! wl "Test"
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
 
 ??? wl "Test"
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 === "Test1"
 
     !!! wl "Test"
 
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
 === "Test2"
 
     !!! wl ""
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
         ``` wl
-        Out[] = 2
+        Out[] = a^2+2 a b+b^2
         ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! wl "Test"
 
     === "Test1"
 
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
     === "Test2"
 
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
 !!! wl "Test"
@@ -93,207 +96,206 @@ test test test test test test test test test test test test test test test test
     === "Test1"
 
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
         ``` wl
-        Out[] = 2
+        Out[] = a^2+2 a b+b^2
         ```
 
     === "Test2"
 
         ``` wl
-        test := 2
+        (a+b)^2//Expand
         ```
 
         ``` wl
-        Out[] = 2
+        Out[] = a^2+2 a b+b^2
         ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-## Other types
+## code
 
-test test test test test test test test test test test test test test test test
-
-!!! code
-
-    ``` wl
-    test := 2
-    ```
-
-    ``` wl
-    test := 2
-    ```
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! code
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
+    ```
+
+    ``` wl
+    (a+b)^2//Expand
+    ```
+
+!!! code
+
+    ``` wl
+    (a+b)^2//Expand
     ```
 
 !!! code "title"
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
 ??? code
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+## mark
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 !!! mark
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
 
 ??? mark
 
     ``` wl
-    test := 2
+    (a+b)^2//Expand
     ```
 
     ``` wl
-    Out[] = 2
+    Out[] = a^2+2 a b+b^2
     ```
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-This is a theorem:
+## theorem
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
 \begin{equation}
     a+b
 \end{equation}
 
-This is a theorem:
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-\begin{align}
-    &a+b\\
-    &c+d
-\end{align}
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-test test test test test test test test test test test test test test test test
+!!! theorem "Test"
 
-!!! theorem "LLL"
-
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-    This is a theorem.
-
-test test test test test test test test test test test test test test test tests
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test tests
 
 !!! theorem ""
 
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-    This is a theorem.
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! theorem "box title"
+!!! theorem "Test"
 
-    This is a theorem:
-
-    \begin{equation}
-        a+b
-    \end{equation}
-
-test test test test test test test test test test test test test test test test
-
-??? theorem "box title"
-
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-test test test test test test test test test test test test test test test test
+!!! theorem "Test"
 
-??? definition "box title"
-
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! theorem "box title"
+??? theorem "Test"
 
-    This is a theorem:
-
-    \begin{equation}
-        a+b
-    \end{equation}
-
-test test test test test test test test test test test test test test test test
-
-!!! definition "box title"
-
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! lemma "box title"
+!!! definition "Test"
 
-    This is a theorem:
-
-    \begin{equation}
-        a+b
-    \end{equation}
-
-test test test test test test test test test test test test test test test test
-
-!!! remark "box title"
-
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! fact "box title"
+??? definition "Test"
 
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
     \end{equation}
 
-test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! equation "box title"
+!!! lemma "Test"
 
-    This is a theorem:
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+!!! remark "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+!!! fact "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+!!! equation "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
     \begin{equation}
         a+b
