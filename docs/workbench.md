@@ -1,7 +1,5 @@
 # Workbench
 
-* [DLMF](symbolic/Yurie-Math/DLMF.md)
-
 * Lacia/CCFT
 
     * [Documentation](workbench/Lacia-CCFT/doc.md)
