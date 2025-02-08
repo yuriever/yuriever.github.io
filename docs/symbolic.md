@@ -75,7 +75,7 @@ title: Triangulated reality
 
 ## External links
 
-### Books
+### Tutorials
 
 * [The Wolfram language: fast introduction for programmers](https://www.wolfram.com/language/fast-introduction-for-programmers/)
 
