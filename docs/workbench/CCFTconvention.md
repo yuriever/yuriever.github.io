@@ -1,1 +1,0 @@
-# Conventions for Celestial CFT
