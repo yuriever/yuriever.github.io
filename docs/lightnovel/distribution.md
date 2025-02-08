@@ -306,6 +306,8 @@ which simply restates the contour deformation
 
 ## Analytic functionals
 
+### Complex $\delta$-function
+
 The $\delta$-function with complex argument $\delta_{c}$ is an analytic functional belonging to the Gelfand–Shilov space $Z'$, which is the dual space of analytic test functions.
 
 It is defined as the identity of the Mellin transform
@@ -419,8 +421,6 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{c}$ admits the fo
     \end{align*}
     
 ### Mellin transform
-
-Lacia-TimeStamp-2025-02-08-01:12:13
 
 Under the Mellin transform, we have the following pairs:
 
