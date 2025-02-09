@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie-Math/doc/">
+        <link rel="canonical" href="https://yuriever.github.io/workbench/Lacia-CCFT/idea/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Yurie/Math - Sora</title>
+        <title>Designing idea - Sora</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yuriemath" class="md-skip">
+        <a href="#designing-idea" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Yurie/Math
+              Designing idea
             
           </span>
         </div>
@@ -216,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../symbolic/" class="md-tabs__link">
         
   
     
@@ -250,7 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../workbench/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -338,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../symbolic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workbench/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -442,9 +442,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Index
+      矢量类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      张量表达式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="张量表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号型矢量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      指标型张量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      分量型张量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      讨论
     </span>
   </a>
   
@@ -502,106 +571,195 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="yuriemath"><a href="https://github.com/yuriever/Yurie-Math">Yurie/Math</a></h1>
-<p>Math utilities.</p>
-<h2 id="index">Index</h2>
+<h1 id="designing-idea">Designing idea</h1>
+<h2 id="_1">矢量类型</h2>
+<p>矢量类型：</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code> - join the variable and index(s) into a symbol.</p>
-<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span>
-</code></pre></div>
-</div>
+<p>符号型矢量 <code class="highlight"><span class="nv">vecsym</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">label_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexify</span></code> - join the variable(s) and index(s) into a sequence of symbols.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Sequence</span><span class="p">[</span><span class="nv">z1</span><span class="p">,</span><span class="nv">zb1</span><span class="p">,</span><span class="nv">z2</span><span class="p">,</span><span class="nv">zb2</span><span class="p">]</span>
-</code></pre></div>
-</div>
+<p>指标型矢量 <code class="highlight"><span class="nv">vec</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
-</code></pre></div>
-</div>
-<ul>
-<li>
-<p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code> - controls the format of indexed vairables.</p>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">Construct</span></code></li>
-<li><code class="highlight"><span class="nb">Subscript</span></code></li>
-<li><code class="highlight"><span class="nb">Superscript</span></code></li>
+<p>分量型矢量 <code class="highlight"><span class="nv">veccomp</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code></p>
+</li>
 </ul>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+<p>对于特定的矢量，例如动量，可定义：</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">p</span><span class="p">[</span><span class="nt">label_</span><span class="p">]</span><span class="o">:=</span>
+<span class="w">    </span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nv">label</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">p</span><span class="p">[</span><span class="nt">label_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span><span class="o">:=</span>
+<span class="w">    </span><span class="nv">vec</span><span class="p">[</span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nv">label</span><span class="p">],</span><span class="nv">index</span><span class="p">]</span><span class="o">;</span>
+
+<span class="nv">veccomp</span><span class="p">[</span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nt">label_</span><span class="p">],</span><span class="nt">dim_</span><span class="p">]</span><span class="o">:=</span>
+<span class="w">    </span><span class="o">...</span>
 </code></pre></div>
 </div>
+<p>此种方案的优势：</p>
+<ul>
+<li>
+<p>无需管理符号型矢量的实例；</p>
 </li>
 <li>
-<p><code class="highlight"><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code> - controls the pattern of indices, and resolves possible conflicts between variable and index.</p>
-<p>The supported values are</p>
-<ul>
-<li><code class="highlight"><span class="nb">All</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrGreekLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumber&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumberOrSingleLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="s">&quot;NaturalNumberOrGreekLetter&quot;</span></code></li>
-<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
+<p>模式匹配简单；</p>
+</li>
+<li>
+<p>可扩展性强。</p>
+</li>
 </ul>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Correct</label><label for="__tabbed_1_2">Incorrect</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
+<h2 id="_2">张量表达式</h2>
+<h3 id="_3">符号型矢量</h3>
+<ul>
+<li>
+<p>符号型矢量表达式：</p>
+<ul>
+<li>
+<p>符号型矢量的线性组合</p>
+</li>
+<li>
+<p>被封装在 <code class="highlight"><span class="nt">_vec</span><span class="o">|</span><span class="nt">_dot</span><span class="o">|</span><span class="nt">_dotcomp</span></code> 等指标或分量型矢量后，可由 <code class="highlight"><span class="nv">vectorReplace</span></code> 等函数访问</p>
 </li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
-<div class="admonition wl">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
-</code></pre></div>
-</div>
+<p>节点：</p>
 <ul>
-<li>The options are the same as <code class="highlight"><span class="nv">indexSplit</span></code>.</li>
+<li>
+<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">vecsym</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">label_</span><span class="p">]</span></code> - 符号型矢量节点</p>
+</li>
 </ul>
 </li>
 </ul>
+<h3 id="_4">指标型张量</h3>
+<ul>
+<li>
+<p>指标型张量表达式：</p>
+<ul>
+<li>
+<p>张量的线性组合</p>
+</li>
+<li>
+<p>用指标表示张量积与缩并</p>
+</li>
+</ul>
+</li>
+<li>
+<p>节点：</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
+</li>
+<li>
+<p>指标型张量节点：</p>
+<ul>
+<li>
+<p>原子化，内部不可直接访问</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">vec</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code> - 指标型矢量，封装了符号型矢量表达式 <code class="highlight"><span class="nv">vecsym</span></code> 与指标 <code class="highlight"><span class="nv">index</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">dot</span><span class="p">[</span><span class="nt">vecsym1_</span><span class="p">,</span><span class="nt">vecsym2_</span><span class="p">]</span></code> - 矢量点积，封装了两个符号型矢量表达式</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">met</span><span class="p">[</span><span class="nt">index1_</span><span class="p">,</span><span class="nt">index2_</span><span class="p">]</span></code> - 度规张量</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">分量型张量</h3>
+<ul>
+<li>
+<p>分量型张量表达式</p>
+</li>
+<li>
+<p>节点：</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
+</li>
+<li>
+<p>分量型张量节点：</p>
+<ul>
+<li>
+<p>依赖于维数与度规号差等常数</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">veccomp</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code> - 分量型矢量，封装了符号型矢量表达式 <code class="highlight"><span class="nv">vecsym</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">dotcomp</span><span class="p">[</span><span class="nt">vecsym1_</span><span class="p">,</span><span class="nt">vecsym2_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code> - 矢量点积分量，封装了两个符号型矢量表达式</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">metcomp</span><span class="p">[</span><span class="nt">dim_</span><span class="p">,</span><span class="nt">signature_</span><span class="p">]</span></code> - 度规分量</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_6">函数</h2>
+<ul>
+<li><code class="highlight"><span class="nv">scalarFreeze</span><span class="o">|</span><span class="nv">scalarFocus</span></code> - 用以处理下述问题：对于形如表达式 <code class="highlight"><span class="p">((</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="nt">_vec</span><span class="o">+</span><span class="nt">_vec</span><span class="p">)</span><span class="o">*</span><span class="nt">_vec</span></code>，仅展开乘积而保持标量系数 <code class="highlight"><span class="p">(</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span></code> 不变，或仅对标量系数进行特定操作。</li>
+</ul>
+<h2 id="_7">文件结构</h2>
+<ul>
+<li>
+<p>核心功能</p>
+<ul>
+<li>
+<p>Constant.wl - 常数</p>
+</li>
+<li>
+<p>Convention.wl - 约定管理</p>
+</li>
+<li>
+<p>Abstract.wl - 符号与指标型张量</p>
+</li>
+<li>
+<p>Component.wl - 分量型张量</p>
+</li>
+<li>
+<p>Conjugate.wl - 共轭</p>
+</li>
+</ul>
+</li>
+<li>
+<p>扩展功能</p>
+<ul>
+<li>
+<p>Conversion.wl</p>
+</li>
+<li>
+<p>Kinematics.wl</p>
+</li>
+<li>
+<p>Coefficient.wl</p>
+</li>
+</ul>
+</li>
+<li>
+<p>输出格式</p>
+<ul>
+<li>Format.lw</li>
+</ul>
+</li>
+<li>
+<p>兼容</p>
+<ul>
+<li>Deprecation.wl</li>
+</ul>
+</li>
+</ul>
+<h2 id="_8">讨论</h2>
 
 <!-- Source file information -->
 

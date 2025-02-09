@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/test/box-thm/">
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie-Math/Index/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Box-thm - Sora</title>
+        <title>Yurie/Math/Index - Sora</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#box-thm" class="md-skip">
+        <a href="#yuriemathindex" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Box-thm
+              Yurie/Math/Index
             
           </span>
         </div>
@@ -216,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../symbolic/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -250,7 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../workbench/" class="md-tabs__link">
         
   
     
@@ -338,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../symbolic/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../workbench/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -485,124 +485,104 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="box-thm">Box-thm</h1>
-<p>Numbering:</p>
+<h1 id="yuriemathindex">Yurie/Math/Index</h1>
 <ul>
 <li>
-<p>definition, lemma, theorem;</p>
+<p><code class="highlight"><span class="nv">indexize</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code> - join the variable and index(s) into a symbol.</p>
+<p>This is basically <code class="highlight"><span class="nb">ToExpression</span><span class="p">[</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">var_</span><span class="p">]</span><span class="o">&lt;&gt;</span><span class="nb">ToString</span><span class="p">[</span><span class="nt">index_</span><span class="p">]]</span></code>, but treating <code class="highlight"><span class="nb">Null</span></code> as an empty string.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexize</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span>
+</code></pre></div>
+</div>
 </li>
 <li>
-<p>proof; remark; fact;</p>
+<p><code class="highlight"><span class="nv">indexify</span></code> - join the variable(s) and index(s) into a sequence of symbols.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">indexify</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Sequence</span><span class="p">[</span><span class="nv">z1</span><span class="p">,</span><span class="nv">zb1</span><span class="p">,</span><span class="nv">z2</span><span class="p">,</span><span class="nv">zb2</span><span class="p">]</span>
+</code></pre></div>
+</div>
 </li>
 <li>
-<p>equation.</p>
+<p><code class="highlight"><span class="nv">indexSplit</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - split symbols into indexed variables in the expression.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Construct</span></code> - controls the format of indexed vairables.</p>
+<p>The supported values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">Construct</span></code></li>
+<li><code class="highlight"><span class="nb">Subscript</span></code></li>
+<li><code class="highlight"><span class="nb">Superscript</span></code></li>
+</ul>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="s">&quot;IndexPosition&quot;</span><span class="o">-&gt;</span><span class="nb">Subscript</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nb">Subscript</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</li>
+<li>
+<p><code class="highlight"><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code> - controls the pattern of indices, and resolves possible conflicts between variable and index.</p>
+<p>The supported values are</p>
+<ul>
+<li><code class="highlight"><span class="nb">All</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveInteger&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrSingleLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;PositiveIntegerOrGreekLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;NaturalNumber&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;NaturalNumberOrSingleLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="s">&quot;NaturalNumberOrGreekLetter&quot;</span></code></li>
+<li><code class="highlight"><span class="nt">_Symbol</span></code> - any function for string pattern matching</li>
+</ul>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Correct</label><label for="__tabbed_1_2">Incorrect</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="s">&quot;IndexType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">indexSplit</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 </li>
 </ul>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">indexJoin</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">}][</span><span class="nt">expr_</span><span class="p">]</span></code> - join indexed variables into symbols in the expression.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nv">indexJoin</span><span class="p">[</span><span class="nv">z</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span>
+</code></pre></div>
 </div>
-<div class="admonition theorem">
-<p class="admonition-title">Test</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="theorem">
-<summary>Test</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition definition">
-<p class="admonition-title">Test</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="definition">
-<summary>Test</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition lemma">
-<p class="admonition-title">Test</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="lemma">
-<summary>Test</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition proof">
-<p class="admonition-title">Proof</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="proof">
-<summary>Proof</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition remark">
-<p class="admonition-title">Remark</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="remark">
-<summary>Remark</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition fact">
-<p class="admonition-title">Fact</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="fact">
-<summary>Fact</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
-<div class="admonition equation">
-<p class="admonition-title">Equation</p>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</div>
-<details class="equation">
-<summary>Equation</summary>
-<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
-<div class="arithmatex">\[\begin{equation}
-    a+b
-\end{equation}\]</div>
-</details>
+<ul>
+<li>The options are the same as <code class="highlight"><span class="nv">indexSplit</span></code>.</li>
+</ul>
+</li>
+</ul>
 
 <!-- Source file information -->
 
