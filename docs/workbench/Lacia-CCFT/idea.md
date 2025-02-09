@@ -117,7 +117,7 @@
 
 * 输出格式
 
-    * Format.lw
+    * Format.wl
 
 * 兼容
 
