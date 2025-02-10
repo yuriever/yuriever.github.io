@@ -109,11 +109,17 @@
 
 * 扩展功能
 
+    * ConformalKinematics.wl
+
+    * ScatteringAmplitude.wl
+
     * Conversion.wl
 
-    * Kinematics.wl
-
     * Coefficient.wl
+
+    * SpinorHelicity.wl
+
+    * MCVariety.wl
 
 * 输出格式
 
