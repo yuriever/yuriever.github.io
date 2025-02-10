@@ -38,9 +38,9 @@ Under the default settings, the components of vectors are
     \, ,
     \\
     &
-    n=-\pp_{z}\pp_{\zb}\qhat
+    n=\pp_{z}\pp_{\zb}\qhat
     =
-    (-1,0,0,1)
+    (1,0,0,-1)
     \, ,
     \\
     &
@@ -62,8 +62,8 @@ Under the default settings, the components of vectors are
             \begin{bmatrix}
                 2 & 0 & 0 & 0 \\
                 0 & 2 & 0 & 0 \\
-                0 & 0 & 0 & 2 \\
-                0 & 0 & 2 & 0 \\
+                0 & 0 & 0 & -2 \\
+                0 & 0 & -2 & 0 \\
             \end{bmatrix}
             \, .
         \end{equation}
