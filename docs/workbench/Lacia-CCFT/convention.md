@@ -44,9 +44,9 @@ Under the default settings, the components of vectors are
     \, ,
     \\
     &
-    \epsilon_{0}=\sqrt{2} y\pp_{y}\phat
+    \epsilon_{0}=y\pp_{y}\phat
     =
-    \frac{1}{\sqrt{2}y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
+    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
     \, .
 \end{align}
 
@@ -78,7 +78,7 @@ Under the default settings, the components of vectors are
             \begin{bmatrix}
                 2 & 0 & 0 & 0 \\
                 0 & 2 & 0 & 0 \\
-                0 & 0 & 2 & 0 \\
+                0 & 0 & 1 & 0 \\
                 0 & 0 & 0 & -1 \\
             \end{bmatrix}
             \, .
