@@ -4,4 +4,6 @@
 
 * [2025 年春季分析 (2) 助教](lightnovel/2025-autumn-analysis-2-TA.md)
 
+---
+
 * [Notes on distributions](lightnovel/distribution.md)
