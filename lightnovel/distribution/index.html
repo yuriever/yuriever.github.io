@@ -22,7 +22,7 @@
     
     
       
-        <title>Distributions - Sora</title>
+        <title>Notes on distributions - Sora</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#distributions" class="md-skip">
+        <a href="#notes-on-distributions" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Distributions
+              Notes on distributions
             
           </span>
         </div>
@@ -539,6 +539,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#two-dimension-with-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two dimension with spin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
@@ -688,11 +697,12 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="distributions">Distributions</h1>
+<h1 id="notes-on-distributions">Notes on distributions</h1>
 <p><span hidden> $
 \newcommand{\deltaComplex}[1]{\delta_{c}(#1)}
 \newcommand{\deltaComplexWithPi}[1]{2\pi\delta\left(i(#1)\right)}
 $ </span></p>
+<p><strong>Under construction.</strong></p>
 <h2 id="tempered-distributions">Tempered distributions</h2>
 <p>In this section we introduce by examples the regularization and normalization of distributions. For simplicity, we focus on tempered distributions on <span class="arithmatex">\(\RR\)</span>.</p>
 <p>A tempered distribution <span class="arithmatex">\(\phi\in \cS'(\RR)\)</span> acting on the rapidly decreasing test function <span class="arithmatex">\(f\in \cS(\RR)\)</span> can be formally written as an integral</p>
@@ -708,7 +718,7 @@ It is useful to conceptualize <span class="arithmatex">\(f\)</span> as a Gaussia
 To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span class="arithmatex">\(V_{\phi}\)</span> to <span class="arithmatex">\(\cS(\RR)\)</span>, we need to subtract off the divergences in \eqref{eq: functional} in a systematic way, and this procedure is called regularization of distributions.</p>
 <p>The extension is highly nonunique. We are interested in the case where a family of distributions <span class="arithmatex">\(\phi_{a}(x)\)</span> depends on the parameter <span class="arithmatex">\(a\)</span> analytically. Then the analyticity of <span class="arithmatex">\(a\)</span> can help choose a unique regularization of <span class="arithmatex">\(\phi_{a}(x)\)</span>.</p>
 <h3 id="normalization">Normalization</h3>
-<p>If <span class="arithmatex">\(\phi_{a}(x)\)</span> is meromorphic w.r.t. <span class="arithmatex">\(a\in\CC\)</span>, we can cancel the poles of <span class="arithmatex">\(\phi_{a}(x)\)</span> by another meromorphic function <span class="arithmatex">\(N(a)\)</span> such that the normalized distribution <span class="arithmatex">\(N(a)\phi_{a}(x)\)</span> is holomorphic, called normalization of distributions.</p>
+<p>If <span class="arithmatex">\(\phi_{a}(x)\)</span> is meromorphic w.r.t. <span class="arithmatex">\(a\in U\subset\CC\)</span>, we can cancel the poles of <span class="arithmatex">\(\phi_{a}(x)\)</span> by another meromorphic function <span class="arithmatex">\(N(a)\)</span> such that the normalized distribution <span class="arithmatex">\(N(a)\phi_{a}(x)\)</span> is holomorphic in <span class="arithmatex">\(U\)</span>, called normalization of distributions.</p>
 <h3 id="example-1-principal-value">Example 1: principal value</h3>
 <p>The principal values of <span class="arithmatex">\(x^{-1}\)</span> and <span class="arithmatex">\(x^{-2}\)</span> are</p>
 <div class="arithmatex">\[\begin{align}
@@ -753,7 +763,7 @@ To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span clas
 \end{equation}\]</div>
 <p>called the Hardy spaces. It is also identified as a specific Knapp-Stein intertwining operator of <span class="arithmatex">\(\slgroup(2,\RR)\)</span>. Consequently the ramified principal series representation at the end-point is reducible, with the decomposition \eqref{eq: Hardy spaces}.</p>
 <h3 id="example-3-power-type-distribution">Example 3: power-type distribution</h3>
-<p>The power-type distribution</p>
+<p>The power-type distribution in <span class="arithmatex">\(\cS'(\RRgeq)\)</span></p>
 <div class="arithmatex">\[\begin{equation}
     (x_{+}^{a},f(x))=\intrange{dx}{0}{\oo}x^a f(x)
     \, ,
@@ -780,6 +790,36 @@ To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span clas
     \frac{1}{\Gamma[a+1]}x_{+}^{a}\bigg|_{a=-n-1}=\delta^{(n)}(x)
     \, .
 \end{equation}\]</div>
+<details class="remark">
+<summary>Singularity near infinity</summary>
+<p>Concretely, we choose the test function as <span class="arithmatex">\(f(x)=e^{-x}\)</span>, then</p>
+<div class="arithmatex">\[\begin{equation}
+    (x^{a}_{+},e^{-x})=\gm{a+1}
+\end{equation}\]</div>
+<p>manifests the meromorphicity of <span class="arithmatex">\(x_{+}^{a}\)</span> and provides the normalization above.</p>
+<p>If choosing the test function as <span class="arithmatex">\(f(x)=(1+x)^{-1}\)</span> however, there are additional poles appeared:</p>
+<div class="arithmatex">\[\begin{equation}
+    (x^{a}_{+},(1+x)^{-1})=\gm{-a}\,  \gm{a+1}
+    \, .
+\end{equation}\]</div>
+<p>The reason is that this test function is not in <span class="arithmatex">\(\cS(\RRgeq)\)</span> and should be divided into two parts:</p>
+<ul>
+<li>
+<p>one is in <span class="arithmatex">\(\cS(\RRgeq)\)</span> and detects the singularity of <span class="arithmatex">\(x_{+}^{a}\)</span> at <span class="arithmatex">\(x=0\)</span>, providing the factor <span class="arithmatex">\(\gm{a+1}\)</span>;</p>
+</li>
+<li>
+<p>another is well-behaved as <span class="arithmatex">\(x\to \oo\)</span> and decays sufficiently fast as <span class="arithmatex">\(x\to 0\)</span>, then detects the singularity of <span class="arithmatex">\(x_{+}^{a}\)</span> near infinity, providing the factor <span class="arithmatex">\(\gm{-a}\)</span>.</p>
+</li>
+</ul>
+<p>To see this, we have for example</p>
+<div class="arithmatex">\[\begin{equation}
+    (x^{a}_{+},e^{-1/x})=-\gm{-a-1}
+    \, .
+\end{equation}\]</div>
+<p>Regarding <span class="arithmatex">\(x\)</span> as energy, 
+in practice the test functions <span class="arithmatex">\(f(x)\)</span> are not in <span class="arithmatex">\(\cS'(\RRgeq)\)</span>, and the singularities of <span class="arithmatex">\(x_{+}^{a}\)</span> at <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\oo\)</span> convert the IR and UV information of <span class="arithmatex">\(f(x)\)</span> into analytic behaviors of <span class="arithmatex">\(a\)</span>.
+This is one of the reasons why the Mellin transform is commonly used in physics.</p>
+</details>
 <h2 id="homogeneous-tempered-distributions">Homogeneous tempered distributions</h2>
 <p>In this section we consider distributional solutions to the functional equation</p>
 <div class="arithmatex">\[\begin{equation}
@@ -869,6 +909,8 @@ This implies <span class="arithmatex">\(\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}\)
     \frac{\gm{\halfdim}}{\pi^{\halfdim} \gm{\frac{\epsilon}{2}}}|x|^{-d+2\epsilon}
     \, .
 \end{equation}\]</div>
+<h3 id="two-dimension-with-spin">Two dimension with spin</h3>
+<p>Lacia-TimeStamp-2025-02-14-18:24:40</p>
 <h3 id="summary">Summary</h3>
 <p>The three bases are summarized into the following table.</p>
 <table>
@@ -1033,8 +1075,8 @@ This specification admits redundancy: for any holomorphic function <span class="
     \textInMath{for} \Re\Delta_{0}&lt;a
     \, .
 \end{numcases}\]</div>
-<div class="admonition proof">
-<p class="admonition-title">Equation \eqref{eq: complex Delta function approximation a}</p>
+<details class="proof">
+<summary>Equation \eqref{eq: complex Delta function approximation a}</summary>
 <p>This can be shown by a contour deformation argument.</p>
 <p>For <span class="arithmatex">\(\Re\Delta_{0}&gt;a\)</span>, we consider a test function <span class="arithmatex">\(f(\Delta)\)</span> that is analytic in the region <span class="arithmatex">\(a&lt;\Re \Delta\)</span> and decays sufficiently fast as <span class="arithmatex">\(\Delta\to +\oo\)</span>.
 As <span class="arithmatex">\(\epsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can enclose the contour to the right and pick up the poles at <span class="arithmatex">\(\Delta=\Delta_{0}+n,\, n\in\NN\)</span>, leading to</p>
@@ -1051,9 +1093,9 @@ As <span class="arithmatex">\(\epsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can
 \end{equation}\]</div>
 <p>which justifies the defining property \eqref{eq: complex Delta function and Mellin transform}.</p>
 <p>From the analysis above, we observe that only the term <span class="arithmatex">\(n = 0\)</span> needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for <span class="arithmatex">\(f(\Delta)\)</span> to be holomorphic in the strip <span class="arithmatex">\(a &lt; \Re \Delta &lt; \Re \Delta_{0}\)</span>, to be meromorphic or contain branch cuts in the region <span class="arithmatex">\(\Re \Delta_{0} &lt; \Re \Delta\)</span>, and to decay sufficiently fast as <span class="arithmatex">\(\Delta \to +\infty\)</span>.</p>
-</div>
-<div class="admonition remark">
-<p class="admonition-title">Remark</p>
+</details>
+<details class="remark">
+<summary>Principal value at <span class="arithmatex">\(\Re\Delta_{0}=a\)</span></summary>
 <p>Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation a} to the case <span class="arithmatex">\(\Re\Delta_{0}=a\)</span>, there would appear an extra factor <span class="arithmatex">\(\half\)</span>.</p>
 <p>The reason is as follows: in this case the leading pole <span class="arithmatex">\(\Delta=\Delta_{0}\)</span> lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle <span class="arithmatex">\(C_{\Delta_{0},\delta}\eqqq\set{\Delta:\Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}&lt;\theta&lt;\frac{3\pi}{2}}\)</span> surrounding the leading pole:</p>
 <div class="arithmatex">\[\begin{align*}
@@ -1079,8 +1121,9 @@ As <span class="arithmatex">\(\epsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can
     -\half f(\Delta_{0})
     \, .
 \end{align*}\]</div>
-</div>
+</details>
 <h3 id="mellin-transform">Mellin transform</h3>
+<p>Lacia-TimeStamp-2025-02-14-18:28:08</p>
 <p>Under the Mellin transform, we have the following pairs:</p>
 <div class="arithmatex">\[\begin{align}
     &amp;
