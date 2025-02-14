@@ -151,7 +151,8 @@ window.MathJax = {
         		5
         	],
         	"tp":"{\\scriptscriptstyle \\mathsf{T} }",
-        	"tr":"{\\scriptscriptstyle \\mathsf{T} }",
+        	"tr":"\\operatorname{tr}",
+        	"Tr":"\\operatorname{Tr}",
         	"dual":"\\prime",
         	"inj":"\\rightarrowtail",
         	"surj":"\\twoheadrightarrow",
