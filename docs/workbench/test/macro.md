@@ -55,7 +55,7 @@ ${}$
 &\ip{*}{*}\\
 &\directIntegral\\
 &\set{*}\\
-&\linearspan{*}\\
+&\given\\
 &\Re\\
 &\Im\\
 &\intt{*}\\
@@ -93,8 +93,9 @@ ${}$
 &\Alt\\
 &\inverseLimit\\
 &\directLimit\\
+&\linearspan{*}\\
 &\ideal{*}\\
-&\Spec\\
+&\spec\\
 &\lie{*}\\
 &\glie\\
 &\UEA{*}\\
@@ -189,6 +190,7 @@ ${}$
 &\cX\\
 &\cY\\
 &\cZ\\
+&\bb{*}\\
 &\ddx{*}\\
 &\ddp{*}\\
 &\xy{*}\\
@@ -201,6 +203,7 @@ ${}$
 &\bra{*}\\
 &\ket{*}\\
 &\braket{*}{*}\\
+&\brakets{*}{*}{*}\\
 &\op\\
 &\abraket{*}\\
 &\sbraket{*}\\

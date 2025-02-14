@@ -110,10 +110,7 @@ window.MathJax = {
         		"\\{ #1 \\}",
         		1
         	],
-        	"linearspan":[
-        		"\\{ #1 \\}",
-        		1
-        	],
+        	"given":"\\setsymbol[\\delimsize]",
         	"Re":"\\operatorname{Re}",
         	"Im":"\\operatorname{Im}",
         	"intt":[
@@ -134,7 +131,7 @@ window.MathJax = {
         	"sign":"\\operatorname{sign}",
         	"diag":"\\operatorname{diag}",
         	"gm":[
-        		"\\Gamma\\left[#1\\right]",
+        		"\\Gamma\\mathopen{}\\left[#1\\right]\\mathclose{}",
         		1
         	],
         	"poch":[
@@ -172,11 +169,15 @@ window.MathJax = {
         	"Alt":"\\operatorname{Alt}",
         	"inverseLimit":"\\varprojlim",
         	"directLimit":"\\varinjlim",
+        	"linearspan":[
+        		"\\{ #1 \\}",
+        		1
+        	],
         	"ideal":[
         		"\\langle #1 \\rangle",
         		1
         	],
-        	"Spec":"\\operatorname{Spec}",
+        	"spec":"\\operatorname{spec}",
         	"lie":[
         		"\\mathfrak{#1}",
         		1
@@ -283,6 +284,10 @@ window.MathJax = {
         	"cX":"\\mathcal{X}",
         	"cY":"\\mathcal{Y}",
         	"cZ":"\\mathcal{Z}",
+        	"bb":[
+        		"\\boldsymbol{#1}",
+        		1
+        	],
         	"ddx":[
         		"d^{d}x_{#1}",
         		1
@@ -317,16 +322,20 @@ window.MathJax = {
         		1
         	],
         	"bra":[
-        		"\\langle #1 |",
+        		"\\langle #1 \\vert",
         		1
         	],
         	"ket":[
-        		"| #1 \\rangle",
+        		"\\vert\\mathopen{} #1 \\rangle",
         		1
         	],
         	"braket":[
-        		"\\langle #1|#2 \\rangle",
+        		"\\langle #1 \\vert\\mathopen{} #2 \\rangle",
         		2
+        	],
+        	"brakets":[
+        		"\\langle #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 \\rangle",
+        		3
         	],
         	"op":"\\mathcal{O}",
         	"abraket":[

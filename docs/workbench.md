@@ -14,6 +14,8 @@
 
 * [MathJax macro](workbench/test/macro.md)
 
+* [MathJax test](workbench/test/mathjax-test.md)
+
 * [TikZ](workbench/test/tikz.md)
 
 * [List](workbench/test/list.md)
