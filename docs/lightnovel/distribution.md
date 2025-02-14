@@ -1,9 +1,11 @@
-# Distributions
+# Notes on distributions
 
 <span hidden> $
 \newcommand{\deltaComplex}[1]{\delta_{c}(#1)}
 \newcommand{\deltaComplexWithPi}[1]{2\pi\delta\left(i(#1)\right)}
 $ </span>
+
+**Under construction.**
 
 ## Tempered distributions
 
@@ -29,7 +31,7 @@ The extension is highly nonunique. We are interested in the case where a family 
 
 ### Normalization
 
-If $\phi_{a}(x)$ is meromorphic w.r.t. $a\in\CC$, we can cancel the poles of $\phi_{a}(x)$ by another meromorphic function $N(a)$ such that the normalized distribution $N(a)\phi_{a}(x)$ is holomorphic, called normalization of distributions.
+If $\phi_{a}(x)$ is meromorphic w.r.t. $a\in U\subset\CC$, we can cancel the poles of $\phi_{a}(x)$ by another meromorphic function $N(a)$ such that the normalized distribution $N(a)\phi_{a}(x)$ is holomorphic in $U$, called normalization of distributions.
 
 ### Example 1: principal value
 
@@ -58,7 +60,7 @@ Notice that although $x^{-2}$ as a function is positive-definite, as a distribut
     f[x_]:=1/(1+x^2);
 
     Integrate[f[x],{x,-∞,∞}]
-    
+
     Integrate[(f[x]+f[-x]-2f[0])/x^2,{x,0,∞}]
     ```
 
@@ -92,7 +94,7 @@ called the Hardy spaces. It is also identified as a specific Knapp-Stein intertw
 
 ### Example 3: power-type distribution
 
-The power-type distribution
+The power-type distribution in $\cS'(\RRgeq)$
 
 \begin{equation}
     (x_{+}^{a},f(x))=\intrange{dx}{0}{\oo}x^a f(x)
@@ -128,6 +130,41 @@ The distribution $x_{+}^{a}$ can be normalized as $\frac{1}{\Gamma[a+1]}x_{+}^{a
     \frac{1}{\Gamma[a+1]}x_{+}^{a}\bigg|_{a=-n-1}=\delta^{(n)}(x)
     \, .
 \end{equation}
+
+??? remark "Singularity near infinity"
+
+    Concretely, we choose the test function as $f(x)=e^{-x}$, then
+
+    \begin{equation}
+        (x^{a}_{+},e^{-x})=\gm{a+1}
+    \end{equation}
+
+    manifests the meromorphicity of $x_{+}^{a}$ and provides the normalization above.
+
+    If choosing the test function as $f(x)=(1+x)^{-1}$ however, there are additional poles appeared:
+
+    \begin{equation}
+        (x^{a}_{+},(1+x)^{-1})=\gm{-a}\,  \gm{a+1}
+        \, .
+    \end{equation}
+
+    The reason is that this test function is not in $\cS(\RRgeq)$ and should be divided into two parts:
+
+    * one is in $\cS(\RRgeq)$ and detects the singularity of $x_{+}^{a}$ at $x=0$, providing the factor $\gm{a+1}$;
+
+    * another is well-behaved as $x\to \oo$ and decays sufficiently fast as $x\to 0$, then detects the singularity of $x_{+}^{a}$ near infinity, providing the factor $\gm{-a}$.
+
+    To see this, we have for example
+
+    \begin{equation}
+        (x^{a}_{+},e^{-1/x})=-\gm{-a-1}
+        \, .
+    \end{equation}
+
+    Regarding $x$ as energy, 
+    in practice the test functions $f(x)$ are not in $\cS'(\RRgeq)$, and the singularities of $x_{+}^{a}$ at $0$ and $\oo$ convert the IR and UV information of $f(x)$ into analytic behaviors of $a$.
+    This is one of the reasons why the Mellin transform is commonly used in physics.
+
 
 ## Homogeneous tempered distributions
 
@@ -250,6 +287,10 @@ Especially for $n=0$, we have
     \, .
 \end{equation}
 
+### Two dimension with spin
+
+Lacia-TimeStamp-2025-02-14-18:24:40
+
 ### Summary
 
 The three bases are summarized into the following table.
@@ -366,7 +407,7 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{c}$ admits the fo
     \, .
 \end{numcases}
 
-!!! proof "Equation \eqref{eq: complex Delta function approximation a}"
+??? proof "Equation \eqref{eq: complex Delta function approximation a}"
 
     This can be shown by a contour deformation argument.
 
@@ -389,8 +430,7 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{c}$ admits the fo
 
     From the analysis above, we observe that only the term $n = 0$ needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for $f(\Delta)$ to be holomorphic in the strip $a < \Re \Delta < \Re \Delta_{0}$, to be meromorphic or contain branch cuts in the region $\Re \Delta_{0} < \Re \Delta$, and to decay sufficiently fast as $\Delta \to +\infty$.
 
-
-!!! remark 
+??? remark "Principal value at $\Re\Delta_{0}=a$"
 
     Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation a} to the case $\Re\Delta_{0}=a$, there would appear an extra factor $\half$.
 
@@ -419,8 +459,10 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{c}$ admits the fo
         -\half f(\Delta_{0})
         \, .
     \end{align*}
-    
+
 ### Mellin transform
+
+Lacia-TimeStamp-2025-02-14-18:28:08
 
 Under the Mellin transform, we have the following pairs:
 
