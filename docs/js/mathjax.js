@@ -424,22 +424,6 @@ window.MathJax = {
         		1
         	],
         	"nn":"\\nonumber",
-        	"ppair":[
-        		"\\left(#1\\right)",
-        		1
-        	],
-        	"bpair":[
-        		"\\left[#1\\right]",
-        		1
-        	],
-        	"cpair":[
-        		"\\left\\{#1\\right\\}",
-        		1
-        	],
-        	"vpair":[
-        		"\\left|#1\\right|",
-        		1
-        	],
         	"mathred":[
         		"{\\color{red} #1}",
         		1

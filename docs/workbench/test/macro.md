@@ -249,10 +249,6 @@ ${}$
 &\uchannel\\
 &\textInMath{*}\\
 &\nn\\
-&\ppair{*}\\
-&\bpair{*}\\
-&\cpair{*}\\
-&\vpair{*}\\
 &\mathred{*}\\
 &\mathblue{*}\\
 &\mathgreen{*}\\
