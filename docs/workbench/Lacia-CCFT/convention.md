@@ -8,13 +8,13 @@ $ </span>
 
 ## Normalization constants
 
-* `#!wl \$signature=1` - the default metric is $(-,+,+,+)$.
+* `#!wl $signature=1` - the default metric is $(-,+,+,+)$.
 
-* `#!wl \$polar=2` - the default normalization of $2d$ polarization vector is $\epsilon=\pp_{z}\qhat$.
+* `#!wl $polar=$polarn=$polar0=1` - the default normalization of polarization vectors.
 
-* `#!wl \$CPWFGauge=1` - the default CPWF gauge parameter.
+* `#!wl $CPWFGauge=1` - the default CPWF gauge parameter.
 
-Under the default settings, the components of vectors are
+Under the default settings, for $d=2$ the components of vectors are
 
 \begin{align}
     &
@@ -38,15 +38,44 @@ Under the default settings, the components of vectors are
     \, ,
     \\
     &
-    n=\pp_{z}\pp_{\zb}\qhat
+    \epsilon_{0}=y\pp_{y}\phat
+    =
+    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
+    \, ,
+    \\
+    &
+    n
     =
     (1,0,0,-1)
+    \, .
+\end{align}
+
+For higher dimensions, they are
+
+\begin{align}
+    &
+    \qhat=(| x|^2+1,2 x,1-| x|^2)
+    \, ,
+    \\
+    &
+    \phat=\frac{1}{2y}(| x|^2+y^2+1,2 x,-| x|^2-y^2+1)
+    \, ,
+    \\
+    &
+    \epsilon_a=\pp_{x_{a}}\qhat
+    \textInMath{for}
+    1\leq a\leq d
     \, ,
     \\
     &
     \epsilon_{0}=y\pp_{y}\phat
     =
-    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
+    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
+    \, ,
+    \\
+    &
+    n=
+    (1,0,\cdots,0,-1)
     \, .
 \end{align}
 
