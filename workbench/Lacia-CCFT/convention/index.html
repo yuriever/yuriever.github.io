@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -322,7 +322,6 @@
   
   <span class="md-ellipsis">
     Home
-    
   </span>
   
 
@@ -343,7 +342,6 @@
   
   <span class="md-ellipsis">
     Triangulated reality
-    
   </span>
   
 
@@ -364,7 +362,6 @@
   
   <span class="md-ellipsis">
     Lightnovel
-    
   </span>
   
 
@@ -385,7 +382,6 @@
   
   <span class="md-ellipsis">
     Workbench
-    
   </span>
   
 
@@ -406,7 +402,6 @@
   
   <span class="md-ellipsis">
     Sora
-    
   </span>
   
 
@@ -520,16 +515,16 @@ $ </span></p>
 <h2 id="normalization-constants">Normalization constants</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="err">\</span><span class="nv">$signature</span><span class="o">=</span><span class="m">1</span></code> - the default metric is <span class="arithmatex">\((-,+,+,+)\)</span>.</p>
+<p><code class="highlight"><span class="nv">$signature</span><span class="o">=</span><span class="m">1</span></code> - the default metric is <span class="arithmatex">\((-,+,+,+)\)</span>.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="err">\</span><span class="nv">$polar</span><span class="o">=</span><span class="m">2</span></code> - the default normalization of <span class="arithmatex">\(2d\)</span> polarization vector is <span class="arithmatex">\(\epsilon=\pp_{z}\qhat\)</span>.</p>
+<p><code class="highlight"><span class="nv">$polar</span><span class="o">=</span><span class="nv">$polarn</span><span class="o">=</span><span class="nv">$polar0</span><span class="o">=</span><span class="m">1</span></code> - the default normalization of polarization vectors.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="err">\</span><span class="nv">$CPWFGauge</span><span class="o">=</span><span class="m">1</span></code> - the default CPWF gauge parameter.</p>
+<p><code class="highlight"><span class="nv">$CPWFGauge</span><span class="o">=</span><span class="m">1</span></code> - the default CPWF gauge parameter.</p>
 </li>
 </ul>
-<p>Under the default settings, the components of vectors are</p>
+<p>Under the default settings, for <span class="arithmatex">\(d=2\)</span> the components of vectors are</p>
 <div class="arithmatex">\[\begin{align}
     &amp;
     \qhat=(z \bar{z}+1,\bar{z}+z,-i (z-\bar{z}),1-z \bar{z})
@@ -552,15 +547,42 @@ $ </span></p>
     \, ,
     \\
     &amp;
-    n=\pp_{z}\pp_{\zb}\qhat
+    \epsilon_{0}=y\pp_{y}\phat
+    =
+    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
+    \, ,
+    \\
+    &amp;
+    n
     =
     (1,0,0,-1)
+    \, .
+\end{align}\]</div>
+<p>For higher dimensions, they are</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;
+    \qhat=(| x|^2+1,2 x,1-| x|^2)
+    \, ,
+    \\
+    &amp;
+    \phat=\frac{1}{2y}(| x|^2+y^2+1,2 x,-| x|^2-y^2+1)
+    \, ,
+    \\
+    &amp;
+    \epsilon_a=\pp_{x_{a}}\qhat
+    \textInMath{for}
+    1\leq a\leq d
     \, ,
     \\
     &amp;
     \epsilon_{0}=y\pp_{y}\phat
     =
-    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
+    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
+    \, ,
+    \\
+    &amp;
+    n=
+    (1,0,\cdots,0,-1)
     \, .
 \end{align}\]</div>
 <h2 id="two-dimensional-polarization">Two dimensional polarization</h2>
@@ -652,10 +674,10 @@ $ </span></p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       
