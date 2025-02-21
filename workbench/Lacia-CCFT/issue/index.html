@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/symbolic/file/file/">
+        <link rel="canonical" href="https://yuriever.github.io/workbench/Lacia-CCFT/issue/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>File operations - Sora</title>
+        <title>Issues - Sora</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-operations" class="md-skip">
+        <a href="#issues" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File operations
+              Issues
             
           </span>
         </div>
@@ -216,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../symbolic/" class="md-tabs__link">
         
   
     
@@ -250,7 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../workbench/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../symbolic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -377,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workbench/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,27 +437,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-name-operations" class="md-nav__link">
+  <a href="#symbolic-dimension" class="md-nav__link">
     <span class="md-ellipsis">
-      File name operations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-operations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      File operations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#directories" class="md-nav__link">
-    <span class="md-ellipsis">
-      Directories
+      Symbolic dimension
     </span>
   </a>
   
@@ -515,185 +497,27 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="file-operations">File operations</h1>
-<h2 id="file-name-operations">File name operations</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;"></th>
-<th style="text-align: left;">a/b/c</th>
-<th style="text-align: left;">a/b/c.txt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">FileNameSplit</td>
-<td style="text-align: left;">{a, b, c}</td>
-<td style="text-align: left;">{a, b, c.txt}</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileBaseName</td>
-<td style="text-align: left;">c</td>
-<td style="text-align: left;">c</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileExtension</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">txt</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileNameTake</td>
-<td style="text-align: left;">c</td>
-<td style="text-align: left;">c.txt</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileNameDrop</td>
-<td style="text-align: left;">a/b</td>
-<td style="text-align: left;">a/b</td>
-</tr>
-<tr>
-<td style="text-align: left;">DirectoryName</td>
-<td style="text-align: left;">a/b/</td>
-<td style="text-align: left;">a/b/</td>
-</tr>
-</tbody>
-</table>
+<h1 id="issues">Issues</h1>
+<h2 id="symbolic-dimension">Symbolic dimension</h2>
+<p>Currently the component computation for symbolic dimension is only partial supported.</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="nb">FileNameSplit</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - split the file path into a list of path elements.</p>
+<p>For symbolic <span class="arithmatex">\(d\)</span>, the boundary coordinates <span class="arithmatex">\(x\)</span> are simply a <code class="highlight"><span class="nb">NonThreadable</span></code> object.</p>
+<p>The related functionalities are buggy!</p>
+<ul>
+<li>
+<p><a href="https://mathematica.stackexchange.com/q/309260/86893">https://mathematica.stackexchange.com/q/309260/86893</a></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nb">FileBaseName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file name.</p>
+<p><a href="https://mathematica.stackexchange.com/q/310871/86893">https://mathematica.stackexchange.com/q/310871/86893</a></p>
 </li>
 <li>
-<p><code class="highlight"><span class="nb">FileExtension</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the file extension.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">FileNameTake</span><span class="o">|</span><span class="nb">FileNameDrop</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Take</span><span class="o">|</span><span class="nb">Drop</span></code> for file path.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">DirectoryName</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return the directory path.</p>
+<p><a href="https://mathematica.stackexchange.com/q/311131/86893">https://mathematica.stackexchange.com/q/311131/86893</a></p>
 </li>
 </ul>
-<hr />
-<ul>
-<li><code class="highlight"><span class="nb">FileNameJoin</span><span class="p">[</span><span class="nt">list_</span><span class="p">]</span></code> - join the list of path elements into a file path according to the operating system.</li>
-</ul>
-<h2 id="file-operations_1">File operations</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;"></th>
-<th style="text-align: left;">a/b/c</th>
-<th style="text-align: left;">a/b/c.txt</th>
-<th style="text-align: left;">/Downloads/test/sub1</th>
-<th style="text-align: left;">/Downloads/test/sub1/file1.txt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">FileExistsQ</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">True</td>
-<td style="text-align: left;">True</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileType</td>
-<td style="text-align: left;">None</td>
-<td style="text-align: left;">None</td>
-<td style="text-align: left;">Directory</td>
-<td style="text-align: left;">File</td>
-</tr>
-<tr>
-<td style="text-align: left;">FileFormat</td>
-<td style="text-align: left;">$Failed</td>
-<td style="text-align: left;">$Failed</td>
-<td style="text-align: left;">Directory</td>
-<td style="text-align: left;">Text</td>
-</tr>
-<tr>
-<td style="text-align: left;">DirectoryQ</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">False</td>
-<td style="text-align: left;">True</td>
-<td style="text-align: left;">False</td>
-</tr>
-<tr>
-<td style="text-align: left;">ParentDirectory</td>
-<td style="text-align: left;">ParentDirectory["a/b/c"]</td>
-<td style="text-align: left;">ParentDirectory["a/b/c.txt"]</td>
-<td style="text-align: left;">/Downloads/test</td>
-<td style="text-align: left;">ParentDirectory["/Downloads/test/sub1/file1.txt"]</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<p><code class="highlight"><span class="nb">FileExistsQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - test whether a file exists.</p>
 </li>
 <li>
-<p><code class="highlight"><span class="nb">FileType</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">File</span><span class="o">|</span><span class="nb">Directory</span></code> or <code class="highlight"><span class="nb">None</span></code> if the file does not exist.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">FileFormat</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - try to return the file type.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">DirectoryQ</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code> - return <code class="highlight"><span class="nb">True</span></code> if the input is an existing directory, and return <code class="highlight"><span class="nb">False</span></code> if the input is not a directory or the directory does not exist.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">ParentDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - check existence of the directory and and return the parent directory.</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><code class="highlight"><span class="nb">CreateFile</span><span class="o">|</span><span class="nb">DeleteFile</span><span class="o">|</span><span class="nb">CopyFile</span><span class="o">|</span><span class="nb">RenameFile</span><span class="p">[</span><span class="nt">file_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">CreateDirectory</span><span class="o">|</span><span class="nb">DeleteDirectory</span><span class="o">|</span><span class="nb">CopyDirectory</span><span class="o">|</span><span class="nb">RenameDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">FileNames</span><span class="p">[</span><span class="nt">forms_</span><span class="p">,</span><span class="nt">dirs_</span><span class="p">,</span><span class="nt">depth_</span><span class="p">]</span></code> - return a list of file paths in the directories.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">FileSystemMap</span><span class="o">|</span><span class="nb">FileSystemScan</span><span class="p">[</span><span class="nt">f_</span><span class="p">,</span><span class="nt">dir_</span><span class="p">]</span></code> - <code class="highlight"><span class="nb">Map</span><span class="o">|</span><span class="nb">Scan</span></code> for files.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">FileSystemTree</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - return the file tree.</p>
-</li>
-</ul>
-<h2 id="directories">Directories</h2>
-<ul>
-<li>
-<p><code class="highlight"><span class="nb">NotebookDirectory</span><span class="p">[]</span></code> - current notebook directory.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">$HomeDirectory</span></code> - home directory.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">$TemporaryDirectory</span></code> - system temporary directory.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">$UserBaseDirectory</span></code> - directory for user-specific add-on files.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">$UserBasePacletsDirectory</span></code> - directory for user-specific paclet files.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">$Path</span></code> - the list of directories to find an external file.</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><code class="highlight"><span class="nb">Directory</span><span class="p">[]</span></code> - return the working directory.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">SetDirectory</span><span class="p">[</span><span class="nt">dir_</span><span class="p">]</span></code> - set the working directory.</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nb">ResetDirectory</span><span class="p">[]</span></code> - revert to the previous working directory.</p>
+<p><code class="highlight"><span class="nb">UnitVector</span></code> is <code class="highlight"><span class="nb">NonThreadable</span></code> but is not compatible with symbolic arrays, e.g. <code class="highlight"><span class="nb">SymbolicZerosArray</span></code>, hence should be replaced.</p>
 </li>
 </ul>
 
