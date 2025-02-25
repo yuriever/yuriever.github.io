@@ -19,4 +19,4 @@ mkdocs-bibtex = { git = "https://github.com/yuriever/mkdocs-bibtex" }
 
 # pygments-mathematica = { path = "../pygments-mathematica/dist/pygments_mathematica-0.3.5.tar.gz" }
 # pybtex = { path = "../pybtex/dist/pybtex-0.24.0.tar.gz" }
-# mkdocs-bibtex = { path = "../mkdocs-bibtex/dist/mkdocs_bibtex-2.17.1.dev3+g25372cc.d20250225.tar.gz" }
+# mkdocs-bibtex = { path = "../mkdocs-bibtex/dist/mkdocs_bibtex-2.17.1.dev4+gde2bda0.d20250225.tar.gz" }

@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        ".gitignore": true,
+        ".vscode": true,
+        "README.md": true,
+        "custom": true,
+        "site": true,
+        "uv.lock": true,
+        ".python-version": true,
+        ".venv": true
+    },
+    "cSpell.words": [
+        "bibtex",
+        "mathematica",
+        "mkdocs",
+        "pybtex",
+        "pygments",
+        "Szabolcs",
+        "Zhuang"
+    ]
+}
