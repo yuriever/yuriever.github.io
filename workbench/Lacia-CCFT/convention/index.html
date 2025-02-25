@@ -446,9 +446,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#two-dimensional-polarization" class="md-nav__link">
     <span class="md-ellipsis">
       Two dimensional polarization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinor-helicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spinor helicity
     </span>
   </a>
   
@@ -508,8 +526,9 @@
 <!-- Page content -->
 <h1 id="convention">Convention</h1>
 <p><span hidden> $
-\newcommand{\qhat}{\hat{q}}
 \newcommand{\phat}{\hat{p}}
+\newcommand{\qhat}{\hat{q}}
+\newcommand{\khat}{\hat{k}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
 \newcommand{\epsilonhat}{\hat{\epsilon}}
 $ </span></p>
@@ -525,6 +544,8 @@ $ </span></p>
 <p><code class="highlight"><span class="nv">$CPWFGauge</span><span class="o">=</span><span class="m">1</span></code> - the default CPWF gauge parameter.</p>
 </li>
 </ul>
+<p>In Klein space, almost everything is preserved except complex conjugation.</p>
+<h2 id="vectors">Vectors</h2>
 <p>Under the default settings, for <span class="arithmatex">\(d=2\)</span> the components of vectors are</p>
 <div class="arithmatex">\[\begin{align}
     &amp;
@@ -533,6 +554,12 @@ $ </span></p>
     \\
     &amp;
     \phat=\frac{1}{2y}(z \bar{z}+y^2+1,\bar{z}+z,-i (z-\bar{z}),-z \bar{z}-y^2+1)
+    \, ,
+    \\
+    &amp;
+    \khat=\epsilonhat=y\pp_{y}\phat
+    =
+    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
     \, ,
     \\
     &amp;
@@ -548,18 +575,13 @@ $ </span></p>
     \, ,
     \\
     &amp;
-    \epsilonhat=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
-    \, ,
-    \\
-    &amp;
     n
     =
     (1,0,0,-1)
     \, .
 \end{align}\]</div>
-<p>For higher dimensions, they are</p>
+<details class="remark">
+<summary>Higher dimensions</summary>
 <div class="arithmatex">\[\begin{align}
     &amp;
     \qhat=(| x|^2+1,2 x,1-| x|^2)
@@ -570,15 +592,15 @@ $ </span></p>
     \, ,
     \\
     &amp;
-    \epsilon_a=\pp_{x_{a}}\qhat
-    \textInMath{for}
-    1\leq a\leq d
+    \khat=\epsilonhat=y\pp_{y}\phat
+    =
+    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
     \, ,
     \\
     &amp;
-    \epsilonhat=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
+    \epsilon_a=\pp_{x_{a}}\qhat
+    \textInMath{for}
+    1\leq a\leq d
     \, ,
     \\
     &amp;
@@ -586,6 +608,7 @@ $ </span></p>
     (1,0,\cdots,0,-1)
     \, .
 \end{align}\]</div>
+</details>
 <h2 id="two-dimensional-polarization">Two dimensional polarization</h2>
 <ul>
 <li>
@@ -627,6 +650,35 @@ $ </span></p>
 </ul>
 </li>
 </ul>
+<h2 id="spinor-helicity">Spinor helicity</h2>
+<p>In <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the convention for incoming (-) and outgoing (+) is</p>
+<div class="arithmatex">\[\begin{equation}
+    \ketS{-q}=\ketS{q}
+    \, ,
+    \quad
+    \ketA{-q}=-\ketA{q}
+    \, .
+\end{equation}\]</div>
+<p>This makes the complex conjugation free from signs:</p>
+<div class="arithmatex">\[\begin{equation}
+    \braS{q}=\ketA{q}^{*}
+    \, ,
+    \quad
+    \braA{q}=\ketS{q}^{*}
+    \, .
+\end{equation}\]</div>
+<p>While in Srednicki/Siegel's convention, the signs are hidden in the complex conjugation.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Henriette Elvang and Yu-tin Huang. Scattering Amplitudes. 8 2013. <a href="https://arxiv.org/abs/1308.1697">arXiv:1308.1697</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger. Gluon Amplitudes as 2d Conformal Correlators. <em>Phys. Rev. D</em>, 96(8):085006, 2017. <a href="https://arxiv.org/abs/1706.03917">arXiv:1706.03917</a>, <a href="https://doi.org/10.1103/PhysRevD.96.085006">doi:10.1103/PhysRevD.96.085006</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 <!-- Source file information -->
 
