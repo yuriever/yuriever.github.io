@@ -1,5 +1,25 @@
 # Designing idea
 
+## 指标
+
+指标分为如下类型：
+
+* 标号 `#!wl label_` - 多数物理量均可带有标号，空标号为 `#!wl Null`。
+
+* 出入态标号 `#!wl IO[label_,sign:1|-1]` - 正号为出态，负号为入态
+
+    * 在特定函数中，例如 Spinor helicity formalism，出入态标号可简化为两类：
+
+        * 非零整数：`#!wl label_Integer|-label_Integer/;label>0`
+
+        * 符号：`#!wl label:_Symbol|-_Symbol`
+
+    * 内部函数 `#!wl labelIO|signIO` 用来访问出入态标号。
+
+* 时空指标 `#!wl index:_Symbol|-_Symbol` - 正号为上指标，负号为下指标。
+
+* 偏振指标 `#!wl polar:_Integer|_Symbol` - 出现在偏振矢量中。
+
 ## 矢量类型
 
 矢量类型：
@@ -18,8 +38,11 @@
     p[label_]:=
         vecsym[p,label];
 
+    p[io_IO]:=
+        signIO[io]*vecsym[p,labelIO[io]];
+
     p[label_,index_]:=
-        vec[vecsym[p,label],index];
+        vec[p[label],index];
     
     veccomp[vecsym[p,label_],dim_]:=
         ...
@@ -99,7 +122,7 @@
 
     * Constant.wl - 常数
 
-    * Convention.wl - 约定管理
+    * Convention.wl - 维数与约定管理
 
     * Abstract.wl - 符号与指标型张量
 
@@ -115,6 +138,8 @@
 
     * Conversion.wl
 
+    * Distribution.wl
+
     * Coefficient.wl
 
     * SpinorHelicity.wl
@@ -123,10 +148,14 @@
 
 * 输出格式
 
-    * Format.wl
+    * Box.wl
 
-* 兼容
+    * LaTeX.wl
 
-    * Deprecation.wl
+* 其它
+
+    * SysFix.wl - 内置函数修复
+
+    * Deprecation.wl - 兼容老版本
 
 ## 讨论
