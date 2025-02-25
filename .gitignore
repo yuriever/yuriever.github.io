@@ -1,8 +1,7 @@
 .gitattributes
 .DS_Store
 .vscode
-custom
 site
-mkdocs.yml
 uv.lock
 .python-version
+init.md
