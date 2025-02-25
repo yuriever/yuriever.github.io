@@ -1,0 +1,18 @@
+[project]
+name = "yuriever"
+version = "1.0.0"
+description = "yuriever's personal website"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mkdocs-exclude>=1.0.2",
+    "mkdocs-material>=9.6.5",
+    "pybtex",
+    "pygments-mathematica",
+    "mkdocs-bibtex",
+]
+
+[tool.uv.sources]
+pygments-mathematica = { git = "https://github.com/yuriever/pygments-mathematica" }
+pybtex = { git = "https://github.com/yuriever/pybtex" }
+mkdocs-bibtex = { git = "https://github.com/yuriever/mkdocs-bibtex" }
