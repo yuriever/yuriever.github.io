@@ -43,6 +43,10 @@ theme:
     logo: img/Mutsumi1.png
     favicon: img/favicon.png
 
+validation:
+    nav:
+        omitted_files: ignore
+
 extra:
     # remove the notice "made with material" in the footer
     generator: false
