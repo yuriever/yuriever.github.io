@@ -2,7 +2,7 @@
 
 * Lacia/CCFT
 
-    * [Documentation](workbench/Lacia-CCFT/doc.md)
+    <!-- * [Documentation](workbench/Lacia-CCFT/doc.md) -->
 
     * [Convention](workbench/Lacia-CCFT/convention.md)
 

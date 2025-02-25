@@ -1,9 +1,11 @@
 # Convention
 
 <span hidden> $
-\newcommand{\qhat}{\hat{q}}
 \newcommand{\phat}{\hat{p}}
+\newcommand{\qhat}{\hat{q}}
+\newcommand{\khat}{\hat{k}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
+\newcommand{\epsilonhat}{\hat{\epsilon}}
 $ </span>
 
 ## Normalization constants
@@ -14,6 +16,10 @@ $ </span>
 
 * `#!wl $CPWFGauge=1` - the default CPWF gauge parameter.
 
+In Klein space, almost everything is preserved except complex conjugation.
+
+## Vectors
+
 Under the default settings, for $d=2$ the components of vectors are
 
 \begin{align}
@@ -23,6 +29,12 @@ Under the default settings, for $d=2$ the components of vectors are
     \\
     &
     \phat=\frac{1}{2y}(z \bar{z}+y^2+1,\bar{z}+z,-i (z-\bar{z}),-z \bar{z}-y^2+1)
+    \, ,
+    \\
+    &
+    \khat=\epsilonhat=y\pp_{y}\phat
+    =
+    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
     \, ,
     \\
     &
@@ -38,46 +50,42 @@ Under the default settings, for $d=2$ the components of vectors are
     \, ,
     \\
     &
-    \epsilon_{0}=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
-    \, ,
-    \\
-    &
     n
     =
     (1,0,0,-1)
     \, .
 \end{align}
 
-For higher dimensions, they are
+??? remark "Higher dimensions"
 
-\begin{align}
-    &
-    \qhat=(| x|^2+1,2 x,1-| x|^2)
-    \, ,
-    \\
-    &
-    \phat=\frac{1}{2y}(| x|^2+y^2+1,2 x,-| x|^2-y^2+1)
-    \, ,
-    \\
-    &
-    \epsilon_a=\pp_{x_{a}}\qhat
-    \textInMath{for}
-    1\leq a\leq d
-    \, ,
-    \\
-    &
-    \epsilon_{0}=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
-    \, ,
-    \\
-    &
-    n=
-    (1,0,\cdots,0,-1)
-    \, .
-\end{align}
+    \begin{align}
+        &
+        \qhat=(| x|^2+1,2 x,1-| x|^2)
+        \, ,
+        \\
+        &
+        \phat=\frac{1}{2y}(| x|^2+y^2+1,2 x,-| x|^2-y^2+1)
+        \, ,
+        \\
+        &
+        \khat=\epsilonhat=y\pp_{y}\phat
+        =
+        \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
+        \, ,
+        \\
+        &
+        \epsilon_a=\pp_{x_{a}}\qhat
+        \textInMath{for}
+        1\leq a\leq d
+        \, ,
+        \\
+        &
+        n=
+        (1,0,\cdots,0,-1)
+        \, .
+    \end{align}
+
+    
 
 ## Two dimensional polarization
 
@@ -97,9 +105,9 @@ For higher dimensions, they are
             \, .
         \end{equation}
 
-* Massive polarization vectors: $\set{\epsilon,\epsilonb,\epsilon_{0}}$ for $J\in \set{1,-1,0}$.
+* Massive polarization vectors: $\set{\epsilon,\epsilonb,\epsilonhat}$ for $J\in \set{1,-1,0}$.
 
-    * Complete basis: $\epsilon(p)_{a}=\set{\epsilon,\epsilonb,\epsilon_{0},\phat}$ with the inner product
+    * Complete basis: $\epsilon(p)_{a}=\set{\epsilon,\epsilonb,\epsilonhat,\phat}$ with the inner product
 
         \begin{equation}
             \epsilon(p)_{a}^{*}\cdot \epsilon(p)_{b}
@@ -112,3 +120,27 @@ For higher dimensions, they are
             \end{bmatrix}
             \, .
         \end{equation}
+
+## Spinor helicity
+
+In [@Elvang:2013cua,@Pasterski:2017ylz], the convention for incoming (-) and outgoing (+) is
+
+\begin{equation}
+    \ketS{-q}=\ketS{q}
+    \, ,
+    \quad
+    \ketA{-q}=-\ketA{q}
+    \, .
+\end{equation}
+
+This makes the complex conjugation free from signs:
+
+\begin{equation}
+    \braS{q}=\ketA{q}^{*}
+    \, ,
+    \quad
+    \braA{q}=\ketS{q}^{*}
+    \, .
+\end{equation}
+
+While in Srednicki/Siegel's convention, the signs are hidden in the complex conjugation.

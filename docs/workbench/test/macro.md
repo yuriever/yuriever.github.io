@@ -206,8 +206,12 @@ ${}$
 &\braket{*}{*}\\
 &\brakets{*}{*}{*}\\
 &\op\\
-&\abraket{*}\\
-&\sbraket{*}\\
+&\braketA{*}\\
+&\braketS{*}\\
+&\braA{*}\\
+&\ketA{*}\\
+&\braS{*}\\
+&\ketS{*}\\
 &\sphere{*}\\
 &\hyperbolic{*}\\
 &\lightcone{*}\\
