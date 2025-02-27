@@ -339,27 +339,27 @@ window.MathJax = {
         		3
         	],
         	"op":"\\mathcal{O}",
-        	"braketA":[
+        	"abraket":[
         		"\\langle #1 \\rangle",
         		1
         	],
-        	"braketS":[
+        	"sbraket":[
         		"[ #1 ]",
         		1
         	],
-        	"braA":[
+        	"abra":[
         		"\\langle #1 \\vert",
         		1
         	],
-        	"ketA":[
+        	"aket":[
         		"\\vert\\mathopen{} #1 \\rangle",
         		1
         	],
-        	"braS":[
+        	"sbra":[
         		"[ #1 \\vert",
         		1
         	],
-        	"ketS":[
+        	"sket":[
         		"\\vert\\mathopen{} #1 ]",
         		1
         	],
