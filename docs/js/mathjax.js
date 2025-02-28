@@ -100,6 +100,9 @@ window.MathJax = {
         	"vv":"\\vee",
         	"oo":"\\infty",
         	"pp":"\\partial",
+        	"UU":"\\mathbb{U}",
+        	"VV":"\\mathbb{V}",
+        	"WW":"\\mathbb{W}",
         	"HH":"\\mathcal{H}",
         	"ip":[
         		"(#1,#2)",
