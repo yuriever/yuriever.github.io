@@ -82,10 +82,6 @@ A Mathematica paclet for improving math layout.
 
     * `#!wl "LinebreakIgnore"->{}` - treat the sub-expressions matching with the specified patterns as symbols.
 
-* `#!wl MFCopy` - copy the string from `#!wl MFString` and return the original expression.
-
-    * The options are inherited from `#!wl MFString`.
-
 * `#!wl MF` - show the LaTeX of the expression.
 
     The expression will be converted to LaTeX string by `#!wl MFString`, then compiled into PDF, controlled by the following options:
@@ -108,23 +104,25 @@ A Mathematica paclet for improving math layout.
 
 ## Format definition
 
-* `#!wl MFInterpret` - set interpretable format values.
+* `#!wl MFMakeBox` - make the box definitions interpretable.
 
     !!! wl "Usage"
 
         ``` wl
-        MFInterpret[Format,format_.,{pattern_,definition_,interpretation_.}]
+        MFMakeBox[{pattern_,definition_}]
         ```
 
         ``` wl
-        MFInterpret[MakeBoxes,format_.,{pattern_,definition_,interpretation_.}]
+        MFMakeBox[{pattern_,definition_,format_}]
         ```
 
         ``` wl
-        MFInterpret[__,{__List}] (*batch-operation*)
+        MFMakeBox[{pattern_,definition_,interpretation_,format_}]
         ```
 
-    * The arguments `#!wl format_` and `#!wl interpretation_` can be omitted.
+        ``` wl
+        MFInterpret[{__List}] (*batch-operation*)
+        ```
 
     * The supported formats are `#!wl StandardForm|TraditionalForm` or non-specified.
 
