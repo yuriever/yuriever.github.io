@@ -51,6 +51,9 @@ ${}$
 &\vv\\
 &\oo\\
 &\pp\\
+&\UU\\
+&\VV\\
+&\WW\\
 &\HH\\
 &\ip{*}{*}\\
 &\directIntegral\\
