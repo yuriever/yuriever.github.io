@@ -19,8 +19,14 @@
         "mkdocs",
         "pybtex",
         "pygments",
+        "Srednicki",
         "Srednicki's",
         "Szabolcs",
         "Zhuang"
+    ],
+    "latex-workshop.intellisense.package.extra": [
+        "yurie",
+        "yurie-math",
+        "yurie-phy"
     ]
 }
