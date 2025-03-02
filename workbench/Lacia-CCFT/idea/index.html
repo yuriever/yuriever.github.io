@@ -624,6 +624,21 @@
 </li>
 <li>
 <p>分量型矢量 <code class="highlight"><span class="nv">veccomp</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code></p>
+<ul>
+<li>
+<p>旋量化的分量型矢量 <code class="highlight"><span class="nv">veccompSA</span><span class="o">|</span><span class="nv">veccompAS</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">]</span></code>，其定义为</p>
+<div class="arithmatex">\[\begin{equation}
+    q_{a\dot{b}}\eqqq q_{\mu}\sigma^{\mu}_{a\dot{b}}
+    \, ,
+    \quad
+    q^{\dot{a}b}\eqqq q_{\mu}\bar{\sigma}^{\mu,\dot{a}b}
+    \, .
+\end{equation}\]</div>
+<ul>
+<li>注意 <code class="highlight"><span class="nv">braS</span><span class="o">|</span><span class="nv">ketS</span></code> 均为 undotted 形式，以 S 代表；而 <code class="highlight"><span class="nv">braA</span><span class="o">|</span><span class="nv">ketA</span></code> 为 dotted 形式，以 A 代表、</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <p>对于特定的矢量，例如动量，可定义：</p>
