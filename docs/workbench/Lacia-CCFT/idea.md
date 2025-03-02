@@ -30,6 +30,18 @@
 
 * 分量型矢量 `#!wl veccomp[vecsym_,dim_]`
 
+    * 旋量化的分量型矢量 `#!wl veccompSA|veccompAS[vecsym_]`，其定义为
+
+        \begin{equation}
+            q_{a\dot{b}}\eqqq q_{\mu}\sigma^{\mu}_{a\dot{b}}
+            \, ,
+            \quad
+            q^{\dot{a}b}\eqqq q_{\mu}\bar{\sigma}^{\mu,\dot{a}b}
+            \, .
+        \end{equation}
+
+        * 注意 `#!wl braS|ketS` 均为 undotted 形式，以 S 代表；而 `#!wl braA|ketA` 为 dotted 形式，以 A 代表、
+
 对于特定的矢量，例如动量，可定义：
 
 !!! code
@@ -43,7 +55,7 @@
 
     p[label_,index_]:=
         vec[p[label],index];
-    
+
     veccomp[vecsym[p,label_],dim_]:=
         ...
     ```
