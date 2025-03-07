@@ -96,12 +96,12 @@ Under the default settings, for $d=2$ the components of vectors are
         \begin{equation}
             \epsilon(q)_{a}^{*}\cdot \epsilon(q)_{b}
             =
-            \begin{bmatrix}
+            \begin{pmatrix}
                 2 & 0 & 0 & 0 \\
                 0 & 2 & 0 & 0 \\
                 0 & 0 & 0 & -2 \\
                 0 & 0 & -2 & 0 \\
-            \end{bmatrix}
+            \end{pmatrix}
             \, .
         \end{equation}
 
@@ -112,12 +112,12 @@ Under the default settings, for $d=2$ the components of vectors are
         \begin{equation}
             \epsilon(p)_{a}^{*}\cdot \epsilon(p)_{b}
             =
-            \begin{bmatrix}
+            \begin{pmatrix}
                 2 & 0 & 0 & 0 \\
                 0 & 2 & 0 & 0 \\
                 0 & 0 & 1 & 0 \\
                 0 & 0 & 0 & -1 \\
-            \end{bmatrix}
+            \end{pmatrix}
             \, .
         \end{equation}
 

@@ -21,9 +21,9 @@ align
 The equations \eqref{eq:0}, \eqref{eq:1} and \eqref{eq:2}.
 
 \begin{equation}
-    A=\begin{bmatrix}
+    A=\begin{pmatrix}
         a&b\\
         c&d
-    \end{bmatrix}
+    \end{pmatrix}
     \, .
 \end{equation}
