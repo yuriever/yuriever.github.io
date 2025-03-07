@@ -342,30 +342,42 @@ window.MathJax = {
         		3
         	],
         	"op":"\\mathcal{O}",
-        	"abraket":[
-        		"\\langle #1 \\rangle",
-        		1
-        	],
-        	"sbraket":[
+        	"braketS":[
         		"[ #1 ]",
         		1
         	],
-        	"abra":[
+        	"braketA":[
+        		"\\langle #1 \\rangle",
+        		1
+        	],
+        	"braketSA":[
+        		"[ #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 \\rangle",
+        		3
+        	],
+        	"braketAS":[
+        		"\\langle #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 ]",
+        		3
+        	],
+        	"braA":[
         		"\\langle #1 \\vert",
         		1
         	],
-        	"aket":[
+        	"abra":"\\braA",
+        	"ketA":[
         		"\\vert\\mathopen{} #1 \\rangle",
         		1
         	],
-        	"sbra":[
+        	"aket":"\\ketA",
+        	"braS":[
         		"[ #1 \\vert",
         		1
         	],
-        	"sket":[
+        	"sbra":"\\braS",
+        	"ketS":[
         		"\\vert\\mathopen{} #1 ]",
         		1
         	],
+        	"sket":"\\ketS",
         	"sphere":[
         		"\\operatorname{S}^{#1}",
         		1

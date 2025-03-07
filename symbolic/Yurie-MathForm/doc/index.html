@@ -597,12 +597,6 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">MFCopy</span></code> - copy the string from <code class="highlight"><span class="nv">MFString</span></code> and return the original expression.</p>
-<ul>
-<li>The options are inherited from <code class="highlight"><span class="nv">MFString</span></code>.</li>
-</ul>
-</li>
-<li>
 <p><code class="highlight"><span class="nv">MF</span></code> - show the LaTeX of the expression.</p>
 <p>The expression will be converted to LaTeX string by <code class="highlight"><span class="nv">MFString</span></code>, then compiled into PDF, controlled by the following options:</p>
 <ul>
@@ -636,23 +630,20 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <h2 id="format-definition">Format definition</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">MFInterpret</span></code> - set interpretable format values.</p>
+<p><code class="highlight"><span class="nv">MFMakeBox</span></code> - make the box definitions interpretable.</p>
 <div class="admonition wl">
 <p class="admonition-title">Usage</p>
-<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="nb">Format</span><span class="p">,</span><span class="nt">format_</span><span class="o">.</span><span class="p">,{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="o">.</span><span class="p">}]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="nb">MakeBoxes</span><span class="p">,</span><span class="nt">format_</span><span class="o">.</span><span class="p">,{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="o">.</span><span class="p">}]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="o">__</span><span class="p">,{</span><span class="nt">__List</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[{</span><span class="nt">__List</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
 </code></pre></div>
 </div>
 <ul>
-<li>
-<p>The arguments <code class="highlight"><span class="nt">format_</span></code> and <code class="highlight"><span class="nt">interpretation_</span></code> can be omitted.</p>
-</li>
-<li>
-<p>The supported formats are <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nb">TraditionalForm</span></code> or non-specified.</p>
-</li>
+<li>The supported formats are <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nb">TraditionalForm</span></code> or non-specified.</li>
 </ul>
 </li>
 <li>
