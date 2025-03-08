@@ -55,7 +55,7 @@ title: Triangulated reality
 
     * Documentation
 
-        * [Index](symbolic/Yurie-Math/Index.md)
+        * [Label](symbolic/Yurie-Math/Label.md)
 
         * [DLMF](symbolic/Yurie-Math/DLMF.md)
 
