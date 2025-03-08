@@ -67,6 +67,7 @@ ${}$
 &\Res\\
 &\Disc\\
 &\volume\\
+&\abs{*}\\
 &\sign\\
 &\diag\\
 &\gm{*}\\
@@ -210,7 +211,9 @@ ${}$
 &\brakets{*}{*}{*}\\
 &\op\\
 &\braketS{*}\\
+&\sbraket\\
 &\braketA{*}\\
+&\abraket\\
 &\braketSA{*}{*}{*}\\
 &\braketAS{*}{*}{*}\\
 &\braA{*}\\

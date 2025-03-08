@@ -113,7 +113,7 @@ window.MathJax = {
         		"\\{ #1 \\}",
         		1
         	],
-        	"given":"\\setsymbol[\\delimsize]",
+        	"given":"\\vert",
         	"Re":"\\operatorname{Re}",
         	"Im":"\\operatorname{Im}",
         	"intt":[
@@ -131,6 +131,10 @@ window.MathJax = {
         	"Res":"\\operatorname{Res}",
         	"Disc":"\\operatorname{Disc}",
         	"volume":"\\operatorname{Vol}",
+        	"abs":[
+        		"\\left\\lvert #1 \\right\\rvert",
+        		1
+        	],
         	"sign":"\\operatorname{sign}",
         	"diag":"\\operatorname{diag}",
         	"gm":[
@@ -346,35 +350,37 @@ window.MathJax = {
         		"[ #1 ]",
         		1
         	],
+        	"sbraket":"\\braketS",
         	"braketA":[
         		"\\langle #1 \\rangle",
         		1
         	],
+        	"abraket":"\\braketA",
         	"braketSA":[
-        		"[ #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 \\rangle",
+        		"[ #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 \\rangle",
         		3
         	],
         	"braketAS":[
-        		"\\langle #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 ]",
+        		"\\langle #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 ]",
         		3
         	],
         	"braA":[
-        		"\\langle #1 \\vert",
+        		"\\langle #1 \\mathclose{|}",
         		1
         	],
         	"abra":"\\braA",
         	"ketA":[
-        		"\\vert\\mathopen{} #1 \\rangle",
+        		"\\mathopen{|} #1 \\rangle",
         		1
         	],
         	"aket":"\\ketA",
         	"braS":[
-        		"[ #1 \\vert",
+        		"[ #1 \\mathclose{|}",
         		1
         	],
         	"sbra":"\\braS",
         	"ketS":[
-        		"\\vert\\mathopen{} #1 ]",
+        		"\\mathopen{|} #1 ]",
         		1
         	],
         	"sket":"\\ketS",
