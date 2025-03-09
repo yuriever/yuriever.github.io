@@ -15,3 +15,7 @@ Currently the component computation for symbolic dimension is only partial suppo
     * <https://mathematica.stackexchange.com/q/311131/86893>
 
 * `#!wl UnitVector` is `#!wl NonThreadable` but is not compatible with symbolic arrays, e.g. `#!wl SymbolicZerosArray`, hence should be replaced.
+
+## indexValidate
+
+`#!wl indexValidate` has not been implemented.
