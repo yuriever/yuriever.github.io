@@ -4,7 +4,9 @@
 
     * Constant - 常数
 
-    * Convention - 维数与约定管理
+    * Dimension - 维数
+
+    * Convention - 约定
 
     * IncomingOutgoing - 出入态
 
