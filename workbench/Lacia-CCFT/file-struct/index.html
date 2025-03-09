@@ -12,7 +12,7 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/Lacia-CCFT/idea/">
+        <link rel="canonical" href="https://yuriever.github.io/workbench/Lacia-CCFT/file-struct/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Designing idea - Sora</title>
+        <title>文件结构 - Sora</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#designing-idea" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Designing idea
+              文件结构
             
           </span>
         </div>
@@ -442,85 +442,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      指标
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      矢量类型
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      张量表达式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="张量表达式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      符号型矢量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      指标型张量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      分量型张量
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      函数
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      文件结构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       讨论
     </span>
@@ -580,214 +502,31 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="designing-idea">Designing idea</h1>
-<h2 id="_1">指标</h2>
-<p>指标分为如下类型：</p>
-<ul>
-<li>
-<p>标号 <code class="highlight"><span class="nt">label_</span></code> - 多数物理量均可带有标号，空标号为 <code class="highlight"><span class="nb">Null</span></code>。</p>
-</li>
-<li>
-<p>出入态标号 <code class="highlight"><span class="nv">IO</span><span class="p">[</span><span class="nt">label_</span><span class="p">,</span><span class="nv">sign</span><span class="o">:</span><span class="m">1</span><span class="o">|-</span><span class="m">1</span><span class="p">]</span></code> - 正号为出态，负号为入态</p>
-<ul>
-<li>
-<p>在特定函数中，例如 Spinor helicity formalism，出入态标号可简化为两类：</p>
-<ul>
-<li>
-<p>非零整数：<code class="highlight"><span class="nt">label_Integer</span><span class="o">|-</span><span class="nt">label_Integer</span><span class="o">/;</span><span class="nv">label</span><span class="o">&gt;</span><span class="m">0</span></code></p>
-</li>
-<li>
-<p>符号：<code class="highlight"><span class="nt">label:_Symbol</span><span class="o">|-</span><span class="nt">_Symbol</span></code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>内部函数 <code class="highlight"><span class="nv">labelIO</span><span class="o">|</span><span class="nv">signIO</span></code> 用来访问出入态标号。</p>
-</li>
-</ul>
-</li>
-<li>
-<p>时空指标 <code class="highlight"><span class="nt">index:_Symbol</span><span class="o">|-</span><span class="nt">_Symbol</span></code> - 正号为上指标，负号为下指标。</p>
-</li>
-<li>
-<p>偏振指标 <code class="highlight"><span class="nt">polar:_Integer</span><span class="o">|</span><span class="nt">_Symbol</span></code> - 出现在偏振矢量中。</p>
-</li>
-</ul>
-<h2 id="_2">矢量类型</h2>
-<p>矢量类型：</p>
-<ul>
-<li>
-<p>符号型矢量 <code class="highlight"><span class="nv">vecsym</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">label_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p>指标型矢量 <code class="highlight"><span class="nv">vec</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code></p>
-</li>
-<li>
-<p>分量型矢量 <code class="highlight"><span class="nv">veccomp</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code></p>
-<ul>
-<li>
-<p>旋量化的分量型矢量 <code class="highlight"><span class="nv">veccompSA</span><span class="o">|</span><span class="nv">veccompAS</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">]</span></code>，其定义为</p>
-<div class="arithmatex">\[\begin{equation}
-    q_{a\dot{b}}\eqqq q_{\mu}\sigma^{\mu}_{a\dot{b}}
-    \, ,
-    \quad
-    q^{\dot{a}b}\eqqq q_{\mu}\bar{\sigma}^{\mu,\dot{a}b}
-    \, .
-\end{equation}\]</div>
-<ul>
-<li>注意 <code class="highlight"><span class="nv">braS</span><span class="o">|</span><span class="nv">ketS</span></code> 均为 undotted 形式，以 S 代表；而 <code class="highlight"><span class="nv">braA</span><span class="o">|</span><span class="nv">ketA</span></code> 为 dotted 形式，以 A 代表、</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>对于特定的矢量，例如动量，可定义：</p>
-<div class="admonition code">
-<p class="admonition-title">Code</p>
-<div class="highlight"><pre><span></span><code><span class="nv">p</span><span class="p">[</span><span class="nt">label_</span><span class="p">]</span><span class="o">:=</span>
-<span class="w">    </span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nv">label</span><span class="p">]</span><span class="o">;</span>
-
-<span class="nv">p</span><span class="p">[</span><span class="nt">io_IO</span><span class="p">]</span><span class="o">:=</span>
-<span class="w">    </span><span class="nv">signIO</span><span class="p">[</span><span class="nv">io</span><span class="p">]</span><span class="o">*</span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nv">labelIO</span><span class="p">[</span><span class="nv">io</span><span class="p">]]</span><span class="o">;</span>
-
-<span class="nv">p</span><span class="p">[</span><span class="nt">label_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span><span class="o">:=</span>
-<span class="w">    </span><span class="nv">vec</span><span class="p">[</span><span class="nv">p</span><span class="p">[</span><span class="nv">label</span><span class="p">],</span><span class="nv">index</span><span class="p">]</span><span class="o">;</span>
-
-<span class="nv">veccomp</span><span class="p">[</span><span class="nv">vecsym</span><span class="p">[</span><span class="nv">p</span><span class="p">,</span><span class="nt">label_</span><span class="p">],</span><span class="nt">dim_</span><span class="p">]</span><span class="o">:=</span>
-<span class="w">    </span><span class="o">...</span>
-</code></pre></div>
-</div>
-<p>此种方案的优势：</p>
-<ul>
-<li>
-<p>无需管理符号型矢量的实例；</p>
-</li>
-<li>
-<p>模式匹配简单；</p>
-</li>
-<li>
-<p>可扩展性强。</p>
-</li>
-</ul>
-<h2 id="_3">张量表达式</h2>
-<h3 id="_4">符号型矢量</h3>
-<ul>
-<li>
-<p>符号型矢量表达式：</p>
-<ul>
-<li>
-<p>符号型矢量的线性组合</p>
-</li>
-<li>
-<p>被封装在 <code class="highlight"><span class="nt">_vec</span><span class="o">|</span><span class="nt">_dot</span><span class="o">|</span><span class="nt">_dotcomp</span></code> 等指标或分量型矢量后，可由 <code class="highlight"><span class="nv">vectorReplace</span></code> 等函数访问</p>
-</li>
-</ul>
-</li>
-<li>
-<p>节点：</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">vecsym</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">label_</span><span class="p">]</span></code> - 符号型矢量节点</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="_5">指标型张量</h3>
-<ul>
-<li>
-<p>指标型张量表达式：</p>
-<ul>
-<li>
-<p>张量的线性组合</p>
-</li>
-<li>
-<p>用指标表示张量积与缩并</p>
-</li>
-</ul>
-</li>
-<li>
-<p>节点：</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
-</li>
-<li>
-<p>指标型张量节点：</p>
-<ul>
-<li>
-<p>原子化，内部不可直接访问</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">vec</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">index_</span><span class="p">]</span></code> - 指标型矢量，封装了符号型矢量表达式 <code class="highlight"><span class="nv">vecsym</span></code> 与指标 <code class="highlight"><span class="nv">index</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">dot</span><span class="p">[</span><span class="nt">vecsym1_</span><span class="p">,</span><span class="nt">vecsym2_</span><span class="p">]</span></code> - 矢量点积，封装了两个符号型矢量表达式</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">met</span><span class="p">[</span><span class="nt">index1_</span><span class="p">,</span><span class="nt">index2_</span><span class="p">]</span></code> - 度规张量</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="_6">分量型张量</h3>
-<ul>
-<li>
-<p>分量型张量表达式</p>
-</li>
-<li>
-<p>节点：</p>
-<ul>
-<li>
-<p><code class="highlight"><span class="nt">_Plus</span><span class="o">|</span><span class="nt">_Times</span></code> - 常规节点</p>
-</li>
-<li>
-<p>分量型张量节点：</p>
-<ul>
-<li>
-<p>依赖于维数与度规号差等常数</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">veccomp</span><span class="p">[</span><span class="nt">vecsym_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code> - 分量型矢量，封装了符号型矢量表达式 <code class="highlight"><span class="nv">vecsym</span></code></p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">dotcomp</span><span class="p">[</span><span class="nt">vecsym1_</span><span class="p">,</span><span class="nt">vecsym2_</span><span class="p">,</span><span class="nt">dim_</span><span class="p">]</span></code> - 矢量点积分量，封装了两个符号型矢量表达式</p>
-</li>
-<li>
-<p><code class="highlight"><span class="nv">metcomp</span><span class="p">[</span><span class="nt">dim_</span><span class="p">,</span><span class="nt">signature_</span><span class="p">]</span></code> - 度规分量</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="_7">函数</h2>
-<ul>
-<li><code class="highlight"><span class="nv">scalarFreeze</span><span class="o">|</span><span class="nv">scalarFocus</span></code> - 用以处理下述问题：对于形如表达式 <code class="highlight"><span class="p">((</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="nt">_vec</span><span class="o">+</span><span class="nt">_vec</span><span class="p">)</span><span class="o">*</span><span class="nt">_vec</span></code>，仅展开乘积而保持标量系数 <code class="highlight"><span class="p">(</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span></code> 不变，或仅对标量系数进行特定操作。</li>
-</ul>
-<h2 id="_8">文件结构</h2>
+<h1 id="_1">文件结构</h1>
 <ul>
 <li>
 <p>核心功能</p>
 <ul>
 <li>
-<p>Constant.wl - 常数</p>
+<p>Constant - 常数</p>
 </li>
 <li>
-<p>Convention.wl - 维数与约定管理</p>
+<p>Convention - 维数与约定管理</p>
 </li>
 <li>
-<p>Abstract.wl - 符号与指标型张量</p>
+<p>IncomingOutgoing - 出入态</p>
 </li>
 <li>
-<p>Component.wl - 分量型张量</p>
+<p>AbstractTensor - 符号与指标型张量</p>
 </li>
 <li>
-<p>Conjugate.wl - 共轭</p>
+<p>ComponentTensor - 分量型张量</p>
+</li>
+<li>
+<p>SpinorHelicity - 符号与分量型动量旋量</p>
+</li>
+<li>
+<p>Conjugate - 共轭</p>
 </li>
 </ul>
 </li>
@@ -795,25 +534,22 @@
 <p>扩展功能</p>
 <ul>
 <li>
-<p>ConformalKinematics.wl</p>
+<p>ConformalKinematics</p>
 </li>
 <li>
-<p>ScatteringAmplitude.wl</p>
+<p>ScatteringAmplitude</p>
 </li>
 <li>
-<p>Conversion.wl</p>
+<p>Conversion</p>
 </li>
 <li>
-<p>Distribution.wl</p>
+<p>Distribution</p>
 </li>
 <li>
-<p>Coefficient.wl</p>
+<p>Coefficient</p>
 </li>
 <li>
-<p>SpinorHelicity.wl</p>
-</li>
-<li>
-<p>MCVariety.wl</p>
+<p>MCVariety</p>
 </li>
 </ul>
 </li>
@@ -821,10 +557,10 @@
 <p>输出格式</p>
 <ul>
 <li>
-<p>Box.wl</p>
+<p>Box</p>
 </li>
 <li>
-<p>LaTeX.wl</p>
+<p>LaTeX</p>
 </li>
 </ul>
 </li>
@@ -832,15 +568,15 @@
 <p>其它</p>
 <ul>
 <li>
-<p>SysFix.wl - 内置函数修复</p>
+<p>SysFix - 内置函数修复</p>
 </li>
 <li>
-<p>Deprecation.wl - 兼容老版本</p>
+<p>Deprecation - 兼容老版本</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="_9">讨论</h2>
+<h2 id="_2">讨论</h2>
 
 <!-- Source file information -->
 
