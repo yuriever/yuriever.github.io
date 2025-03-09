@@ -6,7 +6,15 @@
 
     * [Convention](workbench/Lacia-CCFT/convention.md)
 
-    * [Designing idea](workbench/Lacia-CCFT/idea.md)
+    * [File structure](workbench/Lacia-CCFT/file-struct.md)
+
+    * Designing idea
+
+        * [Label](workbench/Lacia-CCFT/label.md)
+
+        * [Tensor](workbench/Lacia-CCFT/tensor.md)
+
+        * [Spinor](workbench/Lacia-CCFT/spinor.md)
 
     * [Issues&TODO](workbench/Lacia-CCFT/issue.md)
 
