@@ -510,24 +510,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      文件结构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      讨论
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -754,78 +736,6 @@
 <ul>
 <li><code class="highlight"><span class="nv">scalarFreeze</span><span class="o">|</span><span class="nv">scalarFocus</span></code> - 用以处理下述问题：对于形如表达式 <code class="highlight"><span class="p">((</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="nt">_vec</span><span class="o">+</span><span class="nt">_vec</span><span class="p">)</span><span class="o">*</span><span class="nt">_vec</span></code>，仅展开乘积而保持标量系数 <code class="highlight"><span class="p">(</span><span class="nv">a</span><span class="o">+</span><span class="nv">b</span><span class="p">)</span><span class="o">^</span><span class="m">2</span></code> 不变，或仅对标量系数进行特定操作。</li>
 </ul>
-<h2 id="_8">文件结构</h2>
-<ul>
-<li>
-<p>核心功能</p>
-<ul>
-<li>
-<p>Constant.wl - 常数</p>
-</li>
-<li>
-<p>Convention.wl - 维数与约定管理</p>
-</li>
-<li>
-<p>Abstract.wl - 符号与指标型张量</p>
-</li>
-<li>
-<p>Component.wl - 分量型张量</p>
-</li>
-<li>
-<p>Conjugate.wl - 共轭</p>
-</li>
-</ul>
-</li>
-<li>
-<p>扩展功能</p>
-<ul>
-<li>
-<p>ConformalKinematics.wl</p>
-</li>
-<li>
-<p>ScatteringAmplitude.wl</p>
-</li>
-<li>
-<p>Conversion.wl</p>
-</li>
-<li>
-<p>Distribution.wl</p>
-</li>
-<li>
-<p>Coefficient.wl</p>
-</li>
-<li>
-<p>SpinorHelicity.wl</p>
-</li>
-<li>
-<p>MCVariety.wl</p>
-</li>
-</ul>
-</li>
-<li>
-<p>输出格式</p>
-<ul>
-<li>
-<p>Box.wl</p>
-</li>
-<li>
-<p>LaTeX.wl</p>
-</li>
-</ul>
-</li>
-<li>
-<p>其它</p>
-<ul>
-<li>
-<p>SysFix.wl - 内置函数修复</p>
-</li>
-<li>
-<p>Deprecation.wl - 兼容老版本</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="_9">讨论</h2>
 
 <!-- Source file information -->
 
