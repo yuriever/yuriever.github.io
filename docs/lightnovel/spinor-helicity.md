@@ -436,10 +436,7 @@ The helicity spinors can be parametrized as
     \, ,
 \end{align}
 
-
 ## Polarization vectors
-
-
 
 %
 %
