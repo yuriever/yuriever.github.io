@@ -120,27 +120,3 @@ Under the default settings, for $d=2$ the components of vectors are
             \end{pmatrix}
             \, .
         \end{equation}
-
-## Spinor helicity
-
-In [@Elvang:2013cua,@Pasterski:2017ylz], the convention for incoming (-) and outgoing (+) is
-
-\begin{equation}
-    \ketS{-q}=\ketS{q}
-    \, ,
-    \quad
-    \ketA{-q}=-\ketA{q}
-    \, .
-\end{equation}
-
-This makes the complex conjugation free from signs:
-
-\begin{equation}
-    \braS{q}=\ketA{q}^{*}
-    \, ,
-    \quad
-    \braA{q}=\ketS{q}^{*}
-    \, .
-\end{equation}
-
-While in Srednicki/Siegel's convention, the signs are hidden in the complex conjugation.
