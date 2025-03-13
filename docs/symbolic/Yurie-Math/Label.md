@@ -2,7 +2,7 @@
 
 * `#!wl label[var_|{vars__},label_|{labels__},pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
 
-    * `#!wl pos:Symbol|Construct|Function|Subscript|Superscript` - control the position of label. `#!wl Function` is a synonym of `#!wl Construct`.
+    * `#!wl pos:Symbol|Function|Subscript|Superscript` - control the position of label.
 
         !!! wl "Example"
 
@@ -60,6 +60,8 @@
                 ``` wl
                 Out[] = z[b1]
                 ```
+
+    * `#!wl labelJoin|labelSplit` - special cases of `#!wl labelConvert` that convert `#!wl Symbol` to/from other `#!wl Function|Subscript|Superscript`.
 
 * `#!wl labelTo*[var_|{vars__},rule_|{rules__},pos_:Function]` - return a `#!wl ReplaceAll` function according to the rules.
 
