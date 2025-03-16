@@ -11,7 +11,7 @@
         &.proof,
         &.remark,
         &.fact,
-        &.equation {
+        &.ex {
             font-size: 0.8rem;
 
             &:last-child {
@@ -26,7 +26,7 @@
     .proof,
     .remark,
     .fact,
-    .equation {
+    .ex {
         > .admonition-title,
         > summary {
             padding-left: 0rem;
