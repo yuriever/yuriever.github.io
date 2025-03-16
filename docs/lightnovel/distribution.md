@@ -33,65 +33,6 @@ The extension is highly nonunique. We are interested in the case where a family 
 
 If $\phi_{a}(x)$ is meromorphic w.r.t. $a\in U\subset\CC$, we can cancel the poles of $\phi_{a}(x)$ by another meromorphic function $N(a)$ such that the normalized distribution $N(a)\phi_{a}(x)$ is holomorphic in $U$, called normalization of distributions.
 
-### Example 1: principal value
-
-The principal values of $x^{-1}$ and $x^{-2}$ are
-
-\begin{align}
-    &
-    (x^{-1},f(x)) \eqqq(|x|^{-1}\sign(x),f(x))=\intrange{dx}{0}{\oo}\frac{f(x)-f(-x)}{x}
-    \, ,
-    \\
-    &
-    (x^{-2},f(x)) \eqqq(|x|^{-2},f(x))=\intrange{dx}{0}{\oo}\frac{f(x)+f(-x)-2f(0)}{x^2}
-    \, .
-\end{align}
-
-Notice that although $x^{-2}$ as a function is positive-definite, as a distribution it is not.
-
-??? wl "Example"
-
-    \begin{equation}
-        (x^{-2},\frac{1}{1+x^2})=-\pi<0
-        \, .
-    \end{equation}
-
-    ``` wl
-    f[x_]:=1/(1+x^2);
-
-    Integrate[f[x],{x,-∞,∞}]
-
-    Integrate[(f[x]+f[-x]-2f[0])/x^2,{x,0,∞}]
-    ```
-
-    ``` wl
-    Out[] = π
-
-    Out[] = -π
-    ```
-
-### Example 2: Hilbert transform
-
-The regularization of $\phi(x)=\frac{1}{x-y}$ can be chosen as
-
-\begin{equation}
-    \label{eq: Hilbert transform}
-    \intt{dx}\frac{f(x)}{x-y}\eqqq\lim_{\epsilon\to 0}\inttt{dx}{|x-y|>\epsilon}\frac{f(x)}{x-y}
-    \, .
-\end{equation}
-
-This regularized distribution defines the Hilbert transform - a unitary operator on $L^2(\RR)$ [^rigged] with two eigenspaces
-
-\begin{equation}
-    \label{eq: Hardy spaces}
-    L^2(\RR)=H^{2}_{+}(\RR)\oplus H^{2}_{-}(\RR)
-    \, ,
-\end{equation}
-
-called the Hardy spaces. It is also identified as a specific Knapp-Stein intertwining operator of $\slgroup(2,\RR)$. Consequently the ramified principal series representation at the end-point is reducible, with the decomposition \eqref{eq: Hardy spaces}.
-
-[^rigged]: Recall that $L^2(\RR)$ is canonically embedded into $\cS'(\RR)$, as an example of rigged Hilbert space $\cS(\RR)\subset L^2(\RR)\subset \cS'(\RR)$.
-
 ### Example 3: power-type distribution
 
 The power-type distribution in $\cS'(\RRgeq)$
@@ -500,46 +441,6 @@ Under the Mellin transform, we have the following pairs:
 Now we check the consistency of the above Mellin pairs.
 
 ## Miscellaneous
-
-The Dirac $\delta$-function admits the following approximations
-
-\begin{align}
-    &
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\sqrt{2\pi \epsilon}}e^{-x^2/2\epsilon}
-    \, ,
-    \\
-    &
-    \delta(x)
-    =
-    \lim_{p\to \oo}\frac{1}{\pi}\frac{\sin p x}{x}
-    \, ,
-    \\
-    &
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\pi} \frac{\epsilon}{x^2+\epsilon^2}
-    =
-    \lim_{\epsilon\to 0}-\frac{1}{\pi}\Im \frac{1}{x+i\epsilon}
-    \, ,
-    \\
-    &
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0} \frac{1}{\gm{\epsilon}} x_{+}^{-1+\epsilon}
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\gm{\epsilon}} |x|^{-1+2\epsilon}
-    \, ,
-\end{align}
-
-where $\epsilon>0$ and the following properties
-
-\begin{align}
-    &
-    \delta^{(n)}(a x)=\frac{\sign(a)}{a^{n+1}}\delta^{(n)}(x)
-    \, .
-\end{align}
 
 ### An identity
 
