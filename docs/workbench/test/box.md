@@ -293,7 +293,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! equation "Test"
+!!! ex "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 

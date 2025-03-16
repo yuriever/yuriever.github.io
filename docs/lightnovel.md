@@ -6,6 +6,6 @@
 
 ---
 
-* [Notes on distributions](lightnovel/distribution.md)
+<!-- * [Notes on distributions](lightnovel/distribution.md) -->
 
 * [Notes on spinor helicity formalism](lightnovel/spinor-helicity.md)

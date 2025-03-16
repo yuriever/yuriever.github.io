@@ -112,7 +112,7 @@ Numbering:
         a+b
     \end{equation}
 
-!!! equation
+!!! ex
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -120,7 +120,7 @@ Numbering:
         a+b
     \end{equation}
 
-??? equation
+??? ex
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 

@@ -1,7 +1,7 @@
 function injectCounters() {
     // Separate counters
     let sharedCounter = 0; // Counter for theorem, definition, lemma
-    let equationCounter = 0; // Counter for equation
+    let exampleCounter = 0; // Counter for example
     let proofCounter = 0; // Counter for proof
     let remarkCounter = 0; // Counter for remark
     let factCounter = 0; // Counter for fact
@@ -11,7 +11,7 @@ function injectCounters() {
         theorem: { label: "Theorem", counter: () => ++sharedCounter },
         definition: { label: "Definition", counter: () => ++sharedCounter },
         lemma: { label: "Lemma", counter: () => ++sharedCounter },
-        equation: { label: "Equation", counter: () => ++equationCounter },
+        ex: { label: "Example", counter: () => ++exampleCounter },
         proof: { label: "Proof", counter: () => ++proofCounter },
         remark: { label: "Remark", counter: () => ++remarkCounter },
         fact: { label: "Fact", counter: () => ++factCounter }
@@ -19,7 +19,7 @@ function injectCounters() {
 
     // Select all relevant elements
     const elements = document.querySelectorAll(
-        ".theorem, .definition, .lemma, .equation, .proof, .remark, .fact"
+        ".theorem, .definition, .lemma, .ex, .proof, .remark, .fact"
     );
 
     elements.forEach((el) => {
