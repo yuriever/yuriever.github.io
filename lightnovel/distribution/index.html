@@ -470,24 +470,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-1-principal-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 1: principal value
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-2-hilbert-transform" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 2: Hilbert transform
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#example-3-power-type-distribution" class="md-nav__link">
     <span class="md-ellipsis">
       Example 3: power-type distribution
@@ -719,49 +701,6 @@ To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span clas
 <p>The extension is highly nonunique. We are interested in the case where a family of distributions <span class="arithmatex">\(\phi_{a}(x)\)</span> depends on the parameter <span class="arithmatex">\(a\)</span> analytically. Then the analyticity of <span class="arithmatex">\(a\)</span> can help choose a unique regularization of <span class="arithmatex">\(\phi_{a}(x)\)</span>.</p>
 <h3 id="normalization">Normalization</h3>
 <p>If <span class="arithmatex">\(\phi_{a}(x)\)</span> is meromorphic w.r.t. <span class="arithmatex">\(a\in U\subset\CC\)</span>, we can cancel the poles of <span class="arithmatex">\(\phi_{a}(x)\)</span> by another meromorphic function <span class="arithmatex">\(N(a)\)</span> such that the normalized distribution <span class="arithmatex">\(N(a)\phi_{a}(x)\)</span> is holomorphic in <span class="arithmatex">\(U\)</span>, called normalization of distributions.</p>
-<h3 id="example-1-principal-value">Example 1: principal value</h3>
-<p>The principal values of <span class="arithmatex">\(x^{-1}\)</span> and <span class="arithmatex">\(x^{-2}\)</span> are</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    (x^{-1},f(x)) \eqqq(|x|^{-1}\sign(x),f(x))=\intrange{dx}{0}{\oo}\frac{f(x)-f(-x)}{x}
-    \, ,
-    \\
-    &amp;
-    (x^{-2},f(x)) \eqqq(|x|^{-2},f(x))=\intrange{dx}{0}{\oo}\frac{f(x)+f(-x)-2f(0)}{x^2}
-    \, .
-\end{align}\]</div>
-<p>Notice that although <span class="arithmatex">\(x^{-2}\)</span> as a function is positive-definite, as a distribution it is not.</p>
-<details class="wl">
-<summary>Example</summary>
-<div class="arithmatex">\[\begin{equation}
-    (x^{-2},\frac{1}{1+x^2})=-\pi&lt;0
-    \, .
-\end{equation}\]</div>
-<div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:=</span><span class="m">1</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">;</span>
-
-<span class="nb">Integrate</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],{</span><span class="nv">x</span><span class="p">,</span><span class="o">-∞</span><span class="p">,</span><span class="o">∞</span><span class="p">}]</span>
-
-<span class="nb">Integrate</span><span class="p">[(</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="o">+</span><span class="nv">f</span><span class="p">[</span><span class="o">-</span><span class="nv">x</span><span class="p">]</span><span class="o">-</span><span class="m">2</span><span class="nv">f</span><span class="p">[</span><span class="m">0</span><span class="p">])</span><span class="o">/</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">,{</span><span class="nv">x</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="o">∞</span><span class="p">}]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">π</span>
-
-<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nb">π</span>
-</code></pre></div>
-</details>
-<h3 id="example-2-hilbert-transform">Example 2: Hilbert transform</h3>
-<p>The regularization of <span class="arithmatex">\(\phi(x)=\frac{1}{x-y}\)</span> can be chosen as</p>
-<div class="arithmatex">\[\begin{equation}
-    \label{eq: Hilbert transform}
-    \intt{dx}\frac{f(x)}{x-y}\eqqq\lim_{\epsilon\to 0}\inttt{dx}{|x-y|&gt;\epsilon}\frac{f(x)}{x-y}
-    \, .
-\end{equation}\]</div>
-<p>This regularized distribution defines the Hilbert transform - a unitary operator on <span class="arithmatex">\(L^2(\RR)\)</span> <sup id="fnref:rigged"><a class="footnote-ref" href="#fn:rigged">1</a></sup> with two eigenspaces</p>
-<div class="arithmatex">\[\begin{equation}
-    \label{eq: Hardy spaces}
-    L^2(\RR)=H^{2}_{+}(\RR)\oplus H^{2}_{-}(\RR)
-    \, ,
-\end{equation}\]</div>
-<p>called the Hardy spaces. It is also identified as a specific Knapp-Stein intertwining operator of <span class="arithmatex">\(\slgroup(2,\RR)\)</span>. Consequently the ramified principal series representation at the end-point is reducible, with the decomposition \eqref{eq: Hardy spaces}.</p>
 <h3 id="example-3-power-type-distribution">Example 3: power-type distribution</h3>
 <p>The power-type distribution in <span class="arithmatex">\(\cS'(\RRgeq)\)</span></p>
 <div class="arithmatex">\[\begin{equation}
@@ -836,7 +775,7 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
     &amp;x_{-}^{a} \eqqq\theta(-x) |x|^a
     \, ,
 \end{align}\]</div>
-<p>and we can recombine them according to parity as <sup id="fnref:signnotation"><a class="footnote-ref" href="#fn:signnotation">2</a></sup></p>
+<p>and we can recombine them according to parity as <sup id="fnref:signnotation"><a class="footnote-ref" href="#fn:signnotation">1</a></sup></p>
 <div class="arithmatex">\[\begin{align}
     &amp;|x|^{a}_{0}\eqqq|x|^a= x_{+}^{a}+ x_{-}^{a}
     \, ,
@@ -1156,42 +1095,6 @@ As <span class="arithmatex">\(\epsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can
 \end{equation}\]</div>
 <p>Now we check the consistency of the above Mellin pairs.</p>
 <h2 id="miscellaneous">Miscellaneous</h2>
-<p>The Dirac <span class="arithmatex">\(\delta\)</span>-function admits the following approximations</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\sqrt{2\pi \epsilon}}e^{-x^2/2\epsilon}
-    \, ,
-    \\
-    &amp;
-    \delta(x)
-    =
-    \lim_{p\to \oo}\frac{1}{\pi}\frac{\sin p x}{x}
-    \, ,
-    \\
-    &amp;
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\pi} \frac{\epsilon}{x^2+\epsilon^2}
-    =
-    \lim_{\epsilon\to 0}-\frac{1}{\pi}\Im \frac{1}{x+i\epsilon}
-    \, ,
-    \\
-    &amp;
-    \delta(x)
-    =
-    \lim_{\epsilon\to 0} \frac{1}{\gm{\epsilon}} x_{+}^{-1+\epsilon}
-    =
-    \lim_{\epsilon\to 0}\frac{1}{\gm{\epsilon}} |x|^{-1+2\epsilon}
-    \, ,
-\end{align}\]</div>
-<p>where <span class="arithmatex">\(\epsilon&gt;0\)</span> and the following properties</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    \delta^{(n)}(a x)=\frac{\sign(a)}{a^{n+1}}\delta^{(n)}(x)
-    \, .
-\end{align}\]</div>
 <h3 id="an-identity">An identity</h3>
 <p>We consider the distribution <span class="arithmatex">\(\theta(z)\delta(i(z-\zb))\)</span> on <span class="arithmatex">\(\RR^{2}\)</span>, which support on the positive real axis.
 In the Cartesian and radial coordinates, we have</p>
@@ -1249,11 +1152,8 @@ Without loss of generality for <span class="arithmatex">\(w&gt;0,r\in(0,w)\)</sp
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:rigged">
-<p>Recall that <span class="arithmatex">\(L^2(\RR)\)</span> is canonically embedded into <span class="arithmatex">\(\cS'(\RR)\)</span>, as an example of rigged Hilbert space <span class="arithmatex">\(\cS(\RR)\subset L^2(\RR)\subset \cS'(\RR)\)</span>.&#160;<a class="footnote-backref" href="#fnref:rigged" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
 <li id="fn:signnotation">
-<p>The redundant superscript <span class="arithmatex">\(0\)</span> is to stress the companion of <span class="arithmatex">\(|x|^{a}_{0}\)</span> to <span class="arithmatex">\(|x|^{a}_{1}\)</span>.&#160;<a class="footnote-backref" href="#fnref:signnotation" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>The redundant superscript <span class="arithmatex">\(0\)</span> is to stress the companion of <span class="arithmatex">\(|x|^{a}_{0}\)</span> to <span class="arithmatex">\(|x|^{a}_{1}\)</span>.&#160;<a class="footnote-backref" href="#fnref:signnotation" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

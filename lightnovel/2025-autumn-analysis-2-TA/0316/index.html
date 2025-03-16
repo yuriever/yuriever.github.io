@@ -461,9 +461,78 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      导数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      标量乘法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      乘法定义的困难
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#as-module-of-weyl-algebra" class="md-nav__link">
     <span class="md-ellipsis">
       As module of Weyl algebra
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      其它例子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其它例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-principal-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: principal value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-hilbert-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Hilbert transform
     </span>
   </a>
   
@@ -528,7 +597,7 @@
 <!-- Page content -->
 <h1 id="0316">0316</h1>
 <p>在本习题课中我会介绍一些广义函数/分布相关的知识。</p>
-<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
+<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
 <p>大纲：</p>
 <ul>
 <li>
@@ -541,7 +610,7 @@
 <p>齐次广义函数</p>
 </li>
 <li>
-<p>常见的广义函数空间 <span class="arithmatex">\(\cD^{\dual},\,  \cS^{\dual}\)</span></p>
+<p>常见的广义函数空间</p>
 </li>
 </ul>
 </li>
@@ -569,7 +638,7 @@
 <p>Direct integral: Hilbert spaces parametrized by measure space</p>
 </li>
 <li>
-<p>Fourier transform and the regular representation of <span class="arithmatex">\(\RR\)</span></p>
+<p>Fourier transform and the regular representation of <span class="arithmatex">\(\RR\)</span> </p>
 </li>
 </ul>
 </li>
@@ -581,9 +650,9 @@
 <p>在物理中，态与观测量是一对对偶的概念，而广义函数自然的蕴藏其中。</p>
 <div class="admonition ex">
 <p class="admonition-title">观测作为仪器对态的卷积</p>
-<p>考虑望远镜、手机摄像头之类的光学观测系统 <span class="arithmatex">\(\cO\)</span>，输入为信号 <span class="arithmatex">\(\rho(x)\)</span>，输出为光强等实数，这定义了一个泛函</p>
+<p>考虑望远镜、手机摄像头之类的光学观测系统，输入为信号 <span class="arithmatex">\(\rho(x)\)</span>，输出为光强等实数，这定义了一个泛函</p>
 <div class="arithmatex">\[\begin{equation}
-    \cO:V\to \RR
+    \phi:V\to \RR
     \, ,
 \end{equation}\]</div>
 <p>其中 <span class="arithmatex">\(V\)</span> 为信号构成的函数空间。例如滤波器，另一类仪器的输出为信号 <span class="arithmatex">\(\rho_{2}(x) \in V_{2}\)</span>，这定义了一个算子</p>
@@ -591,17 +660,17 @@
     \cO:V \to V_{2}
     \, .
 \end{equation}\]</div>
-<p>通常在信号较弱时，<span class="arithmatex">\(\cO\)</span> 可以近似为线性的，称为线性仪器，例如常见的水银温度计。</p>
+<p>通常在信号较弱时，<span class="arithmatex">\(\phi\, ,\cO\)</span> 可以近似为线性的，称为线性仪器，例如常见的水银温度计。</p>
 <p>每一个元件只接收与反馈特定频率范围内的信号，因此在线性近似下，光强或新信号在动量空间可写为</p>
 <div class="arithmatex">\[\begin{equation}
-    \cO(\rho)=\intt{d p} \cO(p) \rho(p)
+    \phi(\rho)=\intt{d p} \phi(p) \rho(p)
     \, ,
     \quad
     \rho_{2}(p_{2})=\intt{d p_{1}} \cO(p_{1},p_{2}) \rho(p_{1})
     \, ,
 \end{equation}\]</div>
-<p>其中 <span class="arithmatex">\(\cO(p)\)</span> 与 <span class="arithmatex">\(\cO(p_{1},p_{2})\)</span> 描述了仪器对特定频率的响应与反馈。经过 Fourier 变换后，在坐标空间即为卷积。</p>
-<p>现实中的仪器总有一定的展宽，输出的数据或信号总是对真实的物理态的近似描述。这时 <span class="arithmatex">\(\cO(p)\)</span> 与 <span class="arithmatex">\(\cO(p_{1},p_{2})\)</span> 通常是紧支撑的有一定光滑性的可积函数。</p>
+<p>其中 <span class="arithmatex">\(\phi(p)\)</span> 与 <span class="arithmatex">\(\cO(p_{1},p_{2})\)</span> 描述了仪器对特定频率的响应与反馈。经过 Fourier 变换后，在坐标空间即为卷积。</p>
+<p>现实中的仪器总有一定的展宽，输出的数据或信号总是对真实的物理态的近似描述。这时 <span class="arithmatex">\(\phi(p)\)</span> 与 <span class="arithmatex">\(\cO(p_{1},p_{2})\)</span> 通常是紧支撑的有一定光滑性的可积函数。</p>
 <p>对于 <span class="arithmatex">\(\rho_{2}=\rho\)</span> 的完美仪器，<span class="arithmatex">\(\cO(p_{1},p_{2})\)</span> 该如何定义？</p>
 <div class="arithmatex">\[\begin{equation}
     \cO(p_{1},p_{2}) \to \delta(p_{1}-p_{2})
@@ -658,7 +727,7 @@
 </div>
 <p>态与观测量的关系自然的告诉我们如何做扩张：只有配对</p>
 <div class="arithmatex">\[\begin{equation}
-    \braket{f}{g}=\int{dx} f^{*}(x) g(x)
+    \braket{\phi}{f}=\int{dx} \phi^{*}(x) f(x)
 \end{equation}\]</div>
 <p>或矩阵元</p>
 <div class="arithmatex">\[\begin{equation}
@@ -666,15 +735,212 @@
 \end{equation}\]</div>
 <p>才是我们读到的数据，是我们唯一能接触到的物理真实，而非抽象的观测量（仪器）与态。
 我们所能认知到的物理现象关于时间和参数的连续性，均是这种弱连续性。</p>
-<p>那么对于配对 <span class="arithmatex">\(\braket{f}{g}\)</span>，指定 <span class="arithmatex">\(g\)</span> 需满足的性质，即其所在的函数空间，即可自然的定义其对偶 <span class="arithmatex">\(f\)</span> 所在的函数空间。</p>
+<p>那么对于配对 <span class="arithmatex">\(\braket{\phi}{f}\)</span>，指定 <span class="arithmatex">\(f\)</span> 需满足的性质，即其所在的函数空间，即可自然的定义其连续对偶 <span class="arithmatex">\(\phi\)</span> 所在的函数空间。
+特别的，回忆到 Hilbert space 是自对偶的。
+当我们对 <span class="arithmatex">\(f\)</span> 施加足够强的条件后，与通常函数相比 <span class="arithmatex">\(\phi\)</span> 的性质“更差”，称为广义函数，而 <span class="arithmatex">\(f\)</span> 作为探测广义函数的存在，称为测试函数。</p>
+<p>三类常用的测试函数：</p>
+<ul>
+<li>
+<p>紧支撑光滑函数</p>
+</li>
+<li>
+<p>解析函数</p>
+</li>
+<li>
+<p>速降光滑函数 <span class="arithmatex">\(\cS\)</span>，其任意阶导数在无穷远的衰减比任意阶多项式都快（例如 Gauss 波包）</p>
+<div class="arithmatex">\[\begin{equation}
+    \set{f\in C^{\oo}(\RR)\given \norm{f}_{a,b}&lt;\oo\, , \forall a,b&gt;0}
+    \, ,
+\end{equation}\]</div>
+<p>where</p>
+<div class="arithmatex">\[\begin{equation}
+    \norm{f}_{a,b}\eqqq \sup_{x\in\RR}|x^{a}\pp^{b}f|&lt;\oo
+    \, .
+\end{equation}\]</div>
+<p>这时我们需要推广 Banach space，用一可数族半范数来区分不同的函数，进而定义拓扑。
+对偶称为缓增分布 <span class="arithmatex">\(\cS^{\dual}\)</span>。
+这是物理问题中常用的一类广义函数。原因在于 Fourier 变换交换乘法算子与导数算子，可以期待保持速降函数与缓增分布。</p>
+</li>
+</ul>
 <h2 id="dirac">Dirac 广义函数</h2>
-<p>Dirac 广义函数被</p>
-<p>启发我们应将 <span class="arithmatex">\(\delta\)</span>-函数理解为</p>
-<p>乘法定义的困难</p>
+<p>支撑在 <span class="arithmatex">\(x_{0}\in\RR\)</span> 的 Dirac 广义函数被定义为</p>
+<div class="arithmatex">\[\begin{equation}
+    \delta_{x_{0}}(f)\eqqq f(x_{0})
+    \, ,
+\end{equation}\]</div>
+<p>显然这不是 <span class="arithmatex">\(L^{2}(\RR)\)</span> 上的连续线性泛函。</p>
+<p>为了概念直观与运算方便，通常形式上写为函数</p>
+<div class="arithmatex">\[\begin{equation}
+    \delta_{x_{0}}(f)=\intt{dx}\delta(x_{0}-x)f(x)
+    \, .
+\end{equation}\]</div>
+<p>特别的，支撑在原点的 Dirac 函数为齐次偶函数</p>
+<div class="arithmatex">\[\begin{equation}
+    \delta(f)=f(0)
+    \, ,
+    \quad
+    \implies
+    \quad
+    \delta(x)=\delta(-x)
+    \, ,
+    \quad
+    \delta(a x) =\frac{1}{a}\delta(x)
+    \, ,
+    \textInMath{for} a&gt;0
+    \, .
+\end{equation}\]</div>
+<div class="admonition remark">
+<p class="admonition-title">Lazy evaluation</p>
+<p>“需要计算再去计算”，或者说“形式表达式”，是一种常见的处理扩张问题的想法。例如：考虑 <span class="arithmatex">\(\QQ(\sqrt{2})\)</span> 中的数值计算，在最开始带入 <span class="arithmatex">\(\sqrt{2}\)</span> 的数值进行计算会损失精度，更好的是在 <span class="arithmatex">\(\QQ(x)\)</span> 中计算，最后再投影到 <span class="arithmatex">\(\QQ(\sqrt{2})\)</span> 中。</p>
+<p>Gelfand 等在开篇写到 <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">3</a></sup>：</p>
+<blockquote>
+<p>我们注意到，在解决具体的数学物理问题时，Dirac 广义函数等其它“奇异函数”只出现在中间过程中。在计算的最后，奇异函数要么完全消失，要么只出现在积分中，与另一个性质足够好的函数相乘。
+因此，没有必要直接回答奇异函数自身是什么。我们只需回答奇异函数和性质足够好的函数乘积的积分是什么。
+例如，我们不必回答什么是 Dirac 广义函数，而只需指出对于性质足够好的函数，下面的等式成立即可：</p>
+<div class="arithmatex">\[\begin{equation*}
+    \intt{dx}\delta(x-x_{0})f(x)=f(x_{0})
+    \, .
+\end{equation*}\]</div>
+<p>换句话说，我们把奇异函数等同于泛函：该奇异函数和每一个性质足够好的函数对应着某一个完全确定的数值。
+这样，我们就不必再多考虑奇异函数这个概念。我们可以把奇异函数与能够具体讨论的泛函等同起来，这将成为奇异函数完全充分的定义。
+显然，通常的可积函数也可以列入这个定义的范围。即对于每一个可积函数，我们能够回答其与性质足够好的函数的乘积的积分等于多少。因此，作为泛函来处理的广义函数概念既包括奇异函数，又包括通常的可积函数。</p>
+</blockquote>
+</div>
+<h3 id="_2">导数</h3>
+<p>另一种不引入广义函数的理解方式是定义其为单点测度，即广义函数的原始意义——作为质量、电荷等广延量的分布，抽象了点粒子的概念。
+这种方法在概念上不容易处理偶极子：一对无限接近的无限大异号电荷</p>
+<div class="arithmatex">\[\begin{equation}
+    \lim_{\epsilon\to0}\frac{1}{2\epsilon}(\delta(x+\epsilon)-\delta(x-\epsilon))
+    =?
+\end{equation}\]</div>
+<p>先跳过分析细节，采用速降光滑函数或紧支撑光滑函数的好处之一在于，我们可以利用分布积分把对测试函数的导数转移到广义函数上面</p>
+<div class="arithmatex">\[\begin{equation}
+    (\phi',f)\eqqq -(\phi,f')
+    \, ,
+\end{equation}\]</div>
+<p>因此可自然的定义</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: Dirac derivative}
+    \delta^{(n)}(f)=(-1)^{n}f^{(n)}(0)
+    \, .
+\end{equation}\]</div>
+<p>其奇偶性和齐次性为</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;
+    \delta^{(n)}(-x)=(-1)^{n}\delta^{(n)}(x)
+    \, ,
+    \quad
+    \delta^{(n)}(a x)=\frac{1}{a^{n+1}}\delta^{(n)}(x)
+    \, ,
+    \textInMath{for} a&gt;0
+    \, .
+\end{align}\]</div>
+<h3 id="_3">标量乘法</h3>
+<p>此外标量乘法也是显然的</p>
+<div class="arithmatex">\[\begin{equation}
+    (a(x)\phi,f)\eqqq (\phi,a(x)f(x))
+    \, ,
+\end{equation}\]</div>
+<p>对于 Dirac 函数，有</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: Dirac scalar multiplication}
+    x \delta^{(n)}(x)=-n \delta^{(n-1)}(x)
+    \, ,
+\end{equation}\]</div>
+<p>特别的</p>
+<div class="arithmatex">\[\begin{equation}
+    x^{n+1} \delta^{(n)}(x)=0
+    \, .
+\end{equation}\]</div>
+<details class="proof">
+<summary>Proof</summary>
+<div class="arithmatex">\[\begin{align}
+    \intt{dx} x \delta^{(n)}(x)f(x)
+    &amp;=
+    (-1)^{n}
+    \intt{dx} \delta(x)\pp^{n}\left(x f(x)\right)
+    \\
+    &amp;=
+    (-1)^{n}
+    \intt{dx} \delta(x)(x\pp^{n}f(x)+n \pp^{n-1}f(x))
+    \\
+    &amp;=
+    -n \delta^{(n-1)}(f)
+    \, .
+\end{align}\]</div>
+</details>
+<h3 id="_4">具体实现</h3>
+<p>The Dirac <span class="arithmatex">\(\delta\)</span>-function admits the following approximations</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\sqrt{2\pi \epsilon}}e^{-x^2/2\epsilon}
+    \, ,
+    \\
+    &amp;
+    \delta(x)
+    =
+    \lim_{p\to \oo}\frac{1}{\pi}\frac{\sin p x}{x}
+    =
+    \intt{\frac{dp}{2\pi}}e^{ipx}
+    \, ,
+    \\
+    &amp;
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\pi} \frac{\epsilon}{x^2+\epsilon^2}
+    =
+    \lim_{\epsilon\to 0}-\frac{1}{\pi}\Im \frac{1}{x+i\epsilon}
+    \, ,
+    \\
+    &amp;
+    \delta(x)
+    =
+    \lim_{\epsilon\to 0} \frac{1}{\gm{\epsilon}} x_{+}^{-1+\epsilon}
+    =
+    \lim_{\epsilon\to 0}\frac{1}{\gm{\epsilon}} |x|^{-1+2\epsilon}
+    \, ,
+\end{align}\]</div>
+<p>where <span class="arithmatex">\(\epsilon&gt;0\)</span>. The meaning is that:</p>
+<ul>
+<li>
+<p>saddle point approximation</p>
+</li>
+<li>
+<p>cancellation of between positive and negative contributions except singularities</p>
+</li>
+<li>
+<p>boundary value of analytic function</p>
+</li>
+<li>
+<p>regularization of an analytic family of distributions</p>
+</li>
+</ul>
+<h3 id="_5">乘法定义的困难</h3>
+<p>广义函数之间的乘法通常是有问题的。配对 <span class="arithmatex">\((\phi,f)\)</span> 就像跷跷板，奇异性只能放在一边。<sup id="fnref:multi"><a class="footnote-ref" href="#fn:multi">1</a></sup></p>
+<p>例如</p>
+<div class="arithmatex">\[\begin{equation}
+    x^{-1}(x\delta(x))=0
+    \, ,
+    \textInMath{but}
+    (x^{-1}x)\delta(x)=\delta(x)
+    \, .
+\end{equation}
+\begin{equation}
+    \theta^{n}(x)=\theta(x)
+    \, ,
+    \overset{?}{\implies}
+    n \theta(x) \delta(x)=\delta(x)
+    \, .
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+    \delta^{2}(x)=?
+\end{equation}\]</div>
 <h3 id="as-module-of-weyl-algebra">As module of Weyl algebra</h3>
 <p>因此如果不添加额外的结构，<span class="arithmatex">\(\delta\)</span> 函数应该被视为模而非代数中的元素。
 上述对导数和标量乘法的讨论可做如下的抽象。</p>
-<p>首先引入 <span class="arithmatex">\(\CC\)</span> 上单变量的 Weyl 代数 <span class="arithmatex">\(A\)</span>。考虑作用在 <span class="arithmatex">\(\CC[x]\)</span> 上的乘法和导数算子 <span class="arithmatex">\(x,\pp\in\End \CC[x]\)</span></p>
+<p>首先引入 <span class="arithmatex">\(\CC\)</span> 上单变量的 Weyl 代数 <span class="arithmatex">\(A\)</span>。考虑作用在 <span class="arithmatex">\(\CC[x]\)</span> 上的乘法和导数算子 <span class="arithmatex">\(x,\pp\in\End \CC[x]\)</span> </p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: x and p}
     x: f\mapsto x f
@@ -697,27 +963,103 @@
     \set{x^{a}\pp^{b}\given a\in\NN,b\in\NN}
     \, .
 \end{equation}\]</div>
-<p>引入 Weyl 代数后，式 \eqref{eq: x and p} 可被重新翻译为：多项式环 <span class="arithmatex">\(\CC[x]\)</span> 是 <span class="arithmatex">\(A\)</span> 的模，容易验证为不可约模。</p>
+<p>引入 Weyl 代数后，\eqref{eq: x and p} 可被重新翻译为：多项式环 <span class="arithmatex">\(\CC[x]\)</span> 是 <span class="arithmatex">\(A\)</span> 的模。由于求导总可以得到常数，容易验证为不可约模。</p>
+<p>重新审视 Dirac 函数的导数与标量乘法，可以发现 <span class="arithmatex">\(\CC\linearspan{\delta^{(n)}\given n\geq 0}\)</span> 构成了 Weyl 代数的模，式 \eqref{eq: Dirac derivative} 和 \eqref{eq: Dirac scalar multiplication} 定义了具体作用。</p>
+<p>特别的，重写 \eqref{eq: Dirac scalar multiplication} 为</p>
+<div class="arithmatex">\[\begin{equation}
+    \frac{(-1)^{n}}{n!}\delta^{(n)}
+    =
+    x^{-1}\frac{(-1)^{n-1}}{(n-1)!}\delta^{(n-1)}
+\end{equation}\]</div>
+<p>我们可以建立这个模与 <span class="arithmatex">\(\CC[x,x^{-1}]/\CC[x]\)</span> 的同构</p>
+<div class="arithmatex">\[\begin{equation}
+    \frac{(-1)^{n}}{n!}\delta^{(n)}
+    \mapsto 
+    x^{-n-1}
+    \, ,
+\end{equation}\]</div>
+<p>例如</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;
+    x(x^{-1})=0 \mod \CC[x]
+    \, ,
+    \\
+    &amp; x(x^{-n}) = x^{-n-1} \textInMath{for} n\geq 2
+    \, ,
+    \\
+    &amp;\pp(x^{-n}) = -n x^{n+1}
+    \, .
+\end{align}\]</div>
+<h2 id="_6">其它例子</h2>
+<h3 id="example-principal-value">Example: principal value</h3>
+<p>The principal values of <span class="arithmatex">\(x^{-1}\)</span> and <span class="arithmatex">\(x^{-2}\)</span> are</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;
+    (x^{-1},f(x)) \eqqq(|x|^{-1}\sign(x),f(x))=\intrange{dx}{0}{\oo}\frac{f(x)-f(-x)}{x}
+    \, ,
+    \\
+    &amp;
+    (x^{-2},f(x)) \eqqq(|x|^{-2},f(x))=\intrange{dx}{0}{\oo}\frac{f(x)+f(-x)-2f(0)}{x^2}
+    \, .
+\end{align}\]</div>
+<p>Notice that although <span class="arithmatex">\(x^{-2}\)</span> as a function is positive-definite, as a distribution it is not.</p>
+<details class="wl">
+<summary>Nonpositivity</summary>
+<div class="arithmatex">\[\begin{equation}
+    (x^{-2},\frac{1}{1+x^2})=-\pi&lt;0
+    \, .
+\end{equation}\]</div>
+<div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:=</span><span class="m">1</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">;</span>
+
+<span class="nb">Integrate</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],{</span><span class="nv">x</span><span class="p">,</span><span class="o">-∞</span><span class="p">,</span><span class="o">∞</span><span class="p">}]</span>
+
+<span class="nb">Integrate</span><span class="p">[(</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="o">+</span><span class="nv">f</span><span class="p">[</span><span class="o">-</span><span class="nv">x</span><span class="p">]</span><span class="o">-</span><span class="m">2</span><span class="nv">f</span><span class="p">[</span><span class="m">0</span><span class="p">])</span><span class="o">/</span><span class="nv">x</span><span class="o">^</span><span class="m">2</span><span class="p">,{</span><span class="nv">x</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="o">∞</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">π</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nb">π</span>
+</code></pre></div>
+</details>
+<h3 id="example-hilbert-transform">Example: Hilbert transform</h3>
+<p>The regularization of <span class="arithmatex">\(\phi(x)=\frac{1}{x-y}\)</span> can be chosen as</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: Hilbert transform}
+    \intt{dx}\frac{f(x)}{x-y}\eqqq\lim_{\epsilon\to 0}\inttt{dx}{|x-y|&gt;\epsilon}\frac{f(x)}{x-y}
+    \, .
+\end{equation}\]</div>
+<p>This regularized distribution defines the Hilbert transform - a unitary operator on <span class="arithmatex">\(L^2(\RR)\)</span> <sup id="fnref:rigged"><a class="footnote-ref" href="#fn:rigged">2</a></sup> with two eigenspaces</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: Hardy spaces}
+    L^2(\RR)=H^{2}_{+}(\RR)\oplus H^{2}_{-}(\RR)
+    \, ,
+\end{equation}\]</div>
+<p>called the Hardy spaces. It is also identified as a specific Knapp-Stein intertwining operator of <span class="arithmatex">\(\slgroup(2,\RR)\)</span>. Consequently the ramified principal series representation at the end-point is reducible, with the decomposition \eqref{eq: Hardy spaces}.</p>
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:multi">
+<p>However, with effort it is still possible to define an algebra of generalized functions.&#160;<a class="footnote-backref" href="#fnref:multi" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:rigged">
+<p><span class="arithmatex">\(L^2(\RR)\)</span> is canonically embedded into <span class="arithmatex">\(\cS'(\RR)\)</span>, as an example of rigged Hilbert space <span class="arithmatex">\(\cS(\RR)\subset L^2(\RR)\subset \cS'(\RR)\)</span>.&#160;<a class="footnote-backref" href="#fnref:rigged" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 <li id="fn:1">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 1: Properties and Operations</em>. Elsevier Science, 2014. ISBN 9781483261591. URL: <a href="https://books.google.com/books?id=dgnjBQAAQBAJ">https://books.google.com/books?id=dgnjBQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 1: Properties and Operations</em>. Elsevier Science, 2014. ISBN 9781483261591. URL: <a href="https://books.google.com/books?id=dgnjBQAAQBAJ">https://books.google.com/books?id=dgnjBQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 2: Spaces of Fundamental and Generalized Functions</em>. Elsevier Science, 2013. ISBN 9781483262307. URL: <a href="https://books.google.com/books?id=iMo3BQAAQBAJ">https://books.google.com/books?id=iMo3BQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 2: Spaces of Fundamental and Generalized Functions</em>. Elsevier Science, 2013. ISBN 9781483262307. URL: <a href="https://books.google.com/books?id=iMo3BQAAQBAJ">https://books.google.com/books?id=iMo3BQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 3: Theory of Differential Equations</em>. Academic Press, 1964. URL: <a href="https://books.google.com/books?id=NNQdAQAAMAAJ">https://books.google.com/books?id=NNQdAQAAMAAJ</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 3: Theory of Differential Equations</em>. Academic Press, 1964. URL: <a href="https://books.google.com/books?id=NNQdAQAAMAAJ">https://books.google.com/books?id=NNQdAQAAMAAJ</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>I.M. Gelfand and N.Y. Vilenkin. <em>Generalized Functions Volume 4: Applications of Harmonic Analysis</em>. Academic Press, 1964. ISBN 9780122795046. URL: <a href="https://books.google.com/books?id=sRXVXwAACAAJ">https://books.google.com/books?id=sRXVXwAACAAJ</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>I.M. Gelfand and N.Y. Vilenkin. <em>Generalized Functions Volume 4: Applications of Harmonic Analysis</em>. Academic Press, 1964. ISBN 9780122795046. URL: <a href="https://books.google.com/books?id=sRXVXwAACAAJ">https://books.google.com/books?id=sRXVXwAACAAJ</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>I.M. Gelfand, M.I. Graev, and N.Y. Vilenkin. <em>Generalized Functions, Volume 5: Integral Geometry and Representation Theory</em>. Academic Press, 2014. ISBN 9781483262253. URL: <a href="https://books.google.com/books?id=VqjiBQAAQBAJ">https://books.google.com/books?id=VqjiBQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>I.M. Gelfand, M.I. Graev, and N.Y. Vilenkin. <em>Generalized Functions, Volume 5: Integral Geometry and Representation Theory</em>. Academic Press, 2014. ISBN 9781483262253. URL: <a href="https://books.google.com/books?id=VqjiBQAAQBAJ">https://books.google.com/books?id=VqjiBQAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>I.M. Gelfand, M.I. Graev, and I.I. Pyatetskii-Shapiro. <em>Generalized Functions, Volume 6</em>. American Mathematical Society, 2016. ISBN 9781470426644. URL: <a href="https://books.google.com/books?id=3hIBDAAAQBAJ">https://books.google.com/books?id=3hIBDAAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>I.M. Gelfand, M.I. Graev, and I.I. Pyatetskii-Shapiro. <em>Generalized Functions, Volume 6</em>. American Mathematical Society, 2016. ISBN 9781470426644. URL: <a href="https://books.google.com/books?id=3hIBDAAAQBAJ">https://books.google.com/books?id=3hIBDAAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
