@@ -82,6 +82,10 @@ window.MathJax = {
         		"\\widetilde{#1}",
         		1
         	],
+        	"LR":[
+        		"\\left(#1\\right)",
+        		1
+        	],
         	"eq":"=",
         	"eqq":"\\equiv",
         	"geq":"\\geqslant",
@@ -135,10 +139,14 @@ window.MathJax = {
         		"\\left\\lvert #1 \\right\\rvert",
         		1
         	],
+        	"norm":[
+        		"\\left\\lVert #1 \\right\\rVert",
+        		1
+        	],
         	"sign":"\\operatorname{sign}",
         	"diag":"\\operatorname{diag}",
         	"gm":[
-        		"\\Gamma\\mathopen{}\\left[#1\\right]\\mathclose{}",
+        		"\\Gamma[#1]",
         		1
         	],
         	"poch":[
