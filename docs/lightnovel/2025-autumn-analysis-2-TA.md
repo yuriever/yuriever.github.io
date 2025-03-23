@@ -2,6 +2,6 @@
 
 ## 习题课讲义
 
-* [0316](2025-autumn-analysis-2-TA/0316.md)
+* [0316 广义函数：分析与代数模型](2025-autumn-analysis-2-TA/0316.md)
 
-* [0323](2025-autumn-analysis-2-TA/0323.md)
+* [0323 流形：例子与基本思想](2025-autumn-analysis-2-TA/0323.md)
