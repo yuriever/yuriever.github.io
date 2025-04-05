@@ -450,24 +450,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vectors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#two-dimensional-polarization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Two dimensional polarization
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -541,111 +523,6 @@ $ </span></p>
 </li>
 </ul>
 <p>In Klein space, almost everything is preserved except complex conjugation.</p>
-<h2 id="vectors">Vectors</h2>
-<p>Under the default settings, for <span class="arithmatex">\(d=2\)</span> the components of vectors are</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    \qhat=(z \bar{z}+1,\bar{z}+z,-i (z-\bar{z}),1-z \bar{z})
-    \, ,
-    \\
-    &amp;
-    \phat=\frac{1}{2y}(z \bar{z}+y^2+1,\bar{z}+z,-i (z-\bar{z}),-z \bar{z}-y^2+1)
-    \, ,
-    \\
-    &amp;
-    \khat=\epsilonhat=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-z \bar{z}+y^2-1,-\bar{z}-z,i (z-\bar{z}),z \bar{z}-y^2-1)
-    \, ,
-    \\
-    &amp;
-    \epsilon=\pp_{z}\qhat
-    =
-    (\bar{z},1,-i,-\bar{z})
-    \, ,
-    \\
-    &amp;
-    \epsilonb=\pp_{\zb}\qhat
-    =
-    (z,1,i,-z)
-    \, ,
-    \\
-    &amp;
-    n
-    =
-    (1,0,0,-1)
-    \, .
-\end{align}\]</div>
-<details class="remark">
-<summary>Higher dimensions</summary>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    \qhat=(| x|^2+1,2 x,1-| x|^2)
-    \, ,
-    \\
-    &amp;
-    \phat=\frac{1}{2y}(| x|^2+y^2+1,2 x,-| x|^2-y^2+1)
-    \, ,
-    \\
-    &amp;
-    \khat=\epsilonhat=y\pp_{y}\phat
-    =
-    \frac{1}{2y}(-| x|^2+y^2-1,-2 x,| x|^2-y^2-1)
-    \, ,
-    \\
-    &amp;
-    \epsilon_a=\pp_{x_{a}}\qhat
-    \textInMath{for}
-    1\leq a\leq d
-    \, ,
-    \\
-    &amp;
-    n=
-    (1,0,\cdots,0,-1)
-    \, .
-\end{align}\]</div>
-</details>
-<h2 id="two-dimensional-polarization">Two dimensional polarization</h2>
-<ul>
-<li>
-<p>Massless polarization vectors: <span class="arithmatex">\(\set{\epsilon,\epsilonb}\)</span> for <span class="arithmatex">\(J\in\set{1,-1}\)</span>.</p>
-<ul>
-<li>
-<p>Complete basis: <span class="arithmatex">\(\epsilon(q)_{a}=\set{\epsilon,\epsilonb,n,\qhat}\)</span> with the inner product</p>
-<div class="arithmatex">\[\begin{equation}
-    \epsilon(q)_{a}^{*}\cdot \epsilon(q)_{b}
-    =
-    \begin{pmatrix}
-        2 &amp; 0 &amp; 0 &amp; 0 \\
-        0 &amp; 2 &amp; 0 &amp; 0 \\
-        0 &amp; 0 &amp; 0 &amp; -2 \\
-        0 &amp; 0 &amp; -2 &amp; 0 \\
-    \end{pmatrix}
-    \, .
-\end{equation}\]</div>
-</li>
-</ul>
-</li>
-<li>
-<p>Massive polarization vectors: <span class="arithmatex">\(\set{\epsilon,\epsilonb,\epsilonhat}\)</span> for <span class="arithmatex">\(J\in \set{1,-1,0}\)</span>.</p>
-<ul>
-<li>
-<p>Complete basis: <span class="arithmatex">\(\epsilon(p)_{a}=\set{\epsilon,\epsilonb,\epsilonhat,\phat}\)</span> with the inner product</p>
-<div class="arithmatex">\[\begin{equation}
-    \epsilon(p)_{a}^{*}\cdot \epsilon(p)_{b}
-    =
-    \begin{pmatrix}
-        2 &amp; 0 &amp; 0 &amp; 0 \\
-        0 &amp; 2 &amp; 0 &amp; 0 \\
-        0 &amp; 0 &amp; 1 &amp; 0 \\
-        0 &amp; 0 &amp; 0 &amp; -1 \\
-    \end{pmatrix}
-    \, .
-\end{equation}\]</div>
-</li>
-</ul>
-</li>
-</ul>
 
 <!-- Source file information -->
 
