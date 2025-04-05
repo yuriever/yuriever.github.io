@@ -131,4 +131,4 @@ extra_javascript:
 
 plugins:
     - bibtex:
-          bib_dir: "docs/bib"
+          bib_dir: "bib"
