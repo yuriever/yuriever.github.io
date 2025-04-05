@@ -1,4 +1,4 @@
-# Notes on spinor helicity formalism
+# Spinor helicity formalism
 
 <span hidden> $\newcommand{\phat}{\hat{p}}
 \newcommand{\qhat}{\hat{q}}
@@ -381,9 +381,7 @@ For massless momenta, $q$ will be omitted, e.g. $\braketS{12}\eqq \braketS{q_{1}
     \\
     &
     \braketSA{1}{2}{3}=\braketS{12}\braketA{23}
-    \, ,
-    \\
-    &
+    \, .
 \end{align}
 
 #### Parametrization

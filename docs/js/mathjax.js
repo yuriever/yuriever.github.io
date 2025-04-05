@@ -40,42 +40,12 @@ window.MathJax = {
         useLabelIds: true,
         // MathJaxJSOverwrite-Macro-Begin
         macros: {
-        	"a":"\\alpha",
-        	"b":"\\beta",
-        	"c":"\\chi",
-        	"d":"\\delta",
-        	"e":"\\epsilon",
-        	"f":"\\phi",
-        	"g":"\\gamma",
-        	"h":"\\eta",
-        	"i":"\\iota",
-        	"j":"\\digamma",
-        	"k":"\\kappa",
-        	"l":"\\lambda",
-        	"m":"\\mu",
-        	"n":"\\nu",
-        	"o":"\\omicron",
-        	"p":"\\pi",
-        	"q":"\\theta",
-        	"r":"\\rho",
-        	"s":"\\sigma",
-        	"t":"\\tau",
-        	"u":"\\upsilon",
-        	"v":"\\varphi",
-        	"w":"\\omega",
-        	"x":"\\xi",
-        	"y":"\\psi",
-        	"z":"\\zeta",
-        	"bar":[
+        	"barr":[
         		"\\overline{#1}",
         		1
         	],
-        	"hat":[
+        	"hatt":[
         		"\\widehat{#1}",
-        		1
-        	],
-        	"tilde":[
-        		"\\widetilde{#1}",
         		1
         	],
         	"wave":[
@@ -461,9 +431,9 @@ window.MathJax = {
         	"hbar":"\\rlap{\\unicode{xAF}}h",
         	"eqqq":":=",
         	"id":"\\mathbf{1}",
-        	"schannel":"(s)",
-        	"tchannel":"(t)",
-        	"uchannel":"(u)",
+        	"schannel":"\\mathsf{s}",
+        	"tchannel":"\\mathsf{t}",
+        	"uchannel":"\\mathsf{u}",
         	"textInMath":[
         		"\\, \\text{ #1 }\\,",
         		1

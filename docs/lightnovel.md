@@ -6,6 +6,6 @@
 
 ---
 
-<!-- * [Notes on distributions](lightnovel/distribution.md) -->
+* [Sweedler's Hopf algebra](lightnovel/Sweedler-algebra.md)
 
-* [Notes on spinor helicity formalism](lightnovel/spinor-helicity.md)
+* [Spinor helicity formalism](lightnovel/spinor-helicity.md)
