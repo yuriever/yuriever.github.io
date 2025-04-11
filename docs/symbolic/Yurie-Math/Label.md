@@ -4,26 +4,38 @@
 
     * `#!wl pos:Symbol|Function|Subscript|Superscript` - control the position of label.
 
-        !!! wl "Example"
+    !!! wl "Example"
 
-            ``` wl
-            Map[label[x,1,#]&,{Symbol,Function}]
-            ```
+        ``` wl
+        label[{x,y},{1,2}]
+        ```
 
-            ``` wl
-            Out[] = {x1,x[1]}
-            ```
+        ``` wl
+        Out[] = Sequence[x[1],y[1],x[2],y[2]]
+        ```
+
+* `#!wl labelAt[var_,rules__,pos_]` - take the specific value(s) of the labeled object(s).
+
+    !!! wl "Example"
+
+        ``` wl
+        labelAt[x,{1,2}->1,_->0]
+        ```
+
+        ``` wl
+        Out[] = ReplaceAll[{x[1]->1,x[2]->1,x[_]->0}]
+        ```
 
 * `#!wl labelConvert[vars__|{vars__},pos1_->pos2_,opts_][expr_]` - convert the labeled object(s) according to the two specified label positions.
 
     !!! wl "Example"
 
         ``` wl
-        z1+z2//labelConvert[z,Symbol->Function]
+        x1+y2//labelConvert[x,y,Symbol->Function]
         ```
 
         ``` wl
-        Out[] = z[1]+z[2]
+        Out[] = x[1]+y[2]
         ```
 
     * `#!wl "LabelType"->All` - control the pattern of labels, and resolves possible conflicts between variable and label.
@@ -44,7 +56,7 @@
             === "Correct"
 
                 ``` wl
-                zb1//labelConvert[{z,zb},Symbol->Function,"LabelType"->"PositiveInteger"]
+                zb1//labelConvert[z,zb,Symbol->Function,"LabelType"->"PositiveInteger"]
                 ```
 
                 ``` wl
@@ -54,7 +66,7 @@
             === "Incorrect"
 
                 ``` wl
-                zb1//labelConvert[{z,zb},Symbol->Function]
+                zb1//labelConvert[z,zb,Symbol->Function]
                 ```
 
                 ``` wl
@@ -63,16 +75,16 @@
 
     * `#!wl labelJoin|labelSplit` - special cases of `#!wl labelConvert` that convert `#!wl Symbol` to/from other `#!wl Function|Subscript|Superscript`.
 
-* `#!wl labelTo*[var_|{vars__},rule_|{rules__},pos_:Function]` - return a `#!wl ReplaceAll` function according to the rules.
+* `#!wl labelTo*[vars__|{vars__},rules__|{rules__},pos_:Function]` - return a `#!wl ReplaceAll` function according to the rules.
 
     !!! wl "Example"
 
         ``` wl
-        labelToDiff[{z,zb},{1->2},Function]
+        labelToDiff[x,y,1->2,Function]
         ```
 
         ``` wl
-        Out[] = ReplaceAll[{z[1]->z[2]+z["12"],zb[1]->zb[2]+zb["12"]}]
+        Out[] = ReplaceAll[{x[1]->x[2]+x["12"],y[1]->y[2]+y["12"]}]
         ```
 
     | Name                   | Prototype                       |
