@@ -56,6 +56,22 @@ window.MathJax = {
         		"\\left(#1\\right)",
         		1
         	],
+        	"LRa":[
+        		"\\bigl(#1\\bigr)",
+        		1
+        	],
+        	"LRb":[
+        		"\\Bigl(#1\\Bigr)",
+        		1
+        	],
+        	"LRc":[
+        		"\\biggl(#1\\biggr)",
+        		1
+        	],
+        	"LRd":[
+        		"\\Biggl(#1\\Biggr)",
+        		1
+        	],
         	"eq":"=",
         	"eqq":"\\equiv",
         	"geq":"\\geqslant",
