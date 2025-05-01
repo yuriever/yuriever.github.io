@@ -314,6 +314,10 @@ window.MathJax = {
         		"d^{2}z_{#1}",
         		1
         	],
+        	"inn":"\\text{in}",
+        	"out":"\\text{out}",
+        	"io":"\\text{in\/out}",
+        	"oi":"\\text{out\/in}",
         	"vac":"\\ket{0}",
         	"vev":[
         		"\\langle #1 \\rangle",
@@ -415,6 +419,9 @@ window.MathJax = {
         	"vp":"\\vec{p}",
         	"vq":"\\vec{q}",
         	"vk":"\\vec{k}",
+        	"phat":"\\hat{p}",
+        	"qhat":"\\hat{q}",
+        	"khat":"\\hat{k}",
         	"hb":"\\bar{h}",
         	"zb":"\\bar{z}",
         	"wb":"\\bar{w}",
@@ -427,6 +434,7 @@ window.MathJax = {
         		1
         	],
         	"halfdim":"\\frac{d}{2}",
+        	"signature":"\\operatorname{\\color{red}\\mathsf{s}}",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
         	"CO":"\\mathcal{G}",

@@ -181,6 +181,10 @@ ${}$
 &\dxy{*}\\
 &\zzb{*}\\
 &\dzzb{*}\\
+&\inn\\
+&\out\\
+&\io\\
+&\oi\\
 &\vac\\
 &\vev{*}\\
 &\ev{*}\\
@@ -216,6 +220,9 @@ ${}$
 &\vp\\
 &\vq\\
 &\vk\\
+&\phat\\
+&\qhat\\
+&\khat\\
 &\hb\\
 &\zb\\
 &\wb\\
@@ -225,6 +232,7 @@ ${}$
 &\chib\\
 &\normalOrder{*}\\
 &\halfdim\\
+&\signature\\
 &\shadow\\
 &\lightray\\
 &\CO\\
