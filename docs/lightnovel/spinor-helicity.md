@@ -1,15 +1,13 @@
 # Spinor helicity formalism
 
-<span hidden> $\newcommand{\phat}{\hat{p}}
-\newcommand{\qhat}{\hat{q}}
-\newcommand{\khat}{\hat{k}}
+<span hidden> $
 \newcommand{\dota}{\dot{a}}
 \newcommand{\dotb}{\dot{b}}
 \newcommand{\dotc}{\dot{c}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
 \newcommand{\sigmab}{\bar{\sigma}}
 \newcommand{\epsilonhat}{\hat{\epsilon}}
-\newcommand{\signature}{\operatorname{\color{red}\mathsf{s}}}$ </span>
+$ </span>
 
 We set up the conventions of spinor helicity formalism in a signature-independent way.
 
