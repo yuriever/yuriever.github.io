@@ -4,9 +4,8 @@
 \newcommand{\dota}{\dot{a}}
 \newcommand{\dotb}{\dot{b}}
 \newcommand{\dotc}{\dot{c}}
-\newcommand{\epsilonb}{\bar{\epsilon}}
 \newcommand{\sigmab}{\bar{\sigma}}
-\newcommand{\epsilonhat}{\hat{\epsilon}}
+\newcommand{\inout}[1]{e_{#1}}
 $ </span>
 
 We set up the conventions of spinor helicity formalism in a signature-independent way.
@@ -26,7 +25,7 @@ The signature is denoted as
     \end{cases}
 \end{equation}
 
-and when changing signature, we only need to flip the signs of $g_{\mu\nu},\, g^{\mu\nu}$ and the derived objects, e.g. momentum $P_{\mu}$, (covariant) derivative $\pp^{\mu},\, D^{\mu}$, Pauli matrix $\sigma_{\mu},\, \sigmab_{\mu}$.
+and when changing signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum $P_{\mu}$, (covariant) derivative $\pp^{\mu}$, $D^{\mu}$ and Pauli matrix $\sigma_{\mu}$, $\sigmab_{\mu}$.
 
 Here and in the following, we denote a generic momentum as $P$, massive as $p$ and massless as $q$.
 
@@ -181,7 +180,7 @@ Then the metric $g_{\mu\nu}$, i.e. the invariant bilinear form on $V$ is intertw
     \, .
 \end{equation}
 
-With this isomorphism, a generic momentum $P^{\mu}$ can be rewritten into bispinors
+With this isomorphism, a vector $P^{\mu}$ can be rewritten into bispinors
 
 \begin{align}
     \label{eq: momentum bispinor}
@@ -255,10 +254,10 @@ The reason for this discrepancy is that this factorization is only determined up
 which turns out to be exactly the action of the complexified little group.
 
 While for real momentum, the square and angle spinors are related by complex conjugate. Then the left side of \eqref{eq: helicity spinor} is of $\dim_{\RR}=3$, the right side is of $\dim_{\RR}=4$, and the little group scaling is a phase factor in $\sogroup(2,\RR)$.
-We also need to distinguish incoming $(-)$ for $E<0$ and outgoing $(+)$ for $E>0$. Introducing the sign notation
+We also need to distinguish incoming $(-)$ for negative energy $E<0$ and outgoing $(+)$ for positive energy $E>0$. Introducing the sign notation
 
 \begin{equation}
-    e_{q}=\cases{
+    \inout{q}=\cases{
         +1\, \textInMath{for outgoing}
         \\
         -1\, \textInMath{for incoming}
@@ -269,28 +268,32 @@ We also need to distinguish incoming $(-)$ for $E<0$ and outgoing $(+)$ for $E>0
 we adopt the following conventions:
 
 \begin{align}
-    \label{eq: conjugate}
-    \sket{q}^{*}=e_{q}\abra{q}
+    \label{eq: incoming}
+    \sket{-q}=\sket{q}
     \, ,
     \quad
-    \abra{q}^{*}=e_{q} \sket{q}
-    \, ,
-    \quad
-    \braketS{q_{1}q_{2}}^{*}
-    =-e_{q_{1}}e_{q_{2}}\braketA{q_{1}q_{2}}
+    \abra{-q}=-\abra{q}
     \, ,
 \end{align}
 
 and
 
 \begin{align}
-    \label{eq: incoming}
-    \sket{-q}=\sket{q}
+    \label{eq: conjugate}
+    \sket{q}^{*}=\inout{q}\abra{q}
     \, ,
     \quad
-    \abra{-q}=-\abra{q}
-    \, .
+    \abra{q}^{*}=\inout{q} \sket{q}
+    \, ,
 \end{align}
+
+hence
+
+\begin{equation}
+    \braketS{q_{1}q_{2}}^{*}
+    =-\inout{q_{1}}\inout{q_{2}}\braketA{q_{1}q_{2}}
+    \, .
+\end{equation}
 
 ??? proof "\eqref{eq: conjugate}, \eqref{eq: incoming}"
 
@@ -307,7 +310,7 @@ and
     and from \eqref{eq: helicity spinor} we have
 
     \begin{equation}
-        \alpha(q)=\alpha^{*}(q)\in\RR
+        \alpha(q)=\alpha^{*}(q) \in \RR
         \, .
     \end{equation}
 
@@ -350,7 +353,7 @@ and
     a natural choice of $\alpha(q)$ would be
 
     \begin{equation}
-        \alpha(q)=e_{q}
+        \alpha(q)=\inout{q}
         \, .
     \end{equation}
 
@@ -366,11 +369,13 @@ and
 ### Useful identities
 
 For massless momenta, $q$ will be omitted, e.g. $\braketS{12}\eqq \braketS{q_{1}q_{2}}$.
+We have the following identities:
 
 \begin{align}
     &\braketS{12}\braketA{12}
     =
     2\signature q_{1} \cdot q_{2}
+    =\signature{} (q_{1}+q_{2})^{2}
     \, ,
     \\
     &
@@ -379,7 +384,15 @@ For massless momenta, $q$ will be omitted, e.g. $\braketS{12}\eqq \braketS{q_{1}
     \\
     &
     \braketSA{1}{2}{3}=\braketS{12}\braketA{23}
+    \, ,
+    \\
+    &
+    \braA{1}\gamma^{\mu}\ketS{2}
+    \braA{3}\gamma_{\mu}\ketS{4}
+    =
+    2\signature\braketA{13}\braketS{24}
     \, .
+    \textInMath{(Fierz identity)}
 \end{align}
 
 #### Parametrization
@@ -395,7 +408,7 @@ In the celestial CFT literature, we also use the following parametrization:
 
 \begin{equation}
     q=\omega(
-        z \bar{z}+1,\bar{z}+z,-i (z-\bar{z}),1-z \bar{z}
+        1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
     )
     \, .
 \end{equation}
@@ -424,11 +437,11 @@ The helicity spinors can be parametrized as
     \, ,
     \\
     &
-    \abra{q}=e_{q}\sqrt{2\omega}(-z,1)
+    \abra{q}=\inout{q}\sqrt{2\omega}(-z,1)
     \, ,
     \\
     &
-    \aket{q}=e_{q}\sqrt{2\omega}(1,z)
+    \aket{q}=\inout{q}\sqrt{2\omega}(1,z)
     \, ,
 \end{align}
 
