@@ -434,7 +434,7 @@ window.MathJax = {
         		1
         	],
         	"halfdim":"\\frac{d}{2}",
-        	"signature":"\\operatorname{\\color{red}\\mathsf{s}}",
+        	"signature":"{\\color{red}s}",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
         	"CO":"\\mathcal{G}",
