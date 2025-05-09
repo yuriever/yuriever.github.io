@@ -291,11 +291,10 @@ We also need to distinguish incoming $(-)$ for negative energy $E<0$ and outgoin
 
 \begin{equation}
     \inout{q}=\cases{
-        +1\, \textInMath{for outgoing}
+        +1\, , \quad \text{outgoing},
         \\
-        -1\, \textInMath{for incoming}
+        -1\, , \quad \text{incoming},
     }
-    \, ,
 \end{equation}
 
 we adopt the following conventions:
