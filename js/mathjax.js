@@ -56,6 +56,22 @@ window.MathJax = {
         		"\\left(#1\\right)",
         		1
         	],
+        	"LRa":[
+        		"\\bigl(#1\\bigr)",
+        		1
+        	],
+        	"LRb":[
+        		"\\Bigl(#1\\Bigr)",
+        		1
+        	],
+        	"LRc":[
+        		"\\biggl(#1\\biggr)",
+        		1
+        	],
+        	"LRd":[
+        		"\\Biggl(#1\\Biggr)",
+        		1
+        	],
         	"eq":"=",
         	"eqq":"\\equiv",
         	"geq":"\\geqslant",
@@ -298,6 +314,10 @@ window.MathJax = {
         		"d^{2}z_{#1}",
         		1
         	],
+        	"inn":"\\text{in}",
+        	"out":"\\text{out}",
+        	"io":"\\text{in\/out}",
+        	"oi":"\\text{out\/in}",
         	"vac":"\\ket{0}",
         	"vev":[
         		"\\langle #1 \\rangle",
@@ -399,6 +419,9 @@ window.MathJax = {
         	"vp":"\\vec{p}",
         	"vq":"\\vec{q}",
         	"vk":"\\vec{k}",
+        	"phat":"\\hat{p}",
+        	"qhat":"\\hat{q}",
+        	"khat":"\\hat{k}",
         	"hb":"\\bar{h}",
         	"zb":"\\bar{z}",
         	"wb":"\\bar{w}",
@@ -411,6 +434,7 @@ window.MathJax = {
         		1
         	],
         	"halfdim":"\\frac{d}{2}",
+        	"signature":"{\\color{red}s}",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
         	"CO":"\\mathcal{G}",

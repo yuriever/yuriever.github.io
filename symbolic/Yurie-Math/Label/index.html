@@ -490,25 +490,33 @@
 <li>
 <p><code class="highlight"><span class="nv">label</span><span class="p">[</span><span class="nt">var_</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">},</span><span class="nt">label_</span><span class="o">|</span><span class="p">{</span><span class="nt">labels__</span><span class="p">},</span><span class="nt">pos_</span><span class="p">]</span></code> - join the variable(s) and label(s) into a (sequence of) labeled object(s).</p>
 <ul>
-<li>
-<p><code class="highlight"><span class="nv">pos</span><span class="o">:</span><span class="nb">Symbol</span><span class="o">|</span><span class="nb">Function</span><span class="o">|</span><span class="nb">Subscript</span><span class="o">|</span><span class="nb">Superscript</span></code> - control the position of label.</p>
+<li><code class="highlight"><span class="nv">pos</span><span class="o">:</span><span class="nb">Symbol</span><span class="o">|</span><span class="nb">Function</span><span class="o">|</span><span class="nb">Subscript</span><span class="o">|</span><span class="nb">Superscript</span></code> - control the position of label.</li>
+</ul>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Map</span><span class="p">[</span><span class="nv">label</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="nf">#</span><span class="p">]</span><span class="o">&amp;</span><span class="p">,{</span><span class="nb">Symbol</span><span class="p">,</span><span class="nb">Function</span><span class="p">}]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">label</span><span class="p">[{</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">},{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x1</span><span class="p">,</span><span class="nv">x</span><span class="p">[</span><span class="m">1</span><span class="p">]}</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Sequence</span><span class="p">[</span><span class="nv">x</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="nv">y</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="nv">x</span><span class="p">[</span><span class="m">2</span><span class="p">],</span><span class="nv">y</span><span class="p">[</span><span class="m">2</span><span class="p">]]</span>
 </code></pre></div>
 </div>
 </li>
-</ul>
+<li>
+<p><code class="highlight"><span class="nv">labelAt</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">rules__</span><span class="p">,</span><span class="nt">pos_</span><span class="p">]</span></code> - take the specific value(s) of the labeled object(s).</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">labelAt</span><span class="p">[</span><span class="nv">x</span><span class="p">,{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">}</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="o">_-&gt;</span><span class="m">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ReplaceAll</span><span class="p">[{</span><span class="nv">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">x</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="m">1</span><span class="p">,</span><span class="nv">x</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">-&gt;</span><span class="m">0</span><span class="p">}]</span>
+</code></pre></div>
+</div>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">labelConvert</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">},</span><span class="nt">pos1_</span><span class="o">-&gt;</span><span class="nt">pos2_</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - convert the labeled object(s) according to the two specified label positions.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">z1</span><span class="o">+</span><span class="nv">z2</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">x1</span><span class="o">+</span><span class="nv">y2</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span><span class="nv">y</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </code></pre></div>
 </div>
 <ul>
@@ -530,13 +538,13 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Correct</label><label for="__tabbed_1_2">Incorrect</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">,</span><span class="s">&quot;LabelType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">,</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">,</span><span class="s">&quot;LabelType&quot;</span><span class="o">-&gt;</span><span class="s">&quot;PositiveInteger&quot;</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">zb1</span><span class="o">//</span><span class="nv">labelConvert</span><span class="p">[</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">,</span><span class="nb">Symbol</span><span class="o">-&gt;</span><span class="nb">Function</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">z</span><span class="p">[</span><span class="nv">b1</span><span class="p">]</span>
 </code></pre></div>
@@ -551,12 +559,12 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">labelTo</span><span class="o">*</span><span class="p">[</span><span class="nt">var_</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">},</span><span class="nt">rule_</span><span class="o">|</span><span class="p">{</span><span class="nt">rules__</span><span class="p">},</span><span class="nt">pos_</span><span class="o">:</span><span class="nb">Function</span><span class="p">]</span></code> - return a <code class="highlight"><span class="nb">ReplaceAll</span></code> function according to the rules.</p>
+<p><code class="highlight"><span class="nv">labelTo</span><span class="o">*</span><span class="p">[</span><span class="nt">vars__</span><span class="o">|</span><span class="p">{</span><span class="nt">vars__</span><span class="p">},</span><span class="nt">rules__</span><span class="o">|</span><span class="p">{</span><span class="nt">rules__</span><span class="p">},</span><span class="nt">pos_</span><span class="o">:</span><span class="nb">Function</span><span class="p">]</span></code> - return a <code class="highlight"><span class="nb">ReplaceAll</span></code> function according to the rules.</p>
 <div class="admonition wl">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="nv">labelToDiff</span><span class="p">[{</span><span class="nv">z</span><span class="p">,</span><span class="nv">zb</span><span class="p">},{</span><span class="m">1</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">},</span><span class="nb">Function</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">labelToDiff</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nv">y</span><span class="p">,</span><span class="m">1</span><span class="o">-&gt;</span><span class="m">2</span><span class="p">,</span><span class="nb">Function</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ReplaceAll</span><span class="p">[{</span><span class="nv">z</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">z</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">+</span><span class="nv">z</span><span class="p">[</span><span class="s">&quot;12&quot;</span><span class="p">],</span><span class="nv">zb</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">zb</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">+</span><span class="nv">zb</span><span class="p">[</span><span class="s">&quot;12&quot;</span><span class="p">]}]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ReplaceAll</span><span class="p">[{</span><span class="nv">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">x</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">+</span><span class="nv">x</span><span class="p">[</span><span class="s">&quot;12&quot;</span><span class="p">],</span><span class="nv">y</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">y</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">+</span><span class="nv">y</span><span class="p">[</span><span class="s">&quot;12&quot;</span><span class="p">]}]</span>
 </code></pre></div>
 </div>
 <table>

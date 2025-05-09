@@ -442,41 +442,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#helicity-spinors" class="md-nav__link">
+  <a href="#conventions" class="md-nav__link">
     <span class="md-ellipsis">
-      Helicity spinors
+      Conventions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Helicity spinors">
+    <nav class="md-nav" aria-label="Conventions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#square-spinors" class="md-nav__link">
+  <a href="#comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Square spinors
+      Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helicity-spinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helicity spinor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helicity spinor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#square-spinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Square spinor
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#angle-spinors" class="md-nav__link">
+  <a href="#angle-spinor" class="md-nav__link">
     <span class="md-ellipsis">
-      Angle spinors
+      Angle spinor
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#momentum-bispinor" class="md-nav__link">
     <span class="md-ellipsis">
       Momentum bispinor
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Momentum bispinor">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#real-momentum" class="md-nav__link">
@@ -487,27 +517,54 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#useful-identities" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polarization" class="md-nav__link">
     <span class="md-ellipsis">
-      Useful identities
+      Polarization
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Useful identities">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parametrization" class="md-nav__link">
+  <a href="#property" class="md-nav__link">
     <span class="md-ellipsis">
-      Parametrization
+      Property
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#little-group-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Little group scaling
+    </span>
+  </a>
   
 </li>
         
@@ -517,9 +574,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#polarization-vectors" class="md-nav__link">
+  <a href="#verification-test" class="md-nav__link">
     <span class="md-ellipsis">
-      Polarization vectors
+      Verification test
     </span>
   </a>
   
@@ -578,19 +635,20 @@
 
 <!-- Page content -->
 <h1 id="spinor-helicity-formalism">Spinor helicity formalism</h1>
-<p><span hidden> <span class="arithmatex">\(\newcommand{\phat}{\hat{p}}
-\newcommand{\qhat}{\hat{q}}
-\newcommand{\khat}{\hat{k}}
+<p><span hidden> $
 \newcommand{\dota}{\dot{a}}
 \newcommand{\dotb}{\dot{b}}
 \newcommand{\dotc}{\dot{c}}
-\newcommand{\epsilonb}{\bar{\epsilon}}
 \newcommand{\sigmab}{\bar{\sigma}}
-\newcommand{\epsilonhat}{\hat{\epsilon}}
-\newcommand{\signature}{\operatorname{\color{red}\mathsf{s}}}\)</span> </span></p>
-<p>We set up the conventions of spinor helicity formalism in a signature-independent way.</p>
+\newcommand{\epsilonb}{\bar{\epsilon}}
+\newcommand{\inout}[1]{e_{#1}}
+$ </span></p>
+<h2 id="conventions">Conventions</h2>
+<p>We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <p>It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
-Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature here. <sup id="fnref:convention-summary"><a class="footnote-ref" href="#fn:convention-summary">1</a></sup></p>
+Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.</p>
+<ul>
+<li>
 <p>The signature is denoted as</p>
 <div class="arithmatex">\[\begin{equation}
     \signature=
@@ -598,25 +656,70 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         +1
         \, , \quad (-,+,+,+)\, ,\\
         -1
-        \, , \quad (+,-,-,-)\, ,\\
+        \, , \quad (+,-,-,-)\, .\\
     \end{cases}
 \end{equation}\]</div>
-<p>and when changing signature, we only need to flip the signs of <span class="arithmatex">\(g_{\mu\nu},\, g^{\mu\nu}\)</span> and the derived objects, e.g. momentum <span class="arithmatex">\(P_{\mu}\)</span>, (covariant) derivative <span class="arithmatex">\(\pp^{\mu},\, D^{\mu}\)</span>, Pauli matrix <span class="arithmatex">\(\sigma_{\mu},\, \sigmab_{\mu}\)</span>.</p>
-<p>Here and in the following, we denote a generic momentum as <span class="arithmatex">\(P\)</span>, massive as <span class="arithmatex">\(p\)</span> and massless as <span class="arithmatex">\(q\)</span>.</p>
-<h2 id="helicity-spinors">Helicity spinors</h2>
-<p>Helicity spinors are essentially bosonic Weyl spinors that satisfy the massless Weyl equation.</p>
-<h3 id="square-spinors">Square spinors</h3>
-<p>The square ket <span class="arithmatex">\(\sket{q}_{a}\)</span>, as a left-handed (bosonic) Weyl spinor associated to the complex massless momentum <span class="arithmatex">\(q\in\CC^{4}\)</span>, lies in the fundamental representation <span class="arithmatex">\((\half,0)\)</span> of <span class="arithmatex">\(\slgroup(2,\CC)\)</span>, and the square bra <span class="arithmatex">\(\sbra{q}^{a}\)</span> lies in its dual <span class="arithmatex">\((\half,0)^{\dual}\)</span>:</p>
+<p>When altering the signature, we need to flip the signs of <span class="arithmatex">\(g_{\mu\nu}\)</span>, <span class="arithmatex">\(g^{\mu\nu}\)</span> and the derived objects, e.g. momentum <span class="arithmatex">\(P_{\mu}\)</span>, (covariant) derivative <span class="arithmatex">\(\pp^{\mu}\)</span>, <span class="arithmatex">\(D^{\mu}\)</span> and Pauli matrix <span class="arithmatex">\(\sigma_{\mu}\)</span>, <span class="arithmatex">\(\sigmab_{\mu}\)</span>.</p>
+</li>
+<li>
+<p>A generic momentum is denoted as <span class="arithmatex">\(P\)</span>, massive as <span class="arithmatex">\(p\)</span> and massless as <span class="arithmatex">\(q\)</span>.</p>
+</li>
+<li>
+<p>The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast, following Wess&amp;Bagger's convention.</p>
+</li>
+</ul>
+<h3 id="comparison">Comparison</h3>
+<ul>
+<li>
+<p>In <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
+</li>
+<li>
+<p>In Srednicki's book <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and Elvang&amp;Huang's lecture notes <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors \eqref{eq: momentum bispinor} and ceases at helicity spinors \eqref{eq: helicity spinor},</p>
 <div class="arithmatex">\[\begin{equation}
-    \sket{q}_{a} \to M^{b}_{a} \sket{q}_{b}
+    q_{a\dota}={\color{red}-}\ketS{q}_{a}\braA{q}_{\dota}
     \, ,
     \quad
-    \sbra{q}^{a} \to (M^{-\tp})^{a}_{b} \sbra{q}^{b}
+    q^{\dota a}={\color{red}-}\ketA{q}^{\dota}\braS{q}^{a}
+    \, .
+\end{equation}\]</div>
+<p>For incoming/outgoing, the conventions of <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and <sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup> are different. We follow <sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, as discussed later.</p>
+</li>
+<li>
+<p>In <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, but propagates into helicity spinors.</p>
+</li>
+<li>
+<p>In Taylor's lecture notes <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>.
+    The type of helicity spinors is opposite to ours, see Equation 4.31.
+    The type of polarization vectors is also opposite to ours, see Equation 5.7.
+    The net effect is that the polarization vectors match ours up to <span class="arithmatex">\(\sqrt{2}\)</span>, see Equation 5.8 and \eqref{eq: polarization}.</p>
+</li>
+<li>
+<p>In Schwartz's book <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> and Cheung's lecture notes <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the conventions are basically the same as <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> with minor differences.</p>
+<ul>
+<li>
+<p>In <sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, the contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
+</li>
+<li>
+<p>In <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of <span class="arithmatex">\(\epsilon\)</span> tensors.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="helicity-spinor">Helicity spinor</h2>
+<p>Helicity spinors are essentially bosonic Weyl spinors that satisfy the massless Weyl equation.</p>
+<h3 id="square-spinor">Square spinor</h3>
+<p>The square ket <span class="arithmatex">\(\ketS{q}_{a}\)</span>, as a left-handed (bosonic) Weyl spinor associated to the complex massless momentum <span class="arithmatex">\(q\in\CC^{4}\)</span>, lies in the fundamental representation <span class="arithmatex">\((\half,0)\)</span> of <span class="arithmatex">\(\slgroup(2,\CC)\)</span>, and the square bra <span class="arithmatex">\(\braS{q}^{a}\)</span> lies in its dual <span class="arithmatex">\((\half,0)^{\dual}\)</span>:</p>
+<div class="arithmatex">\[\begin{equation}
+    \ketS{q}_{a} \to M^{b}_{a} \ketS{q}_{b}
+    \, ,
+    \quad
+    \braS{q}^{a} \to (M^{-\tp})^{a}_{b} \braS{q}^{b}
     \, ,
 \end{equation}\]</div>
-<p>then the square braket is the natural pairing <sup id="fnref:northwest-to-southeast"><a class="footnote-ref" href="#fn:northwest-to-southeast">2</a></sup></p>
+<p>then the square braket is the natural pairing</p>
 <div class="arithmatex">\[\begin{equation}
-    \braketS{q_{1}q_{2}}\eqq \sbra{q_{1}}^{a} \sket{q_{2}}_{a}
+    \label{eq: pairing S}
+    \braketS{q_{1}q_{2}}\eqq \braS{q_{1}}^{a} \ketS{q_{2}}_{a}
     \, .
 \end{equation}\]</div>
 <p>Due to the intertwiner and its inverse</p>
@@ -632,23 +735,27 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 \end{equation}\]</div>
 <p>the two representations are isomorphic by</p>
 <div class="arithmatex">\[\begin{equation}
-    \sbra{q}^{a}=\epsilon^{ab}\sket{q}_{b}
+    \label{eq: raising lowering S}
+    \braS{q}^{a}=\epsilon^{ab}\ketS{q}_{b}
     \, ,
     \quad
-    \sket{q}_{a}=\epsilon_{ab}\sbra{q}^{b}
+    \ketS{q}_{a}=\epsilon_{ab}\braS{q}^{b}
     \, .
 \end{equation}\]</div>
 <p>Equivalently, <span class="arithmatex">\(\epsilon\)</span> is an invariant bilinear form on <span class="arithmatex">\((\half,0)\)</span> or on its dual, and then <span class="arithmatex">\(\braketS{q_{1}q_{2}}\)</span> is antisymmetric.</p>
-<h3 id="angle-spinors">Angle spinors</h3>
-<p>Repeating the previous discussion onto the complex conjugate representation <span class="arithmatex">\((0,\half)\)</span> and its dual <span class="arithmatex">\((0,\half)^{\dual}\)</span>, the angle bra, ket and braket satisfy</p>
+<h3 id="angle-spinor">Angle spinor</h3>
+<p>Repeating the previous discussion onto the complex conjugate representation <span class="arithmatex">\((0,\half)\)</span> and its dual <span class="arithmatex">\((0,\half)^{\dual}\)</span>, the angle bra and ket satisfy</p>
 <div class="arithmatex">\[\begin{equation}
-    \abra{q}_{\dota} \to (M^{*})_{\dota}^{\dotb}\abra{q}_{\dotb}
+    \braA{q}_{\dota} \to (M^{*})_{\dota}^{\dotb}\braA{q}_{\dotb}
     \, ,
     \quad
-    \aket{q}^{\dota} \to (M^{-\dagger})^{\dota}_{\dotb}\aket{q}^{\dotb}
+    \ketA{q}^{\dota} \to (M^{-\dagger})^{\dota}_{\dotb}\ketA{q}^{\dotb}
     \, ,
-    \quad
-    \braketA{q_{1}q_{2}} \eqq \abra{q_{1}}_{\dota}\aket{q_{2}}^{\dota}
+\end{equation}\]</div>
+<p>and the pairing is</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: pairing A}
+    \braketA{q_{1}q_{2}} \eqq \braA{q_{1}}_{\dota}\ketA{q_{2}}^{\dota}
     \, .
 \end{equation}\]</div>
 <p>The normalization of the intertwiner is chosen to commute with complex conjugation:</p>
@@ -664,13 +771,14 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 \end{equation}\]</div>
 <p>then the indices are lowered/raised as</p>
 <div class="arithmatex">\[\begin{equation}
-    \aket{q}^{\dota}=\epsilon^{\dota \dotb}\abra{q}_{\dotb}
+    \label{eq: raising lowering A}
+    \ketA{q}^{\dota}=\epsilon^{\dota \dotb}\braA{q}_{\dotb}
     \, ,
     \quad
-    \abra{q}_{\dota}=\epsilon_{\dota \dotb}\sbra{q}^{\dotb}
+    \braA{q}_{\dota}=\epsilon_{\dota \dotb}\ketA{q}^{\dotb}
     \, .
 \end{equation}\]</div>
-<h3 id="momentum-bispinor">Momentum bispinor</h3>
+<h2 id="momentum-bispinor">Momentum bispinor</h2>
 <p>The Pauli matrices <span class="arithmatex">\(\vec\sigma\)</span> intertwine the action of <span class="arithmatex">\(\sugroup(2)\)</span> on <span class="arithmatex">\(1\in \half\ox\half\)</span> and the action of <span class="arithmatex">\(\sogroup(3,\RR)\)</span> on the vector representation through the group morphism <span class="arithmatex">\(\sugroup(2)\to \sogroup(3,\RR)\)</span>, given by</p>
 <div class="arithmatex">\[\begin{equation}
     \sigma^{1}=
@@ -696,6 +804,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 \end{equation}\]</div>
 <p>Similarly, the four-component Pauli matrices <span class="arithmatex">\(\sigma\)</span> intertwine the action of <span class="arithmatex">\(\slgroup(2,\CC)\)</span> on <span class="arithmatex">\((\half,\half)\)</span> and the action of <span class="arithmatex">\(\sogroup(3,1,\RR)\)</span> on the complex vector representation <span class="arithmatex">\(V\simeq \CC^{4}\)</span> through the group morphism, given by</p>
 <div class="arithmatex">\[\begin{equation}
+    \label{eq: Pauli matrix}
     \sigma^{\mu}_{a \dota}=(\id,\vec\sigma)
     \, ,
     \quad
@@ -704,6 +813,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 \end{equation}\]</div>
 <p>Then the metric <span class="arithmatex">\(g_{\mu\nu}\)</span>, i.e. the invariant bilinear form on <span class="arithmatex">\(V\)</span> is intertwined by <span class="arithmatex">\(\sigma\)</span> to the one <span class="arithmatex">\(\epsilon_{ab}\epsilon_{\dota\dotb}\)</span> on <span class="arithmatex">\((\half,\half)\)</span>, given by</p>
 <div class="arithmatex">\[\begin{equation}
+    \label{eq: Pauli matrix and epsilon tensor}
     g_{\mu\nu}\sigma^{\mu}_{a\dota}\sigma^{\nu}_{b\dotb}
     =
     - 2 \signature \epsilon_{ab}\epsilon_{\dota\dotb}
@@ -714,54 +824,57 @@ Therefore, we align our spinor conventions to the particle physics literature, e
     - 2 \signature g^{\mu\nu}
     \, .
 \end{equation}\]</div>
-<p>With this isomorphism, a generic momentum <span class="arithmatex">\(P^{\mu}\)</span> can be rewritten into bispinors</p>
-<div class="arithmatex">\[\begin{align}
+<p>With this isomorphism, a vector <span class="arithmatex">\(P^{\mu}\)</span> can be rewritten into bispinors</p>
+<div class="arithmatex">\[\begin{equation}
     \label{eq: momentum bispinor}
-    &amp;
-    P_{a\dota}
-    \eqq
-    - \signature P_{\mu}\sigma^{\mu}_{a\dota}
-    =
-    \begin{pmatrix}
-        P^0-P^3 &amp; -P^1+i P^2 \\
-        -P^1-i P^2 &amp; P^0+P^3 \\
-    \end{pmatrix}
-    \, ,
-    \\
-    &amp;
-    P^{\dota a}
-    \eqq
-    - \signature
-    P_{\mu}\sigmab^{\mu,\dota a}
-    =
-    \begin{pmatrix}
-        P^0+P^3 &amp; P^1-i P^2 \\
-        P^1+i P^2 &amp; P^0-P^3 \\
-    \end{pmatrix}
-    \, ,
-\end{align}\]</div>
+    \begin{aligned}
+        &amp;
+        P_{a\dota}
+        \eqq
+        - \signature P_{\mu}\sigma^{\mu}_{a\dota}
+        =
+        \begin{pmatrix}
+            P^0-P^3 &amp; -P^1+i P^2 \\
+            -P^1-i P^2 &amp; P^0+P^3 \\
+        \end{pmatrix}
+        \, ,
+        \\
+        &amp;
+        P^{\dota a}
+        \eqq
+        - \signature
+        P_{\mu}\sigmab^{\mu,\dota a}
+        =
+        \begin{pmatrix}
+            P^0+P^3 &amp; P^1-i P^2 \\
+            P^1+i P^2 &amp; P^0-P^3 \\
+        \end{pmatrix}
+        \, ,
+    \end{aligned}
+\end{equation}\]</div>
 <p>and <span class="arithmatex">\(\det P = - \signature P^{2}\)</span>.</p>
 <p>Particularly, when the momentum is massless <span class="arithmatex">\(q^{2}=0\)</span>, the bispinors factorize into two helicity spinors</p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: helicity spinor}
-    q_{a\dota}=\sket{q}_{a}\abra{q}_{\dota}
+    q_{a\dota}=\ketS{q}_{a}\braA{q}_{\dota}
     \, ,
     \quad
-    q^{\dota a}=\aket{q}^{\dota}\sbra{q}^{a}
+    q^{\dota a}=\ketA{q}^{\dota}\braS{q}^{a}
     \, ,
 \end{equation}\]</div>
 <p>and then the square and angle spinors satisfy the massless Weyl equations</p>
 <div class="arithmatex">\[\begin{equation}
-    q^{\dota a}\sket{q}_{a}=0
+    \label{eq: Weyl equation}
+    q^{\dota a}\ketS{q}_{a}=0
     \, ,
     \quad
-    \abra{q}_{\dota} q^{\dota a}=0
+    \braA{q}_{\dota} q^{\dota a}=0
     \, ,
     \quad
-    q_{a\dota}\aket{q}^{\dota}=0
+    q_{a\dota}\ketA{q}^{\dota}=0
     \, ,
     \quad
-    \sbra{q}^{a} q_{a\dota}=0
+    \braS{q}^{a} q_{a\dota}=0
     \, .
 \end{equation}\]</div>
 <h3 id="real-momentum">Real momentum</h3>
@@ -769,17 +882,17 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 For a complex massless momentum <span class="arithmatex">\(q\)</span>, the square and angle spinors associated to <span class="arithmatex">\(q\)</span> are independent. The left side of \eqref{eq: helicity spinor} is of <span class="arithmatex">\(\dim_{\CC}=3\)</span>, while the right side is of <span class="arithmatex">\(\dim_{\CC}=4\)</span>.
 The reason for this discrepancy is that this factorization is only determined up to a rescaling</p>
 <div class="arithmatex">\[\begin{equation}
-    \sket{q} \to \lambda \sket{q}
+    \ketS{q} \to \lambda^{-1} \ketS{q}
     \, ,
     \quad
-    \abra{q} \to \lambda^{-1} \abra{q}
+    \braA{q} \to \lambda \braA{q}
     \, ,
 \end{equation}\]</div>
 <p>which turns out to be exactly the action of the complexified little group.</p>
 <p>While for real momentum, the square and angle spinors are related by complex conjugate. Then the left side of \eqref{eq: helicity spinor} is of <span class="arithmatex">\(\dim_{\RR}=3\)</span>, the right side is of <span class="arithmatex">\(\dim_{\RR}=4\)</span>, and the little group scaling is a phase factor in <span class="arithmatex">\(\sogroup(2,\RR)\)</span>.
-We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for <span class="arithmatex">\(E&lt;0\)</span> and outgoing <span class="arithmatex">\((+)\)</span> for <span class="arithmatex">\(E&gt;0\)</span>. Introducing the sign notation</p>
+We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for negative energy <span class="arithmatex">\(E&lt;0\)</span> and outgoing <span class="arithmatex">\((+)\)</span> for positive energy <span class="arithmatex">\(E&gt;0\)</span>. Introducing the sign notation</p>
 <div class="arithmatex">\[\begin{equation}
-    e_{q}=\cases{
+    \inout{q}=\cases{
         +1\, \textInMath{for outgoing}
         \\
         -1\, \textInMath{for incoming}
@@ -788,56 +901,59 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 \end{equation}\]</div>
 <p>we adopt the following conventions:</p>
 <div class="arithmatex">\[\begin{align}
-    \label{eq: conjugate}
-    \sket{q}^{*}=e_{q}\abra{q}
+    \label{eq: incoming}
+    \ketS{-q}=\ketS{q}
     \, ,
     \quad
-    \abra{q}^{*}=e_{q} \sket{q}
-    \, ,
-    \quad
-    \braketS{q_{1}q_{2}}^{*}
-    =-e_{q_{1}}e_{q_{2}}\braketA{q_{1}q_{2}}
+    \braA{-q}=-\braA{q}
     \, ,
 \end{align}\]</div>
 <p>and</p>
 <div class="arithmatex">\[\begin{align}
-    \label{eq: incoming}
-    \sket{-q}=\sket{q}
+    \label{eq: conjugate}
+    \ketS{q}^{*}=\inout{q}\braA{q}
     \, ,
     \quad
-    \abra{-q}=-\abra{q}
-    \, .
+    \braA{q}^{*}=\inout{q} \ketS{q}
+    \, ,
 \end{align}\]</div>
+<p>hence</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: conjugate braket}
+    \braketS{q_{1}q_{2}}^{*}
+    =-\inout{q_{1}}\inout{q_{2}}\braketA{q_{1}q_{2}}
+    \, .
+\end{equation}\]</div>
 <details class="proof">
 <summary>\eqref{eq: conjugate}, \eqref{eq: incoming}</summary>
-<p>Since the intertwiner <span class="arithmatex">\(\epsilon\)</span> commutes with complex conjugate, we only need to consider <span class="arithmatex">\(\sket{q}\)</span> and <span class="arithmatex">\(\abra{q}\)</span>,</p>
+<p>Since the intertwiner <span class="arithmatex">\(\epsilon\)</span> commutes with complex conjugate, we only need to consider <span class="arithmatex">\(\ketS{q}\)</span> and <span class="arithmatex">\(\braA{q}\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
-    \sket{q}^{*}=\alpha(q)\abra{q}
+    \ketS{q}^{*}=\alpha(q)\braA{q}
     \, ,
     \quad
-    \abra{q}^{*}=\alpha^{-*}(q) \sket{q}
+    \braA{q}^{*}=\alpha^{-*}(q) \ketS{q}
     \, ,
 \end{equation}\]</div>
 <p>and from \eqref{eq: helicity spinor} we have</p>
 <div class="arithmatex">\[\begin{equation}
-    \alpha(q)=\alpha^{*}(q)\in\RR
+    \alpha(q)=\alpha^{*}(q) \in \RR
     \, .
 \end{equation}\]</div>
-<p>Continuing <span class="arithmatex">\(q\)</span> to <span class="arithmatex">\(-q\)</span>, there is only one minus sign in \eqref{eq: helicity spinor}, so we need to absorb it either in both of <span class="arithmatex">\(\sket{q}\)</span> and <span class="arithmatex">\(\abra{q}\)</span> or in one of them. Starting from the ansatz</p>
+<p>Continuing <span class="arithmatex">\(q\)</span> to <span class="arithmatex">\(-q\)</span>, there is only one minus sign in \eqref{eq: helicity spinor}, so we need to absorb it either in both of <span class="arithmatex">\(\ketS{q}\)</span> and <span class="arithmatex">\(\braA{q}\)</span> or in one of them. Starting from the ansatz</p>
 <div class="arithmatex">\[\begin{equation}
-    \sket{-q}=\beta(q) \sket{q}
+    \ketS{-q}=\beta(q) \ketS{q}
     \, ,
     \quad
-    \abra{-q}=-\beta^{-1}(q) \abra{q}
+    \braA{-q}=-\beta^{-1}(q) \braA{q}
     \, ,
 \end{equation}\]</div>
 <p>and then by the compatibility of complex conjugate, we have</p>
 <div class="arithmatex">\[\begin{align}
-    \sket{-q}^{*}
-    &amp;=\beta^{*}(q) \sket{q}^{*}
-    =\beta^{*}(q) \alpha(q) \abra{q}
+    \ketS{-q}^{*}
+    &amp;=\beta^{*}(q) \ketS{q}^{*}
+    =\beta^{*}(q) \alpha(q) \braA{q}
     \\
-    &amp;=\alpha(-q)\abra{-q}=-\alpha(-q)\beta^{-1}(q)\abra{q}
+    &amp;=\alpha(-q)\braA{-q}=-\alpha(-q)\beta^{-1}(q)\braA{q}
     \, ,
 \end{align}\]</div>
 <p>which implies</p>
@@ -853,7 +969,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 \end{equation}\]</div>
 <p>a natural choice of <span class="arithmatex">\(\alpha(q)\)</span> would be</p>
 <div class="arithmatex">\[\begin{equation}
-    \alpha(q)=e_{q}
+    \alpha(q)=\inout{q}
     \, .
 \end{equation}\]</div>
 <p>Then for <span class="arithmatex">\(\abs{\beta(q)}=1\)</span> we choose</p>
@@ -861,25 +977,19 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
     \beta(q)=1
     \, .
 \end{equation}\]</div>
-<p>This is the convention in <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">7</a></sup>. While <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">6</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\sket{-(-q)}=-\sket{q}\)</span>, i.e., <span class="arithmatex">\(\sket{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
+<p>This is the convention in <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. While <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
 </details>
-<h3 id="useful-identities">Useful identities</h3>
-<p>For massless momenta, <span class="arithmatex">\(q\)</span> will be omitted, e.g. <span class="arithmatex">\(\braketS{12}\eqq \braketS{q_{1}q_{2}}\)</span>.</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;\braketS{12}\braketA{12}
-    =
-    2\signature q_{1} \cdot q_{2}
+<h2 id="polarization">Polarization</h2>
+<p>Lacia-TimeStamp-2025-05-10-04:25:04</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: polarization}
+    \epsilon^{\mu}_{1}=\frac{\braketSA{1}{\gamma^{\mu}}{2}}{\braketA{12}}
     \, ,
-    \\
-    &amp;
-    \braketAS{1}{2}{3}=\braketA{12}\braketS{23}
-    \, ,
-    \\
-    &amp;
-    \braketSA{1}{2}{3}=\braketS{12}\braketA{23}
+    \quad
+    \epsilonb^{\mu}_{1}=\frac{\braketAS{1}{\gamma^{\mu}}{2}}{\braketS{12}}
     \, .
-\end{align}\]</div>
-<h4 id="parametrization">Parametrization</h4>
+\end{equation}\]</div>
+<h2 id="component">Component</h2>
 <p>The massless momentum can be parametrized by the energy <span class="arithmatex">\(E\)</span> and angular coordinates <span class="arithmatex">\((\theta,\phi)\)</span> as</p>
 <div class="arithmatex">\[\begin{equation}
     q=E(1,\sin \theta  \cos \phi ,\sin \theta  \sin \phi ,\cos \theta )
@@ -888,7 +998,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <p>In the celestial CFT literature, we also use the following parametrization:</p>
 <div class="arithmatex">\[\begin{equation}
     q=\omega(
-        z \bar{z}+1,\bar{z}+z,-i (z-\bar{z}),1-z \bar{z}
+        1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
     )
     \, .
 \end{equation}\]</div>
@@ -903,68 +1013,185 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <p>with the north pole mapped to the origin.</p>
 <p>The helicity spinors can be parametrized as</p>
 <div class="arithmatex">\[\begin{align}
+    \label{eq: bra ket parametrization}
     &amp;
-    \sbra{q}=\sqrt{2\omega}(1,\bar{z})
+    \braS{q}=\sqrt{2\omega}(1,\bar{z})
     \, ,
     \\
     &amp;
-    \sket{q}=\sqrt{2\omega}(-\bar{z},1)
+    \ketS{q}=\sqrt{2\omega}(-\bar{z},1)
     \, ,
     \\
     &amp;
-    \abra{q}=e_{q}\sqrt{2\omega}(-z,1)
+    \braA{q}=\inout{q}\sqrt{2\omega}(-z,1)
     \, ,
     \\
     &amp;
-    \aket{q}=e_{q}\sqrt{2\omega}(1,z)
-    \, ,
+    \ketA{q}=\inout{q}\sqrt{2\omega}(1,z)
+    \, .
 \end{align}\]</div>
-<h2 id="polarization-vectors">Polarization vectors</h2>
-<p>%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%</p>
+<h2 id="useful-properties">Useful properties</h2>
+<p>Lacia-TimeStamp-2025-05-10-04:25:12</p>
+<p>For massless momenta, <span class="arithmatex">\(q\)</span> will be omitted, e.g.</p>
+<div class="arithmatex">\[\begin{equation}
+    \braketS{12}\eqq \braketS{q_{1}q_{2}}
+    \, .
+\end{equation}\]</div>
+<p>The contracted indices between Pauli/Dirac matrices and momentum spinors will be omitted, e.g.</p>
+<div class="arithmatex">\[\begin{equation}
+    \braketSA{1}{P}{2}
+    \eqq
+    \braS{1}^{a}P_{a \dota}\ketA{2}^{\dota}
+    =
+    -\signature P_{\mu}\braS{1}^{a}\sigma^{\mu}_{a\dota}\ketA{2}^{\dota}
+    \, .
+\end{equation}\]</div>
+<h3 id="property">Property</h3>
+<p>Mandelstam variable:</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: momentum squared}
+    \braketS{12}\braketA{12}
+    =
+    2\signature q_{1} \cdot q_{2}
+    =\signature (q_{1}+q_{2})^{2}
+    \, .
+\end{equation}\]</div>
+<p>Bispinor contraction:</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: bispinor contraction}
+    \begin{aligned}
+        &amp;\braketSA{1}{P,\sigma^{\mu},\gamma^{\mu}}{2}=\braketAS{2}{P,\sigmab^{\mu},\gamma^{\mu}}{1}
+        \, ,
+        \\
+        &amp;\braketAS{1}{2}{3}=\braketA{12}\braketS{23}
+        \, ,
+        \\
+        &amp;\braketSA{1}{2}{3}=\braketS{12}\braketA{23}
+        \, .
+    \end{aligned}
+\end{equation}\]</div>
+<p>Fierz identity:</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq Fierz identity}
+    \braA{1}\sigma^{\mu},\gamma^{\mu}\ketS{2}
+    \braA{3}\sigma_{\mu},\gamma_{\mu}\ketS{4}
+    =
+    2\signature\braketA{13}\braketS{24}
+    \, .
+\end{equation}\]</div>
+<h3 id="little-group-scaling">Little group scaling</h3>
+<p>Under the little group scaling, the weights are</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Object</th>
+<th style="text-align: center;">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">square bra/ket</td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">angle bra/ket</td>
+<td style="text-align: center;"><span class="arithmatex">\(-1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">wavefunction with helicity <span class="arithmatex">\(J\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2J\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">amplitude with helicities <span class="arithmatex">\(J_i\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2J_i\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="verification-test">Verification test</h2>
+<p>Directory: <code>~/TestSource/SpinorHelicity/</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Test</th>
+<th style="text-align: left;">Equation(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>bispinor-contraction.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: bispinor contraction}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bispinor.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: momentum bispinor} \eqref{eq: helicity spinor}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>epsilon-tensor.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: raising lowering S} \eqref{eq: raising lowering A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Fierz-identity.wlt</code></td>
+<td style="text-align: left;">$\eqref{eq Fierz identity} $</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>incoming-outgoing.wlt</code></td>
+<td style="text-align: left;">$\eqref{eq: incoming} $</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>momentum-squared.wlt</code></td>
+<td style="text-align: left;">$\eqref{eq: momentum squared} $</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Pauli-Dirac-matrix.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: Pauli matrix} \eqref{eq: Pauli matrix and epsilon tensor}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spinor-component-2-vs-4.wlt</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spinor-component.wlt</code></td>
+<td style="text-align: left;">$\eqref{eq: bra ket parametrization} $</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spinor-conjugate.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: conjugate} \eqref{eq: conjugate braket}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spinor-pairing.wlt</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: pairing S} \eqref{eq: pairing A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Weyl-equation.wlt</code></td>
+<td style="text-align: left;">$\eqref{eq: Weyl equation} $</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:convention-summary">
-<p>We mainly follow <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup>, where the authors provide both signature versions and a detailed discussion on convention changing.</p>
-<p>In <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup> the signature is <span class="arithmatex">\((+,-,-,-)\)</span> with the spinor conventions accordingly aligned.</p>
-<p>In <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup> the signature is <span class="arithmatex">\((-,+,+,+)\)</span>, propagates into momentum bispinors \eqref{eq: momentum bispinor} and stops at the relation between momentum bispinors and helicity spinors \eqref{eq: helicity spinor}.</p>
-<p>In <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup> the signature is <span class="arithmatex">\((-,+,+,+)\)</span> and propagates into helicity spinors \eqref{eq: helicity spinor}.&#160;<a class="footnote-backref" href="#fnref:convention-summary" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:northwest-to-southeast">
-<p>The convention to sum undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast.&#160;<a class="footnote-backref" href="#fnref:northwest-to-southeast" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
 <li id="fn:1">
-<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Henriette Elvang and Yu-ting Huang. Scattering Amplitudes. 8 2013. <a href="https://arxiv.org/abs/1308.1697">arXiv:1308.1697</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger. Gluon Amplitudes as 2d Conformal Correlators. Phys. Rev. D, 96(8):085006, 2017. <a href="https://arxiv.org/abs/1706.03917">arXiv:1706.03917</a>, <a href="https://doi.org/10.1103/PhysRevD.96.085006">doi:10.1103/PhysRevD.96.085006</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Henriette Elvang and Yu-ting Huang. Scattering Amplitudes. 8 2013. <a href="https://arxiv.org/abs/1308.1697">arXiv:1308.1697</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger. Gluon Amplitudes as 2d Conformal Correlators. Phys. Rev. D, 96(8):085006, 2017. <a href="https://arxiv.org/abs/1706.03917">arXiv:1706.03917</a>, <a href="https://doi.org/10.1103/PhysRevD.96.085006">doi:10.1103/PhysRevD.96.085006</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>M.D. Schwartz. <em>Quantum Field Theory and the Standard Model</em>. Cambridge University Press, 2014. ISBN 9781107034730. URL: <a href="https://books.google.com/books?id=HbdEAgAAQBAJ">https://books.google.com/books?id=HbdEAgAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
