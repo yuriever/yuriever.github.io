@@ -14,8 +14,10 @@
         "bibtex",
         "bispinor",
         "brakets",
+        "Cheung's",
         "covector",
         "covectors",
+        "Elvang",
         "mathematica",
         "mkdocs",
         "Parametrizing",
@@ -24,6 +26,7 @@
         "Srednicki",
         "Srednicki's",
         "Szabolcs",
+        "Wess",
         "Zhuang"
     ],
     "latex-workshop.intellisense.package.extra": [
