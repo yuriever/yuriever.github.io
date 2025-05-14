@@ -1,14 +1,13 @@
 {
     "files.exclude": {
         ".gitignore": true,
-        ".vscode": true,
+        // ".vscode": true,
         "README.md": true,
         "custom": true,
         "site": true,
         "uv.lock": true,
         ".python-version": true,
-        ".venv": true,
-        "help": true
+        ".venv": true
     },
     "cSpell.words": [
         "bibtex",

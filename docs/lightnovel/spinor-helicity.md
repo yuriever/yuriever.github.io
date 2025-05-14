@@ -9,6 +9,7 @@
 \newcommand{\inout}[1]{e_{#1}}
 $ </span>
 
+
 ## Conventions
 
 We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Dreiner:2008tw,@Srednicki:2007qs,@Elvang:2013cua].
@@ -34,6 +35,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
 * The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast, following Wess&Bagger's convention.
 
+
 ### Comparison
 
 * In [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
@@ -41,10 +43,10 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 * In Srednicki's book [@Srednicki:2007qs] and Elvang&Huang's lecture notes [@Elvang:2013cua], the signature is $\signature=1$, propagates into momentum bispinors \eqref{eq: momentum bispinor} and ceases at helicity spinors \eqref{eq: helicity spinor},
 
     \begin{equation}
-        q_{a\dota}={\color{red}-}\ketS{q}_{a}\braA{q}_{\dota}
+        q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
         \, ,
         \quad
-        q^{\dota a}={\color{red}-}\ketA{q}^{\dota}\braS{q}^{a}
+        q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
         \, .
     \end{equation}
 
@@ -63,9 +65,11 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
     * In [@Cheung:2017pzi], the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of $\epsilon$ tensors.
 
+
 ## Helicity spinor
 
 Helicity spinors are essentially bosonic Weyl spinors that satisfy the massless Weyl equation.
+
 
 ### Square spinor
 
@@ -113,6 +117,7 @@ the two representations are isomorphic by
 
 Equivalently, $\epsilon$ is an invariant bilinear form on $(\half,0)$ or on its dual, and then $\braketS{q_{1}q_{2}}$ is antisymmetric.
 
+
 ### Angle spinor
 
 Repeating the previous discussion onto the complex conjugate representation $(0,\half)$ and its dual $(0,\half)^{\dual}$, the angle bra and ket satisfy
@@ -156,6 +161,7 @@ then the indices are lowered/raised as
     \braA{q}_{\dota}=\epsilon_{\dota \dotb}\ketA{q}^{\dotb}
     \, .
 \end{equation}
+
 
 ## Momentum bispinor
 
@@ -269,6 +275,7 @@ and then the square and angle spinors satisfy the massless Weyl equations
     \braS{q}^{a} q_{a\dota}=0
     \, .
 \end{equation}
+
 
 ### Real momentum
 
@@ -399,6 +406,7 @@ hence
 
     This is the convention in [@Elvang:2013cua]. While [@Srednicki:2007qs] chooses $\beta(q)=i$, then one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
 
+
 ## Polarization
 
 Lacia-TimeStamp-2025-05-10-04:25:04
@@ -411,6 +419,7 @@ Lacia-TimeStamp-2025-05-10-04:25:04
     \epsilonb^{\mu}_{1}=\frac{\braketAS{1}{\gamma^{\mu}}{2}}{\braketS{12}}
     \, .
 \end{equation}
+
 
 ## Component
 
@@ -463,6 +472,7 @@ The helicity spinors can be parametrized as
     \, .
 \end{align}
 
+
 ## Useful properties
 
 Lacia-TimeStamp-2025-05-10-04:25:12
@@ -484,6 +494,7 @@ The contracted indices between Pauli/Dirac matrices and momentum spinors will be
     -\signature P_{\mu}\braS{1}^{a}\sigma^{\mu}_{a\dota}\ketA{2}^{\dota}
     \, .
 \end{equation}
+
 
 ### Property
 
@@ -525,6 +536,7 @@ Fierz identity:
     \, .
 \end{equation}
 
+
 ### Little group scaling
 
 Under the little group scaling, the weights are
@@ -537,6 +549,7 @@ Under the little group scaling, the weights are
 | amplitude with helicities $J_i$ | $2J_i$ |
 
 ---
+
 
 ## Verification test
 

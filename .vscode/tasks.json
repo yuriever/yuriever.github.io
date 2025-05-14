@@ -1,0 +1,54 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve MkDocs",
+            "group": "none",
+            "type": "shell",
+            "command": "uv run mkdocs serve --dirty",
+            "isBackground": true,
+            "runOptions": {
+                "reevaluateOnRerun": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "focus": false,
+                "echo": false,
+                "showReuseMessage": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": [
+                {
+                    "base": "$tsc",
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "Building documentation",
+                        "endsPattern": "Serving"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Preview MkDocs",
+            "command": "${input:openSimpleBrowser}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Serve and preview MkDocs",
+            "dependsOn": ["Serve MkDocs", "Preview MkDocs"],
+            "dependsOrder": "sequence",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "openSimpleBrowser",
+            "type": "command",
+            "command": "simpleBrowser.show",
+            "args": "http://localhost:8000/"
+        }
+    ]
+}
