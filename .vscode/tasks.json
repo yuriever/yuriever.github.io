@@ -5,18 +5,14 @@
             "label": "MkDocs serve",
             "group": "build",
             "type": "shell",
-            "command": "uv run mkdocs serve --dirty",
+            "command": "uv run mkdocs serve --dev-addr 127.0.0.1:8000 --dirty",
             "isBackground": true,
             "runOptions": {
                 "reevaluateOnRerun": true
             },
             "presentation": {
                 "reveal": "silent",
-                "focus": false,
-                "echo": false,
-                "showReuseMessage": false,
-                "panel": "shared",
-                "clear": true
+                "focus": false
             },
             "problemMatcher": [
                 {
@@ -34,17 +30,29 @@
             "group": "build",
             "type": "shell",
             "command": "uv run mkdocs gh-deploy --force",
+            "presentation": {
+                "reveal": "always",
+                "focus": false
+            },
             "problemMatcher": []
         },
         {
             "label": "MkDocs preview",
             "command": "${input:openSimpleBrowser}",
+            "presentation": {
+                "reveal": "silent",
+                "focus": false
+            },
             "problemMatcher": []
         },
         {
             "label": "MkDocs serve/preview",
             "dependsOn": ["MkDocs serve", "MkDocs preview"],
             "dependsOrder": "sequence",
+            "presentation": {
+                "reveal": "silent",
+                "focus": false
+            },
             "runOptions": {
                 "runOn": "folderOpen"
             }
