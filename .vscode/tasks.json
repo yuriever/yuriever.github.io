@@ -2,8 +2,8 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Serve MkDocs",
-            "group": "none",
+            "label": "MkDocs serve",
+            "group": "build",
             "type": "shell",
             "command": "uv run mkdocs serve --dirty",
             "isBackground": true,
@@ -30,13 +30,20 @@
             ]
         },
         {
-            "label": "Preview MkDocs",
+            "label": "MkDocs deploy",
+            "group": "build",
+            "type": "shell",
+            "command": "uv run mkdocs gh-deploy --force",
+            "problemMatcher": []
+        },
+        {
+            "label": "MkDocs preview",
             "command": "${input:openSimpleBrowser}",
             "problemMatcher": []
         },
         {
-            "label": "Serve and preview MkDocs",
-            "dependsOn": ["Serve MkDocs", "Preview MkDocs"],
+            "label": "MkDocs serve/preview",
+            "dependsOn": ["MkDocs serve", "MkDocs preview"],
             "dependsOrder": "sequence",
             "runOptions": {
                 "runOn": "folderOpen"
