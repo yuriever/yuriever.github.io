@@ -1,7 +1,6 @@
 {
     "files.exclude": {
         ".gitignore": true,
-        // ".vscode": true,
         "README.md": true,
         "custom": true,
         "site": true,
