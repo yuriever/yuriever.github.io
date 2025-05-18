@@ -1,25 +1,59 @@
 function injectCounters() {
     // Separate counters
     let sharedCounter = 0; // Counter for theorem, definition, lemma
-    let exampleCounter = 0; // Counter for example
     let proofCounter = 0; // Counter for proof
+    let ideaCounter = 0; // Counter for idea
     let remarkCounter = 0; // Counter for remark
     let factCounter = 0; // Counter for fact
+    let exampleCounter = 0; // Counter for example
 
     // Mapping of class to labels and counters
     const classToConfig = {
-        theorem: { label: "Theorem", counter: () => ++sharedCounter },
-        definition: { label: "Definition", counter: () => ++sharedCounter },
-        lemma: { label: "Lemma", counter: () => ++sharedCounter },
-        ex: { label: "Example", counter: () => ++exampleCounter },
-        proof: { label: "Proof", counter: () => ++proofCounter },
-        remark: { label: "Remark", counter: () => ++remarkCounter },
-        fact: { label: "Fact", counter: () => ++factCounter }
+        thm: {
+            label: "Theorem",
+            defaultLabel: "Thm",
+            counter: () => ++sharedCounter
+        },
+        def: {
+            label: "Definition",
+            defaultLabel: "Def",
+            counter: () => ++sharedCounter
+        },
+        lem: {
+            label: "Lemma",
+            defaultLabel: "Lem",
+            counter: () => ++sharedCounter
+        },
+        proof: {
+            label: "Proof",
+            defaultLabel: "Proof",
+            counter: () => ++proofCounter
+        },
+        idea: {
+            label: "Idea",
+            defaultLabel: "Idea",
+            counter: () => ++ideaCounter
+        },
+        remark: {
+            label: "Remark",
+            defaultLabel: "Remark",
+            counter: () => ++remarkCounter
+        },
+        fact: {
+            label: "Fact",
+            defaultLabel: "Fact",
+            counter: () => ++factCounter
+        },
+        ex: {
+            label: "Example",
+            defaultLabel: "Ex",
+            counter: () => ++exampleCounter
+        }
     };
 
     // Select all relevant elements
     const elements = document.querySelectorAll(
-        ".theorem, .definition, .lemma, .ex, .proof, .remark, .fact"
+        ".thm, .def, .lem, .proof, .idea, .remark, .fact, .ex"
     );
 
     elements.forEach((el) => {
@@ -29,7 +63,8 @@ function injectCounters() {
         );
 
         if (elementClass && !el.dataset.numbered) {
-            const { label, counter } = classToConfig[elementClass];
+            const { label, defaultLabel, counter } =
+                classToConfig[elementClass];
             const count = counter(); // Increment the relevant counter
 
             // Find the title element
@@ -39,12 +74,13 @@ function injectCounters() {
 
             if (title) {
                 // If the title is empty, Mkdocs provides a default one, which should be removed
-                if (label === title.textContent) {
+                if (title.textContent === defaultLabel) {
                     title.textContent = "";
                 }
                 // Prepend the label and counter to the title text
                 if (
                     elementClass === "proof" ||
+                    elementClass === "idea" ||
                     elementClass === "remark" ||
                     elementClass === "fact"
                 ) {
