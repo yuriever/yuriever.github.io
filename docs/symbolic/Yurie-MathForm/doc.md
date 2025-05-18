@@ -68,6 +68,7 @@ A Mathematica paclet for improving math layout.
     }
     ```
 
+
 ## Formatting
 
 * `#!wl MFString` - refine the string from `#!wl TeXForm`.
@@ -101,6 +102,7 @@ A Mathematica paclet for improving math layout.
     * `#!wl "Listable"->True` - convert list elements as separate PDFs.
 
     * The other options are inherited from `#!wl MFString`.
+
 
 ## Format definition
 

@@ -55,6 +55,7 @@ This is an interesting exercise in Etingof's book *Introduction to Representatio
         \, .
     \end{equation}
 
+
 ## Remarks
 
 !!! fact "Clifford algebra"

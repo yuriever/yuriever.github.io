@@ -1,5 +1,6 @@
 # Box
 
+
 ## wl
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
@@ -115,6 +116,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
+
 ## code
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
@@ -149,6 +151,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
+
 ## mark
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
@@ -175,6 +178,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
+
 ## theorem
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
@@ -187,7 +191,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! theorem "Test"
+!!! thm "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -201,7 +205,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test tests
 
-!!! theorem ""
+!!! thm ""
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -215,7 +219,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! theorem "Test"
+!!! thm "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -223,17 +227,7 @@ test test test test test test test test test test test test test test test test 
         a+b
     \end{equation}
 
-!!! theorem "Test"
-
-    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-
-    \begin{equation}
-        a+b
-    \end{equation}
-
-test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
-
-??? theorem "Test"
+!!! thm "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -243,7 +237,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! definition "Test"
+??? thm "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -253,7 +247,7 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-??? definition "Test"
+!!! def "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
@@ -263,7 +257,17 @@ test test test test test test test test test test test test test test test test 
 
 test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-!!! lemma "Test"
+??? def "Test"
+
+    test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+    \begin{equation}
+        a+b
+    \end{equation}
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+!!! lem "Test"
 
     test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 

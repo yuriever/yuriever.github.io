@@ -2,6 +2,7 @@
 
 We introduce implementation of noncommutative algebras via Mathematica.
 
+
 ## Designing idea
 
 In practice, we define an (associative) algebra $A$ using generators and relations, i.e., as a quotient of the free algebra.
@@ -70,6 +71,7 @@ To make the results readable, we define additional formatting rules.
 
 To ensure the convergence of `#!wl ReplaceRepeated`, we need to specify the ordering of operators, and a simple choice is the Poincare-Birkhoff-Witt type basis.
 
+
 ## Example
 
 !!! wl "Verma module of $\sllie(2)$"
@@ -86,6 +88,7 @@ To ensure the convergence of `#!wl ReplaceRepeated`, we need to specify the orde
         X**v[h_]:>0
     };
     ```
+
 
 ## To-do
 

@@ -1,5 +1,6 @@
 # Miscellaneous
 
+
 ## Replace vs. ReplaceAll
 
 `#!wl ReplaceAll` 的策略是从外到内、广度优先的，匹配完的子表达式不再被匹配；
@@ -69,21 +70,26 @@
     Out[] = Hold[x]
     ```
 
+
 ## Decoupling
 
 减少不同功能的函数与扩展包之间的关联。
+
 
 ## Helper function
 
 复杂的主体函数应分层，最外层提供用户接口，若干内层的辅助函数实现不同功能，尽可能使函数的依赖关系为树状结构。为了避免重复判定条件，仅在最外层使用判别函数。
 
+
 ## Hold-like attributes
 
 需注意 `#!wl HoldAll` 或类似属性在多层函数之间的正确传递。
 
+
 ## Set in package
 
 当 `#!wl Set` 出现在扩展包中时，需注意相关符号在扩展包多次被调用后的状态，或在定义前清除原始值。
+
 
 ## Public variable
 

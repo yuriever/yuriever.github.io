@@ -8,6 +8,7 @@ Dependency:
 "Yurie/Cluster"->">=1.0.0"
 ```
 
+
 ## Attributes
 
 * `#!wl "Generator"` - list of generators.
@@ -19,6 +20,7 @@ Dependency:
 * `#!wl "TensorRank"` - list of tensor ranks of generators.
 
 * `#!wl "Parity"` - list of parities of generators.
+
 
 ## Methods
 
@@ -41,6 +43,7 @@ Dependency:
 | `#!wl algebraReset[]`   | reset all the defined except internal algebras. |
 | `#!wl algebraUnset[]`   | unset all the defined except internal algebras. |
 | `#!wl algebraShow[]`    | show the default algebras.                      |
+
 
 ## Functionalities
 
@@ -74,6 +77,7 @@ There are several remarks.
 * The associativity of multiplication and tensor product is implemented by the attributes `#!wl {Flat,OneIdentity}`.
 
 * The base field $k$ and its embedding in the algebra $A$ is distinguished, and the identity operator `#!wl id` is the image $\eta(1)\in A$.
+
 
 ### Core functionalities
 
@@ -112,6 +116,7 @@ Table of shortcuts:
 | `#!wl algEqualQ[_,_]` | `#!wl x==y` for operators.                           |
 | `#!wl algSameQ[_,_]`  | `#!wl x===y` for operators.                          |
 
+
 ### Inner product
 
 This functionality needs the algebra `#!wl "Conjugate"`.
@@ -121,6 +126,7 @@ This functionality needs the algebra `#!wl "Conjugate"`.
 * `#!wl innerProduct[_,_]` - inner product of the two operators.
 
     For operators $x$ and $y$ this returns $x^{\dagger}\cdot y$, and for a single operator $x$ this returns $x^{\dagger}\cdot x$.
+
 
 ### Tensor product
 
@@ -138,7 +144,9 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
 
 * `#!wl tensorPermute[cycle_][_]` - permute the arguments of the tensor.
 
+
 ## Utilities
+
 
 ### Commutator
 
@@ -147,6 +155,7 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
 * `#!wl commSim|anticommSim[__]` - simplify the (anti-)commutator.
 
 * `#!wl commDefine[_,_]:>_/;_` - define the (anti-)commutator with the given order and condition.
+
 
 ### Adjoint
 
@@ -173,6 +182,7 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
         \, .
     \end{equation}
 
+
 ### Power
 
 * `#!wl operatorPower[op_,order_:1]` - power of the operator.
@@ -186,9 +196,11 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
         \, .
     \end{equation}
 
+
 ### Operator separation
 
 * `#!wl operatorSeparate[_]` - separate scalars and operators in the given linear expression.
+
 
 ### Consistency check
 
@@ -254,6 +266,7 @@ User-defined relations are not guaranteed to be consistent with the internal one
         \epsilon(x)\id
         \, .
     \end{equation}
+
 
 ## Other issues
 

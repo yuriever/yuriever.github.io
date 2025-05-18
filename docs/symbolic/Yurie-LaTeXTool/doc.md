@@ -2,6 +2,7 @@
 
 LaTeX tools.
 
+
 ## Formatter
 
 * `#!wl LaTeXFormat[opts_][file_]` - format the LaTeX file.
@@ -155,6 +156,7 @@ LaTeX tools.
 
         * similar to the one in `#!wl LaTeXFormat`.
 
+
 ## Parser
 
 * `#!wl LaTeXParser[opts_][file_]` - a simple parser of LaTeX.
@@ -175,6 +177,7 @@ LaTeX tools.
 
         For example, the magic comment `#!tex % LaTeXParser-MathJax-Skip` will be triggered by setting the option as `#!wl "SkipType"->"MathJax"`.
 
+
 ## Other tools
 
 * `#!wl MathJaxJSOverwrite[macro_][file_]` - overwrite the macros in JSON files used by MathJax.
@@ -190,6 +193,7 @@ LaTeX tools.
             },
             // MathJaxJSOverwrite-Macro-End
             ```
+
 
 ## To-do
 

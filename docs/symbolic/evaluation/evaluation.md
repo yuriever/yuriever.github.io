@@ -4,6 +4,7 @@ References:
 
 * Mathematica documentation: `tutorial/Expressions`, `tutorial/Evaluation`, `tutorial/EvaluationOfExpressions`
 
+
 ## Moduli
 
 在一些情况下，由相似对象构成的集合具有良好的几何结构，称之为模空间。
@@ -24,6 +25,7 @@ References:
 | complexity                           | potential                         |
 | neighborhood/locality                | ? [^neighbor]                     |
 
+
 ## Everything is an expression
 
 本节回顾 Mathematica 的表达式，记所有符合语法的表达式构成的集合为 **Expr** [^expr]。在 Mathematica 中不存在原生的类型系统，一切对象皆为表达式 (expression)。这个设计原则可见文档 `#!wl guide/Expressions`：
@@ -41,6 +43,7 @@ References:
 例如：表达式 `#!wl a^2+2 a b+b^2` 的树形式为
 
 ![tree-example](tree-example.svg)
+
 
 ## Evaluation
 
@@ -127,6 +130,7 @@ x \mapsto x+ f(x), \, \forall x\in M
 
 需要指出的是，赋值函数 `#!wl Set (=), SetDelayed (:=), UpSet (^=), UpSetDelayed (^:=)` 等的作用是在 Mathematica 的全局规则库中添加指定的规则。
 
+
 ### Standard evaluation
 
 在计算时，Mathematica 会遍历表达式 `#!wl expr=f0[f1,f2,...]` 的子结构，比对全局规则库进行模式匹配，重复这一步骤直到表达式的形式不变，称之为标准计算序列 (standard evaluation sequence)：
@@ -139,6 +143,7 @@ x \mapsto x+ f(x), \, \forall x\in M
 * 重复上述步骤，直到表达式不再变化或溢出。
 
 这类似于动力系统收敛到不动点或发散。
+
 
 ### Non-standard evaluation
 

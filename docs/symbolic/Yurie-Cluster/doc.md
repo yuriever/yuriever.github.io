@@ -68,6 +68,7 @@ A Mathematica paclet for implementing a specific form of class composition.
     class PlanetExtraData,StarDefaultList,StarDefaultData data;
     ```
 
+
 ## Attributes
 
 * `#!wl cluster[data_Association]` - store the data with the following keys:
@@ -90,7 +91,9 @@ A Mathematica paclet for implementing a specific form of class composition.
 
     * `#!wl "StarDefaultData"` - data of default star. After star operations the default data will be updated automatically.
 
+
 ## Methods
+
 
 ### Cluster constructors
 
@@ -101,6 +104,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 * `#!wl clusterPropGet[cluster_,propertyOrItsList_]` - get property of the cluster.
 
 * `#!wl clusterPropSet[cluster_,propertyOrItsList_]` - set property of the cluster.
+
 
 ### Public methods
 
@@ -115,6 +119,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 * `#!wl starMerge[cluster_,starList_,planetData_]` - merge planet data to the stars. The third argument will be association-ized, hence rule, list of rules, association of rules are accepted.
 
 * `#!wl starChange[cluster_,starList_,planetData_,planetFunctionData_]` - change planet data to the stars by the functions.
+
 
 ### Private methods
 
