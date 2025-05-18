@@ -435,6 +435,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theoremdefinitionlemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theorem/Definition/Lemma
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proofidea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof/Idea
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarkfact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remark/Fact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -486,69 +530,115 @@
 
 <!-- Page content -->
 <h1 id="box-thm">Box-thm</h1>
-<p>Numbering:</p>
+<p>编号</p>
 <ul>
 <li>
-<p>definition, lemma, theorem;</p>
+<p>theorem, definition, lemma</p>
 </li>
 <li>
-<p>proof; remark; fact;</p>
-</li>
-<li>
-<p>equation.</p>
+<p>example</p>
 </li>
 </ul>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<p>无编号</p>
+<ul>
+<li>proof, idea, remark, fact</li>
+</ul>
+<h2 id="theoremdefinitionlemma">Theorem/Definition/Lemma</h2>
+<p>They share the same counter.</p>
+<div class="admonition thm">
+<p class="admonition-title">Thm</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </div>
-<div class="admonition theorem">
+<div class="admonition thm">
 <p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </div>
-<details class="theorem">
+<details class="thm">
+<summary>Thm</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<details class="thm">
 <summary>Test</summary>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </details>
-<div class="admonition definition">
+<div class="admonition def">
+<p class="admonition-title">Def</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition def">
 <p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </div>
-<details class="definition">
+<details class="def">
+<summary>Def</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<details class="def">
 <summary>Test</summary>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </details>
-<div class="admonition lemma">
+<div class="admonition lem">
+<p class="admonition-title">Lem</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition lem">
 <p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </div>
-<details class="lemma">
+<details class="lem">
+<summary>Lem</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<details class="lem">
 <summary>Test</summary>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
 \end{equation}\]</div>
 </details>
+<h2 id="proofidea">Proof/Idea</h2>
 <div class="admonition proof">
 <p class="admonition-title">Proof</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition proof">
+<p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
@@ -561,8 +651,51 @@
     a+b
 \end{equation}\]</div>
 </details>
+<details class="proof">
+<summary>Test</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<div class="admonition idea">
+<p class="admonition-title">Idea</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition idea">
+<p class="admonition-title">Test</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<details class="idea">
+<summary>Idea</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<details class="idea">
+<summary>Test</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<h2 id="remarkfact">Remark/Fact</h2>
 <div class="admonition remark">
 <p class="admonition-title">Remark</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition remark">
+<p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
@@ -575,8 +708,22 @@
     a+b
 \end{equation}\]</div>
 </details>
+<details class="remark">
+<summary>Test</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
 <div class="admonition fact">
 <p class="admonition-title">Fact</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
+<div class="admonition fact">
+<p class="admonition-title">Test</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b
@@ -589,6 +736,14 @@
     a+b
 \end{equation}\]</div>
 </details>
+<details class="fact">
+<summary>Test</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<h2 id="example">Example</h2>
 <div class="admonition ex">
 <p class="admonition-title">Ex</p>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
@@ -596,8 +751,22 @@
     a+b
 \end{equation}\]</div>
 </div>
+<div class="admonition ex">
+<p class="admonition-title">Test</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</div>
 <details class="ex">
 <summary>Ex</summary>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    a+b
+\end{equation}\]</div>
+</details>
+<details class="ex">
+<summary>Test</summary>
 <p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
 <div class="arithmatex">\[\begin{equation}
     a+b

@@ -635,14 +635,12 @@
 
 <!-- Page content -->
 <h1 id="spinor-helicity-formalism">Spinor helicity formalism</h1>
-<p><span hidden> $
-\newcommand{\dota}{\dot{a}}
+<p><span hidden> <span class="arithmatex">\(\newcommand{\dota}{\dot{a}}
 \newcommand{\dotb}{\dot{b}}
 \newcommand{\dotc}{\dot{c}}
 \newcommand{\sigmab}{\bar{\sigma}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
-\newcommand{\inout}[1]{e_{#1}}
-$ </span></p>
+\newcommand{\inout}[1]{e_{#1}}\)</span> </span></p>
 <h2 id="conventions">Conventions</h2>
 <p>We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <p>It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
@@ -671,36 +669,51 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 <h3 id="comparison">Comparison</h3>
 <ul>
 <li>
-<p>In <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
+<p>In Dreiner et al.'s review <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
 </li>
 <li>
-<p>In Srednicki's book <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and Elvang&amp;Huang's lecture notes <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors \eqref{eq: momentum bispinor} and ceases at helicity spinors \eqref{eq: helicity spinor},</p>
+<p>In Elvang&amp;Huang's book <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs. Equation 2.7</p>
+<div class="arithmatex">\[\begin{equation}
+    P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
+    \, ,
+\end{equation}\]</div>
+<p>then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs. Equation 2.16</p>
 <div class="arithmatex">\[\begin{equation}
     q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
     \, ,
     \quad
     q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
+    \, ,
+\end{equation}\]</div>
+<ul>
+<li>
+<p>In Srednicki's book <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the conventions are basically the same as <sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, except for incoming/outgoing. For this, we follow <sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup> as discussed later.</p>
+</li>
+<li>
+<p>In Pasterski et al.'s paper <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, but propagates into helicity spinors.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In Taylor's lecture notes <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>.
+    The type of helicity spinors is opposite to ours, see \eqref{eq: pairing A} vs. Equation 4.31.</p>
+<div class="arithmatex">\[\begin{equation}
+    \braketA{12}=\lambda_{1}^{a}\lambda_{2,a}
     \, .
 \end{equation}\]</div>
-<p>For incoming/outgoing, the conventions of <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and <sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup> are different. We follow <sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, as discussed later.</p>
-</li>
+<p>The type of polarization vectors is also opposite to ours, see Equation 5.7.
+The net effect is that the polarization vectors match ours up to <span class="arithmatex">\(\pm\sqrt{2}\)</span>, see Equation 5.8 and \eqref{eq: polarization}.</p>
+<ul>
 <li>
-<p>In <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, but propagates into helicity spinors.</p>
-</li>
-<li>
-<p>In Taylor's lecture notes <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>.
-    The type of helicity spinors is opposite to ours, see Equation 4.31.
-    The type of polarization vectors is also opposite to ours, see Equation 5.7.
-    The net effect is that the polarization vectors match ours up to <span class="arithmatex">\(\sqrt{2}\)</span>, see Equation 5.8 and \eqref{eq: polarization}.</p>
-</li>
-<li>
-<p>In Schwartz's book <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> and Cheung's lecture notes <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the conventions are basically the same as <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> with minor differences.</p>
+<p>In Schwartz's book <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> and Cheung's lecture notes <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the conventions are basically the same as <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup> with minor differences.</p>
 <ul>
 <li>
 <p>In <sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, the contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
 </li>
 <li>
-<p>In <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of <span class="arithmatex">\(\epsilon\)</span> tensors.</p>
+<p>In <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.</p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -890,15 +903,8 @@ The reason for this discrepancy is that this factorization is only determined up
 \end{equation}\]</div>
 <p>which turns out to be exactly the action of the complexified little group.</p>
 <p>While for real momentum, the square and angle spinors are related by complex conjugate. Then the left side of \eqref{eq: helicity spinor} is of <span class="arithmatex">\(\dim_{\RR}=3\)</span>, the right side is of <span class="arithmatex">\(\dim_{\RR}=4\)</span>, and the little group scaling is a phase factor in <span class="arithmatex">\(\sogroup(2,\RR)\)</span>.
-We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for negative energy <span class="arithmatex">\(E&lt;0\)</span> and outgoing <span class="arithmatex">\((+)\)</span> for positive energy <span class="arithmatex">\(E&gt;0\)</span>. Introducing the sign notation</p>
-<div class="arithmatex">\[\begin{equation}
-    \inout{q}=\cases{
-        +1\, , \quad \text{outgoing},
-        \\
-        -1\, , \quad \text{incoming},
-    }
-\end{equation}\]</div>
-<p>we adopt the following conventions:</p>
+We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for negative energy <span class="arithmatex">\(E&lt;0\)</span> and outgoing <span class="arithmatex">\((+)\)</span> for positive energy <span class="arithmatex">\(E&gt;0\)</span>.</p>
+<p>We adopt the following conventions:</p>
 <div class="arithmatex">\[\begin{align}
     \label{eq: incoming}
     \ketS{-q}=\ketS{q}
@@ -923,8 +929,17 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
     =-\inout{q_{1}}\inout{q_{2}}\braketA{q_{1}q_{2}}
     \, .
 \end{equation}\]</div>
+<p>Here the sign notation is</p>
+<div class="arithmatex">\[\begin{equation}
+    \inout{q}=\cases{
+        +1 \quad \text{for outgoing}
+        \\
+        -1 \quad \text{for incoming}
+    }
+    \, .
+\end{equation}\]</div>
 <details class="proof">
-<summary>\eqref{eq: conjugate}, \eqref{eq: incoming}</summary>
+<summary>\eqref{eq: incoming}, \eqref{eq: conjugate}</summary>
 <p>Since the intertwiner <span class="arithmatex">\(\epsilon\)</span> commutes with complex conjugate, we only need to consider <span class="arithmatex">\(\ketS{q}\)</span> and <span class="arithmatex">\(\braA{q}\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
     \ketS{q}^{*}=\alpha(q)\braA{q}
@@ -976,7 +991,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
     \beta(q)=1
     \, .
 \end{equation}\]</div>
-<p>This is the convention in <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. While <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
+<p>This is the convention in <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. While <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
 </details>
 <h2 id="polarization">Polarization</h2>
 <p>Lacia-TimeStamp-2025-05-10-04:25:04</p>
@@ -1131,15 +1146,15 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 </tr>
 <tr>
 <td style="text-align: left;"><code>Fierz-identity.wlt</code></td>
-<td style="text-align: left;">$\eqref{eq Fierz identity} $</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq Fierz identity}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>incoming-outgoing.wlt</code></td>
-<td style="text-align: left;">$\eqref{eq: incoming} $</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: incoming}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>momentum-squared.wlt</code></td>
-<td style="text-align: left;">$\eqref{eq: momentum squared} $</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: momentum squared}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>Pauli-Dirac-matrix.wlt</code></td>
@@ -1151,7 +1166,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 </tr>
 <tr>
 <td style="text-align: left;"><code>spinor-component.wlt</code></td>
-<td style="text-align: left;">$\eqref{eq: bra ket parametrization} $</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: bra ket parametrization}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>spinor-conjugate.wlt</code></td>
@@ -1163,7 +1178,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 </tr>
 <tr>
 <td style="text-align: left;"><code>Weyl-equation.wlt</code></td>
-<td style="text-align: left;">$\eqref{eq: Weyl equation} $</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eqref{eq: Weyl equation}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1172,13 +1187,13 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <hr />
 <ol>
 <li id="fn:1">
-<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Henriette Elvang and Yu-ting Huang. Scattering Amplitudes. 8 2013. <a href="https://arxiv.org/abs/1308.1697">arXiv:1308.1697</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>H. Elvang and Y. Huang. <em>Scattering Amplitudes in Gauge Theory and Gravity</em>. Cambridge University Press, 2015. ISBN 9781316195130. URL: <a href="https://books.google.com/books?id=1AG7BwAAQBAJ">https://books.google.com/books?id=1AG7BwAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
 <p>Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger. Gluon Amplitudes as 2d Conformal Correlators. Phys. Rev. D, 96(8):085006, 2017. <a href="https://arxiv.org/abs/1706.03917">arXiv:1706.03917</a>, <a href="https://doi.org/10.1103/PhysRevD.96.085006">doi:10.1103/PhysRevD.96.085006</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>

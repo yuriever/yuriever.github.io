@@ -5,12 +5,16 @@
 .md-typeset {
     .admonition,
     details {
-        &.theorem,
-        &.definition,
-        &.lemma,
+        &.thm,
+        &.def,
+        &.lem,
+        /*  */
         &.proof,
+        &.idea,
+        /*  */
         &.remark,
         &.fact,
+        /*  */
         &.ex {
             font-size: 0.8rem;
 
@@ -20,12 +24,16 @@
         }
     }
 
-    .theorem,
-    .definition,
-    .lemma,
+    .thm,
+    .def,
+    .lem,
+    /*  */
     .proof,
+    .idea,
+    /*  */
     .remark,
     .fact,
+    /*  */
     .ex {
         > .admonition-title,
         > summary {
