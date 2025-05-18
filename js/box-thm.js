@@ -1,19 +1,15 @@
 function injectCounters() {
-    // Separate counters
-    let sharedCounter = 0; // Counter for theorem, definition, lemma
-    let proofCounter = 0; // Counter for proof
-    let ideaCounter = 0; // Counter for idea
-    let remarkCounter = 0; // Counter for remark
-    let factCounter = 0; // Counter for fact
-    let exampleCounter = 0; // Counter for example
+    // Counter for definition, lemma, theorem, corollary
+    let sharedCounter = 0;
+    // Separate counters for each type
+    let exampleCounter = 0;
+    let proofCounter = 0;
+    let ideaCounter = 0;
+    let remarkCounter = 0;
+    let factCounter = 0;
 
     // Mapping of class to labels and counters
     const classToConfig = {
-        thm: {
-            label: "Theorem",
-            defaultLabel: "Thm",
-            counter: () => ++sharedCounter
-        },
         def: {
             label: "Definition",
             defaultLabel: "Def",
@@ -23,6 +19,22 @@ function injectCounters() {
             label: "Lemma",
             defaultLabel: "Lem",
             counter: () => ++sharedCounter
+        },
+        thm: {
+            label: "Theorem",
+            defaultLabel: "Thm",
+            counter: () => ++sharedCounter
+        },
+        cor: {
+            label: "Corollary",
+            defaultLabel: "Cor",
+            counter: () => ++sharedCounter
+        },
+        //
+        ex: {
+            label: "Example",
+            defaultLabel: "Ex",
+            counter: () => ++exampleCounter
         },
         proof: {
             label: "Proof",
@@ -43,17 +55,12 @@ function injectCounters() {
             label: "Fact",
             defaultLabel: "Fact",
             counter: () => ++factCounter
-        },
-        ex: {
-            label: "Example",
-            defaultLabel: "Ex",
-            counter: () => ++exampleCounter
         }
     };
 
     // Select all relevant elements
     const elements = document.querySelectorAll(
-        ".thm, .def, .lem, .proof, .idea, .remark, .fact, .ex"
+        ".def, .lem, .thm, .cor, .ex, .proof, .idea, .remark, .fact"
     );
 
     elements.forEach((el) => {
