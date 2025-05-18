@@ -49,10 +49,10 @@ References:
 
 表达式的集合 **Expr** 是一个无结构的平凡集合。对表达式的计算 (evaluation) 可实现表达式之间的形变 (deformation)。当然，计算类似于离散动力系统，并无良好的微分结构。
 
-特定对象 $x_0$ 的不同无穷小形变可记为 $x_0 \mapsto x_0 + \d_i x_0,\,  \d_i x_0\in TM_{x_0}$，例如有效作用量的形变为
+特定对象 $x_0$ 的不同无穷小形变可记为 $x_0 \mapsto x_0 + \delta_i x_0,\,  \delta_i x_0\in TM_{x_0}$，例如有效作用量的形变为
 
 \begin{equation}
-    S_0\to S_0+\sum_i\intt{d^d x}\d g_i \op_i
+    S_0\to S_0+\sum_i\intt{d^d x}\delta g_i \op_i
     \, .
 \end{equation}
 
