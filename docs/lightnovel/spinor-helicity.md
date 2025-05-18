@@ -1,18 +1,16 @@
 # Spinor helicity formalism
 
-<span hidden> $
-\newcommand{\dota}{\dot{a}}
+<span hidden> $\newcommand{\dota}{\dot{a}}
 \newcommand{\dotb}{\dot{b}}
 \newcommand{\dotc}{\dot{c}}
 \newcommand{\sigmab}{\bar{\sigma}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
-\newcommand{\inout}[1]{e_{#1}}
-$ </span>
+\newcommand{\inout}[1]{e_{#1}}$ </span>
 
 
 ## Conventions
 
-We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Dreiner:2008tw,@Srednicki:2007qs,@Elvang:2013cua].
+We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Srednicki:2007qs,@Dreiner:2008tw,@Elvang:2015rqa].
 
 It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
 Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.
@@ -38,32 +36,46 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
 ### Comparison
 
-* In [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
+* In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
 
-* In Srednicki's book [@Srednicki:2007qs] and Elvang&Huang's lecture notes [@Elvang:2013cua], the signature is $\signature=1$, propagates into momentum bispinors \eqref{eq: momentum bispinor} and ceases at helicity spinors \eqref{eq: helicity spinor},
+* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs. Equation 2.7
+
+    \begin{equation}
+        P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
+        \, ,
+    \end{equation}
+
+    then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs. Equation 2.16
 
     \begin{equation}
         q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
         \, ,
         \quad
         q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
+        \, ,
+    \end{equation}
+
+
+    * In Srednicki's book [@Srednicki:2007qs], the conventions are basically the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
+
+    * In Pasterski et al.'s paper [@Pasterski:2017ylz], the signature is $\signature=1$, but propagates into helicity spinors.
+
+* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$.
+    The type of helicity spinors is opposite to ours, see \eqref{eq: pairing A} vs. Equation 4.31.
+
+    \begin{equation}
+        \braketA{12}=\lambda_{1}^{a}\lambda_{2,a}
         \, .
     \end{equation}
 
-    For incoming/outgoing, the conventions of [@Srednicki:2007qs] and [@Elvang:2013cua] are different. We follow [@Elvang:2013cua], as discussed later.
-
-* In [@Pasterski:2017ylz], the signature is $\signature=1$, but propagates into helicity spinors.
-
-* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$.
-    The type of helicity spinors is opposite to ours, see Equation 4.31.
     The type of polarization vectors is also opposite to ours, see Equation 5.7.
-    The net effect is that the polarization vectors match ours up to $\sqrt{2}$, see Equation 5.8 and \eqref{eq: polarization}.
+    The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see Equation 5.8 and \eqref{eq: polarization}.
 
-* In Schwartz's book [@Schwartz:2014sze] and Cheung's lecture notes [@Cheung:2017pzi], the conventions are basically the same as [@Taylor:2017sph] with minor differences.
+    * In Schwartz's book [@Schwartz:2014sze] and Cheung's lecture notes [@Cheung:2017pzi], the conventions are basically the same as [@Taylor:2017sph] with minor differences.
 
-    * In [@Schwartz:2014sze], the contraction of spinor indices is opposite to Wess&Bagger's convention, see Section 10.6.2.
+        * In [@Schwartz:2014sze], the contraction of spinor indices is opposite to Wess&Bagger's convention, see Section 10.6.2.
 
-    * In [@Cheung:2017pzi], the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of $\epsilon$ tensors.
+        * In [@Cheung:2017pzi], the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
 
 
 ## Helicity spinor
@@ -294,17 +306,9 @@ The reason for this discrepancy is that this factorization is only determined up
 which turns out to be exactly the action of the complexified little group.
 
 While for real momentum, the square and angle spinors are related by complex conjugate. Then the left side of \eqref{eq: helicity spinor} is of $\dim_{\RR}=3$, the right side is of $\dim_{\RR}=4$, and the little group scaling is a phase factor in $\sogroup(2,\RR)$.
-We also need to distinguish incoming $(-)$ for negative energy $E<0$ and outgoing $(+)$ for positive energy $E>0$. Introducing the sign notation
+We also need to distinguish incoming $(-)$ for negative energy $E<0$ and outgoing $(+)$ for positive energy $E>0$.
 
-\begin{equation}
-    \inout{q}=\cases{
-        +1\, , \quad \text{outgoing},
-        \\
-        -1\, , \quad \text{incoming},
-    }
-\end{equation}
-
-we adopt the following conventions:
+We adopt the following conventions:
 
 \begin{align}
     \label{eq: incoming}
@@ -335,7 +339,19 @@ hence
     \, .
 \end{equation}
 
-??? proof "\eqref{eq: conjugate}, \eqref{eq: incoming}"
+Here the sign notation is
+
+\begin{equation}
+    \inout{q}=\cases{
+        +1 \quad \text{for outgoing}
+        \\
+        -1 \quad \text{for incoming}
+    }
+    \, .
+\end{equation}
+
+
+??? proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
 
     Since the intertwiner $\epsilon$ commutes with complex conjugate, we only need to consider $\ketS{q}$ and $\braA{q}$,
 
@@ -404,7 +420,7 @@ hence
         \, .
     \end{equation}
 
-    This is the convention in [@Elvang:2013cua]. While [@Srednicki:2007qs] chooses $\beta(q)=i$, then one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
+    This is the convention in [@Elvang:2015rqa]. While [@Srednicki:2007qs] chooses $\beta(q)=i$, then one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
 
 
 ## Polarization
@@ -541,10 +557,10 @@ Fierz identity:
 
 Under the little group scaling, the weights are
 
-| Object                          | Weight  |
-| :------------------------------ | :-----: |
+| Object                          | Weight |
+| :------------------------------ | :----: |
 | square bra/ket                  |  $1$   |
-| angle bra/ket                   |   $-1$   |
+| angle bra/ket                   |  $-1$  |
 | wavefunction with helicity $J$  |  $2J$  |
 | amplitude with helicities $J_i$ | $2J_i$ |
 
@@ -555,19 +571,19 @@ Under the little group scaling, the weights are
 
 Directory: `~/TestSource/SpinorHelicity/`
 
-| Test                 | Equation(s)                                                                 |
-| :---------------------------- | :-------------------------------------------------------------------------- |
-| `bispinor-contraction.wlt`  | $\eqref{eq: bispinor contraction}$ |
-| `bispinor.wlt`                | $\eqref{eq: momentum bispinor} \eqref{eq: helicity spinor}$                 |
-| `epsilon-tensor.wlt`          | $\eqref{eq: raising lowering S} \eqref{eq: raising lowering A}$             |
-| `Fierz-identity.wlt`          | $\eqref{eq Fierz identity} $                                                |
-| `incoming-outgoing.wlt`       | $\eqref{eq: incoming} $                                                     |
-| `momentum-squared.wlt`        | $\eqref{eq: momentum squared} $                                             |
-| `Pauli-Dirac-matrix.wlt`      | $\eqref{eq: Pauli matrix} \eqref{eq: Pauli matrix and epsilon tensor}$                                                 |
-| `spinor-component-2-vs-4.wlt` |                                                                             |
-| `spinor-component.wlt`        | $\eqref{eq: bra ket parametrization} $                                      |
-| `spinor-conjugate.wlt`        | $\eqref{eq: conjugate} \eqref{eq: conjugate braket}$                        |
-| `spinor-pairing.wlt`          | $\eqref{eq: pairing S} \eqref{eq: pairing A}$                               |
-| `Weyl-equation.wlt`           | $\eqref{eq: Weyl equation} $                                                |
+| Test                          | Equation(s)                                                            |
+| :---------------------------- | :--------------------------------------------------------------------- |
+| `bispinor-contraction.wlt`    | $\eqref{eq: bispinor contraction}$                                     |
+| `bispinor.wlt`                | $\eqref{eq: momentum bispinor} \eqref{eq: helicity spinor}$            |
+| `epsilon-tensor.wlt`          | $\eqref{eq: raising lowering S} \eqref{eq: raising lowering A}$        |
+| `Fierz-identity.wlt`          | $\eqref{eq Fierz identity}$                                            |
+| `incoming-outgoing.wlt`       | $\eqref{eq: incoming}$                                                 |
+| `momentum-squared.wlt`        | $\eqref{eq: momentum squared}$                                         |
+| `Pauli-Dirac-matrix.wlt`      | $\eqref{eq: Pauli matrix} \eqref{eq: Pauli matrix and epsilon tensor}$ |
+| `spinor-component-2-vs-4.wlt` |                                                                        |
+| `spinor-component.wlt`        | $\eqref{eq: bra ket parametrization}$                                  |
+| `spinor-conjugate.wlt`        | $\eqref{eq: conjugate} \eqref{eq: conjugate braket}$                   |
+| `spinor-pairing.wlt`          | $\eqref{eq: pairing S} \eqref{eq: pairing A}$                          |
+| `Weyl-equation.wlt`           | $\eqref{eq: Weyl equation}$                                            |
 
 ---
