@@ -9,3 +9,23 @@
 mjx-container {
     margin: 0.1rem !important;
 }
+
+/*  */
+/* 方程标号 */
+/*  */
+
+mjx-labels {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: hsl(from var(--sora-eqref-color) H S L / 0.5);
+}
+
+mjx-labels mjx-mrow.MathJax_ref {
+    font-size: 1em;
+}
+
+mjx-mrow.MathJax_ref {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--sora-eqref-color);
+}
