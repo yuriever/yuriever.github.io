@@ -8,11 +8,11 @@
 }
 
 a.footnote-ref:before {
-    content: "";
+    content: "[";
 }
 
 a.footnote-ref:after {
-    content: "";
+    content: "]";
 }
 
 a.footnote-ref {
