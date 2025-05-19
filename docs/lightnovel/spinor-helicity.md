@@ -10,7 +10,7 @@
 
 ## Conventions
 
-We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Srednicki:2007qs,@Dreiner:2008tw,@Elvang:2015rqa].
+We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Dreiner:2008tw,@Elvang:2015rqa,@Srednicki:2007qs].
 
 It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
 Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.
@@ -18,6 +18,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 * The signature is denoted as
 
     \begin{equation}
+        \label{eq: signature}
         \signature=
         \begin{cases}
             +1
@@ -38,44 +39,77 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
 * In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
 
-* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs. Equation 2.7
+* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.
 
     \begin{equation}
+        \tag{2.7 [@Elvang:2015rqa]}
+        \label{eq: test}
         P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
         \, ,
     \end{equation}
 
-    then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs. Equation 2.16
+    then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs.
 
     \begin{equation}
+        \tag{2.16 [@Elvang:2015rqa]}
         q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
         \, ,
         \quad
         q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
-        \, ,
+        \, .
     \end{equation}
 
-
-    * In Srednicki's book [@Srednicki:2007qs], the conventions are basically the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
+    * In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
 
     * In Pasterski et al.'s paper [@Pasterski:2017ylz], the signature is $\signature=1$, but propagates into helicity spinors.
 
 * In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$.
-    The type of helicity spinors is opposite to ours, see \eqref{eq: pairing A} vs. Equation 4.31.
+    The type of helicity spinors is opposite to ours, i.e. angle spinor is undotted, see \eqref{eq: pairing A} vs.
 
     \begin{equation}
-        \braketA{12}=\lambda_{1}^{a}\lambda_{2,a}
+        \tag{4.31 [@Taylor:2017sph]}
+        \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{a} \ketA{q_{2}}_{a}
         \, .
     \end{equation}
 
-    The type of polarization vectors is also opposite to ours, see Equation 5.7.
-    The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see Equation 5.8 and \eqref{eq: polarization}.
+    The type of polarization vectors is also opposite to ours, see \eqref{eq: polarization component} vs.
 
-    * In Schwartz's book [@Schwartz:2014sze] and Cheung's lecture notes [@Cheung:2017pzi], the conventions are basically the same as [@Taylor:2017sph] with minor differences.
+    \begin{equation}
+        \tag{5.7 [@Taylor:2017sph]}
+        \epsilon_{\pm}=\frac{1}{\sqrt{2}}(0,1,\pm i,0)
+        \, .
+    \end{equation}
 
-        * In [@Schwartz:2014sze], the contraction of spinor indices is opposite to Wess&Bagger's convention, see Section 10.6.2.
+    The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see \eqref{eq: polarization} vs.
 
-        * In [@Cheung:2017pzi], the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
+    \begin{equation}
+        \tag{5.8 [@Taylor:2017sph]}
+        \epsilon_{+}^{\mu}(q,q')
+        =
+        \frac{1}{\sqrt{2}}
+        \frac{
+            \braketAS{q'}{\sigma^{\mu}}{q}
+        }{
+            \braketA{q' q}
+        }
+        \, ,
+        \quad
+        \epsilon_{-}^{\mu}(q,q')
+        =
+        -\frac{1}{\sqrt{2}}
+        \frac{
+            \braketSA{q'}{\sigmab^{\mu}}{q}
+        }{
+            \braketS{q' q}
+        }
+        \, ,
+    \end{equation}
+
+    for the reference momentum $q'$.
+
+    * In Schwartz's book [@Schwartz:2014sze], the conventions are almost the same as [@Taylor:2017sph]. The contraction of spinor indices is opposite to Wess&Bagger's convention, see Section 10.6.2.
+
+    * In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
 
 
 ## Helicity spinor
@@ -429,12 +463,90 @@ Lacia-TimeStamp-2025-05-10-04:25:04
 
 \begin{equation}
     \label{eq: polarization}
-    \epsilon^{\mu}_{1}=\frac{\braketSA{1}{\gamma^{\mu}}{2}}{\braketA{12}}
+    \epsilon^{\mu}_{+}(q,q')=\frac{\braketSA{q}{\sigma^{\mu} \lor \gamma^{\mu}}{q'}}{\braketA{qq'}}
     \, ,
     \quad
-    \epsilonb^{\mu}_{1}=\frac{\braketAS{1}{\gamma^{\mu}}{2}}{\braketS{12}}
+    \epsilon^{\mu}_{-,1}(q,q')=\frac{\braketAS{q}{\sigmab^{\mu} \lor \gamma^{\mu}}{q'}}{\braketS{qq'}}
+    \, ,
+\end{equation}
+
+for the reference momentum $q'$.
+
+
+## Useful properties
+
+Lacia-TimeStamp-2025-05-10-04:25:12
+
+For massless momenta, $q$ will be omitted, e.g.
+
+\begin{equation}
+    \braketS{12}\eqq \braketS{q_{1}q_{2}}
     \, .
 \end{equation}
+
+The contracted indices between Pauli/Dirac matrices and momentum spinors will be omitted, e.g.
+
+\begin{equation}
+    \braketSA{1}{P}{2}
+    \eqq
+    \braS{1}^{a}P_{a \dota}\ketA{2}^{\dota}
+    =
+    -\signature P_{\mu}\braS{1}^{a}\sigma^{\mu}_{a\dota}\ketA{2}^{\dota}
+    \, .
+\end{equation}
+
+
+### Property
+
+Mandelstam variable:
+
+\begin{equation}
+    \label{eq: momentum squared}
+    \braketS{12}\braketA{12}
+    =
+    2\signature q_{1} \cdot q_{2}
+    =\signature (q_{1}+q_{2})^{2}
+    \, .
+\end{equation}
+
+Bispinor contraction:
+
+\begin{equation}
+    \label{eq: bispinor contraction}
+    \begin{aligned}
+        &\braketSA{1}{P \lor \sigma^{\mu} \lor \gamma^{\mu}}{2}=\braketAS{2}{P \lor \sigmab^{\mu} \lor \gamma^{\mu}}{1}
+        \, ,
+        \\
+        &\braketAS{1}{2}{3}=\braketA{12}\braketS{23}
+        \, ,
+        \\
+        &\braketSA{1}{2}{3}=\braketS{12}\braketA{23}
+        \, .
+    \end{aligned}
+\end{equation}
+
+Fierz identity:
+
+\begin{equation}
+    \label{eq Fierz identity}
+    \braA{1}\sigma^{\mu},\gamma^{\mu}\ketS{2}
+    \braA{3}\sigma_{\mu},\gamma_{\mu}\ketS{4}
+    =
+    2\signature\braketA{13}\braketS{24}
+    \, .
+\end{equation}
+
+
+### Little group scaling
+
+Under the little group scaling, the weights are
+
+| Object                          | Weight |
+| :------------------------------ | :----: |
+| square bra/ket                  |  $1$   |
+| angle bra/ket                   |  $-1$  |
+| wavefunction with helicity $J$  |  $2J$  |
+| amplitude with helicities $J_i$ | $2J_i$ |
 
 
 ## Component
@@ -489,82 +601,18 @@ The helicity spinors can be parametrized as
 \end{align}
 
 
-## Useful properties
-
-Lacia-TimeStamp-2025-05-10-04:25:12
-
-For massless momenta, $q$ will be omitted, e.g.
+For massless spin-1 particles, the polarization vectors are $\epsilon_{\pm}=\pp_{\pm}\qhat$ where $\pp_{+}=\pp_{z}$ and $\pp_{-}=\pp_{\zb}$, and can be parametrized as
 
 \begin{equation}
-    \braketS{12}\eqq \braketS{q_{1}q_{2}}
-    \, .
-\end{equation}
-
-The contracted indices between Pauli/Dirac matrices and momentum spinors will be omitted, e.g.
-
-\begin{equation}
-    \braketSA{1}{P}{2}
-    \eqq
-    \braS{1}^{a}P_{a \dota}\ketA{2}^{\dota}
-    =
-    -\signature P_{\mu}\braS{1}^{a}\sigma^{\mu}_{a\dota}\ketA{2}^{\dota}
-    \, .
-\end{equation}
-
-
-### Property
-
-Mandelstam variable:
-
-\begin{equation}
-    \label{eq: momentum squared}
-    \braketS{12}\braketA{12}
-    =
-    2\signature q_{1} \cdot q_{2}
-    =\signature (q_{1}+q_{2})^{2}
-    \, .
-\end{equation}
-
-Bispinor contraction:
-
-\begin{equation}
-    \label{eq: bispinor contraction}
+    \label{eq: polarization component}
     \begin{aligned}
-        &\braketSA{1}{P,\sigma^{\mu},\gamma^{\mu}}{2}=\braketAS{2}{P,\sigmab^{\mu},\gamma^{\mu}}{1}
+        &\epsilon_{+}=(\zb,1,-i,-\zb)
         \, ,
         \\
-        &\braketAS{1}{2}{3}=\braketA{12}\braketS{23}
-        \, ,
-        \\
-        &\braketSA{1}{2}{3}=\braketS{12}\braketA{23}
+        &\epsilon_{-}=(z,1,i,-z)
         \, .
     \end{aligned}
 \end{equation}
-
-Fierz identity:
-
-\begin{equation}
-    \label{eq Fierz identity}
-    \braA{1}\sigma^{\mu},\gamma^{\mu}\ketS{2}
-    \braA{3}\sigma_{\mu},\gamma_{\mu}\ketS{4}
-    =
-    2\signature\braketA{13}\braketS{24}
-    \, .
-\end{equation}
-
-
-### Little group scaling
-
-Under the little group scaling, the weights are
-
-| Object                          | Weight |
-| :------------------------------ | :----: |
-| square bra/ket                  |  $1$   |
-| angle bra/ket                   |  $-1$  |
-| wavefunction with helicity $J$  |  $2J$  |
-| amplitude with helicities $J_i$ | $2J_i$ |
-
----
 
 
 ## Verification test
