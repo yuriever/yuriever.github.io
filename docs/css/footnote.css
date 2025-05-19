@@ -12,7 +12,7 @@ a.footnote-ref:after {
 
 a.footnote-ref {
     vertical-align: bottom;
-    color: rgb(118, 118, 255);
+    color: var(--sora-ref-color);
 }
 
 .md-typeset .footnote-ref {
