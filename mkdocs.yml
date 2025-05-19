@@ -33,6 +33,9 @@ theme:
     - search.suggest
     # copy-to-clipboard button in code block
     - content.code.copy
+    #
+    - content.footnote.tooltips
+
   palette:
     - scheme: sora
       toggle:
@@ -73,10 +76,10 @@ extra_css:
   - css/box.css
   - css/box-thm.css
   # blackbox
-  # - css/blackbox.css
+  # - css-test/blackbox.css
   # developer
-  # - css/test.css
-  # - css/test-box-color.css
+  # - css-test/test.css
+  - css-test/test-box-color.css
 
 extra_javascript:
   # random text

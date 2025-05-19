@@ -19,6 +19,8 @@
 
 * [WL cloud](workbench/test/wl-cloud.md)
 
+* [Code](workbench/test/code.md)
+
 <!-- ## Dev
 
 * [Website development](workbench/dev/web-dev.md)

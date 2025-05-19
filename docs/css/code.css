@@ -4,3 +4,11 @@
     border-radius: calc(0.75 * var(--sora-box-border-radius)) !important;
     font-size: 0.6rem;
 }
+
+/*  */
+/* size of copy button */
+/*  */
+
+button.md-clipboard {
+    font-size: small;
+}

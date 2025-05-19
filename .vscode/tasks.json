@@ -63,7 +63,7 @@
             "id": "openSimpleBrowser",
             "type": "command",
             "command": "simpleBrowser.show",
-            "args": "http://localhost:8000/"
+            "args": "http://localhost:8000/lightnovel/spinor-helicity/"
         }
     ]
 }
