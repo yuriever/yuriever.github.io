@@ -7,6 +7,12 @@ window.MathJax = {
             "[tex]/cases"
         ]
     },
+    chtml: {
+        scale: 0.9
+    },
+    svg:{
+        scale: 0.9
+    },
     tex: {
         // packages included
         packages: {
