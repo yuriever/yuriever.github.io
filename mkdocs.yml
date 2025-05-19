@@ -71,8 +71,6 @@ extra_css:
     - css/box-thm.css
     # blackbox
     # - css/blackbox.css
-    # external
-    - https://tikzjax.com/v1/fonts.css
     # developer
     # - css/test.css
     # - css/test-box-color.css
@@ -126,8 +124,6 @@ extra_javascript:
     # - https://polyfill.io/v3/polyfill.min.js?features=es6
     # - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    # tikzjax
-    - https://tikzjax.com/v1/tikzjax.js
 
 plugins:
     - bibtex:
