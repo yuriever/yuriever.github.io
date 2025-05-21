@@ -10,20 +10,7 @@
             "runOptions": {
                 "reevaluateOnRerun": true
             },
-            "presentation": {
-                "reveal": "silent",
-                "focus": false
-            },
-            "problemMatcher": [
-                {
-                    "base": "$tsc",
-                    "background": {
-                        "activeOnStart": true,
-                        "beginsPattern": "Building documentation",
-                        "endsPattern": "Serving"
-                    }
-                }
-            ]
+            "problemMatcher": []
         },
         {
             "label": "MkDocs deploy",
@@ -49,10 +36,6 @@
             "label": "MkDocs serve/preview",
             "dependsOn": ["MkDocs serve", "MkDocs preview"],
             "dependsOrder": "sequence",
-            "presentation": {
-                "reveal": "silent",
-                "focus": false
-            },
             "runOptions": {
                 "runOn": "folderOpen"
             }

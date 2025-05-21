@@ -53,3 +53,12 @@ mjx-assistive-mml {
 ::-webkit-scrollbar {
     display: none;
 }
+
+/*  */
+/* 调整斜体字的格式 */
+/*  */
+
+em {
+    color: #7f8c8d;
+    font-style: normal;
+}

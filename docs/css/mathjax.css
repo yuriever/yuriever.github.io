@@ -24,7 +24,7 @@ mjx-labels {
 /*  */
 
 mjx-mrow.MathJax_ref {
-    font-size: 0.9em;
+    font-size: 0.8rem;
     font-weight: bold;
     color: var(--sora-eqref-color);
 }
