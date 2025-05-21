@@ -2,43 +2,49 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "MkDocs serve",
-            "group": "build",
-            "type": "shell",
-            "command": "uv run mkdocs serve --dev-addr 127.0.0.1:8000 --dirty",
-            "isBackground": true,
-            "runOptions": {
-                "reevaluateOnRerun": true
-            },
-            "problemMatcher": []
-        },
-        {
             "label": "MkDocs deploy",
             "group": "build",
             "type": "shell",
             "command": "uv run mkdocs gh-deploy --force",
             "presentation": {
                 "reveal": "always",
+                "panel": "dedicated",
                 "focus": true
             },
             "problemMatcher": []
         },
         {
-            "label": "MkDocs preview",
-            "command": "${input:openSimpleBrowser}",
+            "label": "MkDocs serve",
+            "group": "build",
+            "type": "shell",
+            "command": "uv run mkdocs serve --dev-addr 127.0.0.1:8000 --dirty",
+            "isBackground": true,
             "presentation": {
-                "reveal": "silent",
+                "reveal": "never",
+                "panel": "new",
                 "focus": false
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
             },
             "problemMatcher": []
         },
         {
-            "label": "MkDocs serve/preview",
-            "dependsOn": ["MkDocs serve", "MkDocs preview"],
-            "dependsOrder": "sequence",
+            "label": "MkDocs preview",
+            "group": "build",
+            "command": "${input:openSimpleBrowser}",
+            "presentation": {
+                "reveal": "never",
+                "panel": "new",
+                "focus": false,
+                "close": true,
+                "clear": true
+            },
             "runOptions": {
-                "runOn": "folderOpen"
-            }
+                "reevaluateOnRerun": true
+            },
+            "problemMatcher": []
         }
     ],
     "inputs": [
