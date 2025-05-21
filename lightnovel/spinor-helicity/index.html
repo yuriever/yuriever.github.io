@@ -70,21 +70,9 @@
     
       <link rel="stylesheet" href="../../css/box-thm.css">
     
-      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNRJZ9DTPF"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNRJZ9DTPF",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNRJZ9DTPF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -532,15 +520,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#component" class="md-nav__link">
-    <span class="md-ellipsis">
-      Component
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#useful-properties" class="md-nav__link">
     <span class="md-ellipsis">
       Useful properties
@@ -570,6 +549,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component
+    </span>
+  </a>
   
 </li>
       
@@ -649,6 +637,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 <li>
 <p>The signature is denoted as</p>
 <div class="arithmatex">\[\begin{equation}
+    \label{eq: signature}
     \signature=
     \begin{cases}
         +1
@@ -669,25 +658,28 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 <h3 id="comparison">Comparison</h3>
 <ul>
 <li>
-<p>In Dreiner et al.'s review <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
+<p>In Dreiner et al.'s review <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
 </li>
 <li>
-<p>In Elvang&amp;Huang's book <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs. Equation 2.7</p>
+<p>In Elvang&amp;Huang's book <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.</p>
 <div class="arithmatex">\[\begin{equation}
+    \tag{2.7 [^2]}
+    \label{eq: test}
     P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
     \, ,
 \end{equation}\]</div>
-<p>then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs. Equation 2.16</p>
+<p>then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs.</p>
 <div class="arithmatex">\[\begin{equation}
+    \tag{2.16 [^2]}
     q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
     \, ,
     \quad
     q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
-    \, ,
+    \, .
 \end{equation}\]</div>
 <ul>
 <li>
-<p>In Srednicki's book <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the conventions are basically the same as <sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, except for incoming/outgoing. For this, we follow <sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup> as discussed later.</p>
+<p>In Srednicki's book <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the conventions are almost the same as <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, except for incoming/outgoing. For this, we follow <sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup> as discussed later.</p>
 </li>
 <li>
 <p>In Pasterski et al.'s paper <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, but propagates into helicity spinors.</p>
@@ -696,24 +688,48 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 </li>
 <li>
 <p>In Taylor's lecture notes <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>.
-    The type of helicity spinors is opposite to ours, see \eqref{eq: pairing A} vs. Equation 4.31.</p>
+    The type of helicity spinors is opposite to ours, i.e. angle spinor is undotted, see \eqref{eq: pairing A} vs.</p>
 <div class="arithmatex">\[\begin{equation}
-    \braketA{12}=\lambda_{1}^{a}\lambda_{2,a}
+    \tag{4.31 [^5]}
+    \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{a} \ketA{q_{2}}_{a}
     \, .
 \end{equation}\]</div>
-<p>The type of polarization vectors is also opposite to ours, see Equation 5.7.
-The net effect is that the polarization vectors match ours up to <span class="arithmatex">\(\pm\sqrt{2}\)</span>, see Equation 5.8 and \eqref{eq: polarization}.</p>
+<p>The type of polarization vectors is also opposite to ours, see \eqref{eq: polarization component} vs.</p>
+<div class="arithmatex">\[\begin{equation}
+    \tag{5.7 [^5]}
+    \epsilon_{\pm}=\frac{1}{\sqrt{2}}(0,1,\pm i,0)
+    \, .
+\end{equation}\]</div>
+<p>The net effect is that the polarization vectors match ours up to <span class="arithmatex">\(\pm\sqrt{2}\)</span>, see \eqref{eq: polarization} vs.</p>
+<div class="arithmatex">\[\begin{equation}
+    \tag{5.8 [^5]}
+    \epsilon_{+}^{\mu}(q,q')
+    =
+    \frac{1}{\sqrt{2}}
+    \frac{
+        \braketAS{q'}{\sigma^{\mu}}{q}
+    }{
+        \braketA{q' q}
+    }
+    \, ,
+    \quad
+    \epsilon_{-}^{\mu}(q,q')
+    =
+    -\frac{1}{\sqrt{2}}
+    \frac{
+        \braketSA{q'}{\sigmab^{\mu}}{q}
+    }{
+        \braketS{q' q}
+    }
+    \, ,
+\end{equation}\]</div>
+<p>for the reference momentum <span class="arithmatex">\(q'\)</span>.</p>
 <ul>
 <li>
-<p>In Schwartz's book <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> and Cheung's lecture notes <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the conventions are basically the same as <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup> with minor differences.</p>
-<ul>
-<li>
-<p>In <sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, the contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
+<p>In Schwartz's book <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, the conventions are almost the same as <sup id="fnref3:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. The contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
 </li>
 <li>
-<p>In <sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.</p>
-</li>
-</ul>
+<p>In Cheung's lecture notes <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, the conventions are almost the same as <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.</p>
 </li>
 </ul>
 </li>
@@ -991,59 +1007,19 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
     \beta(q)=1
     \, .
 \end{equation}\]</div>
-<p>This is the convention in <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. While <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
+<p>This is the convention in <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. While <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
 </details>
 <h2 id="polarization">Polarization</h2>
 <p>Lacia-TimeStamp-2025-05-10-04:25:04</p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: polarization}
-    \epsilon^{\mu}_{1}=\frac{\braketSA{1}{\gamma^{\mu}}{2}}{\braketA{12}}
+    \epsilon^{\mu}_{+}(q,q')=\frac{\braketSA{q}{\sigma^{\mu} \lor \gamma^{\mu}}{q'}}{\braketA{qq'}}
     \, ,
     \quad
-    \epsilonb^{\mu}_{1}=\frac{\braketAS{1}{\gamma^{\mu}}{2}}{\braketS{12}}
-    \, .
-\end{equation}\]</div>
-<h2 id="component">Component</h2>
-<p>The massless momentum can be parametrized by the energy <span class="arithmatex">\(E\)</span> and angular coordinates <span class="arithmatex">\((\theta,\phi)\)</span> as</p>
-<div class="arithmatex">\[\begin{equation}
-    q=E(1,\sin \theta  \cos \phi ,\sin \theta  \sin \phi ,\cos \theta )
-    \, .
-\end{equation}\]</div>
-<p>In the celestial CFT literature, we also use the following parametrization:</p>
-<div class="arithmatex">\[\begin{equation}
-    q=\omega(
-        1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
-    )
-    \, .
-\end{equation}\]</div>
-<p>The two are related by the stereographic projection</p>
-<div class="arithmatex">\[\begin{equation}
-    \omega= E \cos^2\frac{\theta}{2}
-    \, ,
-    \quad
-    z= e^{i \phi} \tan \frac{\theta}{2}
+    \epsilon^{\mu}_{-,1}(q,q')=\frac{\braketAS{q}{\sigmab^{\mu} \lor \gamma^{\mu}}{q'}}{\braketS{qq'}}
     \, ,
 \end{equation}\]</div>
-<p>with the north pole mapped to the origin.</p>
-<p>The helicity spinors can be parametrized as</p>
-<div class="arithmatex">\[\begin{align}
-    \label{eq: bra ket parametrization}
-    &amp;
-    \braS{q}=\sqrt{2\omega}(1,\bar{z})
-    \, ,
-    \\
-    &amp;
-    \ketS{q}=\sqrt{2\omega}(-\bar{z},1)
-    \, ,
-    \\
-    &amp;
-    \braA{q}=\inout{q}\sqrt{2\omega}(-z,1)
-    \, ,
-    \\
-    &amp;
-    \ketA{q}=\inout{q}\sqrt{2\omega}(1,z)
-    \, .
-\end{align}\]</div>
+<p>for the reference momentum <span class="arithmatex">\(q'\)</span>.</p>
 <h2 id="useful-properties">Useful properties</h2>
 <p>Lacia-TimeStamp-2025-05-10-04:25:12</p>
 <p>For massless momenta, <span class="arithmatex">\(q\)</span> will be omitted, e.g.</p>
@@ -1074,7 +1050,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <div class="arithmatex">\[\begin{equation}
     \label{eq: bispinor contraction}
     \begin{aligned}
-        &amp;\braketSA{1}{P,\sigma^{\mu},\gamma^{\mu}}{2}=\braketAS{2}{P,\sigmab^{\mu},\gamma^{\mu}}{1}
+        &amp;\braketSA{1}{P \lor \sigma^{\mu} \lor \gamma^{\mu}}{2}=\braketAS{2}{P \lor \sigmab^{\mu} \lor \gamma^{\mu}}{1}
         \, ,
         \\
         &amp;\braketAS{1}{2}{3}=\braketA{12}\braketS{23}
@@ -1121,7 +1097,58 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="component">Component</h2>
+<p>The massless momentum can be parametrized by the energy <span class="arithmatex">\(E\)</span> and angular coordinates <span class="arithmatex">\((\theta,\phi)\)</span> as</p>
+<div class="arithmatex">\[\begin{equation}
+    q=E(1,\sin \theta  \cos \phi ,\sin \theta  \sin \phi ,\cos \theta )
+    \, .
+\end{equation}\]</div>
+<p>In the celestial CFT literature, we also use the following parametrization:</p>
+<div class="arithmatex">\[\begin{equation}
+    q=\omega(
+        1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
+    )
+    \, .
+\end{equation}\]</div>
+<p>The two are related by the stereographic projection</p>
+<div class="arithmatex">\[\begin{equation}
+    \omega= E \cos^2\frac{\theta}{2}
+    \, ,
+    \quad
+    z= e^{i \phi} \tan \frac{\theta}{2}
+    \, ,
+\end{equation}\]</div>
+<p>with the north pole mapped to the origin.</p>
+<p>The helicity spinors can be parametrized as</p>
+<div class="arithmatex">\[\begin{align}
+    \label{eq: bra ket parametrization}
+    &amp;
+    \braS{q}=\sqrt{2\omega}(1,\bar{z})
+    \, ,
+    \\
+    &amp;
+    \ketS{q}=\sqrt{2\omega}(-\bar{z},1)
+    \, ,
+    \\
+    &amp;
+    \braA{q}=\inout{q}\sqrt{2\omega}(-z,1)
+    \, ,
+    \\
+    &amp;
+    \ketA{q}=\inout{q}\sqrt{2\omega}(1,z)
+    \, .
+\end{align}\]</div>
+<p>For massless spin-1 particles, the polarization vectors are <span class="arithmatex">\(\epsilon_{\pm}=\pp_{\pm}\qhat\)</span> where <span class="arithmatex">\(\pp_{+}=\pp_{z}\)</span> and <span class="arithmatex">\(\pp_{-}=\pp_{\zb}\)</span>, and can be parametrized as</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq: polarization component}
+    \begin{aligned}
+        &amp;\epsilon_{+}=(\zb,1,-i,-\zb)
+        \, ,
+        \\
+        &amp;\epsilon_{-}=(z,1,i,-z)
+        \, .
+    \end{aligned}
+\end{equation}\]</div>
 <h2 id="verification-test">Verification test</h2>
 <p>Directory: <code>~/TestSource/SpinorHelicity/</code></p>
 <table>
@@ -1187,25 +1214,25 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <hr />
 <ol>
 <li id="fn:1">
-<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>H. Elvang and Y. Huang. <em>Scattering Amplitudes in Gauge Theory and Gravity</em>. Cambridge University Press, 2015. ISBN 9781316195130. URL: <a href="https://books.google.com/books?id=1AG7BwAAQBAJ">https://books.google.com/books?id=1AG7BwAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>H. Elvang and Y. Huang. <em>Scattering Amplitudes in Gauge Theory and Gravity</em>. Cambridge University Press, 2015. ISBN 9781316195130. URL: <a href="https://books.google.com/books?id=1AG7BwAAQBAJ">https://books.google.com/books?id=1AG7BwAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
 <p>Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger. Gluon Amplitudes as 2d Conformal Correlators. Phys. Rev. D, 96(8):085006, 2017. <a href="https://arxiv.org/abs/1706.03917">arXiv:1706.03917</a>, <a href="https://doi.org/10.1103/PhysRevD.96.085006">doi:10.1103/PhysRevD.96.085006</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>M.D. Schwartz. <em>Quantum Field Theory and the Standard Model</em>. Cambridge University Press, 2014. ISBN 9781107034730. URL: <a href="https://books.google.com/books?id=HbdEAgAAQBAJ">https://books.google.com/books?id=HbdEAgAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>M.D. Schwartz. <em>Quantum Field Theory and the Standard Model</em>. Cambridge University Press, 2014. ISBN 9781107034730. URL: <a href="https://books.google.com/books?id=HbdEAgAAQBAJ">https://books.google.com/books?id=HbdEAgAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1214,8 +1241,6 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 
 
 <!-- Was this page helpful? -->
-
-  
 
 
 
@@ -1269,8 +1294,6 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
         <script src="../../js/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       
     
   </body>

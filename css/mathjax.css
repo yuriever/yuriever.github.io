@@ -9,3 +9,35 @@
 mjx-container {
     margin: 0.1rem !important;
 }
+
+/*  */
+/* 方程标签 */
+/*  */
+
+mjx-labels {
+    font-weight: bold;
+    color: hsl(from var(--sora-eqref-color) H S L / 0.5);
+}
+
+/*  */
+/* 方程引用 */
+/*  */
+
+mjx-mrow.MathJax_ref {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--sora-eqref-color);
+}
+
+/*  */
+/* 在方程标签或方程引用中，去掉文章引用生成的字符"^" */
+/* 这是一个 ad hoc 解决方案 */
+/*  */
+
+mjx-mrow.MathJax_ref mjx-c.mjx-c5E::before {
+    display: none;
+}
+
+mjx-labels mjx-c.mjx-c5E::before {
+    display: none;
+}
