@@ -10,7 +10,7 @@
 
 ## Conventions
 
-We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Dreiner:2008tw,@Elvang:2015rqa,@Srednicki:2007qs].
+We set up the conventions of spinor helicity formalism in a signature-independent way.
 
 It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
 Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.
@@ -32,12 +32,14 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
 * A generic momentum is denoted as $P$, massive as $p$ and massless as $q$.
 
-* The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast, following Wess&Bagger's convention.
+* The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast,  , e.g.
 
 
 ### Comparison
 
-* In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
+In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
+
+#### $(-,+,+,+)$
 
 * In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.
 
@@ -61,10 +63,9 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
     * In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
 
-    * In Pasterski et al.'s paper [@Pasterski:2017ylz], the signature is $\signature=1$, but propagates into helicity spinors.
+#### $(+,-,-,-)$
 
-* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$.
-    The type of helicity spinors is opposite to ours, i.e. angle spinor is undotted, see \eqref{eq: pairing A} vs.
+* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$. The type of helicity spinors is opposite to ours, i.e. **angle spinor is undotted**, see \eqref{eq: pairing A} vs.
 
     \begin{equation}
         \tag{4.31 [@Taylor:2017sph]}
@@ -111,6 +112,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 
     * In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
 
+    * In Witten's paper [@Witten:2003nn],
 
 ## Helicity spinor
 
