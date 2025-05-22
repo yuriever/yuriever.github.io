@@ -1,6 +1,26 @@
-/* 一级标题颜色与正文颜色一致 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    letter-spacing: 0;
+    font-weight: 400;
+    color: var(--md-default-fg-color--light);
+}
+
 .md-typeset h1 {
-    color: var(--sora-font-color);
+    font-size: 1.6rem;
+}
+
+.md-typeset h2 {
+    font-size: 1.4rem;
+}
+
+.md-typeset h3 {
+    font-size: 1.2rem;
+}
+
+.md-typeset h4 {
+    font-size: 1rem;
 }
 
 /*  */
