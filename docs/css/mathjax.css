@@ -42,3 +42,13 @@ mjx-mrow.MathJax_ref mjx-c.mjx-c5E::before {
 mjx-labels mjx-c.mjx-c5E::before {
     display: none;
 }
+
+/*  */
+/* fix the vertical spacing of mathjax display environment */
+/* https://github.com/mathjax/MathJax/issues/2936 */
+/*  */
+
+mjx-assistive-mml {
+    right: 0;
+    bottom: 0;
+}

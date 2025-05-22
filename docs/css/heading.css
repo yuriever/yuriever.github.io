@@ -1,7 +1,22 @@
+/* 一级标题颜色与正文颜色一致 */
+.md-typeset h1 {
+    color: var(--sora-font-color);
+}
+
 /*  */
-/* 二级标题添加下边框 */
+/* 一级副标题 */
 /*  */
 
+span.subtitle {
+    font-size: 0.8rem;
+}
+
+span.subtitle:before {
+    content: "\a";
+    white-space: pre;
+}
+
+/* 二级标题下边框 */
 .md-typeset h2 {
     padding-bottom: 0.4rem;
     border-bottom: 1px solid rgb(240, 240, 240);
@@ -24,36 +39,27 @@ h3 {
 }
 
 article h2:before {
-    content: counter(h2, upper-roman) " ";
+    content: counter(h2, decimal);
+    margin-right: 0.4rem;
     counter-increment: h2;
 }
 
 article h3:before {
-    content: counter(h3, decimal) " ";
+    content: counter(h2, decimal) "." counter(h3, decimal);
+    margin-right: 0.4rem;
     counter-increment: h3;
 }
 
 article h4:before {
-    content: counter(h4, decimal) " ";
+    content: counter(h2, decimal) "." counter(h3, decimal) "."
+        counter(h4, decimal);
+    margin-right: 0.4rem;
     counter-increment: h4;
 }
 
 h2.nocount:before,
 h3.nocount:before,
 h4.nocount:before {
-    content: "";
+    content: none;
     counter-increment: none;
-}
-
-/*  */
-/* 副标题 */
-/*  */
-
-span.subtitle {
-    font-size: 0.8rem;
-}
-
-span.subtitle:before {
-    content: "\a";
-    white-space: pre;
 }

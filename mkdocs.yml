@@ -61,18 +61,19 @@ validation:
 
 extra_css:
   - css/const.css
-  - css/color.css
+  - css/theme-color.css
   - css/misc.css
   # element
   - css/list.css
   - css/heading.css
   - css/code.css
   - css/table.css
+  - css/image.css
   - css/mathjax.css
   - css/footnote.css
   # box
-  - css/box.css
-  - css/box-thm.css
+  - css/box-format.css
+  - css/box-type.css
   # blackbox
   # - css-test/blackbox.css
   # developer
