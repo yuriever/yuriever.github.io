@@ -1,4 +1,12 @@
 /*  */
+/* 设置 body 元素的文本颜色 */
+/*  */
+
+body {
+    color: var(--sora-font-color);
+}
+
+/*  */
 /* 目录放在右侧 */
 /*  */
 
@@ -58,7 +66,7 @@ mjx-assistive-mml {
 /* 调整斜体字的格式 */
 /*  */
 
-em {
-    color: #7f8c8d;
+.md-typeset em {
+    color: var(--sora-font-em-color);
     font-style: normal;
 }
