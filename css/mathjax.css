@@ -24,9 +24,12 @@ mjx-labels {
 /*  */
 
 mjx-mrow.MathJax_ref {
-    font-size: 0.8rem;
+    font-size: 0.75em;
     font-weight: bold;
+    vertical-align: 0.05em;
     color: var(--sora-eqref-color);
+    /* 抵消 mjx-container 的 margin */
+    margin: -0.1rem;
 }
 
 /*  */
@@ -40,4 +43,14 @@ mjx-mrow.MathJax_ref mjx-c.mjx-c5E::before {
 
 mjx-labels mjx-c.mjx-c5E::before {
     display: none;
+}
+
+/*  */
+/* fix the vertical spacing of mathjax display environment */
+/* https://github.com/mathjax/MathJax/issues/2936 */
+/*  */
+
+mjx-assistive-mml {
+    right: 0;
+    bottom: 0;
 }

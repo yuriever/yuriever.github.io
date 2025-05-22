@@ -18,8 +18,10 @@ a.footnote-ref:after {
 a.footnote-ref {
     vertical-align: bottom;
     color: var(--sora-ref-color);
+    user-select: none;
 }
 
 .md-typeset .footnote-ref {
     font-size: 1em;
+    font-weight: 600;
 }
