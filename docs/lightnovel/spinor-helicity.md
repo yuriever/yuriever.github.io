@@ -15,7 +15,7 @@ We set up the conventions of spinor helicity formalism in a signature-independen
 It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
 Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.
 
-* The signature is denoted as
+* The signature is denoted as [^signaturechanging]
 
     \begin{equation}
         \label{eq: signature}
@@ -28,16 +28,30 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \end{cases}
     \end{equation}
 
-    When altering the signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum $P_{\mu}$, (covariant) derivative $\pp^{\mu}$, $D^{\mu}$ and Pauli matrix $\sigma_{\mu}$, $\sigmab_{\mu}$.
+
+[^signaturechanging]:
+
+    When altering the signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum and Pauli matrix with lower index $P_{\mu}$, $\sigma_{\mu}$, $\sigmab_{\mu}$, and covariant derivative with upper index $\pp^{\mu}$, $D^{\mu}$.
+
+* The convention of spinor contraction follows from Wess&Bagger
+
+    \begin{align}
+        \tag{NW-SE}
+        &\psi\chi=\psi^{a}\chi_{a}
+        \, ,
+        \\
+        \tag{NE-SW}
+        &\psib\chib=\psib_{\dota}\chib^{\dota}
+        \, .
+    \end{align}
 
 * A generic momentum is denoted as $P$, massive as $p$ and massless as $q$.
-
-* The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast,  , e.g.
 
 
 ### Comparison
 
 In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
+
 
 #### $(-,+,+,+)$
 
@@ -62,6 +76,7 @@ In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature
     \end{equation}
 
     * In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
+
 
 #### $(+,-,-,-)$
 
@@ -113,6 +128,7 @@ In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature
     * In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
 
     * In Witten's paper [@Witten:2003nn],
+
 
 ## Helicity spinor
 
