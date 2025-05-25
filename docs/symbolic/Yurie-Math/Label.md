@@ -1,12 +1,10 @@
 # Yurie/Math/Label
 
-* `#!wl label[vars_,labs_,pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
+* `#!wl label[vars_,labs_,head_:Function]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
 
     * `#!wl vars_` and `#!wl labs_` accept `#!wl _|(List|Alternatives)[___]`.
 
-    * The default value of `#!wl pos_` is `#!wl Function`.
-
-    !!! wl "Example"
+    !!! wl "Head"
 
         === "Function"
 
@@ -28,102 +26,116 @@
             Out[] = Sequence[x1,x2,y1,y2]
             ```
 
-        === "Any_"
+        === "Any head"
 
             ``` wl
-            label[x|y,1|2,f]
+            label[x|y,1|2,head]
             ```
 
             ``` wl
-            Out[] = Sequence[f[x,1],f[x,2],f[y,1],f[y,2]]
+            Out[] = Sequence[head[x,1],head[x,2],head[y,1],head[y,2]]
             ```
 
-* `#!wl labelAt[var_,rules__,pos_]` - take the specific value(s) of the labeled object(s).
 
-    !!! wl "Example"
+    !!! wl "Patterned variable"
+
+        ``` wl
+        label[x_|y_,Range[4],Symbol]
+        ```
+
+        ``` wl
+        Out[] = Sequence[x1_,x2_,x3_,x4_,y1_,y2_,y3_,y4_]
+        ```
+
+* `#!wl labelAt[var_,rules__,head_:Function]` - take the specific value(s) of the labeled object(s).
+
+    !!! wl "Head"
 
         === "Function"
 
             ``` wl
-            labelAt[x|y,1|2]
+            labelAt[x,1->a,2|3->b,_->c,Function]
             ```
 
             ``` wl
-            Out[] = Sequence[x[1],y[1],x[2],y[2]]
+            Out[] = ReplaceAll[{x[1]->a,x[2|3]->b,x[_]->c}]
             ```
 
         === "Symbol"
 
             ``` wl
-            label[x|y,1|2,Symbol]
+            (* _->c is not supported. *)
+            labelAt[x,1->a,2|3->b,Symbol]
             ```
 
             ``` wl
-            Out[] = Sequence[x1,y1,x2,y2]
+            Out[] = ReplaceAll[{x1->a,x2->b,x3->b}]
             ```
 
-        === "_"
+        === "Any head"
 
             ``` wl
-            label[x|y,1|2,f]
+            labelAt[x,1->a,2|3->b,_->c,head]
             ```
 
             ``` wl
-            Out[] = Sequence[f[x,1],f[y,1],f[x,2],f[y,2]]
+            Out[] = ReplaceAll[{head[x,1]->a,head[x,2|3]->b,head[x,_]->c}]
             ```
 
-* `#!wl labelConvert[vars__|{vars__},pos1_->pos2_,opts_][expr_]` - convert the labeled object(s) according to the two specified label positions.
+* `#!wl labelConvert[vars_,head1_->head2_,opts_][expr_]` - convert the labeled object(s) according to the two specified label heads.
 
-    !!! wl "Example"
+    * `#!wl vars_` accepts `#!wl _|(List|Alternatives)[___]`.
 
-        ``` wl
-        x1+y2//labelConvert[x,y,Symbol->Function]
-        ```
+    * `#!wl labelJoin|labelSplit` - special cases of `#!wl labelConvert` that convert `#!wl Symbol` to/from other heads.
 
-        ``` wl
-        Out[] = x[1]+y[2]
-        ```
-
-    * `#!wl "LabelType"->All` - control the pattern of labels, and resolves possible conflicts between variable and label.
+    * `#!wl opts_:"LabelType"->All` - control the pattern of labels, and resolve possible conflicts between variable and label.
 
         The supported values are
 
         * `#!wl All`
+        * `#!wl Any_` - user-specified function
         * `#!wl "PositiveInteger"`
         * `#!wl "PositiveIntegerOrSingleLetter"`
         * `#!wl "PositiveIntegerOrGreekLetter"`
         * `#!wl "NaturalNumber"`
         * `#!wl "NaturalNumberOrSingleLetter"`
         * `#!wl "NaturalNumberOrGreekLetter"`
-        * `#!wl _Symbol|_Function|_RightComposition|_Composition` - pure function for string pattern matching
 
-        !!! wl "Example"
+    !!! wl "Basic usage"
 
-            === "Correct"
+        ``` wl
+        x1+y2//labelConvert[x|y,Symbol->Function]
+        ```
 
-                ``` wl
-                zb1//labelConvert[z,zb,Symbol->Function,"LabelType"->"PositiveInteger"]
-                ```
+        ``` wl
+        Out[] = x[1]+y[2]
+        ```
 
-                ``` wl
-                Out[] = zb[1]
-                ```
+    !!! wl "Confliction"
 
-            === "Incorrect"
+        === "Correct"
 
-                ``` wl
-                zb1//labelConvert[z,zb,Symbol->Function]
-                ```
+            ``` wl
+            zb1//labelConvert[z|zb,Symbol->Function,"LabelType"->"PositiveInteger"]
+            ```
 
-                ``` wl
-                Out[] = z[b1]
-                ```
+            ``` wl
+            Out[] = zb[1]
+            ```
 
-    * `#!wl labelJoin|labelSplit` - special cases of `#!wl labelConvert` that convert `#!wl Symbol` to/from other `#!wl Function|Subscript|Superscript`.
+        === "Incorrect"
 
-* `#!wl labelTo*[vars__|{vars__},rules__|{rules__},pos_:Function]` - return a `#!wl ReplaceAll` function according to the rules.
+            ``` wl
+            zb1//labelConvert[z|zb,Symbol->Function]
+            ```
 
-    !!! wl "Example"
+            ``` wl
+            Out[] = z[b1]
+            ```
+
+* `#!wl labelTo*[vars_,rules__,head_:Function]` - return a `#!wl ReplaceAll` function according to the rules.
+
+    !!! wl "Basic usage"
 
         ``` wl
         labelToDiff[x,y,1->2,Function]
