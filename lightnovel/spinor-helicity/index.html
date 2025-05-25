@@ -661,7 +661,7 @@
 Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.</p>
 <ul>
 <li>
-<p>The signature is denoted as</p>
+<p>The signature is denoted as <sup id="fnref:signaturechanging"><a class="footnote-ref" href="#fn:signaturechanging">1</a></sup></p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: signature}
     \signature=
@@ -672,21 +672,29 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \, , \quad (+,-,-,-)\, .\\
     \end{cases}
 \end{equation}\]</div>
-<p>When altering the signature, we need to flip the signs of <span class="arithmatex">\(g_{\mu\nu}\)</span>, <span class="arithmatex">\(g^{\mu\nu}\)</span> and the derived objects, e.g. momentum <span class="arithmatex">\(P_{\mu}\)</span>, (covariant) derivative <span class="arithmatex">\(\pp^{\mu}\)</span>, <span class="arithmatex">\(D^{\mu}\)</span> and Pauli matrix <span class="arithmatex">\(\sigma_{\mu}\)</span>, <span class="arithmatex">\(\sigmab_{\mu}\)</span>.</p>
+</li>
+<li>
+<p>The convention of spinor contraction follows from Wess&amp;Bagger</p>
+<div class="arithmatex">\[\begin{align}
+    \tag{NW-SE}
+    &amp;\psi\chi=\psi^{a}\chi_{a}
+    \, ,
+    \\
+    \tag{NE-SW}
+    &amp;\psib\chib=\psib_{\dota}\chib^{\dota}
+    \, .
+\end{align}\]</div>
 </li>
 <li>
 <p>A generic momentum is denoted as <span class="arithmatex">\(P\)</span>, massive as <span class="arithmatex">\(p\)</span> and massless as <span class="arithmatex">\(q\)</span>.</p>
 </li>
-<li>
-<p>The contraction of undotted indices is from northwest to southeast, and for dotted indices it's from southwest to northeast,  , e.g.</p>
-</li>
 </ul>
 <h3 id="comparison">Comparison</h3>
-<p>In Dreiner et al.'s review <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
+<p>In Dreiner et al.'s review <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup>, the authors provide both signature versions and a detailed discussion on convention changing.</p>
 <h4 id="-"><span class="arithmatex">\((-,+,+,+)\)</span></h4>
 <ul>
 <li>
-<p>In Elvang&amp;Huang's book <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.</p>
+<p>In Elvang&amp;Huang's book <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">3</a></sup>, the signature is <span class="arithmatex">\(\signature=1\)</span>, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.</p>
 <div class="arithmatex">\[\begin{equation}
     \tag{2.7 [^2]}
     \label{eq: test}
@@ -703,14 +711,14 @@ Therefore, we align our spinor conventions to the particle physics literature, e
     \, .
 \end{equation}\]</div>
 <ul>
-<li>In Srednicki's book <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the conventions are almost the same as <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, except for incoming/outgoing. For this, we follow <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> as discussed later.</li>
+<li>In Srednicki's book <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">4</a></sup>, the conventions are almost the same as <sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">3</a></sup>, except for incoming/outgoing. For this, we follow <sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">3</a></sup> as discussed later.</li>
 </ul>
 </li>
 </ul>
 <h4 id="-_1"><span class="arithmatex">\((+,-,-,-)\)</span></h4>
 <ul>
 <li>
-<p>In Taylor's lecture notes <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>. The type of helicity spinors is opposite to ours, i.e. <strong>angle spinor is undotted</strong>, see \eqref{eq: pairing A} vs.</p>
+<p>In Taylor's lecture notes <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup>, the signature is <span class="arithmatex">\(\signature=-1\)</span>. The type of helicity spinors is opposite to ours, i.e. <strong>angle spinor is undotted</strong>, see \eqref{eq: pairing A} vs.</p>
 <div class="arithmatex">\[\begin{equation}
     \tag{4.31 [^4]}
     \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{a} \ketA{q_{2}}_{a}
@@ -748,13 +756,13 @@ Therefore, we align our spinor conventions to the particle physics literature, e
 <p>for the reference momentum <span class="arithmatex">\(q'\)</span>.</p>
 <ul>
 <li>
-<p>In Schwartz's book <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, the conventions are almost the same as <sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
+<p>In Schwartz's book <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup>, the conventions are almost the same as <sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">5</a></sup>. The contraction of spinor indices is opposite to Wess&amp;Bagger's convention, see Section 10.6.2.</p>
 </li>
 <li>
-<p>In Cheung's lecture notes <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, the conventions are almost the same as <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.</p>
+<p>In Cheung's lecture notes <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>, the conventions are almost the same as <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">5</a></sup>. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.</p>
 </li>
 <li>
-<p>In Witten's paper <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>,</p>
+<p>In Witten's paper <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">8</a></sup>,</p>
 </li>
 </ul>
 </li>
@@ -1032,7 +1040,7 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
     \beta(q)=1
     \, .
 \end{equation}\]</div>
-<p>This is the convention in <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. While <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
+<p>This is the convention in <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>. While <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup> chooses <span class="arithmatex">\(\beta(q)=i\)</span>, then one should be careful that <span class="arithmatex">\(\ketS{-(-q)}=-\ketS{q}\)</span>, i.e., <span class="arithmatex">\(\ketS{q}\)</span> is double-valued in the complex plane of <span class="arithmatex">\(E\)</span>.</p>
 </details>
 <h2 id="polarization">Polarization</h2>
 <p>Lacia-TimeStamp-2025-05-10-04:25:04</p>
@@ -1238,26 +1246,29 @@ We also need to distinguish incoming <span class="arithmatex">\((-)\)</span> for
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:signaturechanging">
+<p>When altering the signature, we need to flip the signs of <span class="arithmatex">\(g_{\mu\nu}\)</span>, <span class="arithmatex">\(g^{\mu\nu}\)</span> and the derived objects, e.g. momentum and Pauli matrix with lower index <span class="arithmatex">\(P_{\mu}\)</span>, <span class="arithmatex">\(\sigma_{\mu}\)</span>, <span class="arithmatex">\(\sigmab_{\mu}\)</span>, and covariant derivative with upper index <span class="arithmatex">\(\pp^{\mu}\)</span>, <span class="arithmatex">\(D^{\mu}\)</span>.&#160;<a class="footnote-backref" href="#fnref:signaturechanging" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:1">
-<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Herbi K. Dreiner, Howard E. Haber, and Stephen P. Martin. Two-component spinor techniques and Feynman rules for quantum field theory and supersymmetry. Phys. Rept., 494:1–196, 2010. <a href="https://arxiv.org/abs/0812.1594">arXiv:0812.1594</a>, <a href="https://doi.org/10.1016/j.physrep.2010.05.002">doi:10.1016/j.physrep.2010.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>H. Elvang and Y. Huang. <em>Scattering Amplitudes in Gauge Theory and Gravity</em>. Cambridge University Press, 2015. ISBN 9781316195130. URL: <a href="https://books.google.com/books?id=1AG7BwAAQBAJ">https://books.google.com/books?id=1AG7BwAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>H. Elvang and Y. Huang. <em>Scattering Amplitudes in Gauge Theory and Gravity</em>. Cambridge University Press, 2015. ISBN 9781316195130. URL: <a href="https://books.google.com/books?id=1AG7BwAAQBAJ">https://books.google.com/books?id=1AG7BwAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Mark Srednicki. <em>Quantum Field Theory</em>. Cambridge University Press, 2007. ISBN 9781139462761. URL: <a href="https://books.google.com/books?id=5OepxIG42B4C">https://books.google.com/books?id=5OepxIG42B4C</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Tomasz R. Taylor. A Course in Amplitudes. Phys. Rept., 691:1–37, 2017. <a href="https://arxiv.org/abs/1703.05670">arXiv:1703.05670</a>, <a href="https://doi.org/10.1016/j.physrep.2017.05.002">doi:10.1016/j.physrep.2017.05.002</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>M.D. Schwartz. <em>Quantum Field Theory and the Standard Model</em>. Cambridge University Press, 2014. ISBN 9781107034730. URL: <a href="https://books.google.com/books?id=HbdEAgAAQBAJ">https://books.google.com/books?id=HbdEAgAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>M.D. Schwartz. <em>Quantum Field Theory and the Standard Model</em>. Cambridge University Press, 2014. ISBN 9781107034730. URL: <a href="https://books.google.com/books?id=HbdEAgAAQBAJ">https://books.google.com/books?id=HbdEAgAAQBAJ</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Clifford Cheung. TASI lectures on scattering amplitudes. pages 571–623, 2018. <a href="https://arxiv.org/abs/1708.03872">arXiv:1708.03872</a>, <a href="https://doi.org/10.1142/9789813233348_0008">doi:10.1142/9789813233348_0008</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>Edward Witten. Perturbative gauge theory as a string theory in twistor space. Commun. Math. Phys., 252:189–258, 2004. <a href="https://arxiv.org/abs/hep-th/0312171">arXiv:hep-th/0312171</a>, <a href="https://doi.org/10.1007/s00220-004-1187-3">doi:10.1007/s00220-004-1187-3</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Edward Witten. Perturbative gauge theory as a string theory in twistor space. Commun. Math. Phys., 252:189–258, 2004. <a href="https://arxiv.org/abs/hep-th/0312171">arXiv:hep-th/0312171</a>, <a href="https://doi.org/10.1007/s00220-004-1187-3">doi:10.1007/s00220-004-1187-3</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
