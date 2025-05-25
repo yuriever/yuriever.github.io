@@ -108,7 +108,7 @@
         ```
 
         ``` wl
-        Out[] = ReplaceAll[{x[1]->a,x[2|3]->b,x[_]->c}]
+        Out[] = ReplaceAll[{x[1]->a,x[2]->b,x[3]->b,x[_]->c}]
         ```
 
     === "Symbol"
@@ -129,7 +129,7 @@
         ```
 
         ``` wl
-        Out[] = ReplaceAll[{head[x,1]->a,head[x,2|3]->b,head[x,_]->c}]
+        Out[] = ReplaceAll[{head[x,1]->a,head[x,2]->b,head[x,3]->b,head[x,_]->c}]
         ```
 
 
