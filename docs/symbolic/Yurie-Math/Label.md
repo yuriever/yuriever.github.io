@@ -1,17 +1,21 @@
 # Yurie/Math/Label
 
-* `#!wl label[var_|(List|Alternatives)[vars__],label_,pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
+* `#!wl label[vars_,labs_,pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
+
+    * `#!wl vars_` and `#!wl labs_` accept `#!wl _|(List|Alternatives)[___]`.
+
+    * The default value of `#!wl pos_` is `#!wl Function`.
 
     !!! wl "Example"
 
         === "Function"
 
             ``` wl
-            label[x|y,1|2]
+            label[x|y,1|2,Function]
             ```
 
             ``` wl
-            Out[] = Sequence[x[1],y[1],x[2],y[2]]
+            Out[] = Sequence[x[1],x[2],y[1],y[2]]
             ```
 
         === "Symbol"
@@ -21,17 +25,17 @@
             ```
 
             ``` wl
-            Out[] = Sequence[x1,y1,x2,y2]
+            Out[] = Sequence[x1,x2,y1,y2]
             ```
 
-        === "_"
+        === "Any_"
 
             ``` wl
             label[x|y,1|2,f]
             ```
 
             ``` wl
-            Out[] = Sequence[f[x,1],f[y,1],f[x,2],f[y,2]]
+            Out[] = Sequence[f[x,1],f[x,2],f[y,1],f[y,2]]
             ```
 
 * `#!wl labelAt[var_,rules__,pos_]` - take the specific value(s) of the labeled object(s).
