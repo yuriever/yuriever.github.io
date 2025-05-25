@@ -1,30 +1,72 @@
 # Yurie/Math/Label
 
-* `#!wl label[var_|{vars__},label_|{labels__},pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
-
-    * `#!wl pos:Symbol|Function|Subscript|Superscript` - control the position of label.
+* `#!wl label[var_|(List|Alternatives)[vars__],label_,pos_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
 
     !!! wl "Example"
 
-        ``` wl
-        label[{x,y},{1,2}]
-        ```
+        === "Function"
 
-        ``` wl
-        Out[] = Sequence[x[1],y[1],x[2],y[2]]
-        ```
+            ``` wl
+            label[x|y,1|2]
+            ```
+
+            ``` wl
+            Out[] = Sequence[x[1],y[1],x[2],y[2]]
+            ```
+
+        === "Symbol"
+
+            ``` wl
+            label[x|y,1|2,Symbol]
+            ```
+
+            ``` wl
+            Out[] = Sequence[x1,y1,x2,y2]
+            ```
+
+        === "_"
+
+            ``` wl
+            label[x|y,1|2,f]
+            ```
+
+            ``` wl
+            Out[] = Sequence[f[x,1],f[y,1],f[x,2],f[y,2]]
+            ```
 
 * `#!wl labelAt[var_,rules__,pos_]` - take the specific value(s) of the labeled object(s).
 
     !!! wl "Example"
 
-        ``` wl
-        labelAt[x,{1,2}->1,_->0]
-        ```
+        === "Function"
 
-        ``` wl
-        Out[] = ReplaceAll[{x[1]->1,x[2]->1,x[_]->0}]
-        ```
+            ``` wl
+            labelAt[x|y,1|2]
+            ```
+
+            ``` wl
+            Out[] = Sequence[x[1],y[1],x[2],y[2]]
+            ```
+
+        === "Symbol"
+
+            ``` wl
+            label[x|y,1|2,Symbol]
+            ```
+
+            ``` wl
+            Out[] = Sequence[x1,y1,x2,y2]
+            ```
+
+        === "_"
+
+            ``` wl
+            label[x|y,1|2,f]
+            ```
+
+            ``` wl
+            Out[] = Sequence[f[x,1],f[y,1],f[x,2],f[y,2]]
+            ```
 
 * `#!wl labelConvert[vars__|{vars__},pos1_->pos2_,opts_][expr_]` - convert the labeled object(s) according to the two specified label positions.
 
