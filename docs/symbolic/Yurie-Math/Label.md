@@ -9,7 +9,7 @@
 
     * `#!wl lab_` accepts `#!wl _|(List|Alternatives)[__]`.
 
-    * `#!wl head_` - the heads `#!wl Function` and `#!wl Symbol` are handled separately. The default is `#!wl Function`.
+    * `#!wl head_` accepts `#!wl _Symbol`. The heads `#!wl Function` and `#!wl Symbol` are handled separately, and the default is `#!wl Function`.
 
         | Head            | Example              |
         | :-------------- | :------------------- |
@@ -170,9 +170,9 @@
 !!! wl "`#!wl labelTo*` Basic usage"
 
     ``` wl
-    labelToDiff[x,y,1->2,Function]
+    labelToDiff[x,1->2,3->4]
     ```
 
     ``` wl
-    Out[] = ReplaceAll[{x[1]->x[2]+x["12"],y[1]->y[2]+y["12"]}]
+    Out[] = ReplaceAll[{x[1]->x[2]+x["12"],x[3]->x[4]+x["34"]}]
     ```
