@@ -10,14 +10,15 @@
 
 ## Conventions
 
-We set up the conventions of spinor helicity formalism in a signature-independent way.
+We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Taylor:2017sph].
 
 It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
-Therefore, we align our spinor conventions to the particle physics literature, ensuring they remain independent of the metric signature.
+Therefore, we align our spinor conventions to the particle physics literature, ensuring that they remain independent of the metric signature.
 
-* The signature is denoted as [^signaturechanging]
+* The signature is denoted as
 
     \begin{equation}
+        \tag{Signature}
         \label{eq: signature}
         \signature=
         \begin{cases}
@@ -28,10 +29,7 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \end{cases}
     \end{equation}
 
-
-[^signaturechanging]:
-
-    When altering the signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum and Pauli matrix with lower index $P_{\mu}$, $\sigma_{\mu}$, $\sigmab_{\mu}$, and covariant derivative with upper index $\pp^{\mu}$, $D^{\mu}$.
+    To alter the signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum and subscripted Pauli matrices $P_{\mu}$, $\sigma_{\mu}$, $\sigmab_{\mu}$, and superscripted derivatives $\pp^{\mu}$, $D^{\mu}$.
 
 * The convention of spinor contraction follows from Wess&Bagger
 
@@ -45,89 +43,105 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \, .
     \end{align}
 
+* The normalization of polarization vectors is
+
+    \begin{equation}
+        \tag{Polarization}
+        \epsilon_{+}\cdot\epsilon_{-}=2
+        \, ,
+    \end{equation}
+
+    to avoid the annoying factor $\sqrt{2}$.
+
 * A generic momentum is denoted as $P$, massive as $p$ and massless as $q$.
 
 
 ### Comparison
 
-In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
-
-
-#### $(-,+,+,+)$
-
-* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$, propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.
-
-    \begin{equation}
-        \tag{2.7 [@Elvang:2015rqa]}
-        \label{eq: test}
-        P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
-        \, ,
-    \end{equation}
-
-    then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs.
-
-    \begin{equation}
-        \tag{2.16 [@Elvang:2015rqa]}
-        q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
-        \, ,
-        \quad
-        q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
-        \, .
-    \end{equation}
-
-    * In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing. For this, we follow [@Elvang:2015rqa] as discussed later.
+* In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
 
 
 #### $(+,-,-,-)$
 
-* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$. The type of helicity spinors is opposite to ours, i.e. **angle spinor is undotted**, see \eqref{eq: pairing A} vs.
+* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$. This is our baseline for comparison.
 
-    \begin{equation}
-        \tag{4.31 [@Taylor:2017sph]}
-        \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{a} \ketA{q_{2}}_{a}
-        \, .
-    \end{equation}
+    * **normalization of polarization**
 
-    The type of polarization vectors is also opposite to ours, see \eqref{eq: polarization component} vs.
+* In Schwartz's book [@Schwartz:2014sze], the conventions are almost the same as [@Taylor:2017sph]. The contraction of spinor indices is opposite to Wess&Bagger, see Section 10.6.2.
 
-    \begin{equation}
-        \tag{5.7 [@Taylor:2017sph]}
-        \epsilon_{\pm}=\frac{1}{\sqrt{2}}(0,1,\pm i,0)
-        \, .
-    \end{equation}
+* In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
 
-    The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see \eqref{eq: polarization} vs.
+* In Witten's paper [@Witten:2003nn], **TODO**
 
-    \begin{equation}
-        \tag{5.8 [@Taylor:2017sph]}
-        \epsilon_{+}^{\mu}(q,q')
-        =
-        \frac{1}{\sqrt{2}}
-        \frac{
-            \braketAS{q'}{\sigma^{\mu}}{q}
-        }{
-            \braketA{q' q}
-        }
-        \, ,
-        \quad
-        \epsilon_{-}^{\mu}(q,q')
-        =
-        -\frac{1}{\sqrt{2}}
-        \frac{
-            \braketSA{q'}{\sigmab^{\mu}}{q}
-        }{
-            \braketS{q' q}
-        }
-        \, ,
-    \end{equation}
 
-    for the reference momentum $q'$.
+#### $(-,+,+,+)$
 
-    * In Schwartz's book [@Schwartz:2014sze], the conventions are almost the same as [@Taylor:2017sph]. The contraction of spinor indices is opposite to Wess&Bagger's convention, see Section 10.6.2.
+* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$.
 
-    * In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
+    * The signature propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.
 
-    * In Witten's paper [@Witten:2003nn],
+        \begin{equation}
+            \tag{2.7 in [@Elvang:2015rqa]}
+            \label{eq: test}
+            P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
+            \, ,
+        \end{equation}
+
+        then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs.
+
+        \begin{equation}
+            \tag{2.16 in [@Elvang:2015rqa]}
+            q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
+            \, ,
+            \quad
+            q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
+            \, .
+        \end{equation}
+
+    * The type of helicity spinors is opposite to ours, i.e. **angle spinor is undotted**, see \eqref{eq: pairing A} vs.
+
+        \begin{equation}
+            \tag{4.31 in [@Taylor:2017sph]}
+            \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{\dota} \ketA{q_{2}}_{\dota}
+            \, .
+        \end{equation}
+
+    * The type of polarization vectors is also opposite to ours, see \eqref{eq: polarization component} vs.
+
+        \begin{equation}
+            \tag{5.7 [@Taylor:2017sph]}
+            \epsilon_{\pm}=\frac{1}{\sqrt{2}}(0,1,\pm i,0)
+            \, .
+        \end{equation}
+
+    * The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see \eqref{eq: polarization} vs.
+
+        \begin{equation}
+            \tag{5.8 [@Taylor:2017sph]}
+            \epsilon_{+}^{\mu}(q,q')
+            =
+            \frac{1}{\sqrt{2}}
+            \frac{
+                \braketAS{q'}{\sigma^{\mu}}{q}
+            }{
+                \braketA{q' q}
+            }
+            \, ,
+            \quad
+            \epsilon_{-}^{\mu}(q,q')
+            =
+            -\frac{1}{\sqrt{2}}
+            \frac{
+                \braketSA{q'}{\sigmab^{\mu}}{q}
+            }{
+                \braketS{q' q}
+            }
+            \, ,
+        \end{equation}
+
+        for the reference momentum $q'$.
+
+* In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing.
 
 
 ## Helicity spinor
@@ -135,23 +149,23 @@ In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature
 Helicity spinors are essentially bosonic Weyl spinors that satisfy the massless Weyl equation.
 
 
-### Square spinor
+### Angle spinor
 
-The square ket $\ketS{q}_{a}$, as a left-handed (bosonic) Weyl spinor associated to the complex massless momentum $q\in\CC^{4}$, lies in the fundamental representation $(\half,0)$ of $\slgroup(2,\CC)$, and the square bra $\braS{q}^{a}$ lies in its dual $(\half,0)^{\dual}$:
+The angle ket $\ketA {q}_{a}$, as a left-handed Weyl spinor associated to the complex massless momentum $q\in\CC^{4}$, lies in the fundamental representation $(\half,0)$ of $\slgroup(2,\CC)$, and the angle bra $\braA{q}^{a}$ lies in its dual $(\half,0)^{\dual}$:
 
 \begin{equation}
-    \ketS{q}_{a} \to M^{b}_{a} \ketS{q}_{b}
+    \ketA{q}_{a} \to M^{b}_{a} \ketA{q}_{b}
     \, ,
     \quad
-    \braS{q}^{a} \to (M^{-\tp})^{a}_{b} \braS{q}^{b}
+    \braA{q}^{a} \to (M^{-\tp})^{a}_{b} \braA{q}^{b}
     \, ,
 \end{equation}
 
-then the square braket is the natural pairing
+then the angle braket is the natural pairing
 
 \begin{equation}
-    \label{eq: pairing S}
-    \braketS{q_{1}q_{2}}\eqq \braS{q_{1}}^{a} \ketS{q_{2}}_{a}
+    \label{eq: pairing A}
+    \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{a} \ketA{q_{2}}_{a}
     \, .
 \end{equation}
 
@@ -171,38 +185,38 @@ Due to the intertwiner and its inverse
 the two representations are isomorphic by
 
 \begin{equation}
-    \label{eq: raising lowering S}
-    \braS{q}^{a}=\epsilon^{ab}\ketS{q}_{b}
+    \label{eq: raising lowering A}
+    \braA{q}^{a}=\epsilon^{ab}\ketA{q}_{b}
     \, ,
     \quad
-    \ketS{q}_{a}=\epsilon_{ab}\braS{q}^{b}
+    \ketA{q}_{a}=\epsilon_{ab}\braA{q}^{b}
     \, .
 \end{equation}
 
-Equivalently, $\epsilon$ is an invariant bilinear form on $(\half,0)$ or on its dual, and then $\braketS{q_{1}q_{2}}$ is antisymmetric.
+Equivalently, $\epsilon$ is an invariant bilinear form on $(\half,0)$ or on its dual, and then $\braketA{q_{1}q_{2}}$ is antisymmetric.
 
 
-### Angle spinor
+### Square spinor
 
-Repeating the previous discussion onto the complex conjugate representation $(0,\half)$ and its dual $(0,\half)^{\dual}$, the angle bra and ket satisfy
+Repeating the previous discussion onto the complex conjugate representation $(0,\half)$ and its dual $(0,\half)^{\dual}$, the square bra and ket satisfy
 
 \begin{equation}
-    \braA{q}_{\dota} \to (M^{*})_{\dota}^{\dotb}\braA{q}_{\dotb}
+    \braS{q}_{\dota} \to (M^{*})_{\dota}^{\dotb}\braS{q}_{\dotb}
     \, ,
     \quad
-    \ketA{q}^{\dota} \to (M^{-\dagger})^{\dota}_{\dotb}\ketA{q}^{\dotb}
+    \ketS{q}^{\dota} \to (M^{-\dagger})^{\dota}_{\dotb}\ketS{q}^{\dotb}
     \, ,
 \end{equation}
 
 and the pairing is
 
 \begin{equation}
-    \label{eq: pairing A}
-    \braketA{q_{1}q_{2}} \eqq \braA{q_{1}}_{\dota}\ketA{q_{2}}^{\dota}
+    \label{eq: pairing S}
+    \braketS{q_{1}q_{2}} \eqq \braS{q_{1}}_{\dota}\ketS{q_{2}}^{\dota}
     \, .
 \end{equation}
 
-The normalization of the intertwiner is chosen to commute with complex conjugation:
+The intertwiner is chosen to commute with complex conjugation:
 
 \begin{equation}
     \epsilon^{\dota \dotb}=-\epsilon_{\dota \dotb}=
@@ -218,11 +232,11 @@ The normalization of the intertwiner is chosen to commute with complex conjugati
 then the indices are lowered/raised as
 
 \begin{equation}
-    \label{eq: raising lowering A}
-    \ketA{q}^{\dota}=\epsilon^{\dota \dotb}\braA{q}_{\dotb}
+    \label{eq: raising lowering S}
+    \ketS{q}^{\dota}=\epsilon^{\dota \dotb}\braS{q}_{\dotb}
     \, ,
     \quad
-    \braA{q}_{\dota}=\epsilon_{\dota \dotb}\ketA{q}^{\dotb}
+    \braS{q}_{\dota}=\epsilon_{\dota \dotb}\ketS{q}^{\dotb}
     \, .
 \end{equation}
 
@@ -316,10 +330,10 @@ Particularly, when the momentum is massless $q^{2}=0$, the bispinors factorize i
 
 \begin{equation}
     \label{eq: helicity spinor}
-    q_{a\dota}=\ketS{q}_{a}\braA{q}_{\dota}
+    q_{a\dota}=\ketA{q}_{a}\braS{q}_{\dota}
     \, ,
     \quad
-    q^{\dota a}=\ketA{q}^{\dota}\braS{q}^{a}
+    q^{\dota a}=\ketS{q}^{\dota}\braA{q}^{a}
     \, ,
 \end{equation}
 
@@ -327,16 +341,16 @@ and then the square and angle spinors satisfy the massless Weyl equations
 
 \begin{equation}
     \label{eq: Weyl equation}
-    q^{\dota a}\ketS{q}_{a}=0
+    q^{\dota a}\ketA{q}_{a}=0
     \, ,
     \quad
-    \braA{q}_{\dota} q^{\dota a}=0
+    \braS{q}_{\dota} q^{\dota a}=0
     \, ,
     \quad
-    q_{a\dota}\ketA{q}^{\dota}=0
+    q_{a\dota}\ketS{q}^{\dota}=0
     \, ,
     \quad
-    \braS{q}^{a} q_{a\dota}=0
+    \braA{q}^{a} q_{a\dota}=0
     \, .
 \end{equation}
 
