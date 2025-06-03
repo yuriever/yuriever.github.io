@@ -21,6 +21,3 @@ ReplaceAll[Hold[1+1],Hold[x_]:>Hold[x,x]]
 ReplaceAll[Hold[f[x]],f[x_]:>Identity[x]]
 
 ReplaceAll[Hold[f[x]],f[x_]:>RuleCondition@Identity[x]]
-
-
-

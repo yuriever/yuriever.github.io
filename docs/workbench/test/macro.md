@@ -233,10 +233,9 @@ ${}$
 &\normalOrder{*}\\
 &\halfdim\\
 &\signature\\
+&\polar\\
 &\shadow\\
 &\lightray\\
-&\CO\\
-&\COK\\
 &\CB\\
 &\CBC\\
 &\CPW\\
