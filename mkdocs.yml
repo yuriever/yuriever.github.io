@@ -16,8 +16,8 @@ theme:
   name: material
   custom_dir: custom
   font:
-    text: Sans
-    code: Roboto Mono
+    text: Source Sans Pro
+    code: Source Code Pro Semibold
   features:
     # navigation.instant is conflicted with mathjax
     # - navigation.instant
@@ -97,22 +97,24 @@ markdown_extensions:
   # PyMdown
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.inlinehilite
   - pymdownx.highlight:
       anchor_linenums: false
       use_pygments: true
       auto_title: false
       _enabled: true
-  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: false
+  - pymdownx.mark
+  - pymdownx.tilde
 
 plugins:
   - bibtex:
