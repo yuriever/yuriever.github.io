@@ -22,6 +22,7 @@ a.footnote-ref {
 }
 
 .md-typeset .footnote-ref {
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: bold;
+    vertical-align: -0.35em;
 }

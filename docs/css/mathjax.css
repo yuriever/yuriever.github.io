@@ -24,9 +24,9 @@ mjx-labels {
 /*  */
 
 mjx-mrow.MathJax_ref {
-    font-size: 0.75em;
+    font-size: 0.85em;
     font-weight: bold;
-    vertical-align: 0.05em;
+    vertical-align: 0.075em;
     color: var(--sora-eqref-color);
     /* 抵消 mjx-container 的 margin */
     margin: -0.1rem;
