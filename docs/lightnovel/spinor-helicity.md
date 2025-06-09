@@ -10,15 +10,17 @@
 
 ## Conventions
 
-We set up the conventions of spinor helicity formalism in a signature-independent way, mainly following [@Taylor:2017sph].
+本文目的是理析旋量螺旋度方法 (spinor helicity formalism) 中的约定，主要遵循 Taylor 的讲义 [@Taylor:2017sph]。
 
-It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
-Therefore, we align our spinor conventions to the particle physics literature, ensuring that they remain independent of the metric signature.
+尽管对于物理观测量而言，约定的选择纯粹是一种“规范”，但它会沿着计算过程传播。对于编程而言，这是一种非局域效应，应当被封装在不同的模块之内。
+因此，对于旋量的约定，我们与粒子物理文献对齐，以确保其与度规号差无关。
 
-* The signature is denoted as
+<!-- It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
+Therefore, we align our spinor conventions to the particle physics literature, ensuring that they remain independent of the metric signature. -->
+
+* 度规号差记为
 
     \begin{equation}
-        \tag{Signature}
         \label{eq: signature}
         \signature=
         \begin{cases}
@@ -29,68 +31,123 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \end{cases}
     \end{equation}
 
-    To alter the signature, we need to flip the signs of $g_{\mu\nu}$, $g^{\mu\nu}$ and the derived objects, e.g. momentum and subscripted Pauli matrices $P_{\mu}$, $\sigma_{\mu}$, $\sigmab_{\mu}$, and superscripted derivatives $\pp^{\mu}$, $D^{\mu}$.
+    若要变更号差，我们需要翻转 $g_{\mu\nu}, g^{\mu\nu}$ 以及相关物理量的符号，例如带下指标的动量 $P_{\mu}$ 与泡利矩阵 $\sigma_{\mu}, \sigmab_{\mu}$，带上指标的导数 $\pp^{\mu}, D^{\mu}$。
 
-* The convention of spinor contraction follows from Wess&Bagger
-
-    \begin{align}
-        \tag{NW-SE}
-        &\psi\chi=\psi^{a}\chi_{a}
-        \, ,
-        \\
-        \tag{NE-SW}
-        &\psib\chib=\psib_{\dota}\chib^{\dota}
-        \, .
-    \end{align}
-
-* The normalization of polarization vectors is
+* 极化矢量的归一化为
 
     \begin{equation}
-        \tag{Polarization}
-        \epsilon_{+}\cdot\epsilon_{-}=2
-        \, ,
+        \epsilon_{+}\cdot\epsilon_{-}=2\signature\polar^{2}
+        \, .
     \end{equation}
 
-    to avoid the annoying factor $\sqrt{2}$.
+* 旋量缩并的约定遵循 Wess & Bagger
 
-* A generic momentum is denoted as $P$, massive as $p$ and massless as $q$.
+    \begin{equation}
+        \label{eq: spinor contraction}
+        \psi\chi=\psi^{a}\chi_{a}
+        \, ,
+        \quad
+        \psib\chib=\psib_{\dota}\chib^{\dota}
+        \, .
+    \end{equation}
+
+* 任意动量记为 $P$，有质量的记为 $p$，无质量的记为 $q$。
 
 
-### Comparison
+### Comparison of conventions
 
-* In Dreiner et al.'s review [@Dreiner:2008tw], the authors provide both signature versions and a detailed discussion on convention changing.
+Taylor 的讲义 [@Taylor:2017sph] 是我们比较的基准。此外，Dreiner 等的综述 [@Dreiner:2008tw] 提供了不同号差的版本，以及关于号差变更的详细讨论。
 
 
 #### $(+,-,-,-)$
 
-* In Taylor's lecture notes [@Taylor:2017sph], the signature is $\signature=-1$. This is our baseline for comparison.
+* 在 Schwartz 的书中 [@Schwartz:2014sze]，旋量缩并的约定与 Wess & Bagger 相反，见第 10.6.2 节。
 
-    * **normalization of polarization**
+* 在 Badger 等的书中 [@Badger:2023]，等变映射 $\varepsilon^{ab}$ 和 $\varepsilon^{\dota\dotb}$ 与本文相差一个负号，见附录 A。
 
-* In Schwartz's book [@Schwartz:2014sze], the conventions are almost the same as [@Taylor:2017sph]. The contraction of spinor indices is opposite to Wess&Bagger, see Section 10.6.2.
+* 在 Cheung 的讲义中 [@Cheung:2017pzi]，Mandelstam 变量与旋量内积的关系少了一个负号，这可能是由于 $\varepsilon$ 等变映射的约定不同所致，对比 \eqref{eq: momentum squared} 与
 
-* In Cheung's lecture notes [@Cheung:2017pzi], the conventions are almost the same as [@Taylor:2017sph]. The relation between Mandelstam variables and helicity spinors omits a sign, possibly due to the convention of spinor inner products.
+    \begin{equation}
+        \tag{2.8 [Cheung]}
+        2 q_{1} \cdot q_{2}=\braketA{12}\braketS{12}
+        \, .
+    \end{equation}
 
-* In Witten's paper [@Witten:2003nn], **TODO**
+* 在 SAGEX 综述的第一章中 [@SAGEX1]，
+
+    * 泡利矩阵的空间分量与本文相差一个负号，见附录 A；
+
+    * 旋量出入态的约定与本文不同，对比 \eqref{eq: incoming} 与
+
+        \begin{equation}
+            \tag{1.17 [SAGEX]}
+            \ketA{-q}=i\ketA{q}
+            \, ,
+            \quad
+            \ketS{-q}=i\ketS{q}
+            \, .
+        \end{equation}
 
 
 #### $(-,+,+,+)$
 
-* In Elvang&Huang's book [@Elvang:2015rqa], the signature is $\signature=1$.
+* Srednicki 的书 [@Srednicki:2007qs] 与 Elvang & Huang 的书 [@Elvang:2015rqa]，与本文相比有如下几点不同：
 
-    * The signature propagates into momentum bispinors, see \eqref{eq: momentum bispinor} vs.
+        Lacia-TimeStamp-2025-06-09-13:12:13
+
+    * 螺旋度旋量的类型与本文相反：angle 类型的指标是不带点的，对比 \eqref{eq: pairing A} 与
 
         \begin{equation}
-            \tag{2.7 in [@Elvang:2015rqa]}
-            \label{eq: test}
+            Pass
+        \end{equation}
+
+    * 极化矢量的类型亦与本文相反，对比 \eqref{eq: polarization component} 与
+
+        \begin{equation}
+            Pass
+        \end{equation}
+
+    * 这两者的效应抵消，因此极化矢量的表达式与本文相同，对比 \eqref{eq: polarization} 与
+
+        \begin{equation}
+            Pass
+            % \tag{5.8 [Taylor]}
+            % \epsilon_{+}^{\mu}(q,q')
+            % =
+            % \frac{1}{\sqrt{2}}
+            % \frac{
+            %     \braketAS{q'}{\sigma^{\mu}}{q}
+            % }{
+            %     \braketA{q' q}
+            % }
+            % \, ,
+            % \quad
+            % \epsilon_{-}^{\mu}(q,q')
+            % =
+            % -\frac{1}{\sqrt{2}}
+            % \frac{
+            %     \braketSA{q'}{\sigmab^{\mu}}{q}
+            % }{
+            %     \braketS{q' q}
+            % }
+            %
+            \, ,
+        \end{equation}
+
+        其中 $q'$ 为参考动量。
+
+    * 号差传播到了动量双旋量中，对比 \eqref{eq: momentum bispinor} 与
+
+        \begin{equation}
+            \tag{2.7 [Elvang]}
             P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
             \, ,
         \end{equation}
 
-        then ceases at helicity spinors, see \eqref{eq: helicity spinor} vs.
+        并停止在螺旋度旋量中，对比 \eqref{eq: helicity spinor} 与
 
         \begin{equation}
-            \tag{2.16 in [@Elvang:2015rqa]}
+            \tag{2.16 [Elvang]}
             q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
             \, ,
             \quad
@@ -98,70 +155,25 @@ Therefore, we align our spinor conventions to the particle physics literature, e
             \, .
         \end{equation}
 
-    * The type of helicity spinors is opposite to ours, i.e. **angle spinor is undotted**, see \eqref{eq: pairing A} vs.
-
-        \begin{equation}
-            \tag{4.31 in [@Taylor:2017sph]}
-            \braketA{q_{1}q_{2}}\eqq \braA{q_{1}}^{\dota} \ketA{q_{2}}_{\dota}
-            \, .
-        \end{equation}
-
-    * The type of polarization vectors is also opposite to ours, see \eqref{eq: polarization component} vs.
-
-        \begin{equation}
-            \tag{5.7 [@Taylor:2017sph]}
-            \epsilon_{\pm}=\frac{1}{\sqrt{2}}(0,1,\pm i,0)
-            \, .
-        \end{equation}
-
-    * The net effect is that the polarization vectors match ours up to $\pm\sqrt{2}$, see \eqref{eq: polarization} vs.
-
-        \begin{equation}
-            \tag{5.8 [@Taylor:2017sph]}
-            \epsilon_{+}^{\mu}(q,q')
-            =
-            \frac{1}{\sqrt{2}}
-            \frac{
-                \braketAS{q'}{\sigma^{\mu}}{q}
-            }{
-                \braketA{q' q}
-            }
-            \, ,
-            \quad
-            \epsilon_{-}^{\mu}(q,q')
-            =
-            -\frac{1}{\sqrt{2}}
-            \frac{
-                \braketSA{q'}{\sigmab^{\mu}}{q}
-            }{
-                \braketS{q' q}
-            }
-            \, ,
-        \end{equation}
-
-        for the reference momentum $q'$.
-
-* In Srednicki's book [@Srednicki:2007qs], the conventions are almost the same as [@Elvang:2015rqa], except for incoming/outgoing.
-
 
 ## Helicity spinor
 
-Helicity spinors are essentially bosonic Weyl spinors that satisfy the massless Weyl equation.
+螺旋度旋量 (helicity spinor) 是一类特殊的玻色型 Weyl 旋量，它解开了无质量 Weyl 方程的约束。
 
 
 ### Angle spinor
 
-The angle ket $\ketA {q}_{a}$, as a left-handed Weyl spinor associated to the complex massless momentum $q\in\CC^{4}$, lies in the fundamental representation $(\half,0)$ of $\slgroup(2,\CC)$, and the angle bra $\braA{q}^{a}$ lies in its dual $(\half,0)^{\dual}$:
+与复化的无质量动量 $q\in\CC^{4}$ 相关联的左手旋量记为尖右矢 (angle ket) $\ketA{q}_{a}$，它处于 $\slgroup(2,\CC)$ 的基本表示 $(\half,0)$ 中。而处于对偶表示 $(\half,0)^{\dual}$ 中的记为尖左矢 (angle bra) $\braA{q}^{a}$。两者的变换关系为
 
 \begin{equation}
     \ketA{q}_{a} \to M^{b}_{a} \ketA{q}_{b}
     \, ,
     \quad
     \braA{q}^{a} \to (M^{-\tp})^{a}_{b} \braA{q}^{b}
-    \, ,
+    \, .
 \end{equation}
 
-then the angle braket is the natural pairing
+其自然配对记为尖括号 (angle braket)，
 
 \begin{equation}
     \label{eq: pairing A}
@@ -169,46 +181,47 @@ then the angle braket is the natural pairing
     \, .
 \end{equation}
 
-Due to the intertwiner and its inverse
+两者实际上是同构的，
 
 \begin{equation}
-    \epsilon^{ab}=-\epsilon_{ab}=
+    \label{eq: raising lowering A}
+    \braA{q}^{a}=\varepsilon^{ab}\ketA{q}_{b}
+    \, ,
+    \quad
+    \ketA{q}_{a}=\varepsilon_{ab}\braA{q}^{b}
+    \, .
+\end{equation}
+
+其中 $\varepsilon$ 为可逆的等变映射，分量可取为
+
+\begin{equation}
+    \label{eq: varepsilon tensor A}
+    \varepsilon^{ab}=-\varepsilon_{ab}=
     \begin{pmatrix}
         0 & 1 \\ -1 & 0
     \end{pmatrix}
     \, ,
     \quad
-    \epsilon^{ab}\epsilon_{bc}=\delta^{a}_{b}
-    \, ,
-\end{equation}
-
-the two representations are isomorphic by
-
-\begin{equation}
-    \label{eq: raising lowering A}
-    \braA{q}^{a}=\epsilon^{ab}\ketA{q}_{b}
-    \, ,
-    \quad
-    \ketA{q}_{a}=\epsilon_{ab}\braA{q}^{b}
+    \varepsilon^{ab}\varepsilon_{bc}=\delta^{a}_{b}
     \, .
 \end{equation}
 
-Equivalently, $\epsilon$ is an invariant bilinear form on $(\half,0)$ or on its dual, and then $\braketA{q_{1}q_{2}}$ is antisymmetric.
+等价的，$\varepsilon$ 诱导了 $(\half,0)$ 或 $(\half,0)^{\dual}$ 上的反对称的不变内积。
 
 
 ### Square spinor
 
-Repeating the previous discussion onto the complex conjugate representation $(0,\half)$ and its dual $(0,\half)^{\dual}$, the square bra and ket satisfy
+将前述讨论应用于复共轭表示 $(0,\half)$ 及其对偶表示 $(0,\half)^{\dual}$，方左矢 (square bra) 和方右矢 (square ket) 的变换关系为
 
 \begin{equation}
     \braS{q}_{\dota} \to (M^{*})_{\dota}^{\dotb}\braS{q}_{\dotb}
     \, ,
     \quad
     \ketS{q}^{\dota} \to (M^{-\dagger})^{\dota}_{\dotb}\ketS{q}^{\dotb}
-    \, ,
+    \, .
 \end{equation}
 
-and the pairing is
+两者的自然配对记为方括号 (square braket)，
 
 \begin{equation}
     \label{eq: pairing S}
@@ -216,34 +229,35 @@ and the pairing is
     \, .
 \end{equation}
 
-The intertwiner is chosen to commute with complex conjugation:
+选取与复共轭交换的等变映射，
 
 \begin{equation}
-    \epsilon^{\dota \dotb}=-\epsilon_{\dota \dotb}=
+    \label{eq: varepsilon tensor S}
+    \varepsilon^{\dota \dotb}=-\varepsilon_{\dota \dotb}=
     \begin{pmatrix}
         0 & 1 \\ -1 & 0
     \end{pmatrix}
     \, ,
     \quad
-    \epsilon^{\dota \dotb}\epsilon_{\dotb \dotc}=\delta^{\dota}_{\dotb}
+    \varepsilon^{\dota \dotb}\varepsilon_{\dotb \dotc}=\delta^{\dota}_{\dotb}
     \, ,
 \end{equation}
 
-then the indices are lowered/raised as
+可得下列指标的升降关系：
 
 \begin{equation}
     \label{eq: raising lowering S}
-    \ketS{q}^{\dota}=\epsilon^{\dota \dotb}\braS{q}_{\dotb}
+    \ketS{q}^{\dota}=\varepsilon^{\dota \dotb}\braS{q}_{\dotb}
     \, ,
     \quad
-    \braS{q}_{\dota}=\epsilon_{\dota \dotb}\ketS{q}^{\dotb}
+    \braS{q}_{\dota}=\varepsilon_{\dota \dotb}\ketS{q}^{\dotb}
     \, .
 \end{equation}
 
 
 ## Momentum bispinor
 
-The Pauli matrices $\vec\sigma$ intertwine the action of $\sugroup(2)$ on $1\in \half\ox\half$ and the action of $\sogroup(3,\RR)$ on the vector representation through the group morphism $\sugroup(2)\to \sogroup(3,\RR)$, given by
+在群同态 $\sugroup(2)\to \sogroup(3,\RR)$ 下，Pauli 矩阵 $\vec\sigma$ 是从 $\sugroup(2)$ 的表示 $1\in \half\ox\half$ 到 $\sogroup(3,\RR)$ 的矢量表示的可逆等变映射。通常选为
 
 \begin{equation}
     \sigma^{1}=
@@ -268,7 +282,7 @@ The Pauli matrices $\vec\sigma$ intertwine the action of $\sugroup(2)$ on $1\in 
     \, .
 \end{equation}
 
-Similarly, the four-component Pauli matrices $\sigma$ intertwine the action of $\slgroup(2,\CC)$ on $(\half,\half)$ and the action of $\sogroup(3,1,\RR)$ on the complex vector representation $V\simeq \CC^{4}$ through the group morphism, given by
+类似的，在群同态 $\slgroup(2,\CC) \to \sogroup(3,1,\RR)$ 下，四分量 Pauli 矩阵 $\sigma$ 是从 $\slgroup(2,\CC)$ 的表示 $(\half,\half)$ 到 $\sogroup(3,1,\RR)$ 的复矢量表示 $V\simeq \CC^{4}$ 的可逆等变映射。通常选为
 
 \begin{equation}
     \label{eq: Pauli matrix}
@@ -279,7 +293,7 @@ Similarly, the four-component Pauli matrices $\sigma$ intertwine the action of $
     \, .
 \end{equation}
 
-Then the metric $g_{\mu\nu}$, i.e. the invariant bilinear form on $V$ is intertwined by $\sigma$ to the one $\epsilon_{ab}\epsilon_{\dota\dotb}$ on $(\half,\half)$, given by
+在此同构下，$V$ 上的不变内积 $g_{\mu\nu}$ 对应为 $(\half,\half)$ 上的 $\epsilon_{ab}\epsilon_{\dota\dotb}$，有
 
 \begin{equation}
     \label{eq: Pauli matrix and epsilon tensor}
@@ -294,7 +308,7 @@ Then the metric $g_{\mu\nu}$, i.e. the invariant bilinear form on $V$ is intertw
     \, .
 \end{equation}
 
-With this isomorphism, a vector $P^{\mu}$ can be rewritten into bispinors
+矢量 $P^{\mu}$ 可以被重写为双旋量 (bispinor)
 
 \begin{equation}
     \label{eq: momentum bispinor}
@@ -324,9 +338,9 @@ With this isomorphism, a vector $P^{\mu}$ can be rewritten into bispinors
     \end{aligned}
 \end{equation}
 
-and $\det P = - \signature P^{2}$.
+且 $\det P = - \signature P^{2}$。
 
-Particularly, when the momentum is massless $q^{2}=0$, the bispinors factorize into two helicity spinors
+对于无质量动量 $q^{2}=0$，该双旋量因子化为两个螺旋度旋量
 
 \begin{equation}
     \label{eq: helicity spinor}
@@ -334,10 +348,10 @@ Particularly, when the momentum is massless $q^{2}=0$, the bispinors factorize i
     \, ,
     \quad
     q^{\dota a}=\ketS{q}^{\dota}\braA{q}^{a}
-    \, ,
+    \, .
 \end{equation}
 
-and then the square and angle spinors satisfy the massless Weyl equations
+它们分别满足无质量 Weyl 方程
 
 \begin{equation}
     \label{eq: Weyl equation}
@@ -357,55 +371,21 @@ and then the square and angle spinors satisfy the massless Weyl equations
 
 ### Real momentum
 
-Let's count the degrees of freedom.
-For a complex massless momentum $q$, the square and angle spinors associated to $q$ are independent. The left side of \eqref{eq: helicity spinor} is of $\dim_{\CC}=3$, while the right side is of $\dim_{\CC}=4$.
-The reason for this discrepancy is that this factorization is only determined up to a rescaling
+对于复的无质量动量 $q$，尖旋量和方旋量是独立的。方程 \eqref{eq: helicity spinor} 的左边维数为 $\dim_{\CC}=3$，而右边维数为 $\dim_{\CC}=4$，不匹配的原因是因子化可以相差一个标度变换
 
 \begin{equation}
+    \ketA{q} \to \lambda \ketA{q}
+    \, ,
+    \quad
     \ketS{q} \to \lambda^{-1} \ketS{q}
     \, ,
-    \quad
-    \braA{q} \to \lambda \braA{q}
-    \, ,
 \end{equation}
 
-which turns out to be exactly the action of the complexified little group.
+这正是复化的小群变换，通常称为小群标度变换 (little group rescaling)。
 
-While for real momentum, the square and angle spinors are related by complex conjugate. Then the left side of \eqref{eq: helicity spinor} is of $\dim_{\RR}=3$, the right side is of $\dim_{\RR}=4$, and the little group scaling is a phase factor in $\sogroup(2,\RR)$.
-We also need to distinguish incoming $(-)$ for negative energy $E<0$ and outgoing $(+)$ for positive energy $E>0$.
-
-We adopt the following conventions:
-
-\begin{align}
-    \label{eq: incoming}
-    \ketS{-q}=\ketS{q}
-    \, ,
-    \quad
-    \braA{-q}=-\braA{q}
-    \, ,
-\end{align}
-
-and
-
-\begin{align}
-    \label{eq: conjugate}
-    \ketS{q}^{*}=\inout{q}\braA{q}
-    \, ,
-    \quad
-    \braA{q}^{*}=\inout{q} \ketS{q}
-    \, ,
-\end{align}
-
-hence
-
-\begin{equation}
-    \label{eq: conjugate braket}
-    \braketS{q_{1}q_{2}}^{*}
-    =-\inout{q_{1}}\inout{q_{2}}\braketA{q_{1}q_{2}}
-    \, .
-\end{equation}
-
-Here the sign notation is
+对于实动量，尖旋量和方旋量通过复共轭相关联。此时方程 \eqref{eq: helicity spinor} 的左边维数为 $\dim_{\RR}=3$，右边维数为 $\dim_{\RR}=4$。
+小群标度变换为 $\sogroup(2,\RR)$ 的相位变换。
+我们还需要区分能量为负 $q^{0}<0$ 的入态和能量为正 $q^{0}>0$ 的出态 $(+)$，用 $\inout{q}$ 表示出入态的符号
 
 \begin{equation}
     \inout{q}=\cases{
@@ -416,16 +396,66 @@ Here the sign notation is
     \, .
 \end{equation}
 
+对于复共轭，我们采用如下约定：
 
-??? proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
+\begin{align}
+    \label{eq: conjugate}
+    \ketA{q}^{*}=\inout{q} \braS{q}
+    \, ,
+    \quad
+    \braS{q}^{*}=\inout{q}\ketA{q}
+    \, ,
+\end{align}
 
-    Since the intertwiner $\epsilon$ commutes with complex conjugate, we only need to consider $\ketS{q}$ and $\braA{q}$,
+因此对于旋量内积有
+
+\begin{equation}
+    \label{eq: conjugate braket}
+    \braketA{q_{1}q_{2}}^{*}
+    =
+    -\inout{q_{1}}\inout{q_{2}}
+    \braketS{q_{1}q_{2}}
+    \, .
+\end{equation}
+
+
+对于出入态，通常有两种约定：
+
+[@Elvang:2015rqa]
+
+\begin{align}
+    \label{eq: incoming}
+    \ketA{-q}=\ketA{q}
+    \, ,
+    \quad
+    \braS{-q}=-\braS{q}
+    \, .
+\end{align}
+
+
+
+[@Badger:2023][@SAGEX1][@Srednicki:2007qs]
+
+\begin{equation}
+    \ketA{-q}=i\ketA{q}
+    \, ,
+    \quad
+    \braS{-q}=i\braS{q}
+    \, .
+\end{equation}
+
+For the later choice, one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
+
+
+!!! proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
+
+    Since the intertwiner $\varepsilon$ commutes with complex conjugate, we only need to consider $\ketA{q}$ and $\braS{q}$,
 
     \begin{equation}
-        \ketS{q}^{*}=\alpha(q)\braA{q}
+        \ketA{q}^{*}=\alpha(q) \braS{q}
         \, ,
         \quad
-        \braA{q}^{*}=\alpha^{-*}(q) \ketS{q}
+        \braS{q}^{*}=\alpha^{-*}(q)\ketA{q}
         \, ,
     \end{equation}
 
@@ -436,24 +466,24 @@ Here the sign notation is
         \, .
     \end{equation}
 
-    Continuing $q$ to $-q$, there is only one minus sign in \eqref{eq: helicity spinor}, so we need to absorb it either in both of $\ketS{q}$ and $\braA{q}$ or in one of them. Starting from the ansatz
+    Continuing $q$ to $-q$, there is only one minus sign in \eqref{eq: helicity spinor}, so we need to absorb it either in both of $\ketA{q}$ and $\braS{q}$ or in one of them. Starting from the ansatz
 
     \begin{equation}
-        \ketS{-q}=\beta(q) \ketS{q}
+        \ketA{-q}=\beta(q) \ketA{q}
         \, ,
         \quad
-        \braA{-q}=-\beta^{-1}(q) \braA{q}
+        \braS{-q}=-\beta^{-1}(q) \braS{q}
         \, ,
     \end{equation}
 
     and then by the compatibility of complex conjugate, we have
 
     \begin{align}
-        \ketS{-q}^{*}
-        &=\beta^{*}(q) \ketS{q}^{*}
-        =\beta^{*}(q) \alpha(q) \braA{q}
+        \ketA{-q}^{*}
+        &=\beta^{*}(q) \ketA{q}^{*}
+        =\beta^{*}(q) \alpha(q) \braS{q}
         \\
-        &=\alpha(-q)\braA{-q}=-\alpha(-q)\beta^{-1}(q)\braA{q}
+        &=\alpha(-q)\braS{-q}=-\alpha(-q)\beta^{-1}(q)\braS{q}
         \, ,
     \end{align}
 
@@ -464,11 +494,11 @@ Here the sign notation is
         \, .
     \end{equation}
 
-    Furthermore, to make the square/angle brakets balanced
+    Furthermore, to make the angle/square brakets balanced
 
     \begin{equation}
-        \braketS{q_{1}q_{2}}^{*}
-        =-\alpha(q_{1})\alpha(q_{2})\braketA{q_{1}q_{2}}
+        \braketA{q_{1}q_{2}}^{*}
+        =-\alpha(q_{1})\alpha(q_{2})\braketS{q_{1}q_{2}}
         \, ,
     \end{equation}
 
@@ -479,19 +509,17 @@ Here the sign notation is
         \, .
     \end{equation}
 
-    Then for $\abs{\beta(q)}=1$ we choose
+    Then from $\abs{\beta(q)}=1$ we can choose
 
     \begin{equation}
-        \beta(q)=1
-        \, .
+        \beta(q)=1\, , \textInMath{or} \beta(q)=i\, .
     \end{equation}
 
-    This is the convention in [@Elvang:2015rqa]. While [@Srednicki:2007qs] chooses $\beta(q)=i$, then one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
 
 
 ## Polarization
 
-Lacia-TimeStamp-2025-05-10-04:25:04
+    Lacia-TimeStamp-2025-05-10-04:25:04
 
 \begin{equation}
     \label{eq: polarization}
@@ -632,7 +660,6 @@ The helicity spinors can be parametrized as
     \, .
 \end{align}
 
-
 For massless spin-1 particles, the polarization vectors are $\epsilon_{\pm}=\pp_{\pm}\qhat$ where $\pp_{+}=\pp_{z}$ and $\pp_{-}=\pp_{\zb}$, and can be parametrized as
 
 \begin{equation}
@@ -651,19 +678,19 @@ For massless spin-1 particles, the polarization vectors are $\epsilon_{\pm}=\pp_
 
 Directory: `~/TestSource/SpinorHelicity/`
 
-| Test                          | Equation(s)                                                            |
-| :---------------------------- | :--------------------------------------------------------------------- |
-| `bispinor-contraction.wlt`    | $\eqref{eq: bispinor contraction}$                                     |
-| `bispinor.wlt`                | $\eqref{eq: momentum bispinor} \eqref{eq: helicity spinor}$            |
-| `epsilon-tensor.wlt`          | $\eqref{eq: raising lowering S} \eqref{eq: raising lowering A}$        |
-| `Fierz-identity.wlt`          | $\eqref{eq Fierz identity}$                                            |
-| `incoming-outgoing.wlt`       | $\eqref{eq: incoming}$                                                 |
-| `momentum-squared.wlt`        | $\eqref{eq: momentum squared}$                                         |
-| `Pauli-Dirac-matrix.wlt`      | $\eqref{eq: Pauli matrix} \eqref{eq: Pauli matrix and epsilon tensor}$ |
-| `spinor-component-2-vs-4.wlt` |                                                                        |
-| `spinor-component.wlt`        | $\eqref{eq: bra ket parametrization}$                                  |
-| `spinor-conjugate.wlt`        | $\eqref{eq: conjugate} \eqref{eq: conjugate braket}$                   |
-| `spinor-pairing.wlt`          | $\eqref{eq: pairing S} \eqref{eq: pairing A}$                          |
-| `Weyl-equation.wlt`           | $\eqref{eq: Weyl equation}$                                            |
+| Test                          | Equation(s)                                                          |
+| :---------------------------- | :------------------------------------------------------------------- |
+| `bispinor-contraction.wlt`    | \eqref{eq: bispinor contraction}                                     |
+| `bispinor.wlt`                | \eqref{eq: momentum bispinor} \eqref{eq: helicity spinor}            |
+| `epsilon-tensor.wlt`          | \eqref{eq: raising lowering A} \eqref{eq: raising lowering S}        |
+| `Fierz-identity.wlt`          | \eqref{eq Fierz identity}                                            |
+| `incoming-outgoing.wlt`       | \eqref{eq: incoming}                                                 |
+| `momentum-squared.wlt`        | \eqref{eq: momentum squared}                                         |
+| `Pauli-Dirac-matrix.wlt`      | \eqref{eq: Pauli matrix} \eqref{eq: Pauli matrix and epsilon tensor} |
+| `spinor-component-2-vs-4.wlt` |                                                                      |
+| `spinor-component.wlt`        | \eqref{eq: bra ket parametrization}                                  |
+| `spinor-conjugate.wlt`        | \eqref{eq: conjugate} \eqref{eq: conjugate braket}                   |
+| `spinor-pairing.wlt`          | \eqref{eq: pairing A} \eqref{eq: pairing S}                          |
+| `Weyl-equation.wlt`           | \eqref{eq: Weyl equation}                                            |
 
 ---
