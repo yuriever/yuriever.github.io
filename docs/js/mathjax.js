@@ -8,10 +8,10 @@ window.MathJax = {
         ]
     },
     chtml: {
-        scale: 0.9
+        scale: 19/20
     },
     svg: {
-        scale: 0.9
+        scale: 19/20
     },
     tex: {
         // packages included

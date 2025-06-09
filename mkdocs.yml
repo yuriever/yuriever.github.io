@@ -16,7 +16,7 @@ theme:
   name: material
   custom_dir: custom
   font:
-    text: Source Sans Pro
+    text: Helvetica Neue
     code: Source Code Pro Semibold
   features:
     # navigation.instant is conflicted with mathjax
