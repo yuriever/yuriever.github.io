@@ -14,7 +14,17 @@
 
 <!-- It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules. -->
 
-* 任意动量记为 $P$，有质量的记为 $p$，无质量的记为 $q$。
+* 任意动量记为 $P$，有质量的记为 $p$，无质量的记为 $q$。无质量动量的参数化为
+
+    \begin{equation}
+        q=\omega(
+            1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
+        )
+        \, ,
+        \textInMath{for}
+        \omega>0,z\in\CC
+        \, .
+    \end{equation}
 
 
 ### Metric
@@ -34,27 +44,28 @@
 
 若要变更度规号差，需要翻转 $g_{\mu\nu}, g^{\mu\nu}$ 以及相关物理量的符号，例如带下指标的动量 $P_{\mu}$ 与泡利矩阵 $\sigma_{\mu}, \sigmab_{\mu}$，带上指标的导数 $\pp^{\mu}, D^{\mu}$。
 
-采用 $(-,+,+,+)$ 的包括：
+$(-,+,+,+)$
 
-* Srednicki [@Srednicki:2007qs]
+* Srednicki 的书 *Quantum Field Theory* [@Srednicki:2007qs]
 
-* Elvang & Huang [@Elvang:2015rqa]
+* Elvang & Huang 的书 *Scattering Amplitudes in Gauge Theory and Gravity* [@Elvang:2015rqa]
 
-* Wess & Bagger [@Wess:2020]
+* Wess & Bagger 的书 *Supersymmetry and Supergravity* [@Wess:2020]
 
-采用 $(+,-,-,-)$ 的包括：
+$(+,-,-,-)$
 
-* Schwartz [@Schwartz:2014sze]
+* SAGEX 综述第一章 *The SAGEX Review on Scattering Amplitudes Chapter 1* [@SAGEX1]
 
-* Badger 等的书 [@Badger:2023]
+* Schwartz 的书 *Quantum Field Theory and the Standard Model* [@Schwartz:2014sze]
 
-* SAGEX 综述第一章 [@SAGEX1]
+* Badger 等的书 *Scattering Amplitudes in Quantum Field Theory* [@Badger:2023]
 
-* Cheung 的讲义 [@Cheung:2017pzi]
+* Dixon 的讲义 *A brief introduction to modern amplitude methods* [@Dixon:2013uaa]
 
-Dixon:2013uaa
+* Taylor 的讲义 *A Course in Amplitudes* [@Taylor:2017sph]
 
-Taylor:2017sph
+* Cheung 的讲义 *TASI lectures on scattering amplitudes* [@Cheung:2017pzi]
+
 
 ### Pauli matrices
 
@@ -68,9 +79,9 @@ Taylor:2017sph
     \, .
 \end{equation}
 
-无论采用何种，通常会保证尖括号 $\braketA{12}\sim z_{1,2} $ 是全纯的。
+无论采用何种，通常会保证尖括号 $\braketA{q_{1}q_{2}}\sim z_{1}-z_{2} $ 是全纯的。
 
-* Wess & Bagger [@Wess:2020] 采用了前者，见附录 A & B。与之适配的旋量缩并约定为
+* Wess & Bagger [@Wess:2020] 采用了前者，见 Appendix A & B。与之适配的旋量缩并约定为
 
     \begin{equation}
         \label{eq: spinor contraction}
@@ -81,9 +92,12 @@ Taylor:2017sph
         \, .
     \end{equation}
 
-* Schwartz [@Schwartz:2014sze] 采用了后者，旋量缩并的约定与 Wess & Bagger 相反，见第 10.6.2 节。
+* Dixon [@Dixon:2013uaa] 与 SAGEX [@SAGEX1] 采用了前者。尖旋量的指标是不带点的 $\ketA{q}_{a}$，旋量缩并的约定与 Wess & Bagger 相同，见 [@Dixon:2013uaa] Equation 3.6 与 [@SAGEX1] Appendix A。
 
-* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者，
+* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量的指标是带点的 $\ketA{q}_{\dota}$，旋量缩并的约定与 Wess & Bagger 相同。
+
+* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量的指标是不带点的 $\ketA{q}_{a}$，旋量缩并的约定与 Wess & Bagger 相反，见 Section 10.6.2。
+
 
 #### 旋量度规
 
@@ -97,15 +111,9 @@ Taylor:2017sph
     \end{equation}
 
 
-#### $(+,-,-,-)$
-
-*
-
-* 在 Badger 等的书中 [@Badger:2023]，等变映射 $\varepsilon^{ab}$ 和 $\varepsilon^{\dota\dotb}$ 与本文相差一个负号，见附录 A。
+#### Incoming/Outgoing
 
 * 在 SAGEX 综述的第一章中 [@SAGEX1]，
-
-    * 泡利矩阵的空间分量与本文相差一个负号，见附录 A；
 
     * 旋量出入态的约定与本文不同，对比 \eqref{eq: incoming} 与
 
@@ -118,21 +126,11 @@ Taylor:2017sph
             \, .
         \end{equation}
 
-#### Incoming/Outgoing
 
 
-
-#### $(-,+,+,+)$
+#### 极化矢量
 
 * Srednicki 的书 [@Srednicki:2007qs] 与 Elvang & Huang 的书 [@Elvang:2015rqa]，与本文相比有如下几点不同：
-
-        Lacia-TimeStamp-2025-06-09-13:12:13
-
-    * 螺旋度旋量的类型与本文相反：angle 类型的指标是不带点的，对比 \eqref{eq: pairing A} 与
-
-        \begin{equation}
-            Pass
-        \end{equation}
 
     * 极化矢量的类型亦与本文相反，对比 \eqref{eq: polarization component} 与
 
@@ -140,54 +138,7 @@ Taylor:2017sph
             Pass
         \end{equation}
 
-    * 这两者的效应抵消，因此极化矢量的表达式与本文相同，对比 \eqref{eq: polarization} 与
-
-        \begin{equation}
-            Pass
-            % \tag{5.8 [Taylor]}
-            % \epsilon_{+}^{\mu}(q,q')
-            % =
-            % \frac{1}{\sqrt{2}}
-            % \frac{
-            %     \braketAS{q'}{\sigma^{\mu}}{q}
-            % }{
-            %     \braketA{q' q}
-            % }
-            % \, ,
-            % \quad
-            % \epsilon_{-}^{\mu}(q,q')
-            % =
-            % -\frac{1}{\sqrt{2}}
-            % \frac{
-            %     \braketSA{q'}{\sigmab^{\mu}}{q}
-            % }{
-            %     \braketS{q' q}
-            % }
-            %
-            \, ,
-        \end{equation}
-
-        其中 $q'$ 为参考动量。
-
-    * 号差传播到了动量双旋量中，对比 \eqref{eq: momentum bispinor} 与
-
-        \begin{equation}
-            \tag{2.7 [Elvang]}
-            P_{a\dota}\eqq P_{\mu} \sigma^{\mu}_{a\dota}
-            \, ,
-        \end{equation}
-
-        并停止在螺旋度旋量中，对比 \eqref{eq: helicity spinor} 与
-
-        \begin{equation}
-            \tag{2.16 [Elvang]}
-            q_{a\dota}=-\ketS{q}_{a}\braA{q}_{\dota}
-            \, ,
-            \quad
-            q^{\dota a}=-\ketA{q}^{\dota}\braS{q}^{a}
-            \, .
-        \end{equation}
-
+    * 这两者的效应抵消，因此极化矢量的表达式与本文相同
 
 
 * 极化矢量的归一化为
@@ -196,6 +147,7 @@ Taylor:2017sph
         \epsilon_{+}\cdot\epsilon_{-}=2\signature\polar^{2}
         \, .
     \end{equation}
+
 
 ## Helicity spinor
 
