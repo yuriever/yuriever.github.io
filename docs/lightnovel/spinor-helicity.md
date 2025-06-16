@@ -36,11 +36,25 @@
 
 采用 $(-,+,+,+)$ 的包括：
 
-*
+* Srednicki [@Srednicki:2007qs]
+
+* Elvang & Huang [@Elvang:2015rqa]
+
+* Wess & Bagger [@Wess:2020]
 
 采用 $(+,-,-,-)$ 的包括：
 
-*
+* Schwartz [@Schwartz:2014sze]
+
+* Badger 等的书 [@Badger:2023]
+
+* SAGEX 综述第一章 [@SAGEX1]
+
+* Cheung 的讲义 [@Cheung:2017pzi]
+
+Dixon:2013uaa
+
+Taylor:2017sph
 
 ### Pauli matrices
 
@@ -71,13 +85,8 @@
 
 * Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者，
 
-* **旋量度规**
+#### 旋量度规
 
-#### $(+,-,-,-)$
-
-*
-
-* 在 Badger 等的书中 [@Badger:2023]，等变映射 $\varepsilon^{ab}$ 和 $\varepsilon^{\dota\dotb}$ 与本文相差一个负号，见附录 A。
 
 * 在 Cheung 的讲义中 [@Cheung:2017pzi]，Mandelstam 变量与旋量内积的关系少了一个负号，这可能是由于 $\varepsilon$ 等变映射的约定不同所致，对比 \eqref{eq: momentum squared} 与
 
@@ -86,6 +95,13 @@
         2 q_{1} \cdot q_{2}=\braketA{12}\braketS{12}
         \, .
     \end{equation}
+
+
+#### $(+,-,-,-)$
+
+*
+
+* 在 Badger 等的书中 [@Badger:2023]，等变映射 $\varepsilon^{ab}$ 和 $\varepsilon^{\dota\dotb}$ 与本文相差一个负号，见附录 A。
 
 * 在 SAGEX 综述的第一章中 [@SAGEX1]，
 
