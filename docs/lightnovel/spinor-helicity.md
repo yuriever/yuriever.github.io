@@ -10,37 +10,53 @@
 
 ## Conventions
 
-本文目的是理析旋量螺旋度方法 (spinor helicity formalism) 中的约定，主要遵循 Taylor 的讲义 [@Taylor:2017sph]。
+本文目的是理析旋量螺旋度方法 (spinor helicity formalism) 中的约定。尽管对于物理观测量而言，约定的选择纯粹是一种“规范”，但它会沿着计算过程传播。对于编程而言，这是一种非局域效应，应当被封装在不同的模块之内。
 
-尽管对于物理观测量而言，约定的选择纯粹是一种“规范”，但它会沿着计算过程传播。对于编程而言，这是一种非局域效应，应当被封装在不同的模块之内。
-因此，对于旋量的约定，我们与粒子物理文献对齐，以确保其与度规号差无关。
+<!-- It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules. -->
 
-<!-- It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules.
-Therefore, we align our spinor conventions to the particle physics literature, ensuring that they remain independent of the metric signature. -->
+* 任意动量记为 $P$，有质量的记为 $p$，无质量的记为 $q$。
 
-* 度规号差记为
 
-    \begin{equation}
-        \label{eq: signature}
-        \signature=
-        \begin{cases}
-            +1
-            \, , \quad (-,+,+,+)\, ,\\
-            -1
-            \, , \quad (+,-,-,-)\, .\\
-        \end{cases}
-    \end{equation}
+### Metric
 
-    若要变更号差，我们需要翻转 $g_{\mu\nu}, g^{\mu\nu}$ 以及相关物理量的符号，例如带下指标的动量 $P_{\mu}$ 与泡利矩阵 $\sigma_{\mu}, \sigmab_{\mu}$，带上指标的导数 $\pp^{\mu}, D^{\mu}$。
+度规号差记为
 
-* 极化矢量的归一化为
+\begin{equation}
+    \label{eq: signature}
+    \signature=
+    \begin{cases}
+        +1
+        \, , \quad (-,+,+,+)\, ,\\
+        -1
+        \, , \quad (+,-,-,-)\, .\\
+    \end{cases}
+\end{equation}
 
-    \begin{equation}
-        \epsilon_{+}\cdot\epsilon_{-}=2\signature\polar^{2}
-        \, .
-    \end{equation}
+若要变更度规号差，需要翻转 $g_{\mu\nu}, g^{\mu\nu}$ 以及相关物理量的符号，例如带下指标的动量 $P_{\mu}$ 与泡利矩阵 $\sigma_{\mu}, \sigmab_{\mu}$，带上指标的导数 $\pp^{\mu}, D^{\mu}$。
 
-* 旋量缩并的约定遵循 Wess & Bagger
+采用 $(-,+,+,+)$ 的包括：
+
+*
+
+采用 $(+,-,-,-)$ 的包括：
+
+*
+
+### Pauli matrices
+
+这是最主要的约定差别，有两种：
+
+\begin{equation}
+    \sigma_{\mu}\sim(\id,\sigma^{i})
+    \, ,
+    \textInMath{vs.}
+    \sigma^{\mu}\sim(\id,\sigma^{i})
+    \, .
+\end{equation}
+
+无论采用何种，通常会保证尖括号 $\braketA{12}\sim z_{1,2} $ 是全纯的。
+
+* Wess & Bagger [@Wess:2020] 采用了前者，见附录 A & B。与之适配的旋量缩并约定为
 
     \begin{equation}
         \label{eq: spinor contraction}
@@ -51,17 +67,15 @@ Therefore, we align our spinor conventions to the particle physics literature, e
         \, .
     \end{equation}
 
-* 任意动量记为 $P$，有质量的记为 $p$，无质量的记为 $q$。
+* Schwartz [@Schwartz:2014sze] 采用了后者，旋量缩并的约定与 Wess & Bagger 相反，见第 10.6.2 节。
 
+* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者，
 
-### Comparison of conventions
-
-Taylor 的讲义 [@Taylor:2017sph] 是我们比较的基准。此外，Dreiner 等的综述 [@Dreiner:2008tw] 提供了不同号差的版本，以及关于号差变更的详细讨论。
-
+* **旋量度规**
 
 #### $(+,-,-,-)$
 
-* 在 Schwartz 的书中 [@Schwartz:2014sze]，旋量缩并的约定与 Wess & Bagger 相反，见第 10.6.2 节。
+*
 
 * 在 Badger 等的书中 [@Badger:2023]，等变映射 $\varepsilon^{ab}$ 和 $\varepsilon^{\dota\dotb}$ 与本文相差一个负号，见附录 A。
 
@@ -87,6 +101,9 @@ Taylor 的讲义 [@Taylor:2017sph] 是我们比较的基准。此外，Dreiner �
             \ketS{-q}=i\ketS{q}
             \, .
         \end{equation}
+
+#### Incoming/Outgoing
+
 
 
 #### $(-,+,+,+)$
@@ -155,6 +172,14 @@ Taylor 的讲义 [@Taylor:2017sph] 是我们比较的基准。此外，Dreiner �
             \, .
         \end{equation}
 
+
+
+* 极化矢量的归一化为
+
+    \begin{equation}
+        \epsilon_{+}\cdot\epsilon_{-}=2\signature\polar^{2}
+        \, .
+    \end{equation}
 
 ## Helicity spinor
 
@@ -229,7 +254,7 @@ Taylor 的讲义 [@Taylor:2017sph] 是我们比较的基准。此外，Dreiner �
     \, .
 \end{equation}
 
-选取与复共轭交换的等变映射，
+采用与复共轭交换的等变映射，
 
 \begin{equation}
     \label{eq: varepsilon tensor S}
