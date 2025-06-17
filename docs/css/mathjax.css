@@ -6,6 +6,10 @@
     margin: 1em 0;
 }
 
+.md-typeset div.arithmatex > * {
+    width: auto;
+}
+
 mjx-container {
     margin: 0.1rem !important;
 }
