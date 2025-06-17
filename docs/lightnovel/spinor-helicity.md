@@ -10,7 +10,7 @@
 
 ## Conventions
 
-本文目的是理析旋量螺旋度方法 (spinor helicity formalism) 中的约定。尽管对于物理观测量而言，约定的选择纯粹是一种“规范”，但它会沿着计算过程传播。对于编程而言，这是一种非局域效应，应当被封装在不同的模块之内。
+本文旨在梳理旋量螺旋度方法 (spinor helicity formalism) 中的约定。尽管对于物理观测量而言，约定的选择是一种“规范”，但它会沿着计算过程传播。从编程视角看，这是一种非局域效应，应当被封装在独立的模块中。
 
 <!-- It is noteworthy that while the choice of convention for physical observables is purely a "gauge", it propagates along computations. From the perspective of programming, this is actually a nonlocal effect that should be encapsulated within different modules. -->
 
@@ -44,32 +44,32 @@
 
 若要变更度规号差，需要翻转 $g_{\mu\nu}, g^{\mu\nu}$ 以及相关物理量的符号，例如带下指标的动量 $P_{\mu}$ 与泡利矩阵 $\sigma_{\mu}, \sigmab_{\mu}$，带上指标的导数 $\pp^{\mu}, D^{\mu}$。
 
-$(-,+,+,+)$
+ $(-,+,+,+)$
 
-* Srednicki 的书 *Quantum Field Theory* [@Srednicki:2007qs]
+* Srednicki [@Srednicki:2007qs] *Quantum Field Theory*
 
-* Elvang & Huang 的书 *Scattering Amplitudes in Gauge Theory and Gravity* [@Elvang:2015rqa]
+* Elvang & Huang [@Elvang:2015rqa] *Scattering Amplitudes in Gauge Theory and Gravity*
 
-* Wess & Bagger 的书 *Supersymmetry and Supergravity* [@Wess:2020]
+* Wess & Bagger [@Wess:2020] *Supersymmetry and Supergravity*
 
-$(+,-,-,-)$
+ $(+,-,-,-)$
 
-* SAGEX 综述第一章 *The SAGEX Review on Scattering Amplitudes Chapter 1* [@SAGEX1]
+* SAGEX [@SAGEX1] *The SAGEX Review on Scattering Amplitudes Chapter 1*
 
-* Schwartz 的书 *Quantum Field Theory and the Standard Model* [@Schwartz:2014sze]
+* Schwartz [@Schwartz:2014sze] *Quantum Field Theory and the Standard Model*
 
-* Badger 等的书 *Scattering Amplitudes in Quantum Field Theory* [@Badger:2023]
+* Badger et al. [@Badger:2023] *Scattering Amplitudes in Quantum Field Theory*
 
-* Dixon 的讲义 *A brief introduction to modern amplitude methods* [@Dixon:2013uaa]
+* Dixon [@Dixon:2013uaa] *A brief introduction to modern amplitude methods*
 
-* Taylor 的讲义 *A Course in Amplitudes* [@Taylor:2017sph]
+* Taylor [@Taylor:2017sph] *A Course in Amplitudes*
 
-* Cheung 的讲义 *TASI lectures on scattering amplitudes* [@Cheung:2017pzi]
+* Cheung [@Cheung:2017pzi] *TASI lectures on scattering amplitudes*
 
 
 ### Pauli matrices
 
-这是最主要的约定差别，有两种：
+Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 \begin{equation}
     \sigma_{\mu}\sim(\id,\sigma^{i})
@@ -79,9 +79,9 @@ $(+,-,-,-)$
     \, .
 \end{equation}
 
-无论采用何种，通常会保证尖括号 $\braketA{q_{1}q_{2}}\sim z_{1}-z_{2} $ 是全纯的。
+不同文献的选择示例如下：
 
-* Wess & Bagger [@Wess:2020] 采用了前者，见 Appendix A & B。与之适配的旋量缩并约定为
+* Wess & Bagger [@Wess:2020] 采用了前者，见 Appendix A & B。与之适配的旋量缩并为
 
     \begin{equation}
         \label{eq: spinor contraction}
@@ -92,23 +92,29 @@ $(+,-,-,-)$
         \, .
     \end{equation}
 
-* Dixon [@Dixon:2013uaa] 与 SAGEX [@SAGEX1] 采用了前者。尖旋量的指标是不带点的 $\ketA{q}_{a}$，旋量缩并的约定与 Wess & Bagger 相同，见 [@Dixon:2013uaa] Equation 3.6 与 [@SAGEX1] Appendix A。
+* Dixon [@Dixon:2013uaa] 与 SAGEX [@SAGEX1] 采用了前者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相同，见 [@Dixon:2013uaa] Equation 3.6 与 [@SAGEX1] Appendix A。
 
-* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量的指标是带点的 $\ketA{q}_{\dota}$，旋量缩并的约定与 Wess & Bagger 相同。
+* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量指标为带点的 $\ketA{q}_{\dota}$，旋量缩并与 Wess & Bagger 相同。
 
-* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量的指标是不带点的 $\ketA{q}_{a}$，旋量缩并的约定与 Wess & Bagger 相反，见 Section 10.6.2。
+* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相反，见 Section 10.6.2。
+
+尽管存在这些差异，通常会保证旋量内积 $\braketA{q_{1}q_{2}}\sim z_{1}-z_{2}$ 是全纯的。
+
+此外，在 twistor 理论的相关文献中，Pauli 矩阵往往带有归一化因子 $\frac{1}{\sqrt{2}}$。
 
 
-#### 旋量度规
+### Spinor inner product
 
+旋量内积是另一类正负号差异的来源：其一是等变映射 $\varepsilon$ 的分量的选取，其二是旋量内积与自然配对的相对符号 $\braketA{q_{1}q_{2}}= \pm\braA{q_{1}}^{a}\ketA{q_{2}}_{a}$。
 
-* 在 Cheung 的讲义中 [@Cheung:2017pzi]，Mandelstam 变量与旋量内积的关系少了一个负号，这可能是由于 $\varepsilon$ 等变映射的约定不同所致，对比 \eqref{eq: momentum squared} 与
+需注意的差异是 Mandelstam 变量与旋量内积的关系
 
-    \begin{equation}
-        \tag{2.8 [Cheung]}
-        2 q_{1} \cdot q_{2}=\braketA{12}\braketS{12}
-        \, .
-    \end{equation}
+\begin{equation}
+    s_{12}=\pm \braketA{12}\braketS{12}
+    \, .
+\end{equation}
+
+多数文献中为负号，但例如 Cheung [@Cheung:2017pzi] 为正号，见 Equation 2.8。
 
 
 #### Incoming/Outgoing
@@ -125,7 +131,6 @@ $(+,-,-,-)$
             \ketS{-q}=i\ketS{q}
             \, .
         \end{equation}
-
 
 
 #### 极化矢量
@@ -411,7 +416,6 @@ $(+,-,-,-)$
     \, .
 \end{equation}
 
-
 对于出入态，通常有两种约定：
 
 [@Elvang:2015rqa]
@@ -424,8 +428,6 @@ $(+,-,-,-)$
     \braS{-q}=-\braS{q}
     \, .
 \end{align}
-
-
 
 [@Badger:2023][@SAGEX1][@Srednicki:2007qs]
 
@@ -505,9 +507,9 @@ For the later choice, one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e.,
     Then from $\abs{\beta(q)}=1$ we can choose
 
     \begin{equation}
-        \beta(q)=1\, , \textInMath{or} \beta(q)=i\, .
+        \beta(q)=1
+        \, , \textInMath{or} \beta(q)=i\, .
     \end{equation}
-
 
 
 ## Polarization
