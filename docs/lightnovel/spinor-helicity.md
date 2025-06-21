@@ -117,7 +117,9 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 多数文献中为负号，但例如 Cheung [@Cheung:2017pzi] 为正号，见 Equation 2.8。
 
 
-#### Incoming/Outgoing
+### Incoming/Outgoing
+
+    Lacia-TimeStamp-2025-06-17-08:21:48
 
 * 在 SAGEX 综述的第一章中 [@SAGEX1]，
 
@@ -133,7 +135,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
         \end{equation}
 
 
-#### 极化矢量
+### Polarization
 
 * Srednicki 的书 [@Srednicki:2007qs] 与 Elvang & Huang 的书 [@Elvang:2015rqa]，与本文相比有如下几点不同：
 
