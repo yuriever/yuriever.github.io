@@ -1,7 +1,7 @@
 :root {
     --sora-font-color: rgb(52, 73, 100);
     --sora-font-em-color: rgb(127, 140, 140);
-    --sora-ref-color: rgb(120, 120, 255);
+    --sora-ref-color: rgba(144, 50, 170, 0.7);
     --sora-eqref-color: rgb(15, 165, 70);
     --sora-box-border: none;
     --sora-box-border-radius: 0.4rem;

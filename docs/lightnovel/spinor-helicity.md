@@ -81,7 +81,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 不同文献的选择示例如下：
 
-* Wess & Bagger [@Wess:2020] 采用了前者，见 Appendix A & B。与之适配的旋量缩并为
+* Wess & Bagger [@Wess:2020] 采用了前者，见 [@Wess:2020, Appendix A & B]。与之适配的旋量缩并为
 
     \begin{equation}
         \label{eq: spinor contraction}
@@ -92,11 +92,11 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
         \, .
     \end{equation}
 
-* Dixon [@Dixon:2013uaa] 与 SAGEX [@SAGEX1] 采用了前者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相同，见 [@Dixon:2013uaa] Equation 3.6 与 [@SAGEX1] Appendix A。
+* Dixon [@Dixon:2013uaa] 与 SAGEX [@SAGEX1] 采用了前者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相同，见 [@Dixon:2013uaa, Equation 3.6] 与 [@SAGEX1, Appendix A]。
 
-* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量指标为带点的 $\ketA{q}_{\dota}$，旋量缩并与 Wess & Bagger 相同。
+* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量指标为带点的 $\braA{q}_{\dota}$，旋量缩并与 Wess & Bagger 相同，见 [@Srednicki:2007qs, Section 35] 与 [@Elvang:2015rqa, Appendix A]。
 
-* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相反，见 Section 10.6.2。
+* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量指标为不带点的 $\ketA{q}_{a}$，旋量缩并与 Wess & Bagger 相反，见 [@Schwartz:2014sze, Section 10.6.2]。
 
 尽管存在这些差异，通常会保证旋量内积 $\braketA{q_{1}q_{2}}\sim z_{1}-z_{2}$ 是全纯的。
 
@@ -105,7 +105,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 ### Spinor inner product
 
-旋量内积是另一类正负号差异的来源：其一是等变映射 $\varepsilon$ 的分量的选取，其二是旋量内积与自然配对的相对符号 $\braketA{q_{1}q_{2}}= \pm\braA{q_{1}}^{a}\ketA{q_{2}}_{a}$。
+旋量内积是另一类正负号差异的来源：其一是等变映射 $\varepsilon^{ab}, \varepsilon^{\dota\dotb}$ 的分量的选取，其二是旋量内积与自然配对的相对符号 $\braketA{q_{1}q_{2}}= \pm\braA{q_{1}}^{a}\ketA{q_{2}}_{a}$。
 
 需注意的差异是 Mandelstam 变量与旋量内积的关系
 
@@ -114,28 +114,41 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, .
 \end{equation}
 
-多数文献中为负号，但例如 Cheung [@Cheung:2017pzi] 为正号，见 Equation 2.8。
+在粒子物理领域的相关文献中，多数为负号。
 
 
 ### Incoming/Outgoing
 
-    Lacia-TimeStamp-2025-06-17-08:21:48
 
-* 在 SAGEX 综述的第一章中 [@SAGEX1]，
+出入态的转换对应于能量的解析研拓 $\omega\to -\omega$。通常有两种约定：例如文献 [@Elvang:2015rqa] 把负号吸收到方旋量中，
 
-    * 旋量出入态的约定与本文不同，对比 \eqref{eq: incoming} 与
+\begin{align}
+    \label{eq: incoming}
+    \ketA{-q}=\ketA{q}
+    \, ,
+    \quad
+    \braS{-q}=-\braS{q}
+    \, .
+\end{align}
 
-        \begin{equation}
-            \tag{1.17 [SAGEX]}
-            \ketA{-q}=i\ketA{q}
-            \, ,
-            \quad
-            \ketS{-q}=i\ketS{q}
-            \, .
-        \end{equation}
+这对应于参数化 $\ketA{q}\sim(1,z),\, \braS{q}\sim \omega(1,\zb)$。
+
+而例如文献 [@Srednicki:2007qs] [@SAGEX1] [@Badger:2023] 把负号分配到两种旋量中，
+
+\begin{equation}
+    \ketA{-q}=i\ketA{q}
+    \, ,
+    \quad
+    \braS{-q}=i\braS{q}
+    \, .
+\end{equation}
+
+这对应于参数化 $\ketA{q}\sim \sqrt{\omega}(1,z),\, \braS{q}\sim \sqrt{\omega}(1,\zb)$。注意此时有 $\ketA{-(-q)}=-\ketA{q}$。
 
 
 ### Polarization
+
+    Lacia-TimeStamp-2025-06-24-03:39:11
 
 * Srednicki 的书 [@Srednicki:2007qs] 与 Elvang & Huang 的书 [@Elvang:2015rqa]，与本文相比有如下几点不同：
 
@@ -418,33 +431,8 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, .
 \end{equation}
 
-对于出入态，通常有两种约定：
 
-[@Elvang:2015rqa]
-
-\begin{align}
-    \label{eq: incoming}
-    \ketA{-q}=\ketA{q}
-    \, ,
-    \quad
-    \braS{-q}=-\braS{q}
-    \, .
-\end{align}
-
-[@Badger:2023][@SAGEX1][@Srednicki:2007qs]
-
-\begin{equation}
-    \ketA{-q}=i\ketA{q}
-    \, ,
-    \quad
-    \braS{-q}=i\braS{q}
-    \, .
-\end{equation}
-
-For the later choice, one should be careful that $\ketS{-(-q)}=-\ketS{q}$, i.e., $\ketS{q}$ is double-valued in the complex plane of $E$.
-
-
-!!! proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
+??? proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
 
     Since the intertwiner $\varepsilon$ commutes with complex conjugate, we only need to consider $\ketA{q}$ and $\braS{q}$,
 
