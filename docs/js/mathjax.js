@@ -42,7 +42,7 @@ window.MathJax = {
         tagIndent: "2em",
         tagformat: {
             number: (n) => n.toString(),
-            tag: (tag) => "[" + tag + "]",
+            tag: (tag) => "(" + tag + ")",
             id: (id) => "mjx-eqn:" + id.replace(/\s/g, "_"),
             url: (id, base) => base + "#" + encodeURIComponent(id)
         },
