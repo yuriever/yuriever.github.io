@@ -1,8 +1,9 @@
 /*  */
-/* 设置 body 元素的文本颜色 */
+/* 正文字号与颜色 */
 /*  */
 
-body {
+.md-typeset {
+    font-size: 15px;
     color: var(--sora-font-color);
 }
 

@@ -4,6 +4,7 @@
 .md-typeset h4 {
     letter-spacing: 0;
     font-weight: 400;
+    font-family: Helvetica;
     color: var(--md-default-fg-color--light);
 }
 
