@@ -31,6 +31,19 @@
             "problemMatcher": []
         },
         {
+            "label": "MkDocs serve (no dirty)",
+            "group": "build",
+            "type": "shell",
+            "command": "uv run mkdocs serve --dev-addr 127.0.0.1:8000",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "never",
+                "panel": "new",
+                "focus": false
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "MkDocs preview",
             "group": "build",
             "command": "${input:openSimpleBrowser}",
