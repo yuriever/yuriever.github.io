@@ -16,7 +16,7 @@
         &.idea,
         &.remark,
         &.fact {
-            font-size: 0.8rem;
+            font-size: 14px;
 
             &:last-child {
                 margin-bottom: 0.8rem;

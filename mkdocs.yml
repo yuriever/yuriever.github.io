@@ -33,14 +33,6 @@ theme:
     - search.suggest
     # copy-to-clipboard button in code block
     - content.code.copy
-
-  palette:
-    - scheme: sora
-      toggle:
-        icon: material/weather-night
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
   logo: img/Mutsumi1.png
   favicon: img/favicon.png
 
@@ -91,6 +83,8 @@ extra_javascript:
 
 markdown_extensions:
   # Python-Markdown
+  - toc:
+      toc_depth: 3
   - md_in_html
   - admonition
   - footnotes

@@ -3,17 +3,12 @@
 /* https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss */
 /*  */
 
-/*  */
-/* 白天模式颜色 */
-/*  */
-
 [data-md-color-scheme="sora"] {
+    --md-default-bg-color: rgb(243, 249, 243, 0.5);
     --md-primary-fg-color: rgba(250, 250, 250, 0.6);
-    /* --md-typeset-a-color: rgba(100, 60, 200, 1); */
     --md-typeset-a-color: rgb(200, 90, 70);
     /* 代码高亮 */
-    /* --md-code-bg-color: rgb(247, 247, 247); */
-    /* --md-code-bg-color: rgb(103, 103, 103); */
+    --md-code-bg-color: rgb(200, 200, 200, 0.12);
     --md-code-hl-color: rgba(220, 220, 220, 0.3);
     --md-code-hl-variable-color: rgb(29, 125, 251);
     --md-code-hl-constant-color: rgb(134, 88, 228);
@@ -27,29 +22,6 @@
     /* 下面两个似乎没有作用 */
     --md-code-hl-special-color: rgb(219, 20, 87);
     --md-code-hl-name-color: rgb(34, 18, 220);
-}
-
-/*  */
-/* 夜晚模式颜色 */
-/*  */
-
-[data-md-color-scheme="slate"] {
-    --md-primary-fg-color: rgba(20, 20, 20, 0.2);
-    /* 代码高亮 */
-    --md-code-bg-color: rgba(20, 20, 20, 0.2);
-    --md-code-hl-color: rgba(220, 220, 220, 1);
-    --md-code-hl-variable-color: rgb(80, 150, 240);
-    --md-code-hl-function-color: rgb(117, 94, 229);
-    --md-code-hl-constant-color: rgb(117, 94, 229);
-    --md-code-hl-string-color: rgb(182, 137, 0);
-    --md-code-hl-keyword-color: rgb(50, 137, 83);
-    --md-code-hl-number-color: rgb(178, 65, 0);
-    --md-code-hl-operator-color: rgb(200, 200, 200);
-    --md-code-hl-punctuation-color: rgb(200, 200, 200);
-    --md-code-hl-comment-color: rgb(153, 153, 153);
-    /* 下面两个似乎没有作用 */
-    --md-code-hl-special-color: rgb(219, 20, 87);
-    --md-code-hl-name-color: rgb(153, 146, 232);
 }
 
 /*  */
