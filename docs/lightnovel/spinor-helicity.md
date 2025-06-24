@@ -414,6 +414,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, ,
 \end{align}
 
+
 \begin{align}
     \label{eq: conjugate}
     \ketA{q}^{*}=\inout{q} \braS{q}
@@ -500,7 +501,8 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     Then from $\abs{\beta(q)}=1$ we can choose
 
     \begin{equation*}
-        \beta(q)=\pm1 \textInMath{or} i\, .
+        \beta(q)=\pm1 \textInMath{or} i
+        \, .
     \end{equation*}
 
 
@@ -509,6 +511,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     Lacia-TimeStamp-2025-05-10-04:25:04
 
 <!--
+
 \begin{equation}
     \label{eq: polarization}
     \epsilon^{\mu}_{+}(q,q')=\frac{\braketSA{q}{\sigma^{\mu} \lor \gamma^{\mu}}{q'}}{\braketA{qq'}}
@@ -685,7 +688,8 @@ Fierz 恒等式：
         &\epsilon_{-}=(z,1,i,-z)
         \, .
     \end{aligned}
-\end{equation} -->
+\end{equation}
+ -->
 
 
 ## Verification test
