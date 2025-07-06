@@ -29,51 +29,29 @@ title: Triangulated reality
     * Equation of motion and stress tensor.
 
 
-## Paclets
+## Documentations
 
-* [Yurie/BlueArXiv](https://github.com/yuriever/Yurie-BlueArXiv)
+* [Yurie/BlueArXiv](https://resources.wolframcloud.com/PacletRepository/resources/Yurie/BlueArXiv/) (Wolfram language paclet repository)
 
-    * [Documentation](https://resources.wolframcloud.com/PacletRepository/resources/Yurie/BlueArXiv/)
-
-* [Yurie/Cluster](https://github.com/yuriever/Yurie-Cluster)
-
-    * [Documentation](symbolic/Yurie-Cluster/doc.md)
+* [Yurie/Cluster](symbolic/Yurie-Cluster/doc.md)
 
     * [Designing idea](symbolic/Yurie-Cluster/idea.md)
 
-* [Yurie/Algebra](https://github.com/yuriever/Yurie-Algebra)
-
-    * [Documentation](symbolic/Yurie-Algebra/doc.md)
+* [Yurie/Algebra](symbolic/Yurie-Algebra/doc.md)
 
     * [Designing idea](symbolic/Yurie-Algebra/idea.md)
 
     * [Example](symbolic/Yurie-Algebra/example.md)
 
-* [Yurie/Tensor](https://github.com/yuriever/Yurie-Tensor)
+* [Yurie/Math](symbolic/Yurie-Math/doc.md)
 
-    * [Documentation](symbolic/Yurie-Tensor/doc.md)
+* [Yurie/MathForm](symbolic/Yurie-MathForm/doc.md)
 
-* [Yurie/Math](https://github.com/yuriever/Yurie-Math)
-
-    * Documentation
-
-        * [Label](symbolic/Yurie-Math/Label.md)
-
-        * [DLMF](symbolic/Yurie-Math/DLMF.md)
-
-* [Yurie/MathForm](https://github.com/yuriever/Yurie-MathForm)
-
-    * [Documentation](symbolic/Yurie-MathForm/doc.md)
-
-* [Yurie/LaTeXTool](https://github.com/yuriever/Yurie-LaTeXTool)
-
-    * [Documentation](symbolic/Yurie-LaTeXTool/doc.md)
+* [Yurie/LaTeXTool](symbolic/Yurie-LaTeXTool/doc.md)
 
     * [Designing idea](symbolic/Yurie-LaTeXTool/idea.md)
 
-* [Yurie/Autocode](https://github.com/yuriever/Yurie-Autocode)
-
-    * [Documentation](symbolic/Yurie-Autocode/doc.md)
+* [Yurie/Autocode](symbolic/Yurie-Autocode/doc.md)
 
 
 ## External links
