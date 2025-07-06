@@ -6,7 +6,8 @@
         "site": true,
         "uv.lock": true,
         ".python-version": true,
-        ".venv": true
+        ".venv": true,
+        "dist": true
     },
     "cSpell.words": [
         "bibtex",
