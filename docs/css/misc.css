@@ -7,7 +7,28 @@
 }
 
 /*  */
-/* 目录放在右侧 */
+/* 导航栏 */
+/*  */
+
+.md-header,
+.md-tabs {
+    color: hsl(from var(--md-typeset-a-color) H S L / 0.75);
+}
+
+.md-nav--primary .md-nav__title {
+    background-color: var(--md-default-bg-color);
+}
+
+.md-nav--primary .md-nav__title ~ .md-nav__list {
+    box-shadow: none;
+}
+
+.md-nav--primary .md-nav__item {
+    border-top: none;
+}
+
+/*  */
+/* 目录 */
 /*  */
 
 .md-sidebar--secondary {
@@ -15,16 +36,7 @@
 }
 
 /*  */
-/* 导航栏颜色 */
-/*  */
-
-.md-header,
-.md-tabs {
-    color: hsl(from var(--md-typeset-a-color) H S L / 0.5);
-}
-
-/*  */
-/* 隐藏 md-footer-meta */
+/* 页脚元信息隐藏 */
 /*  */
 
 .md-footer {
@@ -36,7 +48,7 @@
 }
 
 /*  */
-/* 水平线的边距 */
+/* 水平线边距 */
 /*  */
 
 .md-typeset hr {
@@ -44,7 +56,7 @@
 }
 
 /*  */
-/* 隐藏滚动条 */
+/* 滚动条隐藏 */
 /*  */
 
 ::-webkit-scrollbar {
@@ -52,7 +64,7 @@
 }
 
 /*  */
-/* 调整斜体字的格式 */
+/* 斜体字 */
 /*  */
 
 .md-typeset em {
