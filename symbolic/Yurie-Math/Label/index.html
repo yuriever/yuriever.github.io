@@ -484,7 +484,7 @@
 <h2 id="kernel">Kernel</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">label</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">lab_</span><span class="p">,</span><span class="nt">head_</span><span class="p">]</span></code> - join the variable(s) and label(s) into a (sequence of) labeled object(s).</p>
+<p><code class="highlight"><span class="nv">label</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">lab_</span><span class="p">,</span><span class="nt">head_</span><span class="p">]</span></code> - join the variables and labels into labeled objects using specified head.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nt">var_</span></code> accepts <code class="highlight"><span class="o">_|</span><span class="p">(</span><span class="nb">List</span><span class="o">|</span><span class="nb">Alternatives</span><span class="p">)[</span><span class="o">__</span><span class="p">]</span></code>.</p>
@@ -520,13 +520,13 @@
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">labelAt</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">rule_</span><span class="p">,</span><span class="nt">head_</span><span class="p">]</span></code> - take the specific value(s) of the labeled object(s).</p>
+<p><code class="highlight"><span class="nv">labelAt</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">rule_</span><span class="p">,</span><span class="nt">head_</span><span class="p">]</span></code> - take the specific values of the labeled objects according to rules.</p>
 <ul>
 <li><code class="highlight"><span class="nt">rule_</span></code> accepts <code class="highlight"><span class="nt">__Rule</span><span class="o">|</span><span class="nb">List</span><span class="p">[</span><span class="nt">__Rule</span><span class="p">]</span></code>.</li>
 </ul>
 </li>
 <li>
-<p><code class="highlight"><span class="nv">labelConvert</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">head1_</span><span class="o">-&gt;</span><span class="nt">head2_</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - convert the labeled object(s) according to the two specified label heads.</p>
+<p><code class="highlight"><span class="nv">labelConvert</span><span class="p">[</span><span class="nt">var_</span><span class="p">,</span><span class="nt">head1_</span><span class="o">-&gt;</span><span class="nt">head2_</span><span class="p">,</span><span class="nt">opts_</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - convert the labeled objects according to the two specified label heads.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nt">opts_</span><span class="o">:</span><span class="s">&quot;LabelType&quot;</span><span class="o">-&gt;</span><span class="nb">All</span></code> - control the pattern of labels, and resolve possible conflicts between variable and label.</p>

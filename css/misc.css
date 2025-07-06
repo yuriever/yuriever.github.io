@@ -1,10 +1,9 @@
 /*  */
-/* 正文字号与颜色 */
+/* 正文字号 */
 /*  */
 
 .md-typeset {
     font-size: 15px;
-    color: var(--sora-font-color);
 }
 
 /*  */
@@ -16,6 +15,15 @@
 }
 
 /*  */
+/* 导航栏颜色 */
+/*  */
+
+.md-header,
+.md-tabs {
+    color: hsl(from var(--md-typeset-a-color) H S L / 0.5);
+}
+
+/*  */
 /* 隐藏 md-footer-meta */
 /*  */
 
@@ -24,7 +32,6 @@
 }
 
 .md-footer-meta {
-    background-color: rgba(255, 255, 255, 0);
     height: 0;
 }
 
