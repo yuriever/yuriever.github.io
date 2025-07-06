@@ -353,22 +353,22 @@ window.MathJax = {
         		3
         	],
         	"op":"\\mathcal{O}",
-        	"braketS":[
-        		"[ #1 ]",
-        		1
-        	],
-        	"sbraket":"\\braketS",
         	"braketA":[
         		"\\langle #1 \\rangle",
         		1
         	],
         	"abraket":"\\braketA",
-        	"braketSA":[
-        		"[ #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 \\rangle",
-        		3
+        	"braketS":[
+        		"[ #1 ]",
+        		1
         	],
+        	"sbraket":"\\braketS",
         	"braketAS":[
         		"\\langle #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 ]",
+        		3
+        	],
+        	"braketSA":[
+        		"[ #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 \\rangle",
         		3
         	],
         	"braA":[
@@ -431,11 +431,12 @@ window.MathJax = {
         	"phat":"\\hat{p}",
         	"qhat":"\\hat{q}",
         	"khat":"\\hat{k}",
-        	"hb":"\\bar{h}",
         	"zb":"\\bar{z}",
         	"wb":"\\bar{w}",
+        	"hb":"\\bar{h}",
         	"Tb":"\\bar{T}",
         	"Lb":"\\bar{L}",
+        	"ppb":"\\bar{\\partial}",
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
         	"normalOrder":[

@@ -465,20 +465,20 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">5.5.5</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\Gamma (z)=\frac{2^{z-1} \Gamma \left(\frac{z}{2}+\frac{1}{2}\right) \Gamma \left(\frac{z}{2}\right)}{\sqrt{\pi }}\\\end{aligned}\)</span></td>
+<td style="text-align: left;">PochhammerSwapA</td>
+<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\boldsymbol{\text{IntegerQ}[n]} \qquad (a)_n=(-1)^n (-a-n+1)_n\\\end{aligned}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">FactorialPowerSwapA</td>
+<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\boldsymbol{\text{IntegerQ}[n]} \qquad a^{(n)}=(-1)^n (-a+n-1)^{(n)}\\\end{aligned}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">BinomialSwapA</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\binom{a}{n}=(-1)^n \binom{-a+n-1}{n}\\\end{aligned}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\boldsymbol{\text{IntegerQ}[n]} \qquad \binom{a}{n}=(-1)^n \binom{n-a-1}{n}\\\end{aligned}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">BinomialSwapN</td>
 <td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\binom{a}{n}=\binom{a}{a-n}\\\end{aligned}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">PochhammerSwapA</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;(a)_n=(-1)^n (-a-n+1)_n\\\end{aligned}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">5.2.8.1</td>
@@ -487,6 +487,10 @@
 <tr>
 <td style="text-align: left;">5.2.8.2</td>
 <td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\boldsymbol{\text{OddQ}[n]} \qquad (a)_n=2^n \left(\frac{a}{2}\right)_{\frac{n+1}{2}} \left(\frac{a+1}{2}\right)_{\frac{n-1}{2}}\\\end{aligned}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5.5.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\Gamma (z)=\frac{2^{z-1} \Gamma \left(\frac{z}{2}+\frac{1}{2}\right) \Gamma \left(\frac{z}{2}\right)}{\sqrt{\pi }}\\\end{aligned}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">15.1.2</td>
@@ -647,22 +651,6 @@
 <tr>
 <td style="text-align: left;">LegendreAtB=1/2</td>
 <td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;P_a^{\frac{1}{2}}(z)=\frac{\left(z+i \sqrt{1-z^2}\right)^{-a-\frac{1}{2}}+\left(z+i \sqrt{1-z^2}\right)^{a+\frac{1}{2}}}{\sqrt{2 \pi } \sqrt[4]{1-z^2}}\\&amp;Q_a^{\frac{1}{2}}(z)=-\frac{1}{2} i \left(\frac{\sqrt{\frac{\pi }{2}} \left(z+i \sqrt{1-z^2}\right)^{-a-\frac{1}{2}}}{\sqrt[4]{1-z^2}}-\frac{\sqrt{\pi } \left(z-i \sqrt{1-z^2}\right)^{-a-\frac{1}{2}}}{\sqrt{2} \sqrt[4]{1-z^2}}\right)\\&amp;P_a^{\frac{1}{2}}(z)=\frac{\left(\sqrt{z^2-1}+z\right)^{-a-\frac{1}{2}}+\left(\sqrt{z^2-1}+z\right)^{a+\frac{1}{2}}}{\sqrt{2 \pi } \sqrt[4]{z^2-1}}\\&amp;Q_a^{\frac{1}{2}}(z)=\frac{i \sqrt{\pi } \left(\sqrt{z^2-1}+z\right)^{-a-\frac{1}{2}}}{\sqrt{2} \sqrt[4]{z^2-1}}\\\end{aligned}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">WilsonToHyper</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\text{wilsonPolynomial}(a,b,c,d,n,x)=\frac{\Gamma (a+b+n) \Gamma (a+c+n) \Gamma (a+d+n) \Fpq{4}{3}{-n,a+b+c+d+n-1,a-i \sqrt{x},a+i \sqrt{x}}{a+b,a+c,a+d}{1}}{\Gamma (a+b) \Gamma (a+c) \Gamma (a+d)}\\\end{aligned}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">WilsonFromHyper</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\boldsymbol{a+b+c-d-e-f+1-n=0} \qquad \Fpq{4}{3}{-n,a,b,c}{d,e,f}{1}=\frac{(\Gamma (d) \Gamma (e) \Gamma (f)) \text{wilsonPolynomial}\left(\frac{b+c}{2},-\frac{b}{2}-\frac{c}{2}+d,-\frac{b}{2}-\frac{c}{2}+e,-\frac{b}{2}-\frac{c}{2}+f,n,-\frac{1}{4} (b-c)^2\right)}{\Gamma (1+a+b+c-d-e) \Gamma (1+a+b+c-d-f) \Gamma (1+a+b+c-e-f)}\\\end{aligned}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">JacobiPhiToHyper</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\text{jacobiPhi}(a,b,c,z)=\Fpq{2}{1}{\frac{1}{2} (a+b-i c+1),\frac{1}{2} (a+b+i c+1)}{a+1}{-\sinh^2(z)}\\\end{aligned}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">JacobiPhiFromHyper</td>
-<td style="text-align: left;"><span class="arithmatex">\(\begin{aligned}&amp;\Fpq{2}{1}{a,b}{c}{z}=\text{jacobiPhi}\left(c-1,a+b-c,i (a-b),\sinh^{-1}\left(\sqrt{-z}\right)\right)\\\end{aligned}\)</span></td>
 </tr>
 </tbody>
 </table>
