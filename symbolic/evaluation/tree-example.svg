@@ -62,7 +62,7 @@
 </clipPath>
 </defs>
 <g id="surface6">
-<path style=" stroke:none;fill-rule:evenodd;fill:rgb(99.998474%,99.998474%,99.998474%);fill-opacity:1;" d="M 0 181.441406 L 450 181.441406 L 450 0 L 0 0 Z M 0 181.441406 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(1,1,1);fill-opacity:0;" d="M 0 181.441406 L 450 181.441406 L 450 0 L 0 0 Z M 0 181.441406 "/>
 <path style="fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(60%,58.823529%,55.294118%);stroke-opacity:0.7;stroke-miterlimit:3.25;" d="M 224.5 10.355469 L 44.898438 90.152344 "/>
 <path style="fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(60%,58.823529%,55.294118%);stroke-opacity:0.7;stroke-miterlimit:3.25;" d="M 224.5 10.355469 L 224.5 90.152344 "/>
 <path style="fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:miter;stroke:rgb(60%,58.823529%,55.294118%);stroke-opacity:0.7;stroke-miterlimit:3.25;" d="M 224.5 10.355469 L 404.101562 90.152344 "/>
