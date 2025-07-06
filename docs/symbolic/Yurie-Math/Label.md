@@ -3,7 +3,7 @@
 
 ## Kernel
 
-* `#!wl label[var_,lab_,head_]` - join the variable(s) and label(s) into a (sequence of) labeled object(s).
+* `#!wl label[var_,lab_,head_]` - join the variables and labels into labeled objects using specified head.
 
     * `#!wl var_` accepts `#!wl _|(List|Alternatives)[__]`.
 
@@ -18,12 +18,12 @@
         | `#!wl head`     | `#!wl head[var,lab]` |
 
 
-* `#!wl labelAt[var_,rule_,head_]` - take the specific value(s) of the labeled object(s).
+* `#!wl labelAt[var_,rule_,head_]` - take the specific values of the labeled objects according to rules.
 
     * `#!wl rule_` accepts `#!wl __Rule|List[__Rule]`.
 
 
-* `#!wl labelConvert[var_,head1_->head2_,opts_][expr_]` - convert the labeled object(s) according to the two specified label heads.
+* `#!wl labelConvert[var_,head1_->head2_,opts_][expr_]` - convert the labeled objects according to the two specified label heads.
 
     * `#!wl opts_:"LabelType"->All` - control the pattern of labels, and resolve possible conflicts between variable and label.
 
