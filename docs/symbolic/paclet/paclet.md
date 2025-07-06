@@ -9,7 +9,9 @@ References:
 
 Syntactic dependence:
 
-![paclet](paclet.png)
+!!! code
+
+    ![paclet](paclet.png)
 
 !!! wl "File structure"
 
