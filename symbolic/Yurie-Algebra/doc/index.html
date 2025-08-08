@@ -594,7 +594,7 @@
 <h1 id="yuriealgebra"><a href="https://github.com/yuriever/Yurie-Algebra">Yurie/Algebra</a></h1>
 <p>A Mathematica paclet for implementing and managing finitely presented associative algebras.</p>
 <p>Dependency:</p>
-<div class="highlight"><pre><span></span><code><span class="s">&quot;Yurie/Cluster&quot;</span><span class="o">-&gt;</span><span class="s">&quot;&gt;=1.0.0&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;Yurie/Cluster&quot;</span><span class="o">-&gt;</span><span class="s">&quot;&gt;=2.0.0&quot;</span>
 </code></pre></div>
 <h2 id="attributes">Attributes</h2>
 <ul>
@@ -826,20 +826,12 @@
 <td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span></code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algFS</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span></code></td>
-</tr>
-<tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algebraPrint</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algSP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">algebraPrint</span></code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algFSP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">FullSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">algebraPrint</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="nv">algEqualQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
@@ -937,7 +929,12 @@
 </ul>
 <h3 id="operator-separation">Operator separation</h3>
 <ul>
-<li><code class="highlight"><span class="nv">operatorSeparate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - separate scalars and operators in the given linear expression.</li>
+<li>
+<p><code class="highlight"><span class="nv">operatorSeparate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - separate scalars and operators in the given linear expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">scalarSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - simplify the scalar part of the expression.</p>
+</li>
 </ul>
 <h3 id="consistency-check">Consistency check</h3>
 <p>User-defined relations are not guaranteed to be consistent with the internal ones. The following functions are designed for consistency checks.</p>
@@ -1002,10 +999,11 @@
 <h2 id="other-issues">Other issues</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nb">Needs</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will retain the previously defined algebras, while <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will clear them.</p>
+<p><code class="highlight"><span class="nb">Needs</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will preserve the previously defined algebras, while <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">&quot;Yurie`Algebra`&quot;</span><span class="p">]</span></code> will clear them.</p>
 </li>
 <li>
-<p>The accepted pattern of algebra names is <code class="highlight"><span class="nt">_String</span></code>.</p>
+<p>From version 14.2 to 14.3, the behavior of <code class="highlight"><span class="nb">Simplify</span></code> is changed to convert e.g. <code class="highlight"><span class="nv">x</span><span class="o">**</span><span class="nv">x</span></code> to <code class="highlight"><span class="nv">GeneralizedPower</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">2</span><span class="p">]</span></code>.</p>
+<p>The function <code class="highlight"><span class="nv">scalarSimplify</span></code> mimics <code class="highlight"><span class="nb">Simplify</span></code> before version 14.3.</p>
 </li>
 </ul>
 
