@@ -5,7 +5,7 @@ A Mathematica paclet for implementing and managing finitely presented associativ
 Dependency:
 
 ``` wl
-"Yurie/Cluster"->">=1.0.0"
+"Yurie/Cluster"->">=2.0.0"
 ```
 
 
@@ -109,10 +109,8 @@ Table of shortcuts:
 | Name                  | Meaning                                              |
 | :-------------------- | :--------------------------------------------------- |
 | `#!wl algS[_]`        | `#!wl algebraSimplify`                               |
-| `#!wl algFS[_]`       | `#!wl algebraSimplify + FullSimplify`                |
 | `#!wl algP[_]`        | `#!wl algebraPrint`                                  |
 | `#!wl algSP[_]`       | `#!wl algebraSimplify + algebraPrint`                |
-| `#!wl algFSP[_]`      | `#!wl algebraSimplify + FullSimplify + algebraPrint` |
 | `#!wl algEqualQ[_,_]` | `#!wl x==y` for operators.                           |
 | `#!wl algSameQ[_,_]`  | `#!wl x===y` for operators.                          |
 
@@ -201,6 +199,8 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
 
 * `#!wl operatorSeparate[_]` - separate scalars and operators in the given linear expression.
 
+* `#!wl scalarSimplify[_]` - simplify the scalar part of the expression.
+
 
 ### Consistency check
 
@@ -270,6 +270,8 @@ User-defined relations are not guaranteed to be consistent with the internal one
 
 ## Other issues
 
-* ``#!wl Needs["Yurie`Algebra`"]`` will retain the previously defined algebras, while ``#!wl Get["Yurie`Algebra`"]`` will clear them.
+* ``#!wl Needs["Yurie`Algebra`"]`` will preserve the previously defined algebras, while ``#!wl Get["Yurie`Algebra`"]`` will clear them.
 
-* The accepted pattern of algebra names is `#!wl _String`.
+* From version 14.2 to 14.3, the behavior of `#!wl Simplify` is changed to convert e.g. `#!wl x**x` to `#!wl GeneralizedPower[x,2]`.
+
+    The function `#!wl scalarSimplify` mimics `#!wl Simplify` before version 14.3.

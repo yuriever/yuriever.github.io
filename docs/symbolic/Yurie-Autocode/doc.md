@@ -39,8 +39,6 @@ Code tools.
 
             **TODO** check the code `#!wl NotebookImport[#,_->"HeldExpression"]&` to see how `#!wl NotebookImport` handles `#!wl Format`.
 
-        * **TODO** Another parser of input cell, controlled by `#!wl (*$reformatCode = False;*)` should be deprecated, since it cannot distinguish `#!wl Power` and `#!wl Superscript`.
-
 ---
 
 <!-- AST.wl -->
