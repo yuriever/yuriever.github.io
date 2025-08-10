@@ -67,6 +67,10 @@
 /* 斜体字 */
 /*  */
 
+.md-typeset strong {
+    text-shadow: rgba(150, 150, 255, 0.4) 0 0 2px;
+}
+
 .md-typeset em {
     color: rgb(120, 140, 140);
     font-style: normal;
