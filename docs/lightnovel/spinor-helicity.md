@@ -7,7 +7,6 @@
 \newcommand{\epsilonb}{\bar{\epsilon}}
 \newcommand{\inout}[1]{e_{#1}}$ </span>
 
-
 ## Conventions
 
 本文旨在梳理旋量螺旋度方法 (spinor helicity formalism) 中的约定，主要遵循 [@Wess:2020] [@SAGEX1]。
@@ -27,7 +26,6 @@
         \omega>0,z\in\CC
         \, .
     \end{equation*}
-
 
 ### Metric
 
@@ -68,7 +66,6 @@
 
 * Cheung [@Cheung:2017pzi] *TASI lectures on scattering amplitudes*
 
-
 ### Pauli matrices
 
 Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
@@ -103,7 +100,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 此外，在 twistor 理论的相关文献中，Pauli 矩阵往往带有归一化因子 $\frac{1}{\sqrt{2}}$。
 
-
 ### Spinor inner product
 
 旋量内积是另一类正负号差异的来源：其一是等变映射 $\varepsilon^{ab}, \varepsilon^{\dota\dotb}$ 的分量的选取，其二是旋量内积与自然配对的相对符号 $\braketA{q_{1}q_{2}}= \pm\braA{q_{1}}^{a}\ketA{q_{2}}_{a}$。
@@ -117,9 +113,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 在粒子物理领域的相关文献中，多数为负号。
 
-
 ### Incoming/Outgoing
-
 
 出入态的转换对应于能量的解析研拓 $\omega\to -\omega$。通常有两种约定：例如文献 [@SAGEX1] [@Srednicki:2007qs] [@Badger:2023] 把负号分配到两种旋量中，
 
@@ -143,7 +137,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 此时有 $\ketA{-(-q)}=\ketA{q}$。
 
-
 ### Polarization
 
     Lacia-TimeStamp-2025-06-24-07:07:04
@@ -157,14 +150,11 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 * 极化矢量的类型
 
-
 ## Basic ingredients
-
 
 ### Helicity spinor
 
 螺旋度旋量 (helicity spinor) 是一类特殊的玻色型 Weyl 旋量，它解开了无质量 Weyl 方程的约束。
-
 
 #### Angle spinor
 
@@ -213,7 +203,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 等价的，$\varepsilon$ 诱导了 $(\half,0)$ 或 $(\half,0)^{\dual}$ 上的反对称不变内积。
 
-
 #### Square spinor
 
 将前述讨论应用于复共轭表示 $(0,\half)$ 及其对偶表示 $(0,\half)^{\dual}$，方左矢 (square bra) 和方右矢 (square ket) 的变换关系为
@@ -258,7 +247,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \braS{q}_{\dota}=\varepsilon_{\dota \dotb}\ketS{q}^{\dotb}
     \, .
 \end{equation}
-
 
 ### Momentum bispinor
 
@@ -374,7 +362,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, .
 \end{equation}
 
-
 #### Real momentum
 
 对于复的无质量动量 $q$，尖旋量和方旋量是独立的。方程 \eqref{eq: helicity spinor} 的左边维数为 $\dim_{\CC}=3$，而右边维数为 $\dim_{\CC}=4$，不匹配的原因是因子化可以相差一个标度变换
@@ -414,7 +401,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, ,
 \end{align}
 
-
 \begin{align}
     \label{eq: conjugate}
     \ketA{q}^{*}=\inout{q} \braS{q}
@@ -434,7 +420,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \braketS{q_{1}q_{2}}
     \, .
 \end{equation}
-
 
 ??? proof "\eqref{eq: incoming}, \eqref{eq: conjugate}"
 
@@ -505,7 +490,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
         \, .
     \end{equation*}
 
-
 ### Polarization
 
     Lacia-TimeStamp-2025-05-10-04:25:04
@@ -522,7 +506,6 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 \end{equation}
 
 for the reference momentum $q'$. -->
-
 
 ## Useful properties
 
@@ -544,7 +527,6 @@ Pauli/Dirac 矩阵与动量旋量的缩并指标也会被省略，例如
     \braA{1}^{a}\sigma_{\mu,a\dota}\ketS{2}^{\dota}
     \, .
 \end{equation*}
-
 
 ### Property
 
@@ -596,7 +578,6 @@ Fierz 恒等式：
 \end{aligned}
 \end{equation}
 
-
 ### Little group scaling
 
 在小群标度变换下，各对象的权为
@@ -610,9 +591,7 @@ Fierz 恒等式：
 
     Lacia-TimeStamp-2025-06-24-10:11:13
 
-
 ## Component
-
 
 无质量动量 $q$ 可以用能量 $E$ 和角坐标 $(\theta,\phi)$ 参数化为
 
@@ -690,7 +669,6 @@ Fierz 恒等式：
     \end{aligned}
 \end{equation}
  -->
-
 
 ## Verification test
 

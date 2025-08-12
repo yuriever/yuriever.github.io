@@ -8,7 +8,6 @@ References:
 
 ---
 
-
 ## Introduction
 
 Mac 端的 Karabiner 可以复现 Win 端的 AutoHotkey 的一部分功能。配置文件的格式为 JSON，默认目录为
@@ -110,7 +109,6 @@ Karabiner 不具有类似于 AutoHotkey `Send/SendRaw` 的函数，可以通过�
 
 * 字符串需要通过两次转译，例如 `\begin{...}\n` 在命令行中应为 `\\begin{...}\n`，而在 `xxx.json` 中需要进一步将反斜杠进行转译，为 `\\\\begin{...}\\n`；
 * 为保证粘贴之前已经完成字符串的传输，需要在两个事件间用 `hold_down_milliseconds` 添加延迟，类似于 AutoHotkey 的函数 `Sleep`。
-
 
 ## Location of configuration
 

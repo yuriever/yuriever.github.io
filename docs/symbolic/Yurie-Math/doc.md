@@ -2,7 +2,6 @@
 
 Math utilities for Wolfram Language.
 
-
 ## Documentation
 
 * [DLMF](DLMF.md) - partial implementation of [Digital Library of Mathematical Functions](https://dlmf.nist.gov/)

@@ -2,7 +2,6 @@
 
 Convention: $\hbar=1$.
 
-
 ## 问题 4.2
 
 粒子数 $N=1$ 的态为
@@ -62,7 +61,6 @@ Convention: $\hbar=1$.
 \end{align}
 
 从坐标空间来看，在 Cartesian basis 下 $\ket{i,j,k}$ 的波函数正比于三个 Hermite 多项式的乘积 $H_{1}(x_{1})H_{2}(x_{2})H_{3}(x_{3})$，而上述计算是将其重新组合为调和多项式。
-
 
 ## 问题 4.3
 

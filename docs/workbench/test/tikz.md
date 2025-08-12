@@ -2,6 +2,13 @@
 
 This method is reused.
 
+**TODO**
+
+* Automate the generation of TikZ diagrams.
+
+* Add counter to TikZ diagrams.
+
+## Demo
 
 Similarly, we can construct the second cohomology of Lie algebras for classifying central extensions.
 An exact sequence of Lie algebras
@@ -16,5 +23,3 @@ An exact sequence of Lie algebras
 </script>
 </center>
 is call a central extension if $\lie{a}$ is abelian and $[\lie{a},\lie{b}]=0$.
-
-

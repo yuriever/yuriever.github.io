@@ -10,7 +10,6 @@
 
 * proof, idea, remark, fact
 
-
 ## Definition/Lemma/Theorem/Corollary
 
 !!! def
@@ -141,7 +140,6 @@
         a+b
     \end{equation}
 
-
 ## Example
 
 !!! ex
@@ -175,7 +173,6 @@
     \begin{equation}
         a+b
     \end{equation}
-
 
 ## Proof/Idea/Remark/Fact
 
