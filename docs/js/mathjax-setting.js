@@ -107,7 +107,7 @@ window.MathJax = {
         		"(#1,#2)",
         		2
         	],
-        	"directIntegral":"\\int^{\\oplus}",
+        	"DirectIntegral":"\\int^{\\oplus}",
         	"set":[
         		"\\{ #1 \\}",
         		1
@@ -129,7 +129,7 @@ window.MathJax = {
         	],
         	"Res":"\\operatorname{Res}",
         	"Disc":"\\operatorname{Disc}",
-        	"volume":"\\operatorname{Vol}",
+        	"Vol":"\\operatorname{Vol}",
         	"abs":[
         		"\\left\\lvert #1 \\right\\rvert",
         		1
@@ -144,11 +144,7 @@ window.MathJax = {
         		"\\Gamma[#1]",
         		1
         	],
-        	"poch":[
-        		"(#1)_{#2}",
-        		2
-        	],
-        	"multiGamma":[
+        	"mg":[
         		"\\Gamma\\biggl[\\genfrac..{0pt}{}{#1}{#2}\\biggr]",
         		2
         	],
@@ -172,15 +168,13 @@ window.MathJax = {
         	"codim":"\\operatorname{codim}",
         	"Aut":"\\operatorname{Aut}",
         	"End":"\\operatorname{End}",
-        	"adjoint":"\\operatorname{ad}",
-        	"Adjoint":"\\operatorname{Ad}",
-        	"induce":"\\operatorname{Ind}",
-        	"restrict":"\\operatorname{Res}",
+        	"ad":"\\operatorname{ad}",
+        	"Ad":"\\operatorname{Ad}",
         	"Sym":"\\operatorname{Sym}",
         	"Alt":"\\operatorname{Alt}",
-        	"inverseLimit":"\\varprojlim",
-        	"directLimit":"\\varinjlim",
-        	"linearspan":[
+        	"limInverse":"\\varprojlim",
+        	"limDirect":"\\varinjlim",
+        	"vecspan":[
         		"\\{ #1 \\}",
         		1
         	],
@@ -189,6 +183,7 @@ window.MathJax = {
         		1
         	],
         	"spec":"\\operatorname{spec}",
+        	"Spec":"\\operatorname{Spec}",
         	"lie":[
         		"\\mathfrak{#1}",
         		1
@@ -198,7 +193,7 @@ window.MathJax = {
         		"\\operatorname{U}(#1)",
         		1
         	],
-        	"UEAC":[
+        	"UEACenter":[
         		"\\operatorname{ZU}(#1)",
         		1
         	],
@@ -243,27 +238,27 @@ window.MathJax = {
         	"Hom":"\\operatorname{Hom}",
         	"Ext":"\\operatorname{Ext}",
         	"Tor":"\\operatorname{Tor}",
+        	"Ind":"\\operatorname{Ind}",
         	"RR":"\\mathbb{R}",
-        	"RRneq":"\\mathbb{R}^{*}",
+        	"RRstar":"\\mathbb{R}^{*}",
         	"RRgeq":"\\mathbb{R}_{\\scriptscriptstyle{\\geqslant 0}}",
         	"RRleq":"\\mathbb{R}_{\\scriptscriptstyle{\\leqslant 0}}",
         	"RRg":"\\mathbb{R}_{\\scriptscriptstyle{> 0}}",
         	"RRl":"\\mathbb{R}_{\\scriptscriptstyle{< 0}}",
         	"ZZ":"\\mathbb{Z}",
         	"NN":"\\mathbb{N}",
-        	"ZZneq":"\\mathbb{Z}^{*}",
         	"ZZgeq":"\\mathbb{Z}_{\\scriptscriptstyle{\\geqslant 0}}",
         	"ZZleq":"\\mathbb{Z}_{\\scriptscriptstyle{\\leqslant 0}}",
         	"ZZg":"\\mathbb{Z}_{\\scriptscriptstyle{> 0}}",
         	"ZZl":"\\mathbb{Z}_{\\scriptscriptstyle{< 0}}",
         	"QQ":"\\mathbb{Q}",
-        	"QQneq":"\\mathbb{Q}^{*}",
+        	"QQstar":"\\mathbb{Q}^{*}",
         	"QQgeq":"\\mathbb{Q}_{\\scriptscriptstyle{\\geqslant 0}}",
         	"QQleq":"\\mathbb{Q}_{\\scriptscriptstyle{\\leqslant 0}}",
         	"QQg":"\\mathbb{Q}_{\\scriptscriptstyle{> 0}}",
         	"QQl":"\\mathbb{Q}_{\\scriptscriptstyle{< 0}}",
         	"CC":"\\mathbb{C}",
-        	"CCneq":"\\mathbb{C}^{*}",
+        	"CCstar":"\\mathbb{C}^{*}",
         	"CP":"\\mathbb{CP}",
         	"RP":"\\mathbb{RP}",
         	"Qp":"\\mathbb{Q}_{p}",
@@ -439,10 +434,6 @@ window.MathJax = {
         	"ppb":"\\bar{\\partial}",
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
-        	"normalOrder":[
-        		":\\mathrel{#1}:",
-        		1
-        	],
         	"halfdim":"\\frac{d}{2}",
         	"signature":"{\\color{red}s}",
         	"polar":"{\\color{red}n}",
@@ -453,46 +444,38 @@ window.MathJax = {
         	"CPW":"\\Psi",
         	"CPWC":"\\rho",
         	"CPWCWithS":"\\sigma",
-        	"rep":[
-        		"\\mathcal{M}_{#1}",
-        		1
-        	],
-        	"urep":[
-        		"\\mathcal{P}_{#1}",
-        		1
-        	],
         	"hbar":"\\rlap{\\unicode{xAF}}h",
         	"eqqq":":=",
         	"id":"\\mathbf{1}",
         	"schannel":"\\mathsf{s}",
         	"tchannel":"\\mathsf{t}",
         	"uchannel":"\\mathsf{u}",
-        	"textInMath":[
+        	"TextInMath":[
         		"\\, \\text{ #1 }\\,",
         		1
         	],
         	"nn":"\\nonumber",
-        	"mathred":[
+        	"red":[
         		"{\\color{red} #1}",
         		1
         	],
-        	"mathblue":[
+        	"blue":[
         		"{\\color{blue} #1}",
         		1
         	],
-        	"mathgreen":[
+        	"green":[
         		"{\\color{orange} #1}",
         		1
         	],
-        	"mathorange":[
+        	"orange":[
         		"{\\color{orange} #1}",
         		1
         	],
-        	"mathpurple":[
+        	"purple":[
         		"{\\color{purple} #1}",
         		1
         	],
-        	"mathpink":[
+        	"pink":[
         		"{\\color{pink} #1}",
         		1
         	],

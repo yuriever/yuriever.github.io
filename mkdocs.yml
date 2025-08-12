@@ -69,10 +69,10 @@ extra_css:
   # tikzjax
   - css/tikzjax/fonts.css
   # blackbox
-  - css/css-test/blackbox.css
+  # - css/css-test/blackbox.css
   # developer
-  - css/css-test/test.css
-  - css/css-test/test-box-color.css
+  # - css/css-test/test.css
+  # - css/css-test/test-box-color.css
 
 extra_javascript:
   # random text
