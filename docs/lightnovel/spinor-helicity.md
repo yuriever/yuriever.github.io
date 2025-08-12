@@ -22,7 +22,7 @@
             1+z \bar{z},z+\bar{z},-i (z-\bar{z}),1-z \bar{z}
         )
         \, ,
-        \textInMath{for}
+        \TextInMath{for}
         \omega>0,z\in\CC
         \, .
     \end{equation*}
@@ -73,7 +73,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 \begin{equation*}
     \sigma_{\mu}\sim(\id,\sigma^{i})
     \, ,
-    \textInMath{vs.}
+    \TextInMath{vs.}
     \sigma^{\mu}\sim(\id,\sigma^{i})
     \, .
 \end{equation*}
@@ -486,7 +486,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     Then from $\abs{\beta(q)}=1$ we can choose
 
     \begin{equation*}
-        \beta(q)=\pm1 \textInMath{or} i
+        \beta(q)=\pm1 \TextInMath{or} i
         \, .
     \end{equation*}
 
