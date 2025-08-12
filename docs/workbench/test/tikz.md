@@ -1,6 +1,6 @@
 # TikZ test
 
-This method is super slow and has been deprecated.
+This method is reused.
 
 
 If $B\simeq A\times C$, it is called a trivial extension. A central extension is trivial if and only if it splits: $\exists \sigma:C\to B, \, \pi\cdot \sigma=\id_{C}$,

@@ -66,13 +66,13 @@ extra_css:
   # box
   - css/box-format.css
   - css/box-type.css
-  # blackbox
-  # - css-test/blackbox.css
-  # developer
-  # - css-test/test.css
-  # - css-test/test-box-color.css
   # tikzjax
-  - tikzjax/fonts.css
+  - css/tikzjax/fonts.css
+  # blackbox
+  - css/css-test/blackbox.css
+  # developer
+  - css/css-test/test.css
+  - css/css-test/test-box-color.css
 
 extra_javascript:
   # random text
@@ -80,10 +80,10 @@ extra_javascript:
   # theorem
   - js/box-thm.js
   # mathjax
-  - js/mathjax.js
+  - js/mathjax-setting.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # tikzjax
-  - tikzjax/tikzjax.js
+  - js/tikzjax.js
 
 markdown_extensions:
   # Python-Markdown
