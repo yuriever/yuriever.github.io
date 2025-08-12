@@ -69,6 +69,14 @@
     
       <link rel="stylesheet" href="../../../css/box-type.css">
     
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+      <link rel="stylesheet" href="../../../css/css-test/blackbox.css">
+    
+      <link rel="stylesheet" href="../../../css/css-test/test.css">
+    
+      <link rel="stylesheet" href="../../../css/css-test/test-box-color.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -404,6 +412,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -455,7 +480,30 @@
 
 <!-- Page content -->
 <h1 id="tikz-test">TikZ test</h1>
-<p>This method is super slow and has been deprecated.</p>
+<p>This method is reused.</p>
+<p><strong>TODO</strong></p>
+<ul>
+<li>
+<p>Automate the generation of TikZ diagrams.</p>
+</li>
+<li>
+<p>Add counter to TikZ diagrams.</p>
+</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<p>Similarly, we can construct the second cohomology of Lie algebras for classifying central extensions.
+An exact sequence of Lie algebras</p>
+<center>
+<script type="text/tikz">
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+    1 \arrow[r] & A \arrow[r, "\iota"] & B \arrow[r, "\pi"] & C \arrow[r] \arrow[l, "\sigma", bend left] & 1
+\end{tikzcd}
+\end{document}
+</script>
+</center>
+<p>is call a central extension if <span class="arithmatex">\(\lie{a}\)</span> is abelian and <span class="arithmatex">\([\lie{a},\lie{b}]=0\)</span>.</p>
 
 <!-- Source file information -->
 
@@ -513,9 +561,11 @@
       
         <script src="../../../js/box-thm.js"></script>
       
-        <script src="../../../js/mathjax.js"></script>
+        <script src="../../../js/mathjax-setting.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
       
     
   </body>
