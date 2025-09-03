@@ -140,11 +140,11 @@ This functionality needs the algebras `#!wl "Tensor"`, `#!wl "Coalgebra"`, `#!wl
 
 ### Commutator
 
-* `#!wl comm|anticomm[__]` - (anti-)commutator.
+* `#!wl comm[__]` - (anti-)commutator.
 
-* `#!wl commSim|anticommSim[__]` - simplify the (anti-)commutator.
+* `#!wl commSim[__]` - simplify the (anti-)commutator.
 
-* `#!wl commDefine[_,_]:>_/;_` - define the (anti-)commutator with the given order and condition.
+* `#!wl commIn[_,_]:>_/;_` - define the (anti-)commutator with the given order and condition.
 
 ### Adjoint
 
