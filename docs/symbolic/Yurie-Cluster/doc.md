@@ -68,7 +68,6 @@ A Mathematica paclet for implementing a specific form of class composition.
     class PlanetExtraData,StarDefaultList,StarDefaultData data;
     ```
 
-
 ## Attributes
 
 * `#!wl cluster[data_Association]` - store the data with the following keys:
@@ -91,9 +90,7 @@ A Mathematica paclet for implementing a specific form of class composition.
 
     * `#!wl "StarDefaultData"` - data of default star. After star operations the default data will be updated automatically.
 
-
 ## Methods
-
 
 ### Cluster constructors
 
@@ -101,10 +98,9 @@ A Mathematica paclet for implementing a specific form of class composition.
 
 * `#!wl clusterInit[{clusterName_,context_},planetList_,commonList_,extraList_,mergeList_]` - initiate the cluster and bind it to the symbol ``#!wl context`clusterName``. The arguments are the name of cluster with context, then names, common values, extra values and merge methods of planets.
 
-* `#!wl clusterPropGet[cluster_,propertyOrItsList_]` - get property of the cluster.
+* `#!wl clusterGet[cluster_,propertyOrItsList_]` - get property of the cluster.
 
-* `#!wl clusterPropSet[cluster_,propertyOrItsList_]` - set property of the cluster.
-
+* `#!wl clusterSet[cluster_,propertyOrItsList_]` - set property of the cluster.
 
 ### Public methods
 
@@ -120,18 +116,17 @@ A Mathematica paclet for implementing a specific form of class composition.
 
 * `#!wl starChange[cluster_,starList_,planetData_,planetFunctionData_]` - change planet data to the stars by the functions.
 
-
 ### Private methods
 
 * `#!wl starDefineSplit[cluster_,starList_]` - split the list of stars into defined and undefined.
 
 * `#!wl starDefineCheck[__]` - check the input before calling public methods:
 
-    * `#!wl starDefineCheck[cluster_,"starReportUndefAndReturnDef",starList_]`
+    * `#!wl starDefineCheck[cluster_,"StarReportUndefAndReturnDef",starList_]`
 
-    * `#!wl starDefineCheck[cluster_,"starReportDefAndReturnUndef",starList_]`
+    * `#!wl starDefineCheck[cluster_,"StarReportDefAndReturnUndef",starList_]`
 
-    * `#!wl starDefineCheck[cluster_,"planetAborUndeff",starList_]`
+    * `#!wl starDefineCheck[cluster_,"PlanetThrowUndef",starList_]`
 
 * `#!wl starUpdateDefault[cluster_]` - update `#!wl "StarDefaultData"` by `#!wl "StarDefaultList"` after `#!wl starDefault`, `#!wl starReset`, `#!wl starUnset`, `#!wl starMerge` and `#!wl starChange`.
 

@@ -1,9 +1,8 @@
 # Designing idea
 
-
 ## Motivation
 
-A finitely presented algebra (or monoid, module, ...) consists of lists of generators `#!wl operator` and relations `#!wl relation`. From above we can abstract the object as
+A finitely presented algebra (or monoid, module, ...) consists of lists of generators `#!wl "Generator"` and relations `#!wl "Relation"`. From above we can abstract the object as
 
 * class: algebra
 
@@ -11,7 +10,7 @@ A finitely presented algebra (or monoid, module, ...) consists of lists of gener
 
 * method: define, unset, reset, change_elements
 
-Then different algebras correspond to different list-triples and can be composited into one algebra
+Then different algebras correspond to different list pairs and can be composited into one algebra
 
 * class: composite_algebra
 
@@ -26,7 +25,6 @@ This leads to an abstraction of a three-layered structure, referred as
 | composite algebra            | cluster |
 | algebra                      | star    |
 | operator, relation, printing | planet  |
-
 
 ## Structure
 
@@ -55,7 +53,6 @@ This kind of class composition can be illustrated by the following diagram.
     style instances fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem
     end
     ```
-
 
 ## Implementation
 
