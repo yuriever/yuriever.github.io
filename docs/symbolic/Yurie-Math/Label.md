@@ -1,13 +1,12 @@
 # Yurie/Math/Label
 
-
 ## Kernel
 
-* `#!wl label[var_,lab_,head_]` - join the variables and labels into labeled objects using specified head.
+* `#!wl label[var_,lab_,head_]` - join the variable(s) and label into labeled objects using the specified head.
 
     * `#!wl var_` accepts `#!wl _|(List|Alternatives)[__]`.
 
-    * `#!wl lab_` accepts `#!wl _|(List|Alternatives)[__]`.
+    * `#!wl lab_` accepts `#!wl _?AtomQ`.
 
     * `#!wl head_` accepts `#!wl _Symbol`. The heads `#!wl Function` and `#!wl Symbol` are handled separately, and the default is `#!wl Function`.
 
@@ -17,11 +16,13 @@
         | `#!wl Symbol`   | `#!wl varlab`        |
         | `#!wl head`     | `#!wl head[var,lab]` |
 
+    * `#!wl label2` - variant of `#!wl label` with `#!wl Symbol` as head.
 
-* `#!wl labelAt[var_,rule_,head_]` - take the specific values of the labeled objects according to rules.
+* `#!wl labelRange[var_,range__,head_]` - join the variable(s) and labels in the range using the specified head.
 
-    * `#!wl rule_` accepts `#!wl __Rule|List[__Rule]`.
+    * `#!wl labelRange2` - variant of `#!wl labelRange` with `#!wl Symbol` as head.
 
+* `#!wl labelAt[var_,rules__,head_]` - take the specific values of the labeled objects according to rules.
 
 * `#!wl labelConvert[var_,head1_->head2_,opts_][expr_]` - convert the labeled objects according to the two specified label heads.
 
@@ -38,9 +39,7 @@
         * `#!wl "NaturalNumberOrSingleLetter"`
         * `#!wl "NaturalNumberOrGreekLetter"`
 
-
-* `#!wl labelJoin|labelSplit[var_,head_,opts_][expr_]` - special cases of `#!wl labelConvert` that convert `#!wl Symbol` to/from other heads.
-
+    * `#!wl labelJoin|labelSplit` - variants of `#!wl labelConvert` that convert `#!wl Symbol` to/from other heads.
 
 * `#!wl labelTo*[var_,rule_,head_]` - return a `#!wl ReplaceAll` function according to the rule.
 
@@ -52,7 +51,6 @@
     | `#!wl labelToDiffZero` | $ x_1 \to x_{12},\, x_2 \to 0 $ |
     | `#!wl labelToDiffBack` | $ x_{12} \to x_1 - x_2 $        |
 
-
 ## Example
 
 !!! wl "`#!wl label` Different heads"
@@ -60,44 +58,42 @@
     === "Function"
 
         ``` wl
-        label[x|y,1|2,Function]
+        label[x|y,1,Function]
         ```
 
         ``` wl
-        Out[] = Sequence[x[1],x[2],y[1],y[2]]
+        Out[] = Sequence[x[1],y[1]]
         ```
 
     === "Symbol"
 
         ``` wl
-        label[x|y,1|2,Symbol]
+        label[x|y,1,Symbol]
         ```
 
         ``` wl
-        Out[] = Sequence[x1,x2,y1,y2]
+        Out[] = Sequence[x1,y1]
         ```
 
     === "Any head"
 
         ``` wl
-        label[x|y,1|2,head]
+        label[x|y,1,head]
         ```
 
         ``` wl
-        Out[] = Sequence[head[x,1],head[x,2],head[y,1],head[y,2]]
+        Out[] = Sequence[head[x,1],head[y,1]]
         ```
-
 
 !!! wl "`#!wl label` Patterned variables"
 
     ``` wl
-    label[x_|y_,Range[4],Symbol]
+    labelRange[x_|y_,4,Symbol]
     ```
 
     ``` wl
-    Out[] = Sequence[x1_,x2_,x3_,x4_,y1_,y2_,y3_,y4_]
+    Out[] = Sequence[x1_,y1_,x2_,y2_,x3_,y3_,x4_,y4_]
     ```
-
 
 !!! wl "`#!wl labelAt` Different heads"
 
@@ -132,7 +128,6 @@
         Out[] = ReplaceAll[{head[x,1]->a,head[x,2]->b,head[x,3]->b,head[x,_]->c}]
         ```
 
-
 !!! wl "`#!wl labelConvert` Basic usage"
 
     ``` wl
@@ -142,7 +137,6 @@
     ``` wl
     Out[] = x[1]+y[2]
     ```
-
 
 !!! wl "`#!wl labelConvert` Confliction"
 
@@ -165,7 +159,6 @@
         ``` wl
         Out[] = z[b1]
         ```
-
 
 !!! wl "`#!wl labelTo*` Basic usage"
 
