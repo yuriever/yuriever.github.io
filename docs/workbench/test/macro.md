@@ -185,6 +185,7 @@ ${}$
 &\oi\\
 &\vac\\
 &\vev{*}\\
+&\vevv{*}\\
 &\ev{*}\\
 &\bra{*}\\
 &\ket{*}\\
@@ -248,11 +249,15 @@ ${}$
 &\TextInMath{*}\\
 &\nn\\
 &\red{*}\\
-&\blue{*}\\
 &\green{*}\\
+&\blue{*}\\
+&\cyan{*}\\
+&\magenta{*}\\
+&\yellow{*}\\
+&\brown{*}\\
 &\orange{*}\\
-&\purple{*}\\
 &\pink{*}\\
+&\purple{*}\\
 &\const\\
 &\lhs\\
 &\rhs
