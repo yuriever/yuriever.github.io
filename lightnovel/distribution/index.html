@@ -441,9 +441,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-3-power-type-distribution" class="md-nav__link">
+  <a href="#example-power-type-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 3: power-type distribution
+      Example: power-type distribution
     </span>
   </a>
   
@@ -515,11 +515,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hyperfunctions" class="md-nav__link">
+  <a href="#analytic-functionals" class="md-nav__link">
     <span class="md-ellipsis">
-      Hyperfunctions
+      Analytic functionals
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Analytic functionals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analytic-test-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytic test functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-delta-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex \(\delta\)-function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -533,26 +557,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analytic-functionals" class="md-nav__link">
+  <a href="#hyperfunctions" class="md-nav__link">
     <span class="md-ellipsis">
-      Analytic functionals
+      Hyperfunctions
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Analytic functionals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#complex-delta-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Complex \(\delta\)-function
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -629,7 +638,7 @@ To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span clas
 <p>The extension is highly nonunique. We are interested in the case where a family of distributions <span class="arithmatex">\(\phi_{a}(x)\)</span> depends on the parameter <span class="arithmatex">\(a\)</span> analytically. Then the analyticity of <span class="arithmatex">\(a\)</span> can help choose a unique regularization of <span class="arithmatex">\(\phi_{a}(x)\)</span>.</p>
 <h3 id="normalization">Normalization</h3>
 <p>If <span class="arithmatex">\(\phi_{a}(x)\)</span> is meromorphic w.r.t. <span class="arithmatex">\(a\in U\subset\CC\)</span>, we can cancel the poles of <span class="arithmatex">\(\phi_{a}(x)\)</span> by another meromorphic function <span class="arithmatex">\(N(a)\)</span> such that the normalized distribution <span class="arithmatex">\(N(a)\phi_{a}(x)\)</span> is holomorphic in <span class="arithmatex">\(U\)</span>, called normalization of distributions.</p>
-<h3 id="example-3-power-type-distribution">Example 3: power-type distribution</h3>
+<h3 id="example-power-type-distribution">Example: power-type distribution</h3>
 <p>The power-type distribution in <span class="arithmatex">\(\cS'(\RRg)\)</span></p>
 <div class="arithmatex">\[\begin{equation}
     (x_{\blue{+}}^a,f(x))=\intrange{dx}{0}{\oo}x^a f(x)
@@ -693,9 +702,9 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
     f(\lambda x)=\lambda^{a}f(x)
     \, ,
 \end{equation}\]</div>
-<p>for <span class="arithmatex">\(x\in\RR\)</span>, <span class="arithmatex">\(\lambda&gt;0\)</span>. These solutions are called homogeneous tempered distributions.</p>
+<p>for <span class="arithmatex">\(x\in\RR\)</span>, <span class="arithmatex">\(\lambda&gt;0\)</span>. The solutions are called homogeneous tempered distributions.</p>
 <h3 id="three-bases">Three bases</h3>
-<p>The first basis of solutions is</p>
+<p>The <span class="arithmatex">\(\pm\)</span> basis of solutions is</p>
 <div class="arithmatex">\[\begin{align}
     &amp;x_{\blue{+}}^a \eqqq |x|^a \theta(x)
     \, ,
@@ -703,7 +712,7 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
     &amp;x_{\blue{-}}^a \eqqq |x|^a \theta(-x)
     \, ,
 \end{align}\]</div>
-<p>and we can recombine them according to parity into</p>
+<p>and we can recombine them into the even/odd basis</p>
 <div class="arithmatex">\[\begin{align}
     &amp;x_{\blue{0}}^a\eqqq|x|^a= x_{\blue{+}}^a+ x_{\blue{-}}^a
     \, ,
@@ -722,7 +731,7 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
     \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\blue{1}}^a
     \, .
 \end{equation}\]</div>
-<p>The third basis is</p>
+<p>The <span class="arithmatex">\(i \varepsilon\)</span> basis is</p>
 <div class="arithmatex">\[\begin{align}
     &amp;x_{\blue{i}}^a\eqqq \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\blue{+}}^a+e^{i\pi a}x_{\blue{-}}^a
     \, ,
@@ -730,7 +739,22 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
     &amp;x_{\blue{-i}}^a\eqqq \lim_{\varepsilon\to 0}(x-i\varepsilon )^a=x_{\blue{+}}^a+e^{-i\pi a}x_{\blue{-}}^a
     \, .
 \end{align}\]</div>
-<p>The poles of <span class="arithmatex">\(x_{\blue{\pm}}^{a}\)</span> at <span class="arithmatex">\(a=-1,-2,\dots\)</span> get canceled due to the phase factor, hence <span class="arithmatex">\(x_{\blue{\pm i}}^a\)</span> is holomorphic w.r.t. <span class="arithmatex">\(a\in\CC\)</span>.</p>
+<p>The poles at <span class="arithmatex">\(a=-1,-2,\dots\)</span> get canceled due to the phase factor, hence <span class="arithmatex">\(x_{\blue{\pm i}}^a\)</span> is holomorphic w.r.t. <span class="arithmatex">\(a\in\CC\)</span>.</p>
+<p>In practice, the <span class="arithmatex">\(i\varepsilon\)</span> basis is convenient for computation since we can use analytic continuation. The <span class="arithmatex">\(\pm\)</span> basis is suitable for handling problems over <span class="arithmatex">\(\RR\)</span>.</p>
+<div class="admonition remark">
+<p class="admonition-title">Parity</p>
+<p>Notice that from the parity property</p>
+<div class="arithmatex">\[\begin{equation}
+    (-x)_{\blue{\pm}}^{\lambda}=x_{\blue{\mp}}^{\lambda}
+    \, ,
+\end{equation}\]</div>
+<p>we have</p>
+<div class="arithmatex">\[\begin{equation}
+    (-x)_{\blue{\pm i}}^{\lambda}=e^{\pm i\pi \lambda} x_{\blue{\mp i}}^{\lambda}
+    \, .
+\end{equation}\]</div>
+<p>This is consistent with the choice of branch cut for <span class="arithmatex">\(x^{\lambda}\)</span> at <span class="arithmatex">\(x\in (-\infty,0)\)</span>.</p>
+</div>
 <h3 id="fourier-transform">Fourier transform</h3>
 <p>The Riemann-Lebesgue lemma asserts that if <span class="arithmatex">\(f(x)\in L^{1}(\RR^d)\)</span> then the Fourier transform <span class="arithmatex">\(f(p)\)</span> vanishes at infinity,</p>
 <div class="arithmatex">\[\begin{equation}
@@ -859,30 +883,8 @@ This implies <span class="arithmatex">\(\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}\)
 </tr>
 </tbody>
 </table>
-<h2 id="hyperfunctions">Hyperfunctions</h2>
-<p>Hyperfunctions are another type of distributions related to analyticity, and share similar properties with other types of distributions: linearity, existence of derivatives, e.t.c.</p>
-<p>Given a pair <span class="arithmatex">\((f,g)\)</span> such that <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> are holomorphic on the upper and lower half planes respectively, the formal difference <span class="arithmatex">\(f-g\)</span> specifies a hyperfunction on <span class="arithmatex">\(\RR\)</span>.
-This specification admits redundancy: for any holomorphic function <span class="arithmatex">\(h\)</span> on the whole complex plane the two pairs <span class="arithmatex">\((f,g)\sim (f+h,g+h)\)</span> are equivalent.</p>
-<h2 id="formal-distributions">Formal distributions</h2>
-<p>As a formal distribution, the <span class="arithmatex">\(\delta\)</span>-function is</p>
-<div class="arithmatex">\[\begin{equation}
-    \delta(z-w)
-    =
-    \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
-    =
-    \frac{1}{z-w}\bigg|_{|z|&gt;|w|}-\frac{1}{z-w}\bigg|_{|z|&lt;|w|}
-    \, ,
-\end{equation}\]</div>
-<p>which simply restates the contour deformation</p>
-<div class="arithmatex">\[\begin{equation}
-    \inttt{\frac{dz}{z-w}}{C_{w}}
-    =
-    \inttt{dz}{|z|=|w|+r}\frac{1}{z-w}
-    -
-    \inttt{dz}{|z|=|w|-r}\frac{1}{z-w}
-    \, .
-\end{equation}\]</div>
 <h2 id="analytic-functionals">Analytic functionals</h2>
+<h3 id="analytic-test-functions">Analytic test functions</h3>
 <h3 id="complex-delta-function">Complex <span class="arithmatex">\(\delta\)</span>-function</h3>
 <p>The <span class="arithmatex">\(\delta\)</span>-function with complex argument <span class="arithmatex">\(\delta_{\CC}\)</span> is an analytic functional belonging to the Gelfand–Shilov space <span class="arithmatex">\(Z'\)</span>, which is the dual space of analytic test functions.</p>
 <p>It is defined as the identity of the Mellin transform</p>
@@ -980,6 +982,29 @@ As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we 
     \, .
 \end{align*}\]</div>
 </details>
+<h2 id="formal-distributions">Formal distributions</h2>
+<p>As a formal distribution, the <span class="arithmatex">\(\delta\)</span>-function is</p>
+<div class="arithmatex">\[\begin{equation}
+    \delta(z-w)
+    =
+    \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
+    =
+    \frac{1}{z-w}\bigg|_{|z|&gt;|w|}-\frac{1}{z-w}\bigg|_{|z|&lt;|w|}
+    \, ,
+\end{equation}\]</div>
+<p>which simply restates the contour deformation</p>
+<div class="arithmatex">\[\begin{equation}
+    \inttt{\frac{dz}{z-w}}{C_{w}}
+    =
+    \inttt{dz}{|z|=|w|+r}\frac{1}{z-w}
+    -
+    \inttt{dz}{|z|=|w|-r}\frac{1}{z-w}
+    \, .
+\end{equation}\]</div>
+<h2 id="hyperfunctions">Hyperfunctions</h2>
+<p>Hyperfunctions are another type of distributions related to analyticity, and share similar properties with other types of distributions: linearity, existence of derivatives, e.t.c.</p>
+<p>Given a pair <span class="arithmatex">\((f,g)\)</span> such that <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> are holomorphic on the upper and lower half planes respectively, the formal difference <span class="arithmatex">\(f-g\)</span> specifies a hyperfunction on <span class="arithmatex">\(\RR\)</span>.
+This specification admits redundancy: for any holomorphic function <span class="arithmatex">\(h\)</span> on the whole complex plane the two pairs <span class="arithmatex">\((f,g)\sim (f+h,g+h)\)</span> are equivalent.</p>
 
 <!-- Source file information -->
 
