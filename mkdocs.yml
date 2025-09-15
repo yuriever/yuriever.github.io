@@ -117,3 +117,5 @@ markdown_extensions:
 plugins:
   - bibtex:
       bib_dir: "bib"
+  - caption
+
