@@ -32,7 +32,7 @@ The extension is highly nonunique. We are interested in the case where a family 
 
 If $\phi_{a}(x)$ is meromorphic w.r.t. $a\in U\subset\CC$, we can cancel the poles of $\phi_{a}(x)$ by another meromorphic function $N(a)$ such that the normalized distribution $N(a)\phi_{a}(x)$ is holomorphic in $U$, called normalization of distributions.
 
-### Example 3: power-type distribution
+### Example: power-type distribution
 
 The power-type distribution in $\cS'(\RRg)$
 
@@ -114,11 +114,11 @@ In this section we consider distributional solutions to the functional equation
     \, ,
 \end{equation}
 
-for $x\in\RR$, $\lambda>0$. These solutions are called homogeneous tempered distributions.
+for $x\in\RR$, $\lambda>0$. The solutions are called homogeneous tempered distributions.
 
 ### Three bases
 
-The first basis of solutions is
+The $\pm$ basis of solutions is
 
 \begin{align}
     &x_{\blue{+}}^a \eqqq |x|^a \theta(x)
@@ -128,7 +128,7 @@ The first basis of solutions is
     \, ,
 \end{align}
 
-and we can recombine them according to parity into
+and we can recombine them into the even/odd basis
 
 \begin{align}
     &x_{\blue{0}}^a\eqqq|x|^a= x_{\blue{+}}^a+ x_{\blue{-}}^a
@@ -151,7 +151,7 @@ These distributions are meromorphic functions of $a\in\CC$, and the normalized v
     \, .
 \end{equation}
 
-The third basis is
+The $i \varepsilon$ basis is
 
 \begin{align}
     &x_{\blue{i}}^a\eqqq \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\blue{+}}^a+e^{i\pi a}x_{\blue{-}}^a
@@ -161,7 +161,27 @@ The third basis is
     \, .
 \end{align}
 
-The poles of $x_{\blue{\pm}}^{a}$ at $a=-1,-2,\dots$ get canceled due to the phase factor, hence $x_{\blue{\pm i}}^a$ is holomorphic w.r.t. $a\in\CC$.
+The poles at $a=-1,-2,\dots$ get canceled due to the phase factor, hence $x_{\blue{\pm i}}^a$ is holomorphic w.r.t. $a\in\CC$.
+
+In practice, the $i\varepsilon$ basis is convenient for computation since we can use analytic continuation. The $\pm$ basis is suitable for handling problems over $\RR$.
+
+!!! remark "Parity"
+
+    Notice that from the parity property
+
+    \begin{equation}
+        (-x)_{\blue{\pm}}^{\lambda}=x_{\blue{\mp}}^{\lambda}
+        \, ,
+    \end{equation}
+
+    we have
+
+    \begin{equation}
+        (-x)_{\blue{\pm i}}^{\lambda}=e^{\pm i\pi \lambda} x_{\blue{\mp i}}^{\lambda}
+        \, .
+    \end{equation}
+
+    This is consistent with the choice of branch cut for $x^{\lambda}$ at $x\in (-\infty,0)$.
 
 ### Fourier transform
 
@@ -221,7 +241,6 @@ Lacia-TimeStamp-2025-02-14-18:24:40
 
 ### Summary
 
-
 Table: The three bases of homogeneous distributions on $\RR$.
 
 | $a$                      | $-2$                                                | $(-2,-1)$               | $-1$                                          | $\cdots$ |
@@ -243,38 +262,10 @@ Table: The regularized homogeneous distributions, where $n\in \NN$.
 | $\displaystyle x_{\blue{-i}}^{a}$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
 | $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \TextInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
 
-## Hyperfunctions
-
-Hyperfunctions are another type of distributions related to analyticity, and share similar properties with other types of distributions: linearity, existence of derivatives, e.t.c.
-
-Given a pair $(f,g)$ such that $f$ and $g$ are holomorphic on the upper and lower half planes respectively, the formal difference $f-g$ specifies a hyperfunction on $\RR$.
-This specification admits redundancy: for any holomorphic function $h$ on the whole complex plane the two pairs $(f,g)\sim (f+h,g+h)$ are equivalent.
-
-## Formal distributions
-
-As a formal distribution, the $\delta$-function is
-
-\begin{equation}
-    \delta(z-w)
-    =
-    \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
-    =
-    \frac{1}{z-w}\bigg|_{|z|>|w|}-\frac{1}{z-w}\bigg|_{|z|<|w|}
-    \, ,
-\end{equation}
-
-which simply restates the contour deformation
-
-\begin{equation}
-    \inttt{\frac{dz}{z-w}}{C_{w}}
-    =
-    \inttt{dz}{|z|=|w|+r}\frac{1}{z-w}
-    -
-    \inttt{dz}{|z|=|w|-r}\frac{1}{z-w}
-    \, .
-\end{equation}
-
 ## Analytic functionals
+
+### Analytic test functions
+
 
 ### Complex $\delta$-function
 
@@ -388,3 +379,34 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
         -\half f(\Delta_{0})
         \, .
     \end{align*}
+
+## Formal distributions
+
+As a formal distribution, the $\delta$-function is
+
+\begin{equation}
+    \delta(z-w)
+    =
+    \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
+    =
+    \frac{1}{z-w}\bigg|_{|z|>|w|}-\frac{1}{z-w}\bigg|_{|z|<|w|}
+    \, ,
+\end{equation}
+
+which simply restates the contour deformation
+
+\begin{equation}
+    \inttt{\frac{dz}{z-w}}{C_{w}}
+    =
+    \inttt{dz}{|z|=|w|+r}\frac{1}{z-w}
+    -
+    \inttt{dz}{|z|=|w|-r}\frac{1}{z-w}
+    \, .
+\end{equation}
+
+## Hyperfunctions
+
+Hyperfunctions are another type of distributions related to analyticity, and share similar properties with other types of distributions: linearity, existence of derivatives, e.t.c.
+
+Given a pair $(f,g)$ such that $f$ and $g$ are holomorphic on the upper and lower half planes respectively, the formal difference $f-g$ specifies a hyperfunction on $\RR$.
+This specification admits redundancy: for any holomorphic function $h$ on the whole complex plane the two pairs $(f,g)\sim (f+h,g+h)$ are equivalent.
