@@ -1,0 +1,759 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/xAct/xAct/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>xAct - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/const.css">
+    
+      <link rel="stylesheet" href="../../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/table.css">
+    
+      <link rel="stylesheet" href="../../../css/image.css">
+    
+      <link rel="stylesheet" href="../../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-xact" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              xAct
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lightnovel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lightnovel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-structure-of-the-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      The structure of the notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-further-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some further explanations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="introduction-to-xact">Introduction to xAct</h1>
+<p><span hidden><span class="arithmatex">\(\newcommand{\fourpst}{4\partial \text{ST}}\)</span></span></p>
+<p>References:</p>
+<ul>
+<li>
+<p>xTensor <a href="http://www.xact.es/Documentation/HTML/xTensorRefGuide.nb.html">design pattern</a> and <a href="http://www.xact.es/Documentation/HTML/xTensorDoc.nb.html">documentation</a></p>
+</li>
+<li>
+<p><a href="http://www.xact.es/xTras/documentation/guide/xTras.html">xTras documentation</a></p>
+</li>
+<li>
+<p><a href="https://github.com/xAct-contrib/examples">xAct example notebooks</a></p>
+</li>
+</ul>
+<p>Supplementary materials:</p>
+<ul>
+<li><a href="../xAct-eom-and-emt.nb">xAct-eom-and-emt.nb</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>We introduce the symbolic tensor functionality of <strong>xAct</strong>, and as examples, we derive equations of motion in the following theories.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Theory</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">free scalar</td>
+<td style="text-align: left;"><span class="arithmatex">\(S_{\text{f.s.}}=\frac{1}{2}\int\,{d^{d}x}\sqrt{-g}\,\partial^{a}\phi \partial_{a}\phi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">conformal scalar</td>
+<td style="text-align: left;"><span class="arithmatex">\(S_{\text{c.s.}}=\frac{1}{2}\int\,{d^{d}x}\sqrt{-g}\,( \partial^{a}\phi \partial_{a}\phi + c R \phi^2)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">abelian gauge field</td>
+<td style="text-align: left;"><span class="arithmatex">\(S_{\ugroup(1)}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">four-derivative scalar-tensor (<span class="arithmatex">\(\fourpst\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(S_{\fourpst}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,\a(\f) (\partial^{a}\phi \partial_{a}\phi)^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The traces <span class="arithmatex">\(\trace{T}\)</span> of stress tensors <span class="arithmatex">\(T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}\)</span> in these theories vanish at special dimensions and parameters, then the actions are invariant under Weyl transformations <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Theory</th>
+<th style="text-align: left;">Trace of stress tensor</th>
+<th style="text-align: left;">Condition of Weyl-invariance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">free scalar</td>
+<td style="text-align: left;">$\tfrac{1}{2} (-2 + d) \nabla_{a}\phi \nabla^{a}\phi $</td>
+<td style="text-align: left;"><span class="arithmatex">\(d=2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">conformal scalar</td>
+<td style="text-align: left;"><span class="arithmatex">\(\tfrac{1}{2} (-2 + d) \phi \operatorname{EOM}[\f]\)</span> at <span class="arithmatex">\(c= - \frac{2 -  d}{4 (-1 + d)}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(d=2\)</span> or <span class="arithmatex">\(c= - \frac{2 -  d}{4 (-1 + d)}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">abelian gauge</td>
+<td style="text-align: left;"><span class="arithmatex">\(\tfrac{1}{4} (-4 + d) F_{ab} F^{ab}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(d=4\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\fourpst\)</span></td>
+<td style="text-align: left;">$\tfrac{1}{4} (-4 + d) \alpha (\phi) \nabla_{a}\phi \nabla^{a}\phi \nabla_{b}\phi \nabla^{b}\phi $</td>
+<td style="text-align: left;"><span class="arithmatex">\(d=4\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that:</p>
+<ul>
+<li>
+<p>only in <span class="arithmatex">\(d=4\)</span> the free abelian gauge theory is conformally invariant;</p>
+</li>
+<li>
+<p>due to the non-minimal coupling <span class="arithmatex">\(R \phi^2\)</span>, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds.</p>
+</li>
+</ul>
+<p>Here the computation of variational calculus is purely symbolic and there are no issues of global topology or function space <sup id="fnref:integral"><a class="footnote-ref" href="#fn:integral">1</a></sup>. The relevant data is simply a local chart equipped with geometrical structures. We need to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to some target expression.</p>
+<h2 id="the-structure-of-the-notebook">The structure of the notebook</h2>
+<p><a href="../xAct-eom-and-emt.nb">This notebook - xAct-eom-and-emt.nb</a> contains four sections introducing useful functions in <strong>xAct</strong>:</p>
+<ul>
+<li>
+<p>Package loading</p>
+<ul>
+<li><code class="highlight"><span class="nv">ToCanonical</span><span class="p">,</span><span class="w"> </span><span class="nv">ContractMetric</span><span class="p">,</span><span class="w"> </span><span class="nv">Simplification</span></code> - simplifying abstract tensorial expressions</li>
+</ul>
+</li>
+<li>
+<p>Definitions of manifolds, vector fields and actions</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">DefManifold</span><span class="p">,</span><span class="w"> </span><span class="nv">DefMetric</span><span class="p">,</span><span class="w"> </span><span class="nv">DefCovD</span><span class="p">,</span><span class="w"> </span><span class="nv">PD</span></code> - defining manifolds, metrics and connections</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">DefTensor</span><span class="p">,</span><span class="w"> </span><span class="nv">DefConstantSymbol</span><span class="p">,</span><span class="w"> </span><span class="nv">DefScalarFunction</span></code> - defining vector fields, constants and scalar functions of fields</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MakeRule</span></code> - defining relations between fields</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">Scalar</span><span class="p">,</span><span class="w"> </span><span class="nv">Monomial</span></code> - implementing functions on scalars correctly</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Equations of motion and stress tensors</p>
+<ul>
+<li><code class="highlight"><span class="nv">VarD</span></code> - variation and IBP</li>
+</ul>
+</li>
+<li>
+<p>Making ansatz</p>
+<ul>
+<li><code class="highlight"><span class="nv">MakeContractionAnsatz</span><span class="p">,</span><span class="w"> </span><span class="nv">SolveConstants</span></code> - making tensorial ansatz and compare the coefficients</li>
+</ul>
+</li>
+</ul>
+<p>The following functions are not covered and can be found in <a href="http://www.xact.es/Documentation/PDF/xTensorDoc.nb.pdf">the documentation</a>:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">Validate</span></code> - checking xAct syntax like index balancing</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">CommuteCovDs</span><span class="p">,</span><span class="w"> </span><span class="nv">SortCovDs</span></code> - sorting successive covariant derivatives with the commutators</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">StrongGenSet</span><span class="p">,</span><span class="w"> </span><span class="nb">Symmetric</span></code> - tensor symmetry</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">delta</span><span class="p">,</span><span class="w"> </span><span class="nv">Gdelta</span></code> - generalized delta tensor</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">Dagger</span><span class="p">,</span><span class="w"> </span><span class="nv">DaggerIndex</span></code> - complex vector bundle</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">LieD</span><span class="p">,</span><span class="w"> </span><span class="nv">LieDToCovD</span><span class="p">,</span><span class="w"> </span><span class="nv">Bracket</span></code> - Lie derivative</p>
+</li>
+</ul>
+<h2 id="some-further-explanations">Some further explanations</h2>
+<p><strong>xPert</strong> provides functionalities like variations and metric perturbations.
+The function <code class="highlight"><span class="nv">Perturbation</span></code> has built-in linearity and Leibniz rule. For example, <code class="highlight"><span class="nv">Perturbation</span><span class="o">@</span><span class="nv">A</span><span class="p">[</span><span class="o">-</span><span class="nv">a</span><span class="p">]</span></code> is <span class="arithmatex">\(\delta A_{a}\)</span>, printed as <span class="arithmatex">\(\triangle[A_{a}]\)</span>.</p>
+<p>The variation of the electromagnetic field action is</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">abelianGauge</span><span class="p">]</span><span class="o">//</span><span class="nv">Perturbation</span>
+</code></pre></div>
+</div>
+<p>There are three factors to be varied, giving the following terms respectively</p>
+<div class="arithmatex">\[\begin{equation}
+    \triangle [\cL_{A}]=
+    \tfrac{1}{4} \bigl(- \frac{F_{ab} F^{ab} \triangle [\overset{\overset{~}{~}}{g}]}{2 (- \overset{\overset{~}{~}}{g})^{1/2}} + (- \overset{\overset{~}{~}}{g})^{1/2} F^{ab} \triangle [F_{ab}] + (- \overset{\overset{~}{~}}{g})^{1/2} F_{ab} \triangle [F^{ab}]\bigr)
+\end{equation}\]</div>
+<p>The fundamental field is the gauge potential <span class="arithmatex">\(A\)</span> instead of the field strength <span class="arithmatex">\(F\)</span>, so we need to expand <span class="arithmatex">\(F\)</span> by the rule <code class="highlight"><span class="nv">ruleFToA</span></code>,</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">action</span><span class="p">[</span><span class="nv">A</span><span class="p">]</span><span class="o">/.</span><span class="nv">ruleFToA</span><span class="o">//</span><span class="nv">tensorSim</span><span class="o">//</span><span class="nv">Perturbation</span>
+</code></pre></div>
+</div>
+<div class="arithmatex">\[\begin{equation}
+    \triangle [\cL_{A}]=
+    \tfrac{1}{2} \Bigl((- \overset{\overset{~}{~}}{g})^{1/2} \triangle [\nabla^{b}A^{a}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) + (- \overset{\overset{~}{~}}{g})^{1/2} \bigl(- \triangle [\nabla_{a}A_{b}] + \triangle [\nabla_{b}A_{a}]\bigr) \nabla^{b}A^{a} -  \frac{\triangle [\overset{\overset{~}{~}}{g}] (- \nabla_{a}A_{b} + \nabla_{b}A_{a}) \nabla^{b}A^{a}}{2 (- \overset{\overset{~}{~}}{g})^{1/2}}\Bigr)
+\end{equation}\]</div>
+<p>The variation <span class="arithmatex">\(\delta A^{a}\)</span> contains metric contraction <span class="arithmatex">\(\delta(A_{b}g^{ab})=\delta A_{b} g^{ab}+A_{b}\delta g^{ab}\)</span>, hence we need to expand <span class="arithmatex">\(\delta L\)</span> into <span class="arithmatex">\((\dots )\delta g+(\dots )\delta A_{a}\)</span>. Then the coefficient of <span class="arithmatex">\(\delta A_{a}\)</span> gives the equation of motion, and that of <span class="arithmatex">\(\delta g\)</span> gives the stress tensor. There are covariant derivatives in the bracket, which can be eliminated by IBP.</p>
+<p>Based on <code class="highlight"><span class="nv">Perturbation</span></code>, <code class="highlight"><span class="nv">VarD</span><span class="p">[</span><span class="nf">#1</span><span class="p">,</span><span class="nf">#2</span><span class="p">]</span></code> provides the functionality of extracting coefficients and IBP, where the first argument specifies the variational field and the second one specifies IBP with respect to the covariance derivative <code class="highlight"><span class="nv">CD</span></code>.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:integral">
+<p>In simple situations the field configurations are assumed to be compactly supported or fast decayed at infinity, ensuring that the integral in the action <span class="arithmatex">\(S\)</span> is algebraic, aka, is a linear map from field configurations to <span class="arithmatex">\(\CC\)</span> or <span class="arithmatex">\(\CC[[\hbar,m,g,\dots ]]\)</span>. <a class="footnote-backref" href="#fnref:integral" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:1">
+<p>Joseph Polchinski. Scale and conformal invariance in quantum field theory. Nucl. Phys. B, 303:226–236, 1988. <a href="https://doi.org/10.1016/0550-3213(88)90179-4">doi:10.1016/0550-3213(88)90179-4</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Yu Nakayama. Scale invariance vs conformal invariance. Phys. Rept., 569:1–93, 2015. <a href="https://arxiv.org/abs/1302.0884">arXiv:1302.0884</a>, <a href="https://doi.org/10.1016/j.physrep.2014.12.003">doi:10.1016/j.physrep.2014.12.003</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Anatoly Dymarsky, Zohar Komargodski, Adam Schwimmer, and Stefan Theisen. On scale and conformal invariance in four dimensions. JHEP, 10:171, 2015. <a href="https://arxiv.org/abs/1309.2921">arXiv:1309.2921</a>, <a href="https://doi.org/10.1007/JHEP10(2015)171">doi:10.1007/JHEP10(2015)171</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Markus A. Luty, Joseph Polchinski, and Riccardo Rattazzi. The <span class="arithmatex">\(a\)</span>-theorem and the asymptotics of 4d quantum field theory. JHEP, 01:152, 2013. <a href="https://arxiv.org/abs/1204.5221">arXiv:1204.5221</a>, <a href="https://doi.org/10.1007/JHEP01(2013)152">doi:10.1007/JHEP01(2013)152</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>Sheer El-Showk, Yu Nakayama, and Slava Rychkov. What maxwell theory in d≠4 teaches us about scale and conformal invariance. Nucl. Phys. B, 848:578–593, 2011. <a href="https://arxiv.org/abs/1101.5385">arXiv:1101.5385</a>, <a href="https://doi.org/10.1016/j.nuclphysb.2011.03.008">doi:10.1016/j.nuclphysb.2011.03.008</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>R. Jackiw and S. -Y. Pi. Tutorial on scale and conformal symmetries in diverse dimensions. J. Phys. A, 44:223001, 2011. <a href="https://arxiv.org/abs/1101.4886">arXiv:1101.4886</a>, <a href="https://doi.org/10.1088/1751-8113/44/22/223001">doi:10.1088/1751-8113/44/22/223001</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/box-thm.js"></script>
+      
+        <script src="../../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

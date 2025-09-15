@@ -1,0 +1,1076 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie-Algebra/doc/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Yurie/Algebra - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/const.css">
+    
+      <link rel="stylesheet" href="../../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/table.css">
+    
+      <link rel="stylesheet" href="../../../css/image.css">
+    
+      <link rel="stylesheet" href="../../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yuriealgebra" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yurie/Algebra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lightnovel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lightnovel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functionalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core functionalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inner product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensor-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tensor product
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commutator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commutator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operator separation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistency-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other issues
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="yuriealgebra"><a href="https://github.com/yuriever/Yurie-Algebra">Yurie/Algebra</a></h1>
+<p>A Mathematica paclet for implementing and managing finitely presented associative algebras.</p>
+<p>Dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="s">"Yurie/Cluster"</span><span class="o">-&gt;</span><span class="s">"&gt;=2.0.0"</span>
+</code></pre></div>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">"Generator"</span></code> - list of generators.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Relation"</span></code> - list of defining relations.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Printing"</span></code> - list of formatting rules.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"TensorRank"</span></code> - list of tensor ranks of generators.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Parity"</span></code> - list of parities of generators.</p>
+</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs___</span><span class="p">]</span></code> - define the algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs___</span><span class="p">]</span></code> - set the default algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="o">|</span><span class="nv">algebraUnset</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs___</span><span class="p">]</span></code> - reset/unset the algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraAdd</span><span class="o">|</span><span class="nv">algebraMinus</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs___</span><span class="p">][</span><span class="nt">assoc_</span><span class="p">]</span></code> - add/drop elements to/from the algebras.</p>
+<p>The argument <code class="highlight"><span class="nt">assoc_</span></code> accepts <code class="highlight"><span class="nt">_Rule</span><span class="o">|</span><span class="p">{</span><span class="nt">___Rule</span><span class="p">}</span><span class="o">|</span><span class="nt">_Association</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - show the algebra.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[]</span></code></td>
+<td style="text-align: left;">return the defined algebras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[]</span></code></td>
+<td style="text-align: left;">return the default algebras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraReset</span><span class="p">[]</span></code></td>
+<td style="text-align: left;">reset all the defined except internal algebras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraUnset</span><span class="p">[]</span></code></td>
+<td style="text-align: left;">unset all the defined except internal algebras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraShow</span><span class="p">[]</span></code></td>
+<td style="text-align: left;">show the default algebras.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functionalities">Functionalities</h2>
+<p>For an algebra <span class="arithmatex">\(A\)</span> over a base field <span class="arithmatex">\(k\)</span>, the following operations are implemented.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Formatting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">multiplication</td>
+<td style="text-align: left;"><span class="arithmatex">\(m: A\ox A\to A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nb">NonCommutativeMultiply</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">unit</td>
+<td style="text-align: left;"><span class="arithmatex">\(\eta: k\to A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">id</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="m">1</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">conjugate</td>
+<td style="text-align: left;"><span class="arithmatex">\(\dagger: A\to A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">conjugate</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nb">SuperDagger</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">tensor product</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">tensor</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nb">CircleTimes</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">comultiplication</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta:A\to A\ox A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">comultiply</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="s">"\[CapitalDelta]"</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">counit</td>
+<td style="text-align: left;"><span class="arithmatex">\(\epsilon:A\to k\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">counit</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="s">"\[Epsilon]"</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">antipode</td>
+<td style="text-align: left;"><span class="arithmatex">\(S:A\to A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">antipode</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="s">"S"</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>The predefined algebras with their implemented structures are listed below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Algebra</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Algebra"</span></code></td>
+<td style="text-align: left;">multiplication</td>
+<td style="text-align: left;">linearity, zero, identity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Conjugate"</span></code></td>
+<td style="text-align: left;">conjugate</td>
+<td style="text-align: left;">anti-linearity, anti-morphism, identity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Tensor"</span></code></td>
+<td style="text-align: left;">tensor product</td>
+<td style="text-align: left;">linearity, composition</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Coalgebra"</span></code></td>
+<td style="text-align: left;">comultiplication, counit</td>
+<td style="text-align: left;">linearity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Bialgebra"</span></code></td>
+<td style="text-align: left;">comultiplication, counit</td>
+<td style="text-align: left;">morphism, identity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Antipode"</span></code></td>
+<td style="text-align: left;">antipode</td>
+<td style="text-align: left;">linearity, anti-morphism, identity</td>
+</tr>
+</tbody>
+</table>
+<p>There are several remarks.</p>
+<ul>
+<li>
+<p>The algebra <code class="highlight"><span class="s">"Algebra"</span></code> will be enabled by default.</p>
+</li>
+<li>
+<p>The associativity of multiplication and tensor product is implemented by the attributes <code class="highlight"><span class="p">{</span><span class="nb">Flat</span><span class="p">,</span><span class="nb">OneIdentity</span><span class="p">}</span></code>.</p>
+</li>
+<li>
+<p>The base field <span class="arithmatex">\(k\)</span> and its embedding in the algebra <span class="arithmatex">\(A\)</span> is distinguished, and the identity operator <code class="highlight"><span class="nv">id</span></code> is the image <span class="arithmatex">\(\eta(1)\in A\)</span>.</p>
+</li>
+</ul>
+<h3 id="core-functionalities">Core functionalities</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">id</span></code> - identity operator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">generator</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - return the generators of the default/specified algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">relation</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - return the defining relations of the default/specified algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">printing</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - return the formatting rules of the default/specified algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">generatorQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check whether the expression is a generator by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">scalarQ</span><span class="o">|</span><span class="nv">operatorQ</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check whether the expression is a scalar/operator by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - simplify the expression by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraPrint</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - format the expression by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorank</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - return the tensor rank of the expression by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorankUnsafe</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - return the tensor rank of the expression by the default algebra without validating the expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">parity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - return the parity of the expression by the default algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">parityUnsafe</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - return the parity of the expression by the default algebra without validating the expression.</p>
+</li>
+</ul>
+<p>Table of shortcuts:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algS</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraPrint</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algSP</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algebraSimplify</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">algebraPrint</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algEqualQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">x</span><span class="o">==</span><span class="nv">y</span></code> for operators.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">algSameQ</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">x</span><span class="o">===</span><span class="nv">y</span></code> for operators.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inner-product">Inner product</h3>
+<p>This functionality needs the algebra <code class="highlight"><span class="s">"Conjugate"</span></code>.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">conjugate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - conjugate of the operator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - inner product of the two operators.</p>
+<p>For operators <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot y\)</span>, and for a single operator <span class="arithmatex">\(x\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot x\)</span>.</p>
+</li>
+</ul>
+<h3 id="tensor-product">Tensor product</h3>
+<p>This functionality needs the algebras <code class="highlight"><span class="s">"Tensor"</span></code>, <code class="highlight"><span class="s">"Coalgebra"</span></code>, <code class="highlight"><span class="s">"Bialgebra"</span></code> and/or <code class="highlight"><span class="s">"Antipode"</span></code>.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">tensor</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - tensor product.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">comultiply</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - comultiplication of coalgebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">counit</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - counit of coalgebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">antipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - antipode of Hopf algebra.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorCompose</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - composite the tensors over multiplication according to tensor rank.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">tensorPermute</span><span class="p">[</span><span class="nt">cycle_</span><span class="p">][</span><span class="o">_</span><span class="p">]</span></code> - permute the arguments of the tensor.</p>
+</li>
+</ul>
+<h2 id="utilities">Utilities</h2>
+<h3 id="commutator">Commutator</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">comm</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - (anti-)commutator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">commSim</span><span class="p">[</span><span class="o">__</span><span class="p">]</span></code> - simplify the (anti-)commutator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">commIn</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span><span class="o">:&gt;_/;_</span></code> - define the (anti-)commutator with the given order and condition.</p>
+</li>
+</ul>
+<h3 id="adjoint">Adjoint</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">adjoint</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of Lie algebra.</p>
+<p>For <span class="arithmatex">\(x,y\in \glie\)</span>, <span class="arithmatex">\(\ad^{0}_x(y)=y\)</span> and</p>
+<div class="arithmatex">\[\begin{equation}
+    \ad^n_x(y)
+    =[x,\ad^{n-1}_x(y)]
+    \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">adjointExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">t_</span><span class="o">:</span><span class="m">1</span><span class="p">][</span><span class="nt">expr_</span><span class="p">]</span></code> - the adjoint action of formal Lie group truncated at the given order.</p>
+<p>For <span class="arithmatex">\(x,y\in \glie\)</span> and <span class="arithmatex">\(t\in \CC\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    \Ad_{t x}(y)|_{n}
+    =
+    e^{t x}y e^{-t x}|_{n}
+    =
+    \sum_{i=0}^{n}\frac{t^{i}}{i!}\ad^{i}_{x}(y)
+    \, .
+\end{equation}\]</div>
+</li>
+</ul>
+<h3 id="power">Power</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">operatorPower</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">order_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - power of the operator.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">operatorExp</span><span class="p">[</span><span class="nt">op_</span><span class="p">,</span><span class="nt">max_</span><span class="p">,</span><span class="nt">t_</span><span class="o">:</span><span class="m">1</span><span class="p">]</span></code> - exponential of the operator truncated at the given order.</p>
+<p>For <span class="arithmatex">\(x\in A\)</span> and <span class="arithmatex">\(t\in\CC\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    e^{t x}|_n=\sum_{i=0}^{n}\frac{t^i}{i!} x^i
+    \, .
+\end{equation}\]</div>
+</li>
+</ul>
+<h3 id="operator-separation">Operator separation</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">operatorSeparate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - separate scalars and operators in the given linear expression.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">scalarSimplify</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - simplify the scalar part of the expression.</p>
+</li>
+</ul>
+<h3 id="consistency-check">Consistency check</h3>
+<p>User-defined relations are not guaranteed to be consistent with the internal ones. The following functions are designed for consistency checks.</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">checkLieBracket</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the Jacobi identity of Lie algebra.</p>
+<p>For <span class="arithmatex">\(x,y,z\in\glie\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    [[x,y],z]=[x,[y,z]]-[y,[x,z]]
+    \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkLieModule</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - check the action on Lie module.</p>
+<p>For $x,y\in \glie $ and <span class="arithmatex">\(v\in V\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    [x,y] (v)=x(y(v))-y(x(v))
+    \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkCoassociativity</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the coassociativity of comultiplication.</p>
+<p>For <span class="arithmatex">\(x\in A\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    \sum
+    x_{(1)(1)}\ox x_{(1)(2)}\ox x_{(2)}
+    =
+    \sum
+    x_{(1)}\ox x_{(2)(1)}\ox x_{(2)(2)}
+    \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkCounitality</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the counitality of counit.</p>
+<p>For <span class="arithmatex">\(x\in A\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    \sum
+    \epsilon(x_{(1)})x_{(2)}
+    =
+    \sum
+    x_{(1)}\epsilon(x_{(2)})
+    =
+    x
+    \, .
+\end{equation}\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">checkAntipode</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - check the antipode of Hopf algebra.</p>
+<p>For <span class="arithmatex">\(x\in A\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    \sum
+    S(x_{(1)})x_{(2)}
+    =
+    \sum
+    x_{(1)}S(x_{(2)})
+    =
+    \epsilon(x)\id
+    \, .
+\end{equation}\]</div>
+</li>
+</ul>
+<h2 id="other-issues">Other issues</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nb">Needs</span><span class="p">[</span><span class="s">"Yurie`Algebra`"</span><span class="p">]</span></code> will preserve the previously defined algebras, while <code class="highlight"><span class="nb">Get</span><span class="p">[</span><span class="s">"Yurie`Algebra`"</span><span class="p">]</span></code> will clear them.</p>
+</li>
+<li>
+<p>From version 14.2 to 14.3, the behavior of <code class="highlight"><span class="nb">Simplify</span></code> is changed to convert e.g. <code class="highlight"><span class="nv">x</span><span class="o">**</span><span class="nv">x</span></code> to <code class="highlight"><span class="nv">GeneralizedPower</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="m">2</span><span class="p">]</span></code>.</p>
+<p>The function <code class="highlight"><span class="nv">scalarSimplify</span></code> mimics <code class="highlight"><span class="nb">Simplify</span></code> before version 14.3.</p>
+</li>
+</ul>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/box-thm.js"></script>
+      
+        <script src="../../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

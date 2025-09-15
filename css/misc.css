@@ -1,0 +1,78 @@
+/*  */
+/* 正文字号 */
+/*  */
+
+.md-typeset {
+    font-size: 15px;
+}
+
+/*  */
+/* 导航栏 */
+/*  */
+
+.md-header,
+.md-tabs {
+    color: hsl(from var(--md-typeset-a-color) H S L / 0.75);
+}
+
+.md-nav--primary .md-nav__title {
+    background-color: var(--md-default-bg-color);
+}
+
+.md-nav--primary .md-nav__title ~ .md-nav__list {
+    box-shadow: none;
+}
+
+.md-nav--primary .md-nav__item {
+    border-top: none;
+}
+
+/*  */
+/* 目录 */
+/*  */
+
+.md-sidebar--secondary {
+    order: 1;
+}
+
+/*  */
+/* 页脚元信息隐藏 */
+/*  */
+
+.md-footer {
+    display: none;
+}
+
+.md-footer-meta {
+    height: 0;
+}
+
+/*  */
+/* 水平线边距 */
+/*  */
+
+.md-typeset hr {
+    margin: 0.8rem 0;
+}
+
+/*  */
+/* 滚动条隐藏 */
+/*  */
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*  */
+/* 斜体字 */
+/*  */
+
+.md-typeset strong {
+    text-shadow: rgba(150, 150, 255, 0.4) 0 0 2px;
+}
+
+.md-typeset em {
+    color: rgb(120, 140, 140);
+    font-style: normal;
+    text-shadow: rgba(150, 150, 255, 0.4) 0 0 2px;
+}

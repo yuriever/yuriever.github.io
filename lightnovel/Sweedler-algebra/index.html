@@ -1,0 +1,650 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/Sweedler-algebra/">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Sweedler's Hopf algebra - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/const.css">
+    
+      <link rel="stylesheet" href="../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../css/list.css">
+    
+      <link rel="stylesheet" href="../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../css/code.css">
+    
+      <link rel="stylesheet" href="../../css/table.css">
+    
+      <link rel="stylesheet" href="../../css/image.css">
+    
+      <link rel="stylesheet" href="../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sweedlers-hopf-algebra" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sweedler's Hopf algebra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../symbolic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#some-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some facts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="sweedlers-hopf-algebra">Sweedler's Hopf algebra</h1>
+<p><span hidden><span class="arithmatex">\(\newcommand{\radical}{\operatorname{Rad}}\)</span> </span></p>
+<p>This is an interesting exercise in Etingof's book <em>Introduction to Representation Theory</em>.</p>
+<blockquote>
+<p>(Problem 9.3.2) Let <span class="arithmatex">\(A\)</span> be the algebra over complex numbers generated by elements <span class="arithmatex">\(g,x\)</span> with defining relations <span class="arithmatex">\(gx = −xg,\,  x^{2} = 0,\,  g^{2} = 1\)</span>. Find the simple modules, the indecomposable projective modules, and the Cartan matrix of <span class="arithmatex">\(A\)</span>.</p>
+</blockquote>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>Recall that for any finite dimensional algebra over <span class="arithmatex">\(\CC\)</span> with irreducible modules <span class="arithmatex">\(M_{i}\)</span>, we have the decomposition (Theorem 3.5.4)</p>
+<div class="arithmatex">\[\begin{equation}
+    A/\radical{A}\simeq \End M_{i}
+    \, .
+\end{equation}\]</div>
+<p>We choose the basis of <span class="arithmatex">\(A\)</span> as <span class="arithmatex">\(\set{1,g,x,gx}\)</span>, then the radical is <span class="arithmatex">\(\CC\vecspan{x,gx}\)</span>, and the decomposition is</p>
+<div class="arithmatex">\[\begin{equation}
+    A/\radical{A}\simeq \CC p_{+} \os \CC p_{-}
+    \, ,
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(p_{\pm}=\frac{1}{2}(1\pm g)\)</span> are projectors of <span class="arithmatex">\(A/\radical{A}\)</span>. Hence there are two irreducible modules <span class="arithmatex">\(M_{\pm}\eqqq \CC p_{\pm}\)</span> with the actions <span class="arithmatex">\(x=0, \, g=\pm 1\)</span>.</p>
+<p>We can choose the lifting of <span class="arithmatex">\(p_{\pm}\)</span> in <span class="arithmatex">\(A\)</span> as <span class="arithmatex">\(p_{\pm}\)</span>, hence by Theorem 9.2.1 the projective covers of <span class="arithmatex">\(M_{\pm}\)</span> are <span class="arithmatex">\(P_{\pm}\eqqq A p_{\pm}=\CC\vecspan{p_{\pm},xp_{\pm}}\)</span>, and the actions are</p>
+<div class="arithmatex">\[\begin{equation}
+    x=\begin{bmatrix}
+        0&amp;0\\1&amp;0
+    \end{bmatrix}
+    \, ,
+    \quad
+    g=\begin{bmatrix}
+        \pm1&amp;0\\0&amp;\mp 1
+    \end{bmatrix}
+    \, .
+\end{equation}\]</div>
+<p>Then we have the short exact sequences</p>
+<div class="arithmatex">\[\begin{equation}
+    0\to M_{\mp} \to P_{\pm} \to M_{\pm} \to 0
+    \, ,
+\end{equation}\]</div>
+<p>and the Cartan matrix of <span class="arithmatex">\(A\)</span> is</p>
+<div class="arithmatex">\[\begin{equation}
+    (\dim\Hom(P_{i},P_{j}))=
+    \begin{bmatrix}
+        1&amp;1\\1&amp;1
+    \end{bmatrix}
+    \, .
+\end{equation}\]</div>
+</div>
+<h2 id="some-facts">Some facts</h2>
+<div class="admonition fact">
+<p class="admonition-title">Clifford algebra</p>
+<p><span class="arithmatex">\(A\)</span> is the Clifford algebra with degenerate metric <span class="arithmatex">\(\diag(0,1)\)</span>. The projective covers are nontrivial spinors on the <span class="arithmatex">\(2d\)</span> Newton-Cartan geometry.</p>
+</div>
+<div class="admonition fact">
+<p class="admonition-title">Hopf algebra</p>
+<p><span class="arithmatex">\(A\)</span> is the <a href="https://en.wikipedia.org/wiki/Sweedler%27s_Hopf_algebra">Sweedler's Hopf algebra</a>, the smallest noncommutative noncocommutative Hopf algebra. Taft generalizes it to a family of finite dimensional Hopf algebras, called <a href="https://en.wikipedia.org/wiki/Taft_Hopf_algebra">Taft algebra</a>.</p>
+<p>The comultiplication is</p>
+<div class="arithmatex">\[\begin{equation}
+    \Delta g=g\ox g
+    \, ,
+    \quad
+    \Delta x=x\ox 1+g\ox x
+    \, ,
+\end{equation}\]</div>
+<p>the counit is</p>
+<div class="arithmatex">\[\begin{equation}
+    \epsilon(g)=1
+    \, ,
+    \quad
+    \epsilon(x)=0
+    \, ,
+\end{equation}\]</div>
+<p>and the antipode is</p>
+<div class="arithmatex">\[\begin{equation}
+    S(g)=g
+    \, ,
+    \quad
+    S(x)=-gx
+    \, .
+\end{equation}\]</div>
+</div>
+<div class="admonition fact">
+<p class="admonition-title">Quiver algebra</p>
+<p><span class="arithmatex">\(A\)</span> is the quotient of the quiver with adjacent matrix</p>
+<div class="arithmatex">\[\begin{equation}
+    \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{bmatrix}
+\end{equation}\]</div>
+<p>by the ideal generated by all length two paths, see <a href="https://arxiv.org/pdf/math/0009214">https://arxiv.org/pdf/math/0009214</a>. The path algebra is specified by</p>
+<div class="arithmatex">\[\begin{equation}
+    e_{\pm}v_{\pm}=e_{\pm}
+    \, ,
+    \quad
+    v_{\mp}e_{\pm}=e_{\pm}
+    \, ,
+    \quad
+    v_{\pm}^{2}=v_{\pm}
+    \, ,
+\end{equation}\]</div>
+<p>and after the quotient we have</p>
+<div class="arithmatex">\[\begin{equation}
+    e_{i}e_{j}=0
+    \, .
+\end{equation}\]</div>
+<p>The isomorphism is given by</p>
+<div class="arithmatex">\[\begin{equation}
+    v_{\pm}=\frac{1\pm g}{2}
+    \, ,
+    \quad
+    e_{\pm}=x\frac{1\pm g}{2}
+    \, .
+\end{equation}\]</div>
+</div>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/random-text.js"></script>
+      
+        <script src="../../js/box-thm.js"></script>
+      
+        <script src="../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

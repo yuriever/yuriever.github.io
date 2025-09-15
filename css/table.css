@@ -1,0 +1,30 @@
+/*  */
+/* 表格居中 */
+/*  */
+
+.md-typeset__table {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/*  */
+/* 单元格垂直居中 */
+/*  */
+
+.md-typeset__table table tbody tr td {
+    vertical-align: middle !important;
+}
+
+/*  */
+/* 表格标题样式 */
+/*  */
+
+.md-typeset table:not([class]) {
+    display: inline-table;
+}
+
+.md-typeset__table table caption {
+    margin-top: 0.5em;
+}

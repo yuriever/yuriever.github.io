@@ -1,0 +1,86 @@
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    letter-spacing: 0;
+    font-weight: 400;
+    font-family: Helvetica;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset h1 {
+    font-size: 1.6rem;
+}
+
+.md-typeset h2 {
+    font-size: 1.4rem;
+}
+
+.md-typeset h3 {
+    font-size: 1.2rem;
+}
+
+.md-typeset h4 {
+    font-size: 1rem;
+}
+
+/*  */
+/* 一级副标题 */
+/*  */
+
+span.subtitle {
+    font-size: 0.8rem;
+}
+
+span.subtitle:before {
+    content: "\a";
+    white-space: pre;
+}
+
+/* 二级标题下边框 */
+.md-typeset h2 {
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+/*  */
+/* 标题自动编号 */
+/*  */
+
+body {
+    counter-reset: h2;
+}
+
+h2 {
+    counter-reset: h3;
+}
+
+h3 {
+    counter-reset: h4;
+}
+
+article h2:before {
+    content: counter(h2, decimal);
+    margin-right: 0.4rem;
+    counter-increment: h2;
+}
+
+article h3:before {
+    content: counter(h2, decimal) "." counter(h3, decimal);
+    margin-right: 0.4rem;
+    counter-increment: h3;
+}
+
+article h4:before {
+    content: counter(h2, decimal) "." counter(h3, decimal) "."
+        counter(h4, decimal);
+    margin-right: 0.4rem;
+    counter-increment: h4;
+}
+
+h2.nocount:before,
+h3.nocount:before,
+h4.nocount:before {
+    content: none;
+    counter-increment: none;
+}

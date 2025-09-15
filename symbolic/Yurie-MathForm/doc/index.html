@@ -1,0 +1,751 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/Yurie-MathForm/doc/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Yurie/MathForm - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/const.css">
+    
+      <link rel="stylesheet" href="../../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/table.css">
+    
+      <link rel="stylesheet" href="../../../css/image.css">
+    
+      <link rel="stylesheet" href="../../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yuriemathform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yurie/MathForm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lightnovel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lightnovel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format definition
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="yuriemathform"><a href="https://github.com/yuriever/Yurie-MathForm">Yurie/MathForm</a></h1>
+<p>A Mathematica paclet for improving math layout.</p>
+<ul>
+<li>
+<p>The LaTeX template file <code>Source/template</code> is from <a href="http://szhorvat.net/mathematica/MaTeX">MaTeX</a>.</p>
+</li>
+<li>
+<p>The exported LaTeX strings will be formatted by <a href="https://github.com/WGUNDERWOOD/tex-fmt">tex-fmt</a>.</p>
+</li>
+</ul>
+<div class="admonition wl">
+<p class="admonition-title">Flow chart</p>
+<pre class="mermaid"><code>
+flowchart LR
+
+Expression(Expression)
+TraditionalForm(TraditionalForm)
+TeXForm(TeXForm)
+LaTeXString(LaTeXString)
+PDF(PDF)
+
+$MFAssoc($MFAssoc)
+
+MFInterpret{{MFInterpret}}
+MFString{{MFString/MFCopy}}
+MFArgConvert{{MFArgConvert}}
+MFClear{{MFClear}}
+MF{{MF}}
+
+subgraph dataflow[" "]
+Expression --&gt; TraditionalForm --&gt; TeXForm
+TeXForm --- MFString --&gt; LaTeXString
+LaTeXString --- MF --&gt; PDF
+end
+
+MFArgConvert --&gt; $MFAssoc
+MFClear --&gt;|cancel| MFInterpret &amp; MFArgConvert
+MFInterpret --&gt; TraditionalForm
+$MFAssoc --&gt; MFString
+
+classDef data fill:#ffc6ec20;
+class MFInterpret,MFString,MFArgConvert,MFClear,$MFAssoc,MF data;
+
+style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
+</div>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[]</span><span class="o">@</span><span class="p">{</span>
+<span class="w">    </span><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">],</span>
+<span class="w">    </span><span class="nv">args</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"g"</span><span class="p">,</span>
+<span class="w">    </span><span class="nv">argList</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"h"</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">args</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">y</span><span class="p">]]</span><span class="o">//</span><span class="nv">MFString</span>
+
+<span class="nv">argList</span><span class="p">[{</span><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">y</span><span class="p">]}]</span><span class="o">//</span><span class="nv">MFString</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">\g</span><span class="nb">{</span><span class="k">\f</span><span class="nb">{</span>x<span class="nb">}}{</span><span class="k">\f</span><span class="nb">{</span>y<span class="nb">}}</span>
+
+<span class="k">\h</span><span class="nb">{</span>
+    <span class="k">\f</span><span class="nb">{</span>x<span class="nb">}</span>,
+    <span class="k">\f</span><span class="nb">{</span>y<span class="nb">}</span>
+<span class="nb">}</span>
+</code></pre></div>
+</div>
+<h2 id="formatting">Formatting</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">MFString</span></code> - refine the string from <code class="highlight"><span class="nb">TeXForm</span></code>.</p>
+<p>The expression will be converted to string by <code class="highlight"><span class="nb">TeXForm</span></code>, then refined according to <code class="highlight"><span class="nv">$MFAssoc</span></code> and the following options:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">"RemoveLeftRightPair"</span><span class="o">-&gt;</span><span class="nb">True</span></code> - remove the <code class="highlight"><span class="k">\left</span>(...<span class="k">\right</span>)</code> pair.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Linebreak"</span><span class="o">-&gt;</span><span class="nb">True</span></code> - insert line breaks into long expressions.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"LinebreakThreshold"</span><span class="o">-&gt;</span><span class="m">6</span></code> - control the threshold of line breaking.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"LinebreakIgnore"</span><span class="o">-&gt;</span><span class="p">{}</span></code> - treat the sub-expressions matching with the specified patterns as symbols.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MF</span></code> - show the LaTeX of the expression.</p>
+<p>The expression will be converted to LaTeX string by <code class="highlight"><span class="nv">MFString</span></code>, then compiled into PDF, controlled by the following options:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">"Preamble"</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">"\\usepackage{amsmath,amssymb}"</span><span class="p">}</span></code> - add to the preamble.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"FontSize"</span><span class="o">-&gt;</span><span class="m">12</span></code> - adjust the font size.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"LineSpacing"</span><span class="o">-&gt;</span><span class="p">{</span><span class="m">1.2</span><span class="p">,</span><span class="m">0</span><span class="p">}</span></code> - adjust the line spacing.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Magnification"</span><span class="o">-&gt;</span><span class="m">1.5</span></code> - magnify the output.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"CopyToClipboard"</span><span class="o">-&gt;</span><span class="nb">True</span></code> - copy the string from <code class="highlight"><span class="nv">MFString</span></code> to clipboard.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"ClearCache"</span><span class="o">-&gt;</span><span class="nb">False</span></code> - use the cache.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"Listable"</span><span class="o">-&gt;</span><span class="nb">True</span></code> - convert list elements as separate PDFs.</p>
+</li>
+<li>
+<p>The other options are inherited from <code class="highlight"><span class="nv">MFString</span></code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="format-definition">Format definition</h2>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">MFMakeBox</span></code> - make the box definitions interpretable.</p>
+<div class="admonition wl">
+<p class="admonition-title">Usage</p>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[{</span><span class="nt">__List</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
+</code></pre></div>
+</div>
+<ul>
+<li>The supported formats are <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nb">TraditionalForm</span></code> or non-specified.</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MFArgConvert</span></code> - define LaTeX macro for the symbol and store the rule into <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
+<div class="admonition wl">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[][</span><span class="nv">f</span><span class="o">-&gt;</span><span class="s">"f"</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">"{"</span><span class="p">,</span><span class="s">"}"</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"f"</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">"{"</span><span class="p">,</span><span class="s">"}"</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"f"</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">"{"</span><span class="p">,</span><span class="s">"}"</span><span class="p">,</span><span class="s">","</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"f"</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="s">"{"</span><span class="p">,</span><span class="s">"}"</span><span class="p">,</span><span class="s">","</span><span class="p">][</span><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span><span class="o">-&gt;</span><span class="s">"f"</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">MFArgConvert</span><span class="p">[</span><span class="o">___</span><span class="p">][{</span><span class="o">__</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
+</code></pre></div>
+</div>
+<ul>
+<li>
+<p>The existing format values will be cleared and messaged, since the symbol name is used as the key in <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
+</li>
+<li>
+<p>The supported conversion rules are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: left;">Expression</th>
+<th style="text-align: left;">LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="o">___</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a<span class="nb">}{</span>b<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">_List</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nt">___List</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">f</span><span class="p">[{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">},{</span><span class="nv">c</span><span class="p">,</span><span class="nv">d</span><span class="p">}]</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="k">\f</span><span class="nb">{</span>a,b<span class="nb">}{</span>c,d<span class="nb">}</span></code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">MFClear</span></code> - clear format values and rules in <code class="highlight"><span class="nv">$MFAssoc</span></code> of the symbol, or all symbols under the context.</p>
+</li>
+</ul>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/box-thm.js"></script>
+      
+        <script src="../../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

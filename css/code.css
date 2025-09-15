@@ -1,0 +1,15 @@
+.md-typeset code {
+    font-size: 0.6rem;
+    border-radius: calc(var(--sora-border-radius) * 0.2);
+    box-shadow: 0 0 0.25rem rgb(200, 200, 200, 0.2);
+    margin: 0.1rem;
+    padding: 0.1rem;
+}
+
+/*  */
+/* size of copy button */
+/*  */
+
+button.md-clipboard {
+    font-size: 0.6rem;
+}

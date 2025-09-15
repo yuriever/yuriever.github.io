@@ -1,0 +1,28 @@
+/*  */
+/* 页脚格式 */
+/*  */
+
+[dir="ltr"] .md-typeset sub,
+[dir="ltr"] .md-typeset sup {
+    margin-left: 0;
+}
+
+a.footnote-ref:before {
+    content: "[";
+}
+
+a.footnote-ref:after {
+    content: "]";
+}
+
+a.footnote-ref {
+    vertical-align: bottom;
+    color: var(--sora-ref-color);
+    user-select: none;
+}
+
+.md-typeset .footnote-ref {
+    font-size: 1em;
+    font-weight: bold;
+    vertical-align: -0.375em;
+}

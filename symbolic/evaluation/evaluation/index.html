@@ -1,0 +1,793 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/symbolic/evaluation/evaluation/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Standard evaluation sequence - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/const.css">
+    
+      <link rel="stylesheet" href="../../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/table.css">
+    
+      <link rel="stylesheet" href="../../../css/image.css">
+    
+      <link rel="stylesheet" href="../../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#standard-evaluation-sequence" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Standard evaluation sequence
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../lightnovel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lightnovel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moduli
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-is-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything is an expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-standard-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-standard evaluation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="standard-evaluation-sequence">Standard evaluation sequence</h1>
+<p>References:</p>
+<ul>
+<li>Mathematica documentation: <code>tutorial/Expressions</code>, <code>tutorial/Evaluation</code>, <code>tutorial/EvaluationOfExpressions</code></li>
+</ul>
+<h2 id="moduli">Moduli</h2>
+<p>在一些情况下，由相似对象构成的集合具有良好的几何结构，称之为模空间。
+模空间的属性揭示了对象之间的关系。
+借鉴微分几何的思想，模空间中的曲线代表了一族单参数的对象，即有限形变，而其切空间包含了独立的无穷小形变。
+典型的例子是 Narain CFT 的模空间 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">5</a></sup>：切向量对应精确平衡算子 (exactly marginal operator)，而测度对应着 CFT 的系综平均。</p>
+<p>本文通过类比模空间来回顾 Mathematica 表达式的计算。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Expr</th>
+<th style="text-align: left;">Moduli</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">expression <code class="highlight"><span class="nv">x0</span></code></td>
+<td style="text-align: left;">point <span class="arithmatex">\(x_{0}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">rule <code class="highlight"><span class="nv">x0</span><span class="o">-&gt;</span><span class="nv">x0</span><span class="o">+</span><span class="nv">f0</span></code></td>
+<td style="text-align: left;">tangent vector <span class="arithmatex">\(f_{0}\)</span> at <span class="arithmatex">\(x_{0}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">pattern <code class="highlight"><span class="nt">x_</span><span class="o">:&gt;</span><span class="nv">x</span><span class="o">+</span><span class="nv">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span></code></td>
+<td style="text-align: left;">vector field <span class="arithmatex">\(f(x)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">pattern condition <code class="highlight"><span class="nt">x_</span><span class="o">/;</span><span class="nv">Q</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="o">==</span><span class="m">0</span></code></td>
+<td style="text-align: left;">constraint <span class="arithmatex">\(Q(x)=0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">evaluation <code class="highlight"><span class="nv">x0</span><span class="o">-&gt;</span><span class="nv">x1</span><span class="o">-&gt;...-&gt;</span><span class="nv">xn</span></code></td>
+<td style="text-align: left;">flow from <span class="arithmatex">\(x_{0}\)</span> to <span class="arithmatex">\(x_{n}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">standard evaluation sequence</td>
+<td style="text-align: left;">a special flow</td>
+</tr>
+<tr>
+<td style="text-align: left;">complexity</td>
+<td style="text-align: left;">potential</td>
+</tr>
+<tr>
+<td style="text-align: left;">neighborhood/locality</td>
+<td style="text-align: left;">? <sup id="fnref2:neighbor"><a class="footnote-ref" href="#fn:neighbor">1</a></sup></td>
+</tr>
+</tbody>
+</table>
+<h2 id="everything-is-an-expression">Everything is an expression</h2>
+<p>本节回顾 Mathematica 的表达式，记所有符合语法的表达式构成的集合为 <strong>Expr</strong> <sup id="fnref:expr"><a class="footnote-ref" href="#fn:expr">2</a></sup>。在 Mathematica 中不存在原生的类型系统，一切对象皆为表达式 (expression)。这个设计原则可见文档 <code class="highlight"><span class="nv">guide</span><span class="o">/</span><span class="nv">Expressions</span></code>：</p>
+<blockquote>
+<p>At the core of the Wolfram Language is the foundational idea that everything - data, programs, formulas, graphics, documents - can be represented as symbolic expressions. And it is this unifying concept that underlies the Wolfram Language's symbolic programming paradigm, and makes possible much of the unique power of the Wolfram Language and the Wolfram System.</p>
+</blockquote>
+<p>表达式的结构可表示为树 (tree)，函数 <code class="highlight"><span class="nb">TreeForm</span></code> <sup id="fnref:treeform"><a class="footnote-ref" href="#fn:treeform">3</a></sup> 给出表达式的树形式。可用 <code class="highlight"><span class="nb">Head</span><span class="p">,</span><span class="w"> </span><span class="nb">Level</span><span class="p">,</span><span class="w"> </span><span class="nb">Position</span><span class="p">,</span><span class="w"> </span><span class="nb">Part</span><span class="p">,</span><span class="w"> </span><span class="nb">Span</span><span class="p">,</span><span class="w"> </span><span class="nb">Length</span><span class="p">,</span><span class="w"> </span><span class="nb">Depth</span></code> 等函数访问表达式的内部结构。此外，函数 <code class="highlight"><span class="nb">LeafCount</span></code> 给出树的节点 (node) 或称叶子的总数，因此提供了一种表达式复杂度的度量。</p>
+<ul>
+<li>
+<p><strong>原子：</strong> 与树的结构相似，不存在非平凡子表达式的称为原子 (atom)，例如数、符号、字符串。</p>
+</li>
+<li>
+<p><strong>复合：</strong> 树可以拼接，若干表达式可以复合为复杂度更高的表达式，此处复合 (composite) 指树的拼接，形如 <code class="highlight"><span class="nv">f0</span><span class="p">[</span><span class="nv">f1</span><span class="p">,</span><span class="nv">f2</span><span class="p">,</span><span class="o">...</span><span class="p">]</span></code>，类似于 operad <sup id="fnref:operad"><a class="footnote-ref" href="#fn:operad">4</a></sup>。</p>
+</li>
+<li>
+<p><strong>合成：</strong> 树构成森林，对应于合成 (compound)，形如 <code class="highlight"><span class="nv">f1</span><span class="o">;</span><span class="nv">f2</span><span class="o">;...</span></code>，类似于张量积。</p>
+</li>
+</ul>
+<p>例如：表达式 <code class="highlight"><span class="nv">a</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="o">+</span><span class="nv">b</span><span class="o">^</span><span class="m">2</span></code> 的树形式为</p>
+<p><figure id="_figure-1"><img alt="tree-example" src="../tree-example.svg"><figcaption>Figure 1: tree-example</figcaption></figure></p>
+<h2 id="evaluation">Evaluation</h2>
+<p>表达式的集合 <strong>Expr</strong> 是一个无结构的平凡集合。对表达式的计算 (evaluation) 可实现表达式之间的形变 (deformation)。当然，计算类似于离散动力系统，并无良好的微分结构。</p>
+<p>特定对象 <span class="arithmatex">\(x_0\)</span> 的不同无穷小形变可记为 <span class="arithmatex">\(x_0 \mapsto x_0 + \delta_i x_0,\,  \delta_i x_0\in TM_{x_0}\)</span>，例如有效作用量的形变为</p>
+<div class="arithmatex">\[\begin{equation}
+    S_0\to S_0+\sum_i\intt{d^d x}\delta g_i \op_i
+    \, .
+\end{equation}\]</div>
+<p>形变切方向的类似物为规则 <code class="highlight"><span class="nb">Rule</span><span class="w"> </span><span class="p">(</span><span class="o">-&gt;</span><span class="p">)</span></code>。表达式的子表达式的集合可以实现为</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="o">:=</span><span class="nb">Cases</span><span class="p">[</span><span class="nv">expr</span><span class="p">,</span><span class="o">_</span><span class="p">,</span><span class="nb">All</span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+</div>
+<p>例如 <code class="highlight"><span class="nv">expr0</span><span class="o">=</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span></code> 的子表达式为，</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="nv">subexpr</span><span class="p">[</span><span class="nv">expr0</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">h</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]}</span>
+</code></pre></div>
+</div>
+<p>由于 <strong>Expr</strong> 过大，将其简单截断为 <code class="highlight"><span class="nv">exprlist</span><span class="o">=</span><span class="p">{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span></code>。改变表达式 <code class="highlight"><span class="nv">expr0</span></code> 的规则的集合可以实现为</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">exprlist</span><span class="o">=</span><span class="p">{</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nv">rulelist</span><span class="o">=</span><span class="nb">Outer</span><span class="p">[</span><span class="nb">Rule</span><span class="p">,</span><span class="nv">list</span><span class="p">,</span><span class="nv">exprlist</span><span class="p">]</span><span class="o">//</span><span class="nb">Flatten</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">h</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">h</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span><span class="o">-&gt;</span><span class="nv">b</span><span class="p">}</span>
+</code></pre></div>
+</div>
+<p>函数 <code class="highlight"><span class="nb">Replace</span><span class="p">[</span><span class="nt">expr_</span><span class="p">,</span><span class="nt">rule_</span><span class="p">]</span></code> 会搜索 <code class="highlight"><span class="nt">expr_</span></code> 中匹配 <code class="highlight"><span class="nt">rule_</span></code> 的子表达式并进行替换，可实现表达式的形变，<code class="highlight"><span class="nv">expr0</span></code> 的全部形变为 <sup id="fnref:neighbor"><a class="footnote-ref" href="#fn:neighbor">1</a></sup></p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Table</span><span class="p">[</span>
+<span class="w">    </span><span class="nb">Replace</span><span class="p">[</span><span class="nv">expr0</span><span class="p">,</span><span class="nv">rule</span><span class="p">,</span><span class="nb">All</span><span class="p">],</span>
+<span class="w">    </span><span class="p">{</span><span class="nv">rule</span><span class="p">,</span><span class="nv">rulelist</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">a</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="nv">b</span><span class="p">]],</span><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">],</span><span class="nv">f</span><span class="p">[</span><span class="nv">b</span><span class="p">],</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">}</span>
+</code></pre></div>
+</div>
+<p>注意这里并不包含诸如 <code class="highlight"><span class="nv">g</span><span class="o">-&gt;</span><span class="nv">a</span></code> 的形变。若想实现这类形变，需启用 <code class="highlight"><span class="nb">Cases</span><span class="o">|</span><span class="nb">Replace</span></code> 的选项 <code class="highlight"><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">True</span></code>。另一种通用的方法是引入含有模式的延迟规则 <code class="highlight"><span class="nv">g</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">a</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span></code>，此处模式 <code class="highlight"><span class="nt">x_</span></code> 用局部变量 <code class="highlight"><span class="nv">x</span></code> 指代 <strong>Expr</strong> 中的任意一个表达式，类似于 <span class="arithmatex">\(\forall x\in M\)</span>。</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Replace</span><span class="p">[</span><span class="nv">expr0</span><span class="p">,</span><span class="nv">g</span><span class="o">-&gt;</span><span class="nv">a</span><span class="p">,</span><span class="nb">All</span><span class="p">,</span><span class="nb">Heads</span><span class="o">-&gt;</span><span class="nb">True</span><span class="p">]</span>
+
+<span class="nb">Replace</span><span class="p">[</span><span class="nv">expr0</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="nt">x_</span><span class="p">]</span><span class="o">:&gt;</span><span class="nv">a</span><span class="p">[</span><span class="nv">x</span><span class="p">],</span><span class="nb">All</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span>
+
+<span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">f</span><span class="p">[</span><span class="nv">a</span><span class="p">[</span><span class="nv">h</span><span class="p">]]</span>
+</code></pre></div>
+</div>
+<p>模式 <code class="highlight"><span class="nb">Pattern</span><span class="p">[</span><span class="nt">name_</span><span class="p">,</span><span class="nt">patt_</span><span class="p">]</span></code> 提供了全称量词的类似物。含有模式的延迟规则 <code class="highlight"><span class="nt">patt_</span><span class="o">:&gt;</span><span class="nt">target_</span></code> 可作用到 <strong>Expr</strong> 中的每一个表达式上，这类似于矢量场 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(M\)</span> 的每点指派无穷小形变。</p>
+<div class="arithmatex">\[\begin{equation}
+x \mapsto x+ f(x), \, \forall x\in M
+\, .
+\end{equation}\]</div>
+<p>需要指出的是，赋值函数 <code class="highlight"><span class="nb">Set</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="p">),</span><span class="w"> </span><span class="nb">SetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">:=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSet</span><span class="w"> </span><span class="p">(</span><span class="o">^=</span><span class="p">),</span><span class="w"> </span><span class="nb">UpSetDelayed</span><span class="w"> </span><span class="p">(</span><span class="o">^:=</span><span class="p">)</span></code> 等的作用是在 Mathematica 的全局规则库中添加指定的规则。</p>
+<h3 id="standard-evaluation">Standard evaluation</h3>
+<p>在计算时，Mathematica 会遍历表达式 <code class="highlight"><span class="nv">expr</span><span class="o">=</span><span class="nv">f0</span><span class="p">[</span><span class="nv">f1</span><span class="p">,</span><span class="nv">f2</span><span class="p">,</span><span class="o">...</span><span class="p">]</span></code> 的子结构，比对全局规则库进行模式匹配，重复这一步骤直到表达式的形式不变，称之为标准计算序列 (standard evaluation sequence)：</p>
+<ul>
+<li>计算表达式的 <code class="highlight"><span class="nb">Head</span><span class="p">[</span><span class="nv">expr</span><span class="p">]</span><span class="o">=</span><span class="nv">f0</span></code>；</li>
+<li>依次计算子表达式 <code class="highlight"><span class="nv">f1</span><span class="p">,</span><span class="nv">f2</span><span class="p">,</span><span class="o">...</span></code>；</li>
+<li>应用符号的属性；</li>
+<li>应用用户定义进行计算，即利用规则进行替换；</li>
+<li>应用内置定义进行计算；</li>
+<li>重复上述步骤，直到表达式不再变化或溢出。</li>
+</ul>
+<p>这类似于动力系统收敛到不动点或发散。</p>
+<h3 id="non-standard-evaluation">Non-standard evaluation</h3>
+<p>计算依赖规则之间的顺序，类似于不同的矢量场不交换。因此选取合适的规则顺序方可得到目标表达式。</p>
+<p>标准计算序列在特定场景并不合适，例如上面的子表达式一例中，如果表达式含有可被计算的部分，结果为</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">f</span><span class="o">=</span><span class="nv">g</span><span class="o">;</span>
+
+<span class="nv">subexpr</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]}</span>
+</code></pre></div>
+</div>
+<p>这是因为在执行标准计算序列时，先计算 <code class="highlight"><span class="nv">f</span><span class="o">=</span><span class="nv">g</span></code>，再计算 <code class="highlight"><span class="nv">g</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]</span></code>，最后计算 <code class="highlight"><span class="nv">subexpr</span><span class="p">[</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]]</span><span class="o">=</span><span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="nv">g</span><span class="p">[</span><span class="m">2</span><span class="p">]}</span></code>。</p>
+<p>若想得到 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span></code> 的子表达式需要修改计算顺序，可用 <code class="highlight"><span class="nb">HoldFirst</span></code> 属性实现这一点：</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr2</span><span class="o">//</span><span class="nb">Attributes</span><span class="o">=</span><span class="p">{</span><span class="nb">HoldFirst</span><span class="p">}</span><span class="o">;</span>
+
+<span class="nv">subexpr2</span><span class="p">[</span><span class="nt">expr_</span><span class="p">]</span><span class="o">:=</span><span class="nb">Cases</span><span class="p">[</span><span class="nb">Unevaluated</span><span class="o">@</span><span class="nv">expr</span><span class="p">,</span><span class="nt">subexpr_</span><span class="o">:&gt;</span><span class="nb">HoldForm</span><span class="o">@</span><span class="nv">subexpr</span><span class="p">,</span><span class="nb">All</span><span class="p">]</span><span class="o">;</span>
+</code></pre></div>
+</div>
+<p>带有 <code class="highlight"><span class="nb">HoldFirst</span></code> 属性的 <code class="highlight"><span class="nv">subexpr2</span></code> 会保持输入 <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]</span></code> 不变，直接匹配 <code class="highlight"><span class="nv">subexpr2</span></code> 的下值。</p>
+<div class="admonition code">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nv">subexpr2</span><span class="p">[</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">Out</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">,</span><span class="nv">f</span><span class="p">[</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="p">]}</span>
+</code></pre></div>
+</div>
+<p>Mathematica 提供了若干调整计算顺序的内置函数，相关的计算称为非标准计算 (non-standard evaluation)，例如</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="nb">Hold</span></code> family</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Inactive</span></code> family</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Evaluate</span><span class="o">|</span><span class="nb">Unevaluated</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Verbatim</span></code></p>
+</li>
+<li>
+<p><code class="highlight"><span class="nb">Defer</span></code></p>
+</li>
+</ul>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:neighbor">
+<p>Neighborhood: why use <code class="highlight"><span class="nb">Plus</span></code> in <code class="highlight"><span class="nv">x0</span><span class="o">-&gt;</span><span class="nv">x0</span><span class="o">+</span><span class="nv">f0</span></code> since there is no notion of linearity? How to tell whether two expressions are close enough? A possible answer is OOP. <a class="footnote-backref" href="#fnref:neighbor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:neighbor" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:expr">
+<p>The "size" of <strong>Expr</strong> is controlled by two objects: the collection of valid trees and the collection of node indices. Nodes can be atomic or non-atomic, e.g. <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nv">x</span><span class="p">]</span></code> vs. <code class="highlight"><span class="p">(</span><span class="nv">f</span><span class="o">+</span><span class="nv">g</span><span class="p">)[</span><span class="nv">x</span><span class="p">]</span></code>. <a class="footnote-backref" href="#fnref:expr" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:treeform">
+<p>or the functions <code class="highlight"><span class="nb">ExpressionTree</span></code> and <code class="highlight"><span class="nb">ExpressionGraph</span></code>, see the Mathematica documentation: <code class="highlight"><span class="nv">guide</span><span class="o">/</span><span class="nv">Trees</span></code>. <a class="footnote-backref" href="#fnref:treeform" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:operad">
+<p><a href="https://www.math3ma.com/blog/what-is-an-operad-part-1">A mild introduction to operads @math3ma.com</a>. <a class="footnote-backref" href="#fnref:operad" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:1">
+<p>Alexander Maloney and Edward Witten. Averaging over narain moduli space. JHEP, 10:187, 2020. <a href="https://arxiv.org/abs/2006.04855">arXiv:2006.04855</a>, <a href="https://doi.org/10.1007/JHEP10(2020)187">doi:10.1007/JHEP10(2020)187</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/box-thm.js"></script>
+      
+        <script src="../../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

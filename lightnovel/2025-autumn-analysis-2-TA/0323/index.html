@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sora">
+      
+      
+        <meta name="author" content="Yuriever">
+      
+      
+        <link rel="canonical" href="https://yuriever.github.io/lightnovel/2025-autumn-analysis-2-TA/0323/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>0323 流形：例子与基本思想 - Sora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Neue:300,300i,400,400i,700,700i%7CSource+Code+Pro+Semibold:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Helvetica Neue";--md-code-font:"Source Code Pro Semibold"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/const.css">
+    
+      <link rel="stylesheet" href="../../../css/theme-color.css">
+    
+      <link rel="stylesheet" href="../../../css/misc.css">
+    
+      <link rel="stylesheet" href="../../../css/list.css">
+    
+      <link rel="stylesheet" href="../../../css/heading.css">
+    
+      <link rel="stylesheet" href="../../../css/code.css">
+    
+      <link rel="stylesheet" href="../../../css/table.css">
+    
+      <link rel="stylesheet" href="../../../css/image.css">
+    
+      <link rel="stylesheet" href="../../../css/mathjax.css">
+    
+      <link rel="stylesheet" href="../../../css/footnote.css">
+    
+      <link rel="stylesheet" href="../../../css/box-format.css">
+    
+      <link rel="stylesheet" href="../../../css/box-type.css">
+    
+      <link rel="stylesheet" href="../../../css/tikzjax/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0323" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sora" class="md-header__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              0323 流形：例子与基本思想
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../symbolic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Triangulated reality
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lightnovel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../workbench/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Workbench
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sora/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sora
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sora" class="md-nav__button md-logo" aria-label="Sora" data-md-component="logo">
+      
+  <img src="../../../img/Mutsumi1.png" alt="logo">
+
+    </a>
+    Sora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangulated reality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lightnovel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workbench/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workbench
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sora
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      直观例子
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      光滑流形
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      空间、空间中的物体、空间上的量
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+            </div>
+        </div>
+    </div>
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
+
+<!-- Actions -->
+
+
+<!--
+  Check whether the content starts with a level 1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<!-- 
+  update to version 9.x
+  https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a 
+-->
+<!---->
+
+<!-- Page content -->
+<h1 id="0323">0323 流形：例子与基本思想</h1>
+<p><span hidden> <span class="arithmatex">\(\newcommand{\supp}{\operatorname{supp}}\)</span> </span></p>
+<p>本习题课介绍微分流形，常见的参考书如 do Carmo, Spivak。</p>
+<h2 id="_1">直观例子</h2>
+<div class="admonition ex">
+<p class="admonition-title">可展曲面</p>
+<p>一张纸无论如何弯折，如果不出现折痕，总有一个方向是平的。（可用校园卡演示）</p>
+<p>反之，乒乓球无法被摊开到平面上。</p>
+<p>这个物理过程虽然复杂，但可做如下简单的抽象。
+直观上，纸本身是平的，这是纸的内蕴属性 (intrinsic)。
+纸所在的空间是平的，这是空间的内蕴属性。
+纸在空间中的形变，可由两个正交方向上的弯曲程度刻画，这是纸在空间中的外禀 (extrinsic) 属性。制约这三者的关系为 Gauss Codazzi 方程。</p>
+</div>
+<div class="admonition ex">
+<p class="admonition-title">盈缺与散敛</p>
+<p>考虑一束平行的光线穿过一个缺陷角：</p>
+<ul>
+<li>
+<p>缺角 <span class="arithmatex">\(&lt;2\pi\)</span>，光线倾向于汇聚，能覆盖整个空间，相交的点构成低维的闭集；</p>
+</li>
+<li>
+<p>盈角 <span class="arithmatex">\(&gt;2\pi\)</span>，光线倾向于发散，无法覆盖整个空间。</p>
+</li>
+</ul>
+<p><figure id="_figure-1"><img alt="conic" src="conic.png"><figcaption>Figure 1: conic</figcaption></figure></p>
+<p>从中我们可以观察到如下现象：如果尝试用两族正交的直线组成笛卡尔坐标来描述一个曲面，</p>
+<ul>
+<li>
+<p>有时需要多个笛卡尔坐标来完整描述；</p>
+</li>
+<li>
+<p>不完备/奇点：光线可能会消失——测地线无法延拓，Cauchy 列不收敛；</p>
+</li>
+<li>
+<p>散焦点 (conjugate point, focal point, cut locus, caustics, ...实际可分为两类)：笛卡尔坐标能描述的区域的边界——测地流构造的微分同胚失效的地方，测地线相交的地方，Jacobi field 的奇点。</p>
+<ul>
+<li>彩虹的位置即为散焦点。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition remark">
+<p class="admonition-title">Remark</p>
+<p>光滑版本为球面与双曲平面。而这个例子把曲率集中到了一个锥形奇点 (conical singularity) 上。</p>
+<p>平行光线的推广为（从子集出发的）测地流，在现实中的应用之一为光追算法。</p>
+<p>这个例子描述的几何可被实现为 Einstein 引力理论中，2+1 维点粒子的引力场的空间截面。2+1 维局域渐近平直时空中不存在黑洞（或者说事件视界的半径为 0）。</p>
+<div class="highlight"><pre><span></span><code>此处应有黑洞的嵌入图。
+</code></pre></div>
+<p>对于正能量的物质分布，光线总是倾向于汇聚 (focusing theorem)。</p>
+</div>
+</div>
+<div class="admonition ex">
+<p class="admonition-title">Bertrand–Diguet–Puiseux theorem</p>
+<div class="arithmatex">\[\begin{equation}
+    K\sim\lim_{r\to 0} \frac{\pi r^{2}-A(r)}{r^{4}}
+\end{equation}\]</div>
+<p>对于带诱导度规的单位球面，<span class="arithmatex">\(A(r)=2\pi(1-\cos\theta)\)</span>，测地线长 <span class="arithmatex">\(r=\theta\)</span>。</p>
+</div>
+<h2 id="_2">光滑流形</h2>
+<p>上述例子蕴含了太多结构。首先我们给出（光滑）流形的定义。</p>
+<div class="admonition def">
+<p class="admonition-title">Manifold</p>
+<p>给定一个 Hausdorff，第二可数的拓扑空间 <span class="arithmatex">\(M\)</span>，如果对于 <span class="arithmatex">\(M\)</span> 的每一点，都存在一个开邻域 <span class="arithmatex">\(U\)</span>，使得 <span class="arithmatex">\(U\)</span> 同胚于 <span class="arithmatex">\(\RR^{n}\)</span> 的开集 <span class="arithmatex">\(\phi:U\to\RR^{n}\)</span>，那么 <span class="arithmatex">\(M\)</span> 称为拓扑流形，<span class="arithmatex">\((U,\phi)\)</span> 称为 <span class="arithmatex">\(p\)</span> 附近的坐标卡 (chart)，<span class="arithmatex">\(n\)</span> 称为维数。</p>
+<p>对于两个坐标卡 <span class="arithmatex">\((U,\phi)\)</span> 和 <span class="arithmatex">\((V,\psi)\)</span>，如果 <span class="arithmatex">\(\phi(U\cap V)\)</span> 和 <span class="arithmatex">\(\psi(U\cap V)\)</span> 之间的两个同胚映射 <span class="arithmatex">\(\phi\psi^{-1},\, \psi\phi^{-1}\)</span> 是光滑同胚，那么这两个坐标卡称为（光滑）相容的，这些同胚称为坐标转换映射 (transition map)。</p>
+<p>一族覆盖 <span class="arithmatex">\(M\)</span> 的坐标卡 <span class="arithmatex">\(\set{(U_{i},\phi_{i})}\)</span> 如果是两两相容的，则称为 <span class="arithmatex">\(M\)</span> 上的一个图册 (atlas)。</p>
+</div>
+<div class="admonition remark">
+<p class="admonition-title">第二可数性</p>
+<p>第二可数性：拓扑存在可数基。
+在 Hausdorff 和联通的条件下可以替换为仿紧性 (paracompact)：开覆盖可加细为局部有限的开覆盖。</p>
+<p>这个技术条件用来防止流形过“大”，用以保证流形的整体可分割成可数个局部，例如单位分解 (partition of unity) 的存在性：<span class="arithmatex">\(\sum_{i=1}^{\oo}f_{i}=1\)</span>，<span class="arithmatex">\(f_{i}\)</span> 光滑紧支撑在某个坐标卡内，且每一点附近均为有限求和，由此，函数或丛截面可分解或粘和为 <span class="arithmatex">\(g=\sum f_{i}g\)</span>。下图取自 wiki。</p>
+<p><figure id="_figure-2"><img alt="pu" src="Partition_of_unity_illustration.svg"><figcaption>Figure 2: pu</figcaption></figure></p>
+</div>
+<p>图册和坐标卡的命名自然取自地图。在绘制地图的时候我们只能测量局部的地理信息，然后再把它们相容的拼接起来。</p>
+<p>定义完图册后还需考虑图册之间的相容性：抽出一个图册中的坐标卡，检验是否与另一个图册中所有的坐标卡相容，进而遍历该图册中所有的坐标卡。如此，这两个图册可以合并到一个更大的图册中。</p>
+<p>接下来定义（光滑）流形有两个处理方式，并无本质区别：1）该图册直接定义了该流形，再称相容的图册定义了等价的流形；2）先把所有可能的相容的图册合并起来，称该极大的图册定义了该流形。</p>
+<div class="admonition remark">
+<p class="admonition-title">一点历史：黑洞与图册</p>
+<p>在二十世纪初，Einstein 建立的广义相对论一方面推动了物理的几何化，另一方面激发了 Riemannian 几何的发展，此外 Lorentzian 几何与数学相对论至今依然是一个活跃的领域。</p>
+<p>回顾 Einstein 的原始论文，会发现他花费了大量篇幅向读者介绍局部几何的计算——坐标变换、向量丛的变换、度规、联络、曲率等等，缺乏对整体拓扑的重视。</p>
+<p>这是一种“操作性”、“计算性”认识几何的方式，现今一些老式 GR 教科书中依然采取此种方式。</p>
+<p>这种观念在早期讨论黑洞的时候造成了一定的混淆。坐标奇点 vs. 测地奇点 vs. 曲率奇点。</p>
+</div>
+<div class="admonition ex">
+<p class="admonition-title">常见例子</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\RR^{n}\)</span>，其中的开集。</p>
+</li>
+<li>
+<p>光滑函数 <span class="arithmatex">\(f:U\to\RR^{n}\)</span> 的图 <span class="arithmatex">\(\set{(x,f(x))\in U\xx \RR^{n}}\)</span>。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(M\)</span> 中的开集。</p>
+</li>
+<li>
+<p>典型李群及其齐次空间。</p>
+<ul>
+<li><span class="arithmatex">\(\glgroup(n,\RR)\)</span> 作为行列式映射的逆像。</li>
+</ul>
+</li>
+<li>
+<p>乘积流形。</p>
+<ul>
+<li><span class="arithmatex">\(T^{n}\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition ex">
+<p class="admonition-title">反例</p>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Long_line_(topology)">长直线</a>，<span class="arithmatex">\(\omega_{1}\)</span> 不可数份的区间首尾相接得到的光滑流形，see also <a href="https://mathoverflow.net/questions/21673/">the MO question</a>。违背了第二可数性。</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Non-Hausdorff_manifold#Line_with_two_origins">两个原点的直线</a>，粘接了两个原点。第二可数但违背了 Hausdorff 性。</p>
+</li>
+<li>
+<p>带诱导拓扑的两条相交直线/自相交曲线，违背了局部 Euclidean 性。</p>
+</li>
+</ul>
+</div>
+<div class="admonition ex">
+<p class="admonition-title"> <span class="arithmatex">\(\CP^{1}\)</span> </p>
+<p>原点附近的复坐标 <span class="arithmatex">\(z\in U\)</span> 与无穷远点附近的 <span class="arithmatex">\(w\in V\)</span>，转换映射为 <span class="arithmatex">\(z=w^{-1}\)</span>。</p>
+<p>转换映射是复解析的，这是一个复流形。</p>
+</div>
+<p>这个例子 <span class="arithmatex">\(\CP^{1}\)</span> 启发我们，对局部模型和转移映射施加不同的条件，可以得到不同类型的流形。
+另一个例子是带边流形 (manifold with boundary)，局部模型为半空间 <span class="arithmatex">\(\RRgeq\xx\RR^{n-1}\)</span>。</p>
+<div class="admonition ex">
+<p class="admonition-title">带角流形</p>
+<p>证明 <span class="arithmatex">\(\set{(x,y)\given x\geq0,x y\geq0}\)</span> 与 <span class="arithmatex">\(\set{(x,y)\given x\geq0,x y\geq1}\)</span> 作为带边拓扑流形同胚，但前者不是带边光滑流形。</p>
+<p>前者称为带角流形 (manifold with corner)。进一步可以引入不同余维数的角，这些角之间的包含关系可被抽象为 stratified space。更进一步，无论光滑与拓扑，可将带边角的流形定义为带额外 stratification 结构的流形。</p>
+</div>
+<h2 id="_3">空间、空间中的物体、空间上的量</h2>
+<p>一些构造是流形的光滑结构自带的：曲线、子流形、函数、切矢量、切空间、切丛与向量丛，特别的，微分形式。</p>
+<p>在这之上指定额外的结构，给出不同的几何：</p>
+<ul>
+<li>
+<p>体积</p>
+</li>
+<li>
+<p>长度 - Riemannian</p>
+<ul>
+<li>角度 - conformal</li>
+</ul>
+</li>
+<li>
+<p>时间 - Lorentzian/Newton-Cartan/...</p>
+<ul>
+<li>因果 - conformal</li>
+</ul>
+</li>
+<li>
+<p>复数乘法 - complex</p>
+</li>
+<li>
+<p>动量 - symplectic</p>
+</li>
+<li>
+<p>...</p>
+</li>
+</ul>
+
+<!-- Source file information -->
+
+
+<!-- Was this page helpful? -->
+
+
+
+
+<!-- Comment system -->
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/random-text.js"></script>
+      
+        <script src="../../../js/box-thm.js"></script>
+      
+        <script src="../../../js/mathjax-setting.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/tikzjax.js"></script>
+      
+    
+  </body>
+</html>

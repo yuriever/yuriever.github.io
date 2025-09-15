@@ -1,0 +1,8 @@
+:root {
+    --sora-ref-color: rgba(30, 60, 200, 0.7);
+    --sora-eqref-color: rgb(15, 165, 70);
+    --sora-box-wl-color: rgb(255, 0, 0);
+    --sora-box-mark-color: rgba(90, 90, 90, 0.5);
+    --sora-box-background-color: rgba(220, 220, 220, 0.15);
+    --sora-border-radius: 0.4rem;
+}

@@ -1,0 +1,60 @@
+/*  */
+/* 内层 mjx-container 的边距应该较小，外层 div.arithmatex 的边距应与其它元素的边距保持一致 */
+/*  */
+
+.md-typeset div.arithmatex {
+    margin: 1em 0;
+}
+
+.md-typeset div.arithmatex > * {
+    width: auto;
+}
+
+mjx-container {
+    margin: 0.1rem !important;
+}
+
+/*  */
+/* 方程标签 */
+/*  */
+
+mjx-labels {
+    font-weight: bold;
+    color: hsl(from var(--sora-eqref-color) H S L / 0.5);
+}
+
+/*  */
+/* 方程引用 */
+/*  */
+
+mjx-mrow.MathJax_ref {
+    font-size: 0.8em;
+    font-weight: bold;
+    vertical-align: 0.05em;
+    color: var(--sora-eqref-color);
+    /* 抵消 mjx-container 的 margin */
+    margin: -0.1rem;
+}
+
+/*  */
+/* 在方程标签或方程引用中，去掉文章引用生成的字符"^" */
+/* 这是一个 ad hoc 解决方案 */
+/*  */
+
+mjx-mrow.MathJax_ref mjx-c.mjx-c5E::before {
+    display: none;
+}
+
+mjx-labels mjx-c.mjx-c5E::before {
+    display: none;
+}
+
+/*  */
+/* fix the vertical spacing of mathjax display environment */
+/* https://github.com/mathjax/MathJax/issues/2936 */
+/*  */
+
+mjx-assistive-mml {
+    right: 0;
+    bottom: 0;
+}

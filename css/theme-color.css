@@ -1,0 +1,30 @@
+/*  */
+/* 默认颜色 */
+/* https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss */
+/*  */
+
+[data-md-color-scheme="sora"] {
+    --md-default-fg-color: rgb(52, 73, 100);
+    --md-default-bg-color: rgb(243, 249, 243, 0.8);
+    /* --md-primary-fg-color: rgba(250, 250, 250, 0.6); */
+    --md-primary-fg-color: var(--md-default-bg-color);
+    --md-primary-bg-color: var(--md-default-fg-color);
+    /*  */
+    --md-typeset-a-color: rgb(200, 90, 70);
+    --md-typeset-color: var(--md-default-fg-color);
+    /* */
+    --md-admonition-fg-color: var(--md-default-fg-color);
+    --md-admonition-bg-color: var(--md-default-bg-color);
+    /* */
+    --md-code-bg-color: rgb(200, 200, 200, 0.12);
+    --md-code-hl-color: rgba(220, 220, 220, 0.3);
+    --md-code-hl-variable-color: rgb(29, 125, 251);
+    --md-code-hl-constant-color: rgb(134, 88, 228);
+    --md-code-hl-function-color: rgb(134, 88, 228);
+    --md-code-hl-string-color: rgb(182, 137, 0);
+    --md-code-hl-keyword-color: rgb(17, 148, 67);
+    --md-code-hl-number-color: rgb(6, 3, 176);
+    --md-code-hl-operator-color: rgb(100, 100, 100);
+    --md-code-hl-punctuation-color: rgb(100, 100, 100);
+    --md-code-hl-comment-color: rgb(153, 153, 153);
+}

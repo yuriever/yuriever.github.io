@@ -1,0 +1,8 @@
+/*  */
+/* 图片居中 */
+/*  */
+
+img {
+    display: block;
+    margin: 0 auto;
+}
