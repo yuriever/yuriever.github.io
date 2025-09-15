@@ -165,7 +165,7 @@ The poles at $a=-1,-2,\dots$ get canceled due to the phase factor, hence $x_{\bl
 
 In practice, the $i\varepsilon$ basis is convenient for computation since we can use analytic continuation. The $\pm$ basis is suitable for handling problems over $\RR$.
 
-!!! remark "Parity"
+??? remark "Parity"
 
     Notice that from the parity property
 
