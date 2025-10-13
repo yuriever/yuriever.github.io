@@ -65,7 +65,7 @@
             "id": "openSimpleBrowser",
             "type": "command",
             "command": "simpleBrowser.show",
-            "args": "http://localhost:8000/"
+            "args": "http://127.0.0.1:8000/"
         }
     ]
 }
