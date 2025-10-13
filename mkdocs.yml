@@ -33,19 +33,14 @@ theme:
     - search.suggest
     # copy-to-clipboard button in code block
     - content.code.copy
+  palette:
+    - scheme: sora
   logo: img/Mutsumi1.png
   favicon: img/favicon.png
 
 extra:
   # remove the notice "made with material" in the footer
   generator: false
-
-exclude_docs: |
-  *.nb
-  *.wl
-  *.key
-  !symbolic/xAct/xAct-eom-and-emt.nb
-  workbench/dev
 
 validation:
   nav:
