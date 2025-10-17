@@ -106,7 +106,9 @@ A Mathematica paclet for improving math layout.
 
 * `#!wl MFMakeBox` - automatically inject interpretation (and/or tooltip) into format value, controlled by the following options:
 
-    * `#!wl "Tooltip"->False` - disable tooltip injection. The valid values are `#!wl True|False|Automatic|_`.
+    * `#!wl "Tooltip"->None` - disable tooltip injection. The valid parameters are `#!wl None|Full|Automatic|_`.
+
+    * `#!wl "SyntaxForm"->Automatic` - control the precedence of the format value, inherited from `#!wl InterpretationBox`.
 
     !!! wl "Usage"
 
@@ -115,7 +117,7 @@ A Mathematica paclet for improving math layout.
         ```
 
         ``` wl
-        MFMakeBox[{pattern_,format_,interpretation_}]
+        MFMakeBox[{pattern_,format_,realValue_}]
         ```
 
         ``` wl
