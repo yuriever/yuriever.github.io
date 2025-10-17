@@ -16,11 +16,11 @@
         | `#!wl Symbol`   | `#!wl varlab`        |
         | `#!wl head`     | `#!wl head[var,lab]` |
 
-    * `#!wl label2` - variant of `#!wl label` with `#!wl Symbol` as head.
+    * `#!wl labell` - variant of `#!wl label` with `#!wl Symbol` as head.
 
-* `#!wl labelRange[var_,range__,head_]` - join the variable(s) and labels in the range using the specified head.
+* `#!wl labels[var_,range__,head_]` - join the variable(s) and labels in the range using the specified head.
 
-    * `#!wl labelRange2` - variant of `#!wl labelRange` with `#!wl Symbol` as head.
+    * `#!wl labells` - variant of `#!wl labels` with `#!wl Symbol` as head.
 
 * `#!wl labelAt[var_,rules__,head_]` - take the specific values of the labeled objects according to rules.
 
@@ -88,7 +88,7 @@
 !!! wl "`#!wl label` Patterned variables"
 
     ``` wl
-    labelRange[x_|y_,4,Symbol]
+    labels[x_|y_,4,Symbol]
     ```
 
     ``` wl
