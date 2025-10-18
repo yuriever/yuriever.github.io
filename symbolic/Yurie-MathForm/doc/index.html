@@ -579,7 +579,7 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <p>The expression will be converted to LaTeX string by <code class="highlight"><span class="nv">MFString</span></code>, then compiled into PDF, controlled by the following options:</p>
 <ul>
 <li>
-<p><code class="highlight"><span class="s">"Preamble"</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">"\\usepackage{amsmath,amssymb}"</span><span class="p">}</span></code> - add to the preamble.</p>
+<p><code class="highlight"><span class="s">"Preamble"</span><span class="o">-&gt;</span><span class="p">{}</span></code> - add to the preamble.</p>
 </li>
 <li>
 <p><code class="highlight"><span class="s">"FontSize"</span><span class="o">-&gt;</span><span class="m">12</span></code> - adjust the font size.</p>
@@ -608,21 +608,24 @@ style dataflow fill:#ffdaaa20,stroke-width:0,rx:1rem,ry:1rem</code></pre>
 <h2 id="format-definition">Format definition</h2>
 <ul>
 <li>
-<p><code class="highlight"><span class="nv">MFMakeBox</span></code> - make the box definitions interpretable.</p>
+<p><code class="highlight"><span class="nv">MFMakeBox</span></code> - automatically inject interpretation (and/or tooltip) into format value, controlled by the following options:</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="s">"Tooltip"</span><span class="o">-&gt;</span><span class="nb">None</span></code> - disable tooltip injection. The valid parameters are <code class="highlight"><span class="nb">None</span><span class="o">|</span><span class="nb">Full</span><span class="o">|</span><span class="nb">Automatic</span><span class="o">|_</span></code>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="s">"SyntaxForm"</span><span class="o">-&gt;</span><span class="nb">Automatic</span></code> - control the precedence of the format value, inherited from <code class="highlight"><span class="nb">InterpretationBox</span></code>.</p>
+</li>
+</ul>
 <div class="admonition wl">
 <p class="admonition-title">Usage</p>
-<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">}]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">format_</span><span class="p">,</span><span class="nt">realValue_</span><span class="p">}]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFMakeBox</span><span class="p">[{</span><span class="nt">pattern_</span><span class="p">,</span><span class="nt">definition_</span><span class="p">,</span><span class="nt">interpretation_</span><span class="p">,</span><span class="nt">format_</span><span class="p">}]</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[{</span><span class="nt">__List</span><span class="p">}]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">MFInterpret</span><span class="p">[</span><span class="nt">__List</span><span class="p">]</span><span class="w"> </span><span class="c">(*batch-operation*)</span>
 </code></pre></div>
 </div>
-<ul>
-<li>The supported formats are <code class="highlight"><span class="nb">StandardForm</span><span class="o">|</span><span class="nb">TraditionalForm</span></code> or non-specified.</li>
-</ul>
 </li>
 <li>
 <p><code class="highlight"><span class="nv">MFArgConvert</span></code> - define LaTeX macro for the symbol and store the rule into <code class="highlight"><span class="nv">$MFAssoc</span></code>.</p>
