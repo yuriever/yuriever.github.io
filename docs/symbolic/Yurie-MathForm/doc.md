@@ -121,7 +121,7 @@ A Mathematica paclet for improving math layout.
         ```
 
         ``` wl
-        MFInterpret[__List] (*batch-operation*)
+        MFMakeBox[__List] (*batch-operation*)
         ```
 
 * `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
