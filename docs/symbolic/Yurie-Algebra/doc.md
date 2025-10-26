@@ -50,7 +50,8 @@ For an algebra $A$ over a base field $k$, the following operations are implement
 | :--------------- | :------------------- | :---------------------------- | :---------------------------- |
 | multiplication   | $m: A\ox A\to A$     | `#!wl NonCommutativeMultiply` | `#!wl NonCommutativeMultiply` |
 | unit             | $\eta: k\to A$       | `#!wl id`                     | `#!wl 1`                      |
-| conjugate        | $\dagger: A\to A$    | `#!wl conjugate`              | `#!wl SuperDagger`            |
+| conjugate        | $\bullet^\dagger: A\to A$    | `#!wl conjugate`              | `#!wl SuperDagger`            |
+| inverse          | $\bullet^{-1}: A\to A$       | `#!wl inverse`                | `#!wl Inverse` |
 | tensor product   |                      | `#!wl tensor`                 | `#!wl CircleTimes`            |
 | comultiplication | $\Delta:A\to A\ox A$ | `#!wl comultiply`             | `#!wl "\[CapitalDelta]"`      |
 | counit           | $\epsilon:A\to k$    | `#!wl counit`                 | `#!wl "\[Epsilon]"`           |
@@ -62,6 +63,7 @@ The predefined algebras with their implemented structures are listed below.
 | :----------------- | :----------------------- | :-------------------------------------- |
 | `#!wl "Algebra"`   | multiplication           | linearity, zero, identity               |
 | `#!wl "Conjugate"` | conjugate                | anti-linearity, anti-morphism, identity |
+| `#!wl "Inverse"`   | inverse                  | inverse, anti-morphism, identity                 |
 | `#!wl "Tensor"`    | tensor product           | linearity, composition                  |
 | `#!wl "Coalgebra"` | comultiplication, counit | linearity                               |
 | `#!wl "Bialgebra"` | comultiplication, counit | morphism, identity                      |
@@ -110,15 +112,17 @@ Table of shortcuts:
 | `#!wl algEqualQ[_,_]` | `#!wl x==y` for operators.                           |
 | `#!wl algSameQ[_,_]`  | `#!wl x===y` for operators.                          |
 
-### Inner product
+### Involution
 
-This functionality needs the algebra `#!wl "Conjugate"`.
+This functionality needs the algebras `#!wl "Conjugate"` and/or `#!wl "Inverse"`.
 
 * `#!wl conjugate[_]` - conjugate of the operator.
 
 * `#!wl innerProduct[_,_]` - inner product of the two operators.
 
     For operators $x$ and $y$ this returns $x^{\dagger}\cdot y$, and for a single operator $x$ this returns $x^{\dagger}\cdot x$.
+
+* `#!wl inverse[_]` - inverse of the operator.
 
 ### Tensor product
 
