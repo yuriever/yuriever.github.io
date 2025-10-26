@@ -457,9 +457,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inner-product" class="md-nav__link">
+  <a href="#involution" class="md-nav__link">
     <span class="md-ellipsis">
-      Inner product
+      Involution
     </span>
   </a>
   
@@ -698,9 +698,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">conjugate</td>
-<td style="text-align: left;"><span class="arithmatex">\(\dagger: A\to A\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\bullet^\dagger: A\to A\)</span></td>
 <td style="text-align: left;"><code class="highlight"><span class="nv">conjugate</span></code></td>
 <td style="text-align: left;"><code class="highlight"><span class="nb">SuperDagger</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;">inverse</td>
+<td style="text-align: left;"><span class="arithmatex">\(\bullet^{-1}: A\to A\)</span></td>
+<td style="text-align: left;"><code class="highlight"><span class="nv">inverse</span></code></td>
+<td style="text-align: left;"><code class="highlight"><span class="nb">Inverse</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;">tensor product</td>
@@ -747,6 +753,11 @@
 <td style="text-align: left;"><code class="highlight"><span class="s">"Conjugate"</span></code></td>
 <td style="text-align: left;">conjugate</td>
 <td style="text-align: left;">anti-linearity, anti-morphism, identity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="highlight"><span class="s">"Inverse"</span></code></td>
+<td style="text-align: left;">inverse</td>
+<td style="text-align: left;">inverse, anti-morphism, identity</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="highlight"><span class="s">"Tensor"</span></code></td>
@@ -852,8 +863,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="inner-product">Inner product</h3>
-<p>This functionality needs the algebra <code class="highlight"><span class="s">"Conjugate"</span></code>.</p>
+<h3 id="involution">Involution</h3>
+<p>This functionality needs the algebras <code class="highlight"><span class="s">"Conjugate"</span></code> and/or <code class="highlight"><span class="s">"Inverse"</span></code>.</p>
 <ul>
 <li>
 <p><code class="highlight"><span class="nv">conjugate</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - conjugate of the operator.</p>
@@ -861,6 +872,9 @@
 <li>
 <p><code class="highlight"><span class="nv">innerProduct</span><span class="p">[</span><span class="o">_</span><span class="p">,</span><span class="o">_</span><span class="p">]</span></code> - inner product of the two operators.</p>
 <p>For operators <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot y\)</span>, and for a single operator <span class="arithmatex">\(x\)</span> this returns <span class="arithmatex">\(x^{\dagger}\cdot x\)</span>.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">inverse</span><span class="p">[</span><span class="o">_</span><span class="p">]</span></code> - inverse of the operator.</p>
 </li>
 </ul>
 <h3 id="tensor-product">Tensor product</h3>
