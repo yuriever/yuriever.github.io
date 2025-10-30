@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -176,9 +176,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../.." class="md-tabs__link">
         
+  
   
     
   
@@ -193,9 +195,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link">
         
+  
   
     
   
@@ -210,9 +214,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../lightnovel/" class="md-tabs__link">
         
+  
   
     
   
@@ -227,9 +233,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../workbench/" class="md-tabs__link">
         
+  
   
     
   
@@ -244,9 +252,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../sora/" class="md-tabs__link">
         
+  
   
     
   
@@ -298,6 +308,7 @@
       <a href="../../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Home
     
@@ -318,6 +329,7 @@
     <li class="md-nav__item">
       <a href="../../" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Triangulated reality
@@ -340,6 +352,7 @@
       <a href="../../../lightnovel/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Lightnovel
     
@@ -361,6 +374,7 @@
       <a href="../../../workbench/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Workbench
     
@@ -381,6 +395,7 @@
     <li class="md-nav__item">
       <a href="../../../sora/" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     Sora
@@ -434,6 +449,21 @@
       Methods
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default argument
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -626,6 +656,12 @@
 <h2 id="methods">Methods</h2>
 <ul>
 <li>
+<p><code class="highlight"><span class="nv">$algebraDefine</span></code> - list of the defined algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">$algebraDefault</span></code> - list of the default algebras.</p>
+</li>
+<li>
 <p><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[</span><span class="nt">algList_</span><span class="o">|</span><span class="nt">algs___</span><span class="p">]</span></code> - define the algebras.</p>
 </li>
 <li>
@@ -642,36 +678,18 @@
 <p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[</span><span class="nt">alg_</span><span class="p">]</span></code> - show the algebra.</p>
 </li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraDefine</span><span class="p">[]</span></code></td>
-<td style="text-align: left;">return the defined algebras.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraDefault</span><span class="p">[]</span></code></td>
-<td style="text-align: left;">return the default algebras.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraReset</span><span class="p">[]</span></code></td>
-<td style="text-align: left;">reset all the defined except internal algebras.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraUnset</span><span class="p">[]</span></code></td>
-<td style="text-align: left;">unset all the defined except internal algebras.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code class="highlight"><span class="nv">algebraShow</span><span class="p">[]</span></code></td>
-<td style="text-align: left;">show the default algebras.</td>
-</tr>
-</tbody>
-</table>
+<h3 id="default-argument">Default argument</h3>
+<ul>
+<li>
+<p><code class="highlight"><span class="nv">algebraReset</span><span class="p">[]</span></code> - reset all the defined except internal algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraUnset</span><span class="p">[]</span></code> - unset all the defined except internal algebras.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="nv">algebraShow</span><span class="p">[]</span></code> - show the default algebras.</p>
+</li>
+</ul>
 <h2 id="functionalities">Functionalities</h2>
 <p>For an algebra <span class="arithmatex">\(A\)</span> over a base field <span class="arithmatex">\(k\)</span>, the following operations are implemented.</p>
 <table>
@@ -1075,10 +1093,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       
