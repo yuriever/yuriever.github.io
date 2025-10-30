@@ -68,7 +68,6 @@ A Mathematica paclet for improving math layout.
     }
     ```
 
-
 ## Formatting
 
 * `#!wl MFString` - refine the string from `#!wl TeXForm`.
@@ -87,7 +86,7 @@ A Mathematica paclet for improving math layout.
 
     The expression will be converted to LaTeX string by `#!wl MFString`, then compiled into PDF, controlled by the following options:
 
-    * `#!wl "Preamble"->{"\\usepackage{amsmath,amssymb}"}` - add to the preamble.
+    * `#!wl "Preamble"->{}` - add to the preamble.
 
     * `#!wl "FontSize"->12` - adjust the font size.
 
@@ -103,30 +102,27 @@ A Mathematica paclet for improving math layout.
 
     * The other options are inherited from `#!wl MFString`.
 
-
 ## Format definition
 
-* `#!wl MFMakeBox` - make the box definitions interpretable.
+* `#!wl MFMakeBox` - automatically inject interpretation (and/or tooltip) into format value, controlled by the following options:
+
+    * `#!wl "Tooltip"->None` - disable tooltip injection. The valid parameters are `#!wl None|Full|Automatic|_`.
+
+    * `#!wl "SyntaxForm"->Automatic` - control the precedence of the format value, inherited from `#!wl InterpretationBox`.
 
     !!! wl "Usage"
 
         ``` wl
-        MFMakeBox[{pattern_,definition_}]
+        MFMakeBox[{pattern_,format_}]
         ```
 
         ``` wl
-        MFMakeBox[{pattern_,definition_,format_}]
+        MFMakeBox[{pattern_,format_,realValue_}]
         ```
 
         ``` wl
-        MFMakeBox[{pattern_,definition_,interpretation_,format_}]
+        MFMakeBox[__List] (*batch-operation*)
         ```
-
-        ``` wl
-        MFInterpret[{__List}] (*batch-operation*)
-        ```
-
-    * The supported formats are `#!wl StandardForm|TraditionalForm` or non-specified.
 
 * `#!wl MFArgConvert` - define LaTeX macro for the symbol and store the rule into `#!wl $MFAssoc`.
 
