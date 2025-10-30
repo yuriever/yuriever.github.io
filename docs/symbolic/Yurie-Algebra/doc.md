@@ -22,6 +22,10 @@ Dependency:
 
 ## Methods
 
+* `#!wl $algebraDefine` - list of the defined algebras.
+
+* `#!wl $algebraDefault` - list of the default algebras.
+
 * `#!wl algebraDefine[algList_|algs___]` - define the algebras.
 
 * `#!wl algebraDefault[algList_|algs___]` - set the default algebras.
@@ -34,13 +38,13 @@ Dependency:
 
 * `#!wl algebraShow[alg_]` - show the algebra.
 
-| Name                    | Meaning                                         |
-| :---------------------- | :---------------------------------------------- |
-| `#!wl algebraDefine[]`  | return the defined algebras.                    |
-| `#!wl algebraDefault[]` | return the default algebras.                    |
-| `#!wl algebraReset[]`   | reset all the defined except internal algebras. |
-| `#!wl algebraUnset[]`   | unset all the defined except internal algebras. |
-| `#!wl algebraShow[]`    | show the default algebras.                      |
+### Default argument
+
+* `#!wl algebraReset[]` - reset all the defined except internal algebras.
+
+* `#!wl algebraUnset[]` - unset all the defined except internal algebras.
+
+* `#!wl algebraShow[]` - show the default algebras.
 
 ## Functionalities
 
