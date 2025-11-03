@@ -1,6 +1,9 @@
 # Distributions
 
 <span hidden> $
+\newcommand{\psign}[1]{{\color{orange}#1}}
+\newcommand{\deltaMC}{\delta^{(4)}}
+\newcommand{\deltaK}{\delta_{\mathrm{K}}}
 \newcommand{\deltaComplex}[1]{\delta_{\CC}(#1)}
 $ </span>
 
@@ -37,37 +40,37 @@ If $\phi_{a}(x)$ is meromorphic w.r.t. $a\in U\subset\CC$, we can cancel the pol
 The power-type distribution in $\cS'(\RRg)$
 
 \begin{equation}
-    (x_{\blue{+}}^a,f(x))=\intrange{dx}{0}{\oo}x^a f(x)
+    (x_{\psign{+}}^a,f(x))=\intrange{dx}{0}{\oo}x^a f(x)
     \, ,
 \end{equation}
 
 is convergent if $\Re a> -1$ and hence is holomorphic in this region. If $\Re a\leq -1$ the integral is divergent and acquires regularization at $x=0$. Inserting a real-analytic test function $f(x)=\sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!} x^n$ and changing the order of integration and summation, we have
 
 \begin{align}
-    (x_{\blue{+}}^a,f(x))
+    (x_{\psign{+}}^a,f(x))
     & =\intrange{dx}{1}{\oo}x^a f(x) + \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\intrange{dx}{0}{1}x^{a+n}\nn\\
     & =\intrange{dx}{1}{\oo}x^a f(x) + \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{1}{a+n+1}
     \, .
 \end{align}
 
-The first term is convergent due to the rapid decay of $f(x)$ and is irrelevant to our discussion. The second term implies that $(x_{\blue{+}}^a,f(x))$ as a function of $a$ is meromorphic in $\CC$, with simple poles at $a=-1,-2,\dots$ and residues being
+The first term is convergent due to the rapid decay of $f(x)$ and is irrelevant to our discussion. The second term implies that $(x_{\psign{+}}^a,f(x))$ as a function of $a$ is meromorphic in $\CC$, with simple poles at $a=-1,-2,\dots$ and residues being
 
 \begin{equation}
-    \Res_{a=-n-1} (x_{\blue{+}}^a,f(x)) = \frac{f^{(n)}(0)}{(n)!}
+    \Res_{a=-n-1} (x_{\psign{+}}^a,f(x)) = \frac{f^{(n)}(0)}{(n)!}
     \, .
 \end{equation}
 
-Then using $(\delta^{(n)}(x),f(x))= (-1)^{n} f^{(n)}(0)$ to strip off the test function we find $x_{\blue{+}}^a$ is meromorphic w.r.t. $a\in \CC$, with simple poles at $a=-1,-2,\dots$ and residues being
+Then using $(\delta^{(n)}(x),f(x))= (-1)^{n} f^{(n)}(0)$ to strip off the test function we find $x_{\psign{+}}^a$ is meromorphic w.r.t. $a\in \CC$, with simple poles at $a=-1,-2,\dots$ and residues being
 
 \begin{equation}
-    \Res_{a=-n-1} x_{\blue{+}}^a = \frac{(-1)^{n}}{n!}\delta^{(n)}(x)
+    \Res_{a=-n-1} x_{\psign{+}}^a = \frac{(-1)^{n}}{n!}\delta^{(n)}(x)
     \, .
 \end{equation}
 
-The distribution $x_{\blue{+}}^a$ can be normalized as $\frac{1}{\Gamma[a+1]}x_{\blue{+}}^a$, then the values at the removed poles are
+The distribution $x_{\psign{+}}^a$ can be normalized as $\frac{1}{\Gamma[a+1]}x_{\psign{+}}^a$, then the values at the removed poles are
 
 \begin{equation}
-    \frac{1}{\Gamma[a+1]}x_{\blue{+}}^a\bigg|_{a=-n-1}=\delta^{(n)}(x)
+    \frac{1}{\Gamma[a+1]}x_{\psign{+}}^a\bigg|_{a=-n-1}=\delta^{(n)}(x)
     \, .
 \end{equation}
 
@@ -76,33 +79,33 @@ The distribution $x_{\blue{+}}^a$ can be normalized as $\frac{1}{\Gamma[a+1]}x_{
     Concretely, we choose the test function as $f(x)=e^{-x}$, then
 
     \begin{equation}
-        (x_{\blue{+}}^a,e^{-x})=\gm{a+1}
+        (x_{\psign{+}}^a,e^{-x})=\gm{a+1}
     \end{equation}
 
-    manifests the meromorphicity of $x_{\blue{+}}^a$ and provides the normalization above.
+    manifests the meromorphicity of $x_{\psign{+}}^a$ and provides the normalization above.
 
     If choosing the test function as $f(x)=(1+x)^{-1}$ however, there are additional poles appeared:
 
     \begin{equation}
-        (x_{\blue{+}}^a,(1+x)^{-1})=\gm{-a}\,  \gm{a+1}
+        (x_{\psign{+}}^a,(1+x)^{-1})=\gm{-a}\,  \gm{a+1}
         \, .
     \end{equation}
 
     The reason is that this test function is not in $\cS(\RRg)$ and should be divided into two parts:
 
-    * one is in $\cS(\RRg)$ and detects the singularity of $x_{\blue{+}}^a$ at $x=0$, providing the factor $\gm{a+1}$;
+    * one is in $\cS(\RRg)$ and detects the singularity of $x_{\psign{+}}^a$ at $x=0$, providing the factor $\gm{a+1}$;
 
-    * another is well-behaved as $x\to \oo$ and decays sufficiently fast as $x\to 0$, then detects the singularity of $x_{\blue{+}}^a$ near infinity, providing the factor $\gm{-a}$.
+    * another is well-behaved as $x\to \oo$ and decays sufficiently fast as $x\to 0$, then detects the singularity of $x_{\psign{+}}^a$ near infinity, providing the factor $\gm{-a}$.
 
     To see this, we have for example
 
     \begin{equation}
-        (x_{\blue{+}}^a,e^{-1/x})=-\gm{-a-1}
+        (x_{\psign{+}}^a,e^{-1/x})=-\gm{-a-1}
         \, .
     \end{equation}
 
     Interpreting $x$ as energy,
-    in practice the test functions $f(x)$ are not in $\cS'(\RRg)$, and the singularities of $x_{\blue{+}}^a$ at $0$ and $\oo$ convert the IR and UV information of $f(x)$ into analytic behaviors of $a$.
+    in practice the test functions $f(x)$ are not in $\cS'(\RRg)$, and the singularities of $x_{\psign{+}}^a$ at $0$ and $\oo$ convert the IR and UV information of $f(x)$ into analytic behaviors of $a$.
     This is one of the reasons why the Mellin transform is commonly used in physics.
 
 ## Homogeneous tempered distributions
@@ -121,47 +124,47 @@ for $x\in\RR$, $\lambda>0$. The solutions are called homogeneous tempered distri
 The $\pm$ basis of solutions is
 
 \begin{align}
-    &x_{\blue{+}}^a \eqqq |x|^a \theta(x)
+    &x_{\psign{+}}^a \eqqq |x|^a \theta(x)
     \, ,
     \\
-    &x_{\blue{-}}^a \eqqq |x|^a \theta(-x)
+    &x_{\psign{-}}^a \eqqq |x|^a \theta(-x)
     \, ,
 \end{align}
 
 and we can recombine them into the even/odd basis
 
 \begin{align}
-    &x_{\blue{0}}^a\eqqq|x|^a= x_{\blue{+}}^a+ x_{\blue{-}}^a
+    &x_{\psign{0}}^a\eqqq|x|^a= x_{\psign{+}}^a+ x_{\psign{-}}^a
     \, ,
     \\
-    &x_{\blue{1}}^a\eqqq|x|^a \sign{x}=x_{\blue{+}}^a- x_{\blue{-}}^a
+    &x_{\psign{1}}^a\eqqq|x|^a \sign{x}=x_{\psign{+}}^a- x_{\psign{-}}^a
     \, .
 \end{align}
 
 These distributions are meromorphic functions of $a\in\CC$, and the normalized versions are
 
 \begin{equation}
-    \frac{1}{\Gamma[a+1]}x_{\blue{+}}^a
+    \frac{1}{\Gamma[a+1]}x_{\psign{+}}^a
     \, , \quad
-    \frac{1}{\Gamma[a+1]}x_{\blue{-}}^a
+    \frac{1}{\Gamma[a+1]}x_{\psign{-}}^a
     \, ,  \quad
-    \frac{1}{\Gamma[\frac{a+1}{2}]}x_{\blue{0}}^a
+    \frac{1}{\Gamma[\frac{a+1}{2}]}x_{\psign{0}}^a
     \, ,\quad
-    \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\blue{1}}^a
+    \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\psign{1}}^a
     \, .
 \end{equation}
 
 The $i \varepsilon$ basis is
 
 \begin{align}
-    &x_{\blue{i}}^a\eqqq \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\blue{+}}^a+e^{i\pi a}x_{\blue{-}}^a
+    &x_{\psign{i}}^a\eqqq \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\psign{+}}^a+e^{i\pi a}x_{\psign{-}}^a
     \, ,
     \\
-    &x_{\blue{-i}}^a\eqqq \lim_{\varepsilon\to 0}(x-i\varepsilon )^a=x_{\blue{+}}^a+e^{-i\pi a}x_{\blue{-}}^a
+    &x_{\psign{-i}}^a\eqqq \lim_{\varepsilon\to 0}(x-i\varepsilon )^a=x_{\psign{+}}^a+e^{-i\pi a}x_{\psign{-}}^a
     \, .
 \end{align}
 
-The poles at $a=-1,-2,\dots$ get canceled due to the phase factor, hence $x_{\blue{\pm i}}^a$ is holomorphic w.r.t. $a\in\CC$.
+The poles at $a=-1,-2,\dots$ get canceled due to the phase factor, hence $x_{\psign{\pm i}}^a$ is holomorphic w.r.t. $a\in\CC$.
 
 In practice, the $i\varepsilon$ basis is convenient for computation since we can use analytic continuation. The $\pm$ basis is suitable for handling problems over $\RR$.
 
@@ -170,14 +173,14 @@ In practice, the $i\varepsilon$ basis is convenient for computation since we can
     Notice that from the parity property
 
     \begin{equation}
-        (-x)_{\blue{\pm}}^{\lambda}=x_{\blue{\mp}}^{\lambda}
+        (-x)_{\psign{\pm}}^{\lambda}=x_{\psign{\mp}}^{\lambda}
         \, ,
     \end{equation}
 
     we have
 
     \begin{equation}
-        (-x)_{\blue{\pm i}}^{\lambda}=e^{\pm i\pi \lambda} x_{\blue{\mp i}}^{\lambda}
+        (-x)_{\psign{\pm i}}^{\lambda}=e^{\pm i\pi \lambda} x_{\psign{\mp i}}^{\lambda}
         \, .
     \end{equation}
 
@@ -194,14 +197,14 @@ The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fouri
 
 The intuition here is that decay properties of distributions are Fourier-transformed into regularity properties.
 
-Under the Fourier transform, the basis $x_{\blue{0,1}}^{a}$ remains invariant due to parity. In particular, the Dirac $\delta$-functions are Fourier transformed into monomials:
+Under the Fourier transform, the basis $x_{\psign{0,1}}^{a}$ remains invariant due to parity. In particular, the Dirac $\delta$-functions are Fourier transformed into monomials:
 
 \begin{equation}
     \delta^{(n)}(x) =\inttt{\frac{dp}{2\pi}}{\RR}e^{ipx} (ip)^{n}
     \, .
 \end{equation}
 
-The bases $x_{\blue{\pm}}^{a}$ and $x_{\blue{\pm i}}^{a}$ are Fourier transform pairs, revealing the Paley-Wiener theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
+The bases $x_{\psign{\pm}}^{a}$ and $x_{\psign{\pm i}}^{a}$ are Fourier transform pairs, revealing the Paley-Wiener theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
 
 ### Higher dimensions
 
@@ -254,12 +257,12 @@ Table: The regularized homogeneous distributions, where $n\in \NN$.
 
 | Distributions                                                                         | Values                                                                                            | Removed poles |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
-| $\displaystyle \frac{1}{\Gamma[a+1]}x_{\blue{+}}^a$                                        | $\displaystyle \delta^{(n)}(x)$                                                                   | $a = -n-1$    |
-| $\displaystyle \frac{1}{\Gamma[a+1]}x_{\blue{-}}^a$                                        | $\displaystyle (-1)^{n}\delta^{(n)}(x)$                                                           | $a = -n-1$    |
-| $\displaystyle \frac{1}{\Gamma[\frac{a+1}{2}]}x_{\blue{0}}^{a}$                        | $\displaystyle \frac{(-1)^{n} n!}{(2n)!}\delta^{(2n)}(x)$                                         | $a = -2n-1$   |
-| $\displaystyle \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\blue{1}}^{a}$                        | $\displaystyle \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)$                                   | $a = -2n-2$   |
-| $\displaystyle x_{\blue{i}}^{a}$                                                      | $\displaystyle x^{-n-1}-i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
-| $\displaystyle x_{\blue{-i}}^{a}$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
+| $\displaystyle \frac{1}{\Gamma[a+1]}x_{\psign{+}}^a$                                        | $\displaystyle \delta^{(n)}(x)$                                                                   | $a = -n-1$    |
+| $\displaystyle \frac{1}{\Gamma[a+1]}x_{\psign{-}}^a$                                        | $\displaystyle (-1)^{n}\delta^{(n)}(x)$                                                           | $a = -n-1$    |
+| $\displaystyle \frac{1}{\Gamma[\frac{a+1}{2}]}x_{\psign{0}}^{a}$                        | $\displaystyle \frac{(-1)^{n} n!}{(2n)!}\delta^{(2n)}(x)$                                         | $a = -2n-1$   |
+| $\displaystyle \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\psign{1}}^{a}$                        | $\displaystyle \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)$                                   | $a = -2n-2$   |
+| $\displaystyle x_{\psign{i}}^{a}$                                                      | $\displaystyle x^{-n-1}-i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
+| $\displaystyle x_{\psign{-i}}^{a}$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
 | $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \TextInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
 
 ## Analytic functionals
