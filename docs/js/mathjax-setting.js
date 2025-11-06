@@ -58,12 +58,16 @@ window.MathJax = {
         		"\\widehat{#1}",
         		1
         	],
+        	"tildee":[
+        		"\\widetilde{#1}",
+        		1
+        	],
         	"wave":[
         		"\\widetilde{#1}",
         		1
         	],
         	"LR":[
-        		"\\left(#1\\right)",
+        		"\\mleft(#1\\mright)",
         		1
         	],
         	"LRa":[
@@ -296,35 +300,12 @@ window.MathJax = {
         		"\\boldsymbol{#1}",
         		1
         	],
-        	"ddx":[
-        		"d^{d}x_{#1}",
-        		1
-        	],
-        	"ddp":[
-        		"\\frac{d^{d}p_{#1}}{(2\\pi)^{d}}",
-        		1
-        	],
-        	"xy":[
-        		"x_{#1},y_{#1}",
-        		1
-        	],
-        	"dxy":[
-        		"dx_{#1}dy_{#1}",
-        		1
-        	],
-        	"zzb":[
-        		"z_{#1},\\bar{z}_{#1}",
-        		1
-        	],
-        	"dzzb":[
-        		"d^{2}z_{#1}",
-        		1
-        	],
         	"inn":"{\\color{red}\\mathsf{i}}",
         	"out":"{\\color{blue}\\mathsf{o}}",
         	"io":"{\\color{red}\\mathsf{i}}\/{\\color{blue}\\mathsf{o}}",
         	"oi":"{\\color{blue}\\mathsf{o}}\/{\\color{red}\\mathsf{i}}",
         	"vac":"\\ket{0}",
+        	"op":"\\mathcal{O}",
         	"vev":[
         		"\\langle #1 \\rangle",
         		1
@@ -353,7 +334,6 @@ window.MathJax = {
         		"\\langle #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 \\rangle",
         		3
         	],
-        	"op":"\\mathcal{O}",
         	"braketA":[
         		"\\langle #1 \\rangle",
         		1
@@ -422,6 +402,14 @@ window.MathJax = {
         	],
         	"kds":[
         		"\\operatorname{KdS}_{#1}",
+        		1
+        	],
+        	"xy":[
+        		"x_{#1},y_{#1}",
+        		1
+        	],
+        	"zzb":[
+        		"z_{#1},\\bar{z}_{#1}",
         		1
         	],
         	"vx":"\\vec{x}",
