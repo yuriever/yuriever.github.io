@@ -224,7 +224,7 @@ This implies $\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}$ is holomorphic w.r.t. $a\i
 \begin{equation}
     \frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}\bigg|_{a=-2n-d}
     =
-    \frac{(-1)^{n}\pi^{\halfdim}}{2^{2n}\Gamma[\halfdim+n]}\square^{n}\delta(x)
+    \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)
     \, .
 \end{equation}
 
@@ -234,7 +234,7 @@ Especially for $n=0$, we have
     \delta^{(d)}(x)
     =
     \lim_{\varepsilon\to 0}
-    \frac{\gm{\halfdim}}{\pi^{\halfdim} \gm{\frac{\varepsilon}{2}}}r^{-d+2\varepsilon}
+    \frac{\gm{\frac{d}{2}}}{\pi^{\frac{d}{2}} \gm{\frac{\varepsilon}{2}}}r^{-d+2\varepsilon}
     \, .
 \end{equation}
 

@@ -35,8 +35,8 @@ ${}$
 &\VV\\
 &\WW\\
 &\HH\\
-&\ip{*}{*}\\
 &\DirectIntegral\\
+&\ip{*}{*}\\
 &\set{*}\\
 &\given\\
 &\Re\\
@@ -228,9 +228,7 @@ ${}$
 &\ppb\\
 &\psib\\
 &\chib\\
-&\halfdim\\
 &\signature\\
-&\polar\\
 &\shadow\\
 &\lightray\\
 &\CB\\

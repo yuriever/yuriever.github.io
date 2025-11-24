@@ -109,11 +109,11 @@ window.MathJax = {
         	"VV":"\\mathbb{V}",
         	"WW":"\\mathbb{W}",
         	"HH":"\\mathcal{H}",
+        	"DirectIntegral":"\\int^{\\oplus}",
         	"ip":[
         		"(#1,#2)",
         		2
         	],
-        	"DirectIntegral":"\\int^{\\oplus}",
         	"set":[
         		"\\{ #1 \\}",
         		1
@@ -312,10 +312,10 @@ window.MathJax = {
         		"\\boldsymbol{#1}",
         		1
         	],
-        	"inn":"{\\color{red}\\mathsf{i}}",
-        	"out":"{\\color{blue}\\mathsf{o}}",
-        	"io":"{\\color{red}\\mathsf{i}}\/{\\color{blue}\\mathsf{o}}",
-        	"oi":"{\\color{blue}\\mathsf{o}}\/{\\color{red}\\mathsf{i}}",
+        	"inn":"\\mathsf{i}",
+        	"out":"\\mathsf{o}",
+        	"io":"\\mathsf{i}\/\\mathsf{o}",
+        	"oi":"\\mathsf{o}\/\\mathsf{i}",
         	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
         	"vev":[
@@ -440,9 +440,7 @@ window.MathJax = {
         	"ppb":"\\bar{\\partial}",
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
-        	"halfdim":"\\frac{d}{2}",
         	"signature":"{\\color{red}s}",
-        	"polar":"{\\color{red}n}",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
         	"CB":"G",

@@ -5,6 +5,7 @@
 \newcommand{\dotc}{\dot{c}}
 \newcommand{\sigmab}{\bar{\sigma}}
 \newcommand{\epsilonb}{\bar{\epsilon}}
+\newcommand{\polar}{{\color{red}n}}
 \newcommand{\inout}[1]{e_{#1}}$ </span>
 
 ## Conventions
