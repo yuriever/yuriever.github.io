@@ -454,6 +454,10 @@ window.MathJax = {
         	"schannel":"\\mathsf{s}",
         	"tchannel":"\\mathsf{t}",
         	"uchannel":"\\mathsf{u}",
+        	"vevv":[
+        		"\\langle\\!\\langle#1\\rangle\\!\\rangle",
+        		1
+        	],
         	"TextInMath":[
         		"\\, \\text{ #1 }\\,",
         		1
@@ -501,7 +505,8 @@ window.MathJax = {
         	],
         	"const":"\\mathsf{const.}",
         	"lhs":"\\mathsf{l.h.s.}",
-        	"rhs":"\\mathsf{r.h.s.}"
+        	"rhs":"\\mathsf{r.h.s.}",
+        	"pass":"{\\color{violet}\\bf[PASS]}"
         },
         // MathJaxJSOverwrite-Macro-End
         environments: {}

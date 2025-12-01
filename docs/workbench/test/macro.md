@@ -242,6 +242,7 @@ ${}$
 &\schannel\\
 &\tchannel\\
 &\uchannel\\
+&\vevv{*}\\
 &\TextInMath{*}\\
 &\nn\\
 &\red{*}\\
@@ -256,5 +257,6 @@ ${}$
 &\purple{*}\\
 &\const\\
 &\lhs\\
-&\rhs
+&\rhs\\
+&\pass
 \end{align}
