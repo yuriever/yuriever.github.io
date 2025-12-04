@@ -111,7 +111,7 @@ window.MathJax = {
         	"HH":"\\mathcal{H}",
         	"DirectIntegral":"\\int^{\\oplus}",
         	"ip":[
-        		"(#1,#2)",
+        		"\\mleft(#1,#2\\mright)",
         		2
         	],
         	"set":[
@@ -147,31 +147,31 @@ window.MathJax = {
         	"sign":"\\operatorname{sign}",
         	"diag":"\\operatorname{diag}",
         	"gm":[
-        		"\\Gamma[#1]",
+        		"\\Gamma\\mleft[#1\\mright]",
         		1
         	],
         	"mg":[
-        		"\\Gamma\\biggl[\\genfrac..{0pt}{}{#1}{#2}\\biggr]",
+        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
         		2
         	],
         	"Faa":[
-        		"{}_{1}F_{1}(#1)",
+        		"{}_{1}F_{1}\\mleft(#1\\mright)",
         		1
         	],
         	"Fab":[
-        		"{}_{1}F_{2}(#1)",
+        		"{}_{1}F_{2}\\mleft(#1\\mright)",
         		1
         	],
         	"Fba":[
-        		"{}_{2}F_{1}(#1)",
+        		"{}_{2}F_{1}\\mleft(#1\\mright)",
         		1
         	],
         	"Fcb":[
-        		"{}_{3}F_{2}(#1)",
+        		"{}_{3}F_{2}\\mleft(#1\\mright)",
         		1
         	],
         	"Fpq":[
-        		"\\,{}_{#1}F_{#2}\\biggl(\\genfrac..{0pt}{}{#3}{#4};#5\\biggr)",
+        		"\\,{}_{#1}F_{#2}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
         	],
         	"tp":"{\\scriptscriptstyle \\mathsf{T} }",
@@ -193,11 +193,11 @@ window.MathJax = {
         	"limInverse":"\\varprojlim",
         	"limDirect":"\\varinjlim",
         	"vecspan":[
-        		"\\{ #1 \\}",
+        		"\\mleft\\{ #1 \\mright\\}",
         		1
         	],
         	"ideal":[
-        		"\\langle #1 \\rangle",
+        		"\\mleft\\langle #1 \\mright\\rangle",
         		1
         	],
         	"spec":"\\operatorname{spec}",
@@ -451,6 +451,8 @@ window.MathJax = {
         	"hbar":"\\rlap{\\unicode{xAF}}h",
         	"eqqq":":=",
         	"id":"\\mathbf{1}",
+        	"mleft":"\\left",
+        	"mright":"\\right",
         	"schannel":"\\mathsf{s}",
         	"tchannel":"\\mathsf{t}",
         	"uchannel":"\\mathsf{u}",

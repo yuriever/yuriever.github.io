@@ -239,6 +239,8 @@ ${}$
 &\hbar\\
 &\eqqq\\
 &\id\\
+&\mleft\\
+&\mright\\
 &\schannel\\
 &\tchannel\\
 &\uchannel\\
