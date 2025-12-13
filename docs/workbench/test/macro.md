@@ -202,6 +202,8 @@ ${}$
 &\sbra\\
 &\ketS{*}\\
 &\sket\\
+&\shadow\\
+&\lightray\\
 &\sphere{*}\\
 &\hyperbolic{*}\\
 &\lightcone{*}\\
@@ -229,13 +231,6 @@ ${}$
 &\psib\\
 &\chib\\
 &\signature\\
-&\shadow\\
-&\lightray\\
-&\CB\\
-&\CBC\\
-&\CPW\\
-&\CPWC\\
-&\CPWCWithS\\
 &\hbar\\
 &\eqqq\\
 &\id\\
@@ -257,8 +252,9 @@ ${}$
 &\orange{*}\\
 &\pink{*}\\
 &\purple{*}\\
-&\const\\
 &\lhs\\
 &\rhs\\
+&\const\\
+&\rest\\
 &\pass
 \end{align}

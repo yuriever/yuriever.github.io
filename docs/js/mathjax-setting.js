@@ -384,6 +384,8 @@ window.MathJax = {
         		1
         	],
         	"sket":"\\ketS",
+        	"shadow":"\\mathcal{S}",
+        	"lightray":"\\mathcal{L}",
         	"sphere":[
         		"\\operatorname{S}^{#1}",
         		1
@@ -441,13 +443,6 @@ window.MathJax = {
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
         	"signature":"{\\color{red}s}",
-        	"shadow":"\\mathcal{S}",
-        	"lightray":"\\mathcal{L}",
-        	"CB":"G",
-        	"CBC":"p",
-        	"CPW":"\\Psi",
-        	"CPWC":"\\rho",
-        	"CPWCWithS":"\\sigma",
         	"hbar":"\\rlap{\\unicode{xAF}}h",
         	"eqqq":":=",
         	"id":"\\mathbf{1}",
@@ -505,10 +500,11 @@ window.MathJax = {
         		"{\\color{purple} #1}",
         		1
         	],
-        	"const":"\\mathsf{const.}",
         	"lhs":"\\mathsf{l.h.s.}",
         	"rhs":"\\mathsf{r.h.s.}",
-        	"pass":"{\\color{violet}\\bf[PASS]}"
+        	"const":"\\mathsf{const.}",
+        	"rest":"({\\cdots})",
+        	"pass":"{\\color{gray} \\bf PASS}"
         },
         // MathJaxJSOverwrite-Macro-End
         environments: {}
