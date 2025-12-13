@@ -50,6 +50,99 @@ window.MathJax = {
         useLabelIds: true,
         // MathJaxJSOverwrite-Macro-Begin
         macros: {
+        	"hbar":"\\rlap{\\unicode{xAF}}h",
+        	"mleft":"\\mathopen{}\\left",
+        	"mright":"\\right",
+        	"red":[
+        		"{\\color{red} #1}",
+        		1
+        	],
+        	"green":[
+        		"{\\color{green} #1}",
+        		1
+        	],
+        	"blue":[
+        		"{\\color{blue} #1}",
+        		1
+        	],
+        	"cyan":[
+        		"{\\color{cyan} #1}",
+        		1
+        	],
+        	"magenta":[
+        		"{\\color{magenta} #1}",
+        		1
+        	],
+        	"yellow":[
+        		"{\\color{yellow} #1}",
+        		1
+        	],
+        	"brown":[
+        		"{\\color{brown} #1}",
+        		1
+        	],
+        	"orange":[
+        		"{\\color{orange} #1}",
+        		1
+        	],
+        	"pink":[
+        		"{\\color{pink} #1}",
+        		1
+        	],
+        	"purple":[
+        		"{\\color{purple} #1}",
+        		1
+        	],
+        	"lhs":"\\mathsf{l.h.s.}",
+        	"rhs":"\\mathsf{r.h.s.}",
+        	"const":"\\mathsf{const.}",
+        	"rest":"(\\cdots)",
+        	"pass":"{\\color{gray}\\mathbf{PASS}}",
+        	"TextInMath":[
+        		"\\, \\text{ #1 }\\,",
+        		1
+        	],
+        	"nn":"\\nonumber",
+        	"id":"\\mathbf{1}",
+        	"schannel":"\\mathsf{s}",
+        	"tchannel":"\\mathsf{t}",
+        	"uchannel":"\\mathsf{u}",
+        	"inn":"{\\color{Red}\\mathsf{i}}",
+        	"out":"{\\color{Blue}\\mathsf{o}}",
+        	"io":"{\\color{Red}\\mathsf{i}}\/{\\color{Blue}\\mathsf{o}}",
+        	"oi":"{\\color{Blue}\\mathsf{o}}\/{\\color{Red}\\mathsf{i}}",
+        	"sphere":[
+        		"\\operatorname{S}^{#1}",
+        		1
+        	],
+        	"hyperbolic":[
+        		"\\operatorname{H}^{#1}",
+        		1
+        	],
+        	"ads":[
+        		"\\operatorname{AdS}_{#1}",
+        		1
+        	],
+        	"eads":[
+        		"\\operatorname{EAdS}_{#1}",
+        		1
+        	],
+        	"ds":[
+        		"\\operatorname{dS}_{#1}",
+        		1
+        	],
+        	"kds":[
+        		"\\operatorname{KdS}_{#1}",
+        		1
+        	],
+        	"lightcone":[
+        		"\\operatorname{LC}_{#1}",
+        		1
+        	],
+        	"lightconeproj":[
+        		"\\operatorname{PC}_{#1}",
+        		1
+        	],
         	"barr":[
         		"\\overline{#1}",
         		1
@@ -88,6 +181,7 @@ window.MathJax = {
         	],
         	"eq":"=",
         	"eqq":"\\equiv",
+        	"eqqq":"\\coloneqq",
         	"geq":"\\geqslant",
         	"ge":"\\geqslant",
         	"leq":"\\leqslant",
@@ -96,7 +190,7 @@ window.MathJax = {
         	"mod":"\\bmod",
         	"half":"\\frac{1}{2}",
         	"xx":"\\times",
-        	"co":"{\\mspace{1mu}\\cdot\\mspace{1mu}}",
+        	"co":"\\mathclose{}{\\mspace{1mu}\\cdot\\mspace{1mu}}\\mathopen{}",
         	"ox":"\\otimes",
         	"oxx":"\\bigotimes",
         	"os":"\\oplus",
@@ -111,14 +205,14 @@ window.MathJax = {
         	"HH":"\\mathcal{H}",
         	"DirectIntegral":"\\int^{\\oplus}",
         	"ip":[
-        		"\\mleft(#1,#2\\mright)",
+        		"\\left\\lparen #1 , #2 \\right\\rparen",
         		2
         	],
         	"set":[
-        		"\\{ #1 \\}",
+        		"\\lbrace #1 \\rbrace",
         		1
         	],
-        	"given":"\\vert",
+        	"given":"\\,\\vert\\,\\mathopen{}",
         	"Re":"\\operatorname{Re}",
         	"Im":"\\operatorname{Im}",
         	"intt":[
@@ -150,7 +244,23 @@ window.MathJax = {
         		"\\Gamma\\mleft[#1\\mright]",
         		1
         	],
+        	"bt":[
+        		"B\\mleft(#1\\mright)",
+        		1
+        	],
         	"mg":[
+        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		2
+        	],
+        	"gmShort":[
+        		"\\Gamma\\mleft[#1\\mright]",
+        		1
+        	],
+        	"btShort":[
+        		"B\\mleft(#1\\mright)",
+        		1
+        	],
+        	"mgShort":[
         		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
         		2
         	],
@@ -174,7 +284,7 @@ window.MathJax = {
         		"\\,{}_{#1}F_{#2}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
         	],
-        	"tp":"{\\scriptscriptstyle \\mathsf{T} }",
+        	"tp":"{\\scriptscriptstyle\\mathsf{T}}",
         	"tr":"\\operatorname{tr}",
         	"Tr":"\\operatorname{Tr}",
         	"dual":"\\prime",
@@ -193,11 +303,11 @@ window.MathJax = {
         	"limInverse":"\\varprojlim",
         	"limDirect":"\\varinjlim",
         	"vecspan":[
-        		"\\mleft\\{ #1 \\mright\\}",
+        		"\\left\\lbrace #1 \\right\\rbrace",
         		1
         	],
         	"ideal":[
-        		"\\mleft\\langle #1 \\mright\\rangle",
+        		"\\left\\langle #1 \\right\\rangle",
         		1
         	],
         	"spec":"\\operatorname{spec}",
@@ -312,112 +422,70 @@ window.MathJax = {
         		"\\boldsymbol{#1}",
         		1
         	],
-        	"inn":"\\mathsf{i}",
-        	"out":"\\mathsf{o}",
-        	"io":"\\mathsf{i}\/\\mathsf{o}",
-        	"oi":"\\mathsf{o}\/\\mathsf{i}",
         	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
+        	"ev":[
+        		"\\langle #1 \\rangle",
+        		1
+        	],
         	"vev":[
         		"\\langle #1 \\rangle",
         		1
         	],
         	"vevv":[
-        		"\\langle\\langle #1 \\rangle\\rangle",
-        		1
-        	],
-        	"ev":[
-        		"\\langle #1 \\rangle",
+        		"\\langle\\!\\langle #1 \\rangle\\!\\rangle",
         		1
         	],
         	"bra":[
-        		"\\langle #1 \\vert",
+        		"\\langle #1 \\rvert",
         		1
         	],
         	"ket":[
-        		"\\vert\\mathopen{} #1 \\rangle",
+        		"\\lvert #1 \\rangle",
         		1
         	],
         	"braket":[
-        		"\\langle #1 \\vert\\mathopen{} #2 \\rangle",
+        		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\rangle",
         		2
         	],
-        	"brakets":[
-        		"\\langle #1 \\vert\\mathopen{} #2 \\vert\\mathopen{} #3 \\rangle",
+        	"brakett":[
+        		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\rangle",
         		3
+        	],
+        	"braA":[
+        		"\\langle #1 \\rvert",
+        		1
+        	],
+        	"ketA":[
+        		"\\lvert #1 \\rangle",
+        		1
+        	],
+        	"braS":[
+        		"\\mathopen{\\lbrack} #1 \\rvert",
+        		1
+        	],
+        	"ketS":[
+        		"\\lvert #1 \\mathclose{\\rbrack}",
+        		1
         	],
         	"braketA":[
         		"\\langle #1 \\rangle",
         		1
         	],
-        	"abraket":"\\braketA",
         	"braketS":[
-        		"[ #1 ]",
+        		"\\mathopen{\\lbrack} #1 \\mathclose{\\rbrack}",
         		1
         	],
-        	"sbraket":"\\braketS",
         	"braketAS":[
-        		"\\langle #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 ]",
+        		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\mathclose{\\rbrack}",
         		3
         	],
         	"braketSA":[
-        		"[ #1 \\mathclose{}|\\mathopen{} #2 \\mathclose{}|\\mathopen{} #3 \\rangle",
+        		"\\mathopen{\\lbrack} #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\rangle",
         		3
         	],
-        	"braA":[
-        		"\\langle #1 \\mathclose{|}",
-        		1
-        	],
-        	"abra":"\\braA",
-        	"ketA":[
-        		"\\mathopen{|} #1 \\rangle",
-        		1
-        	],
-        	"aket":"\\ketA",
-        	"braS":[
-        		"[ #1 \\mathclose{|}",
-        		1
-        	],
-        	"sbra":"\\braS",
-        	"ketS":[
-        		"\\mathopen{|} #1 ]",
-        		1
-        	],
-        	"sket":"\\ketS",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
-        	"sphere":[
-        		"\\operatorname{S}^{#1}",
-        		1
-        	],
-        	"hyperbolic":[
-        		"\\operatorname{H}_{#1}",
-        		1
-        	],
-        	"lightcone":[
-        		"\\operatorname{LC}_{#1}",
-        		1
-        	],
-        	"lightconeproj":[
-        		"\\operatorname{PC}_{#1}",
-        		1
-        	],
-        	"ads":[
-        		"\\operatorname{AdS}_{#1}",
-        		1
-        	],
-        	"eads":[
-        		"\\operatorname{EAdS}_{#1}",
-        		1
-        	],
-        	"ds":[
-        		"\\operatorname{dS}_{#1}",
-        		1
-        	],
-        	"kds":[
-        		"\\operatorname{KdS}_{#1}",
-        		1
-        	],
         	"xy":[
         		"x_{#1},y_{#1}",
         		1
@@ -442,69 +510,7 @@ window.MathJax = {
         	"ppb":"\\bar{\\partial}",
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
-        	"signature":"{\\color{red}s}",
-        	"hbar":"\\rlap{\\unicode{xAF}}h",
-        	"eqqq":":=",
-        	"id":"\\mathbf{1}",
-        	"mleft":"\\left",
-        	"mright":"\\right",
-        	"schannel":"\\mathsf{s}",
-        	"tchannel":"\\mathsf{t}",
-        	"uchannel":"\\mathsf{u}",
-        	"vevv":[
-        		"\\langle\\!\\langle#1\\rangle\\!\\rangle",
-        		1
-        	],
-        	"TextInMath":[
-        		"\\, \\text{ #1 }\\,",
-        		1
-        	],
-        	"nn":"\\nonumber",
-        	"red":[
-        		"{\\color{red} #1}",
-        		1
-        	],
-        	"green":[
-        		"{\\color{green} #1}",
-        		1
-        	],
-        	"blue":[
-        		"{\\color{blue} #1}",
-        		1
-        	],
-        	"cyan":[
-        		"{\\color{cyan} #1}",
-        		1
-        	],
-        	"magenta":[
-        		"{\\color{magenta} #1}",
-        		1
-        	],
-        	"yellow":[
-        		"{\\color{yellow} #1}",
-        		1
-        	],
-        	"brown":[
-        		"{\\color{brown} #1}",
-        		1
-        	],
-        	"orange":[
-        		"{\\color{orange} #1}",
-        		1
-        	],
-        	"pink":[
-        		"{\\color{pink} #1}",
-        		1
-        	],
-        	"purple":[
-        		"{\\color{purple} #1}",
-        		1
-        	],
-        	"lhs":"\\mathsf{l.h.s.}",
-        	"rhs":"\\mathsf{r.h.s.}",
-        	"const":"\\mathsf{const.}",
-        	"rest":"({\\cdots})",
-        	"pass":"{\\color{gray} \\bf PASS}"
+        	"signature":"{\\color{red}s}"
         },
         // MathJaxJSOverwrite-Macro-End
         environments: {}
