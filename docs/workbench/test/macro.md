@@ -100,6 +100,14 @@ $$\LRc{*}$$
 
 $$\LRd{*}$$
 
+$$\signp$$
+
+$$\signm$$
+
+$$\signpm$$
+
+$$\signmp$$
+
 $$\eq$$
 
 $$\eqq$$
@@ -115,10 +123,6 @@ $$\leq$$
 $$\le$$
 
 $$\peq$$
-
-$$\mod$$
-
-$$\half$$
 
 $$\xx$$
 
@@ -136,49 +140,15 @@ $$\ww$$
 
 $$\vv$$
 
-$$\oo$$
-
 $$\pp$$
 
-$$\UU$$
+$$\ppb$$
 
-$$\VV$$
-
-$$\WW$$
-
-$$\HH$$
-
-$$\DirectIntegral$$
-
-$$\ip{*}{*}$$
-
-$$\set{*}$$
-
-$$\given$$
-
-$$\Re$$
-
-$$\Im$$
-
-$$\intt{*}$$
-
-$$\inttt{*}{*}$$
-
-$$\intrange{*}{*}{*}$$
-
-$$\Res$$
-
-$$\Disc$$
-
-$$\Vol$$
-
-$$\abs{*}$$
-
-$$\norm{*}$$
+$$\mod$$
 
 $$\sign$$
 
-$$\diag$$
+$$\abs{*}$$
 
 $$\gm{*}$$
 
@@ -202,25 +172,43 @@ $$\Fcb{*}$$
 
 $$\Fpq{*}{*}{*}{*}{*}$$
 
-$$\tp$$
+$$\set{*}$$
+
+$$\given$$
+
+$$\HH$$
+
+$$\ip{*}{*}$$
+
+$$\norm{*}$$
+
+$$\DirectIntegral$$
+
+$$\Re$$
+
+$$\Im$$
+
+$$\intt{*}$$
+
+$$\inttt{*}{*}$$
+
+$$\intrange{*}{*}{*}$$
+
+$$\Res$$
+
+$$\Disc$$
+
+$$\Vol$$
+
+$$\diag$$
 
 $$\tr$$
 
 $$\Tr$$
 
+$$\tp$$
+
 $$\dual$$
-
-$$\inj$$
-
-$$\surj$$
-
-$$\im$$
-
-$$\coim$$
-
-$$\coker$$
-
-$$\codim$$
 
 $$\Aut$$
 
@@ -233,10 +221,6 @@ $$\Ad$$
 $$\Sym$$
 
 $$\Alt$$
-
-$$\limInverse$$
-
-$$\limDirect$$
 
 $$\vecspan{*}$$
 
@@ -326,11 +310,27 @@ $$\catG$$
 
 $$\Hom$$
 
+$$\Ind$$
+
 $$\Ext$$
 
 $$\Tor$$
 
-$$\Ind$$
+$$\inj$$
+
+$$\surj$$
+
+$$\coker$$
+
+$$\im$$
+
+$$\coim$$
+
+$$\codim$$
+
+$$\limInverse$$
+
+$$\limDirect$$
 
 $$\RR$$
 
@@ -434,7 +434,9 @@ $$\cY$$
 
 $$\cZ$$
 
-$$\bb{*}$$
+$$\half$$
+
+$$\oo$$
 
 $$\vac$$
 
@@ -503,8 +505,6 @@ $$\hb$$
 $$\Tb$$
 
 $$\Lb$$
-
-$$\ppb$$
 
 $$\psib$$
 

@@ -183,6 +183,10 @@ window.MathJax = {
         		"\\Biggl(#1\\Biggr)",
         		1
         	],
+        	"signp":"\\mathord{+}",
+        	"signm":"\\mathord{-}",
+        	"signpm":"\\mathord{\\pm}",
+        	"signmp":"\\mathord{\\mp}",
         	"eq":"=",
         	"eqq":"\\equiv",
         	"eqqq":"\\coloneqq",
@@ -191,8 +195,6 @@ window.MathJax = {
         	"leq":"\\leqslant",
         	"le":"\\leqslant",
         	"peq":"\\phantom{{}={}}",
-        	"mod":"\\bmod",
-        	"half":"\\frac{1}{2}",
         	"xx":"\\times",
         	"co":"\\mathclose{}{\\mspace{1mu}\\cdot\\mspace{1mu}}\\mathopen{}",
         	"ox":"\\otimes",
@@ -201,49 +203,14 @@ window.MathJax = {
         	"oss":"\\bigoplus",
         	"ww":"\\wedge",
         	"vv":"\\vee",
-        	"oo":"\\infty",
         	"pp":"\\partial",
-        	"UU":"\\mathbb{U}",
-        	"VV":"\\mathbb{V}",
-        	"WW":"\\mathbb{W}",
-        	"HH":"\\mathcal{H}",
-        	"DirectIntegral":"\\int^{\\oplus}",
-        	"ip":[
-        		"\\left\\lparen #1 , #2 \\right\\rparen",
-        		2
-        	],
-        	"set":[
-        		"\\lbrace #1 \\rbrace",
-        		1
-        	],
-        	"given":"\\,\\vert\\,\\mathopen{}",
-        	"Re":"\\operatorname{Re}",
-        	"Im":"\\operatorname{Im}",
-        	"intt":[
-        		"\\int #1\\,",
-        		1
-        	],
-        	"inttt":[
-        		"\\int_{#2} #1\\,",
-        		2
-        	],
-        	"intrange":[
-        		"\\int_{#2}^{#3} #1\\,",
-        		3
-        	],
-        	"Res":"\\operatorname{Res}",
-        	"Disc":"\\operatorname{Disc}",
-        	"Vol":"\\operatorname{Vol}",
+        	"ppb":"\\bar{\\partial}",
+        	"mod":"\\bmod",
+        	"sign":"\\operatorname{sign}",
         	"abs":[
         		"\\left\\lvert #1 \\right\\rvert",
         		1
         	],
-        	"norm":[
-        		"\\left\\lVert #1 \\right\\rVert",
-        		1
-        	],
-        	"sign":"\\operatorname{sign}",
-        	"diag":"\\operatorname{diag}",
         	"gm":[
         		"\\Gamma\\mleft[#1\\mright]",
         		1
@@ -288,24 +255,49 @@ window.MathJax = {
         		"\\,{}_{#1}F_{#2}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
         	],
-        	"tp":"{\\scriptscriptstyle\\mathsf{T}}",
+        	"set":[
+        		"\\lbrace #1 \\rbrace",
+        		1
+        	],
+        	"given":"\\,\\vert\\,\\mathopen{}",
+        	"HH":"\\mathcal{H}",
+        	"ip":[
+        		"\\left\\lparen #1 , #2 \\right\\rparen",
+        		2
+        	],
+        	"norm":[
+        		"\\left\\lVert #1 \\right\\rVert",
+        		1
+        	],
+        	"DirectIntegral":"\\int^{\\oplus}",
+        	"Re":"\\operatorname{Re}",
+        	"Im":"\\operatorname{Im}",
+        	"intt":[
+        		"\\int #1\\,",
+        		1
+        	],
+        	"inttt":[
+        		"\\int_{#2} #1\\,",
+        		2
+        	],
+        	"intrange":[
+        		"\\int_{#2}^{#3} #1\\,",
+        		3
+        	],
+        	"Res":"\\operatorname{Res}",
+        	"Disc":"\\operatorname{Disc}",
+        	"Vol":"\\operatorname{Vol}",
+        	"diag":"\\operatorname{diag}",
         	"tr":"\\operatorname{tr}",
         	"Tr":"\\operatorname{Tr}",
+        	"tp":"{\\scriptscriptstyle\\mathsf{T}}",
         	"dual":"\\prime",
-        	"inj":"\\rightarrowtail",
-        	"surj":"\\twoheadrightarrow",
-        	"im":"\\operatorname{im}",
-        	"coim":"\\operatorname{coim}",
-        	"coker":"\\operatorname{coker}",
-        	"codim":"\\operatorname{codim}",
         	"Aut":"\\operatorname{Aut}",
         	"End":"\\operatorname{End}",
         	"ad":"\\operatorname{ad}",
         	"Ad":"\\operatorname{Ad}",
         	"Sym":"\\operatorname{Sym}",
         	"Alt":"\\operatorname{Alt}",
-        	"limInverse":"\\varprojlim",
-        	"limDirect":"\\varinjlim",
         	"vecspan":[
         		"\\left\\lbrace #1 \\right\\rbrace",
         		1
@@ -368,9 +360,17 @@ window.MathJax = {
         	"catF":"\\mathsf{F}",
         	"catG":"\\mathsf{G}",
         	"Hom":"\\operatorname{Hom}",
+        	"Ind":"\\operatorname{Ind}",
         	"Ext":"\\operatorname{Ext}",
         	"Tor":"\\operatorname{Tor}",
-        	"Ind":"\\operatorname{Ind}",
+        	"inj":"\\rightarrowtail",
+        	"surj":"\\twoheadrightarrow",
+        	"coker":"\\operatorname{coker}",
+        	"im":"\\operatorname{im}",
+        	"coim":"\\operatorname{coim}",
+        	"codim":"\\operatorname{codim}",
+        	"limInverse":"\\varprojlim",
+        	"limDirect":"\\varinjlim",
         	"RR":"\\mathbb{R}",
         	"RRstar":"\\mathbb{R}^{*}",
         	"RRgeq":"\\mathbb{R}_{\\scriptscriptstyle \\geqslant 0}",
@@ -422,10 +422,8 @@ window.MathJax = {
         	"cX":"\\mathcal{X}",
         	"cY":"\\mathcal{Y}",
         	"cZ":"\\mathcal{Z}",
-        	"bb":[
-        		"\\boldsymbol{#1}",
-        		1
-        	],
+        	"half":"\\frac{1}{2}",
+        	"oo":"\\infty",
         	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
         	"ev":[
@@ -511,7 +509,6 @@ window.MathJax = {
         	"hb":"\\bar{h}",
         	"Tb":"\\bar{T}",
         	"Lb":"\\bar{L}",
-        	"ppb":"\\bar{\\partial}",
         	"psib":"\\bar{\\psi}",
         	"chib":"\\bar{\\chi}",
         	"signature":"{\\color{red}s}"
