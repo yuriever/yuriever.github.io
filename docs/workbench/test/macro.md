@@ -254,15 +254,15 @@ $$\UEA{*}$$
 
 $$\UEACenter{*}$$
 
-$$\nlie$$
+$$\hlie$$
 
-$$\plie$$
+$$\nlie$$
 
 $$\blie$$
 
-$$\hlie$$
-
 $$\klie$$
+
+$$\plie$$
 
 $$\gllie$$
 
