@@ -54,9 +54,17 @@ $$\inn$$
 
 $$\out$$
 
-$$\io$$
+$$\innout$$
 
-$$\oi$$
+$$\outinn$$
+
+$$\tacp$$
+
+$$\tacm$$
+
+$$\tacpm$$
+
+$$\tacmp$$
 
 $$\sphere{*}$$
 
