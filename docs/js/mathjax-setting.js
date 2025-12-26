@@ -318,7 +318,7 @@ window.MathJax = {
         		1
         	],
         	"UEACenter":[
-        		"\\operatorname{ZU}(#1)",
+        		"\\operatorname{Z}(#1)",
         		1
         	],
         	"hlie":"\\mathfrak{h}",
@@ -326,6 +326,7 @@ window.MathJax = {
         	"blie":"\\mathfrak{b}",
         	"klie":"\\mathfrak{k}",
         	"plie":"\\mathfrak{p}",
+        	"zlie":"\\mathfrak{z}",
         	"gllie":"\\mathfrak{gl}",
         	"glgroup":"\\operatorname{GL}",
         	"olie":"\\mathfrak{o}",
