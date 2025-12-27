@@ -206,6 +206,10 @@ window.MathJax = {
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
         	"mod":"\\bmod",
+        	"eval":[
+        		"\\mleft. #1 \\mright\\vert_{#2}",
+        		2
+        	],
         	"sign":"\\operatorname{sign}",
         	"abs":[
         		"\\left\\lvert #1 \\right\\rvert",
