@@ -210,6 +210,10 @@ window.MathJax = {
         		"\\mleft. #1 \\mright\\vert_{#2}",
         		2
         	],
+        	"evall":[
+        		"\\mleft.\\mleft( #1 \\mright)\\mright\\vert_{#2}",
+        		2
+        	],
         	"sign":"\\operatorname{sign}",
         	"abs":[
         		"\\left\\lvert #1 \\right\\rvert",
