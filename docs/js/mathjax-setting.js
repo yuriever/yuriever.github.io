@@ -206,14 +206,6 @@ window.MathJax = {
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
         	"mod":"\\bmod",
-        	"eval":[
-        		"\\mleft. #1 \\mright\\vert_{#2}",
-        		2
-        	],
-        	"evall":[
-        		"\\mleft.\\mleft( #1 \\mright)\\mright\\vert_{#2}",
-        		2
-        	],
         	"sign":"\\operatorname{sign}",
         	"abs":[
         		"\\left\\lvert #1 \\right\\rvert",
@@ -268,6 +260,15 @@ window.MathJax = {
         		1
         	],
         	"given":"\\,\\vert\\,\\mathopen{}",
+        	"eval":[
+        		"\\mleft. #1 \\mright\\vert_{#2}",
+        		2
+        	],
+        	"evall":[
+        		"\\mleft.\\mleft( #1 \\mright)\\mright\\vert_{#2}",
+        		2
+        	],
+        	"supp":"\\operatorname{supp}",
         	"HH":"\\mathcal{H}",
         	"ip":[
         		"\\left\\lparen #1 , #2 \\right\\rparen",
@@ -360,6 +361,8 @@ window.MathJax = {
         	],
         	"catSet":"\\mathsf{Set}",
         	"catVec":"\\mathsf{Vec}",
+        	"catMod":"\\mathsf{Mod}",
+        	"catRep":"\\mathsf{Rep}",
         	"catCat":"\\mathsf{Cat}",
         	"catA":"\\mathsf{A}",
         	"catB":"\\mathsf{B}",
