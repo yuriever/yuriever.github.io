@@ -104,9 +104,6 @@ window.MathJax = {
         	],
         	"nn":"\\nonumber",
         	"id":"\\mathbf{1}",
-        	"schannel":"\\mathsf{s}",
-        	"tchannel":"\\mathsf{t}",
-        	"uchannel":"\\mathsf{u}",
         	"inn":"{\\color{Red}\\mathsf{i}}",
         	"out":"{\\color{Blue}\\mathsf{o}}",
         	"innout":"{\\color{Red}\\mathsf{i}}\/{\\color{Blue}\\mathsf{o}}",
@@ -269,16 +266,6 @@ window.MathJax = {
         		2
         	],
         	"supp":"\\operatorname{supp}",
-        	"HH":"\\mathcal{H}",
-        	"ip":[
-        		"\\left\\lparen #1 , #2 \\right\\rparen",
-        		2
-        	],
-        	"norm":[
-        		"\\left\\lVert #1 \\right\\rVert",
-        		1
-        	],
-        	"DirectIntegral":"\\int^{\\oplus}",
         	"Re":"\\operatorname{Re}",
         	"Im":"\\operatorname{Im}",
         	"intt":[
@@ -296,6 +283,16 @@ window.MathJax = {
         	"Res":"\\operatorname{Res}",
         	"Disc":"\\operatorname{Disc}",
         	"Vol":"\\operatorname{Vol}",
+        	"HH":"\\mathcal{H}",
+        	"ip":[
+        		"\\left\\lparen #1 , #2 \\right\\rparen",
+        		2
+        	],
+        	"norm":[
+        		"\\left\\lVert #1 \\right\\rVert",
+        		1
+        	],
+        	"DirectIntegral":"\\int^{\\oplus}",
         	"diag":"\\operatorname{diag}",
         	"tr":"\\operatorname{tr}",
         	"Tr":"\\operatorname{Tr}",
@@ -436,6 +433,9 @@ window.MathJax = {
         	"cZ":"\\mathcal{Z}",
         	"half":"\\frac{1}{2}",
         	"oo":"\\infty",
+        	"schannel":"\\mathsf{s}",
+        	"tchannel":"\\mathsf{t}",
+        	"uchannel":"\\mathsf{u}",
         	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
         	"ev":[

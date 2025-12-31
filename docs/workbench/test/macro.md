@@ -44,12 +44,6 @@ $$\nn$$
 
 $$\id$$
 
-$$\schannel$$
-
-$$\tchannel$$
-
-$$\uchannel$$
-
 $$\inn$$
 
 $$\out$$
@@ -182,14 +176,6 @@ $$\evall{*}{*}$$
 
 $$\supp$$
 
-$$\HH$$
-
-$$\ip{*}{*}$$
-
-$$\norm{*}$$
-
-$$\DirectIntegral$$
-
 $$\Re$$
 
 $$\Im$$
@@ -205,6 +191,14 @@ $$\Res$$
 $$\Disc$$
 
 $$\Vol$$
+
+$$\HH$$
+
+$$\ip{*}{*}$$
+
+$$\norm{*}$$
+
+$$\DirectIntegral$$
 
 $$\diag$$
 
@@ -449,6 +443,12 @@ $$\cZ$$
 $$\half$$
 
 $$\oo$$
+
+$$\schannel$$
+
+$$\tchannel$$
+
+$$\uchannel$$
 
 $$\vac$$
 
