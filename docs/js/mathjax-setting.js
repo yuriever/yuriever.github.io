@@ -304,10 +304,6 @@ window.MathJax = {
         	"Ad":"\\operatorname{Ad}",
         	"Sym":"\\operatorname{Sym}",
         	"Alt":"\\operatorname{Alt}",
-        	"vecspan":[
-        		"\\left\\lbrace #1 \\right\\rbrace",
-        		1
-        	],
         	"ideal":[
         		"\\left\\langle #1 \\right\\rangle",
         		1
@@ -350,8 +346,6 @@ window.MathJax = {
         	"slgroup":"\\operatorname{SL}",
         	"splie":"\\mathfrak{sp}",
         	"spgroup":"\\operatorname{Sp}",
-        	"Diff":"\\operatorname{Diff}",
-        	"Vir":"\\operatorname{Vir}",
         	"cat":[
         		"\\mathsf{#1}",
         		1

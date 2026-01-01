@@ -15,7 +15,7 @@ This is an interesting exercise in Etingof's book *Introduction to Representatio
         \, .
     \end{equation}
 
-    We choose the basis of $A$ as $\set{1,g,x,gx}$, then the radical is $\CC\vecspan{x,gx}$, and the decomposition is
+    We choose the basis of $A$ as $\set{1,g,x,gx}$, then the radical is $\CC\set{x,gx}$, and the decomposition is
 
     \begin{equation}
         A/\radical{A}\simeq \CC p_{+} \os \CC p_{-}
@@ -24,7 +24,7 @@ This is an interesting exercise in Etingof's book *Introduction to Representatio
 
     where $p_{\pm}=\frac{1}{2}(1\pm g)$ are projectors of $A/\radical{A}$. Hence there are two irreducible modules $M_{\pm}\eqqq \CC p_{\pm}$ with the actions $x=0, \, g=\pm 1$.
 
-    We can choose the lifting of $p_{\pm}$ in $A$ as $p_{\pm}$, hence by Theorem 9.2.1 the projective covers of $M_{\pm}$ are $P_{\pm}\eqqq A p_{\pm}=\CC\vecspan{p_{\pm},xp_{\pm}}$, and the actions are
+    We can choose the lifting of $p_{\pm}$ in $A$ as $p_{\pm}$, hence by Theorem 9.2.1 the projective covers of $M_{\pm}$ are $P_{\pm}\eqqq A p_{\pm}=\CC\set{p_{\pm},xp_{\pm}}$, and the actions are
 
     \begin{equation}
         x=\begin{bmatrix}

@@ -222,8 +222,6 @@ $$\Sym$$
 
 $$\Alt$$
 
-$$\vecspan{*}$$
-
 $$\ideal{*}$$
 
 $$\spec$$
@@ -283,10 +281,6 @@ $$\slgroup$$
 $$\splie$$
 
 $$\spgroup$$
-
-$$\Diff$$
-
-$$\Vir$$
 
 $$\cat{*}$$
 
