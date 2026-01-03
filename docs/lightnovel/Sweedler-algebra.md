@@ -11,20 +11,20 @@ This is an interesting exercise in Etingof's book *Introduction to Representatio
     Recall that for any finite dimensional algebra over $\CC$ with irreducible modules $M_{i}$, we have the decomposition (Theorem 3.5.4)
 
     \begin{equation}
-        A/\radical{A}\simeq \End M_{i}
+        A/\radical{A}\iso \End M_{i}
         \, .
     \end{equation}
 
     We choose the basis of $A$ as $\set{1,g,x,gx}$, then the radical is $\CC\set{x,gx}$, and the decomposition is
 
     \begin{equation}
-        A/\radical{A}\simeq \CC p_{+} \os \CC p_{-}
+        A/\radical{A}\iso \CC p_{+} \os \CC p_{-}
         \, ,
     \end{equation}
 
-    where $p_{\pm}=\frac{1}{2}(1\pm g)$ are projectors of $A/\radical{A}$. Hence there are two irreducible modules $M_{\pm}\eqqq \CC p_{\pm}$ with the actions $x=0, \, g=\pm 1$.
+    where $p_{\pm}=\frac{1}{2}(1\pm g)$ are projectors of $A/\radical{A}$. Hence there are two irreducible modules $M_{\pm}\eqdef \CC p_{\pm}$ with the actions $x=0, \, g=\pm 1$.
 
-    We can choose the lifting of $p_{\pm}$ in $A$ as $p_{\pm}$, hence by Theorem 9.2.1 the projective covers of $M_{\pm}$ are $P_{\pm}\eqqq A p_{\pm}=\CC\set{p_{\pm},xp_{\pm}}$, and the actions are
+    We can choose the lifting of $p_{\pm}$ in $A$ as $p_{\pm}$, hence by Theorem 9.2.1 the projective covers of $M_{\pm}$ are $P_{\pm}\eqdef A p_{\pm}=\CC\set{p_{\pm},xp_{\pm}}$, and the actions are
 
     \begin{equation}
         x=\begin{bmatrix}

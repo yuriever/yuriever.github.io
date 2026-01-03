@@ -276,7 +276,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \, .
 \end{equation*}
 
-类似的，在群同态 $\slgroup(2,\CC) \to \sogroup(3,1,\RR)$ 下，四分量 Pauli 矩阵 $\sigma$ 是从 $\slgroup(2,\CC)$ 的表示 $(\half,\half)$ 到 $\sogroup(3,1,\RR)$ 的复矢量表示 $V\simeq \CC^{4}$ 的可逆等变映射，可选为
+类似的，在群同态 $\slgroup(2,\CC) \to \sogroup(3,1,\RR)$ 下，四分量 Pauli 矩阵 $\sigma$ 是从 $\slgroup(2,\CC)$ 的表示 $(\half,\half)$ 到 $\sogroup(3,1,\RR)$ 的复矢量表示 $V\iso \CC^{4}$ 的可逆等变映射，可选为
 
 \begin{equation}
     \label{eq: Pauli matrix}

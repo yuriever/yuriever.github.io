@@ -124,20 +124,20 @@ for $x\in\RR$, $\lambda>0$. The solutions are called homogeneous tempered distri
 The $\pm$ basis of solutions is
 
 \begin{align}
-    &x_{\psign{+}}^a \eqqq |x|^a \theta(x)
+    &x_{\psign{+}}^a \eqdef |x|^a \theta(x)
     \, ,
     \\
-    &x_{\psign{-}}^a \eqqq |x|^a \theta(-x)
+    &x_{\psign{-}}^a \eqdef |x|^a \theta(-x)
     \, ,
 \end{align}
 
 and we can recombine them into the even/odd basis
 
 \begin{align}
-    &x_{\psign{0}}^a\eqqq|x|^a= x_{\psign{+}}^a+ x_{\psign{-}}^a
+    &x_{\psign{0}}^a\eqdef|x|^a= x_{\psign{+}}^a+ x_{\psign{-}}^a
     \, ,
     \\
-    &x_{\psign{1}}^a\eqqq|x|^a \sign{x}=x_{\psign{+}}^a- x_{\psign{-}}^a
+    &x_{\psign{1}}^a\eqdef|x|^a \sign{x}=x_{\psign{+}}^a- x_{\psign{-}}^a
     \, .
 \end{align}
 
@@ -157,10 +157,10 @@ These distributions are meromorphic functions of $a\in\CC$, and the normalized v
 The $i \varepsilon$ basis is
 
 \begin{align}
-    &x_{\psign{i}}^a\eqqq \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\psign{+}}^a+e^{i\pi a}x_{\psign{-}}^a
+    &x_{\psign{i}}^a\eqdef \lim_{\varepsilon\to 0}(x+i\varepsilon )^a=x_{\psign{+}}^a+e^{i\pi a}x_{\psign{-}}^a
     \, ,
     \\
-    &x_{\psign{-i}}^a\eqqq \lim_{\varepsilon\to 0}(x-i\varepsilon )^a=x_{\psign{+}}^a+e^{-i\pi a}x_{\psign{-}}^a
+    &x_{\psign{-i}}^a\eqdef \lim_{\varepsilon\to 0}(x-i\varepsilon )^a=x_{\psign{+}}^a+e^{-i\pi a}x_{\psign{-}}^a
     \, .
 \end{align}
 
@@ -357,7 +357,7 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
 
     Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation a} to the case $\Re\Delta_{0}=a$, there would appear an extra factor $\half$.
 
-    The reason is as follows: in this case the leading pole $\Delta=\Delta_{0}$ lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle $C_{\Delta_{0},\delta}\eqqq\set{\Delta:\Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}<\theta<\frac{3\pi}{2}}$ surrounding the leading pole:
+    The reason is as follows: in this case the leading pole $\Delta=\Delta_{0}$ lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle $C_{\Delta_{0},\delta}\eqdef\set{\Delta:\Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}<\theta<\frac{3\pi}{2}}$ surrounding the leading pole:
 
     \begin{align*}
         &\peq
