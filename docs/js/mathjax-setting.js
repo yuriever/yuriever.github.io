@@ -369,7 +369,7 @@ window.MathJax = {
         	"Tor":"\\operatorname{Tor}",
         	"inj":"\\rightarrowtail",
         	"surj":"\\twoheadrightarrow",
-        	"iso":"\\cong",
+        	"iso":"\\simeq",
         	"coker":"\\operatorname{coker}",
         	"im":"\\operatorname{im}",
         	"coim":"\\operatorname{coim}",
