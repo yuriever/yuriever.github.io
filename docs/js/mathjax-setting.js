@@ -160,6 +160,7 @@ window.MathJax = {
         		"\\widetilde{#1}",
         		1
         	],
+        	"SSS":"",
         	"LR":[
         		"\\mleft(#1\\mright)",
         		1
@@ -209,8 +210,28 @@ window.MathJax = {
         		"\\left\\lvert #1 \\right\\rvert",
         		1
         	],
+        	"stepH":[
+        		"\\theta\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaD":[
+        		"\\delta\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaC":[
+        		"\\delta_{\\mathbb{C}}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaK":[
+        		"\\delta_{\\mathrm{K}}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaMC":[
+        		"\\delta^{(4)}\\mleft(#1\\mright)",
+        		1
+        	],
         	"gm":[
-        		"\\Gamma\\mleft[#1\\mright]",
+        		"\\Gamma\\mleft(#1\\mright)",
         		1
         	],
         	"bt":[
@@ -218,18 +239,6 @@ window.MathJax = {
         		1
         	],
         	"mg":[
-        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
-        		2
-        	],
-        	"gmShort":[
-        		"\\Gamma\\mleft[#1\\mright]",
-        		1
-        	],
-        	"btShort":[
-        		"B\\mleft(#1\\mright)",
-        		1
-        	],
-        	"mgShort":[
         		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
         		2
         	],
@@ -252,6 +261,38 @@ window.MathJax = {
         	"Fpq":[
         		"\\,{}_{#1}F_{#2}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
+        	],
+        	"stepHSS":[
+        		"\\theta\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaDSS":[
+        		"\\delta\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaCSS":[
+        		"\\delta_{\\mathbb{C}}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaKSS":[
+        		"\\delta_{\\mathrm{K}}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaMCSS":[
+        		"\\delta^{(4)}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"gmSS":[
+        		"\\Gamma\\mleft(#1\\mright)",
+        		1
+        	],
+        	"btSS":[
+        		"B\\mleft(#1\\mright)",
+        		1
+        	],
+        	"mgSS":[
+        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		2
         	],
         	"set":[
         		"\\lbrace #1 \\rbrace",
@@ -325,6 +366,7 @@ window.MathJax = {
         		1
         	],
         	"hlie":"\\mathfrak{h}",
+        	"llie":"\\mathfrak{l}",
         	"nlie":"\\mathfrak{n}",
         	"blie":"\\mathfrak{b}",
         	"klie":"\\mathfrak{k}",
@@ -496,14 +538,6 @@ window.MathJax = {
         	],
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
-        	"xy":[
-        		"x_{#1},y_{#1}",
-        		1
-        	],
-        	"zzb":[
-        		"z_{#1},\\bar{z}_{#1}",
-        		1
-        	],
         	"vx":"\\vec{x}",
         	"vy":"\\vec{y}",
         	"vp":"\\vec{p}",

@@ -84,6 +84,8 @@ $$\tildee{*}$$
 
 $$\wave{*}$$
 
+$$\SSS$$
+
 $$\LR{*}$$
 
 $$\LRa{*}$$
@@ -146,17 +148,21 @@ $$\sign$$
 
 $$\abs{*}$$
 
+$$\stepH{*}$$
+
+$$\deltaD{*}$$
+
+$$\deltaC{*}$$
+
+$$\deltaK{*}$$
+
+$$\deltaMC{*}$$
+
 $$\gm{*}$$
 
 $$\bt{*}$$
 
 $$\mg{*}{*}$$
-
-$$\gmShort{*}$$
-
-$$\btShort{*}$$
-
-$$\mgShort{*}{*}$$
 
 $$\Faa{*}$$
 
@@ -167,6 +173,22 @@ $$\Fba{*}$$
 $$\Fcb{*}$$
 
 $$\Fpq{*}{*}{*}{*}{*}$$
+
+$$\stepHSS{*}$$
+
+$$\deltaDSS{*}$$
+
+$$\deltaCSS{*}$$
+
+$$\deltaKSS{*}$$
+
+$$\deltaMCSS{*}$$
+
+$$\gmSS{*}$$
+
+$$\btSS{*}$$
+
+$$\mgSS{*}{*}$$
 
 $$\set{*}$$
 
@@ -239,6 +261,8 @@ $$\UEA{*}$$
 $$\UEACenter{*}$$
 
 $$\hlie$$
+
+$$\llie$$
 
 $$\nlie$$
 
@@ -485,10 +509,6 @@ $$\braketSA{*}{*}{*}$$
 $$\shadow$$
 
 $$\lightray$$
-
-$$\xy{*}$$
-
-$$\zzb{*}$$
 
 $$\vx$$
 
