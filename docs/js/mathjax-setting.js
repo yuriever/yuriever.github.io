@@ -470,6 +470,7 @@ window.MathJax = {
         	"cY":"\\mathcal{Y}",
         	"cZ":"\\mathcal{Z}",
         	"half":"\\frac{1}{2}",
+        	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
         	"schannel":"\\mathsf{s}",
         	"tchannel":"\\mathsf{t}",

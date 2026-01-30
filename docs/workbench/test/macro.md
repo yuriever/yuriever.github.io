@@ -464,6 +464,8 @@ $$\cZ$$
 
 $$\half$$
 
+$$\thalf$$
+
 $$\oo$$
 
 $$\schannel$$
