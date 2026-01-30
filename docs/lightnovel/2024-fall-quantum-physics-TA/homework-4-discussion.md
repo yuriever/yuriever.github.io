@@ -17,7 +17,7 @@
 * 计算上的小技巧：
 
     * 要尝试利用湮灭算子 $a$ 来杀掉一些项，因为 $a$ 是上三角的；
-    * 粒子数算子 $N$ 定义了一个 grading，在计算矩阵元 $\bra{m}\cdots\ket{n}$ 时只需要跟踪 grading 匹配的项。
+    * 粒子数算子 $N$ 定义了一个 grading，在计算矩阵元 $\bra{m}\rest\ket{n}$ 时只需要跟踪 grading 匹配的项。
 
 ## 问题 1.2
 
@@ -114,7 +114,7 @@
 * 在验证 coherent state 是湮灭算子的本征态时可以利用 BCH formula，
 
     \begin{equation}
-        e^{t x}ye^{-t x}=y+[x,y]+\frac{1}{2!}[x,[x,y]]+\cdots
+        e^{t x}ye^{-t x}=y+[x,y]+\frac{1}{2!}[x,[x,y]]+\rest
         \, ,
     \end{equation}
 
