@@ -547,7 +547,7 @@ window.MathJax = {
         	"phat":"\\hat{p}",
         	"qhat":"\\hat{q}",
         	"khat":"\\hat{k}",
-        	"slot":"\\",
+        	"slot":"{\\ }",
         	"symL":"{\\color{ColorSymmetrizer}\\boldsymbol{\\lparen}}",
         	"symR":"{\\color{ColorSymmetrizer}\\boldsymbol{\\rparen}}",
         	"altL":"{\\color{ColorSymmetrizer}\\boldsymbol{\\lbrack}}",
