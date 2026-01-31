@@ -528,6 +528,16 @@ $$\qhat$$
 
 $$\khat$$
 
+$$\slot$$
+
+$$\symL$$
+
+$$\symR$$
+
+$$\altL$$
+
+$$\altR$$
+
 $$\zb$$
 
 $$\wb$$
