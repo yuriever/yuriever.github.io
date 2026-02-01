@@ -44,6 +44,8 @@ $$\nn$$
 
 $$\id$$
 
+$$\mathfrakalt{*}$$
+
 $$\inn$$
 
 $$\out$$
@@ -256,10 +258,6 @@ $$\lie{*}$$
 
 $$\glie$$
 
-$$\UEA{*}$$
-
-$$\UEACenter{*}$$
-
 $$\hlie$$
 
 $$\llie$$
@@ -273,6 +271,10 @@ $$\klie$$
 $$\plie$$
 
 $$\zlie$$
+
+$$\UEA{*}$$
+
+$$\UEACenter{*}$$
 
 $$\gllie$$
 

@@ -104,10 +104,14 @@ window.MathJax = {
         	],
         	"nn":"\\nonumber",
         	"id":"\\mathbf{1}",
+        	"mathfrakalt":[
+        		"\\mathfrak{#1}",
+        		1
+        	],
         	"inn":"{\\color{Red}\\mathsf{i}}",
         	"out":"{\\color{Blue}\\mathsf{o}}",
-        	"innout":"{\\color{Red}\\mathsf{i}}\/{\\color{Blue}\\mathsf{o}}",
-        	"outinn":"{\\color{Blue}\\mathsf{o}}\/{\\color{Red}\\mathsf{i}}",
+        	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
+        	"outinn":"{\\color{Blue}\\mathsf{o}}{\\color{Red}\\mathsf{i}}",
         	"tacp":"{\\color{Purple}\\pmb{+}}",
         	"tacm":"{\\color{Purple}\\pmb{-}}",
         	"tacpm":"{\\color{Purple}\\pmb{\\pm}}",
@@ -357,6 +361,13 @@ window.MathJax = {
         		1
         	],
         	"glie":"\\mathfrak{g}",
+        	"hlie":"\\mathfrak{h}",
+        	"llie":"\\mathfrak{l}",
+        	"nlie":"\\mathfrak{n}",
+        	"blie":"\\mathfrak{b}",
+        	"klie":"\\mathfrakalt{k}",
+        	"plie":"\\mathfrak{p}",
+        	"zlie":"\\mathfrakalt{z}",
         	"UEA":[
         		"\\operatorname{U}(#1)",
         		1
@@ -365,13 +376,6 @@ window.MathJax = {
         		"\\operatorname{Z}(#1)",
         		1
         	],
-        	"hlie":"\\mathfrak{h}",
-        	"llie":"\\mathfrak{l}",
-        	"nlie":"\\mathfrak{n}",
-        	"blie":"\\mathfrak{b}",
-        	"klie":"\\mathfrak{k}",
-        	"plie":"\\mathfrak{p}",
-        	"zlie":"\\mathfrak{z}",
         	"gllie":"\\mathfrak{gl}",
         	"glgroup":"\\operatorname{GL}",
         	"olie":"\\mathfrak{o}",
