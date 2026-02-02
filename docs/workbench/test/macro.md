@@ -44,9 +44,11 @@ $$\textInMath{*}$$
 
 $$\nn$$
 
-$$\id$$
-
 $$\mathfrakalt{*}$$
+
+$$\shortsign{*}$$
+
+$$\id$$
 
 $$\inn$$
 
@@ -87,8 +89,6 @@ $$\hatt{*}$$
 $$\tildee{*}$$
 
 $$\wave{*}$$
-
-$$\SSS$$
 
 $$\LR{*}$$
 

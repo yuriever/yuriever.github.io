@@ -104,11 +104,15 @@ window.MathJax = {
         		1
         	],
         	"nn":"\\nonumber",
-        	"id":"\\mathbf{1}",
         	"mathfrakalt":[
         		"\\mathfrak{#1}",
         		1
         	],
+        	"shortsign":[
+        		"#1",
+        		1
+        	],
+        	"id":"\\mathbf{1}",
         	"inn":"{\\color{Red}\\mathsf{i}}",
         	"out":"{\\color{Blue}\\mathsf{o}}",
         	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
@@ -165,7 +169,6 @@ window.MathJax = {
         		"\\widetilde{#1}",
         		1
         	],
-        	"SSS":"",
         	"LR":[
         		"\\mleft(#1\\mright)",
         		1
@@ -268,35 +271,35 @@ window.MathJax = {
         		5
         	],
         	"stepHSS":[
-        		"\\theta\\mleft(#1\\mright)",
+        		"\\stepH{#1}",
         		1
         	],
         	"deltaDSS":[
-        		"\\delta\\mleft(#1\\mright)",
+        		"\\deltaD{#1}",
         		1
         	],
         	"deltaCSS":[
-        		"\\delta_{\\mathbb{C}}\\mleft(#1\\mright)",
+        		"\\deltaC{#1}",
         		1
         	],
         	"deltaKSS":[
-        		"\\delta_{\\mathrm{K}}\\mleft(#1\\mright)",
+        		"\\deltaK{#1}",
         		1
         	],
         	"deltaMCSS":[
-        		"\\delta^{(4)}\\mleft(#1\\mright)",
+        		"\\deltaMC{#1}",
         		1
         	],
         	"gmSS":[
-        		"\\Gamma\\mleft(#1\\mright)",
+        		"\\gm{#1}",
         		1
         	],
         	"btSS":[
-        		"B\\mleft(#1\\mright)",
+        		"\\bt{#1}",
         		1
         	],
         	"mgSS":[
-        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		"\\mg{#1}{#2}",
         		2
         	],
         	"set":[
