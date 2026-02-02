@@ -153,6 +153,13 @@ window.MathJax = {
         		"\\operatorname{PC}_{#1}",
         		1
         	],
+        	"geq":"\\geqslant",
+        	"ge":"\\geqslant",
+        	"leq":"\\leqslant",
+        	"le":"\\leqslant",
+        	"Re":"\\operatorname{Re}",
+        	"Im":"\\operatorname{Im}",
+        	"mod":"\\bmod",
         	"barr":[
         		"\\overline{#1}",
         		1
@@ -193,14 +200,9 @@ window.MathJax = {
         	"signm":"\\mathord{-}",
         	"signpm":"\\mathord{\\pm}",
         	"signmp":"\\mathord{\\mp}",
-        	"eq":"=",
         	"eqq":"\\equiv",
         	"eqqq":"\\coloneqq",
         	"eqdef":"\\coloneqq",
-        	"geq":"\\geqslant",
-        	"ge":"\\geqslant",
-        	"leq":"\\leqslant",
-        	"le":"\\leqslant",
         	"peq":"\\phantom{{}={}}",
         	"xx":"\\times",
         	"co":"\\mathclose{}{\\mspace{1mu}\\cdot\\mspace{1mu}}\\mathopen{}",
@@ -212,7 +214,6 @@ window.MathJax = {
         	"vv":"\\vee",
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
-        	"mod":"\\bmod",
         	"sign":"\\operatorname{sign}",
         	"abs":[
         		"\\mleft\\lvert #1 \\mright\\rvert",
@@ -316,8 +317,6 @@ window.MathJax = {
         		2
         	],
         	"supp":"\\operatorname{supp}",
-        	"Re":"\\operatorname{Re}",
-        	"Im":"\\operatorname{Im}",
         	"intt":[
         		"\\int #1\\,",
         		1
