@@ -96,9 +96,10 @@ window.MathJax = {
         	"lhs":"\\mathsf{l.h.s.}",
         	"rhs":"\\mathsf{r.h.s.}",
         	"const":"\\mathsf{const.}",
+        	"become":"\\to",
         	"rest":"\\cdots",
         	"pass":"{\\color{gray}\\mathbf{PASS}}",
-        	"TextInMath":[
+        	"textInMath":[
         		"\\, \\text{ #1 }\\,",
         		1
         	],

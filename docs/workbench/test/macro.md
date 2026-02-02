@@ -34,11 +34,13 @@ $$\rhs$$
 
 $$\const$$
 
+$$\become$$
+
 $$\rest$$
 
 $$\pass$$
 
-$$\TextInMath{*}$$
+$$\textInMath{*}$$
 
 $$\nn$$
 

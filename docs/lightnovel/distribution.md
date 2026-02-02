@@ -191,7 +191,7 @@ In practice, the $i\varepsilon$ basis is convenient for computation since we can
 The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fourier transform $f(p)$ vanishes at infinity,
 
 \begin{equation}
-    f(p)=\int_{\RR^d}d^d x\, f(x) e^{-ip\cdot x}\to 0  \TextInMath{as} |p|\to \oo
+    f(p)=\int_{\RR^d}d^d x\, f(x) e^{-ip\cdot x}\to 0  \textInMath{as} |p|\to \oo
     \, .
 \end{equation}
 
@@ -263,7 +263,7 @@ Table: The regularized homogeneous distributions, where $n\in \NN$.
 | $\displaystyle \frac{1}{\Gamma[\frac{a+2}{2}]}x_{\psign{1}}^{a}$                        | $\displaystyle \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)$                                   | $a = -2n-2$   |
 | $\displaystyle x_{\psign{i}}^{a}$                                                      | $\displaystyle x^{-n-1}-i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
 | $\displaystyle x_{\psign{-i}}^{a}$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $a = -n-1$    |
-| $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \TextInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
+| $\displaystyle \frac{1}{\Gamma[\frac{a+d}{2}]}\abs{x}^{a} \textInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\Gamma[\frac{d}{2}+n]}\square^{n}\delta(x)$ | $a = -2n-d$   |
 
 ## Analytic functionals
 
@@ -298,7 +298,7 @@ As a generalization of the usual Dirac $\delta$-function, when $\Delta_{0}$ loca
     =
     2\pi \delta\left(\Im(\Delta-\Delta_{0})\right)
     \, ,
-    \TextInMath{for} \Re\Delta_{0}=a
+    \textInMath{for} \Re\Delta_{0}=a
     \, .
 \end{equation}
 
@@ -314,7 +314,7 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
     \intrange{d\omega}{0}{\oo}\omega^{\Delta_{0}-\Delta-1}e^{-\varepsilon \omega}
     \, ,
     &
-    \TextInMath{for} \Re\Delta_{0}>a
+    \textInMath{for} \Re\Delta_{0}>a
     \, ,
     \\
     \label{eq: complex Delta function approximation b}
@@ -326,7 +326,7 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
     \intrange{d\omega}{0}{\oo}\omega^{\Delta_{0}-\Delta-1}e^{-\varepsilon/\omega}
     \, ,
     &
-    \TextInMath{for} \Re\Delta_{0}<a
+    \textInMath{for} \Re\Delta_{0}<a
     \, .
 \end{numcases}
 
