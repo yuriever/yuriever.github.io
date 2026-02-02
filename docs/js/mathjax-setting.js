@@ -211,7 +211,7 @@ window.MathJax = {
         	"mod":"\\bmod",
         	"sign":"\\operatorname{sign}",
         	"abs":[
-        		"\\left\\lvert #1 \\right\\rvert",
+        		"\\mleft\\lvert #1 \\mright\\rvert",
         		1
         	],
         	"stepH":[
