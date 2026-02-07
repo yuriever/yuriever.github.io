@@ -479,9 +479,6 @@ window.MathJax = {
         	"half":"\\frac{1}{2}",
         	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
-        	"schannel":"\\mathsf{s}",
-        	"tchannel":"\\mathsf{t}",
-        	"uchannel":"\\mathsf{u}",
         	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
         	"ev":[
@@ -510,6 +507,22 @@ window.MathJax = {
         	],
         	"brakett":[
         		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\rangle",
+        		3
+        	],
+        	"braSS":[
+        		"\\bra{#1}",
+        		1
+        	],
+        	"ketSS":[
+        		"\\ket{#1}",
+        		1
+        	],
+        	"braketSS":[
+        		"\\braket{#1}{#2}",
+        		2
+        	],
+        	"brakettSS":[
+        		"\\brakett{#1}{#2}{#3}",
         		3
         	],
         	"braA":[
@@ -544,6 +557,9 @@ window.MathJax = {
         		"\\mathopen{\\lbrack} #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\rangle",
         		3
         	],
+        	"schannel":"\\mathsf{s}",
+        	"tchannel":"\\mathsf{t}",
+        	"uchannel":"\\mathsf{u}",
         	"shadow":"\\mathcal{S}",
         	"lightray":"\\mathcal{L}",
         	"vx":"\\vec{x}",

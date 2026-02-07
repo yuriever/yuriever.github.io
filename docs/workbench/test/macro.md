@@ -470,12 +470,6 @@ $$\thalf$$
 
 $$\oo$$
 
-$$\schannel$$
-
-$$\tchannel$$
-
-$$\uchannel$$
-
 $$\vac$$
 
 $$\op$$
@@ -494,6 +488,14 @@ $$\braket{*}{*}$$
 
 $$\brakett{*}{*}{*}$$
 
+$$\braSS{*}$$
+
+$$\ketSS{*}$$
+
+$$\braketSS{*}{*}$$
+
+$$\brakettSS{*}{*}{*}$$
+
 $$\braA{*}$$
 
 $$\ketA{*}$$
@@ -509,6 +511,12 @@ $$\braketS{*}$$
 $$\braketAS{*}{*}{*}$$
 
 $$\braketSA{*}{*}{*}$$
+
+$$\schannel$$
+
+$$\tchannel$$
+
+$$\uchannel$$
 
 $$\shadow$$
 
