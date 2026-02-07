@@ -113,6 +113,8 @@ window.MathJax = {
         		1
         	],
         	"id":"\\mathbf{1}",
+        	"ccw":"\\circ",
+        	"ccb":"\\bullet",
         	"inn":"{\\color{Red}\\mathsf{i}}",
         	"out":"{\\color{Blue}\\mathsf{o}}",
         	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
@@ -205,7 +207,7 @@ window.MathJax = {
         	"eqdef":"\\coloneqq",
         	"peq":"\\phantom{{}={}}",
         	"xx":"\\times",
-        	"co":"\\mathclose{}{\\mspace{1mu}\\cdot\\mspace{1mu}}\\mathopen{}",
+        	"cc":"\\mathbin{\\mspace{-3mu}\\cdot\\mspace{-3mu}}",
         	"ox":"\\otimes",
         	"oxx":"\\bigotimes",
         	"os":"\\oplus",
