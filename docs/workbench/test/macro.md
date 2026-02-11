@@ -264,9 +264,9 @@ $$\Spec$$
 
 $$\lie{*}$$
 
-$$\UEA{*}$$
+$$\Ulie$$
 
-$$\UEACenter{*}$$
+$$\Zlie$$
 
 $$\gllie$$
 
