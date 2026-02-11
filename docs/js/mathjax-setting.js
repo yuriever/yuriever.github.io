@@ -331,6 +331,14 @@ window.MathJax = {
         		"\\int_{#2}^{#3} #1\\,",
         		3
         	],
+        	"ointt":[
+        		"\\oint #1\\,",
+        		1
+        	],
+        	"ointtt":[
+        		"\\oint_{#2} #1\\,",
+        		2
+        	],
         	"Res":"\\operatorname{Res}",
         	"Disc":"\\operatorname{Disc}",
         	"Vol":"\\operatorname{Vol}",
