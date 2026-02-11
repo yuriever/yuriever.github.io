@@ -266,7 +266,7 @@ $$\lie{*}$$
 
 $$\Ulie$$
 
-$$\Zlie$$
+$$\ZUlie$$
 
 $$\gllie$$
 

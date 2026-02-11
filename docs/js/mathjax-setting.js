@@ -374,7 +374,7 @@ window.MathJax = {
         		1
         	],
         	"Ulie":"\\operatorname{U}",
-        	"Zlie":"\\operatorname{Z}",
+        	"ZUlie":"\\operatorname{Z}",
         	"gllie":"\\operatorname{\\mathfrak{gl}}",
         	"glgroup":"\\operatorname{GL}",
         	"oolie":"\\operatorname{\\mathfrak{o}}",
