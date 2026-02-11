@@ -226,13 +226,13 @@ $$\Disc$$
 
 $$\Vol$$
 
-$$\HH$$
+$$\hil$$
 
 $$\ip{*}{*}$$
 
 $$\norm{*}$$
 
-$$\DirectIntegral$$
+$$\osint$$
 
 $$\diag$$
 
@@ -264,22 +264,6 @@ $$\Spec$$
 
 $$\lie{*}$$
 
-$$\glie$$
-
-$$\hlie$$
-
-$$\llie$$
-
-$$\nlie$$
-
-$$\blie$$
-
-$$\klie$$
-
-$$\plie$$
-
-$$\zlie$$
-
 $$\UEA{*}$$
 
 $$\UEACenter{*}$$
@@ -288,9 +272,9 @@ $$\gllie$$
 
 $$\glgroup$$
 
-$$\olie$$
+$$\oolie$$
 
-$$\ogroup$$
+$$\oogroup$$
 
 $$\solie$$
 
@@ -302,9 +286,9 @@ $$\isolie$$
 
 $$\isogroup$$
 
-$$\ulie$$
+$$\uulie$$
 
-$$\ugroup$$
+$$\uugroup$$
 
 $$\sulie$$
 
@@ -318,6 +302,58 @@ $$\splie$$
 
 $$\spgroup$$
 
+$$\alie$$
+
+$$\blie$$
+
+$$\clie$$
+
+$$\dlie$$
+
+$$\elie$$
+
+$$\flie$$
+
+$$\glie$$
+
+$$\hlie$$
+
+$$\ilie$$
+
+$$\jlie$$
+
+$$\klie$$
+
+$$\llie$$
+
+$$\mlie$$
+
+$$\nlie$$
+
+$$\olie$$
+
+$$\plie$$
+
+$$\qlie$$
+
+$$\rlie$$
+
+$$\slie$$
+
+$$\tlie$$
+
+$$\ulie$$
+
+$$\vlie$$
+
+$$\wlie$$
+
+$$\xlie$$
+
+$$\ylie$$
+
+$$\zlie$$
+
 $$\cat{*}$$
 
 $$\catSet$$
@@ -329,20 +365,6 @@ $$\catMod$$
 $$\catRep$$
 
 $$\catCat$$
-
-$$\catA$$
-
-$$\catB$$
-
-$$\catC$$
-
-$$\catD$$
-
-$$\catE$$
-
-$$\catF$$
-
-$$\catG$$
 
 $$\Hom$$
 
@@ -369,6 +391,20 @@ $$\codim$$
 $$\limInverse$$
 
 $$\limDirect$$
+
+$$\catA$$
+
+$$\catB$$
+
+$$\catC$$
+
+$$\catD$$
+
+$$\catE$$
+
+$$\catF$$
+
+$$\catG$$
 
 $$\RR$$
 
