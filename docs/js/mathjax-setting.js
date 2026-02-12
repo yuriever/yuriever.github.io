@@ -501,8 +501,10 @@ window.MathJax = {
         	"half":"\\frac{1}{2}",
         	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
-        	"vac":"\\ket{0}",
         	"op":"\\mathcal{O}",
+        	"vacL":"\\bra{0}",
+        	"vacR":"\\ket{0}",
+        	"vac":"\\ket{0}",
         	"ev":[
         		"\\langle #1 \\rangle",
         		1
