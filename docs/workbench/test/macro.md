@@ -366,6 +366,10 @@ $$\catRep$$
 
 $$\catCat$$
 
+$$\Obj$$
+
+$$\obj$$
+
 $$\Hom$$
 
 $$\Ind$$

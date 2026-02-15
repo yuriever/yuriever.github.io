@@ -427,6 +427,8 @@ window.MathJax = {
         	"catMod":"\\mathsf{Mod}",
         	"catRep":"\\mathsf{Rep}",
         	"catCat":"\\mathsf{Cat}",
+        	"Obj":"\\operatorname{Obj}",
+        	"obj":"\\operatorname{obj}",
         	"Hom":"\\operatorname{Hom}",
         	"Ind":"\\operatorname{Ind}",
         	"Ext":"\\operatorname{Ext}",
