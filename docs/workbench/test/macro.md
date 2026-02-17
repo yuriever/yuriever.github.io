@@ -46,9 +46,15 @@ $$\nn$$
 
 $$\mathfrakalt{*}$$
 
-$$\shortsign{*}$$
+$$\widecheck{*}$$
+
+$$\checkk{*}$$
+
+$$\phiup$$
 
 $$\id$$
+
+$$\shortsign{*}$$
 
 $$\ccw$$
 

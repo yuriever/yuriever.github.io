@@ -108,11 +108,20 @@ window.MathJax = {
         		"\\mathfrak{#1}",
         		1
         	],
+        	"widecheck":[
+        		"\\check{#1}",
+        		1
+        	],
+        	"checkk":[
+        		"\\check{#1}",
+        		1
+        	],
+        	"phiup":"\\phi",
+        	"id":"\\mathbf{1}",
         	"shortsign":[
         		"#1",
         		1
         	],
-        	"id":"\\mathbf{1}",
         	"ccw":"\\circ",
         	"ccb":"\\bullet",
         	"inn":"{\\color{Red}\\mathsf{i}}",
