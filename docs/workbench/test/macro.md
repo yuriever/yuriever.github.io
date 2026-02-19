@@ -226,8 +226,6 @@ $$\ointt{*}$$
 
 $$\ointtt{*}{*}$$
 
-$$\Res$$
-
 $$\Disc$$
 
 $$\Vol$$
@@ -372,13 +370,19 @@ $$\catRep$$
 
 $$\catCat$$
 
-$$\Obj$$
-
 $$\obj$$
+
+$$\Obj$$
 
 $$\Hom$$
 
+$$\ind$$
+
 $$\Ind$$
+
+$$\res$$
+
+$$\Res$$
 
 $$\Ext$$
 
