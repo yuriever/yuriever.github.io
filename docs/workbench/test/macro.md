@@ -544,15 +544,11 @@ $$\ket{*}$$
 
 $$\braket{*}{*}$$
 
-$$\brakett{*}{*}{*}$$
-
 $$\braSS{*}$$
 
 $$\ketSS{*}$$
 
 $$\braketSS{*}{*}$$
-
-$$\brakettSS{*}{*}{*}$$
 
 $$\braA{*}$$
 

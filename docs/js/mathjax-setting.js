@@ -540,10 +540,6 @@ window.MathJax = {
         		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\rangle",
         		2
         	],
-        	"brakett":[
-        		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\mathclose{}\\vert\\mathopen{} #3 \\rangle",
-        		3
-        	],
         	"braSS":[
         		"\\bra{#1}",
         		1
@@ -555,10 +551,6 @@ window.MathJax = {
         	"braketSS":[
         		"\\braket{#1}{#2}",
         		2
-        	],
-        	"brakettSS":[
-        		"\\brakett{#1}{#2}{#3}",
-        		3
         	],
         	"braA":[
         		"\\langle #1 \\rvert",
