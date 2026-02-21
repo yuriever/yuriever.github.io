@@ -263,23 +263,23 @@ window.MathJax = {
         		2
         	],
         	"Foa":[
-        		"\\prescript{}{0}{F_{1}}\\mleft(#1\\mright)",
+        		"\\mathop{}\\mathopen{}\\vphantom{F}_{0}F_{1}\\mathclose{}\\mleft(#1\\mright)",
         		1
         	],
         	"Faa":[
-        		"\\prescript{}{1}{F_{1}}\\mleft(#1\\mright)",
+        		"\\mathop{}\\mathopen{}\\vphantom{F}_{1}F_{1}\\mathclose{}\\mleft(#1\\mright)",
         		1
         	],
         	"Fba":[
-        		"\\prescript{}{2}{F_{1}}\\mleft(#1\\mright)",
+        		"\\mathop{}\\mathopen{}\\vphantom{F}_{2}F_{1}\\mathclose{}\\mleft(#1\\mright)",
         		1
         	],
         	"Fcb":[
-        		"\\prescript{}{3}{F_{2}}\\mleft(#1\\mright)",
+        		"\\mathop{}\\mathopen{}\\vphantom{F}_{3}F_{2}\\mathclose{}\\mleft(#1\\mright)",
         		1
         	],
         	"Fpq":[
-        		"\\prescript{}{#1}{F_{#2}}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
+        		"\\mathop{}\\mathopen{}\\vphantom{F}_{#1}F_{#2}\\mathclose{}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
         	],
         	"stepHSS":[
