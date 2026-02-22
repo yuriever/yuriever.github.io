@@ -230,89 +230,49 @@ window.MathJax = {
         		"\\mleft\\lvert #1 \\mright\\rvert",
         		1
         	],
-        	"stepH":[
-        		"\\theta\\mleft(#1\\mright)",
+        	"step":[
+        		"\\operatorname{\\theta}\\mleft(#1\\mright)",
         		1
         	],
         	"deltaD":[
-        		"\\delta\\mleft(#1\\mright)",
-        		1
-        	],
-        	"deltaC":[
-        		"\\delta_{\\mathbb{C}}\\mleft(#1\\mright)",
-        		1
-        	],
-        	"deltaK":[
-        		"\\delta_{\\mathrm{K}}\\mleft(#1\\mright)",
+        		"\\operatorname{\\delta}\\mleft(#1\\mright)",
         		1
         	],
         	"deltaMC":[
-        		"\\delta^{(4)}\\mleft(#1\\mright)",
+        		"\\operatorname{\\delta^{(4)}}\\mleft(#1\\mright)",
         		1
         	],
         	"gm":[
-        		"\\Gamma\\mleft(#1\\mright)",
+        		"\\operatorname{\\Gamma}\\mleft(#1\\mright)",
         		1
         	],
         	"bt":[
-        		"B\\mleft(#1\\mright)",
+        		"\\operatorname{B}\\mleft(#1\\mright)",
         		1
         	],
         	"mg":[
-        		"\\Gamma\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		"\\operatorname{\\Gamma}\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
         		2
         	],
         	"Foa":[
-        		"\\mathop{}\\mathopen{}\\vphantom{F}_{0}F_{1}\\mathclose{}\\mleft(#1\\mright)",
+        		"\\operatorname{{}_{0}F_{1}}\\mleft(#1\\mright)",
         		1
         	],
         	"Faa":[
-        		"\\mathop{}\\mathopen{}\\vphantom{F}_{1}F_{1}\\mathclose{}\\mleft(#1\\mright)",
+        		"\\operatorname{{}_{1}F_{1}}\\mleft(#1\\mright)",
         		1
         	],
         	"Fba":[
-        		"\\mathop{}\\mathopen{}\\vphantom{F}_{2}F_{1}\\mathclose{}\\mleft(#1\\mright)",
+        		"\\operatorname{{}_{2}F_{1}}\\mleft(#1\\mright)",
         		1
         	],
         	"Fcb":[
-        		"\\mathop{}\\mathopen{}\\vphantom{F}_{3}F_{2}\\mathclose{}\\mleft(#1\\mright)",
+        		"\\operatorname{{}_{3}F_{2}}\\mleft(#1\\mright)",
         		1
         	],
         	"Fpq":[
-        		"\\mathop{}\\mathopen{}\\vphantom{F}_{#1}F_{#2}\\mathclose{}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
+        		"\\operatorname{{}_{#1}F_{#2}}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
         		5
-        	],
-        	"stepHSS":[
-        		"\\stepH{#1}",
-        		1
-        	],
-        	"deltaDSS":[
-        		"\\deltaD{#1}",
-        		1
-        	],
-        	"deltaCSS":[
-        		"\\deltaC{#1}",
-        		1
-        	],
-        	"deltaKSS":[
-        		"\\deltaK{#1}",
-        		1
-        	],
-        	"deltaMCSS":[
-        		"\\deltaMC{#1}",
-        		1
-        	],
-        	"gmSS":[
-        		"\\gm{#1}",
-        		1
-        	],
-        	"btSS":[
-        		"\\bt{#1}",
-        		1
-        	],
-        	"mgSS":[
-        		"\\mg{#1}{#2}",
-        		2
         	],
         	"set":[
         		"\\lbrace #1 \\rbrace",
@@ -360,11 +320,11 @@ window.MathJax = {
         		1
         	],
         	"osint":"\\int^{\\oplus}",
+        	"tp":"{\\scriptscriptstyle\\mathsf{T}}",
+        	"dual":"\\prime",
         	"diag":"\\operatorname{diag}",
         	"tr":"\\operatorname{tr}",
         	"Tr":"\\operatorname{Tr}",
-        	"tp":"{\\scriptscriptstyle\\mathsf{T}}",
-        	"dual":"\\prime",
         	"Aut":"\\operatorname{Aut}",
         	"End":"\\operatorname{End}",
         	"ad":"\\operatorname{ad}",
@@ -515,9 +475,9 @@ window.MathJax = {
         	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
         	"op":"\\mathcal{O}",
-        	"vacL":"\\bra{0}",
-        	"vacR":"\\ket{0}",
-        	"vac":"\\ket{0}",
+        	"vacL":"\\langle 0 \\rvert",
+        	"vacR":"\\lvert 0 \\rangle",
+        	"vac":"\\lvert 0 \\rangle",
         	"ev":[
         		"\\langle #1 \\rangle",
         		1
@@ -540,18 +500,6 @@ window.MathJax = {
         	],
         	"braket":[
         		"\\langle #1 \\mathclose{}\\vert\\mathopen{} #2 \\rangle",
-        		2
-        	],
-        	"braSS":[
-        		"\\bra{#1}",
-        		1
-        	],
-        	"ketSS":[
-        		"\\ket{#1}",
-        		1
-        	],
-        	"braketSS":[
-        		"\\braket{#1}{#2}",
         		2
         	],
         	"braA":[

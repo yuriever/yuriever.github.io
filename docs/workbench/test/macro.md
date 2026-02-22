@@ -164,13 +164,9 @@ $$\sign$$
 
 $$\abs{*}$$
 
-$$\stepH{*}$$
+$$\step{*}$$
 
 $$\deltaD{*}$$
-
-$$\deltaC{*}$$
-
-$$\deltaK{*}$$
 
 $$\deltaMC{*}$$
 
@@ -189,22 +185,6 @@ $$\Fba{*}$$
 $$\Fcb{*}$$
 
 $$\Fpq{*}{*}{*}{*}{*}$$
-
-$$\stepHSS{*}$$
-
-$$\deltaDSS{*}$$
-
-$$\deltaCSS{*}$$
-
-$$\deltaKSS{*}$$
-
-$$\deltaMCSS{*}$$
-
-$$\gmSS{*}$$
-
-$$\btSS{*}$$
-
-$$\mgSS{*}{*}$$
 
 $$\set{*}$$
 
@@ -238,15 +218,15 @@ $$\norm{*}$$
 
 $$\osint$$
 
+$$\tp$$
+
+$$\dual$$
+
 $$\diag$$
 
 $$\tr$$
 
 $$\Tr$$
-
-$$\tp$$
-
-$$\dual$$
 
 $$\Aut$$
 
@@ -547,12 +527,6 @@ $$\bra{*}$$
 $$\ket{*}$$
 
 $$\braket{*}{*}$$
-
-$$\braSS{*}$$
-
-$$\ketSS{*}$$
-
-$$\braketSS{*}{*}$$
 
 $$\braA{*}$$
 
