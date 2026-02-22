@@ -250,10 +250,6 @@ window.MathJax = {
         		"\\operatorname{B}\\mleft(#1\\mright)",
         		1
         	],
-        	"mg":[
-        		"\\operatorname{\\Gamma}\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
-        		2
-        	],
         	"Foa":[
         		"\\operatorname{{}_{0}F_{1}}\\mleft(#1\\mright)",
         		1
@@ -270,8 +266,12 @@ window.MathJax = {
         		"\\operatorname{{}_{3}F_{2}}\\mleft(#1\\mright)",
         		1
         	],
+        	"mg":[
+        		"\\operatorname{\\Gamma}\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		2
+        	],
         	"Fpq":[
-        		"\\operatorname{{}_{#1}F_{#2}}\\mleft(\\genfrac..{0pt}{}{#3}{#4};#5\\mright)",
+        		"\\operatorname{{}_{#1}F_{#2}}\\mleft[\\genfrac..{0pt}{}{#3}{#4};#5\\mright]",
         		5
         	],
         	"set":[
@@ -338,11 +338,11 @@ window.MathJax = {
         	"spec":"\\operatorname{spec}",
         	"Spec":"\\operatorname{Spec}",
         	"lie":[
-        		"\\operatorname{\\mathfrak{#1}}",
+        		"\\mathfrak{#1}",
         		1
         	],
         	"Ulie":"\\operatorname{U}",
-        	"ZUlie":"\\operatorname{Z}",
+        	"Clie":"\\operatorname{Z}",
         	"gllie":"\\operatorname{\\mathfrak{gl}}",
         	"glgroup":"\\operatorname{GL}",
         	"oolie":"\\operatorname{\\mathfrak{o}}",
@@ -360,32 +360,32 @@ window.MathJax = {
         	"slgroup":"\\operatorname{SL}",
         	"splie":"\\operatorname{\\mathfrak{sp}}",
         	"spgroup":"\\operatorname{Sp}",
-        	"alie":"\\operatorname{\\mathfrak{a}}",
-        	"blie":"\\operatorname{\\mathfrak{b}}",
-        	"clie":"\\operatorname{\\mathfrak{c}}",
-        	"dlie":"\\operatorname{\\mathfrak{d}}",
-        	"elie":"\\operatorname{\\mathfrak{e}}",
-        	"flie":"\\operatorname{\\mathfrak{f}}",
-        	"glie":"\\operatorname{\\mathfrak{g}}",
-        	"hlie":"\\operatorname{\\mathfrak{h}}",
-        	"ilie":"\\operatorname{\\mathfrak{i}}",
-        	"jlie":"\\operatorname{\\mathfrak{j}}",
-        	"klie":"\\operatorname{\\mathfrakalt{k}}",
-        	"llie":"\\operatorname{\\mathfrak{l}}",
-        	"mlie":"\\operatorname{\\mathfrak{m}}",
-        	"nlie":"\\operatorname{\\mathfrak{n}}",
-        	"olie":"\\operatorname{\\mathfrak{o}}",
-        	"plie":"\\operatorname{\\mathfrak{p}}",
-        	"qlie":"\\operatorname{\\mathfrak{q}}",
-        	"rlie":"\\operatorname{\\mathfrak{r}}",
-        	"slie":"\\operatorname{\\mathfrak{s}}",
-        	"tlie":"\\operatorname{\\mathfrak{t}}",
-        	"ulie":"\\operatorname{\\mathfrak{u}}",
-        	"vlie":"\\operatorname{\\mathfrakalt{v}}",
-        	"wlie":"\\operatorname{\\mathfrakalt{w}}",
-        	"xlie":"\\operatorname{\\mathfrakalt{x}}",
-        	"ylie":"\\operatorname{\\mathfrakalt{y}}",
-        	"zlie":"\\operatorname{\\mathfrakalt{z}}",
+        	"alie":"\\mathfrak{a}",
+        	"blie":"\\mathfrak{b}",
+        	"clie":"\\mathfrak{c}",
+        	"dlie":"\\mathfrak{d}",
+        	"elie":"\\mathfrak{e}",
+        	"flie":"\\mathfrak{f}",
+        	"glie":"\\mathfrak{g}",
+        	"hlie":"\\mathfrak{h}",
+        	"ilie":"\\mathfrak{i}",
+        	"jlie":"\\mathfrak{j}",
+        	"klie":"\\mathfrakalt{k}",
+        	"llie":"\\mathfrak{l}",
+        	"mlie":"\\mathfrak{m}",
+        	"nlie":"\\mathfrak{n}",
+        	"olie":"\\mathfrak{o}",
+        	"plie":"\\mathfrak{p}",
+        	"qlie":"\\mathfrak{q}",
+        	"rlie":"\\mathfrak{r}",
+        	"slie":"\\mathfrak{s}",
+        	"tlie":"\\mathfrak{t}",
+        	"ulie":"\\mathfrak{u}",
+        	"vlie":"\\mathfrakalt{v}",
+        	"wlie":"\\mathfrakalt{w}",
+        	"xlie":"\\mathfrakalt{x}",
+        	"ylie":"\\mathfrakalt{y}",
+        	"zlie":"\\mathfrakalt{z}",
         	"cat":[
         		"\\mathsf{#1}",
         		1
