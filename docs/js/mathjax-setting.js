@@ -474,6 +474,10 @@ window.MathJax = {
         	"half":"\\frac{1}{2}",
         	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
+        	"mat":[
+        		"\\begin{bmatrix}#1\\end{bmatrix}",
+        		1
+        	],
         	"op":"\\mathcal{O}",
         	"vacL":"\\langle 0 \\rvert",
         	"vacR":"\\lvert 0 \\rangle",
