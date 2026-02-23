@@ -474,8 +474,12 @@ window.MathJax = {
         	"half":"\\frac{1}{2}",
         	"thalf":"\\tfrac{1}{2}",
         	"oo":"\\infty",
-        	"mat":[
+        	"bmat":[
         		"\\begin{bmatrix}#1\\end{bmatrix}",
+        		1
+        	],
+        	"pmat":[
+        		"\\begin{pmatrix}#1\\end{pmatrix}",
         		1
         	],
         	"op":"\\mathcal{O}",
