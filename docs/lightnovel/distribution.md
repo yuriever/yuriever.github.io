@@ -4,8 +4,8 @@ We review some basic aspects of distributions.
 
 ## Analytic continuation of distributions
 
-The analytic continuation of distributions was initiated by Gelfand and his collaborators in [@Gelfand1] [@Gelfand2], and this motivated Bernstein to develop the theory of D-modules [@Bernstein1] [@Bernstein2].
-In this work, we only need some simple cases. Following [@Gelfand1] [@Gelfand2], we provide a brief and physics-oriented review.
+The analytic continuation of distributions was initiated by Gelfand and his collaborators in [@Gelfand1; @Gelfand2], and this motivated Bernstein to develop the theory of D-modules [@Bernstein1; @Bernstein2].
+Following [@Gelfand1; @Gelfand2], we provide a brief and physics-oriented review.
 
 ### Regularization and normalization
 
@@ -29,10 +29,10 @@ If $\phi_{\lambda}(x)$ is meromorphic in $\lambda\in U\subset\CC$, we can cancel
 
 ### Homogeneous distributions
 
-The distributional solutions to the following functional equation are called homogeneous distributions: for $x\in\RR$, $\lambda>0$,
+The distributional solutions to the following functional equation are called homogeneous distributions: for $x\in\RR$, $c>0$,
 
 \begin{equation}
-    f(\lambda x)=\lambda^{a}f(x)
+    f(c x)=c^{\lambda}f(x)
     \, ,
 \end{equation}
 
@@ -139,10 +139,11 @@ At the removed poles, these six distributions localize to the Dirac delta functi
 
     The last one is useful in computation and is consistent with the branch cut $x\in (-\infty,0)$ of $x^{\lambda}$.
 
-### Analytic structure of $x_{\tacp}^\lambda$
+### Analytic structure
 
+As an example, we discuss the analytic structure of $x_{\tacp}^\lambda$.
 The integral $(x_{\tacp}^\lambda,f(x))=\intrange{dx}{0}{\oo}x^\lambda f(x)$ is convergent and hence is holomorphic for $\Re \lambda> -1$.
-For $\Re \lambda\leq -1$ the integral can be divergent and acquires regularization near $x=0$. The easiest way to see $\lambda$-poles in this region is to choose the test function as $e^{-x}$, then $(x_{\tacp}^\lambda,e^{-x})=\gm{\lambda+1}$ manifests the analytic structure of $x_{\tacp}^\lambda$ and provides the normalization.
+For $\Re \lambda\leq -1$ the integral can be divergent and acquires regularization near $x=0$. The easiest way to see $\lambda$-poles in this region is to choose the test function as $e^{-x}$, then $(x_{\tacp}^\lambda,e^{-x})=\gm{\lambda+1}$ manifests the meromorphicity of $x_{\tacp}^\lambda$ and provides the normalization.
 
 A finer argument to read off the residues at $\lambda=-n-1$ is as follows.
 Given a real-analytic test function, inserting its Taylor expansion and dividing the integration region into $[0,1]$ and $[1,\oo)$, we obtain
@@ -253,20 +254,20 @@ The normalized version and its values at the removed poles are
 
 In higher dimensions, homogeneous distributions are proportional to the spherical harmonics in the representations of the rotation group.
 We only consider the spherical-symmetric case for simplicity.
-In higher dimensions, the solution of $f(\lambda x)=\lambda^{a} f(x)$ for $x\in\RR^{n}$, $\lambda>0$ is $|x|^{a}$, In the spherical coordinates $x=r\hat{x}$ for $\hat{x}\in\sphere{d-1}$, $r>0$, the action of $|x|^{a}$ on a test function is
+In higher dimensions, the solution of $f(c x)=c^{\lambda} f(x)$ for $x\in\RR^{n}$, $c>0$ is $|x|^{\lambda}$, In the spherical coordinates $x=r\hat{x}$ for $\hat{x}\in\sphere{d-1}$, $r>0$, the action of $|x|^{\lambda}$ on a test function is
 
 \begin{equation}
-    (|x|^{a},f(x))
+    (|x|^{\lambda},f(x))
     =
-    \inttt{d\hat{x}}{\sphere{d-1}}\intt{dr}{r^{a+d-1}}f(r\hat{x})
+    \inttt{d\hat{x}}{\sphere{d-1}}\intt{dr}{r^{\lambda+d-1}}f(r\hat{x})
     \, ,
 \end{equation}
 
-hence the possible poles are at $a=-n-d$, $n\in\NN$. Futhermore, the poles for odd $n$-s are absent, since the scalar differential operators constructed from $\frac{\pp}{\pp x^{\mu}}$ are $\square^{n}$.
-This implies $\frac{1}{\gm{\frac{a+d}{2}}}|x|^{a}$ is holomorphic w.r.t. $a\in\CC$, and the values at the removed poles are
+hence the possible poles are at $\lambda=-n-d$, $n\in\NN$. Futhermore, the poles for odd $n$-s are absent, since the scalar differential operators constructed from $\frac{\pp}{\pp x^{\mu}}$ are $\square^{n}$.
+This implies $\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\lambda}$ is holomorphic w.r.t. $\lambda\in\CC$, and the values at the removed poles are
 
 \begin{equation}
-    \frac{1}{\gm{\frac{a+d}{2}}}|x|^{a}\bigg|_{a=-2n-d}
+    \eval{\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\lambda}}{\lambda=-2n-d}
     =
     \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\gm{\frac{d}{2}+n}}\square^{n}\delta(x)
     \, .
@@ -298,7 +299,7 @@ Table: The regularized homogeneous distributions, where $n\in \NN$.
 
 ## Analytic functionals
 
-The complex delta function $\delta_{\CC}$ is an analytic functional belonging to the Gelfand-Shilov space $Z'$, which is the dual of the space $Z$ of entire functions of at most exponential growth, see [@Gelfand1] [@Gelfand2].
+The complex delta function $\delta_{\CC}$ is an analytic functional belonging to the Gelfand-Shilov space $Z'$, which is the dual of the space $Z$ of entire functions of at most exponential growth, see [@Gelfand1; @Gelfand2].
 This distribution is employed in the celestial literature to understand the analytic continuation of $\Delta$, see e.g. [@Donnay:2020guq], and it also appears in the method of brackets for evaluating Feynman integrals, see e.g. [@Gonzalez:2008xm; @Gonzalez:2010nm; @Gonzalez:2021vqh; @Ananthanarayan:2021not].
 Following [@Donnay:2020guq], we provide a brief and self-contained introduction here.
 
@@ -429,7 +430,7 @@ As a formal distribution, the $\delta$-function is
     =
     \sum_{n\in\ZZ}\frac{w^{n}}{z^{n+1}}
     =
-    \frac{1}{z-w}\bigg|_{|z|>|w|}-\frac{1}{z-w}\bigg|_{|z|<|w|}
+    \eval{\frac{1}{z-w}}{|z|>|w|} - \eval{\frac{1}{z-w}}{|z|<|w|}
     \, ,
 \end{equation}
 
