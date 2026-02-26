@@ -21,7 +21,6 @@ Supplementary materials:
 
 * [xAct-eom-and-emt.nb](xAct-eom-and-emt.nb)
 
-
 ## Introduction
 
 We introduce the symbolic tensor functionality of **xAct**, and as examples, we derive equations of motion in the following theories.
@@ -49,7 +48,6 @@ Notice that:
 * due to the non-minimal coupling $R \phi^2$, the conformal scalar theory is better behaved than the free scalar theory on curved manifolds.
 
 Here the computation of variational calculus is purely symbolic and there are no issues of global topology or function space [^integral]. The relevant data is simply a local chart equipped with geometrical structures. We need to manipulate expressions according to a list of rules like Leibniz rule and integration by parts (IBP), to reduce the complexity of expressions and to approach to some target expression.
-
 
 ## The structure of the notebook
 
@@ -90,7 +88,6 @@ The following functions are not covered and can be found in [the documentation](
 * `#!wl Dagger, DaggerIndex` - complex vector bundle
 
 * `#!wl LieD, LieDToCovD, Bracket` - Lie derivative
-
 
 ## Some further explanations
 

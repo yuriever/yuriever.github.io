@@ -1,9 +1,8 @@
 # Workbench
 
-
 ## Test
 
-* [MathJax environment](workbench/test/env.md)
+* [MathJax environment](workbench/test/mathjax-env.md)
 
 * [MathJax macro](workbench/test/macro.md)
 

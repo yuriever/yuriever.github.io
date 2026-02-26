@@ -3,7 +3,6 @@ title: Triangulated reality
 ---
 <h1>Triangulated reality<span class="subtitle">Triangulating the real world via symbolic computation</span></h1>
 
-
 ## Articles
 
 * [Standard evaluation sequence](symbolic/evaluation/evaluation.md)
@@ -27,7 +26,6 @@ title: Triangulated reality
 * [Introduction to xAct](symbolic/xAct/xAct.md)
 
     * Equation of motion and stress tensor.
-
 
 ## Documentations
 
@@ -53,9 +51,7 @@ title: Triangulated reality
 
 * [Yurie/Autocode](symbolic/Yurie-Autocode/doc.md)
 
-
 ## External links
-
 
 ### Tutorials
 
@@ -67,7 +63,6 @@ title: Triangulated reality
 
 * [Mathematica summer school on theoretical physics](http://msstp.org/)
 
-
 ### Talks
 
 * [Inside the Mathematica Pattern Matcher](https://library.wolfram.com/infocenter/Conferences/6999/)
@@ -75,7 +70,6 @@ title: Triangulated reality
 
 * [Working with unevaluated expressions](https://library.wolfram.com/infocenter/Conferences/377/)
     * This talk demonstrates situations in which evaluation control is important, points out common pitfalls and provides useful tools and techniques.
-
 
 ### Paclets
 

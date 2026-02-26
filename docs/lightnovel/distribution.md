@@ -147,7 +147,6 @@ The second term is holomorphic in $\lambda$ by the fast decay. The first term sh
     \, .
 \end{equation}
 The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+1}}x_{\tacp}^\lambda$, then the values at the removed poles are
-
 \begin{equation}
     \eval{\frac{1}{\gm{\lambda+1}}x_{\tacp}^\lambda}{\lambda=-n-1}=\delta^{(n)}(x)
     \, .
@@ -157,14 +156,11 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
 
     In practice, the test functions do not decay sufficiently fast as $x\to \oo$, and the singularity at infinity plays an important role.
     For example, choosing the test function as $(1+x)^{-1}$, there are additional poles at nonnegative integers:
-
     \begin{equation}
         (x_{\tacp}^\lambda,(1+x)^{-1})=\gm{-\lambda}\,  \gm{\lambda+1}
         \, .
     \end{equation}
-
     In this case the test function is not in $S(\RR)$ and should be divided into two parts: (1) one is in $S(\RR)$ and detects the singularity of $x_{\tacp}^\lambda$ at origin, providing the factor $\gm{\lambda+1}$; (2) another is well-behaved as $x\to \oo$ and decays sufficiently fast as $x\to 0$, then detects the singularity of $x_{\tacp}^\lambda$ at infinity, providing the factor $\gm{-\lambda}$, e.g.
-
     \begin{equation}
         (x_{\tacp}^\lambda,e^{-1/x})=-\gm{-\lambda-1}
         \, .
@@ -173,27 +169,22 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
 ### Fourier transform
 
 The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fourier transform $f(p)$ vanishes at infinity,
-
 \begin{equation}
     f(p)=\int_{\RR^d}d^d x\, f(x) e^{-ip\cdot x}\to 0  \textInMath{as} |p|\to \oo
     \, .
 \end{equation}
-
 The intuition here is that decay properties of distributions are Fourier-transformed into regularity properties.
 
 Under the Fourier transform, the basis $x_{\tac{0|1}}^{\lambda}$ remains invariant due to parity. In particular, the Dirac delta functions are Fourier transformed into monomials:
-
 \begin{equation}
     \delta^{(n)}(x) =\inttt{\frac{dp}{2\pi}}{\RR}e^{ipx} (ip)^{n}
     \, .
 \end{equation}
-
 The bases $x_{\tacpm}^{\lambda}$ and $x_{\tac{\pm i}}^{\lambda}$ are Fourier transform pairs, revealing the Paley-Wiener theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
 
 ### Two dimensions
 
 In $2d$, with the complex coordinate $z=r e^{i\theta}$, the homogeneous distributions can be written as
-
 \begin{equation}
     z^{\frac{\delta+j}{2}}\zb^{\frac{\delta-j}{2}}
     \eqq
@@ -205,9 +196,7 @@ In $2d$, with the complex coordinate $z=r e^{i\theta}$, the homogeneous distribu
     j\in\ZZ
     \, .
 \end{equation}
-
 Similar to the $1d$ case, to read off the analytic structure, we divide the integration region into the disk $r\in[0,1]$ and $r\in[1,\oo)$, then
-
 \begin{equation}
     (z^{\frac{\delta+j}{2}}\zb^{\frac{\delta-j}{2}},f(z,\zb))
     =
@@ -218,7 +207,6 @@ Similar to the $1d$ case, to read off the analytic structure, we divide the inte
     \inttt{d^2 z}{r\geq 1}\rest
     \, .
 \end{equation}
-
 For fixed $j=m-n$, this exhibits the simple poles at $\delta=-n-m-2$ with residues proportional to $\delta^{(n,m)}(z,\zb)$.
 The normalized version and its values at the removed poles are
 
@@ -237,17 +225,14 @@ The normalized version and its values at the removed poles are
 In higher dimensions, homogeneous distributions are proportional to the spherical harmonics in the representations of the rotation group.
 We only consider the spherical-symmetric case for simplicity.
 In higher dimensions, the solution of $f(c x)=c^{\lambda} f(x)$ for $x\in\RR^{n}$, $c>0$ is $|x|^{\lambda}$, In the spherical coordinates $x=r\hat{x}$ for $\hat{x}\in\sphere{d-1}$, $r>0$, the action of $|x|^{\lambda}$ on a test function is
-
 \begin{equation}
     (|x|^{\lambda},f(x))
     =
     \inttt{d\hat{x}}{\sphere{d-1}}\intt{dr}{r^{\lambda+d-1}}f(r\hat{x})
     \, ,
 \end{equation}
-
 hence the possible poles are at $\lambda=-n-d$, $n\in\NN$. Futhermore, the poles for odd $n$-s are absent, since the scalar differential operators constructed from $\frac{\pp}{\pp x^{\mu}}$ are $\square^{n}$.
 This implies $\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\lambda}$ is holomorphic w.r.t. $\lambda\in\CC$, and the values at the removed poles are
-
 \begin{equation}
     \eval{\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\lambda}}{\lambda=-2n-d}
     =
@@ -256,7 +241,6 @@ This implies $\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\lambda}$ is holomorphic w.
 \end{equation}
 
 Especially for $n=0$, we have
-
 \begin{equation}
     \delta^{(d)}(x)
     =
@@ -286,7 +270,6 @@ This distribution is employed in the celestial literature to understand the anal
 Following [@Donnay:2020guq], we provide a brief and self-contained introduction here.
 
 The complex delta function is defined as the identity of the Mellin transform,
-
 \begin{equation}
     \label{eq: complex delta function and Mellin transform}
     \intrange{\frac{d\Delta}{2\pi i}}{a-i\infty}{a+i\infty}
@@ -295,9 +278,7 @@ The complex delta function is defined as the identity of the Mellin transform,
     f(\Delta_{0})
     \, ,
 \end{equation}
-
 and formally can be written as
-
 \begin{equation}
     \label{eq: complex delta function}
     \deltaC{\Delta-\Delta_{0}}
@@ -307,7 +288,6 @@ and formally can be written as
 \end{equation}
 
 As a generalization of the conventional Dirac delta function, when $\Delta_{0}$ locates on the integration contour $\Delta\in a + i\RR$ in \eqref{eq: complex delta function and Mellin transform}, $\delta_{\CC}$ reduces to
-
 \begin{equation}
     \deltaC{\Delta-\Delta_{0}}
     =
@@ -318,7 +298,6 @@ As a generalization of the conventional Dirac delta function, when $\Delta_{0}$ 
 \end{equation}
 
 When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the following approximations:
-
 \begin{equation}
     \label{eq: complex Delta function approximation}
     \deltaC{\Delta-\Delta_{0}}
@@ -351,7 +330,6 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
     This can be shown by a contour deformation argument.
     For $\Re\Delta_{0}>a$, we consider a test function $f(\Delta)$ that is analytic in the region $a<\Re \Delta$ and decays sufficiently fast as $\Delta\to +\oo$.
     As $\varepsilon^{\Delta-\Delta_{0}}\to 0$, we can enclose the contour to the right and pick up the poles at $\Delta=\Delta_{0}+n$, $n\in\NN$, leading to
-
     \begin{equation}
         \lim_{\varepsilon\to 0}
         \intrange{\frac{d\Delta}{2\pi i}}{a-i\oo}{a+i\oo}
@@ -363,7 +341,6 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
         f(\Delta_{0})
         \, ,
     \end{equation}
-
     which justifies the defining property \eqref{eq: complex delta function and Mellin transform}.
 
     From the analysis above, we observe that only the term $n = 0$ needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for $f(\Delta)$ to be holomorphic in the strip $a < \Re \Delta < \Re \Delta_{0}$, to be meromorphic or contain branch cuts in the region $\Re \Delta_{0} < \Re \Delta$, and to decay sufficiently fast as $\Delta \to +\infty$.
@@ -373,7 +350,6 @@ When $\Delta_{0}$ leaves off the integration contour, $\delta_{\CC}$ admits the 
     Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation} to the case $\Re\Delta_{0}=a$, there would appear an extra factor $\half$.
 
     The reason is as follows: in this case the leading pole $\Delta=\Delta_{0}$ lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle $C_{\Delta_{0},\delta} = \set{\Delta \given \Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}<\theta<\frac{3\pi}{2}}$ surrounding the leading pole:
-
     \begin{equation}
         \lim_{\delta\to 0}
         \inttt{\frac{d\Delta}{2\pi i}}{C_{\Delta_{0},\delta}}
@@ -406,7 +382,6 @@ This specification admits redundancy: for any holomorphic function $h$ on the wh
 ## Formal distributions
 
 As a formal distribution, the $\delta$-function is
-
 \begin{equation}
     \delta(z-w)
     =
@@ -415,9 +390,7 @@ As a formal distribution, the $\delta$-function is
     \eval{\frac{1}{z-w}}{|z|>|w|} - \eval{\frac{1}{z-w}}{|z|<|w|}
     \, ,
 \end{equation}
-
 which simply restates the contour deformation
-
 \begin{equation}
     \inttt{\frac{dz}{z-w}}{C_{w}}
     =

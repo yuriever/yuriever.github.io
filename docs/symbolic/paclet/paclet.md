@@ -4,7 +4,6 @@ References:
 
 * [Paclets and paclet development](https://www.wolframcloud.com/obj/tgayley/Published/PacletDevelopment.nb) `tutorial/Paclets`
 
-
 ## Paclet structure
 
 Syntactic dependence:
@@ -29,7 +28,6 @@ Syntactic dependence:
         ...
     ...
     ```
-
 
 ## Package structure
 
@@ -62,7 +60,6 @@ Syntactic dependence:
     EndPackage[];
     ```
 
-
 ## Symbol types
 
 * Constant - public/private constants.
@@ -77,7 +74,6 @@ Syntactic dependence:
 
 * Formatting function - format the output. It's better to separate the intermediate values passed between functions and the return values.
 
-
 ## Naming convention
 
 * The symbol names should indicate the types, since there is no inbuilt type system in Mathematica, e.g.,
@@ -89,7 +85,6 @@ Syntactic dependence:
     * list pattern `#!wl fooList_`.
 
 * The keys of options and in associations should be capitalized strings.
-
 
 ## Code style
 

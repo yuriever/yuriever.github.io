@@ -3,7 +3,6 @@
 ## 问题 1.1
 
 * 一些公式：
-
     \begin{align}
         &
         \bra{n}x^{2}\ket{n}=\frac{(2 n+1) \hbar }{2 m \omega }
@@ -24,7 +23,6 @@
 * 部分同学仅对 harmonic oscillator 验证了该等式。题目要求对任意的（束缚）势进行验证。
 
 * 从坐标空间波函数出发，利用分部积分与 Schrodinger equation 捯饬一下即可。
-
     \begin{align}
         \rhs
         &=
@@ -36,18 +34,14 @@
         -\intt{dx}\phi^{*}\phi V
         \, .
     \end{align}
-
     对于第二项利用定态 Schrodinger equation $(K+V)\phi=E\phi$ 有
-
     \begin{equation}
         -\intt{dx}\phi^{*}V\phi
         =\intt{dx}\phi^{*}(K\phi)-E\intt{dx}\phi^{*}\phi
         =\bra{\phi}K\ket{\phi}-E
         \, .
     \end{equation}
-
     类似的，对于第一项有
-
     \begin{align}
         &\peq
         -\intt{dx}\pp(\phi^{*}\phi) xV
@@ -69,14 +63,12 @@
         )
         \, .
     \end{align}
-
     其中第三行利用了定态 Schrodinger equation 以及其复共轭。接下来：
 
     * 第二与第四项组合出 $\pp(\phi^{*}\phi)$，分部积分消去 $x$，给出 $E$；
     * 第一与第三项由于 $K=-\pp^{2}$ 组合出 $\pp(\pp\phi^{*}\pp\phi)$，分部积分消去 $x$，再利用分部积分将 $\pp\phi^{*}\pp\phi$ 转化为 $\phi^{*}K\phi$。
 
 * 部分同学尝试利用 Heisenberg equation，且误认为 $\frac{d (xp)_{H}}{dt}=0$。需要注意对不含时的 Hamiltonian，Heisenberg picture 下的算子为 $\cO_{H}=e^{iHt}\cO e^{-iHt}$，另一方面定态 $\ket{\phi}$ 的时间演化是 trivial 的：$e^{-iHt}\ket{\phi}=e^{-iEt}\ket{\phi}$，这样才能说明
-
     \begin{equation}
         0=\bra{\phi}\frac{d(xp)_H}{dt}\ket{\phi}=
         \bra{\phi}i[H,(xp)_{H}]\ket{\phi}
@@ -88,7 +80,6 @@
 ## 问题 2
 
 * 一些公式：
-
     \begin{align}
         &
         (w|z)=e^{w^{*}z}
@@ -112,15 +103,12 @@
     \end{align}
 
 * 在验证 coherent state 是湮灭算子的本征态时可以利用 BCH formula，
-
     \begin{equation}
         e^{t x}ye^{-t x}=y+[x,y]+\frac{1}{2!}[x,[x,y]]+\rest
         \, ,
     \end{equation}
-
     它可以视为 Lie algebra 到 formal Lie group 的指数映射。当右边的求和截断时，例如 nilpotent Lie algebra，该公式可以简化计算。
     特别的，在本问题中我们有
-
     \begin{equation}
         e^{-a^{\dagger}}a e^{a^{\dagger}}=a+z\id
         \, ,

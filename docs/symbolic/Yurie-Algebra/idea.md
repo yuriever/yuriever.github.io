@@ -1,6 +1,5 @@
 # Designing idea
 
-
 ## Expression tree
 
 Nodes of expression tree:
@@ -14,7 +13,6 @@ Nodes of expression tree:
 * `#!wl _tensor`
 
 * `#!wl _NonCommutativeMultiply`
-
 
 ## Attributes
 
@@ -47,7 +45,6 @@ Nodes of expression tree:
     * `#!wl parityUnsafe` - similar to `#!wl tensorankUnsafe`.
 
     * `#!wl parity` - similar to `#!wl tensorank`.
-
 
 ## File structure
 
@@ -84,6 +81,5 @@ Extension
 * Utility.wl
 
 * Check.wl
-
 
 ## Cache

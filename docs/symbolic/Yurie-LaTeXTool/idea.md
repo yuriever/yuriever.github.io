@@ -1,6 +1,5 @@
 # Designing idea
 
-
 ## Magic comment
 
 * `#!wl comment_String` - comment identifier;

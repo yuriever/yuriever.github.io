@@ -1,6 +1,5 @@
 # File operations
 
-
 ## File name operations
 
 |               | a/b/c     | a/b/c.txt     |
@@ -25,7 +24,6 @@
 ---
 
 * `#!wl FileNameJoin[list_]` - join the list of path elements into a file path according to the operating system.
-
 
 ## File operations
 
@@ -58,7 +56,6 @@
 * `#!wl FileSystemMap|FileSystemScan[f_,dir_]` - `#!wl Map|Scan` for files.
 
 * `#!wl FileSystemTree[dir_]` - return the file tree.
-
 
 ## Directories
 
