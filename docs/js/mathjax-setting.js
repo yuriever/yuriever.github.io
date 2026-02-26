@@ -132,10 +132,10 @@ window.MathJax = {
         		"{\\color{Purple}#1}",
         		1
         	],
-        	"tacp":"{\\color{Purple}\\pmb{+}}",
-        	"tacm":"{\\color{Purple}\\pmb{-}}",
-        	"tacpm":"{\\color{Purple}\\pmb{\\pm}}",
-        	"tacmp":"{\\color{Purple}\\pmb{\\mp}}",
+        	"tacp":"{\\color{Purple}+}",
+        	"tacm":"{\\color{Purple}-}",
+        	"tacpm":"{\\color{Purple}\\pm}",
+        	"tacmp":"{\\color{Purple}\\mp}",
         	"sphere":[
         		"\\operatorname{S}^{#1}",
         		1
