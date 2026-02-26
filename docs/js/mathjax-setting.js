@@ -128,6 +128,10 @@ window.MathJax = {
         	"out":"{\\color{Blue}\\mathsf{o}}",
         	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
         	"outinn":"{\\color{Blue}\\mathsf{o}}{\\color{Red}\\mathsf{i}}",
+        	"tac":[
+        		"{\\color{Purple}#1}",
+        		1
+        	],
         	"tacp":"{\\color{Purple}\\pmb{+}}",
         	"tacm":"{\\color{Purple}\\pmb{-}}",
         	"tacpm":"{\\color{Purple}\\pmb{\\pm}}",
@@ -236,6 +240,14 @@ window.MathJax = {
         	],
         	"deltaD":[
         		"\\operatorname{\\delta}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaC":[
+        		"\\operatorname{\\delta_{\\mathbb{C}}}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaK":[
+        		"\\operatorname{\\delta_{\\mathrm{K}}}\\mleft(#1\\mright)",
         		1
         	],
         	"deltaMC":[
