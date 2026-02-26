@@ -26,41 +26,47 @@ class _Writer:
             return
         self.parts.append(text)
         self.length += len(text)
-        self.recent = (self.recent + text)[-8:]
+        self.recent = (self.recent + text)[-64:]
 
     def endswith(self, suffix: str) -> bool:
         if len(suffix) > len(self.recent):
             return False
         return self.recent.endswith(suffix)
 
+    def has_trailing_blankline(self) -> bool:
+        return bool(re.search(r"\n[ \t]*\n[ \t]*$", self.recent))
+
+    def is_at_line_start(self) -> bool:
+        return bool(re.search(r"(?:^|\n)[ \t]*$", self.recent))
+
     def text(self) -> str:
         return "".join(self.parts)
 
 
-def _ensure_newline_before(w: _Writer) -> None:
-    if w.length == 0 or w.endswith("\n"):
+def _ensure_newline_before(w: _Writer, prefix: str = "") -> None:
+    if w.length == 0 or w.is_at_line_start():
         return
-    w.append("\n")
+    w.append("\n" + prefix)
 
 
-def _ensure_blankline_before(w: _Writer) -> None:
+def _ensure_blankline_before(w: _Writer, prefix: str = "") -> None:
     if w.length == 0:
         return
-    if w.endswith("\n\n"):
+    if w.has_trailing_blankline():
         return
     if w.endswith("\n"):
-        w.append("\n")
+        w.append(prefix + "\n")
     else:
-        w.append("\n\n")
+        w.append("\n" + prefix + "\n")
 
 
-def _append_post_end_spacing_for_inline_tail(w: _Writer) -> None:
-    if w.endswith("\n\n"):
+def _append_post_end_spacing_for_inline_tail(w: _Writer, prefix: str = "") -> None:
+    if w.has_trailing_blankline():
         return
     if w.endswith("\n"):
-        w.append("\n")
+        w.append(prefix + "\n")
     else:
-        w.append("\n\n")
+        w.append("\n" + prefix + "\n")
 
 
 def _process_line(
@@ -68,12 +74,18 @@ def _process_line(
     w: _Writer,
     env_stack: list[str],
     code_span_ticks: int | None
-) -> tuple[int | None, bool]:
+) -> tuple[int | None, str | None]:
     i = 0
     n = len(line)
-    pending_blank_after_end = False
+    pending_blank_after_end_prefix: str | None = None
+    leading_ws_len = len(line) - len(line.lstrip(" \t"))
+    line_has_leading_env = _ENV_RE.match(line, leading_ws_len) is not None
 
     while i < n:
+        if code_span_ticks is None and line_has_leading_env and i < leading_ws_len:
+            i = leading_ws_len
+            continue
+
         ch = line[i]
 
         if ch == "`":
@@ -103,6 +115,9 @@ def _process_line(
         kind, env = m.group(1), m.group(2)
         token = m.group(0)
         token_end = m.end()
+        at_line_start = line[:i].strip() == ""
+        line_prefix = line[:i] if at_line_start else ""
+        skipped_line_prefix = at_line_start and line_has_leading_env and i == leading_ws_len
         token_is_top_begin = kind == "begin" and len(env_stack) == 0
         token_is_top_end = kind == "end" and len(env_stack) == 1 and env_stack[-1] == env
 
@@ -113,13 +128,15 @@ def _process_line(
         has_inline_text_after = k < n and line[k] != "\n"
 
         if token_is_top_begin:
-            _ensure_blankline_before(w)
+            _ensure_blankline_before(w, line_prefix)
 
         if kind == "begin":
             env_stack.append(env)
+            if skipped_line_prefix:
+                w.append(line_prefix)
             w.append(token)
             if token_is_top_begin and has_inline_text_after:
-                _ensure_newline_before(w)
+                _ensure_newline_before(w, line_prefix)
             if token_is_top_begin and token_end < k:
                 i = k
             else:
@@ -129,14 +146,16 @@ def _process_line(
         # kind == "end"
         if env_stack and env_stack[-1] == env:
             if token_is_top_end:
-                _ensure_newline_before(w)
+                _ensure_newline_before(w, line_prefix)
             env_stack.pop()
+            if skipped_line_prefix:
+                w.append(line_prefix)
             w.append(token)
             if token_is_top_end:
                 if has_inline_text_after:
-                    _append_post_end_spacing_for_inline_tail(w)
+                    _append_post_end_spacing_for_inline_tail(w, line_prefix)
                 else:
-                    pending_blank_after_end = True
+                    pending_blank_after_end_prefix = line_prefix
             if token_is_top_end and token_end < k:
                 i = k
             else:
@@ -144,10 +163,12 @@ def _process_line(
             continue
 
         # Mismatched end token, keep as-is.
+        if skipped_line_prefix:
+            w.append(line_prefix)
         w.append(token)
         i = token_end
 
-    return code_span_ticks, pending_blank_after_end
+    return code_span_ticks, pending_blank_after_end_prefix
 
 
 def _normalize_markdown(markdown: str) -> str:
@@ -164,15 +185,15 @@ def _normalize_markdown(markdown: str) -> str:
     in_fence = False
     fence_char = ""
     fence_len = 0
-    pending_blank_after_end = False
+    pending_blank_after_end_prefix: str | None = None
 
     while i < len(lines):
         line = lines[i]
 
         if in_front_matter:
-            if pending_blank_after_end and line.strip() != "":
-                out.append("\n")
-            pending_blank_after_end = False
+            if pending_blank_after_end_prefix is not None and line.strip() != "":
+                out.append(pending_blank_after_end_prefix + "\n")
+            pending_blank_after_end_prefix = None
             out.append(line)
             if i > 0 and line.strip() == "---":
                 in_front_matter = False
@@ -181,9 +202,9 @@ def _normalize_markdown(markdown: str) -> str:
 
         fence_match = _FENCE_RE.match(line)
         if not in_fence and fence_match:
-            if pending_blank_after_end and line.strip() != "":
-                out.append("\n")
-            pending_blank_after_end = False
+            if pending_blank_after_end_prefix is not None and line.strip() != "":
+                out.append(pending_blank_after_end_prefix + "\n")
+            pending_blank_after_end_prefix = None
             marker = fence_match.group(1)
             in_fence = True
             fence_char = marker[0]
@@ -193,9 +214,9 @@ def _normalize_markdown(markdown: str) -> str:
             continue
 
         if in_fence:
-            if pending_blank_after_end and line.strip() != "":
-                out.append("\n")
-            pending_blank_after_end = False
+            if pending_blank_after_end_prefix is not None and line.strip() != "":
+                out.append(pending_blank_after_end_prefix + "\n")
+            pending_blank_after_end_prefix = None
             out.append(line)
             stripped = line.lstrip(" \t")
             run = 0
@@ -210,16 +231,16 @@ def _normalize_markdown(markdown: str) -> str:
             i += 1
             continue
 
-        if pending_blank_after_end:
+        if pending_blank_after_end_prefix is not None:
             if line.strip() == "":
-                pending_blank_after_end = False
+                pending_blank_after_end_prefix = None
             else:
-                out.append("\n")
-                pending_blank_after_end = False
+                out.append(pending_blank_after_end_prefix + "\n")
+                pending_blank_after_end_prefix = None
 
-        code_span_ticks, closed_top_end = _process_line(line, out, env_stack, code_span_ticks)
-        if closed_top_end:
-            pending_blank_after_end = True
+        code_span_ticks, closed_top_end_prefix = _process_line(line, out, env_stack, code_span_ticks)
+        if closed_top_end_prefix is not None:
+            pending_blank_after_end_prefix = closed_top_end_prefix
         i += 1
 
     return out.text()

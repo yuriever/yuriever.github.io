@@ -11,13 +11,11 @@ Following [@Gelfand1; @Gelfand2], we provide a brief and physics-oriented review
 
 For simplicity, we focus on tempered distributions on $\RR$.
 A tempered distribution $\phi\in S'(\RR)$ acting on the rapidly decreasing test function $f\in S(\RR)$ can be formally written as an integral
-
 \begin{equation}
     \label{eq: functional}
     (\phi,f)=\intt{d x}\phi(x) f(x)
     \, ,
 \end{equation}
-
 with the kernel $\phi(x)$.
 It is useful to conceptualize $f$ as a Gaussian wave-packet and $\phi$ as a sharp classical observable.
 
@@ -30,14 +28,12 @@ If $\phi_{\lambda}(x)$ is meromorphic in $\lambda\in U\subset\CC$, we can cancel
 ### Homogeneous distributions
 
 The distributional solutions to the following functional equation are called homogeneous distributions: for $x\in\RR$, $c>0$,
-
 \begin{equation}
     f(c x)=c^{\lambda}f(x)
     \, ,
 \end{equation}
 
 There are three bases of homogeneous distributions: the plus/minus basis is
-
 \begin{equation}
     x_{\tacp}^\lambda \eqq x^\lambda \theta(x)
     \, ,
@@ -45,9 +41,7 @@ There are three bases of homogeneous distributions: the plus/minus basis is
     x_{\tacm}^\lambda \eqq (-x)^\lambda \theta(-x)
     \, ,
 \end{equation}
-
 and the even/odd basis is
-
 \begin{equation}
     x_{\tac{0}}^\lambda \eqq |x|^\lambda= x_{\tacp}^\lambda+ x_{\tacm}^\lambda
     \, ,
@@ -55,9 +49,7 @@ and the even/odd basis is
     x_{\tac{1}}^\lambda \eqq |x|^\lambda \sign(x)=x_{\tacp}^\lambda- x_{\tacm}^\lambda
     \, .
 \end{equation}
-
 These four distributions are meromorphic functions in $\lambda\in\CC$, and the normalized versions are
-
 \begin{equation}
     \frac{1}{\gm{\lambda+1}}x_{\tacp}^\lambda
     \, , \quad
@@ -68,9 +60,7 @@ These four distributions are meromorphic functions in $\lambda\in\CC$, and the n
     \frac{1}{\gm{\frac{\lambda+2}{2}}}x_{\tac{1}}^\lambda
     \, .
 \end{equation}
-
 The third imaginary basis consists of boundary values of holomorphic functions,
-
 \begin{equation}
     \label{eq: homogeneous distribution - imaginary basis}
     \begin{aligned}
@@ -81,11 +71,9 @@ The third imaginary basis consists of boundary values of holomorphic functions,
         \, .
     \end{aligned}
 \end{equation}
-
 The $\lambda$-poles get canceled due to the phase factor, and $x_{\tac{\pm i}}^\lambda$ is holomorphic in $\lambda\in\CC$.
 
 At the removed poles, these six distributions localize to the Dirac delta function and its derivatives. For $n\in\NN$,
-
 \begin{align}
     \label{eq: homogeneous distribution - localization}
     &
@@ -124,7 +112,6 @@ At the removed poles, these six distributions localize to the Dirac delta functi
 !!! remark "Parity symmetry"
 
     Under the parity change $x\to -x$, the three bases transform as
-
     \begin{equation}
         \label{eq: homogeneous distribution - parity symmetry}
         (-x)_{\tacpm}^{\lambda}=x_{\tacmp}^{\lambda}
@@ -136,7 +123,6 @@ At the removed poles, these six distributions localize to the Dirac delta functi
         (-x)_{\tac{\pm i}}^{\lambda}=e^{\pm i\pi \lambda} x_{\tac{\mp i}}^{\lambda}
         \, .
     \end{equation}
-
     The last one is useful in computation and is consistent with the branch cut $x\in (-\infty,0)$ of $x^{\lambda}$.
 
 ### Analytic structure
@@ -147,7 +133,6 @@ For $\Re \lambda\leq -1$ the integral can be divergent and acquires regularizati
 
 A finer argument to read off the residues at $\lambda=-n-1$ is as follows.
 Given a real-analytic test function, inserting its Taylor expansion and dividing the integration region into $[0,1]$ and $[1,\oo)$, we obtain
-
 \begin{equation}
     (x_{\tacp}^\lambda,f(x))
     =
@@ -156,14 +141,11 @@ Given a real-analytic test function, inserting its Taylor expansion and dividing
     \intrange{dx}{1}{\oo}x^\lambda f(x)
     \, .
 \end{equation}
-
 The second term is holomorphic in $\lambda$ by the fast decay. The first term shows the simple poles at $\lambda=-n-1$, and after chopping off the test function, the residues are
-
 \begin{equation}
     \Res_{\lambda=-n-1} x_{\tacp}^\lambda = \frac{(-1)^{n}}{n!}\delta^{(n)}(x)
     \, .
 \end{equation}
-
 The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+1}}x_{\tacp}^\lambda$, then the values at the removed poles are
 
 \begin{equation}

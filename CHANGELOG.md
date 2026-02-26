@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 - Fixed MathJax environment parsing failures caused by missing empty lines around TeX environments in markdown.
 - Prevented transformations inside YAML front matter, fenced code blocks, and inline code spans.
+- Fixed TeX environment rendering inside indented admonition blocks (`!!!` / `???`) by preserving block indentation when injecting blank lines.
 
 ## Historical Website Development
 
