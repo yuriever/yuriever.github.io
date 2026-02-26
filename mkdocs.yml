@@ -114,3 +114,5 @@ plugins:
       bib_dir: "bib"
   - caption
 
+hooks:
+  - hooks/mathjax_env_preprocess.py
