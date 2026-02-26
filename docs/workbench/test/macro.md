@@ -68,6 +68,8 @@ $$\innout$$
 
 $$\outinn$$
 
+$$\tac{*}$$
+
 $$\tacp$$
 
 $$\tacm$$
@@ -167,6 +169,10 @@ $$\abs{*}$$
 $$\step{*}$$
 
 $$\deltaD{*}$$
+
+$$\deltaC{*}$$
+
+$$\deltaK{*}$$
 
 $$\deltaMC{*}$$
 
