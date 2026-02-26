@@ -121,7 +121,9 @@ LaTeX tools.
                 测试，$a$测试
                 ```
 
-    * `#!wl "SurroundEquationWithEmptyLine"->True`
+    * `#!wl "SurroundEquationWithEmptyLine"->False`
+
+        * **In version 4, this functionality is superseded by the hook `mathjax_env_preprocess.py`.**
 
         * surround equations with empty line;
 
