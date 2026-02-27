@@ -94,6 +94,8 @@ $$\lightcone{*}$$
 
 $$\lightconeproj{*}$$
 
+$$\deltaMCDim$$
+
 $$\geq$$
 
 $$\ge$$

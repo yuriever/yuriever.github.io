@@ -168,6 +168,7 @@ window.MathJax = {
         		"\\operatorname{PC}_{#1}",
         		1
         	],
+        	"deltaMCDim":"4",
         	"geq":"\\geqslant",
         	"ge":"\\geqslant",
         	"leq":"\\leqslant",
@@ -244,7 +245,7 @@ window.MathJax = {
         		1
         	],
         	"deltaMC":[
-        		"\\operatorname{\\delta^{(4)}}\\mleft(#1\\mright)",
+        		"\\operatorname{\\delta^{(\\deltaMCDim)}}\\mleft(#1\\mright)",
         		1
         	],
         	"gm":[
