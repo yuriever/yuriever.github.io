@@ -51,27 +51,22 @@ and the even/odd basis is
 \end{equation}
 These four distributions are meromorphic functions in $\lambda\in\CC$, and the normalized versions are
 \begin{equation}
-    \frac{1}{\gm{\lambda+1}}x_{\tacp}^\lambda
+    \frac{1}{\gm{\lambda+1}}x_{\tacpm}^\lambda
     \, , \quad
-    \frac{1}{\gm{\lambda+1}}x_{\tacm}^\lambda
-    \, ,  \quad
-    \frac{1}{\gm{\frac{\lambda+1}{2}}}x_{\tac{0}}^\lambda
-    \, ,\quad
-    \frac{1}{\gm{\frac{\lambda+2}{2}}}x_{\tac{1}}^\lambda
+    \frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{s:\tac{0|1}}^\lambda
     \, .
 \end{equation}
-The third imaginary basis consists of boundary values of holomorphic functions,
+The third imaginary basis consists of boundary values of holomorphic functions, and is holomorphic in $\lambda\in\CC$:
 \begin{equation}
     \label{eq: homogeneous distribution - imaginary basis}
     \begin{aligned}
-        &x_{\tac{+i}}^\lambda \eqq  \lim_{\varepsilon\to 0}(x+i\varepsilon )^\lambda=x_{\tacp}^\lambda+e^{i\pi \lambda}x_{\tacm}^\lambda
+        &x_{\tac{+i}}^\lambda \eqq  \lim_{\varepsilon\to 0^{+}}(x+i\varepsilon )^\lambda=x_{\tacp}^\lambda+e^{i\pi \lambda}x_{\tacm}^\lambda
         \, ,
         \\
-        &x_{\tac{-i}}^\lambda \eqq  \lim_{\varepsilon\to 0}(x-i\varepsilon )^\lambda=x_{\tacp}^\lambda+e^{-i\pi \lambda}x_{\tacm}^\lambda
+        &x_{\tac{-i}}^\lambda \eqq  \lim_{\varepsilon\to 0^{+}}(x-i\varepsilon )^\lambda=x_{\tacp}^\lambda+e^{-i\pi \lambda}x_{\tacm}^\lambda
         \, .
     \end{aligned}
 \end{equation}
-The $\lambda$-poles get canceled due to the phase factor, and $x_{\tac{\pm i}}^\lambda$ is holomorphic in $\lambda\in\CC$.
 
 At the removed poles, these six distributions localize to the Dirac delta function and its derivatives. For $n\in\NN$,
 \begin{align}
@@ -85,19 +80,11 @@ At the removed poles, these six distributions localize to the Dirac delta functi
     \, ,
     \\
     &
-    \frac{1}{\gm{\frac{\lambda+1}{2}}}x_{\tac{0}}^{\lambda}
+    \frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{s:\tac{0|1}}^{\lambda}
     =
-    \frac{(-1)^{n} n!}{(2n)!}\delta^{(2n)}(x)
+    \frac{(-1)^{n+s} n!}{(2n+s)!}\delta^{(2n+s)}(x)
     \, ,
-    \textInMath{for} \lambda=-2n-1
-    \, ,
-    \\
-    &
-    \frac{1}{\gm{\frac{\lambda+2}{2}}}x_{\tac{1}}^{\lambda}
-    =
-    \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)
-    \, ,
-    \textInMath{for} \lambda=-2n-2
+    \textInMath{for} \lambda=-2n-1-s
     \, ,
     \\
     &
@@ -125,7 +112,7 @@ At the removed poles, these six distributions localize to the Dirac delta functi
     \end{equation}
     The last one is useful in computation and is consistent with the branch cut $x\in (-\infty,0)$ of $x^{\lambda}$.
 
-### Analytic structure
+#### Analytic structure
 
 As an example, we discuss the analytic structure of $x_{\tacp}^\lambda$.
 The integral $(x_{\tacp}^\lambda,f(x))=\intrange{dx}{0}{\oo}x^\lambda f(x)$ is convergent and hence is holomorphic for $\Re \lambda> -1$.
@@ -152,6 +139,45 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
     \, .
 \end{equation}
 
+??? remark "Other bases"
+
+    For the plus/minus and even/odd bases, the actions on test functions are
+    \begin{align}
+        &
+        (x_{\tacpm}^{\lambda},f(x)) =
+        \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda+n+1}
+        +
+        \intrange{dx}{1}{\oo}x^\lambda f(\pm x)
+        \, ,
+        \\
+        &
+        (x_{\tac{0}}^{\lambda},f(x))
+        =
+        \sum_{n=0}^{\oo} \frac{f^{(2n)}(0)}{(2n)!}\frac{2}{\lambda+2n+1}
+        +
+        \intrange{dx}{1}{\oo}x^\lambda \LR{f(x)+f(-x)}
+        \, ,
+        \\
+        &
+        (x_{\tac{1}}^{\lambda},f(x))
+        =
+        \sum_{n=0}^{\oo} \frac{f^{(2n+1)}(0)}{(2n+1)!}\frac{2}{\lambda+2n+2}
+        +
+        \intrange{dx}{1}{\oo}x^\lambda \LR{f(x)-f(-x)}
+        \, .
+    \end{align}
+
+    For the imaginary basis, the action is
+    \begin{equation}
+        (x_{\tac{\pm i}}^{\lambda},f(x))
+        =
+        \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{1+e^{\pm i\pi (\lambda+n)}}{\lambda+n+1}
+        +
+        \intrange{dx}{1}{\oo}x^\lambda \LR{f(x)+e^{\pm i\pi \lambda}f(-x)}
+        \, .
+    \end{equation}
+    Notice that the $\lambda$-poles get canceled due to the phase factor, and $x_{\tac{\pm i}}^\lambda$ is holomorphic in $\lambda\in\CC$. As $\lambda$ approaches the removed poles, the first part gives the imaginary delta functions, and the second part gives the principal value of $x^{-n-1}$.
+
 ??? remark "Singularity at infinity"
 
     In practice, the test functions do not decay sufficiently fast as $x\to \oo$, and the singularity at infinity plays an important role.
@@ -166,7 +192,7 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
         \, .
     \end{equation}
 
-### Fourier transform
+#### Fourier transform
 
 The Riemann-Lebesgue lemma asserts that if $f(x)\in L^{1}(\RR^d)$ then the Fourier transform $f(p)$ vanishes at infinity,
 \begin{equation}
@@ -182,7 +208,7 @@ Under the Fourier transform, the basis $x_{\tac{0|1}}^{\lambda}$ remains invaria
 \end{equation}
 The bases $x_{\tacpm}^{\lambda}$ and $x_{\tac{\pm i}}^{\lambda}$ are Fourier transform pairs, revealing the Paley-Wiener theorems, which state that support properties of distributions are Fourier-transformed into analytic properties.
 
-### Two dimensions
+#### Two dimensions
 
 In $2d$, with the complex coordinate $z=r e^{i\theta}$, the homogeneous distributions can be written as
 \begin{equation}
@@ -220,7 +246,7 @@ The normalized version and its values at the removed poles are
     \, .
 \end{equation}
 
-### Higher dimensions
+#### Higher dimensions
 
 In higher dimensions, homogeneous distributions are proportional to the spherical harmonics in the representations of the rotation group.
 We only consider the spherical-symmetric case for simplicity.
@@ -248,6 +274,42 @@ Especially for $n=0$, we have
     \frac{\gm{\frac{d}{2}}}{\pi^{\frac{d}{2}} \gm{\frac{\varepsilon}{2}}}r^{-d+2\varepsilon}
     \, .
 \end{equation}
+
+### Associated homogeneous distributions
+
+For $\lambda \not \in \ZZ_{\leq -1}$, we can take $k$-th $\lambda$-derivative of $x_{\tacpm}^{\lambda}$,
+\begin{align}
+    &
+    x_{\tacpm}^{\lambda}\log^{k} x_{\tacpm}
+    \eqdef
+    \pp_{\lambda}^{k} x_{\tacpm}^{\lambda}
+    =
+    \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}(-1)^{k} k!}{(\lambda+n+1)^{k+1}}
+    +
+    \intrange{dx}{1}{\oo}x^\lambda \log^{k} x\,  f(\pm x)
+    \, .
+\end{align}
+
+As $\lambda$ approaches to the simple poles, the subleading term gives the associated homogeneous distributions: for $\lambda_{0}\in \ZZ_{\leq -1}$,
+\begin{equation}
+    x_{\tacpm,\log}^{\lambda_{0}}
+    \eqdef
+    \lim_{\lambda \to \lambda_{0}}\pp_{\lambda}\LR{(\lambda-\lambda_{0}) x_{\tacpm}^{\lambda}}
+    =
+    \sum_{\substack{n=0\\n\neq-\lambda_{0}-1}}^{\oo}
+    \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda_{0}+n+1}
+    +
+    \intrange{dx}{1}{\oo}x^{\lambda_{0}} \log x\,  f(\pm x)
+    \, .
+\end{equation}
+From the definition, for $\lambda\in \ZZ_{\leq -1}$, the derivatives are
+\begin{equation}
+    \pp_{x} x_{\tacpm,\log}^{\lambda}
+    =
+    \pm \lambda x_{\tacpm,\log}^{\lambda-1} \pm \frac{(-1)^{\lambda}}{(-\lambda)!} \delta^{(-\lambda)}(\pm x)
+    \, .
+\end{equation}
+
 
 ### Summary
 
