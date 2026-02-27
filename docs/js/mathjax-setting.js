@@ -230,16 +230,9 @@ window.MathJax = {
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
         	"sign":"\\operatorname{sign}",
+        	"step":"\\operatorname{\\theta}",
         	"abs":[
         		"\\mleft\\lvert #1 \\mright\\rvert",
-        		1
-        	],
-        	"step":[
-        		"\\operatorname{\\theta}\\mleft(#1\\mright)",
-        		1
-        	],
-        	"deltaD":[
-        		"\\operatorname{\\delta}\\mleft(#1\\mright)",
         		1
         	],
         	"deltaC":[
