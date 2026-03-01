@@ -72,8 +72,6 @@ extra_css:
 extra_javascript:
   # random text
   - js/random-text.js
-  # theorem
-  - js/box-thm.js
   # mathjax
   - js/mathjax-setting.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -116,3 +114,4 @@ plugins:
 
 hooks:
   - hooks/mathjax_env_preprocess.py
+  - hooks/thm-counter.py

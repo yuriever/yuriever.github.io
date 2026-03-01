@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Added build-time theorem/admonition numbering hook at `hooks/thm-counter.py`.
+
+### Changed
+
+- Replaced runtime theorem numbering (`docs/js/box-thm.js`) with build-time numbering in MkDocs hooks.
+- Updated MkDocs hooks configuration to use `hooks/thm-counter.py`.
+
 ## [1.0.1] - 2026-02-26
 
 ### Added
