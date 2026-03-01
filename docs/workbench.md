@@ -20,12 +20,4 @@
 
 * [Code](workbench/test/code.md)
 
-<!-- ## Dev
-
-* [Website development](workbench/dev/web-dev.md)
-
-* [Subtitle overrides](workbench/dev/subtitle.md)
-
-* [MathJax configuration](workbench/dev/mathjax-config.md)
-
-* [Customizing shortcuts via Karabiner](workbench/dev/hotkey.md) -->
+---
