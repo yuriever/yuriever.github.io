@@ -53,7 +53,7 @@ These four distributions are meromorphic functions in $\lambda\in\CC$, and the n
 \begin{equation}
     \frac{1}{\gm{\lambda+1}}x_{\tacpm}^\lambda
     \, , \quad
-    \frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{s:\tac{0|1}}^\lambda
+    \frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{\tac{s:0,1}}^\lambda
     \, .
 \end{equation}
 The third imaginary basis consists of boundary values of holomorphic functions, and is holomorphic in $\lambda\in\CC$:
@@ -68,33 +68,17 @@ The third imaginary basis consists of boundary values of holomorphic functions, 
     \end{aligned}
 \end{equation}
 
-At the removed poles, these six distributions localize to the Dirac delta function and its derivatives. For $n\in\NN$,
-\begin{align}
-    \label{eq: homogeneous distribution - localization}
-    &
-    \frac{1}{\gm{\lambda+1}}x_{\tacpm}^\lambda
-    =
-    \delta^{(n)}(\pm x)
-    \, ,
-    \textInMath{for} \lambda=-n-1
-    \, ,
-    \\
-    &
-    \frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{s:\tac{0|1}}^{\lambda}
-    =
-    \frac{(-1)^{n+s} n!}{(2n+s)!}\delta^{(2n+s)}(x)
-    \, ,
-    \textInMath{for} \lambda=-2n-1-s
-    \, ,
-    \\
-    &
-    x_{\tac{\pm i}}^{\lambda}
-    =
-    x^{-n-1}\mp i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)
-    \, ,
-    \textInMath{for} \lambda=-n-1
-    \, .
-\end{align}
+At the removed poles, these six distributions localize to the Dirac delta function and its derivatives.
+
+Table: The homogeneous distributions, where $n\in \NN$.
+
+| distribution                                                    | residue/value                                          | (removed) pole    |
+| --------------------------------------------------------------- | ------------------------------------------------------ | ----------------- |
+| $x_{\tacpm}^{\lambda}$                                          | $\frac{(-1)^{n}}{n!}\delta^{(n)}(\pm x)$               | $\lambda=-n-1$    |
+| $x_{\tac{s:0,1}}^{\lambda}$                                     | $\frac{2(-1)^{s}}{(2n+s)!}\delta^{(2n+s)}(x)$          | $\lambda=-2n-1-s$ |
+| $\frac{1}{\gm{\lambda+1}}x_{\tacpm}^\lambda$                    | $\delta^{(n)}(\pm x)$                                  | $\lambda=-n-1$    |
+| $\frac{1}{\gm{\frac{\lambda+1+s}{2}}}x_{\tac{s:0,1}}^{\lambda}$ | $\frac{(-1)^{n+s} n!}{(2n+s)!}\delta^{(2n+s)}(x)$      | $\lambda=-2n-1-s$ |
+| $x_{\tac{\pm i}}^{\lambda}$                                     | $x^{-n-1}\mp i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$ | $\lambda=-n-1$    |
 
 !!! remark "Parity symmetry"
 
@@ -145,7 +129,8 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
     \begin{align}
         &
         (x_{\tacpm}^{\lambda},f(x)) =
-        \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda+n+1}
+        \sum_{n=0}^{\oo}
+        \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda+n+1}
         +
         \intrange{dx}{1}{\oo}x^\lambda f(\pm x)
         \, ,
@@ -309,21 +294,6 @@ From the definition, for $\lambda\in \ZZ_{\leq -1}$, the derivatives are
     \pm \lambda x_{\tacpm,\log}^{\lambda-1} \pm \frac{(-1)^{\lambda}}{(-\lambda)!} \delta^{(-\lambda)}(\pm x)
     \, .
 \end{equation}
-
-
-### Summary
-
-Table: The regularized homogeneous distributions, where $n\in \NN$.
-
-| Distribution                                                                         | Value                                                                                            | Removed pole |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
-| $\displaystyle \frac{1}{\gm{\lambda+1}}x_{\tac{+}}^\lambda$                                        | $\displaystyle \delta^{(n)}(x)$                                                                   | $\lambda = -n-1$    |
-| $\displaystyle \frac{1}{\gm{\lambda+1}}x_{\tac{-}}^\lambda$                                        | $\displaystyle (-1)^{n}\delta^{(n)}(x)$                                                           | $\lambda = -n-1$    |
-| $\displaystyle \frac{1}{\gm{\frac{\lambda+1}{2}}}x_{\tac{0}}^{\lambda}$                        | $\displaystyle \frac{(-1)^{n} n!}{(2n)!}\delta^{(2n)}(x)$                                         | $\lambda = -2n-1$   |
-| $\displaystyle \frac{1}{\gm{\frac{\lambda+2}{2}}}x_{\tac{1}}^{\lambda}$                        | $\displaystyle \frac{(-1)^{n+1} n!}{(2n+1)!}\delta^{(2n+1)}(x)$                                   | $\lambda = -2n-2$   |
-| $\displaystyle x_{\tac{i}}^{\lambda}$                                                      | $\displaystyle x^{-n-1}-i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $\lambda = -n-1$    |
-| $\displaystyle x_{\tac{-i}}^{\lambda}$                                                      | $\displaystyle x^{-n-1}+i\pi \frac{(-1)^{n}}{n!} \delta^{(n)}(x)$                                 | $\lambda = -n-1$    |
-| $\displaystyle \frac{1}{\gm{\frac{\lambda+d}{2}}}\abs{x}^{\lambda} \textInMath{ on } \mathbb{R}^{d}$ | $\displaystyle \frac{(-1)^{n}\pi^{\frac{d}{2}}}{2^{2n}\gm{\frac{d}{2}+n}}\square^{n}\delta(x)$ | $\lambda = -2n-d$   |
 
 ## Analytic functionals
 
