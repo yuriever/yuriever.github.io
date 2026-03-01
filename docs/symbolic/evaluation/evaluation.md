@@ -9,7 +9,7 @@ References:
 在一些情况下，由相似对象构成的集合具有良好的几何结构，称之为模空间。
 模空间的属性揭示了对象之间的关系。
 借鉴微分几何的思想，模空间中的曲线代表了一族单参数的对象，即有限形变，而其切空间包含了独立的无穷小形变。
-典型的例子是 Narain CFT 的模空间 [@Maloney:2020nni]：切向量对应精确平衡算子 (exactly marginal operator)，而测度对应着 CFT 的系综平均。
+典型的例子是 Narain CFT 的模空间 \cite{Maloney:2020nni}：切向量对应精确平衡算子 (exactly marginal operator)，而测度对应着 CFT 的系综平均。
 
 本文通过类比模空间来回顾 Mathematica 表达式的计算。
 

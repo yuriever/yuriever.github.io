@@ -10,7 +10,7 @@
 
 ## Conventions
 
-本文旨在梳理旋量螺旋度方法 (spinor helicity formalism) 中的约定，主要遵循 [@Wess:2020] [@SAGEX1]。
+本文旨在梳理旋量螺旋度方法 (spinor helicity formalism) 中的约定，主要遵循 \cite{Wess:2020,SAGEX1}。
 
 * 尽管对于物理观测量而言，约定的选择是一种“规范”，但它会沿着计算过程传播。从编程视角看，这是一种非局域效应，应当被封装在独立的模块中。
 
@@ -45,25 +45,25 @@
 
 采用度规 $(-,+,+,+)$ 的文献示例如下：
 
-* Wess & Bagger [@Wess:2020] *Supersymmetry and Supergravity*
+* Wess & Bagger \cite{Wess:2020} *Supersymmetry and Supergravity*
 
-* Srednicki [@Srednicki:2007qs] *Quantum Field Theory*
+* Srednicki \cite{Srednicki:2007qs} *Quantum Field Theory*
 
-* Elvang & Huang [@Elvang:2015rqa] *Scattering Amplitudes in Gauge Theory and Gravity*
+* Elvang & Huang \cite{Elvang:2015rqa} *Scattering Amplitudes in Gauge Theory and Gravity*
 
 采用度规 $(+,-,-,-)$ 的文献示例如下：
 
-* SAGEX [@SAGEX1] *The SAGEX Review on Scattering Amplitudes Chapter 1*
+* SAGEX \cite{SAGEX1} *The SAGEX Review on Scattering Amplitudes Chapter 1*
 
-* Schwartz [@Schwartz:2014sze] *Quantum Field Theory and the Standard Model*
+* Schwartz \cite{Schwartz:2014sze} *Quantum Field Theory and the Standard Model*
 
-* Badger et al. [@Badger:2023] *Scattering Amplitudes in Quantum Field Theory*
+* Badger et al. \cite{Badger:2023} *Scattering Amplitudes in Quantum Field Theory*
 
-* Dixon [@Dixon:2013uaa] *A brief introduction to modern amplitude methods*
+* Dixon \cite{Dixon:2013uaa} *A brief introduction to modern amplitude methods*
 
-* Taylor [@Taylor:2017sph] *A Course in Amplitudes*
+* Taylor \cite{Taylor:2017sph} *A Course in Amplitudes*
 
-* Cheung [@Cheung:2017pzi] *TASI lectures on scattering amplitudes*
+* Cheung \cite{Cheung:2017pzi} *TASI lectures on scattering amplitudes*
 
 ### Pauli matrices
 
@@ -78,7 +78,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 不同文献的选择示例如下：
 
-* Wess & Bagger [@Wess:2020] 采用了前者，见 [@Wess:2020, Appendix A & B]。与之适配的旋量缩并为
+* Wess & Bagger \cite{Wess:2020} 采用了前者，见 \cite[Appendix A & B]{Wess:2020}。与之适配的旋量缩并为
     \begin{equation*}
         \psi\chi=\psi^{a}\chi_{a}
         \, ,
@@ -87,11 +87,11 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
         \, .
     \end{equation*}
 
-* SAGEX [@SAGEX1] 与 Dixon [@Dixon:2013uaa] 采用了前者。尖旋量 $\ketA{q}_{a}$ 的指标为不带点的，旋量缩并与 Wess & Bagger 相同，见 [@SAGEX1, Appendix A] 与 [@Dixon:2013uaa, Equation 3.6]。
+* SAGEX \cite{SAGEX1} 与 Dixon \cite{Dixon:2013uaa} 采用了前者。尖旋量 $\ketA{q}_{a}$ 的指标为不带点的，旋量缩并与 Wess & Bagger 相同，见 \cite[Appendix A]{SAGEX1} 与 \cite[Equation 3.6]{Dixon:2013uaa}。
 
-* Srednicki [@Srednicki:2007qs] 与 Elvang & Huang [@Elvang:2015rqa] 采用了后者。尖旋量 $\braA{q}_{\dota}$ 的指标为带点的，旋量缩并与 Wess & Bagger 相同，见 [@Srednicki:2007qs, Section 35] 与 [@Elvang:2015rqa, Appendix A]。
+* Srednicki \cite{Srednicki:2007qs} 与 Elvang & Huang \cite{Elvang:2015rqa} 采用了后者。尖旋量 $\braA{q}_{\dota}$ 的指标为带点的，旋量缩并与 Wess & Bagger 相同，见 \cite[Section 35]{Srednicki:2007qs} 与 \cite[Appendix A]{Elvang:2015rqa}。
 
-* Schwartz [@Schwartz:2014sze] 采用了后者。尖旋量 $\ketA{q}_{a}$ 的指标为不带点的，旋量缩并与 Wess & Bagger 相反，见 [@Schwartz:2014sze, Section 10.6.2]。
+* Schwartz \cite{Schwartz:2014sze} 采用了后者。尖旋量 $\ketA{q}_{a}$ 的指标为不带点的，旋量缩并与 Wess & Bagger 相反，见 \cite[Section 10.6.2]{Schwartz:2014sze}。
 
 尽管存在这些差异，通常会保证旋量内积 $\braketA{q_{1}q_{2}}\sim z_{1}-z_{2}$ 是全纯的。
 
@@ -110,7 +110,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
 
 ### Incoming/Outgoing
 
-出入态的转换对应于能量的解析研拓 $\omega\to -\omega$。通常有两种约定：例如文献 [@SAGEX1] [@Srednicki:2007qs] [@Badger:2023] 把负号分配到两种旋量中，
+出入态的转换对应于能量的解析研拓 $\omega\to -\omega$。通常有两种约定：例如文献 \cite{SAGEX1,Srednicki:2007qs,Badger:2023} 把负号分配到两种旋量中，
 \begin{equation*}
     \ketA{-q}=i\ketA{q}
     \, ,
@@ -118,7 +118,7 @@ Pauli 矩阵的定义是约定差异的主要来源之一，有如下两种：
     \braS{-q}=i\braS{q}
     \, ,
 \end{equation*}
-此时有 $\ketA{-(-q)}=-\ketA{q}$。而例如文献 [@Elvang:2015rqa] 把负号吸收到尖旋量中，
+此时有 $\ketA{-(-q)}=-\ketA{q}$。而例如文献 \cite{Elvang:2015rqa} 把负号吸收到尖旋量中，
 \begin{align*}
     \ketA{-q}=-\ketA{q}
     \, ,

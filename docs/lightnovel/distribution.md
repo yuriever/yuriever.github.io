@@ -4,8 +4,8 @@ We review some basic aspects of distributions.
 
 ## Analytic continuation of distributions
 
-The analytic continuation of distributions was initiated by Gelfand and his collaborators in [@Gelfand1; @Gelfand2], and this motivated Bernstein to develop the theory of D-modules [@Bernstein1; @Bernstein2].
-Following [@Gelfand1; @Gelfand2], we provide a brief and physics-oriented review.
+The analytic continuation of distributions was initiated by Gelfand and his collaborators in \cite{Gelfand1,Gelfand2}, and this motivated Bernstein to develop the theory of D-modules \cite{Bernstein1,Bernstein2}.
+Following \cite{Gelfand1,Gelfand2}, we provide a brief and physics-oriented review.
 
 ### Regularization and normalization
 
@@ -297,9 +297,9 @@ From the definition, for $\lambda\in \ZZ_{\leq -1}$, the derivatives are
 
 ## Analytic functionals
 
-The complex delta function $\delta_{\CC}$ is an analytic functional belonging to the Gelfand-Shilov space $Z'$, which is the dual of the space $Z$ of entire functions of at most exponential growth, see [@Gelfand1; @Gelfand2].
-This distribution is employed in the celestial literature to understand the analytic continuation of $\Delta$, see e.g. [@Donnay:2020guq], and it also appears in the method of brackets for evaluating Feynman integrals, see e.g. [@Gonzalez:2008xm; @Gonzalez:2010nm; @Gonzalez:2021vqh; @Ananthanarayan:2021not].
-Following [@Donnay:2020guq], we provide a brief and self-contained introduction here.
+The complex delta function $\delta_{\CC}$ is an analytic functional belonging to the Gelfand-Shilov space $Z'$, which is the dual of the space $Z$ of entire functions of at most exponential growth, see \cite{Gelfand1,Gelfand2}.
+This distribution is employed in the celestial literature to understand the analytic continuation of $\Delta$, see e.g. \cite{Donnay:2020guq}, and it also appears in the method of brackets for evaluating Feynman integrals, see e.g. \cite{Gonzalez:2008xm,Gonzalez:2010nm,Gonzalez:2021vqh,Ananthanarayan:2021not}.
+Following \cite{Donnay:2020guq}, we provide a brief and self-contained introduction here.
 
 The complex delta function is defined as the identity of the Mellin transform,
 \begin{equation}

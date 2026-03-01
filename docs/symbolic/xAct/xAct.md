@@ -32,7 +32,7 @@ We introduce the symbolic tensor functionality of **xAct**, and as examples, we 
 | abelian gauge field                        | $S_{\uugroup(1)}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,F_{ab}F^{ab}$                                             |
 | four-derivative scalar-tensor ($\fourpst$) | $S_{\fourpst}=\frac{1}{4}\int\,{d^{d}x}\sqrt{-g}\,\a(\f) (\partial^{a}\phi \partial_{a}\phi)^2$         |
 
-The traces $\trace{T}$ of stress tensors $T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}$ in these theories vanish at special dimensions and parameters, then the actions are invariant under Weyl transformations [@Polchinski:1987dy,@Nakayama:2013is,@Dymarsky:2013pqa,@Luty:2012ww,@El-Showk:2011xbs,@Jackiw:2011vz].
+The traces $\trace{T}$ of stress tensors $T_{ab}=\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{ab}}$ in these theories vanish at special dimensions and parameters, then the actions are invariant under Weyl transformations \cite{Polchinski:1987dy,Nakayama:2013is,Dymarsky:2013pqa,Luty:2012ww,El-Showk:2011xbs,Jackiw:2011vz}.
 
 | Theory           | Trace of stress tensor                                                                             | Condition of Weyl-invariance              |
 | :--------------- | :------------------------------------------------------------------------------------------------- | :---------------------------------------- |
