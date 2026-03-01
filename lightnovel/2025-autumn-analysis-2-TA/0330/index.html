@@ -17,8 +17,11 @@
       
       
       
+        
+      
+      
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -26,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -78,7 +81,6 @@
     
       
 
-    
     
     
   </head>
@@ -310,9 +312,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -332,9 +339,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Triangulated reality
+  
+
     
   </span>
+  
   
 
       </a>
@@ -354,9 +366,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Lightnovel
+  
+
     
   </span>
+  
   
 
       </a>
@@ -376,9 +393,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Workbench
+  
+
     
   </span>
+  
   
 
       </a>
@@ -398,9 +420,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Sora
+  
+
     
   </span>
+  
   
 
       </a>
@@ -437,7 +464,9 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      代数定义
+      
+        代数定义
+      
     </span>
   </a>
   
@@ -446,7 +475,9 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      表示论观点
+      
+        表示论观点
+      
     </span>
   </a>
   
@@ -462,6 +493,7 @@
 
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   <!--
@@ -505,6 +537,7 @@
 
 <!-- Page content -->
 <h1 id="0330">0330</h1>
+<p><span class="arithmatex">\(\newcommand{\Diff}{\operatorname{Diff}}\)</span></p>
 <h2 id="_1">代数定义</h2>
 <p>在上周我们介绍了（光滑）流形的几何定义：坐标卡与图册，这里我们介绍与它对偶的代数定义，可见例如 Wells 的 <em>Differential Analysis on Complex Manifolds</em>。</p>
 <p>推前与拉回：对于映射 <span class="arithmatex">\(\phi:U\to U'\)</span>，<span class="arithmatex">\(U\)</span> 中的“物体”/子对象总可以被推前</p>
@@ -545,7 +578,7 @@
 <p class="admonition-title">Remark</p>
 <p>退回几何定义：为了验证坐标卡之间的转移映射是光滑的，我们仅需对 <span class="arithmatex">\(\RR^{n}\)</span> 中的开集间的映射 <span class="arithmatex">\(\phi:U\to U'\)</span> 验证：</p>
 <div class="arithmatex">\[\begin{equation}
-    \phi \TextInMath{is smooth}
+    \phi \textInMath{is smooth}
     \Leftrightarrow
     f\in C^{\oo}(V) \implies \phi^{*}f \in C^{\oo}(U)
     \, ,
@@ -586,11 +619,11 @@
 <h2 id="_2">表示论观点</h2>
 <p>一个粗略的图像：</p>
 <p>集合 <span class="arithmatex">\(M\)</span> 上的置换群 <span class="arithmatex">\(S(M)\)</span> 没有携带 <span class="arithmatex">\(M\)</span> 上的拓扑与微分结构，应考虑（带特定拓扑的）微分同胚群 <span class="arithmatex">\(\Diff(M)\)</span>，see e.g. <a href="https://pi.math.cornell.edu/~hatcher/Papers/Diff%28M%292012.pdf">Hatcher's article</a>。</p>
-<p>例如 <span class="arithmatex">\(\Diff(S^{1})\)</span> 的同伦类为 <span class="arithmatex">\(\ogroup(2)\)</span>，李代数为 Witt 代数，其中心扩张称为 Virasoro 代数。</p>
+<p>例如 <span class="arithmatex">\(\Diff(S^{1})\)</span> 的同伦类为 <span class="arithmatex">\(\oogroup(2)\)</span>，李代数为 Witt 代数，其中心扩张称为 Virasoro 代数。</p>
 <p>群 <span class="arithmatex">\(G\)</span> 在 <span class="arithmatex">\(M\)</span> 上的作用：群同态 <span class="arithmatex">\(G\to S(M)\)</span>。光滑版本：李群 <span class="arithmatex">\(G\to\Diff(M)\)</span>。</p>
 <p>点 <span class="arithmatex">\(p\)</span> （更进一步的，子对象）对应于稳定子群 <span class="arithmatex">\(\Diff_{p}(M)\)</span>。参考 Erlangen program。</p>
 <p>光滑函数空间 <span class="arithmatex">\(C^{\oo}(M)\)</span> 为 <span class="arithmatex">\(\Diff(M)\)</span> 的表示，正如置换群 <span class="arithmatex">\(S(M)\)</span> 作用在 <span class="arithmatex">\(M\)</span> 上的任意函数 <span class="arithmatex">\(\RR^{M}\)</span> 上。进而其它丛截面也构成了表示。进而作用在其子表示上，例如平坦联络。</p>
-<p>考虑 <span class="arithmatex">\(I_p(M)\)</span> 为在点 <span class="arithmatex">\(p\)</span> 消失的函数构成的理想，进而定义 <span class="arithmatex">\(I_p^{n}(M)\)</span>。例如 <span class="arithmatex">\(I_p/I^{2}_p\)</span> 定义了余切矢量。<span class="arithmatex">\(\Diff^{n}_p(M)\)</span> 为在 <span class="arithmatex">\(I_p/I^{n}_p\)</span> 上平凡作用的微分同胚构成的群。有 <span class="arithmatex">\(\Diff_p(M)/\Diff^{2}_p(M)\simeq \glgroup(n,\RR)\)</span>，其各种张量表示即为 <span class="arithmatex">\(p\)</span> 点的张量，行列式表示给出张量密度。例如 Riemann tensor 的 Ricci 分解。</p>
+<p>考虑 <span class="arithmatex">\(I_p(M)\)</span> 为在点 <span class="arithmatex">\(p\)</span> 消失的函数构成的理想，进而定义 <span class="arithmatex">\(I_p^{n}(M)\)</span>。例如 <span class="arithmatex">\(I_p/I^{2}_p\)</span> 定义了余切矢量。<span class="arithmatex">\(\Diff^{n}_p(M)\)</span> 为在 <span class="arithmatex">\(I_p/I^{n}_p\)</span> 上平凡作用的微分同胚构成的群。有 <span class="arithmatex">\(\Diff_p(M)/\Diff^{2}_p(M)\iso \glgroup(n,\RR)\)</span>，其各种张量表示即为 <span class="arithmatex">\(p\)</span> 点的张量，行列式表示给出张量密度。例如 Riemann tensor 的 Ricci 分解。</p>
 <p>矢量场的集合 <span class="arithmatex">\(\Gamma(TM)\)</span> 为 <span class="arithmatex">\(\Diff(M)\)</span> 的李代数。其 UEA 为高阶微分算子。其在各种丛截面上的作用为李导数。特别的，矢量场的对易子为伴随表示。</p>
 <p>保持额外结构，例如度规，得到等距变换群，等等。</p>
 
@@ -641,10 +674,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       

@@ -17,8 +17,11 @@
       
       
       
+        
+      
+      
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -26,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -78,7 +81,6 @@
     
       
 
-    
     
     
   </head>
@@ -310,9 +312,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -332,9 +339,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Triangulated reality
+  
+
     
   </span>
+  
   
 
       </a>
@@ -354,9 +366,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Lightnovel
+  
+
     
   </span>
+  
   
 
       </a>
@@ -376,9 +393,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Workbench
+  
+
     
   </span>
+  
   
 
       </a>
@@ -398,9 +420,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Sora
+  
+
     
   </span>
+  
   
 
       </a>
@@ -437,7 +464,9 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      态与观测量
+      
+        态与观测量
+      
     </span>
   </a>
   
@@ -446,7 +475,9 @@
         <li class="md-nav__item">
   <a href="#dirac" class="md-nav__link">
     <span class="md-ellipsis">
-      Dirac 广义函数
+      
+        Dirac 广义函数
+      
     </span>
   </a>
   
@@ -456,7 +487,9 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      导数
+      
+        导数
+      
     </span>
   </a>
   
@@ -465,7 +498,9 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      标量乘法
+      
+        标量乘法
+      
     </span>
   </a>
   
@@ -474,7 +509,9 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      具体实现
+      
+        具体实现
+      
     </span>
   </a>
   
@@ -483,7 +520,9 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      乘法定义的困难
+      
+        乘法定义的困难
+      
     </span>
   </a>
   
@@ -492,7 +531,9 @@
           <li class="md-nav__item">
   <a href="#as-module-of-weyl-algebra" class="md-nav__link">
     <span class="md-ellipsis">
-      As module of Weyl algebra
+      
+        As module of Weyl algebra
+      
     </span>
   </a>
   
@@ -506,7 +547,9 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      其它例子
+      
+        其它例子
+      
     </span>
   </a>
   
@@ -516,7 +559,9 @@
           <li class="md-nav__item">
   <a href="#example-principal-value" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: principal value
+      
+        Example: principal value
+      
     </span>
   </a>
   
@@ -525,7 +570,9 @@
           <li class="md-nav__item">
   <a href="#example-hilbert-transform" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Hilbert transform
+      
+        Example: Hilbert transform
+      
     </span>
   </a>
   
@@ -546,6 +593,7 @@
 
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   <!--
@@ -590,7 +638,7 @@
 <!-- Page content -->
 <h1 id="0316">0316 广义函数：分析与代数模型</h1>
 <p>在本习题课中会介绍一些广义函数/分布相关的知识。</p>
-<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
+<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup> @Gelfand2,@Gelfand3,@Gelfand4,@Gelfand5,@Gelfand6。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
 <p>大纲：</p>
 <ul>
 <li>
@@ -689,7 +737,7 @@
 </div>
 <div class="admonition ex">
 <p class="admonition-title">量子力学</p>
-<p>不妨 <span class="arithmatex">\(\dim\HH&lt;\oo\)</span>，纯态 <span class="arithmatex">\(\ket{f}\in \HH\)</span> 可提升为 <span class="arithmatex">\(\HH\)</span> 上的算子</p>
+<p>不妨 <span class="arithmatex">\(\dim\hil&lt;\oo\)</span>，纯态 <span class="arithmatex">\(\ket{f}\in \hil\)</span> 可提升为 <span class="arithmatex">\(\hil\)</span> 上的算子</p>
 <div class="arithmatex">\[\begin{equation}
     \ket{f}\bra{f} : \ket{g}\mapsto \ket{f}\braket{f}{g}
     \, ,
@@ -699,14 +747,14 @@
     \rho =\sum_{i}\rho_{i}\ket{i}\bra{i}
     \, ,
 \end{equation}\]</div>
-<p>观测量 <span class="arithmatex">\(\cO\in \cL(\HH)\)</span> 下的期望值为</p>
+<p>观测量 <span class="arithmatex">\(\cO\in \cL(\hil)\)</span> 下的期望值为</p>
 <div class="arithmatex">\[\begin{equation}
     \Tr \cO \rho = \sum_{i} \rho_{i} \brakets{i}{\cO}{i}
     \, ,
 \end{equation}\]</div>
 <p>这是 \eqref{eq: classical observable} 的非交换推广。</p>
-<p>虽然对于可分 Hilbert space <span class="arithmatex">\(\HH\)</span>，我们总可以引入一组可数基进行具体计算。但这个同构 <span class="arithmatex">\(\HH\simeq \ell^{2}\)</span> 并不是自然的。</p>
-<p>对于束缚态体系，例如谐振子，<span class="arithmatex">\(\HH=L^{2}(\RR)\)</span> 的完备基可选为 <span class="arithmatex">\(H=-\pp^{2}+x^{2}\)</span> 的本征态（这里我们需要无界算子的谱定理）。但对于散射态体系，例如自由粒子，<span class="arithmatex">\(H=-\pp^{2}\)</span> 具有连续谱，且对应的本征函数——平面波并不在 <span class="arithmatex">\(\HH=L^{2}(\RR)\)</span> 中。对于后者，虽然可以强行采用谐振子的本征态作为自由粒子体系的完备基，但它们并不适用于讨论散射问题，且不遵从该体系的对称性。</p>
+<p>虽然对于可分 Hilbert space <span class="arithmatex">\(\hil\)</span>，我们总可以引入一组可数基进行具体计算。但这个同构 <span class="arithmatex">\(\hil\iso \ell^{2}\)</span> 并不是自然的。</p>
+<p>对于束缚态体系，例如谐振子，<span class="arithmatex">\(\hil=L^{2}(\RR)\)</span> 的完备基可选为 <span class="arithmatex">\(H=-\pp^{2}+x^{2}\)</span> 的本征态（这里我们需要无界算子的谱定理）。但对于散射态体系，例如自由粒子，<span class="arithmatex">\(H=-\pp^{2}\)</span> 具有连续谱，且对应的本征函数——平面波并不在 <span class="arithmatex">\(\hil=L^{2}(\RR)\)</span> 中。对于后者，虽然可以强行采用谐振子的本征态作为自由粒子体系的完备基，但它们并不适用于讨论散射问题，且不遵从该体系的对称性。</p>
 <p>一个更极端的例子是，描述我们现实世界的标准模型，真空态“附近”的激发态依然处于某个抽象的可分 Hilbert space 中（对于有质量粒子，忽略相互作用，这一空间可被具体实现为 Fock space）。这意味着“万事万物等距同构于一个谐振子”，这个荒谬性的来源同上。</p>
 <p>对于特定的问题，我们需要选择与之适配的空间与基底，来显现特定的性质。</p>
 <p>这同样导致了，我们需要将 Hilbert space 嵌入到某个更大的空间中，来容纳动量与坐标本征态。</p>
@@ -744,7 +792,7 @@
 \end{equation}\]</div>
 <p>where</p>
 <div class="arithmatex">\[\begin{equation}
-    \norm{f}_{a,b}\eqqq \sup_{x\in\RR}|x^{a}\pp^{b}f|&lt;\oo
+    \norm{f}_{a,b}\eqdef \sup_{x\in\RR}|x^{a}\pp^{b}f|&lt;\oo
     \, .
 \end{equation}\]</div>
 <p>这时我们需要推广 Banach space，用一可数族半范数来区分不同的函数，进而定义拓扑。
@@ -755,7 +803,7 @@
 <h2 id="dirac">Dirac 广义函数</h2>
 <p>支撑在 <span class="arithmatex">\(x_{0}\in\RR\)</span> 的 Dirac 广义函数被定义为</p>
 <div class="arithmatex">\[\begin{equation}
-    \delta_{x_{0}}(f)\eqqq f(x_{0})
+    \delta_{x_{0}}(f)\eqdef f(x_{0})
     \, ,
 \end{equation}\]</div>
 <p>显然这不是 <span class="arithmatex">\(L^{2}(\RR)\)</span> 上的连续线性泛函。</p>
@@ -776,7 +824,7 @@
     \quad
     \delta(a x) =\frac{1}{a}\delta(x)
     \, ,
-    \TextInMath{for} a&gt;0
+    \textInMath{for} a&gt;0
     \, .
 \end{equation}\]</div>
 <div class="admonition remark">
@@ -786,12 +834,8 @@
 <blockquote>
 <p>我们注意到，在解决具体的数学物理问题时，Dirac 广义函数等其它“奇异函数”只出现在中间过程中。在计算的最后，奇异函数要么完全消失，要么只出现在积分中，与另一个性质足够好的函数相乘。
 因此，没有必要直接回答奇异函数自身是什么。我们只需回答奇异函数和性质足够好的函数乘积的积分是什么。
-例如，我们不必回答什么是 Dirac 广义函数，而只需指出对于性质足够好的函数，下面的等式成立即可：</p>
-<div class="arithmatex">\[\begin{equation*}
-    \intt{dx}\delta(x-x_{0})f(x)=f(x_{0})
-    \, .
-\end{equation*}\]</div>
-<p>换句话说，我们把奇异函数等同于泛函：该奇异函数和每一个性质足够好的函数对应着某一个完全确定的数值。
+例如，我们不必回答什么是 Dirac 广义函数，而只需指出对于性质足够好的函数，下面的等式成立即可：<span class="arithmatex">\(\intt{dx}\delta(x-x_{0})f(x)=f(x_{0})\)</span>。
+换句话说，我们把奇异函数等同于泛函：该奇异函数和每一个性质足够好的函数对应着某一个完全确定的数值。
 这样，我们就不必再多考虑奇异函数这个概念。我们可以把奇异函数与能够具体讨论的泛函等同起来，这将成为奇异函数完全充分的定义。
 显然，通常的可积函数也可以列入这个定义的范围。即对于每一个可积函数，我们能够回答其与性质足够好的函数的乘积的积分等于多少。因此，作为泛函来处理的广义函数概念既包括奇异函数，又包括通常的可积函数。</p>
 </blockquote>
@@ -805,7 +849,7 @@
 \end{equation}\]</div>
 <p>先跳过分析细节，采用速降光滑函数或紧支撑光滑函数的好处之一在于，我们可以利用分布积分把对测试函数的导数转移到广义函数上面</p>
 <div class="arithmatex">\[\begin{equation}
-    (\phi',f)\eqqq -(\phi,f')
+    (\phi',f)\eqdef -(\phi,f')
     \, ,
 \end{equation}\]</div>
 <p>因此可自然的定义</p>
@@ -822,13 +866,13 @@
     \quad
     \delta^{(n)}(a x)=\frac{1}{a^{n+1}}\delta^{(n)}(x)
     \, ,
-    \TextInMath{for} a&gt;0
+    \textInMath{for} a&gt;0
     \, .
 \end{align}\]</div>
 <h3 id="_3">标量乘法</h3>
 <p>此外标量乘法也是显然的</p>
 <div class="arithmatex">\[\begin{equation}
-    (a(x)\phi,f)\eqqq (\phi,a(x)f(x))
+    (a(x)\phi,f)\eqdef (\phi,a(x)f(x))
     \, ,
 \end{equation}\]</div>
 <p>对于 Dirac 函数，有</p>
@@ -913,7 +957,7 @@
 <div class="arithmatex">\[\begin{equation}
     x^{-1}(x\delta(x))=0
     \, ,
-    \TextInMath{but}
+    \textInMath{but}
     (x^{-1}x)\delta(x)=\delta(x)
     \, .
 \end{equation}\]</div>
@@ -939,7 +983,7 @@
     \pp: f\mapsto \pp f
     \, ,
     \quad
-    \TextInMath{for}
+    \textInMath{for}
     f \in \CC[x]
     \, ,
 \end{equation}\]</div>
@@ -954,7 +998,7 @@
     \, .
 \end{equation}\]</div>
 <p>引入 Weyl 代数后，\eqref{eq: x and p} 可被重新翻译为：多项式环 <span class="arithmatex">\(\CC[x]\)</span> 是 <span class="arithmatex">\(A\)</span> 的模。由于求导总可以得到常数，容易验证为不可约模。</p>
-<p>重新审视 Dirac 函数的导数与标量乘法，可以发现 <span class="arithmatex">\(\CC\vecspan{\delta^{(n)}\given n\geq 0}\)</span> 构成了 Weyl 代数的模，式 \eqref{eq: Dirac derivative} 和 \eqref{eq: Dirac scalar multiplication} 定义了具体作用。</p>
+<p>重新审视 Dirac 函数的导数与标量乘法，可以发现 <span class="arithmatex">\(\CC\set{\delta^{(n)}\given n\geq 0}\)</span> 构成了 Weyl 代数的模，式 \eqref{eq: Dirac derivative} 和 \eqref{eq: Dirac scalar multiplication} 定义了具体作用。</p>
 <p>特别的，重写 \eqref{eq: Dirac scalar multiplication} 为</p>
 <div class="arithmatex">\[\begin{equation}
     \frac{(-1)^{n}}{n!}\delta^{(n)}
@@ -974,7 +1018,7 @@
     x(x^{-1})=0 \mod \CC[x]
     \, ,
     \\
-    &amp; x(x^{-n}) = x^{-n-1} \TextInMath{for} n\geq 2
+    &amp; x(x^{-n}) = x^{-n-1} \textInMath{for} n\geq 2
     \, ,
     \\
     &amp;\pp(x^{-n}) = -n x^{n+1}
@@ -985,11 +1029,11 @@
 <p>The principal values of <span class="arithmatex">\(x^{-1}\)</span> and <span class="arithmatex">\(x^{-2}\)</span> are</p>
 <div class="arithmatex">\[\begin{align}
     &amp;
-    (x^{-1},f(x)) \eqqq(|x|^{-1}\sign(x),f(x))=\intrange{dx}{0}{\oo}\frac{f(x)-f(-x)}{x}
+    (x^{-1},f(x)) \eqdef(|x|^{-1}\sign(x),f(x))=\intrange{dx}{0}{\oo}\frac{f(x)-f(-x)}{x}
     \, ,
     \\
     &amp;
-    (x^{-2},f(x)) \eqqq(|x|^{-2},f(x))=\intrange{dx}{0}{\oo}\frac{f(x)+f(-x)-2f(0)}{x^2}
+    (x^{-2},f(x)) \eqdef(|x|^{-2},f(x))=\intrange{dx}{0}{\oo}\frac{f(x)+f(-x)-2f(0)}{x^2}
     \, .
 \end{align}\]</div>
 <p>Notice that although <span class="arithmatex">\(x^{-2}\)</span> as a function is positive-definite, as a distribution it is not.</p>
@@ -1014,7 +1058,7 @@
 <p>The regularization of <span class="arithmatex">\(\phi(x)=\frac{1}{x-y}\)</span> can be chosen as</p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: Hilbert transform}
-    \intt{dx}\frac{f(x)}{x-y}\eqqq\lim_{\epsilon\to 0}\inttt{dx}{|x-y|&gt;\epsilon}\frac{f(x)}{x-y}
+    \intt{dx}\frac{f(x)}{x-y}\eqdef\lim_{\epsilon\to 0}\inttt{dx}{|x-y|&gt;\epsilon}\frac{f(x)}{x-y}
     \, .
 \end{equation}\]</div>
 <p>This regularized distribution defines the Hilbert transform - a unitary operator on <span class="arithmatex">\(L^2(\RR)\)</span> <sup id="fnref:rigged"><a class="footnote-ref" href="#fn:rigged">2</a></sup> with two eigenspaces</p>
@@ -1034,22 +1078,7 @@
 <p><span class="arithmatex">\(L^2(\RR)\)</span> is canonically embedded into <span class="arithmatex">\(\cS'(\RR)\)</span>, as an example of rigged Hilbert space <span class="arithmatex">\(\cS(\RR)\subset L^2(\RR)\subset \cS'(\RR)\)</span>. <a class="footnote-backref" href="#fnref:rigged" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:1">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 1: Properties and Operations</em>. Elsevier Science, 2014. ISBN 9781483261591. URL: <a href="https://books.google.com/books?id=dgnjBQAAQBAJ">https://books.google.com/books?id=dgnjBQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:2">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 2: Spaces of Fundamental and Generalized Functions</em>. Elsevier Science, 2013. ISBN 9781483262307. URL: <a href="https://books.google.com/books?id=iMo3BQAAQBAJ">https://books.google.com/books?id=iMo3BQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:3">
-<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 3: Theory of Differential Equations</em>. Academic Press, 1964. URL: <a href="https://books.google.com/books?id=NNQdAQAAMAAJ">https://books.google.com/books?id=NNQdAQAAMAAJ</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-<li id="fn:4">
-<p>I.M. Gelfand and N.Y. Vilenkin. <em>Generalized Functions Volume 4: Applications of Harmonic Analysis</em>. Academic Press, 1964. ISBN 9780122795046. URL: <a href="https://books.google.com/books?id=sRXVXwAACAAJ">https://books.google.com/books?id=sRXVXwAACAAJ</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">↩</a></p>
-</li>
-<li id="fn:5">
-<p>I.M. Gelfand, M.I. Graev, and N.Y. Vilenkin. <em>Generalized Functions, Volume 5: Integral Geometry and Representation Theory</em>. Academic Press, 2014. ISBN 9781483262253. URL: <a href="https://books.google.com/books?id=VqjiBQAAQBAJ">https://books.google.com/books?id=VqjiBQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
-<li id="fn:6">
-<p>I.M. Gelfand, M.I. Graev, and I.I. Pyatetskii-Shapiro. <em>Generalized Functions, Volume 6</em>. American Mathematical Society, 2016. ISBN 9781470426644. URL: <a href="https://books.google.com/books?id=3hIBDAAAQBAJ">https://books.google.com/books?id=3hIBDAAAQBAJ</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">↩</a></p>
+<p>I.M. Gel'fand and G.E. Shilov. <em>Generalized Functions, Volume 1</em>. Elsevier Science, 2014. ISBN 9781483261591. URL: <a href="https://books.google.com/books?id=dgnjBQAAQBAJ">https://books.google.com/books?id=dgnjBQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -1101,10 +1130,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       

@@ -12,24 +12,27 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/dev/subtitle/">
+        <link rel="canonical" href="https://yuriever.github.io/workbench/test/mathjax-env/">
       
       
+      
+      
+        
       
       
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>Subtitle overrides - Sora</title>
+        <title>MathJax environment - Sora</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -80,7 +83,6 @@
 
     
     
-    
   </head>
   
   
@@ -100,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#subtitle-overrides" class="md-skip">
+        <a href="#mathjax-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Subtitle overrides
+              MathJax environment
             
           </span>
         </div>
@@ -310,9 +312,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -332,9 +339,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Triangulated reality
+  
+
     
   </span>
+  
   
 
       </a>
@@ -354,9 +366,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Lightnovel
+  
+
     
   </span>
+  
   
 
       </a>
@@ -376,9 +393,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Workbench
+  
+
     
   </span>
+  
   
 
       </a>
@@ -398,9 +420,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Sora
+  
+
     
   </span>
+  
   
 
       </a>
@@ -428,6 +455,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#env-at-top-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Env at top level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#env-inside-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Env inside block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#env-inside-code-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Env inside code block
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -436,6 +504,7 @@
 
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   <!--
@@ -478,33 +547,64 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="subtitle-overrides">Subtitle overrides</h1>
-<p>The subtitle is realized by <code>span</code>:</p>
-<h1>the_title
-    <span class="subtitle">the_subtitle</span>
-</h1>
+<h1 id="mathjax-environment">MathJax environment</h1>
+<h2 id="env-at-top-level">Env at top level</h2>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test <span class="arithmatex">\(x\)</span> test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    x
+\end{equation}\]</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    x
+\end{equation}\]</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{align}
+    &amp;ax+b
+    \label{eq:1}
+    \\
+    &amp;cx+d
+    \label{eq:2}
+\end{align}\]</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<p>The equations \eqref{eq:1} and \eqref{eq:2}.</p>
+<h2 id="env-inside-block">Env inside block</h2>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="admonition remark">
+<p class="admonition-title">Remark</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    x
+\end{equation}\]</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="admonition remark">
+<p class="admonition-title">Remark</p>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<div class="arithmatex">\[\begin{equation}
+    x
+\end{equation}\]</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+</div>
+<p>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</p>
+<h2 id="env-inside-code-block">Env inside code block</h2>
+<div class="highlight"><pre><span></span><code>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>title
-    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"subtitle"</span><span class="p">&gt;</span>the_subtitle<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    x
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+    x
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 </code></pre></div>
-<p>with additional metadata</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">the_title</span>
-<span class="nn">---</span>
-</code></pre></div>
-<p>since from <a href="https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/header.html"><code>material/partials/header.html</code></a> line 23:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"md-header__topic"</span> <span class="na">data-md-component</span><span class="o">=</span><span class="s">"header-topic"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"md-ellipsis"</span><span class="p">&gt;</span>
-    {% if page.meta and page.meta.title %}
-        {{ page.meta.title }}
-    {% else %}
-        {{ page.title }}
-    {% endif %}
-    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>After updating to Material for MkDocs 9.x, also need rewriting the page <code>/custom/partials/content.html</code>, see <a href="https://github.com/squidfunk/mkdocs-material/pull/4628/files#diff-db74d007cdd9552f496a973903f6c0d75c034d53d76dd94ffed01926cb6e9f2a">this update</a> and <a href="https://github.com/squidfunk/mkdocs-material/blob/master/src/partials/content.html">here</a>.</p>
 
 <!-- Source file information -->
 
@@ -553,10 +653,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       

@@ -12,24 +12,27 @@
         <meta name="author" content="Yuriever">
       
       
-        <link rel="canonical" href="https://yuriever.github.io/workbench/dev/web-dev/">
+        <link rel="canonical" href="https://yuriever.github.io/workbench/__/hotkey/">
       
       
+      
+      
+        
       
       
       <link rel="icon" href="../../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>Website development - Sora</title>
+        <title>Customizing shortcuts via Karabiner - Sora</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -80,7 +83,6 @@
 
     
     
-    
   </head>
   
   
@@ -100,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#website-development" class="md-skip">
+        <a href="#customizing-shortcuts-via-karabiner" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Website development
+              Customizing shortcuts via Karabiner
             
           </span>
         </div>
@@ -310,9 +312,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -332,9 +339,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Triangulated reality
+  
+
     
   </span>
+  
   
 
       </a>
@@ -354,9 +366,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Lightnovel
+  
+
     
   </span>
+  
   
 
       </a>
@@ -376,9 +393,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Workbench
+  
+
     
   </span>
+  
   
 
       </a>
@@ -398,9 +420,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Sora
+  
+
     
   </span>
+  
   
 
       </a>
@@ -428,6 +455,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location-of-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location of configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
             </div>
         </div>
@@ -436,6 +493,7 @@
 
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   <!--
@@ -478,31 +536,105 @@
 <!---->
 
 <!-- Page content -->
-<h1 id="website-development">Website development</h1>
-<ul class="task-list">
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> overwrite <code>main.html</code> to hide the sidebar on all pages.</p>
+<h1 id="customizing-shortcuts-via-karabiner">Customizing shortcuts via Karabiner</h1>
+<p>References:</p>
+<ul>
+<li>
+<p><a href="https://ahkcn.github.io/docs/AutoHotkey.htm">AutoHotkey</a></p>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> BibTeX by <code>mkdocs-bibtex</code></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> customize <code>admonition.css</code></p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> customize the code highlighter</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> subtitle</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> mma code block</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" disabled checked> TikZ support by <code>tikzjax</code></p>
-<p><a href="https://tikzjax.com/v1/tikzjax.js">https://tikzjax.com/v1/tikzjax.js</a></p>
+<li>
+<p><a href="https://karabiner-elements.pqrs.org/docs/json/">Karabiner-Elements</a></p>
 </li>
 </ul>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Mac 端的 Karabiner 可以复现 Win 端的 AutoHotkey 的一部分功能。配置文件的格式为 JSON，默认目录为</p>
+<div class="highlight"><pre><span></span><code>~/.config/karabiner/assets/complex_modifications/xxx.json
+</code></pre></div>
+<p>配置文件 <code>xxx.json</code> 的结构为</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test shortcuts"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="err">...</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>数组 <code>rules</code> 存储了快捷键的配置信息，其结构如下。<code>from</code> 为快捷键以及修饰键，<code>to</code> 为激活的一系列按键或其它事件。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"manipulators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basic"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>例如，右 option 键加删除键实现向后删除的方案如下。键名可用 Karabiner 自带的 EventViewer 查看。</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"right_option + del : del_forward"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"manipulators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basic"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"key_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete_or_backspace"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"modifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="s2">"right_option"</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"key_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delete_forward"</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+</code></pre></div>
+<p>Karabiner 不具有类似于 AutoHotkey <code>Send/SendRaw</code> 的函数，可以通过剪切板实现类似的功能，例如 LaTeX 的行间公式环境可被快捷键实现为，</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"option + n : equation"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"manipulators"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basic"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"key_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"modifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">"left_option"</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"shell_command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"printf '\\\\begin{equation}\\n\\n\\\\end{equation}' | pbcopy"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"hold_down_milliseconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"key_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"modifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">"right_command"</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"key_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"up_arrow"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>此处 <code>shell_command</code> 可通过命令行将字符串传输给剪切板。需要注意的是：</p>
+<ul>
+<li>字符串需要通过两次转译，例如 <code>\begin{...}\n</code> 在命令行中应为 <code>\\begin{...}\n</code>，而在 <code>xxx.json</code> 中需要进一步将反斜杠进行转译，为 <code>\\\\begin{...}\\n</code>；</li>
+<li>为保证粘贴之前已经完成字符串的传输，需要在两个事件间用 <code>hold_down_milliseconds</code> 添加延迟，类似于 AutoHotkey 的函数 <code>Sleep</code>。</li>
+</ul>
+<h2 id="location-of-configuration">Location of configuration</h2>
+<p><a href="https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/">https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/</a></p>
 
 <!-- Source file information -->
 
@@ -551,10 +683,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "header.autohide", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
       
