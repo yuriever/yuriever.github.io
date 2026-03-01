@@ -1,11 +1,13 @@
 .DS_Store
 .gitattributes
 .vscode
+
 .python-version
+uv.lock
 .venv
 dist
-uv.lock
-**/__pycache__
+__pycache__
 
-init.md
 site
+
+INIT.md
