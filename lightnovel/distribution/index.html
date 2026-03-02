@@ -694,7 +694,7 @@ The extension is nonunique, and we are interested in the case where a family of 
 </tbody>
 </table>
 <div class="admonition remark">
-<p class="admonition-title">Parity symmetry</p>
+<p class="admonition-title">Remark. Parity symmetry</p>
 <p>Under the parity change <span class="arithmatex">\(x\to -x\)</span>, the three bases transform as</p>
 <div class="arithmatex">\[\begin{equation}
     \label{eq: homogeneous distribution - parity symmetry}
@@ -716,6 +716,7 @@ For <span class="arithmatex">\(\Re \lambda\leq -1\)</span> the integral can be d
 <p>A finer argument to read off the residues at <span class="arithmatex">\(\lambda=-n-1\)</span> is as follows.
 Given a real-analytic test function, inserting its Taylor expansion and dividing the integration region into <span class="arithmatex">\([0,1]\)</span> and <span class="arithmatex">\([1,\oo)\)</span>, we obtain</p>
 <div class="arithmatex">\[\begin{equation}
+    \label{eq: homogeneous distribution - Mittag-Leffler expansion 1}
     (x_{\tacp}^\lambda,f(x))
     =
     \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{1}{\lambda+n+1}
@@ -734,8 +735,8 @@ Given a real-analytic test function, inserting its Taylor expansion and dividing
     \, .
 \end{equation}\]</div>
 <details class="remark">
-<summary>Other bases</summary>
-<p>For the plus/minus and even/odd bases, the actions on test functions are</p>
+<summary>Remark. Mittag-Leffler expansion</summary>
+<p>For the plus/minus and even/odd bases, the actions are</p>
 <div class="arithmatex">\[\begin{align}
     &amp;
     (x_{\tacpm}^{\lambda},f(x)) =
@@ -771,9 +772,18 @@ Given a real-analytic test function, inserting its Taylor expansion and dividing
     \, .
 \end{equation}\]</div>
 <p>Notice that the <span class="arithmatex">\(\lambda\)</span>-poles get canceled due to the phase factor, and <span class="arithmatex">\(x_{\tac{\pm i}}^\lambda\)</span> is holomorphic in <span class="arithmatex">\(\lambda\in\CC\)</span>. As <span class="arithmatex">\(\lambda\)</span> approaches the removed poles, the first part gives the imaginary delta functions, and the second part gives the principal value of <span class="arithmatex">\(x^{-n-1}\)</span>.</p>
+<p>This can be understood as the Mittag-Leffler expansion of homogeneous distributions. For example, the expansion of <span class="arithmatex">\(x_{\tacp}^\lambda\)</span> is</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacp}^\lambda
+    =
+    \sum_{n=0}^{\oo} \frac{\delta^{(n)}(x)}{n!}\frac{(-1)^{n}}{\lambda+n+1}
+    +
+    x^\lambda \step(x-1)
+    \, .
+\end{equation}\]</div>
 </details>
 <details class="remark">
-<summary>Singularity at infinity</summary>
+<summary>Remark. Singularity at infinity</summary>
 <p>In practice, the test functions do not decay sufficiently fast as <span class="arithmatex">\(x\to \oo\)</span>, and the singularity at infinity plays an important role.
 For example, choosing the test function as <span class="arithmatex">\((1+x)^{-1}\)</span>, there are additional poles at nonnegative integers:</p>
 <div class="arithmatex">\[\begin{equation}
@@ -861,37 +871,74 @@ This implies <span class="arithmatex">\(\frac{1}{\gm{\frac{\lambda+d}{2}}}|x|^{\
     \, .
 \end{equation}\]</div>
 <h3 id="associated-homogeneous-distributions">Associated homogeneous distributions</h3>
-<p>For <span class="arithmatex">\(\lambda \not \in \ZZ_{\leq -1}\)</span>, we can take <span class="arithmatex">\(k\)</span>-th <span class="arithmatex">\(\lambda\)</span>-derivative of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span>,</p>
-<div class="arithmatex">\[\begin{align}
-    &amp;
-    x_{\tacpm}^{\lambda}\log^{k} x_{\tacpm}
+<p>For <span class="arithmatex">\(\lambda_{0} \not \in \ZZ_{\leq -1}\)</span>, we can take the <span class="arithmatex">\(\lambda\)</span>-derivative of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span> and obtain the associated homogeneous distribution,</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacpm}^{\lambda_{0}}\log^{k} x_{\tacpm}
     \eqdef
-    \pp_{\lambda}^{k} x_{\tacpm}^{\lambda}
+    \eval{\pp_{\lambda}^{k} x_{\tacpm}^{\lambda}}{\lambda=\lambda_{0}}
+    \, .
+\end{equation}\]</div>
+<p>Then the Taylor expansion of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span> is</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacpm}^{\lambda}
+    =
+    \sum_{k=0}^{\oo}
+    \frac{1}{k!}
+    (\lambda-\lambda_{0})^{k}
+    x_{\tacpm}^{\lambda_{0}}\log^{k} x_{\tacpm}
+    \, .
+\end{equation}\]</div>
+<p>As <span class="arithmatex">\(\lambda\)</span> approaches to a simple pole, the leading term of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span> is a delta function, while the subleading terms give the associated homogeneous distribution: for <span class="arithmatex">\(\lambda_{0}\in \ZZ_{\leq -1}\)</span> and <span class="arithmatex">\(k\in \NN\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacpm}^{\lambda_{0}} \log^{k} x_{\tacpm}
+    \eqdef
+    \lim_{\lambda \to \lambda_{0}}
+    \frac{1}{k+1}
+    \pp_{\lambda}^{k+1}
+    \LR{
+        (\lambda-\lambda_{0}) x_{\tacpm}^{\lambda}
+    }
+    \, .
+\end{equation}\]</div>
+<p>Then the Laurent expansion of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span> is</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacpm}^{\lambda}
+    =
+    \frac{1}{\lambda-\lambda_{0}} \frac{(-1)^{-\lambda_{0}-1}}{(-\lambda_{0}-1)!} \delta^{(-\lambda_{0}-1)}(\pm x)
+    +
+    \sum_{k=0}^{\oo} \frac{1}{k!}(\lambda-\lambda_{0})^{k} x_{\tacpm}^{\lambda_{0}} \log^{k} x_{\tacpm}
+    \, .
+\end{equation}\]</div>
+<p>Notice that <span class="arithmatex">\(x_{\tacpm}^{\lambda_{0}}\)</span> is <strong>not</strong> the value of <span class="arithmatex">\(x_{\tacpm}^{\lambda}\)</span> at <span class="arithmatex">\(\lambda=\lambda_{0}\)</span>, and is not a canonical regularization of the function <span class="arithmatex">\(x^{\lambda}\)</span>.
+For <span class="arithmatex">\(k=0\)</span>, the derivatives are</p>
+<div class="arithmatex">\[\begin{equation}
+    \pp_{x} x_{\tacpm}^{\lambda_{0}}
+    =
+    \pm \lambda_{0} x_{\tacpm}^{\lambda_{0}-1} \pm \frac{(-1)^{\lambda_{0}}}{(-\lambda_{0})!} \delta^{(-\lambda_{0})}(\pm x)
+    \, .
+\end{equation}\]</div>
+<details class="remark">
+<summary>Remark. Mittag-Leffler expansion</summary>
+<p>The Mittag-Leffler expansions are</p>
+<div class="arithmatex">\[\begin{equation}
+    x_{\tacpm}^{\lambda}\log^{k} x_{\tacpm}
     =
     \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}(-1)^{k} k!}{(\lambda+n+1)^{k+1}}
     +
     \intrange{dx}{1}{\oo}x^\lambda \log^{k} x\,  f(\pm x)
-    \, .
-\end{align}\]</div>
-<p>As <span class="arithmatex">\(\lambda\)</span> approaches to the simple poles, the subleading term gives the associated homogeneous distributions: for <span class="arithmatex">\(\lambda_{0}\in \ZZ_{\leq -1}\)</span>,</p>
+    \, ,
+\end{equation}\]</div>
+<p>and</p>
 <div class="arithmatex">\[\begin{equation}
-    x_{\tacpm,\log}^{\lambda_{0}}
-    \eqdef
-    \lim_{\lambda \to \lambda_{0}}\pp_{\lambda}\LR{(\lambda-\lambda_{0}) x_{\tacpm}^{\lambda}}
+    x_{\tacpm,\log}^{\Lambda}
     =
-    \sum_{\substack{n=0\\n\neq-\lambda_{0}-1}}^{\oo}
-    \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda_{0}+n+1}
+    \sum_{\substack{n=0\\n\neq-\Lambda-1}}^{\oo}
+    \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\Lambda+n+1}
     +
-    \intrange{dx}{1}{\oo}x^{\lambda_{0}} \log x\,  f(\pm x)
+    \intrange{dx}{1}{\oo}x^{\Lambda} \log x\,  f(\pm x)
     \, .
 \end{equation}\]</div>
-<p>From the definition, for <span class="arithmatex">\(\lambda\in \ZZ_{\leq -1}\)</span>, the derivatives are</p>
-<div class="arithmatex">\[\begin{equation}
-    \pp_{x} x_{\tacpm,\log}^{\lambda}
-    =
-    \pm \lambda x_{\tacpm,\log}^{\lambda-1} \pm \frac{(-1)^{\lambda}}{(-\lambda)!} \delta^{(-\lambda)}(\pm x)
-    \, .
-\end{equation}\]</div>
+</details>
 <h2 id="analytic-functionals">Analytic functionals</h2>
 <p>The complex delta function <span class="arithmatex">\(\delta_{\CC}\)</span> is an analytic functional belonging to the Gelfand-Shilov space <span class="arithmatex">\(Z'\)</span>, which is the dual of the space <span class="arithmatex">\(Z\)</span> of entire functions of at most exponential growth, see <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.
 This distribution is employed in the celestial literature to understand the analytic continuation of <span class="arithmatex">\(\Delta\)</span>, see e.g. <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, and it also appears in the method of brackets for evaluating Feynman integrals, see e.g. <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>.
@@ -950,7 +997,7 @@ Following <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, w
     \end{dcases}
 \end{equation}\]</div>
 <details class="proof">
-<summary>Equation \eqref{eq: complex Delta function approximation}</summary>
+<summary>Proof. Equation \eqref{eq: complex Delta function approximation}</summary>
 <p>This can be shown by a contour deformation argument.
 For <span class="arithmatex">\(\Re\Delta_{0}&gt;a\)</span>, we consider a test function <span class="arithmatex">\(f(\Delta)\)</span> that is analytic in the region <span class="arithmatex">\(a&lt;\Re \Delta\)</span> and decays sufficiently fast as <span class="arithmatex">\(\Delta\to +\oo\)</span>.
 As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can enclose the contour to the right and pick up the poles at <span class="arithmatex">\(\Delta=\Delta_{0}+n\)</span>, <span class="arithmatex">\(n\in\NN\)</span>, leading to</p>
@@ -969,7 +1016,7 @@ As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we 
 <p>From the analysis above, we observe that only the term <span class="arithmatex">\(n = 0\)</span> needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for <span class="arithmatex">\(f(\Delta)\)</span> to be holomorphic in the strip <span class="arithmatex">\(a &lt; \Re \Delta &lt; \Re \Delta_{0}\)</span>, to be meromorphic or contain branch cuts in the region <span class="arithmatex">\(\Re \Delta_{0} &lt; \Re \Delta\)</span>, and to decay sufficiently fast as <span class="arithmatex">\(\Delta \to +\infty\)</span>.</p>
 </details>
 <details class="remark">
-<summary>Principal value at <span class="arithmatex">\(\Re\Delta_{0}=a\)</span></summary>
+<summary>Remark. Principal value at <span class="arithmatex">\(\Re\Delta_{0}=a\)</span></summary>
 <p>Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation} to the case <span class="arithmatex">\(\Re\Delta_{0}=a\)</span>, there would appear an extra factor <span class="arithmatex">\(\half\)</span>.</p>
 <p>The reason is as follows: in this case the leading pole <span class="arithmatex">\(\Delta=\Delta_{0}\)</span> lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle <span class="arithmatex">\(C_{\Delta_{0},\delta} = \set{\Delta \given \Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}&lt;\theta&lt;\frac{3\pi}{2}}\)</span> surrounding the leading pole:</p>
 <div class="arithmatex">\[\begin{equation}
@@ -1104,8 +1151,6 @@ This specification admits redundancy: for any holomorphic function <span class="
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/random-text.js"></script>
-      
-        <script src="../../js/box-thm.js"></script>
       
         <script src="../../js/mathjax-setting.js"></script>
       

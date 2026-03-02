@@ -552,7 +552,7 @@
 <p>本习题课介绍微分流形，常见的参考书如 do Carmo, Spivak。</p>
 <h2 id="_1">直观例子</h2>
 <div class="admonition ex">
-<p class="admonition-title">可展曲面</p>
+<p class="admonition-title">Example 1. 可展曲面</p>
 <p>一张纸无论如何弯折，如果不出现折痕，总有一个方向是平的。（可用校园卡演示）</p>
 <p>反之，乒乓球无法被摊开到平面上。</p>
 <p>这个物理过程虽然复杂，但可做如下简单的抽象。
@@ -561,7 +561,7 @@
 纸在空间中的形变，可由两个正交方向上的弯曲程度刻画，这是纸在空间中的外禀 (extrinsic) 属性。制约这三者的关系为 Gauss Codazzi 方程。</p>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">盈缺与散敛</p>
+<p class="admonition-title">Example 2. 盈缺与散敛</p>
 <p>考虑一束平行的光线穿过一个缺陷角：</p>
 <ul>
 <li>
@@ -588,7 +588,7 @@
 </li>
 </ul>
 <div class="admonition remark">
-<p class="admonition-title">Remark</p>
+<p class="admonition-title">Remark.</p>
 <p>光滑版本为球面与双曲平面。而这个例子把曲率集中到了一个锥形奇点 (conical singularity) 上。</p>
 <p>平行光线的推广为（从子集出发的）测地流，在现实中的应用之一为光追算法。</p>
 <p>这个例子描述的几何可被实现为 Einstein 引力理论中，2+1 维点粒子的引力场的空间截面。2+1 维局域渐近平直时空中不存在黑洞（或者说事件视界的半径为 0）。</p>
@@ -598,7 +598,7 @@
 </div>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">Bertrand–Diguet–Puiseux theorem</p>
+<p class="admonition-title">Example 3. Bertrand–Diguet–Puiseux theorem</p>
 <div class="arithmatex">\[\begin{equation}
     K\sim\lim_{r\to 0} \frac{\pi r^{2}-A(r)}{r^{4}}
 \end{equation}\]</div>
@@ -607,13 +607,13 @@
 <h2 id="_2">光滑流形</h2>
 <p>上述例子蕴含了太多结构。首先我们给出（光滑）流形的定义。</p>
 <div class="admonition def">
-<p class="admonition-title">Manifold</p>
+<p class="admonition-title">Definition 1. Manifold</p>
 <p>给定一个 Hausdorff，第二可数的拓扑空间 <span class="arithmatex">\(M\)</span>，如果对于 <span class="arithmatex">\(M\)</span> 的每一点，都存在一个开邻域 <span class="arithmatex">\(U\)</span>，使得 <span class="arithmatex">\(U\)</span> 同胚于 <span class="arithmatex">\(\RR^{n}\)</span> 的开集 <span class="arithmatex">\(\phi:U\to\RR^{n}\)</span>，那么 <span class="arithmatex">\(M\)</span> 称为拓扑流形，<span class="arithmatex">\((U,\phi)\)</span> 称为 <span class="arithmatex">\(p\)</span> 附近的坐标卡 (chart)，<span class="arithmatex">\(n\)</span> 称为维数。</p>
 <p>对于两个坐标卡 <span class="arithmatex">\((U,\phi)\)</span> 和 <span class="arithmatex">\((V,\psi)\)</span>，如果 <span class="arithmatex">\(\phi(U\cap V)\)</span> 和 <span class="arithmatex">\(\psi(U\cap V)\)</span> 之间的两个同胚映射 <span class="arithmatex">\(\phi\psi^{-1},\, \psi\phi^{-1}\)</span> 是光滑同胚，那么这两个坐标卡称为（光滑）相容的，这些同胚称为坐标转换映射 (transition map)。</p>
 <p>一族覆盖 <span class="arithmatex">\(M\)</span> 的坐标卡 <span class="arithmatex">\(\set{(U_{i},\phi_{i})}\)</span> 如果是两两相容的，则称为 <span class="arithmatex">\(M\)</span> 上的一个图册 (atlas)。</p>
 </div>
 <div class="admonition remark">
-<p class="admonition-title">第二可数性</p>
+<p class="admonition-title">Remark. 第二可数性</p>
 <p>第二可数性：拓扑存在可数基。
 在 Hausdorff 和联通的条件下可以替换为仿紧性 (paracompact)：开覆盖可加细为局部有限的开覆盖。</p>
 <p>这个技术条件用来防止流形过“大”，用以保证流形的整体可分割成可数个局部，例如单位分解 (partition of unity) 的存在性：<span class="arithmatex">\(\sum_{i=1}^{\oo}f_{i}=1\)</span>，<span class="arithmatex">\(f_{i}\)</span> 光滑紧支撑在某个坐标卡内，且每一点附近均为有限求和，由此，函数或丛截面可分解或粘和为 <span class="arithmatex">\(g=\sum f_{i}g\)</span>。下图取自 wiki。</p>
@@ -623,14 +623,14 @@
 <p>定义完图册后还需考虑图册之间的相容性：抽出一个图册中的坐标卡，检验是否与另一个图册中所有的坐标卡相容，进而遍历该图册中所有的坐标卡。如此，这两个图册可以合并到一个更大的图册中。</p>
 <p>接下来定义（光滑）流形有两个处理方式，并无本质区别：1）该图册直接定义了该流形，再称相容的图册定义了等价的流形；2）先把所有可能的相容的图册合并起来，称该极大的图册定义了该流形。</p>
 <div class="admonition remark">
-<p class="admonition-title">一点历史：黑洞与图册</p>
+<p class="admonition-title">Remark. 一点历史：黑洞与图册</p>
 <p>在二十世纪初，Einstein 建立的广义相对论一方面推动了物理的几何化，另一方面激发了 Riemannian 几何的发展，此外 Lorentzian 几何与数学相对论至今依然是一个活跃的领域。</p>
 <p>回顾 Einstein 的原始论文，会发现他花费了大量篇幅向读者介绍局部几何的计算——坐标变换、向量丛的变换、度规、联络、曲率等等，缺乏对整体拓扑的重视。</p>
 <p>这是一种“操作性”、“计算性”认识几何的方式，现今一些老式 GR 教科书中依然采取此种方式。</p>
 <p>这种观念在早期讨论黑洞的时候造成了一定的混淆。坐标奇点 vs. 测地奇点 vs. 曲率奇点。</p>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">常见例子</p>
+<p class="admonition-title">Example 4. 常见例子</p>
 <ul>
 <li>
 <p><span class="arithmatex">\(\RR^{n}\)</span>，其中的开集。</p>
@@ -656,7 +656,7 @@
 </ul>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">反例</p>
+<p class="admonition-title">Example 5. 反例</p>
 <ul>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/Long_line_(topology)">长直线</a>，<span class="arithmatex">\(\omega_{1}\)</span> 不可数份的区间首尾相接得到的光滑流形，see also <a href="https://mathoverflow.net/questions/21673/">the MO question</a>。违背了第二可数性。</p>
@@ -670,14 +670,14 @@
 </ul>
 </div>
 <div class="admonition ex">
-<p class="admonition-title"> <span class="arithmatex">\(\CP^{1}\)</span> </p>
+<p class="admonition-title">Example 6. <span class="arithmatex">\(\CP^{1}\)</span></p>
 <p>原点附近的复坐标 <span class="arithmatex">\(z\in U\)</span> 与无穷远点附近的 <span class="arithmatex">\(w\in V\)</span>，转换映射为 <span class="arithmatex">\(z=w^{-1}\)</span>。</p>
 <p>转换映射是复解析的，这是一个复流形。</p>
 </div>
 <p>这个例子 <span class="arithmatex">\(\CP^{1}\)</span> 启发我们，对局部模型和转移映射施加不同的条件，可以得到不同类型的流形。
 另一个例子是带边流形 (manifold with boundary)，局部模型为半空间 <span class="arithmatex">\(\RRgeq\xx\RR^{n-1}\)</span>。</p>
 <div class="admonition ex">
-<p class="admonition-title">带角流形</p>
+<p class="admonition-title">Example 7. 带角流形</p>
 <p>证明 <span class="arithmatex">\(\set{(x,y)\given x\geq0,x y\geq0}\)</span> 与 <span class="arithmatex">\(\set{(x,y)\given x\geq0,x y\geq1}\)</span> 作为带边拓扑流形同胚，但前者不是带边光滑流形。</p>
 <p>前者称为带角流形 (manifold with corner)。进一步可以引入不同余维数的角，这些角之间的包含关系可被抽象为 stratified space。更进一步，无论光滑与拓扑，可将带边角的流形定义为带额外 stratification 结构的流形。</p>
 </div>
@@ -765,8 +765,6 @@
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
-      
-        <script src="../../../js/box-thm.js"></script>
       
         <script src="../../../js/mathjax-setting.js"></script>
       

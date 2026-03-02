@@ -728,7 +728,7 @@ To extend the domain of <span class="arithmatex">\(\phi\)</span> from <span clas
     \, .
 \end{equation}\]</div>
 <details class="remark">
-<summary>Singularity near infinity</summary>
+<summary>Remark. Singularity near infinity</summary>
 <p>Concretely, we choose the test function as <span class="arithmatex">\(f(x)=e^{-x}\)</span>, then</p>
 <div class="arithmatex">\[\begin{equation}
     (x_{\psign{+}}^a,e^{-x})=\gm{a+1}
@@ -803,7 +803,7 @@ This is one of the reasons why the Mellin transform is commonly used in physics.
 <p>The poles at <span class="arithmatex">\(a=-1,-2,\dots\)</span> get canceled due to the phase factor, hence <span class="arithmatex">\(x_{\psign{\pm i}}^a\)</span> is holomorphic w.r.t. <span class="arithmatex">\(a\in\CC\)</span>.</p>
 <p>In practice, the <span class="arithmatex">\(i\varepsilon\)</span> basis is convenient for computation since we can use analytic continuation. The <span class="arithmatex">\(\pm\)</span> basis is suitable for handling problems over <span class="arithmatex">\(\RR\)</span>.</p>
 <details class="remark">
-<summary>Parity</summary>
+<summary>Remark. Parity</summary>
 <p>Notice that from the parity property</p>
 <div class="arithmatex">\[\begin{equation}
     (-x)_{\psign{\pm}}^{\lambda}=x_{\psign{\mp}}^{\lambda}
@@ -998,7 +998,7 @@ This implies <span class="arithmatex">\(\frac{1}{\Gamma[\frac{a+d}{2}]}|x|^{a}\)
     \, .
 \end{numcases}\]</div>
 <details class="proof">
-<summary>Equation \eqref{eq: complex Delta function approximation a}</summary>
+<summary>Proof. Equation \eqref{eq: complex Delta function approximation a}</summary>
 <p>This can be shown by a contour deformation argument.</p>
 <p>For <span class="arithmatex">\(\Re\Delta_{0}&gt;a\)</span>, we consider a test function <span class="arithmatex">\(f(\Delta)\)</span> that is analytic in the region <span class="arithmatex">\(a&lt;\Re \Delta\)</span> and decays sufficiently fast as <span class="arithmatex">\(\Delta\to +\oo\)</span>.
 As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we can enclose the contour to the right and pick up the poles at <span class="arithmatex">\(\Delta=\Delta_{0}+n\)</span>, <span class="arithmatex">\(n\in\NN\)</span>, leading to</p>
@@ -1017,7 +1017,7 @@ As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we 
 <p>From the analysis above, we observe that only the term <span class="arithmatex">\(n = 0\)</span> needs to be dominant. Consequently, the requirement on test functions can be relaxed: it suffices for <span class="arithmatex">\(f(\Delta)\)</span> to be holomorphic in the strip <span class="arithmatex">\(a &lt; \Re \Delta &lt; \Re \Delta_{0}\)</span>, to be meromorphic or contain branch cuts in the region <span class="arithmatex">\(\Re \Delta_{0} &lt; \Re \Delta\)</span>, and to decay sufficiently fast as <span class="arithmatex">\(\Delta \to +\infty\)</span>.</p>
 </details>
 <details class="remark">
-<summary>Principal value at <span class="arithmatex">\(\Re\Delta_{0}=a\)</span></summary>
+<summary>Remark. Principal value at <span class="arithmatex">\(\Re\Delta_{0}=a\)</span></summary>
 <p>Notice that if naively applying the approximation \eqref{eq: complex Delta function approximation a} to the case <span class="arithmatex">\(\Re\Delta_{0}=a\)</span>, there would appear an extra factor <span class="arithmatex">\(\half\)</span>.</p>
 <p>The reason is as follows: in this case the leading pole <span class="arithmatex">\(\Delta=\Delta_{0}\)</span> lies on the contour, hence the integral is divergent and should be understood as the principal value. When deforming the contour to the right, it is necessary to consider the contribution of a small semicircle <span class="arithmatex">\(C_{\Delta_{0},\delta}\eqdef\set{\Delta:\Delta=\Delta_{0}+\delta e^{i\theta}, \frac{\pi}{2}&lt;\theta&lt;\frac{3\pi}{2}}\)</span> surrounding the leading pole:</p>
 <div class="arithmatex">\[\begin{align*}
@@ -1099,8 +1099,6 @@ As <span class="arithmatex">\(\varepsilon^{\Delta-\Delta_{0}}\to 0\)</span>, we 
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
-      
-        <script src="../../../js/box-thm.js"></script>
       
         <script src="../../../js/mathjax-setting.js"></script>
       

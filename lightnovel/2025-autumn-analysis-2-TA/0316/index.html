@@ -638,7 +638,7 @@
 <!-- Page content -->
 <h1 id="0316">0316 广义函数：分析与代数模型</h1>
 <p>在本习题课中会介绍一些广义函数/分布相关的知识。</p>
-<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup> @Gelfand2,@Gelfand3,@Gelfand4,@Gelfand5,@Gelfand6。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
+<p>主要参考书为 Gelfand 等人的《广义函数论》<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>。这套成书于 60 年代的讲义蕴含了 Gelfand school 诸多丰富的思想。例如第一卷对于广义函数正规化的讨论启发了 Bernstein 建立 D-module 理论，第五卷对 <span class="arithmatex">\(\slgroup(2,\CC|\RR)\)</span> 的表示论的讨论导向了 BGG category 与对称空间上的调和分析两个方向。</p>
 <p>大纲：</p>
 <ul>
 <li>
@@ -687,7 +687,7 @@
 <h2 id="_1">态与观测量</h2>
 <p>在物理中，态与观测量是一对对偶的概念，而广义函数自然的蕴藏其中。</p>
 <div class="admonition ex">
-<p class="admonition-title">观测作为仪器对态的卷积</p>
+<p class="admonition-title">Example 1. 观测作为仪器对态的卷积</p>
 <p>考虑望远镜、手机摄像头之类的光学观测系统，输入为信号 <span class="arithmatex">\(\rho(x)\)</span>，输出为光强等实数，这定义了一个泛函</p>
 <div class="arithmatex">\[\begin{equation}
     \phi:V\to \RR
@@ -716,7 +716,7 @@
 \end{equation}\]</div>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">经典力学</p>
+<p class="admonition-title">Example 2. 经典力学</p>
 <p>纯态由坐标和动量 <span class="arithmatex">\((x,p)\)</span> 所标记，其集合构成了相空间流形 <span class="arithmatex">\(\Gamma\)</span>，动力学由相空间上的 Hamiltonian flow 决定。观测量为 <span class="arithmatex">\(\Gamma\)</span> 上的函数 <span class="arithmatex">\(\cO(x,p)\)</span>。</p>
 <p>混态 <span class="arithmatex">\(\rho(x,p)\)</span> 描述了一族纯态的概率分布，满足归一化条件</p>
 <div class="arithmatex">\[\begin{equation}
@@ -736,7 +736,7 @@
 \end{equation}\]</div>
 </div>
 <div class="admonition ex">
-<p class="admonition-title">量子力学</p>
+<p class="admonition-title">Example 3. 量子力学</p>
 <p>不妨 <span class="arithmatex">\(\dim\hil&lt;\oo\)</span>，纯态 <span class="arithmatex">\(\ket{f}\in \hil\)</span> 可提升为 <span class="arithmatex">\(\hil\)</span> 上的算子</p>
 <div class="arithmatex">\[\begin{equation}
     \ket{f}\bra{f} : \ket{g}\mapsto \ket{f}\braket{f}{g}
@@ -760,7 +760,7 @@
 <p>这同样导致了，我们需要将 Hilbert space 嵌入到某个更大的空间中，来容纳动量与坐标本征态。</p>
 </div>
 <div class="admonition remark">
-<p class="admonition-title">Remark</p>
+<p class="admonition-title">Remark.</p>
 <p>Gelfand 等人的一个想法是将态与观测量的地位调换过来。“真实物理态”是一个不可被精确测量的、先验的概念，在操作中，我们总是用不同的观测量来区分不同的态，进而刻画一个特定的态。在逻辑框架上，Gelfand 等人将其实现为：对于特定系统，先引入所有观测量组成的算子代数 <span class="arithmatex">\(\cA\)</span>，而态被定义为 <span class="arithmatex">\(\cA\)</span> 上的正定线性泛函。</p>
 </div>
 <p>态与观测量的关系自然的告诉我们如何做扩张：只有配对</p>
@@ -828,7 +828,7 @@
     \, .
 \end{equation}\]</div>
 <div class="admonition remark">
-<p class="admonition-title">Lazy evaluation</p>
+<p class="admonition-title">Remark. Lazy evaluation</p>
 <p>“需要计算再去计算”，或者说“形式表达式”，是一种常见的处理扩张问题的想法。例如：考虑 <span class="arithmatex">\(\QQ(\sqrt{2})\)</span> 中的数值计算，在最开始带入 <span class="arithmatex">\(\sqrt{2}\)</span> 的数值进行计算会损失精度，更好的是在 <span class="arithmatex">\(\QQ(x)\)</span> 中计算，最后再投影到 <span class="arithmatex">\(\QQ(\sqrt{2})\)</span> 中。</p>
 <p>Gelfand 等在开篇写到 <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">3</a></sup>：</p>
 <blockquote>
@@ -887,7 +887,7 @@
     \, .
 \end{equation}\]</div>
 <details class="proof">
-<summary>Proof</summary>
+<summary>Proof.</summary>
 <div class="arithmatex">\[\begin{align}
     \intt{dx} x \delta^{(n)}(x)f(x)
     &amp;=
@@ -1080,6 +1080,21 @@
 <li id="fn:1">
 <p>I.M. Gel'fand and G.E. Shilov. <em>Generalized Functions, Volume 1</em>. Elsevier Science, 2014. ISBN 9781483261591. URL: <a href="https://books.google.com/books?id=dgnjBQAAQBAJ">https://books.google.com/books?id=dgnjBQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
+<li id="fn:2">
+<p>I.M. Gel'Fand and G.E. Shilov. <em>Generalized Functions, Volume 2</em>. Elsevier Science, 2013. ISBN 9781483262307. URL: <a href="https://books.google.com/books?id=iMo3BQAAQBAJ">https://books.google.com/books?id=iMo3BQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>I.M. Gelfand and G.E. Shilov. <em>Generalized Functions, Volume 3: Theory of Differential Equations</em>. Academic Press, 1964. URL: <a href="https://books.google.com/books?id=NNQdAQAAMAAJ">https://books.google.com/books?id=NNQdAQAAMAAJ</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>I.M. Gelfand and N.Y. Vilenkin. <em>Generalized Functions Volume 4: Applications of Harmonic Analysis</em>. Academic Press, 1964. ISBN 9780122795046. URL: <a href="https://books.google.com/books?id=sRXVXwAACAAJ">https://books.google.com/books?id=sRXVXwAACAAJ</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>I.M. Gelfand, M.I. Graev, and N.Y. Vilenkin. <em>Generalized Functions, Volume 5: Integral Geometry and Representation Theory</em>. Academic Press, 2014. ISBN 9781483262253. URL: <a href="https://books.google.com/books?id=VqjiBQAAQBAJ">https://books.google.com/books?id=VqjiBQAAQBAJ</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>I.M. Gelfand, M.I. Graev, and I.I. Pyatetskii-Shapiro. <em>Generalized Functions, Volume 6</em>. American Mathematical Society, 2016. ISBN 9781470426644. URL: <a href="https://books.google.com/books?id=3hIBDAAAQBAJ">https://books.google.com/books?id=3hIBDAAAQBAJ</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
 </ol>
 </div>
 
@@ -1137,8 +1152,6 @@
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/random-text.js"></script>
-      
-        <script src="../../../js/box-thm.js"></script>
       
         <script src="../../../js/mathjax-setting.js"></script>
       
