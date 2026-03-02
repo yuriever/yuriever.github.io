@@ -105,6 +105,7 @@ For $\Re \lambda\leq -1$ the integral can be divergent and acquires regularizati
 A finer argument to read off the residues at $\lambda=-n-1$ is as follows.
 Given a real-analytic test function, inserting its Taylor expansion and dividing the integration region into $[0,1]$ and $[1,\oo)$, we obtain
 \begin{equation}
+    \label{eq: homogeneous distribution - Mittag-Leffler expansion 1}
     (x_{\tacp}^\lambda,f(x))
     =
     \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{1}{\lambda+n+1}
@@ -123,9 +124,9 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
     \, .
 \end{equation}
 
-??? remark "Other bases"
+??? remark "Mittag-Leffler expansion"
 
-    For the plus/minus and even/odd bases, the actions on test functions are
+    For the plus/minus and even/odd bases, the actions are
     \begin{align}
         &
         (x_{\tacpm}^{\lambda},f(x)) =
@@ -151,7 +152,6 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
         \intrange{dx}{1}{\oo}x^\lambda \LR{f(x)-f(-x)}
         \, .
     \end{align}
-
     For the imaginary basis, the action is
     \begin{equation}
         (x_{\tac{\pm i}}^{\lambda},f(x))
@@ -162,6 +162,16 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
         \, .
     \end{equation}
     Notice that the $\lambda$-poles get canceled due to the phase factor, and $x_{\tac{\pm i}}^\lambda$ is holomorphic in $\lambda\in\CC$. As $\lambda$ approaches the removed poles, the first part gives the imaginary delta functions, and the second part gives the principal value of $x^{-n-1}$.
+
+    This can be understood as the Mittag-Leffler expansion of homogeneous distributions. For example, the expansion of $x_{\tacp}^\lambda$ is
+    \begin{equation}
+        x_{\tacp}^\lambda
+        =
+        \sum_{n=0}^{\oo} \frac{\delta^{(n)}(x)}{n!}\frac{(-1)^{n}}{\lambda+n+1}
+        +
+        x^\lambda \step(x-1)
+        \, .
+    \end{equation}
 
 ??? remark "Singularity at infinity"
 
@@ -262,38 +272,76 @@ Especially for $n=0$, we have
 
 ### Associated homogeneous distributions
 
-For $\lambda \not \in \ZZ_{\leq -1}$, we can take $k$-th $\lambda$-derivative of $x_{\tacpm}^{\lambda}$,
-\begin{align}
-    &
-    x_{\tacpm}^{\lambda}\log^{k} x_{\tacpm}
+For $\lambda_{0} \not \in \ZZ_{\leq -1}$, we can take the $\lambda$-derivative of $x_{\tacpm}^{\lambda}$ and obtain the associated homogeneous distribution,
+\begin{equation}
+    x_{\tacpm}^{\lambda_{0}}\log^{k} x_{\tacpm}
     \eqdef
-    \pp_{\lambda}^{k} x_{\tacpm}^{\lambda}
-    =
-    \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}(-1)^{k} k!}{(\lambda+n+1)^{k+1}}
-    +
-    \intrange{dx}{1}{\oo}x^\lambda \log^{k} x\,  f(\pm x)
+    \eval{\pp_{\lambda}^{k} x_{\tacpm}^{\lambda}}{\lambda=\lambda_{0}}
     \, .
-\end{align}
+\end{equation}
+Then the Taylor expansion of $x_{\tacpm}^{\lambda}$ is
+\begin{equation}
+    x_{\tacpm}^{\lambda}
+    =
+    \sum_{k=0}^{\oo}
+    \frac{1}{k!}
+    (\lambda-\lambda_{0})^{k}
+    x_{\tacpm}^{\lambda_{0}}\log^{k} x_{\tacpm}
+    \, .
+\end{equation}
 
-As $\lambda$ approaches to the simple poles, the subleading term gives the associated homogeneous distributions: for $\lambda_{0}\in \ZZ_{\leq -1}$,
+As $\lambda$ approaches to a simple pole, the leading term of $x_{\tacpm}^{\lambda}$ is a delta function, while the subleading terms give the associated homogeneous distribution: for $\lambda_{0}\in \ZZ_{\leq -1}$ and $k\in \NN$,
 \begin{equation}
-    x_{\tacpm,\log}^{\lambda_{0}}
+    x_{\tacpm}^{\lambda_{0}} \log^{k} x_{\tacpm}
     \eqdef
-    \lim_{\lambda \to \lambda_{0}}\pp_{\lambda}\LR{(\lambda-\lambda_{0}) x_{\tacpm}^{\lambda}}
-    =
-    \sum_{\substack{n=0\\n\neq-\lambda_{0}-1}}^{\oo}
-    \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\lambda_{0}+n+1}
-    +
-    \intrange{dx}{1}{\oo}x^{\lambda_{0}} \log x\,  f(\pm x)
+    \lim_{\lambda \to \lambda_{0}}
+    \frac{1}{k+1}
+    \pp_{\lambda}^{k+1}
+    \LR{
+        (\lambda-\lambda_{0}) x_{\tacpm}^{\lambda}
+    }
     \, .
 \end{equation}
-From the definition, for $\lambda\in \ZZ_{\leq -1}$, the derivatives are
+Then the Laurent expansion of $x_{\tacpm}^{\lambda}$ is
 \begin{equation}
-    \pp_{x} x_{\tacpm,\log}^{\lambda}
+    x_{\tacpm}^{\lambda}
     =
-    \pm \lambda x_{\tacpm,\log}^{\lambda-1} \pm \frac{(-1)^{\lambda}}{(-\lambda)!} \delta^{(-\lambda)}(\pm x)
+    \frac{1}{\lambda-\lambda_{0}} \frac{(-1)^{-\lambda_{0}-1}}{(-\lambda_{0}-1)!} \delta^{(-\lambda_{0}-1)}(\pm x)
+    +
+    \sum_{k=0}^{\oo} \frac{1}{k!}(\lambda-\lambda_{0})^{k} x_{\tacpm}^{\lambda_{0}} \log^{k} x_{\tacpm}
     \, .
 \end{equation}
+
+Notice that $x_{\tacpm}^{\lambda_{0}}$ is **not** the value of $x_{\tacpm}^{\lambda}$ at $\lambda=\lambda_{0}$, and is not a canonical regularization of the function $x^{\lambda}$.
+For $k=0$, the derivatives are
+\begin{equation}
+    \pp_{x} x_{\tacpm}^{\lambda_{0}}
+    =
+    \pm \lambda_{0} x_{\tacpm}^{\lambda_{0}-1} \pm \frac{(-1)^{\lambda_{0}}}{(-\lambda_{0})!} \delta^{(-\lambda_{0})}(\pm x)
+    \, .
+\end{equation}
+
+??? remark "Mittag-Leffler expansion"
+
+    The Mittag-Leffler expansions are
+    \begin{equation}
+        x_{\tacpm}^{\lambda}\log^{k} x_{\tacpm}
+        =
+        \sum_{n=0}^{\oo} \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}(-1)^{k} k!}{(\lambda+n+1)^{k+1}}
+        +
+        \intrange{dx}{1}{\oo}x^\lambda \log^{k} x\,  f(\pm x)
+        \, ,
+    \end{equation}
+    and
+    \begin{equation}
+        x_{\tacpm,\log}^{\Lambda}
+        =
+        \sum_{\substack{n=0\\n\neq-\Lambda-1}}^{\oo}
+        \frac{f^{(n)}(0)}{n!}\frac{(\pm 1)^{n}}{\Lambda+n+1}
+        +
+        \intrange{dx}{1}{\oo}x^{\Lambda} \log x\,  f(\pm x)
+        \, .
+    \end{equation}
 
 ## Analytic functionals
 
