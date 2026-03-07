@@ -230,10 +230,20 @@ window.MathJax = {
         	"vv":"\\vee",
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
-        	"sign":"\\operatorname{sign}",
-        	"step":"\\operatorname{\\theta}",
         	"abs":[
         		"\\mleft\\lvert #1 \\mright\\rvert",
+        		1
+        	],
+        	"sign":[
+        		"\\operatorname{sign}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"step":[
+        		"\\operatorname{\\theta}\\mleft(#1\\mright)",
+        		1
+        	],
+        	"deltaD":[
+        		"\\operatorname{\\delta}\\mleft(#1\\mright)",
         		1
         	],
         	"deltaC":[
@@ -256,6 +266,10 @@ window.MathJax = {
         		"\\operatorname{B}\\mleft(#1\\mright)",
         		1
         	],
+        	"mg":[
+        		"\\operatorname{\\Gamma}\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
+        		2
+        	],
         	"Foa":[
         		"\\operatorname{{}_{0}F_{1}}\\mleft(#1\\mright)",
         		1
@@ -271,10 +285,6 @@ window.MathJax = {
         	"Fcb":[
         		"\\operatorname{{}_{3}F_{2}}\\mleft(#1\\mright)",
         		1
-        	],
-        	"mg":[
-        		"\\operatorname{\\Gamma}\\mleft[\\genfrac..{0pt}{}{#1}{#2}\\mright]",
-        		2
         	],
         	"Fpq":[
         		"\\operatorname{{}_{#1}F_{#2}}\\mleft[\\genfrac..{0pt}{}{#3}{#4};#5\\mright]",
