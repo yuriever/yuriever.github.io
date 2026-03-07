@@ -282,10 +282,6 @@ window.MathJax = {
         		"\\operatorname{{}_{2}F_{1}}\\mleft(#1\\mright)",
         		1
         	],
-        	"Fcb":[
-        		"\\operatorname{{}_{3}F_{2}}\\mleft(#1\\mright)",
-        		1
-        	],
         	"Fpq":[
         		"\\operatorname{{}_{#1}F_{#2}}\\mleft[\\genfrac..{0pt}{}{#3}{#4};#5\\mright]",
         		5
