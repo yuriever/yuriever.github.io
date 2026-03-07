@@ -169,7 +169,7 @@ The distribution $x_{\tacp}^\lambda$ can be normalized as $\frac{1}{\gm{\lambda+
         =
         \sum_{n=0}^{\oo} \frac{\delta^{(n)}(x)}{n!}\frac{(-1)^{n}}{\lambda+n+1}
         +
-        x^\lambda \step(x-1)
+        x^\lambda \step{x-1}
         \, .
     \end{equation}
 
