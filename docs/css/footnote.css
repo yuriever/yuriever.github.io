@@ -24,5 +24,11 @@ a.footnote-ref {
 .md-typeset .footnote-ref {
     font-size: 1em;
     font-weight: bold;
-    vertical-align: -0.375em;
+}
+
+.mkdocs-bibtex-citation-note {
+    color: var(--sora-ref-color);
+    font-weight: bold;
+    vertical-align: baseline;
+    user-select: none;
 }
