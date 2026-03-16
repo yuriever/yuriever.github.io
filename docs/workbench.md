@@ -20,4 +20,6 @@
 
 * [Code](workbench/test/code.md)
 
+* [Citation](workbench/test/cite.md)
+
 ---
