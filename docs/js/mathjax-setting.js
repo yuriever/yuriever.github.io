@@ -507,6 +507,10 @@ window.MathJax = {
         		1
         	],
         	"op":"\\mathcal{O}",
+        	"normal":[
+        		"\\mathopen{:}#1\\mathclose{:}",
+        		1
+        	],
         	"vacL":"\\langle 0 \\rvert",
         	"vacR":"\\lvert 0 \\rangle",
         	"vac":"\\lvert 0 \\rangle",
