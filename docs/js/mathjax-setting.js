@@ -93,6 +93,18 @@ window.MathJax = {
         		"{\\color{purple} #1}",
         		1
         	],
+        	"gray":[
+        		"{\\color{gray} #1}",
+        		1
+        	],
+        	"black":[
+        		"{\\color{black} #1}",
+        		1
+        	],
+        	"white":[
+        		"{\\color{white} #1}",
+        		1
+        	],
         	"lhs":"\\mathsf{l.h.s.}",
         	"rhs":"\\mathsf{r.h.s.}",
         	"const":"\\mathsf{const.}",
