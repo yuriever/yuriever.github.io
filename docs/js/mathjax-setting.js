@@ -224,10 +224,6 @@ window.MathJax = {
         		"\\Biggl(#1\\Biggr)",
         		1
         	],
-        	"signp":"\\mathord{+}",
-        	"signm":"\\mathord{-}",
-        	"signpm":"\\mathord{\\pm}",
-        	"signmp":"\\mathord{\\mp}",
         	"eqq":"\\equiv",
         	"eqqq":"\\coloneqq",
         	"eqdef":"\\coloneqq",

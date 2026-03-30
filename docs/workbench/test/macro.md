@@ -134,14 +134,6 @@ $$\LRc{*}$$
 
 $$\LRd{*}$$
 
-$$\signp$$
-
-$$\signm$$
-
-$$\signpm$$
-
-$$\signmp$$
-
 $$\eqq$$
 
 $$\eqqq$$
