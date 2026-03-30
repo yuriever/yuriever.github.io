@@ -130,7 +130,7 @@ window.MathJax = {
         	],
         	"phiup":"\\phi",
         	"id":"\\mathbf{1}",
-        	"shortsign":[
+        	"sss":[
         		"#1",
         		1
         	],

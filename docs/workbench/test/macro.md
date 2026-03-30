@@ -60,7 +60,7 @@ $$\phiup$$
 
 $$\id$$
 
-$$\shortsign{*}$$
+$$\sss{*}$$
 
 $$\ccw$$
 
