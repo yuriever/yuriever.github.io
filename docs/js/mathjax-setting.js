@@ -136,14 +136,22 @@ window.MathJax = {
         	],
         	"ccw":"\\circ",
         	"ccb":"\\bullet",
-        	"inn":"{\\color{Red}\\mathsf{i}}",
-        	"out":"{\\color{Blue}\\mathsf{o}}",
-        	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
-        	"outinn":"{\\color{Blue}\\mathsf{o}}{\\color{Red}\\mathsf{i}}",
+        	"io":[
+        		"{\\color{Purple}#1}",
+        		1
+        	],
+        	"oi":[
+        		"{\\color{Purple}#1}",
+        		1
+        	],
         	"tac":[
         		"{\\color{Purple}#1}",
         		1
         	],
+        	"inn":"{\\color{Red}\\mathsf{i}}",
+        	"out":"{\\color{Blue}\\mathsf{o}}",
+        	"innout":"{\\color{Red}\\mathsf{i}}{\\color{Blue}\\mathsf{o}}",
+        	"outinn":"{\\color{Blue}\\mathsf{o}}{\\color{Red}\\mathsf{i}}",
         	"tacp":"{\\color{Purple}+}",
         	"tacm":"{\\color{Purple}-}",
         	"tacpm":"{\\color{Purple}\\pm}",
