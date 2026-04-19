@@ -229,7 +229,7 @@ window.MathJax = {
         	"eqdef":"\\coloneqq",
         	"peq":"\\phantom{{}={}}",
         	"xx":"\\times",
-        	"cc":"\\mathbin{\\mspace{-3mu}\\cdot\\mspace{-3mu}}",
+        	"cc":"\\mathbin{\\mathchoice{\\mspace{-3mu}\\cdot\\mspace{-3mu}}{\\mspace{-3mu}\\cdot\\mspace{-3mu}}{\\cdot}{\\cdot}}",
         	"ox":"\\otimes",
         	"oxx":"\\bigotimes",
         	"os":"\\oplus",
