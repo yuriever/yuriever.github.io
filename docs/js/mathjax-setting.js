@@ -340,11 +340,11 @@ window.MathJax = {
         	"Vol":"\\operatorname{Vol}",
         	"hil":"\\mathcal{H}",
         	"ip":[
-        		"\\left\\lparen #1 , #2 \\right\\rparen",
-        		2
+        		"\\langle #1 \\rangle",
+        		1
         	],
         	"norm":[
-        		"\\left\\lVert #1 \\right\\rVert",
+        		"\\lVert #1 \\rVert",
         		1
         	],
         	"osint":"\\int^{\\oplus}",
