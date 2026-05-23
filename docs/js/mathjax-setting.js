@@ -232,6 +232,10 @@ window.MathJax = {
         		"\\Biggl(#1\\Biggr)",
         		1
         	],
+        	"llbrack":"\\mathopen{\\lbrack\\mspace{-2mu}\\lbrack}",
+        	"rrbrack":"\\mathclose{\\rbrack\\mspace{-2mu}\\rbrack}",
+        	"llangle":"\\mathopen{\\langle\\mspace{-4mu}\\langle}",
+        	"rrangle":"\\mathclose{\\rangle\\mspace{-4mu}\\rangle}",
         	"eqq":"\\equiv",
         	"eqqq":"\\coloneqq",
         	"eqdef":"\\coloneqq",
