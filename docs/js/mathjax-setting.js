@@ -509,6 +509,7 @@ window.MathJax = {
         	"cZ":"\\mathcal{Z}",
         	"half":"\\frac{1}{2}",
         	"thalf":"\\tfrac{1}{2}",
+        	"ii":"i",
         	"oo":"\\infty",
         	"bmat":[
         		"\\begin{bmatrix}#1\\end{bmatrix}",
