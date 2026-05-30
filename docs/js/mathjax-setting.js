@@ -250,6 +250,7 @@ window.MathJax = {
         	"vv":"\\vee",
         	"pp":"\\partial",
         	"ppb":"\\bar{\\partial}",
+        	"dd":"\\mathrm{d}",
         	"abs":[
         		"\\mleft\\lvert #1 \\mright\\rvert",
         		1
@@ -511,6 +512,7 @@ window.MathJax = {
         	"thalf":"\\tfrac{1}{2}",
         	"ii":"i",
         	"oo":"\\infty",
+        	"ee":"e",
         	"bmat":[
         		"\\begin{bmatrix}#1\\end{bmatrix}",
         		1
